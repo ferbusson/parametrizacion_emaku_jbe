@@ -1,0 +1,108 @@
+<emaku_template type="GRAPHIC" requestNumeration="false" copies="2" silence="true" printer="DeskJet-3920-1">
+	<settings width="612" height="792" />
+
+	<metadata>
+		<!-- <image row="20" col="220" width="100" height="75">/icons/logo_fac.png</image>	 -->
+		<font row="0" col="0" name="Arial" size="8" />
+		<field row="65" col="90" fontName="Arial" fontSize="8" fontStyle="0" type="STRING">Copia en Hoja de Vida</field>
+		<font row="0" col="0" name="Arial" size="10" />
+		<field row="75" col="90" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">CS</field>
+		<field col="90" row="115" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">San Juan de Pasto,</field>
+		<field row="180" col="90" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">Señores</field>
+		<field row="204" col="90" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">Ciudad</field>
+		<field row="240" col="310" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">ASUNTO:</field>
+		<field row="265" col="90" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">Cordial Saludo</field>
+
+		<!-- <field row="380" col="90" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">Nombres del funcionario:</field>
+		<field row="392" col="90" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">Identificación: C.C.</field>
+		<field row="404" col="90" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">Concepto del retiro:</field>
+		<field row="416" col="90" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">Valor del retiro:</field>
+		<field row="428" col="90" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">Cuenta Bancaria:</field> -->
+
+		<field row="550" col="90" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">Cordialmente,</field>
+		<field row="585" col="90" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">Empleador</field>
+
+		<field row="660" col="90" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">JOHN VARGAS OSORIO</field>
+		<field row="672" col="90" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">Gerente Administrativo</field>
+		<field row="684" col="90" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">C.C. 12985463</field>
+
+		<field row="685" col="390" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">Elaboró</field>
+
+
+		<font row="0" col="0" name="Arial" size="10" />		
+	</metadata>
+
+	<!-- <newpage>
+		<field row="80" col="430" type="STRING">PAGINA:</field>
+		<pagenumber row="80" col="530" />
+		<font row="0" col="0" name="Arial" size="10" />
+	</newpage> -->
+	
+	<!-- Empiezan los paquetes que vienen del formulario-->
+
+		<!-- 00 numero documento -->
+   <package>
+		<field row="75" col="105" fontName="Arial" fontSize="10" fontStyle="0" type="STRING" />
+	</package>
+
+	<!-- 01 fecha -->
+   <package>
+		<field row="115" col="184" fontName="Arial" fontSize="10" fontStyle="0" type="DATE" mask="dd MMMM yyyy" />
+	</package>
+
+	<!-- 2 fondo de cesantias -->
+   <package>
+		<field row="192" col="90" fontName="Arial" fontSize="10" fontStyle="1" type="STRING" />
+	</package>
+
+	<!-- 3 asunto -->
+   <package>
+		<field row="240" col="365" fontName="Arial" fontSize="10" fontStyle="0" type="STRING" />
+	</package>
+
+	<!-- 3 nombre del funcionario -->
+   <!-- <package>
+		<field row="380" col="240" fontName="Arial" fontSize="10" fontStyle="0" type="STRING" />
+	</package> -->
+
+	<!-- 4 identificacion -->
+<!--    <package>
+		<field row="392" col="210" fontName="Arial" fontSize="10" fontStyle="0" type="STRING" />
+	</package>
+ -->
+	<!-- 5 concepto del retiro -->
+<!--    <package>
+		<field row="404" col="210" fontName="Arial" fontSize="10" fontStyle="0" type="STRING" />
+	</package>
+ -->
+	<!-- 6 valor del retiro -->
+<!--    <package>
+		<field row="416" col="190" fontName="Arial" fontSize="10" fontStyle="0" type="NUMTOLETTERS" width="75" height="2" rowAcum="12" />
+	</package>
+ -->
+	<!-- 7 valor retiro numeros --> 
+<!-- 	<package>
+		<field row="416" col="520" width="18" fontName="Arial" fontSize="10" fontStyle="0" type="NUMERIC" mask="##,###,###,##0.00" />
+	</package>
+ -->
+	<!-- 8 cuenta bancaria --> 
+	<!-- <package>
+		<field row="428" col="200" fontName="Arial" fontSize="10" fontStyle="0" type="STRING" />
+	</package> -->
+
+	<!-- 9 usuario elaboro --> 
+	<package>
+		<field row="705" col="390" fontName="Arial" fontSize="10" fontStyle="1" type="STRING" />
+	</package>
+
+	<!-- 10 Texto principal -->
+	<package>
+		<field row="290" col="90" type="TEXT" fontSize="10" fontName="Arial" fontStyle="0" width="90" height="90" rowAcum="10" fullJustify="430"/>
+	</package>
+
+	<!-- Imagen firma -->
+	<!-- <package>
+		 <image rowAcum="0" row="560" col="241" width="100" height="75">/icons/firmab.jpg</image>
+	</package> -->
+
+</emaku_template>

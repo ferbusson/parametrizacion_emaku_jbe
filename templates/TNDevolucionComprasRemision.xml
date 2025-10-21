@@ -1,0 +1,116 @@
+<emaku_template type="POSTSCRIPT" requestNumeration="true" silence="false" printer="EPSON_TM-T20">
+	<settings width="612" height="792" />
+	<metadata>
+		<font row="0" col="0" name="Sans" size="16" />
+		<field row="70" col="250" type="STRING">DEVOLUCION COMPRAS REMISION</field>
+		<font row="0" col="0" name="Sans" size="10" />
+		<!-- Encabezado MT -->
+		<!--<image row="10" col="25" width="100" height="75">/icons/logo_fac.png</image>-->
+		<barcodeImage row="145" col="390" />
+		<roundedRectangle row="110" col="20" width="300" height="17" />
+		<roundedRectangle row="145" col="20" width="300" height="65" />
+		<roundedRectangle row="220" col="20" width="565" height="520" />
+		<roundedRectangle row="220" col="20" width="565" height="15" />
+		<roundedRectangle row="660" col="20" width="565" height="80" />
+		<field row="120" col="25" type="STRING">Fecha:</field>
+		<field row="140" col="25" type="STRING">Señores</field>
+		<!--  <font row="0" col="0" name="Sans" size="14"/>-->
+		<ndocument row="130" col="480" />
+		<field row="130" col="390" type="STRING">Numero:</field>
+		<field row="130" col="455" type="STRING">DE-</field>
+		<font row="0" col="0" name="Sans" size="8" />
+		<!-- Detalles -->
+		<line row="220" col="97" row2="660" col2="97" />
+		<line row="220" col="145" row2="660" col2="145" />
+		<line row="220" col="260" row2="660" col2="260" />
+		<line row="220" col="335" row2="660" col2="335" />
+		<line row="220" col="380" row2="740" col2="380" />
+		<line row="220" col="440" row2="660" col2="440" />
+		<line row="220" col="517" row2="740" col2="517" />
+		
+		<field row="230" col="35" type="STRING">Codigo</field>
+		<field row="230" col="100" type="STRING">Referencia</field>
+		<field row="230" col="167" type="STRING">Descripcion</field>
+		<field row="230" col="275" type="STRING">Color</field>
+		<field row="230" col="350" type="STRING">Talla</field>
+		<field row="230" col="390" type="STRING">Cantidad</field>
+		<field row="230" col="450" type="STRING">V. Unitario</field>
+		<field row="230" col="540" type="STRING">Total</field>
+		
+		<!-- Sub totales -->
+	<!-- 	<field row="674" col="430" type="STRING">Sub. Total</field>
+		<field row="686" col="430" type="STRING">IVA</field>
+		<field row="698" col="430" type="STRING">Total</field>-->
+		<field row="710" col="430" type="STRING">Total Prendas</field>
+		<field row="722" col="430" type="STRING">Total a Pagar</field>
+		
+		<!--<field row="753" col="20" type="STRING">Berceli Medina - Nit. 79.719.543-2 - Kra. 6 # 13-87 - Tel. 7733324</field>-->
+		<!-- Pie de pagina -->
+		<field row="670" col="25" type="STRING">Abonos de Factura:</field>
+	</metadata>
+<newpage>
+		<font row="0" col="0" name="Sans" size="16" />
+		<field row="60" col="250" type="STRING">DEVOLUCION EN COMPRA REMISIONADA</field>
+		<!--<image row="30" col="25" width="100" height="75">/icons/logo_fac.png</image>-->
+		<generateBarCodeImage row="140" col="400" />
+		<field row="80" col="430" type="STRING">PAGINA:</field>
+		<pagenumber row="80" col="530" />
+		<font row="0" col="0" name="Sans" size="7" />
+		<roundedRectangle row="140" col="20" width="565" height="620" />
+
+		<line row="156" col="20" row2="156" col2="585" />
+		<line row="140" col="97" row2="760" col2="97" />
+		<line row="140" col="145" row2="760" col2="145" />
+		<line row="140" col="260" row2="760" col2="260" />
+		<line row="140" col="335" row2="760" col2="335" />
+		<line row="140" col="380" row2="760" col2="380" />
+		<line row="140" col="440" row2="760" col2="440" />
+		<line row="140" col="517" row2="760" col2="517" />
+				
+		<field row="150" col="35" type="STRING">Codigo</field>
+		<field row="150" col="100" type="STRING">Referencia</field>
+		<field row="150" col="167" type="STRING">Descripcion</field>
+		<field row="150" col="275" type="STRING">Color</field>
+		<field row="150" col="350" type="STRING">Talla</field>
+		<field row="150" col="390" type="STRING">Cantidad</field>
+		<field row="150" col="450" type="STRING">V. Unitario</field>
+		<field row="150" col="540" type="STRING">Total</field>
+	</newpage>	
+	<package>
+		<field row="674" col="340" type="STRING" />
+	</package>
+	<package>
+		<field row="154" col="25" type="STRING" />
+		<field row="164" col="25" type="STRING" />
+		<field row="174" col="25" type="STRING" />
+		<field row="184" col="25" type="STRING" />
+		<field row="194" col="25" type="STRING" />
+		<field row="204" col="25" type="STRING" />
+	</package>
+	<package>
+		<field row="120" col="60" type="DATE" mask="yyyy-MM-dd" />
+	</package>
+		<package>
+		<field row="680" col="25" type="TEXT" width="60" height="3" rowAcum="10" />
+	</package>
+	<package>
+		<field row="710" col="580" type="NUMERIC" mask="#,###,###,##0.00" />
+	</package>	
+	<package>
+		<field row="722" col="580" type="NUMERIC" mask="#,###,###,##0.00" />
+	</package>
+	<package>
+		<subpackage rowInit="250" rowAcum="12" colAcumGroup="1" colTotalGroup="5" colTextTotalGroup="150" textTotalGroup="T O T A L  P R E N D A S . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ." maxRowsAcum="34" rowInitNewPage="170" maxRowsAcumNewPage="49">
+			<field col="25" type="STRING" />
+			<field col="100" type="STRING" />
+			<field col="150" type="STRING" />
+			<field col="263" type="STRING" />
+			<field col="337" type="STRING" />
+			<field col="420" type="NUMERIC" mask="##,###" />
+			<field col="500" type="NUMERIC" mask="#,###,###,##0.00" />
+			<field col="580" type="NUMERIC" mask="#,###,###,##0.00" />
+		</subpackage>
+	</package>
+
+	 	
+</emaku_template>

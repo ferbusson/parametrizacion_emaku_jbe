@@ -1,0 +1,22 @@
+<emaku_template type="POSTSCRIPT" requestNumeration="false" copies="1" silent="false" printer="EPSON_TM-T20">
+	<settings width="220" height="10000" />
+	<metadata>
+		<image row="1" col="10" width="100" height="75">/icons/logo_fac.png</image>
+		<field row="90" col="10" type="STRING">Marcas &amp; Tendencias COLOMBIA</field>
+		<font row="0" col="0" name="Sans" size="8" />
+		<field row="110" col="10" type="STRING">EN EL MES DEL PADRE PARTICIPA EN</field>
+		<field row="120" col="10" type="STRING">FABULOSOS PREMIOS. FELIZ DIA PAPA !!</field>
+		<field row="240" col="5" type="STRING">Numero:</field>
+		<field row="250" col="5" type="STRING">Valor:</field>
+		<field row="160" col="5" type="STRING">Nombre: __________________________________</field>
+		<field row="180" col="5" type="STRING">Apellido: __________________________________</field>
+		<field row="200" col="5" type="STRING">Direccion: _________________________________</field>
+		<field row="220" col="5" type="STRING">Teléfono: _________________________________</field>
+	</metadata>
+	<package>
+		<field row="240" col="115" width="10" type="NUMERIC" mask="0000000000" />
+	</package>
+	<package>
+		<field row="250" col="115" width="10" type="NUMERIC" mask="#,###,###.##" />
+	</package>
+</emaku_template>

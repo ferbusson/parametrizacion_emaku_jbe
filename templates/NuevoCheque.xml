@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emaku_template type="POSTSCRIPT" requestNumeration="false" silent="false" copies="1" printer="EPSON_TM-T20Creator">
+	<settings width="612" height="792" />
+	<metadata>
+		<font row="0" col="0" name="Dialog" size="12" />
+		<ndocument row="275" col="330" />
+		<font row="0" col="0" name="Dialog" size="10" />
+		<field row="190" col="430" type="STRING">Páguese al Primer</field>
+		<field row="200" col="445" type="STRING">Beneficiario</field>
+		<field row="480" col="65" type="STRING">La Cali S.A.S</field>
+	</metadata>
+	<package>
+		<field row="55" col="323" type="DATE" mask="yyyy    MM   dd" fontSize="12" fontName="Dialog" />
+	</package>
+	<package>
+		<field row="55" col="530" type="NUMERIC" mask="###,###,###,##0.00" width="18" fontSize="12" fontName="Dialog" />
+	</package>
+	<package>
+		<field row="75" col="115" type="STRING" lengthFill="110" charFill=".*"/>
+	</package>
+	<package>
+		<field row="100" col="115" type="NUMTOLETTERS" width="70" height="2" rowAcum="20" />
+	</package>
+	<package>
+		<field row="250" col="235" type="DATE" mask="yyyy   MM  dd" fontSize="12" fontName="Dialog" />
+	</package>
+	<package>
+		<field row="280" col="60" type="STRING" />
+		<field row="290" col="60" type="STRING" />
+	</package>
+	<package>
+		<field row="310" col="60" width="240" height="100" type="TEXT" rowAcum="12" />
+	</package>
+		<!-- 
+		<package>
+		<field row="310" col="60" type="STRING"/>
+		<field row="320" col="60" type="STRING"/>
+		<field row="330" col="60" type="STRING"/>
+		<field row="340" col="60" type="STRING"/>
+		<field row="350" col="60" type="STRING"/>
+		<field row="360" col="60" type="STRING"/>
+		<field row="370" col="60" type="STRING"/>
+		<field row="380" col="60" type="STRING"/>
+		<field row="390" col="60" type="STRING"/>
+		<field row="400" col="60" type="STRING"/>
+		<field row="410" col="60" type="STRING"/>
+		<field row="420" col="60" type="STRING"/>
+		<field row="430" col="60" type="STRING"/>
+	</package> -->
+</emaku_template>

@@ -1,0 +1,99 @@
+<emaku_template type="POSTSCRIPT" requestNumeration="true" silent="false" printer="EPSON_TM-T20">
+	<settings width="220" height="10000" />
+	<metadata>
+
+		<image row="1" col="30" width="25" height="12">/icons/logo_fac.png</image>
+		<font row="0" col="0" name="Sans" size="8" />
+		<field row="107" center="218" type="STRING" importValue="true">terceroal</field>
+	      <font row="0" col="0" name="Sans" size="7" />
+	      <field row="117" center="218" type="STRING" importValue="true">nitalterno</field>
+	      <field row="127" center="218" type="STRING">Responsable del Impuesto sobre las ventas - IVA</field>
+	      <field row="137" center="218" type="STRING" importValue="true">direccion</field>
+	      <field row="147" center="218" type="STRING" importValue="true">telefono</field>
+	      <field row="157" center="218" type="STRING" importValue="true">piepaginados</field>
+	      <field row="167" center="218" type="STRING" importValue="true">ciudad</field>
+
+		<font row="0" col="0" name="Sans" size="11" />
+		<field row="190" center="218" type="STRING">REEMPLAZO PAGO CON TARJETA</field>
+		<line row="200" col="2" row2="200" col2="210"/>
+		<font row="0" col="0" name="Sans" size="8" />
+		<field row="210" col="10" type="STRING">Número:</field>
+		<field row="220" col="10" type="STRING">Fecha:</field>
+		<field row="230" col="10" type="STRING">Hora:</field>
+		<field row="240" col="10" type="STRING">Cajero:</field>	
+		<barcodeImage row="70" col="20"/>
+		<ndocument row="210" col="69"/>
+		<time row="230" col="49"/>
+		<date row="220" col="49" mask="EEEEEE dd MMMM yyyy"/>
+		<line row="245" col="2" row2="245" col2="210"/>
+		<font row="0" col="0" name="Sans" size="8" />
+
+		<field row="259" col="70" type="STRING">PAGO ANTERIOR</field>
+		<field row="272" col="10" type="STRING">Documento</field>
+		<field row="282" col="10" type="STRING">Número</field>
+
+		<field row="315" center="200" type="STRING">NUEVO PAGO</field>
+
+	</metadata>
+	
+	<!-- 0 USUARIO -->
+	<package>
+		<field row="240" col="49" width="10" type="STRING"/>
+	</package>
+	
+	<!-- 1 PREFIJO -->
+	<package>
+		<field row="210" col="49" textLine="-" textCol="62" width="10" type="STRING"/>
+	</package>
+
+	<!-- 2 TIPO DOCUMENTO AFECTADO -->
+	<package>
+		<field row="272" col="80" width="10" type="STRING"/>
+	</package>
+	<!-- 3 NUMERO DOC AFECTADO -->
+	<package>
+		<field row="282" col="80" width="10" type="STRING"/>
+	</package>
+	<!-- 4 PAGO A REEMPLAZAR -->
+	<package>
+		<field row="292" col="10" width="10" type="STRING" rowAcum="20" />
+	</package>
+
+	<!-- 5 LINEA  -->
+        <package>
+                <line row="302" col="5" row2="302" col2="210" rowAcum="20"/>
+        </package>
+
+	<!-- 6 EFECTIVO -->
+	<package>
+		<field textLine="Efectivo" textCol="10" rowAcum="13" validZero="true" row="last" col="200" width="10" type="NUMERIC" mask="#,###,###" fontSize="10" fontName="Sans"/>
+	</package>
+
+	<!-- 7 CAMBIO -->
+	<package>
+		<field textLine="Cambio" textCol="10" rowAcum="13" validZero="true" row="last" col="200" width="10" type="NUMERIC" mask="#,###,###" fontSize="10" fontName="Sans"/>
+	</package>
+	<!-- 8 Tarjeta -->
+	<package>
+		<field textLine="Tarjeta" textCol="10" rowAcum="0" validZero="true" row="last" col="200" width="10" type="NUMERIC" mask="#,###,###" fontSize="10" fontName="Sans"/>
+	</package>
+
+	<!-- 9 Franquicia -->
+	<package>
+		<field row="last" col="60" width="10" type="STRING" rowAcum="0" />
+	</package>
+
+	<!-- 10 Voucher -->
+	<package>
+		<field row="last" col="100" width="10" type="STRING" rowAcum="10" />
+	</package>
+
+
+	<!--  11 LINEA  -->
+        <package>
+                <line row="last" col="5" row2="last" col2="210" rowAcum="20"/>
+        </package>
+
+
+
+</emaku_template>

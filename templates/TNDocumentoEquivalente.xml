@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emaku_template copies="1" printer="EPSON_TM-T20" requestNumeration="true" silent="false" type="POSTSCRIPT">
+	<settings height="792" width="612"/>
+	<metadata>
+		<!-- Encabezado -->
+		<image col="25" height="75" row="0" width="100">/icons/logo_fac.png
+		</image>
+		<font col="0" name="Dialog" row="0" size="8"/>
+		<field col="240" row="20" type="NAMEDB">nit</field>
+		<field col="240" row="30" type="NAMEDB">direccion</field>
+		<field col="240" row="40" type="NAMEDB">ciudad</field>
+		<!-- cuadros de la forma -->
+		<roundedRectangle col="20" height="695" row="85" width="565"/>
+		<!-- Numero de documento -->
+		<font col="0" name="Dialog" row="0" size="12"/>
+		<field col="240" row="57" type="STRING">DOCUMENTO SOPORTE EN GASTOS</field>
+		<field col="240" row="71" type="Numero">NUMERO: SA -</field>
+		<font col="0" name="Dialog" row="0" size="8"/>
+		<field col="240" row="81" type="STRING">Este es un documento soporte en adquisiciones efectuadas a no obligados a facturar.</field>
+		<ndocument col="340" row="71"/>
+		<font col="0" name="Dialog" row="0" size="10"/>
+		<field col="30" row="99" type="Numero">Fecha:</field>
+		<field col="270" row="99" type="Numero">Centrocosto:</field>
+		<field col="270" row="111" type="Numero">Subcentro:</field>
+		<field col="30" row="130" type="Numero">Tercero:</field>
+		<field col="390" row="150" type="Numero">VALOR $</field>
+		<field col="30" row="200" type="Numero">LA SUMA DE:</field>
+		<field col="79" row="223" type="Numero">Concepto</field>
+		<field col="25" row="532" type="Numero">Forma de Pago: Efectivo[  ] Cheque[  ] Consignación[  ] Tarjeta[  ] Transferencia[  ] Cruce CxP[  ] 
+		</field>
+		<field col="50" row="550" type="Numero">Código</field>
+		<field col="160" row="550" type="Numero">Débitos</field>
+		<field col="265" row="550" type="Numero">Créditos</field>
+		<field col="25" row="760" type="Numero">Elaboro</field>
+		<field col="125" row="760" type="Numero">Aprobo</field>
+		<field col="245" row="760" type="Numero">Contabilizo</field>
+		<field col="360" row="775" type="Numero">Firma y Sello</field>
+		<!-- lineas horizontales -->
+		<line col="20" col2="585" row="120" row2="120"/>
+		<line col="20" col2="585" row="180" row2="180"/>
+		<line col="20" col2="73" row="220" row2="220"/>
+		<line col="135" col2="585" row="220" row2="220"/>
+		<line col="20" col2="585" row="520" row2="520"/>
+		<line col="20" col2="585" row="540" row2="540"/>
+		<line col="20" col2="340" row="555" row2="555"/>
+		<line col="20" col2="340" row="750" row2="750"/>
+		<line col="355" col2="575" row="765" row2="765"/>
+		<!-- lineas verticales -->
+		<line col="120" col2="120" row="540" row2="780"/>
+		<line col="240" col2="240" row="540" row2="780"/>
+		<line col="340" col2="340" row="540" row2="780"/>
+	</metadata>
+	<!-- 0 -->
+	<package>
+		<field col="70" mask="EEEEEE, dd MMMM yyyy" row="99" type="DATE"/>
+	</package>
+	<!-- 1 -->
+	<package>
+		<field col="30" row="144" type="STRING"/>
+		<field col="30" row="154" type="STRING"/>
+		<field col="30" row="164" type="STRING"/>
+		<field col="30" row="174" type="STRING"/>
+		<!--<field row="0" col="0" /><field row="0" col="0" /><field row="145" col="30" link="1" type="STRINGCONCAT" char="- " /><field row="0" col="0" />-->
+	</package>
+	<!-- 2 -->
+	<package>
+		<field col="550" mask="##,###,###,##0.00" row="150" type="NUMERIC" width="18"/>
+	</package>
+	<!-- 3 -->
+	<package>
+		<field col="105" height="2" row="200" rowAcum="12" type="NUMTOLETTERS" width="75"/>
+	</package>
+	<!-- 4 -->
+	<package>
+		<field col="30" height="150" row="240" rowAcum="12" type="TEXT" width="108"/>
+	</package>
+	<!-- 5 cc -->
+	<package>
+		<field col="390" row="99" type="STRING"/>
+	</package>
+	<!-- 6 scc -->
+	<package>
+		<field col="390" row="111" type="STRING"/>
+	</package>
+	<!-- 7 -->
+	<package>
+		<subpackage rowAcum="10" rowInit="565">
+			<field col="30" type="STRING"/>
+			<field col="220" mask="##,###,###,###" type="NUMERIC" width="14"/>
+			<field col="320" mask="##,###,###,###" type="NUMERIC" width="14"/>
+		</subpackage>
+	</package>
+	<!-- resolucion facturacion -->
+	<!-- 8 -->
+	<package>
+		<field col="480" fontName="Dialog" fontSize="5" fontStyle="0" row="25" type="STRING"/>
+	</package>
+	<!-- 9 -->
+	<package>
+		<field col="480" fontName="Dialog" fontSize="5" fontStyle="0" row="35" type="STRING"/>
+	</package>
+	<!-- 10 -->
+	<package>
+		<field col="490" fontName="Dialog" fontSize="5" fontStyle="0" row="45" type="STRING"/>
+	</package>
+	<!-- 11 -->
+	<package>
+		<field col="502" fontName="Dialog" fontSize="5" fontStyle="0" row="55" type="STRING"/>
+	</package>
+	<!-- fin resolucion -->
+	<!-- 12 -->
+	<package>
+		<field row="532" col="151" type="STRING" /> <!--efectivo-->
+		<field row="532" col="206" type="STRING" /> <!--cheques-->
+		<field row="532" col="291" type="STRING" /> <!--consignacion-->
+		<field row="532" col="343" type="STRING" /> <!--tarjeta-->
+		<field row="532" col="428" type="STRING" /> <!--transferencia-->
+		<field row="532" col="499" type="STRING" /> <!--cruce cxp-->
+	</package>
+
+</emaku_template>

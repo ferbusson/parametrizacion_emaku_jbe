@@ -1,0 +1,106 @@
+<emaku_template type="POSTSCRIPT" requestNumeration="true" silent="true" nativeprinter="true" printer="EPSON_TM-T20">
+	<settings width="220" height="10000" />
+	<metadata>
+
+		<image row="50" col="15" width="25" height="12">/icons/logo_fac.png</image>
+		<font row="0" col="0" name="Sans" size="6" />	
+		<field row="144" center="200" type="NAMEDB">razon_social</field>
+		<field row="154" center="200" type="NAMEDB">nit</field>
+		<font row="0" col="0" name="Sans" size="12" />
+		<field row="170" center="220" type="STRING">COMPROBANTE DE INGRESO</field>
+		<line row="180" col="2" row2="180" col2="210"/>
+		<font row="0" col="0" name="Sans" size="7" />
+		<field row="190" col="5" type="STRING">FECHA:</field>
+		<field row="200" col="5" type="STRING">EXPEDIDO EN:</field>
+		<field row="210" col="5" type="STRING">NÚMERO:</field>
+		<field row="220" col="5" type="STRING">USUARIO:</field>	
+		<ndocument row="210" col="80"/>
+		<time row="190" col="170"/>
+		<date row="190" col="35" mask="EEEEEE dd MMMM yyyy"/>
+		<line row="225" col="2" row2="225" col2="210"/>
+		<font row="0" col="0" name="Sans" size="14" />
+		<field row="240" col="5" type="STRING">VALOR $</field>
+		<font row="0" col="0" name="Sans" size="8" />
+		<line row="260" col="2" row2="260" col2="210"/>
+		<line row="330" col="2" row2="330" col2="210"/>
+		<field row="340" center="200" type="STRING">CONCEPTO</field>
+
+	</metadata>
+
+	0 SUCURSAL
+	<package>
+		<field row="200" col="60" width="10" type="STRING"/>
+	</package>
+	
+	USUARIO
+	<package>
+		<field row="220" col="44" width="10" type="STRING"/>
+	</package>
+	
+	PREFIJO
+	<package>
+		<field row="210" col="44" width="10" type="STRING"/>
+	</package>
+
+	1 VALOR
+	<package>
+		<field row="240" col="170" width="10" type="NUMERIC" mask="#,###,###" fontSize="14" fontName="Sans"/>
+	</package>
+
+	2 VALOR EN LETRAS
+	<package>
+                <field row="253" col="5" type="NUMTOLETTERS" width="75" height="2" rowAcum="12" />
+        </package>
+
+	<package>
+	      <field textLine="Efectivo ......" rowAcum="20" textCol="12" fontName="Dialog" fontSize="14" fontStyle="1" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	   
+
+	<package>
+	      <field textLine="Tarjetas ......" rowAcum="20" textCol="12" fontName="Dialog" fontSize="14" fontStyle="1" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>
+
+	<package>
+	      <field textLine="Cheque ......" rowAcum="20" textCol="12" fontName="Dialog" fontSize="14" fontStyle="1" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>
+
+	<package>
+	      <field textLine="Consignación ......" rowAcum="20" textCol="12" fontName="Dialog" fontSize="14" fontStyle="1" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>
+
+
+	3 NOMBRE
+	<package>
+                <field row="270" col="5" type="STRING" />
+                <field row="280" col="5" type="STRING" />
+                <field row="290" col="5" type="STRING" />
+                <field row="300" col="5" type="STRING" />
+                <field row="310" col="5" type="STRING" />
+                <field row="320" col="5" type="STRING" />
+        </package>
+
+
+	4 CONCEPTO
+	<package>
+		<field row="355" rowAcum="10" col="5" width="50" height="4" type="TEXT" fontSize="8" fontName="Sans"/>
+	</package>
+
+	5 LINEA ABAJO CONCEPTO
+        <package>
+                <line row="last" col="5" row2="last" col2="210" rowAcum="40"/>
+        </package>
+
+        11 FIELD
+    <package>
+
+      <text rowAcum="10" row="last" col="50" type="STRING" importValue="true"></text>
+      <text rowAcum="10" row="last" col="58" type="STRING" importValue="true">direccion</text>
+      <text rowAcum="10" row="last" col="83" type="STRING" importValue="true">telefono</text>
+      <text rowAcum="10" row="last" col="66" type="STRING" importValue="true">email</text>
+      <text rowAcum="20" row="last" col="86" type="STRING" importValue="true">ciudad</text>
+      <text fontName="Dialog" fontSize="6" fontStyle="1" rowAcum="8" row="last" col="64" type="STRING">Elaborado Con E-Maku</text>
+      <text fontName="Dialog" fontSize="6" fontStyle="1" rowAcum="30" row="last" col="59" type="STRING">Licenciado Bajo GPL V 2.0</text>
+   </package>
+
+
+</emaku_template>

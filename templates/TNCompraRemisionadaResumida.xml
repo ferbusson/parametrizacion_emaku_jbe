@@ -1,0 +1,76 @@
+<emaku_template type="POSTSCRIPT" requestNumeration="true" silence="false" printer="EPSON_TM-T20">
+	<settings width="612" height="792" />
+	<metadata>
+		<font row="0" col="0" name="Sans" size="16" />
+		<field row="70" col="250" type="STRING">REMISION RESUMIDA</field>
+		<font row="0" col="0" name="Sans" size="10" />
+		<!-- Encabezado MT -->
+		<image row="10" col="25" width="100" height="75">/icons/logo_fac.png</image>
+		<barcodeImage row="145" col="390" />
+		<roundedRectangle row="110" col="20" width="300" height="17" />
+		<roundedRectangle row="145" col="20" width="300" height="65" />
+		<roundedRectangle row="220" col="20" width="565" height="80" />
+		<field row="120" col="25" type="STRING">Fecha:</field>
+		<field row="120" col="120" type="STRING">Crédito:</field>
+		<field row="120" col="190" type="STRING">Vencimiento:</field>
+		<field row="140" col="25" type="STRING">Señores</field>
+		<!--  <font row="0" col="0" name="Sans" size="14"/>-->
+		<ndocument row="130" col="480" />
+		<field row="130" col="390" type="STRING">Numero:</field>
+		<field row="140" col="390" type="STRING">Rem.Proveedor: </field>
+		<field row="130" col="455" type="STRING">RC-</field>
+		<font row="0" col="0" name="Sans" size="8" />
+
+		<!-- Sub totales -->
+		<field row="230" col="430" type="STRING">Sub. Total</field>
+		<field row="242" col="430" type="STRING">Descuento</field>
+		<field row="254" col="430" type="STRING">Total</field>
+		<!-- Pie de pagina -->
+		<field row="230" col="250" type="STRING">Total Articulos</field>
+		<field row="230" col="25" type="STRING">Transportadora</field>
+		<field row="242" col="25" type="STRING">Guia</field>
+		<field row="254" col="25" type="STRING">Fecha de Recepcion</field>
+		<field row="266" col="25" type="STRING">Peso (Kg.)</field>
+		<field row="278" col="25" type="STRING">Cajas</field>
+		<field row="290" col="25" type="STRING">Recibio</field>
+		<!--<field row="320" col="20" type="STRING">Berceli Medina - Nit. 79.719.543-2 - Kra. 6 # 13-87 - Tel. 7733324</field>-->
+	</metadata>
+
+	<package>
+		<field row="230" col="340" type="STRING" />
+	</package>
+	<package>
+		<field row="230" col="110" type="STRING" />
+		<field row="242" col="110" type="STRING" />
+		<field row="254" col="110" type="STRING" />
+		<field row="266" col="110" type="STRING" />
+		<field row="278" col="110" type="STRING" />
+		<field row="290" col="110" type="STRING" />
+	</package>
+	<package>
+		<field row="154" col="25" type="STRING" />
+		<field row="164" col="25" type="STRING" />
+		<field row="174" col="25" type="STRING" />
+		<field row="184" col="25" type="STRING" />
+		<field row="194" col="25" type="STRING" />
+		<field row="204" col="25" type="STRING" />
+	</package>
+	<package>
+		<field row="140" col="465" type="STRING" fontSize="10" fontName="Sans" />
+	</package>
+	<package>
+		<field row="120" col="60" type="DATE" mask="yyyy-MM-dd" />
+	</package>
+	<package>
+		<field row="120" col="160" type="STRING" fontSize="8" fontName="Sans" />
+	</package>
+	<package>
+		<field row="120" col="260" type="DATE" mask="yyyy-MM-dd" />
+	</package>
+	
+	<package>
+		<field row="230" col="580" type="NUMERIC" mask="#,###,###,##0.00" />
+		<field row="242" col="580" type="NUMERIC" mask="#,###,###,##0.00" />
+		<field row="254" col="580" type="NUMERIC" mask="#,###,###,##0.00" />
+	</package>
+</emaku_template>

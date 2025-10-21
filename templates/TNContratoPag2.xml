@@ -1,0 +1,31 @@
+<emaku_template type="GRAPHIC" requestNumeration="false" copies="2" silence="true" printer="DeskJet-3920-1">
+	<settings width="612" height="792" />
+	<metadata>		
+
+		<!-- <image row="1" col="450" width="100" height="75">/icons/logo_fac.png</image> -->
+
+	</metadata>
+	<!-- <newpage>
+		<field row="80" col="430" type="STRING">PAGINA:</field>
+		<pagenumber row="80" col="530" />
+		<font row="0" col="0" name="Sans" size="4" />
+	</newpage> -->
+	<package>
+		<field row="70" col="90" type="TEXT" fontSize="10" fontName="Arial" width="90" height="90" rowAcum="10" fullJustify="430"/>
+	</package>
+	
+	<!--
+	READ ME: 
+	row: initial row, left upper corner
+	col: initial col, left upper corner
+	type: type of data displayed, gives the format
+	fontSize: size of the font
+	fontName: name of the font
+	width: the number of characters that are going to be fixed in a line of text. Ej: width=2 will create lines of two characters.
+	height: ?? not sure yet 
+	rowAcum: separation between lines
+	fullJustify: ?? not sure yet but, it seems to be the wide in characters of the area to be used, in this case 570 is the width of the page 612
+	             minus 40 that is twice the separation from the left margin (20).
+	-->
+
+</emaku_template>

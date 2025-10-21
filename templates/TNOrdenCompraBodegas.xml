@@ -1,0 +1,234 @@
+<emaku_template type="POSTSCRIPT" requestNumeration="false" silence="false" printer="EPSON_TM-T20">
+	<settings width="612" height="792" />
+	<metadata>
+		<pagenumber row="17" center="612" fontName="Dialog" fontSize="7" fontStyle="0"/>
+		<field row="70" col="250" type="STRING" fontName="Dialog" fontSize="16" fontStyle="0">ORDEN DE COMPRA</field>
+		<field row="88" col="245" type="STRING" fontName="Dialog" fontSize="14" fontStyle="0">LISTA DE DISTRIBUCIÓN</field>
+		<font row="0" col="0" name="Sans" size="10" />
+		<image row="10" col="25" width="100" height="75">/icons/logo_fac.png</image>
+		<!-- <barcodeImage row="130" col="370" /> -->
+		<roundedRectangle row="110" col="20" width="335" height="17" />
+		<roundedRectangle row="145" col="20" width="335" height="65" />
+		<roundedRectangle row="220" col="20" width="565" height="540" />
+		<roundedRectangle row="220" col="20" width="565" height="15" />
+		<roundedRectangle row="670" col="20" width="565" height="90" />
+		<field row="120" col="25" type="STRING">Fecha Ing Sis:</field>
+		<field row="120" col="255" type="STRING">Crédito:</field>
+		<field row="120" col="320" type="STRING">Días</field>
+		<!-- <field row="120" col="225" type="STRING">Vencimiento:</field> -->
+		<field row="140" col="25" type="STRING">Señores</field>
+		<!-- <ndocument row="120" col="510" /> -->
+		<field row="120" col="370" type="STRING">NÚMERO:               OC -</field>	
+		<font row="0" col="0" name="Sans" size="9" />
+		<!-- <field row="140" col="370" type="STRING">Fac. Proveedor:</field> -->
+		<field row="164" col="370" type="STRING">PRIORIDAD:</field>
+		<field row="174" col="370" type="STRING">TEMPORADA</field>
+		<field row="184" col="370" type="STRING">USUARIO:</field>
+		<field row="194" col="370" type="STRING">BODEGA:</field>
+		<font row="0" col="0" name="Sans" size="8" />
+		<!-- Detalles -->
+		<line row="220" col="92" row2="760" col2="92" /> <!-- linea antes de referencia -->
+		<!-- <line row="220" col="165" row2="760" col2="165" /> --> <!-- linea antes de descripcion -->
+		<line row="220" col="295" row2="760" col2="295" /> <!-- linea antes de A -->
+	    <line row="220" col="315" row2="760" col2="315" /> <!-- linea antes de B -->
+	    <line row="220" col="335" row2="760" col2="335" /> <!-- linea antes de C -->
+	    <line row="220" col="355" row2="760" col2="355" /> <!-- linea antes de D -->
+	    <line row="220" col="375" row2="760" col2="375" /> <!-- linea antes de E -->
+	    <line row="220" col="395" row2="760" col2="395" /> <!-- linea antes de F -->
+	    <line row="220" col="415" row2="760" col2="415" /> <!-- linea antes de G -->
+	    <line row="220" col="435" row2="760" col2="435" /> <!-- linea antes de Total -->
+	    <line row="220" col="460" row2="760" col2="460" /> <!-- linea antes de Pventa1-->
+	    <line row="220" col="502" row2="760" col2="502" /> <!-- linea antes de Pventa2-->
+	    <line row="220" col="544" row2="760" col2="544" /> <!-- linea antes de Pventa3-->
+		<!-- <line row="220" col="545" row2="760" col2="545" /> --> <!-- linea antes de -->
+		<!-- <line row="220" col="570" row2="760" col2="570" /> --> <!-- linea antes de -->
+
+		<!-- <line row="220" col="295" row2="760" col2="295" />
+		<line row="220" col="368" row2="760" col2="368" />
+		<line row="220" col="393" row2="760" col2="393" />
+		<line row="220" col="418" row2="760" col2="418" />
+		<line row="220" col="443" row2="760" col2="443" />
+		<line row="220" col="468" row2="760" col2="468" />
+		<line row="220" col="493" row2="760" col2="493" />
+		<line row="220" col="518" row2="760" col2="518" />
+		<line row="220" col="543" row2="760" col2="543" />
+		<line row="220" col="568" row2="760" col2="568" /> -->
+
+		<!-- <line row="220" col="368" row2="760" col2="368" />
+		<line row="220" col="400" row2="760" col2="400" />
+		<line row="220" col="435" row2="760" col2="435" />
+		<line row="220" col="470" row2="760" col2="470" />
+		<line row="220" col="527" row2="760" col2="527" /> -->
+		
+		<field row="230" col="35" type="STRING">Codigo</field>
+		<field row="230" col="115" type="STRING">Descripcion</field>
+		<field row="230" col="298" type="STRING">A</field>
+	    <field row="230" col="318" type="STRING">B</field>
+	    <field row="230" col="338" type="STRING">C</field>
+	    <field row="230" col="358" type="STRING">D</field>
+	    <field row="230" col="378" type="STRING">E</field>
+	    <field row="230" col="398" type="STRING">F</field>
+	    <field row="230" col="418" type="STRING">G</field>
+	    <field row="230" col="437" type="STRING">Total</field>
+	    <field row="230" col="462" type="STRING">PVenta1</field>
+	    <field row="230" col="504" type="STRING">PVenta2</field>
+	    <field row="230" col="546" type="STRING">PVenta3</field>
+
+	</metadata>
+	<newpage>
+		<pagenumber row="17" center="612" fontName="Dialog" fontSize="7" fontStyle="0"/>
+		<font row="0" col="0" name="Sans" size="16" />
+		<field row="80" col="250" type="STRING">ORDEN DE COMPRA</field>
+		<image row="30" col="25" width="100" height="75">/icons/logo_fac.png</image>
+		<font row="0" col="0" name="Sans" size="7" />
+		<roundedRectangle row="140" col="20" width="565" height="620" />
+
+		<line row="156" col="20" row2="156" col2="585" /> <!-- linea horizontal que cierra encabezados de tabla -->
+		
+		<line row="220" col="92" row2="760" col2="92" /> <!-- linea antes de referencia -->
+		<!-- <line row="220" col="165" row2="760" col2="165" /> --> <!-- linea antes de descripcion -->
+		<line row="220" col="295" row2="760" col2="295" /> <!-- linea antes de A -->
+	    <line row="220" col="315" row2="760" col2="315" /> <!-- linea antes de B -->
+	    <line row="220" col="335" row2="760" col2="335" /> <!-- linea antes de C -->
+	    <line row="220" col="355" row2="760" col2="355" /> <!-- linea antes de D -->
+	    <line row="220" col="375" row2="760" col2="375" /> <!-- linea antes de E -->
+	    <line row="220" col="395" row2="760" col2="395" /> <!-- linea antes de F -->
+	    <line row="220" col="415" row2="760" col2="415" /> <!-- linea antes de G -->
+	    <line row="220" col="435" row2="760" col2="435" /> <!-- linea antes de Total -->
+	    <line row="220" col="460" row2="760" col2="460" /> <!-- linea antes de Pventa1-->
+	    <line row="220" col="502" row2="760" col2="502" /> <!-- linea antes de Pventa2-->
+	    <line row="220" col="544" row2="760" col2="544" /> <!-- linea antes de Pventa3-->
+
+		<field row="230" col="35" type="STRING">Codigo</field>
+		<field row="230" col="115" type="STRING">Descripcion</field>
+		<field row="230" col="298" type="STRING">A</field>
+	    <field row="230" col="318" type="STRING">B</field>
+	    <field row="230" col="338" type="STRING">C</field>
+	    <field row="230" col="358" type="STRING">D</field>
+	    <field row="230" col="378" type="STRING">E</field>
+	    <field row="230" col="398" type="STRING">F</field>
+	    <field row="230" col="418" type="STRING">G</field>
+	    <field row="230" col="437" type="STRING">Total</field>
+	    <field row="230" col="462" type="STRING">PVenta1</field>
+	    <field row="230" col="504" type="STRING">PVenta2</field>
+	    <field row="230" col="546" type="STRING">PVenta3</field>
+	</newpage>	
+	<nextpage>
+            <field row="770" col="540" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">P A S A......</field>
+    </nextpage>
+	<endofpage>
+		<froundedRectangle row="670" col="20" width="565" height="90" />
+		<field row="680" col="95" fontSize="8" fontName="Sans" fontStyle="0" type="STRING">Observaciones:</field>
+
+		<field row="687" col="25" fontSize="8" fontName="Sans" fontStyle="0" type="STRING">A: Principal</field>
+		<field row="697" col="25" fontSize="8" fontName="Sans" fontStyle="0" type="STRING">B: Las Cuadras</field>
+		<field row="707" col="25" fontSize="8" fontName="Sans" fontStyle="0" type="STRING">C: Único</field>
+		<field row="717" col="25" fontSize="8" fontName="Sans" fontStyle="0" type="STRING">D: Gran Plaza</field>
+		<field row="727" col="25" fontSize="8" fontName="Sans" fontStyle="0" type="STRING">E: La Cali Web</field>
+		<field row="737" col="25" fontSize="8" fontName="Sans" fontStyle="0" type="STRING">F: Bodega</field>
+		<field row="747" col="25" fontSize="8" fontName="Sans" fontStyle="0" type="STRING">G: Américas</field>
+		
+	</endofpage>
+	<!-- 0 barcode -->
+	<package>
+		<generateBarCodeImage row="130" col="370" />
+	</package>
+	<!-- 1 numero -->
+	<package>
+		<field row="120" col="510" type="STRING" fontSize="10" fontName="Sans" />
+	</package>
+	<!-- 2 tercero -->
+	<package>
+		<field row="154" col="25" type="STRING" />
+		<field row="164" col="25" type="STRING" />
+		<field row="174" col="25" type="STRING" />
+		<field row="184" col="25" type="STRING" />
+		<field row="194" col="25" type="STRING" />
+		<field row="204" col="25" type="STRING" />
+	</package>
+	<!-- 3 PRIORIDAD -->
+	<package>
+		<field row="164" col="440" type="STRING" fontSize="9" fontName="Sans" />
+	</package>
+	<!-- 4 temporada -->
+	<package>
+		<field row="174" col="440" type="STRING" fontSize="9" fontName="Sans" />
+	</package>
+	<!-- 5 usuario -->
+	<package>
+		<field row="184" col="440" type="STRING" fontSize="9" fontName="Sans" />
+	</package>
+	<!-- 6 bodega -->
+	<package>
+		<field row="194" col="440" type="STRING" fontSize="9" fontName="Sans" />
+	</package>
+	<!-- 7 dir bodega -->
+	<package>
+		<field row="204" col="370" type="STRING" fontSize="8" fontName="Sans" />
+	</package>
+	<!-- 8 fecha -->
+	<package>
+		<field row="120" col="102" type="DATE" fontSize="9" fontName="Sans" mask="yyyy-MM-dd" />
+	</package>
+	<!-- 9 dias de credito-->
+	<package>
+		<field row="120" col="300" type="STRING" fontSize="9" fontName="Sans" />
+	</package>
+	
+	<!-- 11 tabla principal -->
+	<package generateMultiPage="true">
+		<subpackage rowInit="250" rowAcum="12" maxRowsAcum="40" rowInitNewPage="160" maxRowsAcumNewPage="49" maxRowsFootPage="34" maxRowsFootNewPage="43">
+			<field col="25" type="STRING" fontSize="7" fontName="Sans" fontStyle="0" /> <!-- codigo -->
+			<field col="-100" type="STRING" fontSize="7" fontName="Sans" fontStyle="0" /> <!-- referencia -->
+			<field col="94" type="STRING" fontSize="7" fontName="Sans" fontStyle="0" /> <!-- descripcion -->
+			<field col="313" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###" /> <!-- cantidad A-->
+		      <field col="333" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###" /> <!-- cantidad B-->
+		      <field col="353" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###" /> <!-- cantidad C-->
+		      <field col="373" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###" /> <!-- cantidad D-->
+		      <field col="393" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###" /> <!-- cantidad E-->
+		      <field col="413" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###" /> <!-- cantidad F-->
+		      <field col="433" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###" /> <!-- cantidad G-->
+		      <field col="458" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###" /> <!-- cantidad Total-->
+		      <field col="-100" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###" /> <!-- %iva-->
+		      <field col="-100" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###" /> <!-- %desc-->
+		      <field col="-100" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###" /> <!-- costo-->
+		      <field col="-100" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###" /> <!-- costo total-->
+		      <field col="500" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="#,###,###,##0" /> <!-- pventa1 -->
+		      <field col="542" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="#,###,###,##0" /> <!-- pventa2 -->     
+		      <field col="583" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="#,###,###,##0" /> <!-- pventa3 -->     
+		</subpackage>
+	</package>
+
+	<!-- 12 cantidades -->
+	<!-- <package>
+		<field row="680" col="580" type="NUMERIC" mask="###,##0" />
+	</package> -->
+	<!-- 13 flete asumido proveedor -->
+	<!-- <package>
+		<field row="732" col="275" type="NUMERIC" mask="###,##0" />
+	</package> -->
+	<!-- 14 dcto financiero -->
+	<!-- <package>
+		<field row="744" col="275" type="NUMERIC" mask="###,##0" />
+	</package> -->
+	<!-- 15 plazo dcto financiero-->
+	<!-- <package>
+		<field row="744" col="320" type="NUMERIC" fontSize="8" fontName="Sans" mask="###,##0" />
+	</package> -->
+	<!-- 16 subtotales-->
+	<!-- <package>
+		<field row="721" col="580" type="NUMERIC" mask="#,###,###,##0.00" />
+		<field row="733" col="580" type="NUMERIC" mask="#,###,###,##0.00" />
+		<field row="745" col="580" type="NUMERIC" mask="#,###,###,##0.00" />
+	</package> -->
+	
+	<!-- 17 total fac -->
+	<!-- <package>
+		<field row="757" col="580" type="NUMERIC" mask="#,###,###,##0.00" fontSize="8" fontName="Sans" fontStyle="1"/>
+	</package> -->
+	<!-- 17 obs -->
+	<package>
+		<field row="692" col="95" type="TEXT" width="96" height="6" rowAcum="10" />
+	</package>
+
+</emaku_template>

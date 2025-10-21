@@ -1,0 +1,186 @@
+<emaku_template printer="EPSON_TM-T20" requestNumeration="false" silence="false" type="POSTSCRIPT">
+	<settings height="792" width="612"/>
+	<metadata>
+		<pagenumber row="17" center="612" fontName="Dialog" fontSize="7" fontStyle="0"/>
+		<font col="0" name="Sans" row="0" size="12"/>
+		<field col="190" row="70" type="STRING">NOTA DE AJUSTE DEL DOCUMENTO SOPORTE</field>
+		 
+		<font col="0" name="Sans" row="0" size="10"/>
+		<!-- Encabezado MT -->
+		<image col="25" height="75" row="10" width="100">/icons/logo_fac.png</image>
+		<qr row="10" col="470" width="115" height="115" />
+		<!-- <barcodeImage col="380" row="160"/> -->
+		<roundedRectangle col="20" height="17" row="110" width="150"/>
+		<roundedRectangle col="20" height="65" row="145" width="335"/>
+		<roundedRectangle col="20" height="530" row="220" width="565"/>
+		<roundedRectangle col="20" height="15" row="220" width="565"/>
+		<!-- <roundedRectangle col="20" height="100" row="650" width="565"/> -->
+		<field col="25" row="120" type="STRING">Fecha:</field>
+		<field col="25" row="140" type="STRING">Señores</field>
+		<field col="390" fontName="Dialog" fontSize="10" fontStyle="1" row="139" type="STRING">Numero:         DO -</field>
+		<field col="390" fontName="Dialog" fontSize="9" fontStyle="0" row="154" type="STRING">Documento Aplicado</field>
+		<field col="390" fontName="Dialog" fontSize="9" fontStyle="0" row="164" type="STRING">Número:</field>
+		<field col="390" fontName="Dialog" fontSize="9" fontStyle="0" row="174" type="STRING">Fac Proveedor:</field>
+		<field col="390" fontName="Dialog" fontSize="9" fontStyle="0" row="184" type="STRING">Fecha Fac. Prov:</field>
+
+		<field col="390" fontName="Dialog" fontSize="9" fontStyle="0" row="194" type="STRING">TEMPORADA:</field>
+		<field col="390" fontName="Dialog" fontSize="9" fontStyle="0" row="204" type="STRING">Usuario:</field>
+		<font col="0" name="Sans" row="0" size="8"/>
+		<!-- Detalles -->
+		<line col="92" col2="92" row="220" row2="750"/>
+		<line col="165" col2="165" row="220" row2="750"/>
+		<line col="368" col2="368" row="220" row2="750"/>
+		<line col="400" col2="400" row="220" row2="750"/>
+		<line col="435" col2="435" row="220" row2="750"/>
+		<line col="470" col2="470" row="220" row2="750"/>
+		<line col="527" col2="527" row="220" row2="750"/>
+
+		<field col="35" row="230" type="STRING">Codigo</field>
+		<field col="115" row="230" type="STRING">Referencia</field>
+		<field col="197" row="230" type="STRING">Descripcion</field>
+		<field col="369" row="230" type="STRING">% Desc</field>
+		<field col="407" row="230" type="STRING">% IVA</field>
+		<field col="442" row="230" type="STRING">Cant</field>
+		<field col="477" row="230" type="STRING">V. Unitario</field>
+		<field col="540" row="230" type="STRING">Total</field>
+
+	</metadata>
+	<newpage>
+		<pagenumber row="17" center="612" fontName="Dialog" fontSize="7" fontStyle="0"/>
+		<font row="0" col="0" name="Sans" size="12" />
+		<field col="190" row="70" type="STRING">NOTA DE AJUSTE DEL DOCUMENTO SOPORTE</field>
+		<image row="30" col="25" width="100" height="75">/icons/logo_fac.png</image>		
+		<field col="390" fontName="Dialog" fontSize="10" fontStyle="1" row="110" type="STRING">Numero:         DO -</field>
+		<roundedRectangle row="140" col="20" width="565" height="620" />		
+		<font row="0" col="0" name="Sans" size="7" />	
+		<line row="156" col="20" row2="156" col2="585" /> <!-- linea horizontal que cierra encabezados de tabla -->
+		<line row="140" col="92" row2="760" col2="92" /> <!-- linea antes de referencia -->
+		<line row="140" col="165" row2="760" col2="165" /> <!-- linea antes de descripcion -->
+		<line row="140" col="368" row2="760" col2="368" /> <!-- linea antes de %Desc -->
+		<line row="140" col="400" row2="760" col2="400" /> <!-- linea antes de %IVA -->
+		<line row="140" col="435" row2="760" col2="435" /> <!-- linea antes de cantidad -->
+		<line row="140" col="470" row2="760" col2="470" /> <!-- linea antes de vunitario -->
+		<line row="140" col="527" row2="760" col2="527" /> <!-- linea antes de total -->
+		
+		<field fontName="Dialog" fontSize="7" fontStyle="0" row="150" col="35" type="STRING">Codigo</field>
+		<field fontName="Dialog" fontSize="7" fontStyle="0" row="150" col="115" type="STRING">Referencia</field>
+		<field fontName="Dialog" fontSize="7" fontStyle="0" row="150" col="197" type="STRING">Descripcion</field>
+		<field fontName="Dialog" fontSize="7" fontStyle="0" row="150" col="369" type="STRING">% Desc</field>
+		<field fontName="Dialog" fontSize="7" fontStyle="0" row="150" col="407" type="STRING">% IVA</field>
+		<field fontName="Dialog" fontSize="7" fontStyle="0" row="150" col="442" type="STRING">Cant</field>
+		<field fontName="Dialog" fontSize="7" fontStyle="0" row="150" col="477" type="STRING">V. Unitario</field>
+		<field fontName="Dialog" fontSize="7" fontStyle="0" row="150" col="540" type="STRING">Total</field>
+	</newpage>
+	<nextpage>
+            <field row="770" col="540" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">P A S A......</field>
+    </nextpage>
+	<endofpage>
+		<froundedRectangle row="670" col="20" width="565" height="90" />
+		<line row="670" col="425" row2="760" col2="425" /> <!-- linea antes de letreros pie pagina -->
+		<line row="670" col="500" row2="760" col2="500" /> <!-- linea antes de totales pie pagina -->
+
+		<field col="25" row="678" type="STRING">Observaciones:</field>
+		<!-- Sub totales -->
+		<field col="430" row="678" type="STRING">Sub. Total</field>
+		<field col="430" row="690" type="STRING">Descuento</field>
+		<field col="430" row="702" type="STRING">IVA</field>
+		<field col="430" row="714" type="STRING">Total</field>
+		<field col="430" row="726" type="STRING">Ret. Fuente</field>
+		<field col="430" row="738" type="STRING">Ret. ICA</field>
+		<field col="430" row="750" fontSize="8" fontName="Sans" fontStyle="1" type="STRING">Total a Pagar</field>
+		<!-- Pie de pagina -->
+		<field col="250" row="678" fontSize="8" fontName="Sans" fontStyle="0" type="STRING">Total Articulos</field>        
+		
+	</endofpage>
+	<!-- 00 -->
+	<!-- <package>
+		<generateBarCodeImage row="160" col="380" />
+	</package> -->
+
+	<!-- 0 CUFE  -->
+	     <package>
+		<field multipage="true" rownewpage="218" colnewpage="25" row="218" col="25" width="10" type="STRING" mask="0" fontName="Dialog" fontSize="6" fontStyle="0"/>
+	    </package>
+
+	<!--  0 Numero dev -->
+	<package>
+		<field center="1012" colnewpage="470" fontName="Dialog" fontSize="10" fontStyle="1" mask="0" multipage="true" row="139" rownewpage="139" type="STRING" width="10"/>
+	</package>	
+	<!-- 2 tercero -->
+	<package>
+		<field col="25" row="154" type="STRING"/>
+		<field col="25" row="164" type="STRING"/>
+		<field col="25" row="174" type="STRING"/>
+		<field col="25" row="184" type="STRING"/>
+		<field col="25" row="194" type="STRING"/>
+		<field col="25" row="204" type="STRING"/>
+	</package>
+	<!-- 3 fac ea -->
+	<package>
+		<field col="470" fontName="Sans" fontSize="9" row="164" type="STRING"/>
+	</package>
+	<!-- 3b fac proveedor ea -->
+	<package>
+		<field col="470" fontName="Sans" fontSize="9" row="174" type="STRING"/>
+	</package>
+	<!-- 3c fecha fac proveedor -->
+	<package>
+		<field col="470" fontName="Sans" fontSize="9" row="184" type="STRING"/>
+	</package>
+	<!-- 3d temporada -->
+	<package>
+		<field col="470" fontName="Sans" fontSize="10" row="194" type="STRING"/>
+	</package>
+	<!-- 3e usuario -->
+	<package>
+		<field col="470" fontName="Sans" fontSize="9" row="204" type="STRING"/>
+	</package>
+	<!-- 4 fecha actual reg en sistema -->
+	<package>
+		<field col="80" fontName="Dialog" fontSize="10" fontStyle="0" mask="yyyy-MM-dd" row="120" type="DATE"/>
+	</package>	
+	<!-- 10 tabla principal -->
+	<package generateMultiPage="true">
+		<subpackage rowInit="250" rowAcum="12" maxRowsAcum="40" rowInitNewPage="160" maxRowsAcumNewPage="49" maxRowsFootPage="34" maxRowsFootNewPage="43">
+			<field col="25" type="STRING" fontSize="7" fontName="Sans" fontStyle="0"/>
+			<field col="94" type="STRING" fontSize="7" fontName="Sans" fontStyle="0"/>
+			<field col="167" type="STRING" fontSize="7" fontName="Sans" fontStyle="0"/>
+			<field col="468" mask="##,###" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0"/>
+			<field col="525" mask="#,###,###,##0.00" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0"/>
+			<field col="433" mask="##,###" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0"/>
+			<field col="398" mask="##,###" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0"/>
+			<field col="580" mask="#,###,###,##0.00" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0"/>
+		</subpackage>
+	</package>
+	<!-- 0 cantidades -->
+	<package>
+		<field col="340" row="678" type="STRING"/>
+	</package>
+	<!-- 7 subtotales-->
+	<package>
+		<field col="580" mask="#,###,###,##0.00" row="678" type="NUMERIC"/>
+		<field col="580" mask="#,###,###,##0.00" row="690" type="NUMERIC"/>
+		<field col="580" mask="#,###,###,##0.00" row="702" type="NUMERIC"/>
+		<field col="580" mask="#,###,###,##0.00" row="714" type="NUMERIC"/>
+	</package>
+	<!-- 8 retefuente-->
+	<package>
+		<field col="580" mask="#,###,###,##0.00" row="726" type="NUMERIC"/>
+	</package>
+	<!-- 8b reteica-->
+	<package>
+		<field col="580" mask="#,###,###,##0.00" row="738" type="NUMERIC"/>
+	</package>
+	<!-- 9 total fac -->
+	<package>
+		<field col="580" mask="#,###,###,##0.00" row="750" fontSize="8" fontName="Sans" fontStyle="1" type="NUMERIC"/>
+	</package>
+	<!-- 11 obs -->
+	<package>
+		<field col="25" height="3" row="688" rowAcum="10" type="TEXT" width="60"/>
+	</package>
+	<!-- 12 info_despacho -->
+	<package>
+		<field col="25" fontName="Dialog" fontSize="7" fontStyle="0" height="6" row="705" rowAcum="10" type="TEXT" width="60"/>
+	</package>
+</emaku_template>

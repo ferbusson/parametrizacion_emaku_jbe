@@ -1,0 +1,215 @@
+<emaku_template type="GRAPHIC" requestNumeration="true" silence="true" printer="EPSON_TM-T20">
+		<settings width="612" height="792"/>
+		<metadata>
+			<image row="30" col="30" width="25" height="12">/icons/logo_fac.png</image>
+
+			<field row="37" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" importValue="true">terceroal</field>
+			<field row="49" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" importValue="true">nitalterno</field>
+			<field row="61" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Responsable del Impuesto sobre las ventas - IVA</field>
+			<field row="73" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" importValue="true">direccion</field>
+			<field row="85" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" importValue="true">telefono</field>
+			<field row="97" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" importValue="true">piepaginados</field>
+			<field row="109" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" importValue="true">ciudad</field>
+
+			<field row="140" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Fecha - Hora:</field>
+			<field row="150" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Forma de Pago:  CRÉDITO -     días    Vencimiento:</field>
+			<field row="170" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="1">DATOS CLIENTE</field>
+
+			<field row="140" col="400" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">FACTURA DE VENTA</field>
+			<field row="150" col="420" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Numero:</field>
+			<ndocument multipage="true" rownewpage="150" colnewpage="475" fontName="Dialog" fontSize="8" fontStyle="0" row="150" col="475" format="Integer"/>
+
+			<!-- Detalles -->
+			<field row="250" col="100" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">DESCRIPCIÓN</field>
+			<field row="250" col="270" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">CANT</field>
+			<field row="250" col="315" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">PRECIO</field>
+			<field row="250" col="360" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">DESCUENTOS</field>
+			<field row="250" col="420" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">VR. UNITARIO</field>
+			<field row="250" col="510" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">TOTAL</field>
+			<field row="250" col="552" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">IVA %</field>
+			<field row="260" col="40" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">CÓDIGO</field>
+			<field row="260" col="110" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">REFERENCIA</field>
+
+			<!-- Inicia Pie Pagina -->
+
+			<field row="600" col="80" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">SUBTOTAL</field>
+                        <field row="600" col="180" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">DESCUENTOS</field>
+                        <field row="600" col="280" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">BASE EXCLUIDA</field>
+                        <field row="600" col="380" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">BASE EXENTA</field>
+                        <field row="600" col="480" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">BASE GRAVADA</field>
+                        <field row="625" col="90" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">IVA</field>
+                        <field row="625" col="200" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">INC</field>
+                        <field row="625" col="280" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">RETE-FUENTE</field>
+                        <field row="625" col="390" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">RETE-IVA</field>
+                        <field row="625" col="500" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">RETE-ICA</field>
+                        <field row="650" col="380" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">NETO A PAGAR</field>
+
+                        <field row="660" col="40" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Dcto. Financiero: 10% a 30 días.</field>
+
+                        <field row="670" col="40" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Esta Factura se asimila en sus efectos legales a la letra de cambio (Según el articulo 774 del Código de Comercio). Con esta Factura el Comprador declara haber recibido real</field>
+                        <field row="676" col="40" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">y materialmente las mercancías descritas en este Titulo-Valor. Esta factura se deberá cancelar hasta la fecha de vencimiento aquí mencionada, de lo contrario causara inte-</field>
+                        <field row="682" col="40" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">reses moratorios mensuales a la tasa máxima permitida por la ley, a partir de su vencimiento. Aplican Políticas de Cambio, Conserve este documento para cualquier novedad.</field>
+
+                        <field row="710" col="120" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">______________________________________</field>
+                        <field row="718" col="140" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Firma Aceptación Cliente</field>
+                        <field row="710" col="360" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">______________________________________</field>
+                        <field row="718" col="390" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Firma Autorización</field>
+
+                        <field row="738" col="235" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Factura Impresa por LA CALI S.A.S</field>
+                        <field row="748" col="290" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Software E-MAKU</field>
+
+                        <field row="758" col="310" type="STRING">Pág.</field>
+                        <pagenumber row="758" col="330" />
+
+			<!-- Fin Pie Pagina -->
+
+		</metadata>
+		<newpage>
+			<image row="30" col="30" width="25" height="12">/icons/logo_fac.png</image>
+			<field row="37" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" importValue="true">terceroal</field>
+                        <field row="49" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" importValue="true">nitalterno</field>
+                        <field row="61" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Responsable del Impuesto sobre las ventas - IVA</field>
+                        <field row="73" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" importValue="true">direccion</field>
+                        <field row="85" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" importValue="true">telefono</field>
+                        <field row="97" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" importValue="true">piepaginados</field>
+                        <field row="109" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" importValue="true">ciudad</field>
+
+                        <field row="140" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Fecha - Hora:</field>
+                        <field row="150" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Forma de Pago:  CRÉDITO -     días    Vencimiento:</field>
+                        <field row="170" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="1">DATOS CLIENTE</field>
+
+                        <field row="140" col="400" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">FACTURA DE VENTA</field>
+                        <field row="150" col="420" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Numero:</field>
+                        <!-- Detalles -->
+                        <field row="250" col="100" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">DESCRIPCIÓN</field>
+                        <field row="250" col="270" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">CANT</field>
+                        <field row="250" col="315" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">PRECIO</field>
+                        <field row="250" col="360" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">DESCUENTOS</field>
+                        <field row="250" col="420" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">VR. UNITARIO</field>
+                        <field row="250" col="510" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">TOTAL</field>
+                        <field row="250" col="552" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">IVA %</field>
+                        <field row="260" col="40" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">CÓDIGO</field>
+                        <field row="260" col="110" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">REFERENCIA</field>
+
+		</newpage>
+		 <nextpage>
+                        <field row="755" col="560" type="STRING">P A S A......</field>
+                </nextpage>
+
+		<!-- 0 codigo tipo -->
+		<package>
+			<field multipage="true" rownewpage="150" colnewpage="460" row="150" col="460" textLine="-" textCol="470" fontName="Dialog" fontSize="8" fontStyle="0" type="STRING"/>
+		</package>
+		<!-- 0 Numero resolucion -->
+		<package validate="true">
+			<field multipage="true" rownewpage="170" colnewpage="385" row="170" fontName="Dialog" fontSize="7" fontStyle="0" rowAcum="10" textCol="5" col="385" type="STRING" />
+		</package>
+
+		<!-- 1 Fecha resolucion -->
+		<package validate="true">
+			<field multipage="true" rownewpage="180" colnewpage="390" row="180" fontName="Dialog" fontSize="7" fontStyle="0" rowAcum="10" textCol="5" col="390" type="STRING" />
+		</package>
+
+		<!-- 2 Rango numeracion autorizacion -->
+		<package validate="true">
+			<field multipage="true" rownewpage="190" colnewpage="405" row="190" fontName="Dialog" fontSize="7" fontStyle="0" rowAcum="10" textCol="15" col="405" type="STRING" />
+		</package>
+
+		<!-- 3 Vigencia resolucion -->
+		<package validate="true">
+			<field multipage="true" rownewpage="200" colnewpage="425" row="200" fontName="Dialog" fontSize="7" fontStyle="0" rowAcum="10" textCol="5" col="425" type="STRING" />
+		</package>
+		
+		<!-- 4 tercero -->
+		<package>
+			<field multipage="true" rownewpage="182" colnewpage="40" row="182" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
+			<field multipage="true" rownewpage="194" colnewpage="40" row="194" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
+			<field multipage="true" rownewpage="206" colnewpage="40" row="206" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
+			<field multipage="true" rownewpage="218" colnewpage="40" row="218" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
+			<field multipage="true" rownewpage="230" colnewpage="40" row="230" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
+		</package>
+
+		<!-- fecha -->
+		<package>
+			<field multipage="true" rownewpage="140" colnewpage="100" row="140" col="100" type="DATE" mask="EEEEEE, dd MMMM yyyy" fontName="Dialog" fontSize="8" fontStyle="0"/>
+		</package>
+		
+		<!-- dias de credito -->
+		<package>
+			<field multipage="true" rownewpage="150" colnewpage="150" row="150" col="150" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
+		</package>
+
+		<!-- vencimiento -->
+		<package>
+			<field multipage="true" rownewpage="150" colnewpage="248" row="150" col="248" type="DATE" mask="yyyy-MM-dd" fontName="Dialog" fontSize="8" fontStyle="0"/>
+		</package>
+
+		<!-- subtotal -->
+		<package>
+		      <field multipage="false" fontName="Dialog" fontSize="8" fontStyle="0" row="612" col="125" width="13" type="NUMERIC" mask="#,###,###.##" />
+		</package>	
+		<!-- descuentos -->
+		<package>
+		      <field multipage="false" fontName="Dialog" fontSize="8" fontStyle="0" row="612" col="230" width="13" type="NUMERIC" mask="#,###,###.##" />
+		</package>
+		<!-- base exclu -->
+		<package>
+		      <field multipage="false" fontName="Dialog" fontSize="8" fontStyle="0" row="612" col="340" width="13" type="NUMERIC" mask="#,###,###.##" />
+		</package>
+		<!-- base exenta -->
+		<package>
+		      <field multipage="false" fontName="Dialog" fontSize="8" fontStyle="0" row="612" col="430" width="13" type="NUMERIC" mask="#,###,###.##" />
+		</package>
+		<!-- base gravada -->
+		<package>
+		      <field multipage="false" fontName="Dialog" fontSize="8" fontStyle="0" row="612" col="540" width="13" type="NUMERIC" mask="#,###,###.##" />
+		</package>
+		<!-- iva -->
+		<package>
+		      <field multipage="false" fontName="Dialog" fontSize="8" fontStyle="0" row="637" col="120" width="13" type="NUMERIC" mask="#,###,###.##" />
+		</package>
+
+		<!-- INC -->
+		<package>
+		      <field multipage="false" fontName="Dialog" fontSize="8" fontStyle="0" row="637" col="210" width="13" type="NUMERIC" mask="#,###,###.##" />
+		</package>
+
+		<!-- rete fuente -->
+		<package>
+		      <field multipage="false" fontName="Dialog" fontSize="8" fontStyle="0" row="637" col="330" width="13" type="NUMERIC" mask="#,###,###.##" />
+		</package>
+
+		<!-- rete iva -->
+		<package>
+		      <field multipage="false" fontName="Dialog" fontSize="8" fontStyle="0" row="637" col="430" width="13" type="NUMERIC" mask="#,###,###.##" />
+		</package>
+
+		<!-- rete ica -->
+		<package>
+		      <field multipage="false" fontName="Dialog" fontSize="8" fontStyle="0" row="637" col="540" width="13" type="NUMERIC" mask="#,###,###.##" />
+		</package>
+
+		<!-- neto a pagar -->
+		<package>
+		      <field multipage="false" fontName="Dialog" fontSize="8" fontStyle="0" row="650" col="540" width="13" type="NUMERIC" mask="#,###,###.##" />
+		</package>
+
+
+		<package>
+			<subpackage rowInit="272" rowAcum="10" maxRowsAcum="16" rowInitNewPage="263" maxRowsAcumNewPage="24" >
+					<field col="40" fontName="Dialog" fontSize="6" fontStyle="0" type="STRING" incrementRow="false" /> <!-- descripcion -->
+					<field col="282" fontName="Dialog" fontSize="6" fontStyle="0" type="NUMERIC" mask="##,###" incrementRow="false" /> <!-- cant -->
+					<field col="342" fontName="Dialog" fontSize="6" fontStyle="0" type="NUMERIC" mask="#,###,###,##0.00" incrementRow="false" /> <!-- vunitario -->
+					<field textLine="%" textCol="568" col="567" fontName="Dialog" fontSize="6" fontStyle="0" type="NUMERIC" mask="##,###" incrementRow="false" /> <!-- piva -->
+					<field textLine="%" textCol="395" col="394" fontName="Dialog" fontSize="6" fontStyle="0" type="NUMERIC" mask="#,###,###,##0.00" incrementRow="false" /> <!-- pdescuento -->
+					<field col="475" fontName="Dialog" fontSize="6" fontStyle="0" type="NUMERIC" mask="#,###,###,##0.00" incrementRow="false" /> <!-- neto -->
+					<field col="539" fontName="Dialog" fontSize="6" fontStyle="0" type="NUMERIC" mask="#,###,###,##0.00" incrementRow="true" /> <!-- total -->
+
+					<field col="40" fontName="Dialog" fontSize="6" fontStyle="0" type="STRING" incrementRow="false" /> <!-- codigo -->
+					<field col="110" fontName="Dialog" fontSize="6" fontStyle="0" type="STRING" incrementRow="false" /> <!-- referencia -->
+
+			</subpackage>
+		</package>
+
+
+</emaku_template>

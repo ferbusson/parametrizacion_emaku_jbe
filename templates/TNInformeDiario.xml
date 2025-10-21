@@ -1,0 +1,46 @@
+<emaku_template type="POSTSCRIPT" requestNumeration="true" copies="1" silent="false" printer="EPSON_TM-T20">
+	<settings width="220" height="10000" />
+	<metadata>
+		<!--<image row="1" col="10" width="100" height="75">/icons/logo_fac.png</image>-->
+		<font row="0" col="0" name="Sans" size="9" />
+		<field row="110" col="10" type="STRING">INFORME DIARIO DE FACTURACION</field>
+		<field row="120" col="10" type="STRING" importValue="true">nombre_suc</field>
+                <font row="0" col="0" name="Sans" size="8" />
+		<field row="130" col="10" type="STRING" importValue="true">nitalterno</field>
+		<field row="140" col="10" type="STRING">Nro. Documento:</field>
+		<ndocument row="140" col="87" format="Integer"/>	
+		<field row="160" col="10" type="STRING">Fecha:</field>
+		<field row="150" col="10" type="STRING">CAJA : 1</field>
+		<font row="0" col="0" name="Sans" size="7" />
+		<!-- Informacion detallada de productos -->
+		<!--<field row="200" col="5" type="STRING">Descripcion</field>
+		<field row="210" col="10" type="STRING"></field>
+		<field row="210" col="80" type="STRING">Totales</field>
+		<field row="210" col="150" type="STRING">Total</field>-->
+	</metadata>
+        <package>
+      		<dbimage row="5" width = "150" height= "80"  col="15" type="STRING" />
+     	   </package>
+	<package>
+		<field row="160" col="70" type="DATE" mask="EEEEEE dd MMMM yyyy" />
+	</package>
+	<package>
+		<subpackage rowInit="170" rowAcum="10">
+			<field col="10" type="STRING" />
+			<field col="85" width="13" type="STRING" />
+			<field col="175" width="14" type="STRING" align="LEFT" />
+		</subpackage>
+	</package>
+	<package>
+		<line row="last" rowAcum="20" col="2" row2="last" col2="200" />
+	</package>
+	<package>
+                <text rowAcum="10" row="last" col="15" type="STRING" importValue="true">terceroal</text>
+                <text rowAcum="10" row="last" col="15" type="STRING" importValue="true">nitalterno</text>
+                <text rowAcum="10" row="last" col="15" type="STRING" importValue="true">direccion</text>
+                <text rowAcum="10" row="last" col="15" type="STRING" importValue="true">email</text>
+                <text rowAcum="20" row="last" col="15" type="STRING" importValue="true">ciudad</text>
+                <text rowAcum="10" row="last" col="15" type="STRING">Informe Elaborado Con E-Maku</text>
+                <text rowAcum="10" row="last" col="15" type="STRING">Licenciado Bajo GPL V 2.0</text>
+        </package>
+</emaku_template>

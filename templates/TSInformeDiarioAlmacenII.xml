@@ -1,0 +1,63 @@
+<emaku_template type="GRAPHIC" requestNumeration="false" silence="true" printer="EPSON_TM-T20">
+	<settings width="612" height="792"/>
+	<metadata>
+		<field row="30" col="530" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">Pag. 2 de 2</field>
+		<image row="30" col="30" width="25" height="12">/icons/logo_fac.png</image>
+        <font row="0" col="0" name="Sans" size="10"/>
+
+        <field row="37" center="612" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1" importValue="true">terceroal</field>
+        <field row="52" center="612" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0" importValue="true">nitalterno</field>
+		<field row="67" center="612" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0">Responsable del Impuesto sobre las ventas - IVA</field>
+		<field row="82" center="612" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0" importValue="true">direccion</field>
+		<field row="97" center="612" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0" importValue="true">ciudad</field>
+		<field row="140" center="612" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">COMPROBANTE INFORME DIARIO POR ALMACEN (Copia)</field>
+
+		<field row="170" col="50" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">Número:</field>
+		<field row="182" col="50" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1" >Fecha:</field>
+
+		 <field row="209" center="612" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1" >DISCRIMINACION POR EQUIPOS EMISORES DE FACTURAS</field>
+	 	<field row="222" col="50" type="STRING" >CAJA</field>
+		<field row="222" col="120" type="STRING" >USUARIO</field>
+		<field row="222" col="210" type="STRING" >UBICACION</field>
+		<field row="222" col="330" type="STRING" >SERIE</field>
+		<field row="222" col="400" type="STRING" >CANT. FACTURAS</field>
+		<field row="222" col="530" type="STRING" >VALOR</field>
+
+	</metadata>
+
+
+	<!-- Prefijo -->
+	<package>
+	       <field multipage="true" rownewpage="170" colnewpage="105" row="170" col="105" type="STRING" textLine="-" textCol="120" fontName="Dialog" fontSize="10" fontStyle="0"/>
+	</package>
+
+	<!-- Numero fac -->
+	<package>
+	<field multipage="true" rownewpage="170" colnewpage="130" row="170" col="130" width="10" type="STRING" mask="0" fontName="Dialog" fontSize="10" fontStyle="0"/>
+	</package>
+
+	<!-- fecha fac -->
+	<package>
+	<field multipage="true" rownewpage="182" colnewpage="105" row="182" col="105" type="DATE" mask="EEEEEE dd MMMM yyyy" fontName="Dialog" fontSize="10" fontStyle="0"/>
+	</package>
+
+	<!-- 14 DISCRIMINACION EQUIPO -->
+
+	<package generateMultiPage="true" >
+		<subpackage rowInit="237" rowAcum="15" maxRowsAcum="40" rowInitNewPage="237" maxRowsAcumNewPage="47" maxRowsFootPage="40" maxRowsFootNewPage="40">
+			 <field col="50" type="STRING" fontName="Dialog" fontSize="9" fontStyle="0" incrementRow="false" /> 
+			 <field col="120" type="STRING" fontName="Dialog" fontSize="9" fontStyle="0" incrementRow="false" /> 
+			 <field col="210" type="STRING" fontName="Dialog" fontSize="9" fontStyle="0" incrementRow="false" /> 
+			 <field col="330" type="STRING" fontName="Dialog" fontSize="9" fontStyle="0" incrementRow="false" /> 
+			 <field col="450" type="NUMERIC" width="9" fontName="Dialog" fontSize="9" fontStyle="0" mask="#,###" />
+			 <field col="570" type="NUMERIC" width="13" fontName="Dialog" fontSize="9" fontStyle="0" mask="###,###,###" />
+		 </subpackage>
+	</package>
+
+
+	<!-- 15 TOTAL DISCRIMINACION -->
+	<package>
+	    <field multipage="true" textLine="TOTAL" textCol="50" fontName="Dialog" fontSize="10" fontStyle="1" row="last" rowAcum="15" col="570" width="13" type="NUMERIC" mask="###,###,###"/>
+	</package>
+
+</emaku_template>

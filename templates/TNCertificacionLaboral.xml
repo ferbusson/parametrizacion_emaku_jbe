@@ -1,0 +1,48 @@
+<emaku_template copies="2" printer="DeskJet-3920-1" requestNumeration="false" silence="true" type="GRAPHIC">
+  <settings height="792" width="612"/>
+  <metadata>    
+    <!-- <image col="430" height="75" row="20" width="100">/icons/logo_fac.png</image> -->
+    <font col="0" name="Arial" row="0" size="8"/>
+    <!-- <field col="458" row="80" fontName="Arial" fontSize="8" fontStyle="0" type="STRING">Vargas &amp; Cía. S. en C.</field>
+    <field col="468" row="90" fontName="Arial" fontSize="8" fontStyle="0" type="STRING">NIT: 800.220.247-8</field> -->
+    <field col="90" row="88" fontName="Arial" fontSize="8" fontStyle="0" type="STRING">Copia en Hoja de Vida</field>
+    <field col="90" row="98" fontName="Arial" fontSize="8" fontStyle="0" type="STRING">CL</field>
+    <font col="0" name="Sans" row="0" size="10"/>
+    <field col="200" row="175" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">LA CALI S.A.S</field>
+    <field col="273" row="242" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">CERTIFICA</field>
+    <field col="90" row="541" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">Atentamente,</field>
+    <field col="385" row="656" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">Elaboró</field>
+    <font col="0" name="Sans" row="0" size="10"/>
+  </metadata>
+
+  <!-- <newpage><field row="80" col="430" type="STRING">PAGINA:</field><pagenumber row="80" col="530" /><font row="0" col="0" name="Sans" size="10" /></newpage>-->
+  <!-- Empiezan los paquetes que vienen del formulario-->
+
+
+  <!-- 0 numero -->
+  <package validate="true">
+    <field col="105" fontName="Arial" fontSize="8" fontStyle="0" row="98" type="STRING"/>
+  </package>
+  <!-- 1 encabezado quien firma -->
+  <package validate="true">
+    <field center="612" fontName="Arial" fontSize="10" fontStyle="1" row="165" type="STRING"/>
+  </package>
+  <!-- 2 nombre firmante gerencia -->
+  <package validate="true">
+    <field col="90" fontName="Arial" fontSize="10" fontStyle="1" row="609" type="STRING"/>
+  </package>
+  <!-- 3 titulo firmante gerencia -->
+  <package validate="true">
+    <field col="90" fontName="Arial" fontSize="10" fontStyle="0" row="625" type="STRING"/>
+  </package>
+  <!-- 4 nombre elaboro -->
+  <package validate="true">
+    <field col="385" fontName="Arial" fontSize="10" fontStyle="1" row="675" type="STRING"/>
+  </package>
+  <!-- 5 Texto principal -->
+  <package>
+    <field row="310" col="90" fontName="Arial" fontSize="10" fullJustify="430" height="90" rowAcum="10" type="TEXT" width="90"/>
+  </package>
+  <!-- Imagen firma -->
+  <!-- <package><image rowAcum="0" row="470" col="241" width="100" height="75">/icons/firmab.jpg</image></package>-->
+</emaku_template>

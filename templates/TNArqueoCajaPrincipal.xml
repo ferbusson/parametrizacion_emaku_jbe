@@ -1,0 +1,127 @@
+<emaku_template type="POSTSCRIPT" requestNumeration="true" copies="1" silent="false" printer="EPSON_TM-T20">
+	<settings width="612" height="792" />
+	<metadata>
+		<image row="1" col="10" width="100" height="75">/icons/logo_fac.png</image>
+		<field row="95" col="10" type="STRING">Marcas &amp; Tendencias COLOMBIA</field>
+		<barcodeImage row="110" col="400" />
+		<font row="0" col="0" name="Sans" size="17" />
+		<field row="45" col="250" type="STRING">ARQUEO CAJA PRINCIPAL</field>
+		<font row="0" col="0" name="Sans" size="11" />		
+		<field row="95" col="410" type="STRING">Numero: </field>
+		<field row="105" col="410" type="STRING">Ipiales,</field>
+		<field row="130" col="5" type="STRING">Cajero:</field>
+		<field row="140" col="5" type="STRING">Hora:</field>
+		<ndocument row="95" col="460" />
+		<time row="140" col="40" />
+		<!-- Informacion detallada de productos -->
+		<line row="150" col="2" row2="150" col2="190" />
+		<field row="160" col="10" type="STRING">MOVIMIENTOS DEL TURNO</field>
+		<field row="190" col="10" type="STRING">PESOS</field>
+		<font row="0" col="0" name="Sans" size="11" />
+	</metadata>
+	<package>
+		<field row="105" col="450" type="DATE" mask="EEEEEE dd MMMM yyyy" />
+	</package>
+	<package>
+		<field row="130" col="45" type="STRING" />
+	</package>
+		<package>
+		<field textLine="$ 50000   ...................................." rowAcum="15" textCol="50" fontName="Dialog" fontSize="12" fontStyle="1" row="210" col="350" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="$ 20000   ...................................." rowAcum="15" textCol="50" fontName="Dialog" fontSize="12" fontStyle="1" row="last" col="350" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="$ 10000   ...................................." rowAcum="15" textCol="50" fontName="Dialog" fontSize="12" fontStyle="1" row="last" col="350" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="$ 5000    ....................................." rowAcum="15" textCol="50" fontName="Dialog" fontSize="12" fontStyle="1" row="last" col="350" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="$ 2000    ....................................." rowAcum="15" textCol="50" fontName="Dialog" fontSize="12" fontStyle="1" row="last" col="350" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="$ 1000    ....................................." rowAcum="15" textCol="50" fontName="Dialog" fontSize="12" fontStyle="1" row="last" col="350" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="$ Monedas:" rowAcum="15" textCol="50" fontName="Dialog" fontSize="12" fontStyle="1" row="last" col="350" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="Total Pesos:" rowAcum="30" textCol="50" fontName="Dialog" fontSize="12" fontStyle="1" row="last" col="350" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="DOLARES" rowAcum="20" textCol="50" fontName="Dialog" fontSize="14" fontStyle="1" row="last" col="350" width="13" type="STRING" />
+	</package>	
+	<package>
+		<field textLine="$ 100   ........................................" rowAcum="15" textCol="50" fontName="Dialog" fontSize="12" fontStyle="1" row="last" col="350" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="$ 50    ........................................." rowAcum="15" textCol="50" fontName="Dialog" fontSize="12" fontStyle="1" row="last" col="350" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="$ 20    ........................................." rowAcum="15" textCol="50" fontName="Dialog" fontSize="12" fontStyle="1" row="last" col="350" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="$ 10    ........................................." rowAcum="15" textCol="50" fontName="Dialog" fontSize="12" fontStyle="1" row="last" col="350" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="$ 5     .........................................." rowAcum="15" textCol="50" fontName="Dialog" fontSize="12" fontStyle="1" row="last" col="350" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="$ 1     .........................................." rowAcum="15" textCol="50" fontName="Dialog" fontSize="12" fontStyle="1" row="last" col="350" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="$ Monedas:" rowAcum="15" textCol="50" fontName="Dialog" fontSize="12" fontStyle="1" row="last" col="350" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="$ Total Dolares:" rowAcum="25" textCol="50" fontName="Dialog" fontSize="12" fontStyle="1" row="last" col="350" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="Total Dolares en Pesos:" rowAcum="15" textCol="50" fontName="Dialog" fontSize="12" fontStyle="1" row="last" col="350" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="T.R.M." rowAcum="25" textCol="50" fontName="Dialog" fontSize="12" fontStyle="1" row="last" col="350" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="Total Efectivo:" rowAcum="25" textCol="50" fontName="Dialog" fontSize="12" fontStyle="1" row="last" col="350" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="Total Tarjetas Débito:" rowAcum="15" textCol="50" fontName="Dialog" fontSize="12" fontStyle="1" row="last" col="350" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="Total Tarjetas Crédito:" rowAcum="15" textCol="50" fontName="Dialog" fontSize="12" fontStyle="1" row="last" col="350" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="Total Tarjetas Regalo:" rowAcum="15" textCol="50" fontName="Dialog" fontSize="12" fontStyle="1" row="last" col="350" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="Total Facturas Crédito:" rowAcum="15" textCol="50" fontName="Dialog" fontSize="12" fontStyle="1" row="last" col="350" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<line row="last" rowAcum="15" col="50" row2="last" col2="350" />
+	</package>	
+	<package>
+		<field textLine="Gran Total:" rowAcum="15" textCol="50" fontName="Dialog" fontSize="12" fontStyle="0" row="last" col="350" width="13" type="NUMERIC" mask="#,###,###" />
+	</package>	
+	<package>
+		<line row="last" rowAcum="15" col="50" row2="last" col2="350" />
+	</package>	
+	<package>
+		<field textLine="OBSERVACIONES:" rowAcum="12" textCol="20" row="last" col="200" width="13" type="STRING" />
+	</package>	
+	<package>
+		<field rowAcum="60" row="last" col="10"  width="13" type="STRING" />
+	</package>	
+	<package>
+		<line row="690" rowAcum="10" col="50" row2="690" col2="250" />
+	</package>	
+	<package>
+		<line row="690" rowAcum="10" col="310" row2="690" col2="510" />
+	</package>	
+	<package>
+		<text rowAcum="40" row="700" col="70" type="STRING">Firma Cajero                                                         Firma Recibe</text>
+		<text rowAcum="10" row="740" col="120" fontName="Dialog" fontSize="7" fontStyle="1" type="STRING">BERCELI MEDINA - NIT: 79719543-2 - REGIMEN COMUN - CRA 6 N° 13 - 87 - Tel: 7733324 - IPIALES</text>
+		<text rowAcum="10" row="750" col="260" fontName="Dialog" fontSize="7" fontStyle="1" type="STRING">almacenesmt@gmail.com</text>
+	</package>
+</emaku_template>
+	

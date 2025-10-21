@@ -1,0 +1,190 @@
+<emaku_template type="GRAPHIC" requestNumeration="false" copies="1" silent="false" printer="POS">
+		<settings width="220" height="10000"/>
+		<metadata>
+				<image row="1" col="30" width="25" height="12">/icons/logo_fac.png</image>
+				<font row="0" col="0" name="Sans" size="10"/>
+
+				<field row="97" center="220" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1" importValue="true">terceroal</field>
+				<field row="112" center="220" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0" importValue="true">nitalterno</field>
+				<field row="127" center="220" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">Responsable del Impuesto sobre las ventas - IVA</field>
+				<field row="142" center="220" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0" importValue="true">direccion</field>
+				<field row="157" center="220" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0" importValue="true">ciudad</field>
+
+				<field row="175" center="220" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">CUADRE DE CAJA</field>
+
+				<field row="200" col="10" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">Número:</field>
+				<field row="212" col="10" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">Fecha:</field>
+				<field row="224" col="10" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">Hora:</field>
+				<field row="236" col="10" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">Cajero:</field>
+
+		</metadata>
+
+	<!-- 0 codigo tipo -->
+	<package>
+		<field row="200" col="50" textLine="-" textCol="65" fontName="Dialog" fontSize="7" fontStyle="0" type="STRING"/>
+	</package>
+
+	<!-- 1 Numero fac -->
+        <package>
+                 <field row="200" col="70" width="10" type="STRING" mask="0" fontName="Dialog" fontSize="7" fontStyle="0"/>
+        </package>
+	
+	<!-- 2 Fecha -->
+	<package>
+		<field row="212" col="50" type="DATE" mask="EEEEEE, dd MMMM yyyy" fontName="Dialog" fontSize="7" fontStyle="0"/>
+	</package>
+
+        <!-- 3 Hora -->
+	<package>
+		<field row="224" col="50" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0"/>
+	</package>
+
+	<!-- 4 cajero -->
+	<package>
+		<field row="236" col="50" type="STRING" rowAcum="60" fontName="Dialog" fontSize="6" fontStyle="0"/>
+	</package>
+
+	<!-- 5 Facturas Contado -->
+        <package>
+                <field textLine="Facturas Contado" rowAcum="10" textCol="10" fontName="Dialog" fontSize="8" fontStyle="0" row="266" col="210" width="13" type="NUMERIC" mask="#,###,###.##" />
+        </package>
+
+	<!-- 7 Facturas Credito -->
+        <package>
+                <field textLine="Facturas Crédito" rowAcum="15" textCol="10" fontName="Dialog" fontSize="8" fontStyle="0" row="281" col="210" width="13" type="NUMERIC" mask="#,###,###.##" />
+        </package>
+		
+	<!-- 6 Total Facturas -->
+        <package>
+                <field textLine="TOTAL FACTURAS" rowAcum="10" textCol="10" fontName="Dialog" fontSize="8" fontStyle="1" row="296" col="210" width="13" type="NUMERIC" mask="#,###,###.##" />
+        </package>
+
+	<!-- 8 Total Facturado -->
+        <package>
+                <field textLine="TOTAL FACTURADO" rowAcum="20" textCol="10" fontName="Dialog" fontSize="8" fontStyle="1" row="311" col="210" width="13" type="NUMERIC" mask="#,###,###.##" />
+        </package>
+
+	<!-- 9 Ingresos del turno -->
+        <package>
+                 <text fontName="Dialog" fontSize="8" fontStyle="1" rowAcum="0" row="326" col="50" type="STRING">Ingresos del Turno</text>
+        </package>	
+
+	<!-- 11 Facturación POS y POS Electronica-->
+        <package>
+                <field textLine="Facturación" rowAcum="15" textCol="10" fontName="Dialog" fontSize="8" fontStyle="0" row="336" col="210" width="13" type="NUMERIC" mask="#,###,###.##" />
+        </package>
+
+	<!-- 13 Tarjetas Regalo -->
+        <package>
+                <field textLine="Tarjetas Regalo" rowAcum="15" textCol="10" fontName="Dialog" fontSize="8" fontStyle="0" row="346" col="210" width="13" type="NUMERIC" mask="#,###,###.##" />
+        </package>
+
+	<!-- 15 Separados -->
+        <package>
+                <field textLine="Separados" rowAcum="15" textCol="10" fontName="Dialog" fontSize="8" fontStyle="0" row="356" col="210" width="13" type="NUMERIC" mask="#,###,###.##" />
+        </package>
+
+	<!-- 17 Abonos a separados -->
+        <package>
+                <field textLine="Abonos a Separados" rowAcum="15" textCol="10" fontName="Dialog" fontSize="8" fontStyle="0" row="366" col="210" width="13" type="NUMERIC" mask="#,###,###.##" />
+        </package>
+
+	<!-- 19 Abonos a Cartera -->
+        <package>
+                <field textLine="Abonos a Cartera" rowAcum="15" textCol="10" fontName="Dialog" fontSize="8" fontStyle="0" row="376" col="210" width="13" type="NUMERIC" mask="#,###,###.##" />
+        </package>
+
+	<!-- Cambios -->
+        <package>
+                <field textLine="Cambios" rowAcum="15" textCol="10" fontName="Dialog" fontSize="8" fontStyle="0" row="386" col="210" width="13" type="NUMERIC" mask="#,###,###.##" />
+        </package>
+        <!-- 20 Devolucion en Venta -->
+        <package>
+                <field textLine="Devolucion en Venta" rowAcum="15" textCol="10" fontName="Dialog" fontSize="8" fontStyle="0" row="396" col="210" width="13" type="NUMERIC" mask="#,###,###.##" />
+        </package>        
+
+	<!-- 22 TOTAL RECIBIDO -->
+        <package>
+                <field textLine="TOTAL CUADRE DE CAJA" rowAcum="0" textCol="10" fontName="Dialog" fontSize="8" fontStyle="1" row="406" col="210" width="13" type="NUMERIC" mask="#,###,###.##" />
+        </package>
+
+        <!-- 10 Medios de Pago -->
+        <package>
+                 <text fontName="Dialog" fontSize="8" fontStyle="1" rowAcum="20" row="421" col="50" type="STRING">Medios de Pago</text>
+        </package>
+
+	   <!-- Medios de pago -->
+	   <package>
+	      <subpackage rowInit="435" rowAcum="10">
+		 <field col="10" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" incrementRow="false" /> 
+		 <field col="210" width="13" fontName="Dialog" fontSize="8" fontStyle="0" type="NUMERIC" mask="#,###,###.##" />
+	      </subpackage>
+	   </package>
+
+	<!-- 23 TOTAL ENTREGADO -->
+        <package>
+                <field textLine="TOTAL MEDIOS DE PAGO" rowAcum="40" textCol="10" fontName="Dialog" fontSize="8" fontStyle="1" row="last" col="210" width="13" type="NUMERIC" mask="#,###,###.##" />
+        </package>
+
+	<!-- 24 EFECTIVO ENTREGADO -->
+        <package>
+                <field textLine="EFECTIVO ENTREGADO" rowAcum="10" textCol="10" fontName="Dialog" fontSize="8" fontStyle="1" row="last" col="210" width="13" type="NUMERIC" mask="#,###,###.##" />
+        </package>
+	
+
+	<!-- 26 Retiros Parciales -->
+        <package>
+                <field textLine="(+)RETIRO PARCIAL" rowAcum="10" textCol="10" fontName="Dialog" fontSize="8" fontStyle="1" row="last" col="210" width="13" type="NUMERIC" mask="#,###,###.##" />
+        </package>
+
+	<!-- 28 SENCILLA -->
+        <package>
+                <field textLine="(-)SENCILLA" rowAcum="10" textCol="10" fontName="Dialog" fontSize="8" fontStyle="1" row="last" col="210" width="13" type="NUMERIC" mask="#,###,###.##" />
+        </package>
+
+	<!-- 30 TOTAL EFECTIVO -->
+        <package>
+                <field textLine="TOTAL EFECTIVO" rowAcum="10" textCol="10" fontName="Dialog" fontSize="8" fontStyle="1" row="last" col="210" width="13" type="NUMERIC" mask="#,###,###.##" />
+        </package>
+
+        <!-- 25 Ajuste al peso -->
+        <package>
+                <field textLine="AJUSTE AL PESO" rowAcum="15" textCol="10" fontName="Dialog" fontSize="8" fontStyle="1" row="last" col="210" width="13" type="NUMERIC" mask="#,###,###.##" />
+        </package>
+
+	<!-- 27 FALTANTE -->
+        <package>
+                <field textLine="FALTANTE DE CAJA" rowAcum="15" textCol="10" fontName="Dialog" fontSize="8" fontStyle="1" row="last" col="210" width="13" type="NUMERIC" mask="#,###,###.##" />
+        </package>
+
+	<!-- 29 SOBRANTE DE CAJA -->
+        <package>
+                <field textLine="SOBRANTE DE CAJA" rowAcum="40" textCol="10" fontName="Dialog" fontSize="8" fontStyle="1" row="last" col="210" width="13" type="NUMERIC" mask="#,###,###.##" />
+        </package>
+
+	<!-- Letrero Observaciones -->
+        <package>
+                 <text fontName="Dialog" fontSize="8" fontStyle="1" rowAcum="10" row="last" col="10" type="STRING">Observaciones:</text>
+        </package>
+
+
+	<!-- Observaciones -->
+	   <package>
+	      <field fontName="Dialog" fontSize="7" fontStyle="0" row="last" col="10"  width="97"  height="5" rowAcum="15" type="TEXT"/>
+      </package>
+		
+	
+	<!-- 30 Firmas -->
+	 <package>
+	    <text rowAcum="70" row="last" col="10" type="STRING">Acepta,</text>
+	    <text rowAcum="10" row="last" col="20" type="STRING">_______________________________________________</text>
+	    
+	    <text rowAcum="10" row="last" col="35" fontName="Dialog" fontSize="6" fontStyle="1" type="STRING"></text>
+	  </package>
+
+	  <!-- nombre cajero espacio firmas -->
+	   <package>
+	      <field fontName="Dialog" fontSize="5" fontStyle="1" rowAcum="10" row="last" col="20" type="STRING"/>
+	   </package>
+
+</emaku_template>

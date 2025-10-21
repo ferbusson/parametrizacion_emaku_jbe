@@ -1,0 +1,82 @@
+<emaku_template type="POSTSCRIPT" silent="true" nativeprinter="true" printer="EPSON_TM-T20">
+	<settings width="612" height="792" />
+	<metadata>
+		<font row="0" col="0" name="Sans" size="8" />
+		<field row="72" col="75" type="STRING">LA CALI S.A.S</field>
+		<field row="84" col="75" type="STRING">NIT: 800.220.247-8</field>
+		<field row="96" col="75" type="STRING">CRA 21 No. 15-68 Centro</field>
+		<field row="108" col="75" type="STRING">TEL. 7219070</field>
+		<field row="120" col="75" type="STRING">PASTO - NARIÑO</field>
+		<field row="108" col="390" type="STRING">Numero:</field>
+		<ndocument row="108" col="450"/>
+		<line row="132" col="70" row2="132" col2="515" />
+		<line row="134" col="70" row2="134" col2="515" />
+	</metadata>
+	<!-- 0 -->
+	<package validate="true">
+		<subpackage rowInit="last" rowAcum="10">
+			<metadata>
+				<line row="last" col="70" row2="last" col2="515" />
+				<field row="last" col="72" type="STRING">TARJETA DE CREDITO</field>
+				<line row="last" col="70"  row2="last" col2="515" />
+				<field row="last" col="70" incrementRow="false" type="STRING">Tarjeta</field>
+				<field row="last" col="200" incrementRow="false" type="STRING">Cuenta</field>
+				<field row="last" col="340" incrementRow="false" type="STRING">Banco</field>
+				<field row="last" col="460" type="STRING">Valor</field>
+				<line row="last" col="70" row2="last" col2="515" />
+			</metadata>
+			<field col="70" type="STRING" />
+			<field col="190" type="STRING"/>
+			<field col="320" type="STRING"/>
+			<field col="490" width="15" type="NUMERIC" mask="##,###,###,##0.00"/>
+		</subpackage>
+	</package>
+	<!-- 1 -->
+	<package validate="true">
+		<subpackage rowInit="last" rowAcum="10">
+			<metadata>
+				<line row="last" col="70" row2="last" col2="515" />
+				<field row="last" col="72" type="STRING">TRANSFERENCIAS</field>
+				<line row="last" col="70"  row2="last" col2="515" />
+				<field row="last" col="70" incrementRow="false" type="STRING">Fecha</field>
+				<field row="last" col="200" incrementRow="false" type="STRING">Cuenta</field>
+				<field row="last" col="340" incrementRow="false" type="STRING">Banco</field>
+				<field row="last" col="460" type="STRING">Valor</field>
+				<line row="last" col="70" row2="last" col2="515" />
+			</metadata>
+			<field col="70" type="STRING" />
+			<field col="190" type="STRING"/>
+			<field col="320" type="STRING"/>
+			<field col="490" width="15" type="NUMERIC" mask="##,###,###,##0.00"/>
+		</subpackage>
+	</package>
+	<!-- 2 -->
+	<!-- <package validate="true">
+		<subpackage rowInit="last" rowAcum="10">
+			<metadata>
+				<line row="last" col="70" row2="last" col2="515" />
+				<field row="last" col="72" type="STRING">CHEQUES</field>
+				<line row="last" col="70"  row2="last" col2="515" />
+				<field row="last" col="70" incrementRow="false" type="STRING">Fecha</field>
+				<field row="last" col="170" incrementRow="false" type="STRING">Cuenta</field>
+				<field row="last" col="290" incrementRow="false" type="STRING">Banco</field>
+				<field row="last" col="370" incrementRow="false" type="STRING">Numero</field>
+				<field row="last" col="460" type="STRING">Valor</field>
+				<line row="last" col="70" row2="last" col2="515" />
+			</metadata>
+			<field col="70" type="STRING" />
+			<field col="150" type="STRING" />
+			<field col="270" type="STRING" />
+			<field col="370" type="STRING" />
+			<field col="490" width="15" type="NUMERIC" mask="##,###,###,##0.00" />
+		</subpackage>
+	</package> -->
+	<!-- 3 -->
+	<!-- <package invalidate="true">
+		<field row="72" col="400" type="STRING"/>
+	</package> -->
+	<!-- 4 -->
+	<!-- <package invalidate="true">
+		<field row="72" col="480" type="STRING"/>
+	</package> -->
+</emaku_template>

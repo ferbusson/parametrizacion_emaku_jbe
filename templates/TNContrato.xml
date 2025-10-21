@@ -1,0 +1,149 @@
+<emaku_template type="GRAPHIC" requestNumeration="false" copies="2" silence="true" printer="DeskJet-3920-1">
+	<settings width="612" height="792" />
+	<metadata>		
+
+		<!-- <image row="1" col="450" width="100" height="75">/icons/logo_fac.png</image> -->
+		<font row="0" col="0" name="Arial" size="10" />
+
+		<field row="40" col="420" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">CF-</field>
+		<field row="50" col="420" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">Ref-</field>
+
+		<field row="50" center="612" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">CONTRATO INDIVIDUAL DE TRABAJO</field>
+		<field row="60" center="612" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">A TÉRMINO FIJO INFERIOR A UN AÑO</field>
+
+		<field row="80" col="90" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">NOMBRE EMPLEADOR:</field>
+		<field row="80" col="210" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">LA CALI S.A.S.</field>
+		<field row="92" col="90" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">DIRECCIÓN EMPLEADOR:</field>
+		<field row="92" col="220" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">CARRERA 21 N. 15-68 CENTRO</field>
+
+		<field row="112" col="90" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">NOMBRE DEL TRABAJADOR:</field>
+		<field row="124" col="90" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">DIRECCIÓN TRABAJADOR:</field>
+		<field row="136" col="90" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">LUGAR DE NACIMIENTO:</field>
+		<field row="148" col="90" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">FECHA DE NACIMIENTO:</field>
+		<field row="160" col="90" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">NACIONALIDAD:</field>
+		<!-- <field row="172" col="90" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">CARGO U OFICIO QUE DESEMPEÑARA EL TRABAJADOR:</field> -->
+		<field row="172" col="90" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">CARGO U OFICIO DEL TRABAJADOR:</field>
+		<field row="184" col="90" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">SALARIO:</field>
+		<field row="184" col="230" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">VALOR: $</field>
+		<field row="196" col="90" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">VALOR EN LETRAS:</field>
+		<field row="208" col="90" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">PERÍODOS DE PAGO:</field>
+		<field row="208" col="200" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">MES VENCIDO</field>
+
+		<field row="228" col="90" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">FECHA DE INICIACIÓN DE LABORES:</field>
+		<field row="240" col="90" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">LUGAR DONDE DESEMPEÑARÁ LAS LABORES:</field>
+		<field row="252" col="90" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">CIUDAD DONDE HA SIDO CONTRATADO EL TRABAJADOR:</field>
+		<field row="264" col="90" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">TÉRMINO INICIAL DEL CONTRATO:</field>
+		<field row="276" col="90" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">VENCE EL DÍA:</field>
+
+	</metadata>
+	<!-- <newpage>
+		<field row="80" col="430" type="STRING">PAGINA:</field>
+		<pagenumber row="80" col="530" />
+		<font row="0" col="0" name="Arial" size="4" />
+	</newpage> -->
+
+	<!-- 00 numero documento -->
+   <package>
+		<field row="40" col="440" type="STRING" fontName="Arial" fontSize="10" fontStyle="1" />
+	</package>
+
+	<!-- 00 numero referencia -->
+   <package>
+		<field row="50" col="440" type="STRING" fontName="Arial" fontSize="10" fontStyle="1" />
+	</package>
+
+	<!-- 0 nombre completo -->
+   <package>
+		<field row="112" col="240" type="STRING" fontName="Arial" fontSize="10" fontStyle="0" />
+	</package>
+
+	<!-- 1 direccion -->
+   <package>
+		<field row="124" col="230" type="STRING" fontName="Arial" fontSize="10" fontStyle="0" />
+	</package>
+
+	<!-- 2 lugar nacimiento -->
+   <package>
+		<field row="136" col="220" fontName="Arial" fontSize="10" fontStyle="0" type="STRING" />
+	</package>
+
+	<!-- 2 fecha nacimiento -->
+   <package>
+		<field row="148" col="220" fontName="Arial" fontSize="10" fontStyle="0" type="DATE" mask="dd/MM/yyyy" />
+	</package>
+
+	<!-- 2 nacionalidad -->
+   <package>
+		<field row="160" col="180" fontName="Arial" fontSize="10" fontStyle="0" type="STRING" />
+	</package>
+
+	<!-- 3 cargo empleado -->
+   <package>
+		<field row="172" col="278" type="STRING" fontName="Arial" fontSize="10" fontStyle="0" />
+	</package>
+
+	<!-- 4 tipo salario -->
+   <package>
+		<field row="184" col="145" type="STRING" fontName="Arial" fontSize="10" fontStyle="0" />
+	</package>
+
+	<!-- 5 salario numeros --> 
+	<package>
+		<field row="184" col="360" fontName="Arial" fontSize="10" fontStyle="0" width="18" type="NUMERIC" mask="##,###,###,###" />
+	</package>
+
+	<!-- 6 salario letras -->
+	<package>
+		<field row="196" col="198" type="NUMTOLETTERS" width="75" height="2" rowAcum="12" fontName="Arial" fontSize="10" fontStyle="0" />
+	</package>
+
+	<!-- 7 fecha inicio labores -->
+	<package>
+		<field row="228" col="280" fontName="Arial" fontSize="10" fontStyle="0" type="DATE" mask="dd/MM/yyyy" />
+	</package>
+
+	<!-- 8 lugar labores -->
+   <package>
+		<field row="240" col="330" type="STRING" fontName="Arial" fontSize="10" fontStyle="0" />
+	</package>
+
+	<!-- 9 ciudad contratacion -->
+   <package>
+		<field row="252" col="385" type="STRING" fontName="Arial" fontSize="10" fontStyle="0" />
+	</package>
+
+	<!-- 10 termino inicial contrato valor-->
+   <package>
+		<field row="264" col="270" type="STRING" fontName="Arial" fontSize="10" fontStyle="0" />
+	</package>
+
+	<!-- 11 termino inicial contrato unidad tiempo-->
+   <package>
+		<field row="264" col="290" type="STRING" fontName="Arial" fontSize="10" fontStyle="0" />
+	</package>
+
+	<!-- 12 fecha vence -->
+	<package>
+		<field row="276" col="170" type="DATE" mask="dd/MM/yyyy" fontName="Arial" fontSize="10" fontStyle="0" />
+	</package>
+
+	<!-- 13 -->
+	<package>
+		<field row="296" col="90" type="TEXT" fontName="Arial" fontSize="10" fontStyle="0" width="90" height="90" rowAcum="10" fullJustify="430" />
+	</package>
+	
+	<!--
+	READ ME: 
+	row: initial row, left upper corner
+	col: initial col, left upper corner
+	type: type of data displayed, gives the format
+	fontSize: size of the font
+	fontName: name of the font
+	width: the number of characters that are going to be fixed in a line of text. Ej: width=2 will create lines of two characters.
+	height: ?? not sure yet 
+	rowAcum: separation between lines
+	fullJustify: ?? not sure yet but, it seems to be the wide in characters of the area to be used, in this case 570 is the width of the page 612
+	             minus 40 that is twice the separation from the left margin (20).
+	-->
+
+</emaku_template>

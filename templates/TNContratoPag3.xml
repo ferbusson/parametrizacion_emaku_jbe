@@ -1,0 +1,81 @@
+<emaku_template type="GRAPHIC" requestNumeration="false" copies="2" silence="true" printer="DeskJet-3920-1">
+	<settings width="612" height="792" />
+	<metadata>		
+
+		<!-- <image row="1" col="450" width="100" height="75">/icons/logo_fac.png</image> -->
+		<font row="0" col="0" name="Arial" size="10" />
+		<field row="440" col="90" type="STRING" fontName="Arial" fontSize="10" fontStyle="1">CIUDAD:</field>
+		<field row="440" col="140" type="STRING" fontName="Arial" fontSize="10" fontStyle="0">SAN JUAN DE PASTO</field>
+		<field row="440" col="330" type="STRING" fontName="Arial" fontSize="10" fontStyle="1">FECHA:</field>
+		<field row="460" col="90" type="STRING" fontName="Arial" fontSize="10" fontStyle="0">EL EMPLEADOR</field>
+		<field row="460" col="330" type="STRING" fontName="Arial" fontSize="10" fontStyle="0">EL TRABAJADOR</field>
+
+		<field row="510" col="90" type="STRING" fontName="Arial" fontSize="10" fontStyle="1">JOHN VARGAS OSORIO</field>
+		<field row="520" col="90" type="STRING" fontName="Arial" fontSize="10" fontStyle="1">LA CALI S.A.S</field>
+		<field row="530" col="90" type="STRING" fontName="Arial" fontSize="10" fontStyle="0">NIT. 800220247-8</field>
+
+		<field row="520" col="330" type="STRING" fontName="Arial" fontSize="10" fontStyle="0">C.C.</field>
+
+		<field row="620" col="90" type="STRING" fontName="Arial" fontSize="10" fontStyle="0">C.C.</field>
+
+		<field row="560" col="90" type="STRING" fontName="Arial" fontSize="10" fontStyle="0">TESTIGO - TALENTO HUMANO</field>
+
+		<!-- <field row="650" col="90" type="STRING" fontName="Arial" fontSize="10" fontStyle="0">NOTA: Las modificaciones al presente contrato podrán elaborarse en una hoja anexa</field>
+		<field row="660" col="90" type="STRING" fontName="Arial" fontSize="10" fontStyle="0">a este documento, la cual hará parte del mismo y donde deberán consignarse los</field>
+		<field row="670" col="90" type="STRING" fontName="Arial" fontSize="10" fontStyle="0">nombres y firmas de las partes contratantes, su documento de identidad y fecha en</field>
+		<field row="680" col="90" type="STRING" fontName="Arial" fontSize="10" fontStyle="0">que se efectué la modificación</field>
+
+		<field row="700" col="90" type="STRING" fontName="Arial" fontSize="10" fontStyle="0">NOTA ESPECIAL: Salario Integral. En caso de pactar un salario integral, debe apreciarse</field>
+		<field row="710" col="90" type="STRING" fontName="Arial" fontSize="10" fontStyle="0">que el mismo en ningún caso puede mensualmente ser interior a diez (10) salarios</field>
+		<field row="720" col="90" type="STRING" fontName="Arial" fontSize="10" fontStyle="0">mínimoslegales mensuales, más un porcentaje adicional de por lo menos el treinta</field>
+		<field row="730" col="90" type="STRING" fontName="Arial" fontSize="10" fontStyle="0">por ciento (30%) dedicho salario, que constituye el factor prestacional.</field> -->
+
+	</metadata>
+	<!-- <newpage>
+		<field row="80" col="430" type="STRING">PAGINA:</field>
+		<pagenumber row="80" col="530" />
+		<font row="0" col="0" name="Sans" size="4" />
+	</newpage> -->
+	<!-- 00 fecha -->
+   <package>
+		<field row="440" col="375" fontName="Arial" fontSize="10" fontStyle="0"  type="DATE" mask="dd/MM/yyyy" />
+	</package>
+
+	<!-- 0 nombre completo trabajador -->
+   <package>
+		<field row="510" col="330" fontName="Arial" fontSize="10" fontStyle="1"  type="STRING" />
+	</package>
+	<!-- 1 cedula trabajador -->
+	<package>
+		<field row="520" col="355" fontName="Arial" fontSize="10" fontStyle="0"  width="18" type="STRING" mask="##,###,###,###" />
+	</package>
+
+	<!-- 2 nombre completo usuario -->
+   <package>
+		<field row="610" col="90"  fontName="Arial" fontSize="10" fontStyle="1" type="STRING" />
+	</package>
+	<!-- 3 cedula usuario -->
+	<package>
+		<field row="620" col="115"  fontName="Arial" fontSize="10" fontStyle="0" width="18" type="STRING" mask="##,###,###,###" />
+	</package>
+
+
+	<package>
+		<field row="70" col="90" type="TEXT" fontSize="10" fontName="Arial" width="90" height="90" rowAcum="10" fullJustify="430"/>
+	</package>
+	
+	<!--
+	READ ME: 
+	row: initial row, left upper corner
+	col: initial col, left upper corner
+	type: type of data displayed, gives the format
+	fontSize: size of the font
+	fontName: name of the font
+	width: the number of characters that are going to be fixed in a line of text. Ej: width=2 will create lines of two characters.
+	height: ?? not sure yet 
+	rowAcum: separation between lines
+	fullJustify: ?? not sure yet but, it seems to be the wide in characters of the area to be used, in this case 570 is the width of the page 612
+	             minus 40 that is twice the separation from the left margin (20).
+	-->
+
+</emaku_template>

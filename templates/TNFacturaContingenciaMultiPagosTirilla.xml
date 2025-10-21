@@ -1,0 +1,362 @@
+<emaku_template type="POSTSCRIPT" requestNumeration="true" copies="1" silent="true" nativeprinter="true" printer="EPSON_TM-T20">
+   <settings width="220" height="10000" />
+   <metadata>
+
+      <image row="1" col="30" width="25" height="12">/icons/logo_fac.png</image>
+
+	      <!--<qr row="70" col="50" width="115" height="115" />-->
+
+      <font row="0" col="0" name="Sans" size="8" />
+      <field row="80" center="218" type="STRING" importValue="true">terceroal</field>
+
+      <font row="0" col="0" name="Sans" size="7" />
+      <field row="90" center="218" type="STRING" importValue="true">nitalterno</field>
+      <field row="100" center="218" type="STRING">Responsable del Impuesto sobre las ventas - IVA</field>
+      <field row="110" center="218" type="STRING" importValue="true">direccion</field>
+      <field row="120" center="218" type="STRING" importValue="true">telefono</field>
+      <field row="130" center="218" type="STRING" importValue="true">piepaginados</field>
+      <field row="140" center="218" type="STRING" importValue="true">ciudad</field>
+      <field row="153" center="218" type="STRING" importValue="true">horarioatencion</field>
+      <field row="165" center="218" type="STRING" importValue="true">piepaginauno</field>
+
+      
+      <font row="0" col="0" name="Sans" size="12" />
+
+      <field row="230" center="220" type="STRING">FACTURA DE CONTINGENCIA</field>
+
+      <font row="0" col="0" name="Sans" size="8" />
+      <field row="243" col="15" type="STRING">Numero:</field>
+      <field row="253" col="15" type="STRING">Fecha:</field>
+      <field row="263" col="15" type="STRING">Hora:</field>
+      <field row="273" col="15" type="STRING">Cajero:</field>
+      <!-- <barcodeImage row="200" col="30" width="10" type="NUMERIC" mask="0000000000" /> -->
+      <ndocument row="243" col="66" format="Integer"/>
+      <date row="253" col="53" mask="EEEEEE dd MMMM yyyy"/>
+      <time row="263" col="53" />
+
+      <!-- Informacion detallada de productos -->
+      <line row="283" col="2" row2="283" col2="218" />
+      <field row="293" col="177" type="STRING">Item #</field>
+      <field row="293" col="10" type="STRING">Código</field>
+      <field row="303" col="10" type="STRING">Descripcion</field>
+      <field row="313" col="10" type="STRING">Cant</field>
+      <field row="313" col="60" type="STRING">%IVA</field>
+      <field row="313" col="110" type="STRING">V. Unit</field>
+      <field row="313" col="180" type="STRING">Total</field>
+      <line row="323" col="2" row2="323" col2="218" />
+   </metadata>
+
+	<!-- 0 Numero resolucion -->
+	<package validate="true">
+		<field row="181" fontName="Dialog" fontSize="7" fontStyle="0" rowAcum="10" textCol="5" col="30" type="STRING" />
+	</package>
+
+	<!-- 1 Fecha resolucion -->
+	<package validate="true">
+		<field row="191" fontName="Dialog" fontSize="7" fontStyle="0" rowAcum="10" textCol="5" col="35" type="STRING" />
+	</package>
+
+	<!-- 2 Rango numeracion autorizacion -->
+	<package validate="true">
+		<field row="201" fontName="Dialog" fontSize="7" fontStyle="0" rowAcum="10" textCol="15" col="55" type="STRING" />
+	</package>
+
+	<!-- 3 Vigencia resolucion -->
+	<package validate="true">
+		<field row="211" fontName="Dialog" fontSize="7" fontStyle="0" rowAcum="10" textCol="5" col="75" type="STRING" />
+	</package>
+
+     <!-- 4 Prefijo -->
+     <package>
+       <field row="243" col="53" type="STRING" />
+     </package>
+     
+   <!-- 5 vendedor -->
+   <package>
+      <field row="273" col="53" fontName="Dialog" fontSize="7" fontStyle="0" type="STRING" />
+   </package>
+
+   <!-- 6 tabla productos -->
+   <package>
+      <subpackage rowInit="333" rowAcum="10" colCounter="200">
+         <field col="10" type="STRING" incrementRow="true" /> <!-- codigo -->
+         <field col="10" incrementRow="true" type="STRING" /> <!-- descripcion -->
+         <field col="15" width="3" type="NUMERIC" mask="###" /> <!-- cantidad -->
+         <field col="140" width="13" type="NUMERIC" mask="#,###,##0.00" /> <!-- vlr uni -->
+         <field col="75" width="3" type="NUMERIC" mask="###" /> <!-- %iva -->
+
+         <field col="-300" width="3" type="NUMERIC" mask="###" /> <!-- %desc oculto -->
+         
+         <field col="204" width="13" type="NUMERIC" mask="#,###,##0.00" /> <!-- total -->
+
+         <field col="-300" width="13" type="NUMERIC" mask="#,###,###.##" /> <!-- vuni oculto-->
+         <field col="-300" incrementRow="false" type="STRING" /> <!-- codigo oculto -->
+         <field col="-300" incrementRow="false" type="STRING" /> <!-- referencia oculto -->         
+      </subpackage>
+   </package>
+   <!-- 7 linea -->
+   <package>
+      <line row="last" rowAcum="20" col="2" row2="last" col2="218" />
+   </package>  
+
+   <!-- 8 --> 
+   <package>
+      <field textLine="Descuento" rowAcum="13" textCol="5" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,##0.00" />
+   </package>  
+   
+   <!-- 9 --> 
+   <package>
+      <field textLine="Subtotal" rowAcum="13" textCol="5" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,##0.00" />
+   </package>  
+
+   <!-- 10 --> 
+   <package>
+      <field textLine="IVA" rowAcum="13" textCol="5" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,##0.00" />
+   </package>  
+   <!-- 11 --> 
+   <package>
+      <field textLine="INC" rowAcum="13" textCol="5" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,##0.00" />
+   </package>  
+   <!-- 12 --> 
+   <package>
+      <field textLine="Neto a Pagar" rowAcum="13" textCol="5" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,##0.00" />
+   </package>  
+   <!-- 13 linea -->
+   <package>
+      <line row="last" rowAcum="20" col="2" row2="last" col2="218" />
+   </package>  
+   <!-- 14 Titulo -->
+   <package>
+      <field textLine="FORMA DE PAGO:" rowAcum="0" textCol="30" row="last" col="200" type="STRING"/>
+   </package>
+
+  <!-- 10 forma de pago credito -->
+   <package>
+      <field row="last" col="105" rowAcum="13" fontName="Dialog" fontSize="8" fontStyle="0" type="STRING" />
+   </package>
+
+
+   <!-- 10 forma de pago contado -->
+   <package>
+      <field row="last" col="105" rowAcum="13" fontName="Dialog" fontSize="8" fontStyle="0" type="STRING" />
+   </package>
+
+
+   <!-- 15 -->
+   <package>
+      <field textLine="Anticipos" rowAcum="13" textCol="5" validZero="true" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,###.##" />
+   </package>
+   <!-- 16 --> 
+   <package>
+      <field textLine="Cheques" rowAcum="13" textCol="5" validZero="true" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,###.##" />
+   </package>
+  <!-- 17 -->
+  <package>
+      <field textLine="Efectivo" rowAcum="13" textCol="5" validZero="true" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,###.##" />
+   </package>  
+   
+   <!-- 18 -->
+   <package>
+      <field textLine="Tarjetas" rowAcum="13" textCol="5" validZero="true" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,###.##" />
+   </package>  
+   
+   <!-- 19 -->
+   <package>
+      <field textLine="Bonos" rowAcum="13" textCol="5" validZero="true" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,###.##" />
+   </package>  
+
+   <!-- 20 -->
+   <package>
+      <field textLine="Cambio" rowAcum="13" textCol="5" validZero="true" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,###.##" />
+   </package> 
+	
+   <package>
+      <field textLine="Crédito" rowAcum="13" textCol="5" validZero="true" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,###.##" />
+   </package>
+
+   <!-- 21 -->
+   <package>
+      <line rowAcum="12" row="last" col="2" row2="last" col2="218" />
+   </package>  
+
+<!-- 22 Titulo -->
+   <package>
+      <field textLine="DISCRIMINACIÓN TARIFAS IMPUESTOS" rowAcum="15" textCol="30" row="last" col="200" type="STRING"/>
+   </package>
+
+   <!-- 23 -->
+   <package>
+      <field textLine="TARIFA                BASE                      IVA" rowAcum="12" textCol="13" row="last" col="200" type="STRING"/>
+   </package>
+
+   <!-- 24 TARIFA EXCLUIDOS -->
+   <package>
+      <field textLine="-" rowAcum="0" textCol="13" row="last" col="200" type="STRING"/>
+   </package>
+
+   <!-- 25 base excluidos -->
+   <package>
+      <field textCol="30" row="last" col="110"  width="13" type="NUMERIC" mask="#,###,##0.00"/>
+   </package>
+
+   <!-- 26 IVA EXCLUIDOS -->
+   <package>
+      <field textLine="-" rowAcum="12" textCol="186" row="last" col="180" type="STRING"/>
+   </package>
+
+   <!-- 27 TARIFA EXENTOS -->
+   <package>
+      <field textLine="0%" rowAcum="0" textCol="13" row="last" col="200" type="STRING"/>
+   </package>
+
+   <!-- 28 base exentos -->
+   <package>
+      <field textCol="30" row="last" col="110"  width="13" type="NUMERIC" mask="#,###,##0.00"/>
+   </package>
+
+   <!-- 29 tiva exentos -->
+   <package>
+      <field rowAcum="12" textCol="13" row="last" col="190"  width="13" type="NUMERIC" mask="#,###,##0.00"/>
+   </package>
+
+<!-- 30 -->
+   <package>
+      <field textLine="5%" rowAcum="0" textCol="13" row="last" col="200" type="STRING"/>
+   </package>
+
+   <!-- 31 base iva 5% -->
+   <package>
+      <field textCol="30" row="last" col="110"  width="13" type="NUMERIC" mask="#,###,##0.00"/>
+   </package>
+
+   <!-- 32 tiva 5% -->
+   <package>
+      <field rowAcum="12" textCol="13" row="last" col="190"  width="13" type="NUMERIC" mask="#,###,##0.00"/>
+   </package>
+
+   <!-- 33 -->
+   <package>
+      <field textLine="19%" rowAcum="0" textCol="13" row="last" col="200" type="STRING"/>
+   </package>
+
+   <!-- 34 base iva 19% -->
+   <package>
+      <field textCol="30" row="last" col="110"  width="13" type="NUMERIC" mask="#,###,##0.00"/>
+   </package>
+
+   <!-- 35 tiva 19% -->
+   <package>
+      <field rowAcum="15" textCol="13" row="last" col="190"  width="13" type="NUMERIC" mask="#,###,##0.00"/>
+   </package>
+
+   <!-- 36 verde -->
+   <package>
+      <field textLine="Impuesto Bolsas Plasticas" rowAcum="0" textCol="13" row="last" col="200" type="STRING"/>
+   </package>
+
+   <!-- 37 -->
+   <package>
+      <field rowAcum="10" textCol="13" row="last" col="190"  width="13" type="NUMERIC" mask="#,###,##0.00"/>
+   </package>
+
+   <!-- 38 -->
+   <package>
+      <line row="last" rowAcum="20" col="2" row2="last" col2="218" />
+   </package>  
+
+   <!-- 39 -->
+   <package>
+      <field textLine="Total Articulos:" rowAcum="12" textCol="13" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="205" width="13" type="NUMERIC" mask="#,###,###" />
+   </package> 
+
+   <!-- 40 -->
+   <package>
+      <field textLine="Total Líneas de Factura:" rowAcum="12" textCol="13" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="205" width="13" type="NUMERIC" mask="#,###,###" />
+   </package> 
+ 
+   <!-- 41 -->
+   <package>
+      <line row="last" rowAcum="20" col="2" row2="last" col2="218" />
+   </package> 
+ 
+   <!-- 42 -->
+   <package>
+      <field textLine="DATOS DEL CLIENTE" rowAcum="12" textCol="10" row="last" col="200" type="STRING"/>
+   </package>
+ 
+   <!-- 43 -->
+   <package validate="true">
+      <field row="last" rowAcum="12"  col="10" type="STRING"/>
+      <field row="last" rowAcum="12"  col="10" type="STRING"/>
+      <field row="last" rowAcum="12"  col="10" type="STRING"/>
+      <field row="last" rowAcum="12"  col="10" type="STRING"/>
+      <field row="last" rowAcum="12"  col="10" type="STRING"/>
+   </package>
+
+   <!-- 44 --> 
+   <package>
+      <!-- <image rowAcum="0" row="last" col="5" width="50" height="50">/icons/lacaliqr.png</image> -->
+      <line row="last" rowAcum="15" col="2" row2="last" col2="218" />
+   </package>
+
+   <!-- 45 letrero obs -->
+   <package>
+      <field textLine="Observaciones:" rowAcum="15" textCol="10" row="last" col="200" type="STRING"/>
+   </package>
+
+   <!-- 46 observaciones -->
+     <package>
+        <field fontName="Dialog" fontSize="6" fontStyle="0" row="last" col="10"  width="65"  height="6" rowAcum="10" type="TEXT"/>
+     </package>
+
+   <!-- 47 linea -->
+   <package>
+      <line row="last" rowAcum="20" col="2" row2="last" col2="218" />
+   </package> 
+
+
+   <!-- 48 -->
+   <package>
+      <field textLine="USTED AHORRÓ $" rowAcum="20" textCol="10" validZero="true" fontName="Dialog" fontSize="9" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,##0.00" />
+   </package>
+
+   <!-- 49 -->
+   <package>
+      <field textLine="¡¡GRACIAS POR SU COMPRA!!" rowAcum="15" textCol="43" row="last" col="200" type="STRING"/>
+   </package>
+   
+   <!-- 50 -->
+   <package>
+      <field textLine="VISITA www.lacalionline.com" rowAcum="15" textCol="47" row="last" col="200" type="STRING"/>
+   </package>
+
+   <!-- 51 cufe -->
+   <!--<package>
+        <field fontName="Dialog" fontSize="6" fontStyle="0" row="last" col="10"  width="57"  height="5" rowAcum="10" type="TEXT"/>
+   </package>-->
+
+     <!-- 52 Fecha procesamiento -->
+   <package>
+      <field fontName="Dialog" fontSize="6" fontStyle="0" textLine="Fecha de procesamiento:" rowAcum="15" textCol="10" row="last" col="90" type="STRING"/>
+   </package>
+
+   <!-- 53 --> 
+   <package>
+      <line row="last" rowAcum="20" col="2" row2="last" col2="218" />
+   </package>  
+
+   <!-- 54 -->
+   <package>
+
+        <text fontName="Dialog" fontSize="7" fontStyle="0" rowAcum="15" row="last" col="58" type="STRING">Aplican Políticas de Cambio</text>
+        <text fontName="Dialog" fontSize="7" fontStyle="0" rowAcum="15" row="last" col="18" type="STRING">Conserve este documento para cualquier novedad.</text>
+        <line row="last" rowAcum="15" col="2" row2="last" col2="218" />
+        <text fontName="Dialog" fontSize="9" fontStyle="0" rowAcum="0" row="last" col="28" type="STRING">SERVICIO A DOMICILIO</text>
+        <text rowAcum="12" row="last" col="137" type="STRING" importValue="true">piepaginatres</text>
+        <line row="last" rowAcum="12" col="2" row2="last" col2="218" />
+        <text fontName="Dialog" fontSize="6" fontStyle="0" rowAcum="10" row="last" col="18" type="STRING">Factura elaborada, impresa y enviada electrónicamente por:</text>
+        <text fontName="Dialog" fontSize="6" fontStyle="0" rowAcum="10" row="last" col="54" type="STRING">LA CALI S.A.S Nit. 800.220.247-8</text>
+        <text fontName="Dialog" fontSize="6" fontStyle="0" rowAcum="10" row="last" col="77" type="STRING">Software E-MAKU</text>
+   </package>
+
+</emaku_template>

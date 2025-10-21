@@ -1,0 +1,136 @@
+<!--
+   Los tags que se agregaron para soportar impresion multi centrocosto fueron:
+   metadata: importValue nombre_suc
+   paquete final: importValue direccion
+   paquete final: importValue ciudad
+
+   *Para la impresion del logo se adiciono la etiqueta dbimage, la cual recibe la imagen a imprimir
+   En esta plantilla es el primer paquete que se recibe luego del metadata
+-->
+<!--EPSON_TM-T20 -->
+<emaku_template type="POSTSCRIPT" requestNumeration="true" copies="2" silent="true" nativeprinter="true" printer="EPSON_TM-T20">
+   <settings width="220" height="10000" />
+   <metadata>
+      <!--<barcodeImage row="110" col="20" />-->
+      <image row="1" col="30" width="25" height="12">/icons/logo_fac.png</image>
+      <font row="0" col="0" name="Sans" size="8" />
+      <field row="117" center="218" type="STRING" importValue="true">terceroal</field>
+      <font row="0" col="0" name="Sans" size="7" />
+      <field row="127" center="218" type="STRING" importValue="true">nitalterno</field>
+      <field row="137" center="218" type="STRING">Responsable del Impuesto sobre las ventas - IVA</field>
+      <field row="147" center="218" type="STRING" importValue="true">direccion</field>
+      <field row="157" center="218" type="STRING" importValue="true">telefono</field>
+      <field row="167" center="218" type="STRING" importValue="true">piepaginados</field>
+      <field row="177" center="218" type="STRING" importValue="true">ciudad</field>
+      <field row="192" center="218" type="STRING" importValue="true">horarioatencion</field>
+      <field row="203" center="218" type="STRING" importValue="true">piepaginauno</field>
+      
+      <font row="0" col="0" name="Sans" size="13" />
+      <field row="223" center="218" type="STRING">ABONO A SEPARADO</field>
+
+      <font row="0" col="0" name="Sans" size="8" />
+    
+      <field row="250" col="15" type="STRING">Numero:</field>
+      <field row="260" col="15" type="STRING">Fecha:</field>
+      <field row="270" col="15" type="STRING">Hora:</field>
+      <field row="280" col="15" type="STRING">Cajero:</field>
+
+      <barcodeImage row="80" col="20" />
+      <ndocument row="250" col="71" />
+      <date row="260" col="53" mask="EEEEEE dd MMMM yyyy"/>
+      <time row="270" col="50" />
+
+
+      <line row="287" col="2" row2="287" col2="218" />
+     
+      <field row="300" col="10" type="STRING">Identificación:</field>
+      <field row="310" col="10" type="STRING">Cliente:</field>
+      <field row="320" col="10" type="STRING">Dirección:</field>
+      <field row="330" col="10" type="STRING">Ciudad:</field>
+      <field row="340" col="10" type="STRING">Contacto:</field>
+      <field row="350" col="10" type="STRING">Separado:</field>
+
+   </metadata>
+
+
+	<!-- 0 Prefijo -->
+	<package>
+	       <field row="250" col="53" type="STRING" textLine="-" textCol="65" />
+	</package>   
+ 	
+	<!-- 1 vendedor -->
+   	<package>
+      		<field row="280" col="53" fontName="Dialog" fontSize="7" fontStyle="0" type="STRING" />
+   	</package>
+
+	   <!-- 2 -->
+	   <package validate="true">
+	      <field row="310" rowAcum="15"  col="80" type="STRING"/>
+	      <field row="300" rowAcum="15"  col="80" type="STRING"/>
+	      <field row="320" rowAcum="15"  col="80" type="STRING"/>
+	      <field row="340" rowAcum="15"  col="80" type="STRING"/>
+	      <field row="330" rowAcum="15"  col="80" type="STRING"/>
+	   </package>
+  	
+	<!-- 3 Separado -->
+	<package>
+	       <field row="350" col="80" type="STRING" />
+	</package>   
+
+	<!-- 4 linea -->
+  	 <package>
+     		 <line row="last" rowAcum="20" col="2" row2="last" col2="218" />
+  	 </package>  
+   	
+	<!-- 5 --> 
+   	<package>
+      		<field textLine="Abono" rowAcum="15" textCol="5" validZero="true" fontName="Dialog" fontSize="11" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,###.##" />
+   	</package>
+  	
+	<!-- 6 -->
+  	<package>
+      		<field textLine="Saldo" rowAcum="15" textCol="5" validZero="true" fontName="Dialog" fontSize="11" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,###.##" />
+   	</package>  
+
+	<!-- 7 linea -->
+  	 <package>
+     		 <line row="last" rowAcum="15" col="2" row2="last" col2="218" />
+  	 </package>  
+
+	<!-- 8 -->
+  	<package>
+      		<field textLine="Efectivo" rowAcum="15" textCol="5" validZero="true" fontName="Dialog" fontSize="11" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,###.##" />
+   	</package>  
+   	
+	<!-- 9 --> 
+   	<package>
+      		<field textLine="Cheques" rowAcum="15" textCol="5" validZero="true" fontName="Dialog" fontSize="11" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,###.##" />
+   	</package>
+   
+   	<!-- 10 -->
+	<package>
+      		<field textLine="Tarjetas" rowAcum="15" textCol="5" validZero="true" fontName="Dialog" fontSize="11" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,###.##" />
+   	</package>  
+   
+   	<!-- 11 -->
+   	<package>
+   	   <field textLine="Cambio" rowAcum="15" textCol="5" validZero="true" fontName="Dialog" fontSize="11" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,###.##" />
+   </package> 
+ 
+ 
+   <!-- 12 --> 
+   <package>
+      <image rowAcum="0" row="last" col="5" width="50" height="50">/icons/lacaliqr.png</image>
+      <line row="last" rowAcum="20" col="2" row2="last" col2="218" />
+   </package>  
+
+
+   <!-- 13 -->
+   <package>
+        <text fontName="Dialog" fontSize="9" fontStyle="0" rowAcum="15" row="last" col="77" type="STRING">DIAS DE SEPARADO 30</text>
+        <text fontName="Dialog" fontSize="10" fontStyle="0" rowAcum="0" row="last" col="55" type="STRING">VENCIMIENTO</text>
+	<text rowAcum="15" row="last" col="140" type="STRING" importValue="true">vencimiento</text>
+   </package>
+
+
+</emaku_template>

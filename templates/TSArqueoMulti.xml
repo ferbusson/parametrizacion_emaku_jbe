@@ -1,0 +1,217 @@
+<!--
+   Los tags que se agregaron para soportar impresion multi centrocosto fueron:
+   metadata: importValue nombre_suc
+   paquete final: importValue direccion
+   paquete final: importValue ciudad
+
+   *Para la impresion del logo se adiciono la etiqueta dbimage, la cual recibe la imagen a imprimir
+   En esta plantilla es el primer paquete que se recibe luego del metadata
+-->
+
+<emaku_template type="POSTSCRIPT" requestNumeration="false" copies="1" silent="false" printer="EPSON_TM-T20">
+   <settings width="220" height="10000" />
+
+   <metadata>
+      <font row="0" col="0" name="Sans" size="10" />
+      <field row="90" center="70" type="STRING" importValue="true">nombre_suc</field>
+      <font row="0" col="0" name="Sans" size="7" />
+      <field row="100" center="5" type="STRING" importValue="true">nitalterno</field>
+      <font row="0" col="0" name="Sans" size="8" />
+      <field row="200" col="15" type="STRING">Arqueo de Caja</field>
+      <field row="210" col="15" type="STRING">Numero:</field>
+
+      <field row="220" col="15" type="STRING">Fecha:</field>
+      <field row="230" col="15" type="STRING">Usuario:</field>
+      <field row="240" col="15" type="STRING">Hora:</field>
+      <field row="252" col="15" type="STRING">Rangos Fac</field>
+      <!-- Informacion detallada de productos -->
+      <line row="250" col="2" row2="250" col2="5" />
+   </metadata>
+
+
+    <!-- logo sucursal -->
+      <package>
+      <dbimage row="1" width = "150" height= "80"  col="15" type="STRING" />
+       </package>
+  00
+  <package>
+          <generateBarCodeImage row="110" col="20" width="10" type="NUMERIC" mask="0000000000" />
+  </package>
+
+	0<!--Numero fac-->
+	 <package>
+        <field row="210" col="100" width="10" type="NUMERIC" mask="0000000000" />
+    </package>
+
+	1<!--Hora-->
+	<package>
+          <field row="240" col="53" type="STRING" />
+  </package>
+   2 <!-- Fecha Factura -->
+   <package>
+      <field row="220" col="53" type="DATE" mask="EEEEEE dd MMMM yyyy" />
+   </package>
+   3 <!-- Cajero -->
+   <package>
+      <field row="230" col="53" type="STRING" />
+   </package>
+   <!-- Rango de factura -->
+
+   <package>
+      <field row="252" col="67" type="STRING" />
+   </package>
+   <!-- Rango de factura -->
+   5 <!-- Base caja -->
+   <package>
+      <field textLine="Base Caja......" rowAcum="20" textCol="10" fontName="Dialog" fontSize="14" fontStyle="1" row="270" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+   </package>  
+
+   6<!--Titulo ingresos del turno-->
+   <package>
+      <text fontName="Dialog" fontSize="12" fontStyle="1" rowAcum="20" row="last" col="12" type="STRING">Ingreso del Turno</text>
+   </package>
+
+  7 <!-- Factura POS-->
+   <package>
+      <field textLine="Factura POS......" rowAcum="15" textCol="12" fontName="Dialog" fontSize="10" fontStyle="1" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+   </package>  
+   8 <!-- Cambios-->
+   <package>
+      <field textLine="Cambios......" rowAcum="15" textCol="12" fontName="Dialog" fontSize="10" fontStyle="1" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+   </package>  
+   9 <!-- Abonos y pagos-->
+   <package>
+      <field textLine="Abonos y Pagos......" rowAcum="15" textCol="12" fontName="Dialog" fontSize="10" fontStyle="1" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+   </package>  
+   10 <!-- Tarjetas regalo-->
+   <package>
+      <field textLine="Tarjetas Regalo......" rowAcum="15" textCol="12" fontName="Dialog" fontSize="10" fontStyle="1" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+   </package>  
+   11 <!-- Separados-->
+   <package>
+      <field textLine="Separados......" rowAcum="20" textCol="12" fontName="Dialog" fontSize="10" fontStyle="1" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+   </package>  
+
+
+   12 <!-- Total ingresos del turno-->
+   <package>
+      <field textLine="Total Ingresos......" rowAcum="20" textCol="12" fontName="Dialog" fontSize="10" fontStyle="1" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+   </package>  
+
+  13 <!-- Linea -->
+   <package>
+      <line row="last" rowAcum="20" col="2" row2="last" col2="200" />
+   </package>     
+  14<!--Titulo Egresos del turno-->
+   <package>
+      <text fontName="Dialog" fontSize="12" fontStyle="1" rowAcum="20" row="last" col="8" type="STRING">Egresos del Turno</text>
+   </package>
+
+
+   15 <!-- Vales de retiro-->
+   <package>
+      <field textLine="Vales de Retiro......" rowAcum="20" textCol="12" fontName="Dialog" fontSize="10" fontStyle="1" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+   </package>  
+   
+  16 <!-- Total egresos del turno-->
+   <package>
+      <field textLine="Total Egresos......" rowAcum="20" textCol="12" fontName="Dialog" fontSize="10" fontStyle="1" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+   </package>     
+  17 <!-- Linea -->
+   <package>
+      <line row="last" rowAcum="20" col="2" row2="last" col2="200" />
+   </package>     
+  18<!--Titulo informacion de recaudo-->
+   <package>
+      <text fontName="Dialog" fontSize="12" fontStyle="1" rowAcum="20" row="last" col="8" type="STRING">Informacion de Recaudo</text>
+   </package>   
+
+   19 <!-- Tabla recaudo-->
+   <package>
+      <subpackage rowInit="last" rowAcum="8">
+         <field fontName="Dialog" fontSize="10" fontStyle="0" col="15" type="STRING" incrementRow="false"/>
+         <field fontName="Dialog" fontSize="10" fontStyle="0" col="200" incrementRow="true" width="13" type="NUMERIC" mask="#,###,###.##" />
+      </subpackage>
+   </package>
+
+
+  20 <!-- Total recaudo -->
+   <package>
+      <field textLine="Total Recaudo......" rowAcum="20" textCol="12" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+   </package>  
+
+
+  21 <!-- Linea -->
+   <package>
+      <line row="last" rowAcum="20" col="2" row2="last" col2="200" />
+   </package>  
+  22 <!-- Total movimiento del dia -->
+   <package>
+      <field textLine="Total Mov. del Dia......" rowAcum="15" textCol="12" fontName="Dialog" fontSize="10" fontStyle="1" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+   </package>  
+
+  23 <!-- Efectivo recaudado -->
+   <package>
+      <field textLine="Efectivo recaudado......" rowAcum="15" textCol="12" fontName="Dialog" fontSize="10" fontStyle="1" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+   </package>  
+  24 <!-- Efectivo entregado -->
+   <package>
+      <field textLine="Efectivo entregado......" rowAcum="15" textCol="12" fontName="Dialog" fontSize="10" fontStyle="1" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+   </package>  
+  25 <!-- Diferencia-->
+   <package>
+      <field textLine="Diferencia......" rowAcum="20" textCol="12" fontName="Dialog" fontSize="10" fontStyle="1" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+   </package>  
+
+  26 <!-- Linea -->
+   <package>
+      <line row="last" rowAcum="20" col="2" row2="last" col2="200" />
+   </package>  
+  27<!--Titulo Observaciones-->
+   <package>
+      <text fontName="Dialog" fontSize="12" fontStyle="1" rowAcum="20" row="last" col="8" type="STRING">Observaciones:</text>
+   </package>
+
+  28 <!-- Observaciones -->
+   <package>
+      <field fontName="Dialog" fontSize="8" fontStyle="0" row="last" col="1"  width="50"  height="5" rowAcum="10" type="TEXT"/>
+   </package> 
+
+   29 <!-- Linea -->
+   <package>
+      <line rowAcum="40" row="last" col="2" row2="last" col2="200" />
+   </package>     
+
+   30 <!-- Linea firma-->
+   <package>
+      <line rowAcum="15" row="last" col="32" row2="last" col2="170" />
+   </package>     
+  31<!--Titulo Elaboro-->
+   <package>
+      <text fontName="Dialog" fontSize="12" fontStyle="1" rowAcum="30" row="last" col="75" type="STRING">Elaboró</text>
+   </package>
+
+   
+   32 <!-- Pie de pagina -->
+   <package>
+
+      <text fontName="Dialog" fontSize="8" fontStyle="1" rowAcum="10" row="last" col="15" type="STRING" importValue="true">direccion</text>
+
+      <text fontName="Dialog" fontSize="8" fontStyle="1" rowAcum="10" row="last" col="15" type="STRING" importValue="true">telefono</text>
+
+     <text rowAcum="10" row="last" col="15" type="STRING">fabflyestiloamericano@gmail.com</text>
+
+      <text fontName="Dialog" fontSize="8" fontStyle="1" rowAcum="20" row="last" col="15" type="STRING" importValue="true">ciudad</text>
+
+
+      
+      <text fontName="Dialog" fontSize="6" fontStyle="1" rowAcum="8" row="last" col="12" type="STRING">Comprobante Elaborado Con E-Maku</text>
+
+      <text fontName="Dialog" fontSize="6" fontStyle="1" rowAcum="30" row="last" col="12" type="STRING">Licenciado Bajo GPL V 2.0</text>
+
+   </package>
+
+
+
+
+</emaku_template>

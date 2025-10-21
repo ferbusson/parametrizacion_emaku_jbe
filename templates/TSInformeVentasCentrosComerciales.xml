@@ -1,0 +1,86 @@
+<emaku_template type="POSTSCRIPT" requestNumeration="false" copies="1" silent="false" printer="EPSON_TM-T20">
+	<settings width="220" height="10000" />
+	<metadata>
+		<image row="15" col="35" width="100" height="75">/icons/logo_fac.png</image>
+		<font row="0" col="0" name="Sans" size="9" />
+		
+                <field row="117" center="218" type="STRING" importValue="true">terceroal</field>
+	      <font row="0" col="0" name="Sans" size="7" />
+	      <field row="127" center="218" type="STRING" importValue="true">nitalterno</field>
+	      <field row="137" center="218" type="STRING">Responsable del Impuesto sobre las ventas - IVA</field>
+	      <field row="147" center="218" type="STRING" importValue="true">direccion</field>
+	      <field row="157" center="218" type="STRING" importValue="true">telefono</field>
+	      <field row="167" center="218" type="STRING" importValue="true">piepaginados</field>
+	      <field row="177" center="218" type="STRING" importValue="true">ciudad</field>
+	      <!--<field row="192" center="218" type="STRING" importValue="true">horarioatencion</field>
+	      <field row="202" center="218" type="STRING" importValue="true">piepaginauno</field>-->
+
+		<font row="0" col="0" name="Sans" size="14" />
+                <field row="201" col="10" type="STRING">INFORME DIARIO DE VENTAS</field>
+
+		<font row="0" col="0" name="Sans" size="9" />		
+		<field row="215" col="15" type="STRING">Fecha Inicial: </field>
+		<field row="225" col="15" type="STRING">Fecha Final:</field>
+		<field row="235" col="15" type="STRING">Generó:</field>
+		<!--<field row="265" col="15" type="STRING">Sucursal:</field>-->
+		<!-- Informacion detallada de productos -->
+		<line row="250" col="10" row2="250" col2="200" />
+		<line row="265" col="10" row2="265" col2="200" />
+		<field row="260" col="10" fontName="Dialog" fontSize="7" fontStyle="1" type="STRING">Fecha</field>
+		<field row="260" col="75" fontName="Dialog" fontSize="7" fontStyle="1" type="STRING">| Ventas sin IVA</field>
+		<field row="260" col="147" fontName="Dialog" fontSize="7" fontStyle="1" type="STRING">| CantF</field>
+		<field row="260" col="179" fontName="Dialog" fontSize="7" fontStyle="1" type="STRING">| UVen</field>
+		<font row="0" col="0" name="Sans" size="9" />
+	</metadata>
+	<!--<package>
+		<generateBarCodeImage row="80" col="30" width="10" type="NUMERIC" mask="0000000000" />
+	</package>-->
+	<!-- Fecha Ini -->
+	<package>
+		<field row="215" col="85" type="DATE" mask="EEEEEE dd MMMM yyyy" />
+	</package>
+	<!-- Fecha Fin -->
+	<package>
+		<field row="225" col="85" type="DATE" mask="EEEEEE dd MMMM yyyy" />
+	</package>
+	<!-- Hora -->
+	<!--<package>
+		<field row="235" col="50" type="STRING" />
+	</package>-->
+	<!-- Usuario -->
+	<package>
+		<field row="235" col="65" type="STRING" />
+	</package>
+
+	   <!-- 11 tabla productos -->
+	   <package>
+	      <subpackage rowInit="280" rowAcum="10">
+		 <field col="10" fontName="Dialog" fontsize="6" fontStyle="0" type="STRING" incrementRow="false" /> <!-- fecha -->
+		 <field col="140" fontName="Dialog" fontsize="6" fontStyle="0" width="13" type="NUMERIC" mask="#,###,##0.00" /> <!-- ventas sin iva -->
+		 <field col="170" fontName="Dialog" fontsize="6" fontStyle="0" width="3" type="NUMERIC" mask="###" /> <!-- total facturas -->
+		 <field col="204" fontName="Dialog" fontsize="6" fontStyle="0" width="3" type="NUMERIC" mask="###" /> <!-- total articulos -->
+	      </subpackage>
+	   </package>
+
+	<package>
+		<line row="last" rowAcum="15" col="10" row2="last" col2="200" />
+	</package>	
+	<package>
+		<field textLine="Totales:" rowAcum="0" textCol="10" fontName="Dialog" fontSize="7" fontStyle="1" row="last" col="140" width="13" type="NUMERIC" mask="#,###,##0.00" />
+	</package>	
+	<package>
+		<field rowAcum="0" fontName="Dialog" fontSize="7" fontStyle="1" row="last" col="170" width="13" type="NUMERIC" mask="#,###,###" />
+	</package>	
+	<package>
+		<field rowAcum="10" fontName="Dialog" fontSize="7" fontStyle="1" row="last" col="204" width="13" type="NUMERIC" mask="#,###,###" />
+	</package>	
+
+	<!-- 46 -->
+	<package>
+        <line row="last" rowAcum="15" col="2" row2="last" col2="218" />
+        <text fontName="Dialog" fontSize="6" fontStyle="0" rowAcum="10" row="last" col="18" type="STRING">Informe impreso por LA CALI S.A.S</text>
+        <text fontName="Dialog" fontSize="6" fontStyle="0" rowAcum="10" row="last" col="77" type="STRING">Software E-MAKU</text>
+	</package>
+
+
+</emaku_template>

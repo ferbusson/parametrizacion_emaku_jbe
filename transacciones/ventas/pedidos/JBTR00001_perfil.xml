@@ -2198,7 +2198,17 @@
                   <!-- impresion lado cliente Carta -->
                   <action>
                     <type>printer</type>
-                    <printerTemplate>/graphics/TNPedidoMostradorCarta.xml</printerTemplate>                    
+                    <printerTemplate>/graphics/TNPedidoMostradorCarta.xml</printerTemplate>
+                    <!-- 0 codigo tipo -->
+                    <component>
+                      <driver>this</driver>
+                      <method>getPackage</method>
+                      <parameters>
+                      <subarg>
+                        <arg attribute="importValue">prefix</arg>
+                      </subarg>
+                      </parameters>
+                    </component>
                     <!-- 1 -->
                     <component>
                       <driver>client.gui.components.FindThird</driver>

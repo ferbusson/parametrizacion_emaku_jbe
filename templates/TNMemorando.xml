@@ -1,0 +1,83 @@
+<emaku_template copies="2" printer="DeskJet-3920-1" requestNumeration="false" silence="true" type="GRAPHIC">
+        <settings height="792" width="612"/>
+        <metadata>
+                <!-- <image col="90" height="40" row="10" width="90">/icons/logo_fac.png</image> -->
+                <font col="0" name="Arial" row="0" size="10"/>
+                <!-- <field col="90" row="75" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">LA CALI S.A.S</field>
+                <field col="90" row="88" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">NIT: 800.220.247-8</field> -->                
+
+                <field col="385" row="128" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">Copia a: Hoja de Vida</field>
+                <field col="385" row="141" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">MEMORANDO</field>
+                <field col="385" row="153" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">N°:</field>
+                <field col="385" row="168" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">Elaboró:</field>
+
+                <field col="90" row="128" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">San Juan de Pasto,</field>
+                <field col="90" row="197" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">De:</field>
+                <field col="115" row="197" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">TALENTO HUMANO</field>
+                <field col="90" row="224" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">Para:</field>
+                <field col="90" row="251" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">Asunto:</field>
+                
+                <field col="360" row="578" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">JOHANA CAROLINA ORTIZ R.</field>
+                <field col="394" row="591" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">Talento Humano</field>
+                <field col="178" row="700" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">Colaborador</field>
+                <!-- lineas huella -->
+                <!-- lineas verticales -->
+                <line col="400" col2="400" row="613" row2="682"/>
+                <line col="461" col2="461" row="613" row2="682"/>
+                <!-- lineas horizontales -->
+                <line col="400" col2="461" row="613" row2="613"/>
+                <line col="400" col2="461" row="682" row2="682"/>
+                <font col="0" name="Arial" row="0" size="10"/>
+        </metadata>
+        <!-- <newpage><field row="80" col="430" type="STRING">PAGINA:</field><pagenumber row="80" col="530" /><font row="0" col="0" name="Arial" size="10" /></newpage>-->
+        <!-- Empiezan los paquetes que vienen del formulario-->0 
+        <!-- imagen firma -->
+        <!-- <package><dbimage row="545" width = "100" height= "75"  col="70" type="STRING" /></package>-->
+
+        <!-- 01 fecha -->
+        <package>
+                <field row="128" col="183" fontName="Arial" fontSize="10" fontStyle="0" type="DATE" mask="dd MMMM yyyy" />
+        </package>
+        <!-- 0 numero -->
+        <package validate="true">
+                <field col="405" fontName="Arial" fontSize="10" fontStyle="1" row="153" type="STRING"/>
+        </package>
+        <!-- 1 nombre usuario -->
+        <package validate="true">
+                <field col="425" fontName="Arial" fontSize="10" fontStyle="0" row="168" type="STRING"/>
+        </package>
+        <!-- 2 nombre completo empleado-->
+        <package validate="true">
+                <field col="122" fontName="Arial" fontSize="10" fontStyle="0" row="224" type="STRING"/>
+        </package>
+        <!-- 3 asunto -->
+        <package validate="true">
+                <field col="134" fontName="Arial" fontSize="10" fontStyle="0" row="251" type="STRING"/>
+        </package>
+        <!-- 3b complemento asunto -->
+        <package validate="true">
+                <field col="264" fontName="Arial" fontSize="10" fontStyle="0" row="251" type="STRING"/>
+        </package>
+        <!-- 4 nombre firma -->
+        <package validate="true">
+                <field center="420" fontName="Arial" fontSize="10" fontStyle="1" row="578" type="STRING"/>
+        </package>
+        <!-- 5 cargo firmante -->
+        <package validate="true">
+                <field center="420" fontName="Arial" fontSize="10" fontStyle="0" row="591" type="STRING"/>
+        </package>
+        <!-- 6 nombre completo empleado espacio firma -->
+        <package validate="true">
+                <field center="420" fontName="Arial" fontSize="10" fontStyle="1" row="672" type="STRING"/>
+        </package>
+        <!-- 7 cedula empleado espacio firma -->
+        <package validate="true">
+                <field center="420" fontName="Arial" fontSize="10" fontStyle="0" row="686" type="STRING"/>
+        </package>
+        <!-- 8 Texto principal -->
+        <package>
+                <field row="306" col="90" fontName="Arial" fontSize="10" fullJustify="430" height="90" rowAcum="10" type="TEXT" width="90"/>
+        </package>
+        <!-- Pie de pagina -->
+        <!-- <package><field row="670" col="75" type="TEXT" fontSize="10" fontName="Arial" width="100" height="90" rowAcum="11" fullJustify="490"/></package>-->
+</emaku_template>

@@ -1,0 +1,119 @@
+<emaku_template type="POSTSCRIPT" copies="1" printer="EPSON_TM-T20" requestNumeration="true" silent="false">
+	<settings height="792" width="612"/>
+	<metadata>
+		<font col="0" name="Sans" row="0" size="16"/>
+		<image col="35" height="75" row="45" width="100">/icons/logo_fac.png</image>
+		<field col="215" row="80" type="STRING">TRASLADO DE MERCANCIA</field>
+		<pagenumber row="17" center="612" fontName="Dialog" fontSize="7" fontStyle="0"/>
+		<font col="0" name="Sans" row="0" size="10"/>
+		<barcodeImage col="380" row="135"/>
+		<roundedRectangle col="20" height="520" row="220" width="565"/>
+		<roundedRectangle col="20" height="15" row="220" width="565"/>
+		<roundedRectangle col="20" height="40" row="700" width="565"/>
+		<field col="390" row="120" type="STRING">Fecha:</field>
+		<ndocument col="462" row="130"/>
+		<field col="45" row="150" type="STRING">Usuario:</field>
+		<field col="45" row="162" type="STRING">Bodega Salida:</field>
+		<field col="45" row="174" type="STRING">Bodega Entrante:</field>
+		<field col="45" row="186" type="STRING">Total Cantidad:</field>
+		<field col="390" row="130" type="STRING">Numero:</field>
+		<field col="30" row="710" type="STRING">Observaciones:</field>
+		<font col="0" name="Sans" row="0" size="8"/>
+		<!-- Detalles -->
+		<line col="97" col2="97" row="220" row2="700"/>
+		<!-- cierra codigo -->
+		<line col="175" col2="175" row="220" row2="700"/>
+		<!-- cierra ref -->
+		<line col="350" col2="350" row="220" row2="700"/>
+		<!-- cierra descripcion -->
+		<line col="415" col2="415" row="220" row2="700"/>
+		<!-- cierra linea -->
+		<line col="480" col2="480" row="220" row2="700"/>
+		<!-- cierra marca -->
+		<line col="537" col2="537" row="220" row2="700"/>
+		<!-- cierra pventa -->
+		<field col="35" row="230" type="STRING">Codigo</field>
+		<field col="100" row="230" type="STRING">Referencia</field>
+		<field col="260" row="230" type="STRING">Descripcion</field>
+		<field col="370" row="230" type="STRING">Línea</field>
+		<field col="435" row="230" type="STRING">Marca</field>
+		<field col="490" row="230" type="STRING">P. Venta</field>
+		<field col="540" row="230" type="STRING">Cantidad</field>
+		<!-- Pie de pagina -->
+		<field col="20" row="753" type="STRING">LA CALI S.A.S - Nit. 800.220.247-8 - Pasto - Nariño</field>
+	</metadata>
+	<newpage>
+		<font col="0" name="Sans" row="0" size="16"/>
+		<image col="35" height="75" row="45" width="100">/icons/logo_fac.png</image>
+		<field col="240" row="80" type="STRING">TRASLADO MERCANCIA</field>
+		<pagenumber row="17" center="612" fontName="Dialog" fontSize="7" fontStyle="0"/>
+		<font col="0" name="Sans" row="0" size="7"/>
+		<roundedRectangle col="20" height="620" row="140" width="565"/>
+		<roundedRectangle row="140" col="20" width="565" height="15" />
+		<line col="97" col2="97" row="140" row2="760"/>
+		<line col="175" col2="175" row="140" row2="760"/>
+		<line col="350" col2="350" row="140" row2="760"/>
+		<line col="415" col2="415" row="140" row2="760"/>
+		<line col="480" col2="480" row="140" row2="760"/>
+		<line col="537" col2="537" row="140" row2="760"/>
+		<field col="35" row="150" type="STRING">Codigo</field>
+		<field col="100" row="150" type="STRING">Referencia</field>
+		<field col="260" row="150" type="STRING">Descripcion</field>
+		<field col="370" row="150" type="STRING">Línea</field>
+		<field col="435" row="150" type="STRING">Marca</field>
+		<field col="490" row="150" type="STRING">P. Venta</field>
+		<field col="540" row="150" type="STRING">Cantidad</field>
+	</newpage>
+	<!-- 00 prefijo -->
+	<package>
+		<field row="130" col="445" type="STRING" fontSize="10" fontName="Sans" />
+	</package>
+	<!-- 0 -->
+	<package>
+		<field col="445" fontName="Sans" fontSize="10" mask="yyyy-MM-dd" row="120" type="DATE"/>
+	</package>
+	<!-- 1 doc asociado -->
+	<!-- <package>
+		<field col="470" fontName="Dialog" fontSize="10" fontStyle="0" row="174" type="STRING"/>
+	</package> -->
+	<!-- 2 observaciones -->
+	<package>
+		<field col="25" fontName="Sans" fontSize="8" height="3" row="720" rowAcum="10" type="TEXT" width="120"/>
+	</package>
+	<!-- 3 cantidades-->
+	<package>
+		<field col="150" fontName="Sans" fontSize="10" row="186" type="STRING"/>
+	</package>
+	<!-- 4 bodega salida -->
+	<package>
+		<field col="150" fontName="Sans" fontSize="10" row="162" type="STRING"/>
+	</package>
+	<!-- 5 bodega entrada -->
+	<package>
+		<field col="150" fontName="Sans" fontSize="10" row="174" type="STRING"/>
+	</package>
+	<!-- 6 usuario -->
+	<package>
+		<field col="150" fontName="Sans" fontSize="10" row="150" type="STRING"/>
+	</package>
+	<!-- 7 tabla prods -->
+	<package generateMultiPage="true">
+		<!-- <subpackage maxRowsAcum="37" maxRowsAcumNewPage="50" rowAcum="12" rowInit="250" rowInitNewPage="170"> -->
+		<subpackage rowInit="250" rowAcum="12" maxRowsAcum="37" rowInitNewPage="170" maxRowsAcumNewPage="50" maxRowsFootPage="38" maxRowsFootNewPage="43">
+			<!-- codigo -->
+			<field col="25" fontName="Dialog" fontSize="7" fontStyle="0" type="STRING"/>
+			<!-- referencia -->
+			<field col="100" fontName="Dialog" fontSize="7" fontStyle="0" type="STRING"/>
+			<!-- cantidad -->
+			<field col="570" fontName="Dialog" fontSize="7" fontStyle="0" mask="##,###" type="NUMERIC"/>
+			<!-- pventa -->
+			<field col="534" fontName="Dialog" fontSize="7" fontStyle="0" mask="##,###,###" type="NUMERIC"/>
+			<!-- descripcion -->
+			<field col="177" fontName="Dialog" fontSize="7" fontStyle="0" type="STRING"/>
+			<!-- linea -->
+			<field col="351" fontName="Dialog" fontSize="7" fontStyle="0" type="STRING"/>
+			<!-- marca -->
+			<field col="416" fontName="Dialog" fontSize="7" fontStyle="0" type="STRING"/>
+		</subpackage>
+	</package>
+</emaku_template>

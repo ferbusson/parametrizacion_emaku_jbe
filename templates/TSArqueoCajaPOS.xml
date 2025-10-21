@@ -1,0 +1,192 @@
+<emaku_template type="POSTSCRIPT" requestNumeration="false" copies="1" silent="false" printer="EPSON_TM-T20">
+	<settings width="220" height="10000" />
+	<metadata>
+		<image row="5" col="35" width="100" height="75">/icons/logo_fac.png</image>
+		<font row="0" col="0" name="Sans" size="9" />
+		
+                <field row="117" center="218" type="STRING" importValue="true">terceroal</field>
+	      <font row="0" col="0" name="Sans" size="7" />
+	      <field row="127" center="218" type="STRING" importValue="true">nitalterno</field>
+	      <field row="137" center="218" type="STRING">Responsable del Impuesto sobre las ventas - IVA</field>
+	      <field row="147" center="218" type="STRING" importValue="true">direccion</field>
+	      <field row="157" center="218" type="STRING" importValue="true">telefono</field>
+	      <field row="167" center="218" type="STRING" importValue="true">piepaginados</field>
+	      <field row="177" center="218" type="STRING" importValue="true">ciudad</field>
+	      <!--<field row="192" center="218" type="STRING" importValue="true">horarioatencion</field>
+	      <field row="202" center="218" type="STRING" importValue="true">piepaginauno</field>-->
+
+		<font row="0" col="0" name="Sans" size="14" />
+                <field row="201" col="25" type="STRING">ARQUEO CAJA (Copia)</field>
+
+		<font row="0" col="0" name="Sans" size="9" />		
+		<field row="215" col="15" type="STRING">Numero: </field>
+		<field row="225" col="15" type="STRING">Fecha:</field>
+		<field row="235" col="15" type="STRING">Hora:</field>
+		<field row="245" col="15" type="STRING">Cajero:</field>
+		<!--<field row="265" col="15" type="STRING">Sucursal:</field>-->
+		<!-- Informacion detallada de productos -->
+		<line row="250" col="10" row2="250" col2="200" />
+		<line row="265" col="10" row2="265" col2="200" />
+		<field row="260" col="15" type="STRING">Denominación      Cantidad           Total</field>
+		<font row="0" col="0" name="Sans" size="9" />
+	</metadata>
+	<package>
+		<generateBarCodeImage row="80" col="30" width="10" type="NUMERIC" mask="0000000000" />
+	</package>
+	<!-- Numero -->
+	<package>
+		<field row="215" col="92" width="10" type="NUMERIC" mask="0" />
+	</package>
+	<!-- Estado -->
+	<package>
+		<field row="187" center="218" width="10" type="STRING" />
+	</package>
+	<!-- Fecha -->
+	<package>
+		<field row="225" col="50" type="DATE" mask="EEEEEE dd MMMM yyyy" />
+	</package>
+	<!-- Hora -->
+	<package>
+		<field row="235" col="50" type="STRING" />
+	</package>
+	<!-- Usuario -->
+	<package>
+		<field row="245" col="50" type="STRING" />
+	</package>
+       
+        <!-- 7 Prefijo -->
+        <package>
+          <field row="215" col="57" type="STRING" textLine="-" textCol="72" fontName="Dialog" fontSize="9" fontStyle="0"/>
+        </package>
+
+	<package>
+		<field textLine="100.000" rowAcum="0" textCol="10" fontName="Dialog" fontSize="10" fontStyle="0" row="280" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+
+	<package>
+		<field row="last" col="100" type="STRING" rowAcum="15"/>
+	</package>
+
+	<package>
+		<field textLine="50.000" rowAcum="0" textCol="10" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+
+	<package>
+		<field row="last" col="100" type="STRING" rowAcum="15"/>
+	</package>
+
+	<package>
+		<field textLine="20.000" rowAcum="0" textCol="10" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+
+	<package>
+		<field row="last" col="100" type="STRING" rowAcum="15"/>
+	</package>
+
+	<package>
+		<field textLine="10.000" rowAcum="0" textCol="10" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+
+	<package>
+		<field row="last" col="100" type="STRING" rowAcum="15"/>
+	</package>
+
+	<package>
+		<field textLine="5.000" rowAcum="0" textCol="10" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+
+	<package>
+		<field row="last" col="100" type="STRING" rowAcum="15"/>
+	</package>
+
+	<package>
+		<field textLine="2.000" rowAcum="0" textCol="10" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+
+	<package>
+		<field row="last" col="100" type="STRING" rowAcum="15"/>
+	</package>
+
+	<package>
+		<field textLine="1.000" rowAcum="0" textCol="10" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>
+	
+	<package>
+		<field row="last" col="100" type="STRING" rowAcum="15"/>
+	</package>
+
+	<package>
+		<field textLine="Monedas:" rowAcum="15" textCol="10" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="TOTAL PESOS" rowAcum="15" textCol="10" fontName="Dialog" fontSize="10" fontStyle="1" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+
+	<package>
+		<line row="last" rowAcum="15" col="10" row2="last" col2="200" />
+	</package>	
+
+	<package>
+		<field textLine="Valor Dolar $" rowAcum="15" textCol="10" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="Cantidad de Dolares $" rowAcum="15" textCol="10" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="T. DOLARES EN PESOS $" rowAcum="15" textCol="10" fontName="Dialog" fontSize="10" fontStyle="1" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+
+	<package>
+		<line row="last" rowAcum="15" col="10" row2="last" col2="200" />
+	</package>	
+
+	<package>
+		<field textLine="Efectivo" rowAcum="15" textCol="10" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="Tarjetas" rowAcum="15" textCol="10" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="Tarjetas Regalo" rowAcum="15" textCol="10" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="Cheques Sodexo Pass" rowAcum="15" textCol="10" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="Cheques Big Pass" rowAcum="15" textCol="10" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="Facturas Crédito" rowAcum="15" textCol="10" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<line row="last" rowAcum="15" col="10" row2="last" col2="200" />
+	</package>	
+	<package>
+		<field textLine="TOTAL ARQUEO" rowAcum="10" textCol="10" fontName="Dialog" fontSize="10" fontStyle="1" row="last" col="200" width="13" type="NUMERIC" mask="#,###,###" />
+	</package>	
+	<package>
+		<line row="last" rowAcum="15" col="10" row2="last" col2="200" />
+	</package>	
+
+	<package>
+		<field textLine="Observaciones:" rowAcum="10" textCol="10" row="last" col="10" width="13" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0" />
+	</package>	
+
+	<!-- Observaciones -->
+	<package>
+		<field row="last" col="10" type="TEXT" width="50" height="3" rowAcum="10" fontName="Dialog" fontSize="7" fontStyle="0" />
+	</package>	
+	<package>
+		<line row="last" rowAcum="15" col="10" row2="last" col2="200" />
+	</package>	
+	<package>
+		<field textLine="Recibe," rowAcum="12" textCol="10" row="last" col="200" width="13" type="STRING" />
+	</package>	
+
+	<package>
+		<text rowAcum="30" row="last" col="80" type="STRING"></text>
+		<text rowAcum="10" row="last" col="20" type="STRING">__________________________________</text>
+		<text rowAcum="30" row="last" col="85" type="STRING">Firma</text>
+		<text rowAcum="30" row="last" col="80" type="STRING"></text>
+	</package>
+</emaku_template>
