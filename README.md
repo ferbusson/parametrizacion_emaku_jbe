@@ -14,7 +14,8 @@ parametrizacion_emaku_jbe/
 │   └── seeds/           # Datos iniciales
 ├── resources/           # Recursos
 │   ├── jar_files/       # Bibliotecas Java
-│   ├── server_side/     # Scripts del lado del servidor
+|   |   |── server_side/ # jars del lado del servidor /usr/local/emaku
+    |   |── client_side/ # jars del lado del cliente /var/www/html/emaku
 │   └── icons/           # Íconos de la aplicación
 ├── docs/                # Documentación adicional
 └── .github/workflows/   # Flujos de trabajo de GitHub Actions
