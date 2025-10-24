@@ -1,0 +1,179 @@
+<!--seccion impresion de pedidos en tirilla, version inicial con lo basico pero funcional-->
+                  <!-- impresion cliente tirilla -->
+
+                  <action>
+                    <type>printer</type>
+                    <printerTemplate>/graphics/TNPedidoMostradorTirilla.xml</printerTemplate>
+                    
+                    <!-- 4 Prefijo  -->
+                    <component>
+                      <driver>this</driver>
+                      <method>getPackage</method>
+                      <parameters>
+                        <subarg>
+                          <arg attribute="importValue">prefix</arg>
+                        </subarg>
+                      </parameters>
+                    </component>
+
+                    <!-- 5 -->
+                    <!-- <component>
+                      <driver id="cajero">common.gui.components.GenericData</driver>
+                      <method>getPrintPackage</method>
+                    </component> -->
+                    <component>
+                      <driver>this</driver>
+                      <method>getPackage</method>
+                      <parameters>
+                        <subarg>
+                          <arg attribute="importValue">userLogin</arg>
+                        </subarg>
+                      </parameters>
+                    </component>
+                    <!-- 6 Tabla Principal de productos -->
+                    <component>
+                      <driver id="principal">client.gui.components.TableFindData</driver>
+                      <method>getPrintPackage</method>
+                    </component>
+
+                    <!-- 7 Paquete Blanco linea -->
+                    <component>
+                      <driver id="piepaginatres">common.gui.components.GenericData</driver>
+                      <method>getBlankPackage</method>
+                    </component>
+
+                    <!-- 8 Descuento -->
+                    <component>
+                      <driver>this</driver>
+                      <method>getPackage</method>
+                      <parameters>
+                        <subarg>
+                          <arg attribute="importValue">vdescuentoglobal</arg>
+                        </subarg>
+                      </parameters>
+                    </component>
+
+                    <!-- 9 Subtotal -->
+                    <component>
+                      <driver>this</driver>
+                      <method>getPackage</method>
+                      <parameters>
+                        <subarg>
+                          <arg attribute="importValue">baseivaglobal</arg>
+                        </subarg>
+                      </parameters>
+                    </component>
+
+
+                    <!-- 10 TIVA -->
+                    <component>
+                      <driver>this</driver>
+                      <method>getPackage</method>
+                      <parameters>
+                        <subarg>
+                          <arg attribute="importValue">tiva</arg>
+                        </subarg>
+                      </parameters>
+                    </component>
+
+                    <!-- 11 INC -->
+                    <component>
+                      <driver>this</driver>
+                      <method>getPackage</method>
+                      <parameters>
+                        <subarg>
+                          <arg attribute="importValue">verde</arg>
+                        </subarg>
+                      </parameters>
+                    </component>
+
+
+                    <!-- 12 Total -->
+                    <component>
+                      <driver>this</driver>
+                      <method>getPackage</method>
+                      <parameters>
+                        <subarg>
+                          <arg attribute="importValue">totalmenosreteglobal</arg>
+                        </subarg>
+                      </parameters>
+                    </component>
+
+                    <!-- 13 Paquete Blanco linea -->
+                    <component>
+                      <driver id="piepaginatres">common.gui.components.GenericData</driver>
+                      <method>getBlankPackage</method>
+                    </component>
+
+                    <!-- 14 totalcantidades -->
+                    <component>
+                      <driver>this</driver>
+                      <method>getPackage</method>
+                      <parameters>
+                        <subarg>
+                          <arg attribute="importValue">totalcantidades</arg>
+                        </subarg>
+                      </parameters>
+                    </component>
+
+                    <!-- 15 contador lineas -->
+                    <component>
+                      <driver>this</driver>
+                      <method>getPackage</method>
+                      <parameters>
+                        <subarg>
+                          <arg attribute="importValue">totallineas</arg>
+                        </subarg>
+                      </parameters>
+                    </component>
+
+                    <!-- 16 Paquete Blanco linea -->
+                    <component>
+                      <driver id="piepaginatres">common.gui.components.GenericData</driver>
+                      <method>getBlankPackage</method>
+                    </component>
+
+                    <!-- 17 Paquete Blanco letrero datos cliente -->
+                    <component>
+                      <driver id="piepaginatres">common.gui.components.GenericData</driver>
+                      <method>getBlankPackage</method>
+                    </component>
+
+                    <!-- 18 Tercero -->
+                    <component>
+                      <driver>client.gui.components.FindThird</driver>
+                      <method>getPrintPackage</method>
+                    </component>
+
+                    <!-- 19 Paquete Blanco linea -->
+                    <component>
+                      <driver id="piepaginatres">common.gui.components.GenericData</driver>
+                      <method>getBlankPackage</method>
+                    </component>
+
+                    <!-- 20 Paquete Blanco letrero observaciones -->
+                    <component>
+                      <driver id="piepaginatres">common.gui.components.GenericData</driver>
+                      <method>getBlankPackage</method>
+                    </component>
+
+                    <!-- 21 observaciones -->
+                    <component>
+                      <driver>common.gui.components.XMLTextArea</driver>
+                      <method>getPrintPackage</method>
+                    </component>
+
+                    <!-- 22 Paquete Blanco linea -->
+                    <component>
+                      <driver id="piepaginatres">common.gui.components.GenericData</driver>
+                      <method>getBlankPackage</method>
+                    </component>
+
+                    <!-- 23 Paquete Blanco Pie de pagina -->
+                    <component>
+                      <driver id="piepaginatres">common.gui.components.GenericData</driver>
+                      <method>getBlankPackage</method>
+                    </component>
+
+                  </action>
+                  <!--Termina Impresion Tirilla -->

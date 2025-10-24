@@ -16,22 +16,22 @@
 
 		<!-- <field row="140" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Forma de Pago:</field> -->
 		<field row="140" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Vigencia:</field>
-		<field row="140" col="108" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">días</field>
-		<field row="140" col="130" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Vencimiento:</field>
-
+		<field row="140" col="116" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">días</field>
+		<field row="140" col="138" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Vencimiento:</field>
+		<field row="150" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Elaboró:</field>
 
 		<field row="170" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="1">DATOS CLIENTE</field>
 
 		<!-- <qr row="10" col="470" width="115" height="115"/> -->
 		<!-- <cufe multipage="true" rownewpage="155" colnewpage="40" row="155" col="40" /> -->
 
-		<field row="130" center="950" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">ORDEN DE PEDIDO</field>
-		<field row="140" center="875" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Número:</field>
+		<field row="130" center="920" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">ORDEN DE PEDIDO</field>
+		<field row="150" center="875" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">Número:</field>
 		<!-- <field row="210" center="870" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">Fecha Procesamiento:</field> -->
-		<ndocument multipage="true" rownewpage="140" colnewpage="475" fontName="Dialog" fontSize="10" fontStyle="1" row="140" center="1010" format="Integer"/>
-		<field row="130" col="230" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">-</field>
+		<ndocument multipage="true" rownewpage="150" colnewpage="475" fontName="Dialog" fontSize="10" fontStyle="1" row="150" center="1010" format="Integer"/>
+		<field row="130" col="200" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">-</field>
 		<!-- <field row="130" col="235" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" importValue="true">detime</field> -->
-		<time row="130" col="235" fontName="Dialog" fontSize="8" fontStyle="0"/>
+		<time row="130" col="200" fontName="Dialog" fontSize="8" fontStyle="0"/>
 		<!-- Encabezados tabla -->
 		<line row="240" col="40" row2="240" col2="572" />
 		<line row="263" col="40" row2="263" col2="572" />
@@ -108,9 +108,9 @@
 		<field row="600" col="480" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">BASE GRAVADA</field>
 		<field row="625" col="90" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">IVA</field>
 		<field row="625" col="200" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">INC</field>
-		<field row="625" col="280" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">RETE-FUENTE</field>
+		<!-- <field row="625" col="280" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">RETE-FUENTE</field>
 		<field row="625" col="390" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">RETE-IVA</field>
-		<field row="625" col="500" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">RETE-ICA</field>
+		<field row="625" col="500" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">RETE-ICA</field> -->
 		<field row="650" col="40" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">Total Artículos:</field>
 		<field row="650" col="160" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">Total Líneas de Pedido:</field>
 		<field row="650" col="390" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">NETO A PAGAR</field>
@@ -124,6 +124,11 @@
 	<!-- <package>
 		<field multipage="true" rownewpage="140" colnewpage="920" row="140" center="940" fontName="Dialog" fontSize="8" fontStyle="0" type="STRING"/>
 	</package> -->
+
+	<!-- 0 elaboro -->
+	<package>
+		<field multipage="true" rownewpage="150" colnewpage="100" row="150" col="100" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
+	</package>
 
 	<!-- 1 tercero -->
 	<package>
@@ -141,12 +146,12 @@
 
 	<!-- 3 dias de credito -->
 	<package>
-		<field multipage="true" rownewpage="140" colnewpage="92" row="140" col="92" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
+		<field multipage="true" rownewpage="140" colnewpage="100" row="140" col="100" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
 	</package>
 
 	<!-- 4 vencimiento -->
 	<package>
-		<field multipage="true" rownewpage="140" colnewpage="188" row="140" col="188" type="DATE" mask="yyyy-MM-dd" fontName="Dialog" fontSize="8" fontStyle="0"/>
+		<field multipage="true" rownewpage="140" colnewpage="193" row="140" col="193" type="DATE" mask="yyyy-MM-dd" fontName="Dialog" fontSize="8" fontStyle="0"/>
 	</package>
 	<!-- 5 -->
 	<package generateMultiPage="true">
@@ -207,19 +212,19 @@
 	</package>
 
 	<!-- 13 rete fuente -->
-	<package>
+	<!-- <package>
 		<field fontName="Dialog" fontSize="8" fontStyle="0" row="637" col="340" width="13" type="NUMERIC" mask="#,###,##0.00" />
-	</package>
+	</package> -->
 
 	<!-- 14 rete iva -->
-	<package>
+	<!-- <package>
 		<field fontName="Dialog" fontSize="8" fontStyle="0" row="637" col="430" width="13" type="NUMERIC" mask="#,###,##0.00" />
-	</package>
+	</package> -->
 
 	<!-- 15 rete ica -->
-	<package>
+	<!-- <package>
 		<field fontName="Dialog" fontSize="8" fontStyle="0" row="637" col="540" width="13" type="NUMERIC" mask="#,###,##0.00" />
-	</package>
+	</package> -->
 
 	<!-- 16 total cantidades -->
 	<package>
