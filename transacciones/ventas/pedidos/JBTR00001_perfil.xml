@@ -1,57 +1,4 @@
 <!-- EN DESARROLLO - PEDIDOS JBE -->
-
-<!--List of components:
-<driver id="nro_fact">client.gui.components.TableDataFields</driver>
-<driver id="baseivagravados">client.gui.components.TableDataFields</driver>
-<driver id="subtotalglobalsinverde">client.gui.components.TableDataFields</driver>
-<driver id="totalmenosreteglobal">client.gui.components.TableDataFields</driver>
-<driver id="id_res_fact">client.gui.components.TableDataFields</driver>
-<driver id="res_fact">client.gui.components.TableDataFields</driver>
-<driver id="res_fact_fecha">client.gui.components.TableDataFields</driver>
-<driver id="res_fact_desde">client.gui.components.TableDataFields</driver>
-<driver id="res_fact_vigencia">client.gui.components.TableDataFields</driver>
-<driver id="res_fact_prefijo">client.gui.components.TableDataFields</driver>
-<driver id="nrogenerador">client.gui.components.TableDataFields</driver>
-<driver id="total">client.gui.components.TableDataFields</driver>
-<driver id="totalcantidad">client.gui.components.TableDataFields</driver>
-<driver id="totalcanttemp">client.gui.components.TableDataFields</driver>
-<driver id="totalValuesDescuento">client.gui.components.TableDataFields</driver>
-<driver id="totalValues">client.gui.components.TableDataFields</driver>
-<driver id="iddirecciontercero">common.gui.components.GenericData</driver>
-<driver id="idtelefonotercero">common.gui.components.GenericData</driver>
-<driver id="terceroempleado">common.gui.components.GenericData</driver>
-<driver id="idbodegae">common.gui.components.GenericData</driver>
-<driver id="bodega">common.gui.components.GenericData</driver>
-<driver id="piepaginauno">common.gui.components.GenericData</driver>
-<driver id="piepaginados">common.gui.components.GenericData</driver>
-<driver id="piepaginatres">common.gui.components.GenericData</driver>
-<driver id="horarioatencion">common.gui.components.GenericData</driver>
-<driver id="nitalterno">common.gui.components.GenericData</driver>
-<driver id="terceroal">common.gui.components.GenericData</driver>
-<driver id="centrocosto">common.gui.components.GenericData</driver>
-<driver id="referrercustomername">common.gui.components.GenericData</driver>
-<driver id="date">common.gui.components.GenericData</driver>
-<driver id="credit">common.gui.components.GenericData</driver>
-<driver id="vencimiento">common.gui.components.GenericData</driver>
-<driver id="numeroordenexterno">common.gui.components.GenericData</driver>
-<driver id="email">common.gui.components.GenericData</driver>
-<driver id="direccioncontacto">common.gui.components.GenericData</driver>
-<driver id="telefonocontacto">common.gui.components.GenericData</driver>
-<driver id="tipo_doc">client.gui.components.XMLComboBox</driver>
-<driver id="Vendedor">client.gui.components.XMLComboBox</driver>
-<driver id="combotemporales">client.gui.components.XMLComboBox</driver>
-<driver id="principal">client.gui.components.TableFindData</driver>
-<driver id="temporales">client.gui.components.TableFindData</driver>
-<driver>client.gui.components.FindThird</driver>
-<driver id="referrercustomerid">client.gui.components.EmakuSearchField</driver>
-<driver>common.gui.components.XMLTextArea</driver>
-
-<driver id="sendbuttontemporales">client.gui.components.EmakuSendRecordButton</driver>
-<driver id="temporal">common.gui.components.ButtonsPanel</driver>
-<driver id="pagocarta">common.gui.components.ButtonsPanel</driver>
-<driver id="pagotirilla">common.gui.components.ButtonsPanel</driver>
--->
-
 <FORM>
   <preferences>
     <size height="600" width="890"/>
@@ -537,7 +484,7 @@
           <driver>client.gui.components.FindThird</driver>
           <parameters>
             <arg attribute="keySQL">SEL0157</arg>
-            <arg attribute="driverEvent">client.gui.components.TableDataFields</arg>
+            <arg attribute="driverEvent" id="nrogenerador">client.gui.components.TableDataFields</arg>
             <arg attribute="sqlSizeRecords">SEL0132</arg>            <!-- cuenta los records -->
             <arg attribute="sqlRecords">LCSEL0936</arg>            <!-- consulta informacion del tercero seleccionado -->
             <arg attribute="sqlAddress">LCSEL0933</arg>            <!-- retorna direcciones de tercero desde tercero def en consultar si no los numeros que tenga -->
@@ -550,6 +497,8 @@
             <arg attribute="sqlCodeWT">LCSEL0479</arg>            <!-- retorna ultimo id_telefono del tercero -->
             <arg attribute="sqlCodeWT">LCSEL0986</arg>            <!-- retorna 1 si el tercero es empleado 0 en caso contrario -->
             <arg attribute="importTypeDocument">codigo_tipo</arg>
+            <arg attribute="sqlInit">LCSEL0103</arg>
+            <arg attribute="queryOnInit">true</arg>
             <arg attribute="exportValue">idtercero</arg>
             <arg attribute="importValue">id_centrocosto</arg>
             <arg attribute="maxRecords">100</arg>
@@ -741,7 +690,43 @@
             </panel>
           </panel>
           <panel locate="Center" type="BorderLayout">
-            <component locate="East">
+          <component locate="East">
+                    <driver id="total">client.gui.components.TableDataFields</driver>
+                    <parameters>
+                      <arg attribute="Panel">false</arg>
+                      <subarg>
+                        <arg attribute="format">NUMERIC</arg>
+                        <arg attribute="label">Total:</arg>
+                        <arg attribute="size">11</arg>
+                        <arg attribute="maxlength">26</arg>
+                        <arg attribute="enabled">false</arg>
+                        <arg attribute="font">Dialog,1,30</arg>
+                        <arg attribute="foreground">0,0,0</arg>
+                        <arg attribute="background">152,251,152</arg>
+                        <arg attribute="alignment">RIGHT</arg>
+                        <arg attribute="calculateExportValue">totalfact-(trfuente+triva+trica)</arg>
+                      </subarg>
+                    </parameters>
+                  </component>
+            <!-- <component locate="East">
+              <driver id="Vendedor">client.gui.components.XMLComboBox</driver>
+              <parameters>
+                <arg attribute="importValue">id_bodega</arg>
+                <arg attribute="label">Vendedor:</arg>
+                <arg attribute="sqlCombo">MTSEL0735</arg>
+                <arg attribute="selectedIndex">1</arg>
+                <arg attribute="preferredLength">210</arg>
+                <arg attribute="addAttribute">finalKey</arg>
+                <arg attribute="exportValue">vendedor</arg>
+              </parameters>
+            </component>            -->
+          </panel>
+          <panel locate="South" type="BorderLayout">
+            <panel locate="Center" type="BorderLayout">
+              <box locate="West" width="60"/>
+              <panel locate="North" type="FlowLayout"/>
+              <panel locate="East" type="FlowLayout"/>
+              <component locate="Center">
               <driver id="Vendedor">client.gui.components.XMLComboBox</driver>
               <parameters>
                 <arg attribute="importValue">id_bodega</arg>
@@ -753,14 +738,26 @@
                 <arg attribute="exportValue">vendedor</arg>
               </parameters>
             </component>           
-          </panel>
-          <panel locate="South" type="BorderLayout">
-            <panel locate="Center" type="BorderLayout">
-              <box locate="West" width="60"/>
-              <panel locate="North" type="FlowLayout"/>
-              <panel locate="East" type="FlowLayout"/>
-              <panel locate="Center" type="BorderLayout">
-                <panel cols="1" locate="West" rows="3" type="GridLayout">
+              <!-- <component locate="Center">
+                    <driver id="total">client.gui.components.TableDataFields</driver>
+                    <parameters>
+                      <arg attribute="Panel">false</arg>
+                      <subarg>
+                        <arg attribute="format">NUMERIC</arg>
+                        <arg attribute="label">Total:</arg>
+                        <arg attribute="size">11</arg>
+                        <arg attribute="maxlength">26</arg>
+                        <arg attribute="enabled">false</arg>
+                        <arg attribute="font">Dialog,1,30</arg>
+                        <arg attribute="foreground">0,0,0</arg>
+                        <arg attribute="background">152,251,152</arg>
+                        <arg attribute="alignment">RIGHT</arg>
+                        <arg attribute="calculateExportValue">totalfact-(trfuente+triva+trica)</arg>
+                      </subarg>
+                    </parameters>
+                  </component> -->
+              <!-- <panel locate="Center" type="BorderLayout">
+                <panel cols="1" locate="West" rows="1" type="GridLayout">
                   <component locate="West">
                     <driver>common.gui.components.XMLLabel</driver>
                     <parameters>
@@ -768,7 +765,7 @@
                       <arg attribute="alignment">0</arg>
                       <arg attribute="font">Dialog,0,14</arg>
                     </parameters>
-                  </component>
+                  </component> 
                   <component locate="West">
                     <driver>common.gui.components.XMLLabel</driver>
                     <parameters>
@@ -786,25 +783,8 @@
                     </parameters>
                   </component>
                 </panel>
-                <panel cols="1" locate="Center" rows="3" type="GridLayout">
-                <component>
-                    <driver id="numeroordenexterno">common.gui.components.GenericData</driver>
-                    <parameters>
-                      <arg attribute="Panel">false</arg>
-                      <subarg>
-                        <arg attribute="format">TEXT</arg>
-                        <arg attribute="exportValue">numeroordenexterno</arg>
-                        <arg attribute="name">numeroordenexterno</arg>
-                        <arg attribute="maxlength">20</arg>                        
-                        <arg attribute="enabled">true</arg>
-                        <arg attribute="clean">true</arg>
-                        <arg attribute="font">Dialog,1,15</arg>
-                        <arg attribute="alignment">RIGHT</arg>
-                        <arg attribute="foreground">249,87,87</arg>
-                        <arg attribute="background">196,196,252</arg>
-                      </subarg>
-                    </parameters>
-                  </component>
+                <panel cols="1" locate="Center" rows="1" type="GridLayout">
+                
                   <component locate="Center">
                     <driver id="total">client.gui.components.TableDataFields</driver>
                     <parameters>
@@ -814,39 +794,44 @@
                         <arg attribute="size">11</arg>
                         <arg attribute="maxlength">26</arg>
                         <arg attribute="enabled">false</arg>
-                        <arg attribute="font">Dialog,1,15</arg>
+                        <arg attribute="font">Dialog,1,30</arg>
                         <arg attribute="foreground">0,0,0</arg>
-                        <arg attribute="background">196,196,252</arg>
+                        <arg attribute="background">152,251,152</arg>
                         <arg attribute="alignment">RIGHT</arg>
                         <arg attribute="calculateExportValue">totalfact-(trfuente+triva+trica)</arg>
                       </subarg>
                     </parameters>
                   </component>
-                  <component locate="Center">
-                    <driver id="totalcantidad">client.gui.components.TableDataFields</driver>
+                  
+                </panel>
+              </panel> -->
+              <panel locate="South" type="BorderLayout">
+              <component locate="North">
+                    <driver id="numeroordenexterno">common.gui.components.GenericData</driver>
                     <parameters>
                       <arg attribute="Panel">false</arg>
                       <subarg>
-                        <arg attribute="format">NUMERIC</arg>
-                        <arg attribute="size">11</arg>
-                        <arg attribute="maxlength">26</arg>
-                        <arg attribute="enabled">false</arg>
-                        <arg attribute="font">Dialog,0,14</arg>
-                        <arg attribute="foreground">0,0,0</arg>
-                        <arg attribute="background">196,196,252</arg>
+                        <arg attribute="label">No. Orden: </arg>
+                        <arg attribute="format">TEXT</arg>
+                        <arg attribute="exportValue">numeroordenexterno</arg>
+                        <arg attribute="name">numeroordenexterno</arg>
+                        <arg attribute="maxlength">20</arg>
+                        <arg attribute="size">15</arg>
+                        <arg attribute="enabled">true</arg>
+                        <arg attribute="clean">true</arg>
+                        <arg attribute="font">Dialog,0,12</arg>
                         <arg attribute="alignment">RIGHT</arg>
-                        <arg attribute="calculateExportValue">totalcantidades</arg>
+                        <arg attribute="foreground">249,87,87</arg>
+                        <arg attribute="background">196,196,252</arg>
                       </subarg>
                     </parameters>
                   </component>
-                </panel>
-              </panel>
-              <component locate="South">
+              <component locate="Center">
                 <driver id="email">common.gui.components.GenericData</driver>
                 <parameters>
                   <arg attribute="keySQL">LCSEL0382</arg>
                   <arg attribute="driverEvent">client.gui.components.FindThird</arg>
-                  <arg attribute="panel">false</arg>
+                  <arg attribute="Panel">false</arg>
                   <subarg>
                     <arg attribute="label">Email:</arg>
                     <arg attribute="format">TEXT</arg>
@@ -862,6 +847,7 @@
                   </subarg>
                 </parameters>
               </component>
+              </panel>
             </panel>
           </panel>
         </panel>
@@ -884,8 +870,9 @@
           <arg attribute="driverEventRecord" id="sendbuttontemporales">client.gui.components.EmakuSendRecordButton</arg>
 
           <arg attribute="keySQL">SEL0119</arg>
-          <arg attribute="driverEvent">client.gui.components.TableDataFields</arg>
-
+          <arg attribute="driverEvent" id="nrogenerador">client.gui.components.TableDataFields</arg>
+          <arg attribute="rowHeight">24</arg>
+          <arg attribute="font">Dialog,1,13</arg>
           <arg attribute="Query">LCSEL0857</arg>
           <arg attribute="importValue">idtercero</arg>
           <arg attribute="importValue">id_centrocosto</arg>
@@ -898,69 +885,72 @@
 
           <arg attribute="externalValue">totalValuesDescuento,client.gui.components.TableDataFields,az</arg>
 
-          <arg attribute="totales">c,h,i,j,k,l,q,s,t,u,v,w,x,y,z,aa,ab,an</arg>
+          <arg attribute="totales">d,i,j,k,l,m,r,t,u,v,w,x,y,z,aa,ab,ac,ao</arg>
 
-          <arg attribute="exportTotalCol">c,totalcantidades</arg>
-          <arg attribute="exportTotalCol">h,stotal</arg>
-          <arg attribute="exportTotalCol">j,neto</arg>
-          <arg attribute="exportTotalCol">k,tiva</arg>
-          <arg attribute="exportTotalCol">aa,netosinbolsa</arg>
-          <arg attribute="exportTotalCol">an,subtotalsinbolsa</arg>
+          <arg attribute="exportTotalCol">d,totalcantidades</arg>
+          <arg attribute="exportTotalCol">i,stotal</arg>
+          <arg attribute="exportTotalCol">k,neto</arg>
+          <arg attribute="exportTotalCol">l,tiva</arg>
+          <arg attribute="exportTotalCol">ab,netosinbolsa</arg>
+          <arg attribute="exportTotalCol">ao,subtotalsinbolsa</arg>
 
-          <arg attribute="exportTotalCol">s,stotalcinco</arg>
-          <arg attribute="exportTotalCol">t,tivacinco</arg>
-          <arg attribute="exportTotalCol">u,stotaldiezynueve</arg>
-          <arg attribute="exportTotalCol">v,tivadiezynueve</arg>
-          <arg attribute="exportTotalCol">w,stotalexento</arg>
-          <arg attribute="exportTotalCol">x,tivaexento</arg>
-          <arg attribute="exportTotalCol">y,stotalexcluido</arg>
-          <arg attribute="exportTotalCol">z,tivaexcluido</arg>
-          <arg attribute="exportTotalCol">q,verde</arg>
-          <arg attribute="exportTotalCol">ab,totallineas</arg>
+          <arg attribute="exportTotalCol">t,stotalcinco</arg>
+          <arg attribute="exportTotalCol">u,tivacinco</arg>
+          <arg attribute="exportTotalCol">v,stotaldiezynueve</arg>
+          <arg attribute="exportTotalCol">w,tivadiezynueve</arg>
+          <arg attribute="exportTotalCol">x,stotalexento</arg>
+          <arg attribute="exportTotalCol">y,tivaexento</arg>
+          <arg attribute="exportTotalCol">z,stotalexcluido</arg>
+          <arg attribute="exportTotalCol">aa,tivaexcluido</arg>
+          <arg attribute="exportTotalCol">r,verde</arg>
+          <arg attribute="exportTotalCol">ac,totallineas</arg>
           <!-- lista de precios -->
-          <arg attribute="beanshell">d=as!=0?(d&gt;3||d&lt;1?1:d):(d&gt;2||d&lt;1?1:d)</arg>
+          <arg attribute="beanshell">e=at!=0?(e&gt;3||e&lt;1?1:e):(e&gt;2||e&lt;1?1:e)</arg>
           <!-- vunitario -->
-          <arg attribute="beanshell">e="2".equals(d)&amp;&amp;ap&gt;0?ap:"3".equals(d)&amp;&amp;aq&gt;0?aq:ao</arg>
+          <arg attribute="beanshell">f="2".equals(e)&amp;&amp;aq&gt;0?aq:"3".equals(e)&amp;&amp;ar&gt;0?ar:ap</arg>
+
           <!-- dctoxy -->
-          <arg attribute="beanshell">aj=ae&gt;0?ae:ad&gt;0?ad:ah&gt;0?ah:ai&gt;0?ai:ag&gt;0?ag:af&gt;0?af:ac</arg>
+          <arg attribute="beanshell">ak=af&gt;0?af:ae&gt;0?ae:ai&gt;0?ai:aj&gt;0?aj:ah&gt;0?ah:ag&gt;0?ag:ad</arg>
           <!-- PDCTO -->
-          <arg attribute="beanshell">g="28312".equals(m)||al&gt;0?0:ar!=0?ar:g!=0?g:aj</arg>          <!-- pdescuento -->
+          <arg attribute="beanshell">h="28312".equals(n)||am&gt;0?0:az!=0?az:h!=0?h:ak</arg>          <!-- pdescuento -->
+
+
           <!-- STOTAL -->
-          <arg attribute="beanshell">h=al&lt;0?(c*e)/(1+(f/100.0)):((e-(am*(al/100.0)))*c)/(1+(f/100.0))</arg>          <!-- subtotal -->
-          <arg attribute="formula">i=((c*e)*g/100.0)</arg>          <!-- descuento -->
+          <arg attribute="beanshell">i=am&lt;0?(d*f)/(1+(g/100.0)):((f-(an*(am/100.0)))*d)/(1+(g/100.0))</arg>          <!-- subtotal -->
+          <arg attribute="formula">j=((d*f)*h/100.0)</arg>          <!-- descuento -->
           <!-- TOTAL -->
-          <arg attribute="formula">l=(c*e)-i</arg>          <!-- total -->
+          <arg attribute="formula">m=(d*f)-j</arg>          <!-- total -->
           <!-- NETO -->
-          <arg attribute="beanshell">j=al&lt;0?(c*e-i)/(1+(f/100.0)):(((e-(am*(al/100.0)))*c)-i)/(1+(f/100.0))</arg>          <!-- neto -->
+          <arg attribute="beanshell">k=am&lt;0?(d*f-j)/(1+(g/100.0)):(((f-(an*(am/100.0)))*d)-j)/(1+(g/100.0))</arg>          <!-- neto -->
           <!-- TIVA -->
-          <arg attribute="beanshell">k=al&lt;0?l-j:(((e-(am*(al/100.0)))*c)-i)-j</arg>          <!-- iva -->
+          <arg attribute="beanshell">l=am&lt;0?m-k:(((f-(an*(am/100.0)))*d)-j)-k</arg>          <!-- iva -->
           <!-- vlrunitarioimpr -->
-          <arg attribute="beanshell">n=al&lt;0?e-(e*(g/100.0)):e</arg>
+          <arg attribute="beanshell">o=am&lt;0?f-(f*(h/100.0)):f</arg>
           <!-- VERDE vlr unitario imp -->
-          <arg attribute="beanshell">q="28312".equals(m)?c*e:al&gt;0?c*(am*(al/100.0)):0</arg>          <!-- verde -->
+          <arg attribute="beanshell">r="28312".equals(n)?d*e:am&gt;0?d*(an*(am/100.0)):0</arg>          <!-- verde -->
           <!-- basecinco -->
-          <arg attribute="beanshell">s=r==&quot;10&quot;?j:0</arg>
+          <arg attribute="beanshell">t=s==&quot;10&quot;?j:0</arg>
           <!-- base 5% -->
-          <arg attribute="beanshell">t=r==&quot;10&quot;?k:0</arg>
+          <arg attribute="beanshell">u=s==&quot;10&quot;?k:0</arg>
           <!-- IVA 5% -->
-          <arg attribute="beanshell">u=r==&quot;5&quot;?j:0</arg>
+          <arg attribute="beanshell">v=s==&quot;5&quot;?j:0</arg>
           <!-- base 19% -->
-          <arg attribute="beanshell">v=r==&quot;5&quot;?k:0</arg>
+          <arg attribute="beanshell">w=s==&quot;5&quot;?k:0</arg>
           <!-- IVA 19% -->
-          <arg attribute="beanshell">w=r==&quot;13&quot;&amp;&amp;!&quot;28312&quot;.equals(m)?j:0</arg>
+          <arg attribute="beanshell">x=s==&quot;13&quot;&amp;&amp;!&quot;28312&quot;.equals(n)?j:0</arg>
           <!-- base exento -->
-          <arg attribute="beanshell">x=r==&quot;13&quot;?k:0</arg>
+          <arg attribute="beanshell">y=s==&quot;13&quot;?k:0</arg>
           <!-- IVA exento -->
-          <arg attribute="beanshell">y=r==&quot;12&quot;&amp;&amp;!&quot;28312&quot;.equals(m)?j:0</arg>
+          <arg attribute="beanshell">z=s==&quot;12&quot;&amp;&amp;!&quot;28312&quot;.equals(n)?j:0</arg>
           <!-- base excluido -->
-          <arg attribute="beanshell">z=r==&quot;12&quot;?k:0</arg>
+          <arg attribute="beanshell">aa=s==&quot;12&quot;?k:0</arg>
           <!-- IVA excluido -->
-          <arg attribute="beanshell">aa=&quot;28312&quot;.equals(m)?0:j</arg>          <!-- netosinbolsa sin bolsa -->
-          <arg attribute="beanshell">an="28312".equals(m)?0:h</arg>          <!-- subtotal sin bolsa -->
+          <arg attribute="beanshell">ab=&quot;28312&quot;.equals(n)?0:k</arg>          <!-- netosinbolsa sin bolsa -->
+          <arg attribute="beanshell">ao="28312".equals(n)?0:i</arg>          <!-- subtotal sin bolsa -->
             <!-- 1 (a) -->
             <subarg>
             <arg attribute="name">CODE</arg>
-            <arg attribute="length">155</arg>
+            <arg attribute="length">130</arg>
             <arg attribute="type">DATASEARCH</arg>
             <arg attribute="sqlCombo">DGSEL0170</arg>
             <arg attribute="keyDataSearch">searchp</arg>
@@ -974,7 +964,7 @@
             <!-- 2 (b) -->
             <subarg>
             <arg attribute="name">DESCRIPCION</arg>
-            <arg attribute="length">220</arg>
+            <arg attribute="length">250</arg>
             <arg attribute="type">STRING</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="queryCol">1</arg>
@@ -982,7 +972,16 @@
             </subarg>
             <!-- 3 (c) -->
             <subarg>
-            <arg attribute="name">CANTIDAD</arg>
+            <arg attribute="name">Disp</arg>
+            <arg attribute="length">70</arg>
+            <arg attribute="type">INTEGER</arg>
+            <arg attribute="enabled">true</arg>
+            <arg attribute="queryCol">5</arg>
+            <!-- <arg attribute="minValue">0</arg> -->
+            </subarg>
+            <!-- 4 (d) -->
+            <subarg>
+            <arg attribute="name">Cant</arg>
             <arg attribute="length">70</arg>
             <arg attribute="type">INTEGER</arg>
             <arg attribute="enabled">true</arg>
@@ -993,7 +992,7 @@
             <arg attribute="printable">true</arg>
             <arg attribute="minValue">0</arg>
             </subarg>
-            <!-- 4 (d) -->
+            <!-- 5 (e) -->
             <subarg>
             <arg attribute="name">Lista</arg>
             <arg attribute="length">60</arg>
@@ -1002,7 +1001,7 @@
             <arg attribute="returnCol">12</arg>
             <arg attribute="defaultValue">1</arg>
             </subarg>
-            <!-- 5 (e) -->
+            <!-- 6 (f) -->
             <subarg>
             <arg attribute="name">VUNITARIO</arg>
             <arg attribute="length">80</arg>
@@ -1014,10 +1013,10 @@
             <arg attribute="printable">true</arg>
             <arg attribute="minValue">0</arg>
             </subarg>
-            <!-- 6 (f) -->
+            <!-- 7 (g) -->
             <subarg>
             <arg attribute="name">PIVA</arg>
-            <arg attribute="length">50</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="roundDecimal">0</arg>
             <arg attribute="enabled">false</arg>
@@ -1025,53 +1024,53 @@
             <arg attribute="returnCol">3</arg>
             <arg attribute="printable">true</arg>
             </subarg>
-            <!-- 7 (g) -->
+            <!-- 8 (h) -->
             <subarg>
             <arg attribute="name">PDCTO</arg>
-            <arg attribute="length">50</arg>
+            <arg attribute="length">80</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="roundDecimal">0</arg>
             <arg attribute="enabled">true</arg>
             <arg attribute="returnCol">4</arg>
             <arg attribute="printable">true</arg>
             </subarg>
-            <!-- 8 (h) -->
+            <!-- 9 (i) -->
             <subarg>
             <arg attribute="name">STOTAL</arg>
-            <arg attribute="length">90</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="roundDecimal">2</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="minValue">0</arg>
             <arg attribute="returnCol">7</arg>
             </subarg>
-            <!-- 9 (i) -->
+            <!-- 10 (j) -->
             <subarg>
             <arg attribute="name">DESCUENTO</arg>
-            <arg attribute="length">80</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="roundDecimal">0</arg>
             <arg attribute="enabled">false</arg>
             </subarg>
-            <!-- 10 (j) -->
+            <!-- 11 (k) -->
             <subarg>
             <arg attribute="name">NETO</arg>
-            <arg attribute="length">90</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="roundDecimal">2</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="returnCol">6</arg>
             </subarg>
-            <!-- 11 (k) -->
+            <!-- 12 (l) -->
             <subarg>
             <arg attribute="name">TIVA</arg>
-            <arg attribute="length">90</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="roundDecimal">2</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="returnCol">5</arg>
             </subarg>
-            <!-- 12 (l) -->
+            <!-- 13 (m) -->
             <subarg>
             <arg attribute="name">TOTAL</arg>
             <arg attribute="length">90</arg>
@@ -1081,10 +1080,10 @@
             <arg attribute="returnCol">8</arg>
             <arg attribute="printable">true</arg>
             </subarg>
-            <!-- 13 (m) -->
+            <!-- 14 (n) -->
             <subarg>
             <arg attribute="name">ID</arg>
-            <arg attribute="length">10</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">STRING</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="queryCol">0</arg>
@@ -1092,286 +1091,286 @@
             <arg attribute="nameField">idProducto</arg>
             <arg attribute="exportValue">idproducto</arg>
             </subarg>
-            <!-- 14 (n) -->
+            <!-- 15 (o) -->
             <subarg>
             <arg attribute="name">vlrunitarioimpr</arg>
-            <arg attribute="length">50</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="roundDecimal">0</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="printable">true</arg>
             </subarg>
-            <!-- 15 (o) -->
+            <!-- 16 (p) -->
             <subarg>
             <arg attribute="name">codigo</arg>
-            <arg attribute="length">220</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">STRING</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="queryCol">37</arg>
             <arg attribute="printable">true</arg>
             </subarg>
-            <!-- 16 (p) -->
+            <!-- 17 (q) -->
             <subarg>
             <arg attribute="name">referencia</arg>
-            <arg attribute="length">220</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">STRING</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="queryCol">38</arg>
             <arg attribute="printable">true</arg>
             </subarg>
-            <!-- 17 (q) -->
+            <!-- 18 (r) -->
             <subarg>
             <arg attribute="name">VERDE</arg>
-            <arg attribute="length">162</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="roundDecimal">2</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="returnCol">9</arg>
             </subarg>
-            <!-- 18 (r) -->
+            <!-- 19 (s) -->
             <subarg>
             <arg attribute="name">idasientostring</arg>
-            <arg attribute="length">0</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">STRING</arg>
             <arg attribute="queryCol">24</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="nameField">idasientogenerico</arg>
             </subarg>
-            <!-- 19 (s) -->
-            <subarg>
-            <arg attribute="name">basecinco</arg>
-            <arg attribute="length">50</arg>
-            <arg attribute="type">DECIMAL</arg>
-            <arg attribute="roundDecimal">2</arg>
-            <arg attribute="enabled">false</arg>
-            </subarg>
             <!-- 20 (t) -->
             <subarg>
-            <arg attribute="name">tivacinco</arg>
-            <arg attribute="length">50</arg>
+            <arg attribute="name">basecinco</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="roundDecimal">2</arg>
             <arg attribute="enabled">false</arg>
             </subarg>
             <!-- 21 (u) -->
             <subarg>
-            <arg attribute="name">basediezynueve</arg>
-            <arg attribute="length">50</arg>
+            <arg attribute="name">tivacinco</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="roundDecimal">2</arg>
             <arg attribute="enabled">false</arg>
             </subarg>
             <!-- 22 (v) -->
             <subarg>
-            <arg attribute="name">tivadiezynueve</arg>
-            <arg attribute="length">50</arg>
+            <arg attribute="name">basediezynueve</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="roundDecimal">2</arg>
             <arg attribute="enabled">false</arg>
             </subarg>
             <!-- 23 (w) -->
             <subarg>
-            <arg attribute="name">baseexento</arg>
-            <arg attribute="length">50</arg>
+            <arg attribute="name">tivadiezynueve</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="roundDecimal">2</arg>
             <arg attribute="enabled">false</arg>
             </subarg>
             <!-- 24 (x) -->
             <subarg>
-            <arg attribute="name">tivaexento</arg>
-            <arg attribute="length">50</arg>
+            <arg attribute="name">baseexento</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="roundDecimal">2</arg>
             <arg attribute="enabled">false</arg>
             </subarg>
             <!-- 25 (y) -->
             <subarg>
-            <arg attribute="name">baseexcluido</arg>
-            <arg attribute="length">50</arg>
+            <arg attribute="name">tivaexento</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="roundDecimal">2</arg>
             <arg attribute="enabled">false</arg>
             </subarg>
             <!-- 26 (z) -->
             <subarg>
-            <arg attribute="name">tivaexluido</arg>
-            <arg attribute="length">50</arg>
+            <arg attribute="name">baseexcluido</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="roundDecimal">2</arg>
             <arg attribute="enabled">false</arg>
             </subarg>
             <!-- 27 (aa) -->
             <subarg>
-            <arg attribute="name">netosinbolsa</arg>
-            <arg attribute="length">50</arg>
+            <arg attribute="name">tivaexluido</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="roundDecimal">2</arg>
             <arg attribute="enabled">false</arg>
             </subarg>
             <!-- 28 (ab) -->
             <subarg>
-            <arg attribute="name">contadorlinea</arg>
-            <arg attribute="length">50</arg>
-            <arg attribute="type">INTEGER</arg>
-            <arg attribute="queryCol">39</arg>
+            <arg attribute="name">netosinbolsa</arg>
+            <arg attribute="length">100</arg>
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="roundDecimal">2</arg>
             <arg attribute="enabled">false</arg>
             </subarg>
             <!-- 29 (ac) -->
             <subarg>
+            <arg attribute="name">contadorlinea</arg>
+            <arg attribute="length">100</arg>
+            <arg attribute="type">INTEGER</arg>
+            <arg attribute="queryCol">39</arg>
+            <arg attribute="enabled">false</arg>
+            </subarg>
+            <!-- 30 (ad) -->
+            <subarg>
             <arg attribute="name">ya</arg>
             <!-- Porcentaje de descuento que se aplica si xa se cumple por almacen-->
-            <arg attribute="length">0</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="roundDecimal">0</arg>
             <arg attribute="queryCol">12</arg>
             </subarg>
-            <!-- 30 (ad) -->
+            <!-- 31 (ae) -->
             <subarg>
             <arg attribute="name">ym</arg>
             <!-- Porcentaje de descuento que se aplica si xm se cumple por marca -->
-            <arg attribute="length">0</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="roundDecimal">0</arg>
             <arg attribute="queryCol">14</arg>
             </subarg>
-            <!-- 31 (ae) -->
+            <!-- 32 (af) -->
             <subarg>
             <arg attribute="name">yi</arg>
             <!-- Porentaje de descuento que se aplica si xi se cumple por referencia -->
-            <arg attribute="length">0</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="roundDecimal">0</arg>
             <arg attribute="queryCol">16</arg>
             </subarg>
-            <!-- 32 (af) -->
+            <!-- 33 (ag) -->
             <subarg>
             <arg attribute="name">yxyl</arg>
             <!-- Porcentaje de descuento que se aplica si xa se cumple por linea-->
-            <arg attribute="length">0</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="roundDecimal">0</arg>
             <arg attribute="queryCol">30</arg>
             </subarg>
-            <!-- 33 (ag) -->
+            <!-- 34 (ah) -->
             <subarg>
             <arg attribute="name">yxyg</arg>
             <!-- Porcentaje de descuento que se aplica si xa se cumple por grupo-->
-            <arg attribute="length">0</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="roundDecimal">0</arg>
             <arg attribute="queryCol">32</arg>
             </subarg>
-            <!-- 34 (ah) -->
+            <!-- 35 (ai) -->
             <subarg>
             <arg attribute="name">yxysg</arg>
             <!-- Porcentaje de descuento que se aplica si xm se cumple por subgrupo -->
-            <arg attribute="length">0</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="roundDecimal">0</arg>
             <arg attribute="queryCol">34</arg>
             </subarg>
-            <!-- 35 (ai) -->
+            <!-- 36 (aj) -->
             <subarg>
             <arg attribute="name">yxysm</arg>
             <!-- Porentaje de descuento que se aplica si xi se cumple por submarca -->
-            <arg attribute="length">0</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="roundDecimal">0</arg>
             <arg attribute="queryCol">36</arg>
             </subarg>
-            <!-- 36 (aj) -->
+            <!-- 37 (ak) -->
             <subarg>
             <arg attribute="name">dctoxy</arg>
             <!-- Se usa para almacenar la sumatoria de la combinacion de descuentos aplicados en la promocion xy -->
-            <arg attribute="length">0</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="roundDecimal">0</arg>
             <arg attribute="enabled">false</arg>
             </subarg>
-            <!-- 37 (ak) -->
+            <!-- 38 (al) -->
             <subarg>
             <arg attribute="name">charctaplataforma</arg>
-            <arg attribute="length">0</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">STRING</arg>
             <arg attribute="queryCol">41</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="nameField">idasientogenerico</arg>
             </subarg>
-            <!-- 38 (al) -->
+            <!-- 39 (am) -->
             <subarg>
             <arg attribute="name">porcentajebp</arg>
-            <arg attribute="length">10</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="roundDecimal">2</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="queryCol">42</arg>
             <arg attribute="returnCol">10</arg>
             </subarg>
-            <!-- 39 (am) -->
+            <!-- 40 (an) -->
             <subarg>
             <arg attribute="name">inc</arg>
-            <arg attribute="length">10</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="roundDecimal">2</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="queryCol">43</arg>
             <arg attribute="returnCol">11</arg>
             </subarg>
-            <!-- 40 (an) -->
+            <!-- 41 (ao) -->
             <subarg>
             <arg attribute="name">subtotalsinbolsa</arg>
-            <arg attribute="length">50</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="roundDecimal">2</arg>
             <arg attribute="enabled">false</arg>
             </subarg>
-            <!-- 41 (ao) -->
+            <!-- 42 (ap) -->
             <subarg>
             <arg attribute="name">pventa1</arg>
-            <arg attribute="length">80</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="roundDecimal">0</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="queryCol">2</arg>
             </subarg>
-            <!-- 42 (ap) -->
+            <!-- 43 (aq) -->
             <subarg>
             <arg attribute="name">pventa2</arg>
-            <arg attribute="length">80</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="roundDecimal">0</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="queryCol">45</arg>
             </subarg>
-            <!-- 43 (aq) -->
+            <!-- 44 (ar) -->
             <subarg>
             <arg attribute="name">pventa3</arg>
-            <arg attribute="length">80</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="roundDecimal">0</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="queryCol">46</arg>
             </subarg>
-            <!-- 44 (ar) -->
+            <!-- 45 (as) -->
             <subarg>
             <arg attribute="name">espintor</arg>
-            <arg attribute="length">60</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">INTEGER</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="queryCol">47</arg>
             </subarg>
-            <!-- 45 (as) -->
+            <!-- 46 (at) -->
             <subarg>
             <arg attribute="name">tienepreciobase</arg>
-            <arg attribute="length">60</arg>
+            <arg attribute="length">100</arg>
             <arg attribute="type">INTEGER</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="queryCol">48</arg>
@@ -1447,29 +1446,29 @@
       
 
       <arg attribute="keySQL">LCSEL0947</arg>
-      <arg attribute="driverEvent" id="temporales">client.gui.components.XMLComboBox</arg>
+      <arg attribute="driverEvent" id="combotemporales">client.gui.components.XMLComboBox</arg>
 
       <arg attribute="rows">600</arg>
       <arg attribute="colorBackground">196,196,252</arg>
       <arg attribute="colorSelected">114,126,255</arg>
       <arg attribute="protectSelected">true</arg>
-      <arg attribute="totales">c</arg>
-      <arg attribute="beanshell">h=al&lt;0?(c*e)/(1+(f/100.0)):((e-(am*(al/100.0)))*c)/(1+(f/100.0))</arg>          <!-- subtotal -->
-      <arg attribute="formula">i=((c*e)*g/100.0)</arg>          <!-- descuento -->
-      <arg attribute="formula">l=(c*e)-i</arg>          <!-- total -->
-      <arg attribute="beanshell">j=al&lt;0?(c*e-i)/(1+(f/100.0)):(((e-(am*(al/100.0)))*c)-i)/(1+(f/100.0))</arg>          <!-- neto -->
-      <arg attribute="beanshell">k=al&lt;0?l-j:(((e-(am*(al/100.0)))*c)-i)-j</arg>          <!-- iva -->
-      <arg attribute="beanshell">n=al&lt;0?e-(e*(g/100.0)):e</arg>          <!-- vlr unitario imp -->
-      <arg attribute="beanshell">q="28312".equals(m)?c*e:al&gt;0?(am*(al/100.0)):0</arg>          <!-- verde -->
-      <arg attribute="beanshell">s=r=="10"?j:0</arg>          <!-- base 5% -->
-      <arg attribute="beanshell">t=r=="10"?k:0</arg>          <!-- IVA 5% -->
-      <arg attribute="beanshell">u=r=="5"?j:0</arg>          <!-- base 19% -->
-      <arg attribute="beanshell">v=r=="5"?k:0</arg>          <!-- IVA 19% -->
-      <arg attribute="beanshell">w=r=="13"&amp;&amp;!&quot;28312&quot;.equals(m)?j:0</arg>          <!-- base exento -->
-      <arg attribute="beanshell">x=r=="13"?k:0</arg>          <!-- IVA exento -->
-      <arg attribute="beanshell">y=r=="12"&amp;&amp;!&quot;28312&quot;.equals(m)?j:0</arg>          <!-- base excluido -->
-      <arg attribute="beanshell">z=r=="12"?k:0</arg>          <!-- IVA excluido -->
-      <arg attribute="beanshell">aa=&quot;28312&quot;.equals(m)?0:al&gt;0?h:(h-i)</arg>          <!-- subtotal sin bolsa -->
+      <arg attribute="totales">d,i,j,k,l,m,r,t,u,v,w,x,y,z,aa,ab,ac,ao</arg>
+      <arg attribute="beanshell">i=am&lt;0?(d*f)/(1+(g/100.0)):((f-(an*(am/100.0)))*d)/(1+(g/100.0))</arg>          <!-- subtotal -->
+      <arg attribute="formula">j=((d*f)*h/100.0)</arg>          <!-- descuento -->
+      <arg attribute="formula">m=(d*f)-j</arg>          <!-- total -->
+      <arg attribute="beanshell">k=am&lt;0?(d*f-j)/(1+(g/100.0)):(((f-(an*(am/100.0)))*d)-j)/(1+(g/100.0))</arg>          <!-- neto -->
+      <arg attribute="beanshell">l=am&lt;0?m-j:(((f-(an*(am/100.0)))*d)-j)-k</arg>          <!-- iva -->
+      <arg attribute="beanshell">o=am&lt;0?f-(f*(h/100.0)):f</arg>          <!-- vlr unitario imp -->
+      <arg attribute="beanshell">r="28312".equals(n)?d*e:am&gt;0?(an*(am/100.0)):0</arg>          <!-- verde -->
+      <arg attribute="beanshell">t=s=="10"?j:0</arg>          <!-- base 5% -->
+      <arg attribute="beanshell">u=s=="10"?k:0</arg>          <!-- IVA 5% -->
+      <arg attribute="beanshell">v=s=="5"?j:0</arg>          <!-- base 19% -->
+      <arg attribute="beanshell">w=s=="5"?k:0</arg>          <!-- IVA 19% -->
+      <arg attribute="beanshell">x=s=="13"&amp;&amp;!&quot;28312&quot;.equals(n)?j:0</arg>          <!-- base exento -->
+      <arg attribute="beanshell">y=s=="13"?k:0</arg>          <!-- IVA exento -->
+      <arg attribute="beanshell">z=s=="12"&amp;&amp;!&quot;28312&quot;.equals(n)?j:0</arg>          <!-- base excluido -->
+      <arg attribute="beanshell">aa=s=="12"?k:0</arg>          <!-- IVA excluido -->
+      <arg attribute="beanshell">ab=&quot;28312&quot;.equals(n)?0:am&gt;0?h:(i-j)</arg>          <!-- subtotal sin bolsa -->
         
       <!-- 1 CODE (a) -->
       <subarg>
@@ -1850,6 +1849,7 @@
               <arg attribute="keyExternalValue">az</arg>
               <arg attribute="return">false</arg>
               <arg attribute="nullValue">true</arg>
+              <arg attribute="foreground">0,0,0</arg>
               <arg attribute="background">196,196,252</arg>
             </subarg>
           </parameters>
@@ -1867,6 +1867,7 @@
               <arg attribute="enabled">false</arg>
               <arg attribute="alignment">RIGHT</arg>
               <arg attribute="return">false</arg>
+              <arg attribute="foreground">0,0,0</arg>
               <arg attribute="background">196,196,252</arg>
               <arg attribute="calculateExportValue">subtotalsinbolsa</arg>
               <arg attribute="printable">true</arg>
@@ -1878,15 +1879,17 @@
               <arg attribute="maxlength">26</arg>
               <arg attribute="enabled">false</arg>
               <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="totalCol">i</arg>
+              <arg attribute="totalCol">j</arg>
               <arg attribute="exportValue">vdescuentoglobal</arg>
               <arg attribute="return">false</arg>
+              <arg attribute="foreground">0,0,0</arg>
               <arg attribute="background">196,196,252</arg>
               <arg attribute="printable">true</arg>
             </subarg>
             <subarg>
               <arg attribute="label">NETO</arg>
               <arg attribute="format">NUMERIC</arg>
+              <arg attribute="foreground">0,0,0</arg>
               <arg attribute="background">114,141,171</arg>
               <arg attribute="size">10</arg>
               <arg attribute="maxlength">26</arg>
@@ -1894,6 +1897,7 @@
               <arg attribute="alignment">RIGHT</arg>
               <arg attribute="return">false</arg>
               <arg attribute="calculateExportValue">netosinbolsa</arg>
+              <arg attribute="foreground">0,0,0</arg>
               <arg attribute="background">196,196,252</arg>
             </subarg>
             <subarg>
@@ -1904,8 +1908,9 @@
               <arg attribute="enabled">false</arg>
               <arg attribute="alignment">RIGHT</arg>
               <arg attribute="exportValue">ivaglobal</arg>
-              <arg attribute="totalCol">k</arg>
+              <arg attribute="totalCol">l</arg>
               <arg attribute="return">false</arg>
+              <arg attribute="foreground">0,0,0</arg>
               <arg attribute="background">196,196,252</arg>
               <arg attribute="printable">true</arg>
             </subarg>
@@ -1916,8 +1921,9 @@
               <arg attribute="maxlength">26</arg>
               <arg attribute="enabled">false</arg>
               <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="totalCol">q</arg>
+              <arg attribute="totalCol">r</arg>
               <arg attribute="return">false</arg>
+              <arg attribute="foreground">0,0,0</arg>
               <arg attribute="background">196,196,252</arg>
               <arg attribute="printable">true</arg>
             </subarg>
@@ -1929,7 +1935,8 @@
               <arg attribute="exportValue">totalfact</arg>
               <arg attribute="enabled">false</arg>
               <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="totalCol">l</arg>
+              <arg attribute="totalCol">m</arg>
+              <arg attribute="foreground">0,0,0</arg>
               <arg attribute="background">196,196,252</arg>
               <arg attribute="return">false</arg>
               <arg attribute="printable">true</arg>
@@ -1942,6 +1949,7 @@
               <arg attribute="calculateExportValue">trfuente+triva+trica</arg>
               <arg attribute="enabled">false</arg>
               <arg attribute="alignment">RIGHT</arg>
+              <arg attribute="foreground">0,0,0</arg>
               <arg attribute="background">196,196,252</arg>
               <arg attribute="return">false</arg>
               <arg attribute="printable">true</arg>
@@ -1954,6 +1962,7 @@
               <arg attribute="calculateExportValue">totalfact-(trfuente+triva+trica)</arg>
               <arg attribute="enabled">false</arg>
               <arg attribute="alignment">RIGHT</arg>
+              <arg attribute="foreground">0,0,0</arg>
               <arg attribute="background">196,196,252</arg>
               <arg attribute="printable">true</arg>
             </subarg>
@@ -2054,6 +2063,24 @@
           </component>
           <!-- AQUI ESTABA -->
         </panel>
+        <component locate="Center">
+          <driver id="totalcantidad">client.gui.components.TableDataFields</driver>
+          <parameters>
+            <!-- <arg attribute="Panel">false</arg> -->
+            <subarg>
+              <arg attribute="label">Total Artículos:</arg>
+              <arg attribute="format">NUMERIC</arg>
+              <arg attribute="size">5</arg>
+              <arg attribute="maxlength">26</arg>
+              <arg attribute="enabled">false</arg>
+              <arg attribute="font">Dialog,1,10</arg>
+              <arg attribute="foreground">0,0,0</arg>
+              <arg attribute="background">196,196,252</arg>
+              <arg attribute="alignment">RIGHT</arg>
+              <arg attribute="calculateExportValue">totalcantidades</arg>
+            </subarg>
+          </parameters>
+        </component>
         <panel locate="East" type="BorderLayout">
           <panel locate="Center" type="BorderLayout">
             <component locate="East">
@@ -3129,3 +3156,55 @@
   </panel>
 
 </FORM>
+
+<!--List of components:
+<driver id="nro_fact">client.gui.components.TableDataFields</driver>
+<driver id="baseivagravados">client.gui.components.TableDataFields</driver>
+<driver id="subtotalglobalsinverde">client.gui.components.TableDataFields</driver>
+<driver id="totalmenosreteglobal">client.gui.components.TableDataFields</driver>
+<driver id="id_res_fact">client.gui.components.TableDataFields</driver>
+<driver id="res_fact">client.gui.components.TableDataFields</driver>
+<driver id="res_fact_fecha">client.gui.components.TableDataFields</driver>
+<driver id="res_fact_desde">client.gui.components.TableDataFields</driver>
+<driver id="res_fact_vigencia">client.gui.components.TableDataFields</driver>
+<driver id="res_fact_prefijo">client.gui.components.TableDataFields</driver>
+<driver id="nrogenerador">client.gui.components.TableDataFields</driver>
+<driver id="total">client.gui.components.TableDataFields</driver>
+<driver id="totalcantidad">client.gui.components.TableDataFields</driver>
+<driver id="totalcanttemp">client.gui.components.TableDataFields</driver>
+<driver id="totalValuesDescuento">client.gui.components.TableDataFields</driver>
+<driver id="totalValues">client.gui.components.TableDataFields</driver>
+<driver id="iddirecciontercero">common.gui.components.GenericData</driver>
+<driver id="idtelefonotercero">common.gui.components.GenericData</driver>
+<driver id="terceroempleado">common.gui.components.GenericData</driver>
+<driver id="idbodegae">common.gui.components.GenericData</driver>
+<driver id="bodega">common.gui.components.GenericData</driver>
+<driver id="piepaginauno">common.gui.components.GenericData</driver>
+<driver id="piepaginados">common.gui.components.GenericData</driver>
+<driver id="piepaginatres">common.gui.components.GenericData</driver>
+<driver id="horarioatencion">common.gui.components.GenericData</driver>
+<driver id="nitalterno">common.gui.components.GenericData</driver>
+<driver id="terceroal">common.gui.components.GenericData</driver>
+<driver id="centrocosto">common.gui.components.GenericData</driver>
+<driver id="referrercustomername">common.gui.components.GenericData</driver>
+<driver id="date">common.gui.components.GenericData</driver>
+<driver id="credit">common.gui.components.GenericData</driver>
+<driver id="vencimiento">common.gui.components.GenericData</driver>
+<driver id="numeroordenexterno">common.gui.components.GenericData</driver>
+<driver id="email">common.gui.components.GenericData</driver>
+<driver id="direccioncontacto">common.gui.components.GenericData</driver>
+<driver id="telefonocontacto">common.gui.components.GenericData</driver>
+<driver id="tipo_doc">client.gui.components.XMLComboBox</driver>
+<driver id="Vendedor">client.gui.components.XMLComboBox</driver>
+<driver id="combotemporales">client.gui.components.XMLComboBox</driver>
+<driver id="principal">client.gui.components.TableFindData</driver>
+<driver id="temporales">client.gui.components.TableFindData</driver>
+<driver>client.gui.components.FindThird</driver>
+<driver id="referrercustomerid">client.gui.components.EmakuSearchField</driver>
+<driver>common.gui.components.XMLTextArea</driver>
+
+<driver id="sendbuttontemporales">client.gui.components.EmakuSendRecordButton</driver>
+<driver id="temporal">common.gui.components.ButtonsPanel</driver>
+<driver id="pagocarta">common.gui.components.ButtonsPanel</driver>
+<driver id="pagotirilla">common.gui.components.ButtonsPanel</driver>
+-->
