@@ -1,30 +1,12 @@
-<!-- EN DESARROLLO - PEDIDOS JBE -->
-<!-- Acciones implementadas:
-permite generar pedidos de mostrador con configuracion especial para JBE
-solicita datos del cliente obligatoriomente
-el correo electrónico es obligatorio y necesario para el siguiente proceso de facturación electrónica
-si el tercero no tiene correo el sistema le asigna el correo electrónico por defecto definido en la configuración general
-la tabla de productos permite buscar por componente F2 para busqueda por código de barras, código alterno y descripción
-la tabla permite digitar directamente el codigo de barras del producto o capturarlo con lector de codigo de barras
-la tabla permite ingresar cantidad de productos directamente en la celda de cantidad, no admite decimales en cantidad
-el catalogo de precio de venta depende del cliente seleccionado, la lista 1 es la lista por defecto, las listas 2 y 3 dependen del cliente
-el descuento por cliente se aplica automáticamente al agregar el producto a la tabla si el producto se encuentra en alguna de las promociones vigentes
-*nota para desarrollo: la celda de descuento debe estar desactivada
-los calculos de impuestos y totales se realizan automáticamente al agregar productos a la tabla
-la vigencia del pedido por defecto es de 1 dias, permite cambio por parte del usuario
-permite seleccionar el vendedor que atiende el pedido por medio del combo Vendedor
-permite adicionar informacion numero de orden informado por el cliente, esta informacion es externa al sistema
-permite agregar obervaciones, espacio multi linea para digitar formulas o información adicional del pedido
-permite digitar direccion de contacto para entrega de mercancia
-permite digitar telefono de contacto para entrega de mercancia
-totaliza cantidad de productos del pedido, sumatoria de columna cantidad
-permite enlazar al pedido la identificacion del pintor, constructor o carpintero que refiere al cliente para plan de puntos
-permite guardar listado temporal cuando los pedidos son largos y requieren varias sesiones para su elaboración
-permite posteriormente recuperar el listado temporal guardado para continuar con la elaboración del pedido
-el boton guardar genera el pedido guardando la informacion en base de datos y generando impresion en tamaño carta
-al terminar las acciones de guardado e impresion el formulario se limpia automaticamente para dar espacio al siguiente pedido
-el boton limpiar limpia los componentes del formulario para dar espacio a nueva informacion
-el boton cerrar cierra el formulario
+<!-- EN DESARROLLO - CONSULTAR PEDIDOS JBE -->
+<!-- purpose of this form: charge the data of a pedido mostrador that has been created in the system using its number
+to dos:
+change all the enable attributes to false where it is necessary
+change the <driver id="Vendedor">client.gui.components.XMLComboBox</driver> component to a GenericData component keeping the id
+add an extra component type GenericData to let the user type the number of order he is searching
+add the the <arg attribute="sqlCode">QUERYCODE</arg> attribute to the new component with a query that returns the data of the pedido given its number
+do the previous step as many times as necessary to all the components that need to load data from the pedido
+
 -->
 
 <FORM>
