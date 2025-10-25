@@ -2246,7 +2246,7 @@ el boton cerrar cierra el formulario
                       <driver>this</driver>
                       <method>getPackage</method>
                       <parameters>
-                        <arg attribute="nullField">true</arg>
+                        <arg attribute="blankField">true</arg>
                         <subarg>
                           <arg attribute="importValue">telefonocontacto</arg>
                           <arg attribute="importValue">direccioncontacto</arg>

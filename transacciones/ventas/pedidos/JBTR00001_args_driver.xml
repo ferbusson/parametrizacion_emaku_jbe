@@ -12,7 +12,7 @@
     <arg>INS0037</arg>
     <!-- 2  tercero_def -->
     <arg>INS0048</arg>      
-    <!-- contactos_clientes -->
+    <!-- contacto_pedidos -->
     <arg>JBINS0001</arg>      
     <!-- 3 adiciona key bodega out: bodegaSaliente -->
     <arg attribute="addKey"/>
