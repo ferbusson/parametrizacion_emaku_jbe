@@ -1,4 +1,4 @@
-<!-- EN DESARROLLO - CONSULTAR PEDIDOS JBE -->
+<!-- EN DESARROLLO - ANULAR PEDIDOS JBE -->
 <!-- purpose of this form: charge the data of a pedido mostrador that has been created in the system using its number
 to dos:
 change all the enable attributes to false where it is necessary
@@ -12,8 +12,8 @@ do the previous step as many times as necessary to all the components that need 
 <FORM>
   <preferences>
     <size height="600" width="890"/>
-    <name>Consultar Pedido Mostrador</name>
-    <icon>SFCREDITO</icon>
+    <name>Anular Pedido Mostrador</name>
+    <icon>AFCREDITO</icon>
     <iconificable/>
     <maximizable/>
     <resizable/>
@@ -1459,7 +1459,7 @@ do the previous step as many times as necessary to all the components that need 
             <component locate="Center">
               <driver>common.gui.components.XMLLabel</driver>
               <parameters>
-                <arg attribute="text">Imprimir</arg>
+                <arg attribute="text">Anular</arg>
                 <arg attribute="alignment">0</arg>
                 <arg attribute="font">Dialog,1,12</arg>
               </parameters>
@@ -1467,316 +1467,45 @@ do the previous step as many times as necessary to all the components that need 
             <component locate="East">
               <driver id="pagotirilla">common.gui.components.ButtonsPanel</driver>
               <parameters>
-                <subarg>                  <!-- tirilla -->
-                  <arg attribute="label">PRINT</arg>
-                  <arg attribute="icon">/icons/ico_impresora.png</arg>
-                  <arg attribute="keyStroke">F12</arg>
-                  <arg attribute="typePackage">MAILPRINTER</arg>
-                </subarg>
+                <subarg>
+                <arg attribute="label">DELETE</arg>
+                <arg attribute="icon">/icons/ico_eliminar_16x16.png</arg>
+                <arg attribute="keyStroke">F5</arg>
+              </subarg>
                 <arg>NEW</arg>
                 <arg>EXIT</arg>
               </parameters>
               <events>
-                <!-- Boton Impresion Tirilla -->
                 <object>
-                  <name>PRINT</name>
+          <name>DELETE</name>
+          <action>
+            <type>transaction</type>
+            <component>
+              <driver id="pagotirilla">common.gui.components.ButtonsPanel</driver>
+              <method>setEnabled</method>
+              <parameters>
+                <arg attribute="button">DELETE</arg>
+                <arg attribute="state">false</arg>
+              </parameters>
+            </component>            
 
-                  <!-- impresion lado cliente Carta -->
-                  <action>
-                    <type>printer</type>
-                    <printerTemplate>/graphics/TSPedidoMostradorCarta.xml</printerTemplate>
-                    <!-- 0 codigo tipo -->
-                    <!-- <component>
-                      <driver>this</driver>
-                      <method>getPackage</method>
-                      <parameters>
-                      <subarg>
-                        <arg attribute="importValue">prefix</arg>
-                      </subarg>
-                      </parameters>
-                    </component> -->                    
-                    <component>
-                      <driver id="nro_fact">client.gui.components.TableDataFields</driver>
-                      <method>getPrintPackage</method>
-                    </component>
-                    <component>
-                      <driver id="hora">common.gui.components.GenericData</driver>
-                      <method>getPrintPackage</method>
-                    </component>
-                    <!-- 0 -->
-                    <component>
-                      <driver id="vendedor">common.gui.components.GenericData</driver>
-                      <method>getPrintPackage</method>
-                    </component>
-                    <!-- 1 -->
-                    <component>
-                      <driver>client.gui.components.FindThird</driver>
-                      <method>getPrintPackage</method>
-                    </component>
-                    <!-- 2 -->
-                    <component>
-                      <driver id="date">common.gui.components.GenericData</driver>
-                      <method>getPrintPackage</method>
-                    </component>
-                    <!-- 3 -->
-                    <component>
-                      <driver id="credit">common.gui.components.GenericData</driver>
-                      <method>getPrintPackage</method>
-                    </component>
-                    <!-- 4 -->
-                    <component>
-                      <driver id="vencimiento">common.gui.components.GenericData</driver>
-                      <method>getPrintPackage</method>
-                    </component>
-                    <!-- 5 tabla productos -->
-                    <component>
-                      <driver id="principal">client.gui.components.TableFindData</driver>
-                      <method>getPrintPackage</method>
-                    </component>
-                    <!-- 6 -->
-                    <component>
-                      <driver>this</driver>
-                      <method>getPackage</method>
-                      <parameters>
-                      <subarg>
-                        <arg attribute="importValue">subtotalglobalsinverde</arg>
-                      </subarg>
-                      </parameters>
-                    </component>
-                    <!-- 7 -->
-                    <component>
-                      <driver>this</driver>
-                      <method>getPackage</method>
-                      <parameters>
-                      <subarg>
-                        <arg attribute="importValue">vdescuentoglobal</arg>
-                      </subarg>
-                      </parameters>
-                    </component>
-                    <!-- 8 -->
-                    <component>
-                      <driver>this</driver>
-                      <method>getPackage</method>
-                      <parameters>
-                      <subarg>
-                        <arg attribute="importValue">stotalexcluido</arg>
-                      </subarg>
-                      </parameters>
-                    </component>
-                    <!-- 9 -->
-                    <component>
-                      <driver>this</driver>
-                      <method>getPackage</method>
-                      <parameters>
-                      <subarg>
-                        <arg attribute="importValue">stotalexento</arg>
-                      </subarg>
-                      </parameters>
-                    </component>
-                    <!-- 10 -->
-                    <component>
-                      <driver id="baseivagravados">client.gui.components.TableDataFields</driver>
-                      <method>getPrintPackage</method>
-                    </component>
-                    <!-- 11 -->
-                    <component>
-                      <driver>this</driver>
-                      <method>getPackage</method>
-                      <parameters>
-                      <subarg>
-                        <arg attribute="importValue">ivaglobal</arg>
-                      </subarg>
-                      </parameters>
-                    </component>
-                    <!-- 12 -->
-                    <component>
-                      <driver>this</driver>
-                      <method>getPackage</method>
-                      <parameters>
-                      <subarg>
-                        <arg attribute="importValue">verde</arg>
-                      </subarg>
-                      </parameters>
-                    </component>
-                    <!-- 13 -->
-                    <!-- <component>
-                      <driver>this</driver>
-                      <method>getPackage</method>
-                      <parameters>
-                      <subarg>
-                        <arg attribute="importValue">trfuente</arg>
-                      </subarg>
-                      </parameters>
-                    </component> -->
-                    <!-- 14 -->
-                    <!-- <component>
-                      <driver>this</driver>
-                      <method>getPackage</method>
-                      <parameters>
-                      <subarg>
-                        <arg attribute="importValue">triva</arg>
-                      </subarg>
-                      </parameters>
-                    </component> -->
-                    <!-- 15 -->
-                    <!-- <component>
-                      <driver>this</driver>
-                      <method>getPackage</method>
-                      <parameters>
-                      <subarg>
-                        <arg attribute="importValue">trica</arg>
-                      </subarg>
-                      </parameters>
-                    </component> -->
-                    <!-- 16 totalcantidades -->
-                    <component>
-                      <driver>this</driver>
-                      <method>getPackage</method>
-                      <parameters>
-                      <subarg>
-                        <arg attribute="importValue">totalcantidades</arg>
-                      </subarg>
-                      </parameters>
-                    </component>
-                    <!-- 17 contador lineas -->
-                    <component>
-                      <driver>this</driver>
-                      <method>getPackage</method>
-                      <parameters>
-                      <subarg>
-                        <arg attribute="importValue">totallineas</arg>
-                      </subarg>
-                      </parameters>
-                    </component>
-                    <!-- 18 -->
-                    <component>
-                      <driver>this</driver>
-                      <method>getPackage</method>
-                      <parameters>
-                      <subarg>
-                        <arg attribute="importValue">totalmenosreteglobal</arg>
-                      </subarg>
-                      </parameters>
-                    </component>
-                    <!-- 19 Observaciones -->
-                    <component>
-                      <driver>common.gui.components.XMLTextArea</driver>
-                      <method>getPrintPackage</method>
-                    </component>
+            <component>
+              <driver id="nro_fact">client.gui.components.TableDataFields</driver>
+              <method>getPackage</method>
+            </component>
 
-                  </action>
+            <component>
+              <driver>this</driver>
+              <method>getPackage</method>
+              <parameters>
+                <subarg>
+                  <arg attribute="importValue">codigo_tipo</arg>
+                </subarg>
+              </parameters>
+            </component>            
 
-                  <action>
-                    <type>transaction</type>
-                    <component>
-                    <driver id="baseivagravados">client.gui.components.TableDataFields</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="subtotalglobalsinverde">client.gui.components.TableDataFields</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="totalmenosreteglobal">client.gui.components.TableDataFields</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="direccioncontacto">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="telefonocontacto">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="credit">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="vencimiento">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>                  
-                  <component>
-                    <driver id="referrercustomerid">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="referrercustomername">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="principal">client.gui.components.TableFindData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="total">client.gui.components.TableDataFields</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="totalValues">client.gui.components.TableDataFields</driver>
-                    <method>clean</method>
-                  </component>                  
-                  <component>
-                    <driver>common.gui.components.XMLTextArea</driver>
-                    <method>clean</method>
-                  </component>                  
-                  <component>
-                    <driver id="iddirecciontercero">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="idtelefonotercero">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="numeroordenexterno">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                  <!--  limpiando llaves externas -->
-                  <component>
-                    <driver>this</driver>
-                    <method>cleanExternalValues</method>
-                  </component>
-                  <!--  Estos componentes exportan valores, por eso debe ir despues de
-            limpiar las llaves externas -->
-                  <component>
-                    <driver id="vendedor">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="date">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver>client.gui.components.FindThird</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="email">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="totalcantidad">client.gui.components.TableDataFields</driver>
-                    <method>clean</method>
-                  </component>
-                  <!--<component>
-                      <driver id="pagocarta">common.gui.components.ButtonsPanel</driver>
-                      <method>setEnabled</method>
-                      <parameters>
-                        <arg attribute="button">PRINT</arg>
-                        <arg attribute="state">true</arg>
-                      </parameters>
-                    </component> -->
-                    <component>
-                      <driver id="pagotirilla">common.gui.components.ButtonsPanel</driver>
-                      <method>setEnabled</method>
-                      <parameters>
-                        <arg attribute="button">PRINT</arg>
-                        <arg attribute="state">true</arg>
-                      </parameters>
-                    </component>
-                  </action>
-                </object>
+          </action>
+        </object>
 
                 <object>
                   <name>SALIR</name>
@@ -1885,7 +1614,7 @@ do the previous step as many times as necessary to all the components that need 
                     <driver id="pagocarta">common.gui.components.ButtonsPanel</driver>
                     <method>setEnabled</method>
                     <parameters>
-                      <arg attribute="button">PRINT</arg>
+                      <arg attribute="button">DELETE</arg>
                       <arg attribute="state">true</arg>
                     </parameters>
                   </component> -->
@@ -1893,7 +1622,7 @@ do the previous step as many times as necessary to all the components that need 
                     <driver id="pagotirilla">common.gui.components.ButtonsPanel</driver>
                     <method>setEnabled</method>
                     <parameters>
-                      <arg attribute="button">PRINT</arg>
+                      <arg attribute="button">DELETE</arg>
                       <arg attribute="state">true</arg>
                     </parameters>
                   </component>
