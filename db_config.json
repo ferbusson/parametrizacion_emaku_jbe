@@ -1,0 +1,16 @@
+{
+  "database": {
+    "host": "192.168.50.5",
+    "port": 5432,
+    "database": "jbe",
+    "user": "emaku",
+    "password": "control"
+  },
+  "table": "transacciones",
+  "backup_enabled": true,
+  "backup_directory": "./backups",
+  "file_mappings": {
+    "JBTR00001_perfil.xml": "JBTR00001",
+    "JBTR00004_perfil.xml": "JBTR00004"
+  }
+}
