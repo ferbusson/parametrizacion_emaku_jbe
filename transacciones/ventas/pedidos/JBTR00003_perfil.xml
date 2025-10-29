@@ -1397,6 +1397,7 @@ do the previous step as many times as necessary to all the components that need 
               <arg attribute="enabled">false</arg>
               <arg attribute="exportValue">direccioncontacto</arg>
               <arg attribute="clean">true</arg>
+              <arg attribute="printable">true</arg>
             </subarg>
           </parameters>
         </component>
@@ -1446,6 +1447,7 @@ do the previous step as many times as necessary to all the components that need 
               <arg attribute="enabled">false</arg>
               <arg attribute="exportValue">telefonocontacto</arg>
               <arg attribute="clean">true</arg>
+              <arg attribute="printable">true</arg>
             </subarg>
           </parameters>
         </component>
@@ -1501,6 +1503,10 @@ do the previous step as many times as necessary to all the components that need 
                     </component>
                     <component>
                       <driver id="hora">common.gui.components.GenericData</driver>
+                      <method>getPrintPackage</method>
+                    </component>
+                    <component>
+                      <driver id="numeroordenexterno">common.gui.components.GenericData</driver>
                       <method>getPrintPackage</method>
                     </component>
                     <!-- 0 -->
@@ -1661,6 +1667,14 @@ do the previous step as many times as necessary to all the components that need 
                     <!-- 19 Observaciones -->
                     <component>
                       <driver>common.gui.components.XMLTextArea</driver>
+                      <method>getPrintPackage</method>
+                    </component>
+                    <component>
+                      <driver id="direccioncontacto">common.gui.components.GenericData</driver>
+                      <method>getPrintPackage</method>
+                    </component>
+                    <component>
+                      <driver id="telefonocontacto">common.gui.components.GenericData</driver>
                       <method>getPrintPackage</method>
                     </component>
 

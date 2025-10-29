@@ -29,7 +29,7 @@ el boton cerrar cierra el formulario
 
 <FORM>
   <preferences>
-    <size height="600" width="890"/>
+    <size height="600" width="1140"/>
     <name>Nuevo Pedido Mostrador</name>
     <icon>NFCREDITO</icon>
     <iconificable/>
@@ -506,7 +506,7 @@ el boton cerrar cierra el formulario
   <!--  Forma de factura credito -->
   <panel locate="North" type="BorderLayout">
     <panel locate="West" type="FlowLayout"/>
-    <tab locate="Center">
+    <tab locate="West">
       <panel icon="NTERCERO" name="THIRD" type="BorderLayout">
         <component locate="Center">
           <driver>client.gui.components.FindThird</driver>
@@ -650,8 +650,96 @@ el boton cerrar cierra el formulario
         </panel>
       </panel>
     </tab>
+    <panel locate="Center" type="BorderLayout">
+                <panel locate="Center" type="BorderLayout">
+                <panel cols="1" locate="West" rows="4" type="GridLayout">
+                <panel locate="South" type="FlowLayout"/>
+                  <!-- <component locate="West">
+                    <driver>common.gui.components.XMLLabel</driver>
+                    <parameters>
+                      <arg attribute="text">Pedido No:</arg>
+                      <arg attribute="alignment">0</arg>
+                      <arg attribute="font">Dialog,0,14</arg>
+                    </parameters>
+                  </component>  -->
+                  <component locate="West">
+                    <driver>common.gui.components.XMLLabel</driver>
+                    <parameters>
+                      <arg attribute="text">Vendedor:</arg>
+                      <arg attribute="alignment">0</arg>
+                      <arg attribute="font">Dialog,0,14</arg>
+                    </parameters>
+                  </component> 
+                  <component locate="West">
+                    <driver>common.gui.components.XMLLabel</driver>
+                    <parameters>
+                      <arg attribute="text">No. Orden:</arg>
+                      <arg attribute="alignment">0</arg>
+                      <arg attribute="font">Dialog,0,14</arg>
+                    </parameters>
+                  </component>
+                  
+                  <panel locate="South" type="FlowLayout"/>
+                </panel>
+                <panel cols="1" locate="Center" rows="4" type="GridLayout">
+                <panel locate="South" type="FlowLayout"/>
+                  <!-- <component locate="West">
+                    <driver id="consecutivopedido">client.gui.components.TableDataFields</driver>
+                    <parameters>
+                      <arg attribute="Panel">false</arg>
+                      <subarg>
+                        <arg attribute="format">TEXT</arg>
+                        <arg attribute="size">15</arg>
+                        <arg attribute="maxlength">12</arg>
+                        <arg attribute="enabled">false</arg>
+                        <arg attribute="clean">false</arg>
+                        <arg attribute="font">Dialog,1,15</arg>
+                        <arg attribute="foreground">249,87,87</arg>
+                        <arg attribute="background">196,196,252</arg>
+                        <arg attribute="alignment">RIGHT</arg>
+                        <arg attribute="getValue">lastnumber</arg>
+                        <arg attribute="printable">true</arg>
+                      </subarg>
+                    </parameters>
+                  </component> -->
+                  <component locate="Center">
+                    <driver id="Vendedor">client.gui.components.XMLComboBox</driver>
+                    <parameters>
+                    <!-- <arg attribute="Panel">false</arg> -->
+                      <arg attribute="importValue">id_bodega</arg>
+                      <arg attribute="sqlCombo">MTSEL0735</arg>
+                      <arg attribute="selectedIndex">1</arg>
+                      <arg attribute="preferredLength">140</arg>
+                      <arg attribute="addAttribute">finalKey</arg>
+                      <arg attribute="exportValue">vendedor</arg>
+                    </parameters>
+                  </component>
+                  <component locate="North">
+                    <driver id="numeroordenexterno">common.gui.components.GenericData</driver>
+                    <parameters>
+                      <!-- <arg attribute="Panel">false</arg> -->
+                      <subarg>
+                        <arg attribute="format">TEXT</arg>
+                        <arg attribute="exportValue">numeroordenexterno</arg>
+                        <arg attribute="name">numeroordenexterno</arg>
+                        <arg attribute="upperCase">true</arg>
+                        <arg attribute="maxlength">20</arg>
+                        <arg attribute="size">10</arg>
+                        <arg attribute="enabled">true</arg>
+                        <arg attribute="clean">true</arg>
+                        <arg attribute="font">Dialog,1,14</arg>
+                        <arg attribute="alignment">RIGHT</arg>
+                        <arg attribute="foreground">0,0,0</arg>
+                        <arg attribute="background">196,196,252</arg>
+                      </subarg>
+                    </parameters>
+                  </component>  
+                  <panel locate="South" type="FlowLayout"/>
+                </panel>
+              </panel>
+              </panel>
     <panel locate="East" type="BorderLayout">
-      <box locate="Center" width="30"/>
+      <box locate="Center" width="10"/>
       <panel locate="South" type="FlowLayout"/>
       <panel locate="East" type="BorderLayout">
         <panel locate="North" type="BorderLayout">
@@ -785,71 +873,47 @@ el boton cerrar cierra el formulario
                       </subarg>
                     </parameters>
                   </component> -->
+              
+
+              <!-- aqui estaba el grupo de tres -->
               <panel locate="Center" type="BorderLayout">
-                <panel cols="1" locate="West" rows="2" type="GridLayout">
+                <panel cols="1" locate="West" rows="1" type="GridLayout">
                   <component locate="West">
                     <driver>common.gui.components.XMLLabel</driver>
                     <parameters>
-                      <arg attribute="text">Vendedor:</arg>
+                      <arg attribute="text">Pedido No:</arg>
                       <arg attribute="alignment">0</arg>
-                      <arg attribute="font">Dialog,0,14</arg>
+                      <arg attribute="font">Dialog,1,20</arg>
                     </parameters>
-                  </component> 
-                  <component locate="West">
-                    <driver>common.gui.components.XMLLabel</driver>
-                    <parameters>
-                      <arg attribute="text">No. Orden:</arg>
-                      <arg attribute="alignment">0</arg>
-                      <arg attribute="font">Dialog,0,14</arg>
-                    </parameters>
-                  </component>
-                  <!-- <component locate="West">
-                    <driver>common.gui.components.XMLLabel</driver>
-                    <parameters>
-                      <arg attribute="text">Email:</arg>
-                      <arg attribute="alignment">0</arg>
-                      <arg attribute="font">Dialog,0,14</arg>
-                    </parameters>
-                  </component> -->
+                  </component>                   
                 </panel>
-                <panel cols="1" locate="Center" rows="2" type="GridLayout">
-                
-                  <component locate="Center">
-                    <driver id="Vendedor">client.gui.components.XMLComboBox</driver>
-                    <parameters>
-                    <arg attribute="Panel">false</arg>
-                      <arg attribute="importValue">id_bodega</arg>
-                      <!-- <arg attribute="label">Vendedor:</arg> -->
-                      <arg attribute="sqlCombo">MTSEL0735</arg>
-                      <arg attribute="selectedIndex">1</arg>
-                      <arg attribute="preferredLength">210</arg>
-                      <arg attribute="addAttribute">finalKey</arg>
-                      <arg attribute="exportValue">vendedor</arg>
-                    </parameters>
-                  </component>
-                  <component locate="North">
-                    <driver id="numeroordenexterno">common.gui.components.GenericData</driver>
+                <panel cols="1" locate="Center" rows="1" type="GridLayout">
+                  <component locate="West">
+                    <driver id="consecutivopedido">client.gui.components.TableDataFields</driver>
                     <parameters>
                       <arg attribute="Panel">false</arg>
                       <subarg>
-                        <!-- <arg attribute="label">No. Orden: </arg> -->
+                        <!-- <arg attribute="label">Documento:</arg> -->
                         <arg attribute="format">TEXT</arg>
-                        <arg attribute="exportValue">numeroordenexterno</arg>
-                        <arg attribute="name">numeroordenexterno</arg>
-                        <arg attribute="maxlength">20</arg>
-                        <arg attribute="size">15</arg>
-                        <arg attribute="enabled">true</arg>
-                        <arg attribute="clean">true</arg>
-                        <arg attribute="font">Dialog,0,12</arg>
-                        <arg attribute="alignment">RIGHT</arg>
+                        <arg attribute="size">13</arg>
+                        <arg attribute="maxlength">12</arg>
+                        <arg attribute="enabled">false</arg>
+                        <arg attribute="clean">false</arg>
+                        <arg attribute="font">Dialog,1,22</arg>
                         <arg attribute="foreground">249,87,87</arg>
                         <arg attribute="background">196,196,252</arg>
+                        <arg attribute="alignment">RIGHT</arg>
+                        <arg attribute="getValue">lastnumber</arg>
+                        <arg attribute="printable">true</arg>
                       </subarg>
                     </parameters>
-                  </component>    
+                  </component>                  
                 </panel>
               </panel>
+
+
               <panel locate="South" type="BorderLayout">
+              <panel locate="North" type="FlowLayout"/>
               <panel locate="East" type="FlowLayout"/>
               <component locate="Center">
                 <driver id="email">common.gui.components.GenericData</driver>
@@ -2027,6 +2091,7 @@ el boton cerrar cierra el formulario
               <arg attribute="enabled">true</arg>
               <arg attribute="exportValue">direccioncontacto</arg>
               <arg attribute="clean">true</arg>
+              <arg attribute="printable">true</arg>
             </subarg>
           </parameters>
         </component>
@@ -2073,6 +2138,7 @@ el boton cerrar cierra el formulario
               <arg attribute="enabled">true</arg>
               <arg attribute="exportValue">telefonocontacto</arg>
               <arg attribute="clean">true</arg>
+              <arg attribute="printable">true</arg>
             </subarg>
           </parameters>
         </component>
@@ -2246,7 +2312,7 @@ el boton cerrar cierra el formulario
                       <driver>this</driver>
                       <method>getPackage</method>
                       <parameters>
-                        <arg attribute="blankField">true</arg>
+                        <arg attribute="nullField">true</arg>
                         <subarg>
                           <arg attribute="importValue">telefonocontacto</arg>
                           <arg attribute="importValue">direccioncontacto</arg>
@@ -2287,6 +2353,10 @@ el boton cerrar cierra el formulario
                       </subarg>
                       </parameters>
                     </component> -->
+                    <component>
+                      <driver id="numeroordenexterno">common.gui.components.GenericData</driver>
+                      <method>getPrintPackage</method>
+                    </component>
                     <!-- 0 -->
                     <component>
                       <driver id="Vendedor">client.gui.components.XMLComboBox</driver>
@@ -2447,143 +2517,17 @@ el boton cerrar cierra el formulario
                       <driver>common.gui.components.XMLTextArea</driver>
                       <method>getPrintPackage</method>
                     </component>
-
-                  </action>
-
-                  <action>
-                    <type>transaction</type>
                     <component>
-                    <driver id="baseivagravados">client.gui.components.TableDataFields</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="subtotalglobalsinverde">client.gui.components.TableDataFields</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="totalmenosreteglobal">client.gui.components.TableDataFields</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="direccioncontacto">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="telefonocontacto">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="credit">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="vencimiento">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="tipo_doc">client.gui.components.XMLComboBox</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="referrercustomerid">client.gui.components.EmakuSearchField</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="referrercustomername">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="principal">client.gui.components.TableFindData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="nrogenerador">client.gui.components.TableDataFields</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="total">client.gui.components.TableDataFields</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="totalValues">client.gui.components.TableDataFields</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="totalValuesDescuento">client.gui.components.TableDataFields</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver>common.gui.components.XMLTextArea</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="totalcanttemp">client.gui.components.TableDataFields</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="temporales">client.gui.components.TableFindData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="combotemporales">client.gui.components.XMLComboBox</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="totalcantidad">client.gui.components.TableDataFields</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="iddirecciontercero">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="idtelefonotercero">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="numeroordenexterno">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                  <!--  limpiando llaves externas -->
-                  <component>
-                    <driver>this</driver>
-                    <method>cleanExternalValues</method>
-                  </component>
-                  <!--  Estos componentes exportan valores, por eso debe ir despues de
-            limpiar las llaves externas -->
-                  <component>
-                    <driver id="Vendedor">client.gui.components.XMLComboBox</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="date">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver>client.gui.components.FindThird</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="email">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                    <!-- <component>
-                      <driver id="pagocarta">common.gui.components.ButtonsPanel</driver>
-                      <method>setEnabled</method>
-                      <parameters>
-                        <arg attribute="button">PRINT</arg>
-                        <arg attribute="state">true</arg>
-                      </parameters>
-                    </component> -->
-                    <component>
-                      <driver id="pagotirilla">common.gui.components.ButtonsPanel</driver>
-                      <method>setEnabled</method>
-                      <parameters>
-                        <arg attribute="button">PRINT</arg>
-                        <arg attribute="state">true</arg>
-                      </parameters>
+                      <driver id="direccioncontacto">common.gui.components.GenericData</driver>
+                      <method>getPrintPackage</method>
                     </component>
+                    <component>
+                      <driver id="telefonocontacto">common.gui.components.GenericData</driver>
+                      <method>getPrintPackage</method>
+                    </component>
+
                   </action>
+                  
                 </object>
 
                 <object>
