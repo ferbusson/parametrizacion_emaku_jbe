@@ -1,0 +1,127 @@
+<container>
+  <subarg>
+    <arg attribute="consecutive" />
+    <arg attribute="date" />
+    <arg attribute="actionDocument">createDocument</arg>
+    <arg attribute="cash" />
+  </subarg>
+
+  <!-- 0 -->
+  <arg>LCUPD0006</arg>
+  <!-- 1 Observaciones -->
+  <arg>INS0037</arg>
+  <!-- 2 Valor datos_documento-->
+  <arg>INS0075</arg>
+  <!-- 3 tercero -->
+  <arg>INS0048</arg>
+
+  <!-- 4 centrocosto     -->
+  <arg attribute="addKey"/>
+
+  <!-- 5 Ret. Fuente -->
+  <subarg>
+    <LNData>
+      <driver>LNSelectedField</driver>
+      <method>getSubpackage</method>
+      <parameters>
+        <arg attribute="sql">INS0072</arg>
+        <arg attribute="fields">2,3,4,5,1,6</arg>
+        <arg attribute="conditional">B&gt;0</arg>
+        <arg attribute="discartKey">idTercero</arg>
+        <arg attribute="discartKey">centrocosto</arg>        
+      </parameters>
+    </LNData>
+    <LNData>
+      <driver>LNContabilidad</driver>
+      <method>columnDataAccount</method>
+      <parameters>
+        <arg attribute="Concepto">Venta segun factura de credito</arg>
+        <arg attribute="naturaleza">D</arg>
+        <arg attribute="centrocosto">getName</arg>
+        <arg attribute="tercero">getName</arg>
+        <subarg>
+          <arg attribute="accountKey">0</arg>
+          <arg attribute="accountData">1</arg>
+        </subarg>
+      </parameters>
+    </LNData>
+  </subarg>
+
+  <!-- 6 Ret. I.V.A. -->
+  <subarg>
+    <LNData>
+      <driver>LNSelectedField</driver>
+      <method>getSubpackage</method>
+      <parameters>
+        <arg attribute="sql">INS0072</arg>
+        <arg attribute="fields">2,3,4,5,1,6</arg>
+        <arg attribute="conditional">B&gt;0</arg>
+        <arg attribute="discartKey">idTercero</arg>
+        <arg attribute="discartKey">centrocosto</arg>
+      </parameters>
+    </LNData>
+    <LNData>
+      <driver>LNContabilidad</driver>
+      <method>columnDataAccount</method>
+      <parameters>
+        <arg attribute="Concepto">Venta segun factura de credito</arg>
+        <arg attribute="naturaleza">D</arg>
+        <arg attribute="centrocosto">getName</arg>
+        <arg attribute="tercero">getName</arg>
+        <subarg>
+          <arg attribute="accountKey">0</arg>
+          <arg attribute="accountData">1</arg>
+        </subarg>
+      </parameters>
+    </LNData>
+  </subarg>
+
+  <!-- 7 Ret. I.C.A. -->
+  <subarg>
+    <LNData>
+      <driver>LNSelectedField</driver>
+      <method>getSubpackage</method>
+      <parameters>
+        <arg attribute="sql">INS0072</arg>
+        <arg attribute="fields">2,3,4,5,1,6</arg>
+        <arg attribute="conditional">B&gt;0</arg>
+        <arg attribute="discartKey">idTercero</arg>
+        <arg attribute="discartKey">centrocosto</arg>
+      </parameters>
+    </LNData>
+    <LNData>
+      <driver>LNContabilidad</driver>
+      <method>columnDataAccount</method>
+      <parameters>
+        <arg attribute="Concepto">Venta segun factura de credito</arg>
+        <arg attribute="naturaleza">D</arg>
+        <arg attribute="tercero">getName</arg>
+        <arg attribute="centrocosto">getName</arg>
+        <subarg>
+          <arg attribute="accountKey">0</arg>
+          <arg attribute="accountData">1</arg>
+        </subarg>
+      </parameters>
+    </LNData>
+  </subarg>
+
+
+  <!-- 10 -->
+  <arg attribute="addKey" />
+
+  <!-- 11 -->
+   <subarg>
+    <LNData>
+      <driver>LNSelectedField</driver>
+      <method>getSubpackage</method>
+      <parameters>
+        <arg attribute="sql">LCINS0211</arg>
+        <arg attribute="fields">0,1,2,3,4,10,11</arg>
+        <arg attribute="discartKey">idTercero</arg>
+        <arg attribute="discartKey">centrocosto</arg>
+      </parameters>
+    </LNData>
+
+    
+  </subarg> 
+</container>
