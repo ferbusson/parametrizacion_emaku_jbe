@@ -1,7 +1,7 @@
 <!-- EN DESARROLLO - PEDIDOS JBE JBTR00004 auto 2 -->
 <FORM>
   <preferences>
-    <size height="600" width="1140"/>
+    <size height="600" width="1150"/>
     <name>Nueva Cotización</name>
     <icon>NFCREDITO</icon>
     <iconificable/>
@@ -72,25 +72,7 @@
     <requestFocus>client.gui.components.FindThird</requestFocus>
 
   </preferences>
-
-  <component locate="Center">
-    <driver id="nro_fact">client.gui.components.TableDataFields</driver>
-    <parameters>
-      <arg attribute="Panel">false</arg>
-      <subarg>
-        <arg attribute="format">TEXT</arg>
-        <arg attribute="size">10</arg>
-        <arg attribute="maxlength">26</arg>
-        <arg attribute="enabled">false</arg>
-        <arg attribute="clean">false</arg>
-        <arg attribute="font">Dialog,0,14</arg>
-        <arg attribute="foreground">249,87,87</arg>
-        <arg attribute="background">227,243,255</arg>
-        <arg attribute="alignment">RIGHT</arg>
-        <arg attribute="idAutoDocument">codigo_tipo</arg>
-      </subarg>
-    </parameters>
-  </component>
+  
   <component>
     <driver id="iddirecciontercero">common.gui.components.GenericData</driver>
     <parameters>
@@ -563,7 +545,7 @@
           </panel>
         </panel>
       </panel>
-      <panel icon="NTERCERO" name="Javipuntos" type="BorderLayout">
+      <!-- <panel icon="NTERCERO" name="Javipuntos" type="BorderLayout">
         <panel locate="North" type="BorderLayout">
           <panel locate="East" type="FlowLayout"/>
           <panel locate="North" type="FlowLayout"/>
@@ -620,7 +602,7 @@
             </component>
           </panel>
         </panel>
-      </panel>
+      </panel> -->
     </tab>
     <panel locate="Center" type="BorderLayout">
                 <panel locate="Center" type="BorderLayout">
@@ -853,19 +835,18 @@
                   <component locate="West">
                     <driver>common.gui.components.XMLLabel</driver>
                     <parameters>
-                      <arg attribute="text">Pedido No:</arg>
+                      <arg attribute="text">Número:</arg>
                       <arg attribute="alignment">0</arg>
-                      <arg attribute="font">Dialog,1,20</arg>
+                      <arg attribute="font">Dialog,0,14</arg>
                     </parameters>
                   </component>                   
                 </panel>
                 <panel cols="1" locate="Center" rows="1" type="GridLayout">
-                  <component locate="West">
+                  <!-- <component locate="West">
                     <driver id="consecutivopedido">client.gui.components.TableDataFields</driver>
                     <parameters>
                       <arg attribute="Panel">false</arg>
                       <subarg>
-                        <!-- <arg attribute="label">Documento:</arg> -->
                         <arg attribute="format">TEXT</arg>
                         <arg attribute="size">13</arg>
                         <arg attribute="maxlength">12</arg>
@@ -879,7 +860,26 @@
                         <arg attribute="printable">true</arg>
                       </subarg>
                     </parameters>
-                  </component>                  
+                  </component>-->
+                  <component locate="Center">
+                  <driver id="nro_fact">client.gui.components.TableDataFields</driver>
+                  <parameters>
+                    <arg attribute="Panel">false</arg>
+                    <subarg>
+                      <arg attribute="format">TEXT</arg>
+                      <arg attribute="size">10</arg>
+                      <arg attribute="maxlength">26</arg>
+                      <arg attribute="enabled">false</arg>
+                      <arg attribute="clean">false</arg>
+                      <arg attribute="font">Dialog,1,15</arg>
+                      <arg attribute="foreground">249,87,87</arg>
+                      <arg attribute="background">227,243,255</arg>
+                      <arg attribute="alignment">RIGHT</arg>
+                      <arg attribute="idAutoDocument">codigo_tipo</arg>
+                    </subarg>
+                  </parameters>
+                </component>
+
                 </panel>
               </panel>
 
@@ -2050,7 +2050,7 @@
           </parameters>
         </component>
         <panel locate="West" type="BorderLayout">
-        <panel locate="West" type="FlowLayout">
+        <!-- <panel locate="West" type="FlowLayout">
         <component>
           <driver id="direccioncontacto">common.gui.components.GenericData</driver>
           <parameters>
@@ -2068,7 +2068,7 @@
             </subarg>
           </parameters>
         </component>
-        </panel>
+        </panel> -->
         <panel locate="East" type="FlowLayout">
           <component>
             <driver>common.gui.components.XMLLabel</driver>
@@ -2097,7 +2097,7 @@
         </component>
         </panel>
         </panel>
-        <panel locate="South" type="BorderLayout">
+        <!-- <panel locate="South" type="BorderLayout">
         <component locate="Center">
           <driver id="telefonocontacto">common.gui.components.GenericData</driver>
           <parameters>
@@ -2115,7 +2115,7 @@
             </subarg>
           </parameters>
         </component>
-        </panel>
+        </panel> -->
       </panel>
       <panel locate="South" type="BorderLayout">
         <panel locate="West" type="FlowLayout">
@@ -2204,6 +2204,31 @@
                 </object>
                 <object>
                   <name>NEW</name>
+                  <!--  Limpiando tablas de retenciones  -->
+                <component>
+                  <driver id="base">client.gui.components.TableFindData</driver>
+                  <method>clean</method>
+                </component>
+                <component>
+                  <driver id="tretbase">client.gui.components.TableDataFields</driver>
+                  <method>clean</method>
+                </component>
+                <component>
+                  <driver id="retiva">client.gui.components.TableFindData</driver>
+                  <method>clean</method>
+                </component>
+                <component>
+                  <driver id="tretiva">client.gui.components.TableDataFields</driver>
+                  <method>clean</method>
+                </component>
+                <component>
+                  <driver id="retica">client.gui.components.TableFindData</driver>
+                  <method>clean</method>
+                </component>
+                <component>
+                  <driver id="tretica">client.gui.components.TableDataFields</driver>
+                  <method>clean</method>
+                </component>            
                   <component>
                     <driver id="baseivagravados">client.gui.components.TableDataFields</driver>
                     <method>clean</method>
@@ -2216,14 +2241,14 @@
                     <driver id="totalmenosreteglobal">client.gui.components.TableDataFields</driver>
                     <method>clean</method>
                   </component>
-                  <component>
+                  <!-- <component>
                     <driver id="direccioncontacto">common.gui.components.GenericData</driver>
                     <method>clean</method>
                   </component>
                   <component>
                     <driver id="telefonocontacto">common.gui.components.GenericData</driver>
                     <method>clean</method>
-                  </component>
+                  </component> -->
                   <component>
                     <driver id="credit">common.gui.components.GenericData</driver>
                     <method>clean</method>
@@ -2236,14 +2261,14 @@
                     <driver id="tipo_doc">client.gui.components.XMLComboBox</driver>
                     <method>clean</method>
                   </component>
-                  <component>
+                  <!-- <component>
                     <driver id="referrercustomerid">client.gui.components.EmakuSearchField</driver>
                     <method>clean</method>
                   </component>
                   <component>
                     <driver id="referrercustomername">common.gui.components.GenericData</driver>
                     <method>clean</method>
-                  </component>
+                  </component> -->
                   <component>
                     <driver id="principal">client.gui.components.TableFindData</driver>
                     <method>clean</method>
@@ -2260,10 +2285,10 @@
                     <driver id="totalValues">client.gui.components.TableDataFields</driver>
                     <method>clean</method>
                   </component>
-                  <component>
+                  <!-- <component> descuento global
                     <driver id="totalValuesDescuento">client.gui.components.TableDataFields</driver>
                     <method>clean</method>
-                  </component>
+                  </component> -->
                   <component>
                     <driver>common.gui.components.XMLTextArea</driver>
                     <method>clean</method>
@@ -2864,7 +2889,8 @@
       </panel>
     </tab>
     <panel locate="South" type="FlowLayout" />
-    <panel locate="South" type="BorderLayout" />
+    <panel locate="South" type="BorderLayout">
+    <panel locate="East" type="BorderLayout">
     <component locate="Center">
               <driver>common.gui.components.XMLLabel</driver>
               <parameters>
@@ -2964,7 +2990,7 @@
                         <subarg>
                           <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">vendedor</arg>
                           <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">dcredit</arg>
-                          <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">referrercustomerid</arg>
+                          <!-- <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">referrercustomerid</arg> -->
                           <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">numeroordenexterno</arg>
                         </subarg>
                       </parameters>
@@ -2980,7 +3006,7 @@
                       <method>getPackage</method>
                     </component>
                     <!-- 3 table: contactos_clientes -->
-                    <component>
+                    <!-- <component>
                       <driver>this</driver>
                       <method>getPackage</method>
                       <parameters>
@@ -2990,7 +3016,22 @@
                           <arg attribute="importValue">direccioncontacto</arg>
                         </subarg>
                       </parameters>
-                    </component>                    
+                    </component>-->
+                    <!-- 5 retefuente -->
+                  <component>
+                    <driver id="base">client.gui.components.TableFindData</driver>
+                    <method>getPackage</method>
+                  </component>
+                  <!-- 6 reteiva -->
+                  <component>
+                    <driver id="retiva">client.gui.components.TableFindData</driver>
+                    <method>getPackage</method>
+                  </component>
+                  <!-- 7 reteica -->
+                  <component>
+                    <driver id="retica">client.gui.components.TableFindData</driver>
+                    <method>getPackage</method>
+                  </component>    
                     <!-- 3 adds key bodega, the java code keeps this key as the first argument subsequenly used by query that corresponds the next getPackage calls -->
                     <!--inventory outs from this bodega -> -->
                     <component>
@@ -3125,7 +3166,7 @@
                       </parameters>
                     </component>
                     <!-- 13 -->
-                    <!-- <component>
+                    <component>
                       <driver>this</driver>
                       <method>getPackage</method>
                       <parameters>
@@ -3133,9 +3174,9 @@
                         <arg attribute="importValue">trfuente</arg>
                       </subarg>
                       </parameters>
-                    </component> -->
+                    </component>
                     <!-- 14 -->
-                    <!-- <component>
+                    <component>
                       <driver>this</driver>
                       <method>getPackage</method>
                       <parameters>
@@ -3143,9 +3184,9 @@
                         <arg attribute="importValue">triva</arg>
                       </subarg>
                       </parameters>
-                    </component> -->
+                    </component>
                     <!-- 15 -->
-                    <!-- <component>
+                    <component>
                       <driver>this</driver>
                       <method>getPackage</method>
                       <parameters>
@@ -3153,7 +3194,7 @@
                         <arg attribute="importValue">trica</arg>
                       </subarg>
                       </parameters>
-                    </component> -->
+                    </component>
                     <!-- 16 totalcantidades -->
                     <component>
                       <driver>this</driver>
@@ -3189,14 +3230,14 @@
                       <driver>common.gui.components.XMLTextArea</driver>
                       <method>getPrintPackage</method>
                     </component>
-                    <component>
+                    <!-- <component>
                       <driver id="direccioncontacto">common.gui.components.GenericData</driver>
                       <method>getPrintPackage</method>
                     </component>
                     <component>
                       <driver id="telefonocontacto">common.gui.components.GenericData</driver>
                       <method>getPrintPackage</method>
-                    </component>
+                    </component> -->
 
                   </action>
                   
@@ -3213,6 +3254,7 @@
         </object>
       </events>
     </component>
+    </panel>
     </panel>
   </FORM>
   <!-- Termina forma de Pago *** -->

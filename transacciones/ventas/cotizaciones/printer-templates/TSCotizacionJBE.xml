@@ -26,7 +26,7 @@
 		<!-- <qr row="10" col="470" width="115" height="115"/> -->
 		<!-- <cufe multipage="true" rownewpage="155" colnewpage="40" row="155" col="40" /> -->
 
-		<field row="130" center="920" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">ORDEN DE PEDIDO</field>
+		<field row="130" center="920" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">COTIZACIÓN</field>
 		<field row="150" center="875" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">Número:</field>
 				
 		<!-- <field row="210" center="870" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">Fecha Procesamiento:</field> -->
@@ -75,7 +75,7 @@
 		<!-- <qr row="10" col="470" width="115" height="115"/> -->
 		<!-- <cufe multipage="true" rownewpage="155" colnewpage="40" row="155" col="40" /> -->
 
-		<field row="130" center="920" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">ORDEN DE PEDIDO</field>
+		<field row="130" center="920" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">COTIZACIÓN</field>
 		<field row="150" center="875" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">Número:</field>
 		<!-- <ndocument fontName="Dialog" fontSize="8" fontStyle="0" row="140" center="1010" format="Integer"/> -->
 		<!-- <field row="130" col="235" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" importValue="true">detime</field> -->
@@ -113,15 +113,15 @@
 		<field row="600" col="480" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">BASE GRAVADA</field>
 		<field row="625" col="90" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">IVA</field>
 		<field row="625" col="200" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">INC</field>
-		<!-- <field row="625" col="280" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">RETE-FUENTE</field>
+		<field row="625" col="280" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">RETE-FUENTE</field>
 		<field row="625" col="390" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">RETE-IVA</field>
-		<field row="625" col="500" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">RETE-ICA</field> -->
+		<field row="625" col="500" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">RETE-ICA</field>
 		<field row="650" col="40" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">Total Artículos:</field>
 		<field row="650" col="160" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">Total Líneas de Pedido:</field>
 		<field row="650" col="390" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">NETO A PAGAR</field>		
-		<field row="665" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Dirección Contacto:</field>
-		<field row="675" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Teléfono Contacto:</field>
-		<field row="690" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Observaciones:</field>
+		<!-- <field row="665" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Dirección Contacto:</field>
+		<field row="675" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Teléfono Contacto:</field> -->
+		<field row="665" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Observaciones:</field>
 		
 		<field row="756" col="290" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Software E-MAKU</field>
 
@@ -235,19 +235,19 @@
 	</package>
 
 	<!-- 13 rete fuente -->
-	<!-- <package>
+	<package>
 		<field fontName="Dialog" fontSize="8" fontStyle="0" row="637" col="340" width="13" type="NUMERIC" mask="#,###,##0.00" />
-	</package> -->
+	</package>
 
 	<!-- 14 rete iva -->
-	<!-- <package>
+	<package>
 		<field fontName="Dialog" fontSize="8" fontStyle="0" row="637" col="430" width="13" type="NUMERIC" mask="#,###,##0.00" />
-	</package> -->
+	</package>
 
 	<!-- 15 rete ica -->
-	<!-- <package>
+	<package>
 		<field fontName="Dialog" fontSize="8" fontStyle="0" row="637" col="540" width="13" type="NUMERIC" mask="#,###,##0.00" />
-	</package> -->
+	</package>
 
 	<!-- 16 total cantidades -->
 	<package>
@@ -265,15 +265,15 @@
 	</package>
 	<!-- 19 Observaciones -->
 	<package>
-		<field row="700" col="40" type="TEXT" width="180" height="3" rowAcum="7" fontName="Dialog" fontSize="6" fontStyle="0" />
+		<field row="675" col="40" type="TEXT" width="180" height="3" rowAcum="7" fontName="Dialog" fontSize="6" fontStyle="0" />
 	</package>
 	<!-- 20 direccion contacto -->
-	<package>
+	<!-- <package>
 		<field row="665" col="130" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0" />
-	</package>
+	</package> -->
 	<!-- 21 telefono contacto -->
-	<package>
+	<!-- <package>
 		<field row="675" col="130" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0" />
-	</package>
+	</package> -->
 
 </emaku_template>

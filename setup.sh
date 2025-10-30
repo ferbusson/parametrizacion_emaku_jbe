@@ -13,17 +13,37 @@ fi
 
 echo "✅ Python 3 found"
 
-# Install required Python packages
-echo "📦 Installing required Python packages..."
+# Install required Python packages (PEP 668 compliant)
+echo "📦 Setting up Python environment..."
 
-pip3 install psycopg2-binary --user
+# Check if virtual environment exists
+if [ ! -d "venv" ]; then
+    echo "📦 Creating virtual environment (PEP 668 compliant)..."
+    python3 -m venv venv
+    
+    if [ $? -eq 0 ]; then
+        echo "✅ Virtual environment created successfully"
+    else
+        echo "❌ Failed to create virtual environment"
+        exit 1
+    fi
+else
+    echo "✅ Virtual environment already exists"
+fi
+
+# Activate virtual environment and install dependencies
+echo "📦 Installing dependencies in virtual environment..."
+source venv/bin/activate
+
+pip install psycopg2-binary
 
 if [ $? -eq 0 ]; then
-    echo "✅ psycopg2-binary installed successfully"
+    echo "✅ psycopg2-binary installed successfully in virtual environment"
 else
     echo "❌ Failed to install psycopg2-binary"
-    echo "💡 Try: sudo apt-get install libpq-dev python3-dev"
-    echo "💡 Then: pip3 install psycopg2-binary"
+    echo "💡 Try installing system dependencies first:"
+    echo "💡 sudo apt-get install libpq-dev python3-dev"
+    exit 1
 fi
 
 # Create backups directory
@@ -38,15 +58,19 @@ chmod +x setup.sh
 
 # Test if the script runs
 echo "🧪 Testing script..."
-python3 xml_db_sync.py config
+python xml_db_sync.py config
 
 echo ""
 echo "✅ Setup complete!"
 echo ""
 echo "📋 Next steps:"
 echo "1. Edit db_config.json with your PostgreSQL credentials"
-echo "2. Test connection: python3 xml_db_sync.py test"
-echo "3. Sync your first file: python3 xml_db_sync.py sync --file JBTR00004_perfil.xml"
+echo "2. Activate virtual environment: source venv/bin/activate"
+echo "3. Test connection: python xml_db_sync.py test"
+echo "4. Sync your first file: python xml_db_sync.py sync --file JBTR00004_perfil.xml"
+echo ""
+echo "⚠️  IMPORTANT: Always activate the virtual environment first:"
+echo "   source venv/bin/activate"
 echo ""
 echo "🔧 VS Code Integration:"
 echo "• Ctrl+Shift+D: Sync current XML file"
