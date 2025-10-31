@@ -1,0 +1,10 @@
+<container>
+  <subarg>
+    
+    <arg attribute="actionDocument">annulDocument</arg>
+    <arg attribute="date" />
+
+  </subarg>
+
+ 
+</container>
