@@ -772,6 +772,7 @@ do the previous step as many times as necessary to all the components that need 
                         <arg attribute="sqlCode">DGSEL0088</arg> <!-- numero orden externo -->
                         <arg attribute="sqlCode">JBSEL0009</arg> <!-- tabla principal de productos -->
                         <arg attribute="sqlCode">MDSEL0001</arg> <!-- hora -->
+                        <arg attribute="sqlCode">SEL00404</arg> <!-- estado del documento-->
                         <arg attribute="sqlCodeExportValue">JBSEL0008,_sigla,_usuario,_norden,_id_char_tercero_referente,_nombre_tercero_referente,_direccion_contacto,_telefono_contacto</arg>
                       </subarg>
                     </parameters>
@@ -1454,6 +1455,15 @@ do the previous step as many times as necessary to all the components that need 
         </panel>
       </panel>
       <panel locate="South" type="BorderLayout">      
+      <component locate="West">
+          <driver id="estado">common.gui.components.XMLLabel</driver>
+          <parameters>
+            <arg attribute="keySQL">SEL00404</arg>
+            <arg attribute="driverEvent" id="nro_fact">client.gui.components.TableDataFields</arg>
+            <arg attribute="text">:</arg>
+            <arg attribute="alignment">LEFT</arg>
+          </parameters>
+        </component>      
         <panel locate="East" type="BorderLayout">        
           <!-- aqui estaba el fragmento del segundo boton que permitia originalmente guardar con impresion carta:
           fragmento_xml_boton_guardar_pedidos_carta.xml -->
@@ -1683,6 +1693,10 @@ do the previous step as many times as necessary to all the components that need 
                   <action>
                     <type>transaction</type>
                     <component>
+                  <driver id="estado">common.gui.components.XMLLabel</driver>
+                  <method>clean</method>
+                </component>                  
+                    <component>
                     <driver id="baseivagravados">client.gui.components.TableDataFields</driver>
                     <method>clean</method>
                   </component>
@@ -1804,6 +1818,10 @@ do the previous step as many times as necessary to all the components that need 
                 </object>
                 <object>
                   <name>NEW</name>
+                  <component>
+                  <driver id="estado">common.gui.components.XMLLabel</driver>
+                  <method>clean</method>
+                </component>                  
                   <component>
                     <driver id="baseivagravados">client.gui.components.TableDataFields</driver>
                     <method>clean</method>

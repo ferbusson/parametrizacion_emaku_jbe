@@ -72,3 +72,6 @@ db.sqlite3-journal
 # System Files
 .DS_Store
 Thumbs.db
+
+# Project specific directories
+backups/
