@@ -1,8 +1,61 @@
-<!-- EN DESARROLLO - COTIZACION JBE JBTR00004 auto 2 -->
+<!-- EN DESARROLLO - FACTURA ELECTRONICA JBE JBTR00007 
+  Permite generar factura electronica de punto de venta a partir de un pedido de venta
+-->
+
+<!-- TO DO list:
+  adicionar componente para capturar el numero de pedido de venta que se va a facturar done
+  adicionar componente de javipuntos done
+  cambiar combo de vendedor por componente generic data done
+  adicionar componente para direccion de contacto done
+  adicionar componente para telefono de contacto done
+  
+  hacer que la siguiente inforacion se cargue al digitar el numero de pedido de venta:
+  tercero, done
+  javipuntos, done
+  vendedor, done
+  nro orden, done
+  fecha, done
+  vigencia, done
+  vencimiento, done
+  tabla de productos -> al hacer esto la tabla debe generar los puntos automaticamente,
+  observaciones, done
+  direccion de contacto, done
+  telefono de contacto, done
+
+  validar que el pedido:
+  no este anulado
+  no este facturado
+  este vigente
+
+  adicionar las formas de pago
+  en las formas de pago:
+  adicionar el pago con javipuntos,
+  adicionar cruce con anticipos
+  adicionar comisiones vendedores
+
+  al guardar la factura:
+  validar que la suma de los valores en las formas de pago sea igual o mayor al total de la factura
+  si el pago es con javipuntos, validar que el cliente tenga los puntos suficientes
+  si el pago es en efectivo el valor ingresado puede ser mayor al total de la factura, en este caso calcular el cambio
+  si el pago es con tarjeta, bonos, instrumento no definido u otro, no permitir que el valor sea mayor al total de la factura
+  si el pago es mixto validar que solo la parte en efectivo puede generar cambio
+
+  guardar asientos contables de la factura y de las formas de pago
+  guardar asientos contables de cruce con anticipos
+  guardar asientos contables de javipuntos
+
+  imprimir factura electronica en tirilla continua cuando es contado
+  imprimir factura electronica en hoja carta cuando es credito
+
+  asegurarse de que todos los componentes tengan el metodo clean implementado
+
+-->
+
+
 <FORM>
   <preferences>
     <size height="600" width="1150"/>
-    <name>Nueva Cotización</name>
+    <name>Nueva FacturaElectronica</name>
     <icon>NFCREDITO</icon>
     <iconificable/>
     <maximizable/>
@@ -34,7 +87,7 @@
     <notCleanExportValue>instrumentond</notCleanExportValue>
     <notCleanExportValue>OTRO</notCleanExportValue>
 
-    <loadMultiBranch>LCSEL0133</loadMultiBranch>
+    <loadMultiBranch>LCSEL0607</loadMultiBranch>
     <!-- <notCleanExportValue>charctatipofactura</notCleanExportValue> lust -->
     <notCleanExportValue>trm</notCleanExportValue>
     <notCleanExportValue>prefix</notCleanExportValue>
@@ -73,6 +126,25 @@
 
   </preferences>
   
+    <component>
+        <driver id="prefijo_pedido">common.gui.components.GenericData</driver>
+        <parameters>
+            <subarg>
+                <arg attribute="format">TEXT</arg>
+                <arg attribute="name">idBodegae</arg>
+                <arg attribute="size">20</arg>
+                <arg attribute="maxlength">20</arg>
+                <arg attribute="importValue">codigo_tipo</arg>
+                <arg attribute="sqlInit">JBSEL0010</arg>
+                <arg attribute="queryOnInit">true</arg>                
+                <arg attribute="nameField">bodegaEntrante</arg>
+                <arg attribute="exportValue">codigo_tipo_pedido</arg>
+                <arg attribute="nullValue">true</arg>
+            </subarg>
+        </parameters>
+    </component>
+
+
   <component>
     <driver id="iddirecciontercero">common.gui.components.GenericData</driver>
     <parameters>
@@ -86,7 +158,7 @@
         <arg attribute="maxlength">200</arg>
         <arg attribute="enabled">false</arg>
         <arg attribute="foreground">0,0,0</arg>
-        <arg attribute="background">227,243,255</arg>
+        <arg attribute="background">186,245,248</arg>
         <arg attribute="clean">true</arg>
       </subarg>
     </parameters>
@@ -104,7 +176,7 @@
         <arg attribute="maxlength">200</arg>
         <arg attribute="enabled">false</arg>
         <arg attribute="foreground">0,0,0</arg>
-        <arg attribute="background">227,243,255</arg>
+        <arg attribute="background">186,245,248</arg>
         <arg attribute="clean">true</arg>
       </subarg>
     </parameters>
@@ -465,8 +537,11 @@
         <component locate="Center">
           <driver>client.gui.components.FindThird</driver>
           <parameters>
-            <arg attribute="keySQL">SEL0157</arg>
-            <arg attribute="driverEvent" id="nrogenerador">client.gui.components.TableDataFields</arg>
+            <!-- <arg attribute="keySQL">SEL0157</arg>
+            <arg attribute="driverEvent" id="nrogenerador">client.gui.components.TableDataFields</arg> -->
+            <arg attribute="keySQL">SEL0169</arg>
+            <arg attribute="driverEvent" id="nro_orden_pedido">client.gui.components.TableDataFields</arg>
+
             <arg attribute="sqlSizeRecords">SEL0132</arg>            <!-- cuenta los records -->
             <arg attribute="sqlRecords">LCSEL0936</arg>            <!-- consulta informacion del tercero seleccionado -->
             <arg attribute="sqlAddress">LCSEL0933</arg>            <!-- retorna direcciones de tercero desde tercero def en consultar si no los numeros que tenga -->
@@ -533,7 +608,7 @@
                   <arg attribute="maxlength">10</arg>
                   <arg attribute="font">Dialog,0,13</arg>
                   <arg attribute="foreground">0,0,0</arg>
-                  <arg attribute="background">227,243,255</arg>
+                  <arg attribute="background">186,245,248</arg>
                   <arg attribute="alignment">RIGHT</arg>
                   <arg attribute="importValue">tipo_doc</arg>
                   <arg attribute="sqlCode">SEL0119</arg>
@@ -545,7 +620,7 @@
           </panel>
         </panel>
       </panel>
-      <!-- <panel icon="NTERCERO" name="Javipuntos" type="BorderLayout">
+      <panel icon="NTERCERO" name="Javipuntos" type="BorderLayout">
         <panel locate="North" type="BorderLayout">
           <panel locate="East" type="FlowLayout"/>
           <panel locate="North" type="FlowLayout"/>
@@ -556,27 +631,23 @@
               <arg attribute="font">Dialog,0,13</arg>
             </parameters>
           </component>
-          <component locate="Center">
-                <driver id="referrercustomerid">client.gui.components.EmakuSearchField</driver>
-                <parameters>
+          <component locate="West">
+              <driver id="referrercustomerid">common.gui.components.GenericData</driver>
+              <parameters>
+                <subarg>
                   <arg attribute="label">Nit/CC</arg>
-                  <arg attribute="size">15</arg>
-                  <arg attribute="maxlength">26</arg>
-                  <arg attribute="nullValue">true</arg>
-                  <arg attribute="exportValue">referrercustomerid</arg>
+                  <arg attribute="getValue">_id_char_tercero_referente</arg>                  
                   <arg attribute="format">TEXT</arg>
-                  <arg attribute="sqlCombo">JBSEL0006</arg>
-                  <arg attribute="blankArgs">false</arg>
-                  <arg attribute="keyDataSearch">searchProd</arg>
-                  <arg attribute="repeatData">2</arg>
-                  <arg attribute="noDataBeep">true</arg>
-                  <arg attribute="noDataMessage">No se encontro registros</arg>
-                  <arg attribute="selectedIndex">1</arg>
-                  <arg attribute="enabled">true</arg>
+                  <arg attribute="size">15</arg>
+                  <arg attribute="maxlength">250</arg>
+                  <arg attribute="font">Dialog,0,12</arg>
+                  <arg attribute="enabled">false</arg>
                   <arg attribute="clean">true</arg>
-                  <arg attribute="sqlCode">JBSEL0005</arg>                  
-                </parameters>
-              </component>
+                  <arg attribute="alignment">CENTER</arg>
+                  <arg attribute="printable">true</arg>
+                </subarg>
+              </parameters>
+            </component>
         </panel>
         <panel locate="Center" type="BorderLayout">
           <panel locate="East" type="FlowLayout"/>
@@ -585,10 +656,9 @@
             <component locate="West">
               <driver id="referrercustomername">common.gui.components.GenericData</driver>
               <parameters>
-                    <arg attribute="keySQL">JBSEL0005</arg>
-                    <arg attribute="driverEvent" id="referrercustomerid">client.gui.components.EmakuSearchField</arg>
                 <subarg>
                   <arg attribute="label">Nombre</arg>
+                  <arg attribute="getValue">_nombre_tercero_referente</arg>                  
                   <arg attribute="format">TEXT</arg>
                   <arg attribute="size">29</arg>
                   <arg attribute="maxlength">250</arg>
@@ -602,7 +672,7 @@
             </component>
           </panel>
         </panel>
-      </panel> -->
+      </panel>
     </tab>
     <panel locate="Center" type="BorderLayout">
                 <panel locate="Center" type="BorderLayout">
@@ -637,57 +707,48 @@
                 </panel>
                 <panel cols="1" locate="Center" rows="4" type="GridLayout">
                 <panel locate="South" type="FlowLayout"/>
-                  <!-- <component locate="West">
-                    <driver id="consecutivopedido">client.gui.components.TableDataFields</driver>
+                  <component locate="North">
+                    <driver id="vendedor">common.gui.components.GenericData</driver>
                     <parameters>
                       <arg attribute="Panel">false</arg>
                       <subarg>
                         <arg attribute="format">TEXT</arg>
+                        <arg attribute="getValue">_sigla</arg>
+                        <arg attribute="exportValue">vendedor</arg>
+                        <arg attribute="name">vendedor</arg>
+                        <arg attribute="maxlength">80</arg>
                         <arg attribute="size">15</arg>
-                        <arg attribute="maxlength">12</arg>
+                        <arg attribute="printable">TRUE</arg>
                         <arg attribute="enabled">false</arg>
-                        <arg attribute="clean">false</arg>
-                        <arg attribute="font">Dialog,1,15</arg>
-                        <arg attribute="foreground">249,87,87</arg>
-                        <arg attribute="background">227,243,255</arg>
+                        <arg attribute="clean">true</arg>
+                        <arg attribute="font">Dialog,0,12</arg>
                         <arg attribute="alignment">RIGHT</arg>
-                        <arg attribute="getValue">lastnumber</arg>
-                        <arg attribute="printable">true</arg>
+                        <arg attribute="foreground">0,0,0</arg>
+                        <arg attribute="background">186,245,248</arg>
                       </subarg>
                     </parameters>
-                  </component> -->
-                  <component locate="Center">
-                    <driver id="Vendedor">client.gui.components.XMLComboBox</driver>
-                    <parameters>
-                    <!-- <arg attribute="Panel">false</arg> -->
-                      <arg attribute="importValue">id_bodega</arg>
-                      <arg attribute="sqlCombo">MTSEL0735</arg>
-                      <arg attribute="selectedIndex">1</arg>
-                      <arg attribute="preferredLength">140</arg>
-                      <arg attribute="addAttribute">finalKey</arg>
-                      <arg attribute="exportValue">vendedor</arg>
-                    </parameters>
-                  </component>
+                  </component>    
                   <component locate="North">
                     <driver id="numeroordenexterno">common.gui.components.GenericData</driver>
                     <parameters>
-                      <!-- <arg attribute="Panel">false</arg> -->
+                      <arg attribute="Panel">false</arg>
                       <subarg>
                         <arg attribute="format">TEXT</arg>
+                        <arg attribute="getValue">_norden</arg>
                         <arg attribute="exportValue">numeroordenexterno</arg>
                         <arg attribute="name">numeroordenexterno</arg>
-                        <arg attribute="upperCase">true</arg>
                         <arg attribute="maxlength">20</arg>
-                        <arg attribute="size">10</arg>
-                        <arg attribute="enabled">true</arg>
+                        <arg attribute="size">15</arg>
+                        <arg attribute="printable">TRUE</arg>
+                        <arg attribute="enabled">false</arg>
                         <arg attribute="clean">true</arg>
-                        <arg attribute="font">Dialog,1,14</arg>
+                        <arg attribute="font">Dialog,0,12</arg>
                         <arg attribute="alignment">RIGHT</arg>
                         <arg attribute="foreground">0,0,0</arg>
-                        <arg attribute="background">227,243,255</arg>
+                        <arg attribute="background">186,245,248</arg>
                       </subarg>
                     </parameters>
-                  </component>  
+                  </component>    
                   <panel locate="South" type="FlowLayout"/>
                 </panel>
               </panel>
@@ -701,6 +762,8 @@
             <component locate="West">
               <driver id="date">common.gui.components.GenericData</driver>
               <parameters>
+              <arg attribute="keySQL">SEL0177</arg>
+                <arg attribute="driverEvent" id="nro_fact">client.gui.components.TableDataFields</arg>
                 <subarg>
                   <arg attribute="label">DATE</arg>
                   <arg attribute="format">TEXT</arg>
@@ -708,10 +771,9 @@
                   <arg attribute="maxlength">50</arg>
                   <arg attribute="enabled">false</arg>
                   <arg attribute="return">false</arg>
-                  <arg attribute="clean">false</arg>
+                  <arg attribute="clean">TRUE</arg>
                   <arg attribute="alignment">CENTER</arg>
                   <arg attribute="exportValue">fechai</arg>
-                  <arg attribute="systemDate">yyyy-MM-dd</arg>
                   <arg attribute="printable">true</arg>
                 </subarg>
               </parameters>
@@ -720,12 +782,15 @@
               <component locate="West">
                 <driver id="credit">common.gui.components.GenericData</driver>
                 <parameters>
+                <arg attribute="keySQL">DGSEL0081</arg>
+                <arg attribute="driverEvent" id="nro_fact">client.gui.components.TableDataFields</arg>
                   <subarg>
                     <arg attribute="label">Vigencia:</arg>
                     <arg attribute="format">TEXT</arg>
                     <arg attribute="mask">NUMERIC</arg>
                     <arg attribute="size">3</arg>
                     <arg attribute="maxlength">3</arg>
+                    <arg attribute="enabled">false</arg>
                     <arg attribute="defaultText">1</arg>
                     <arg attribute="exportValue">dcredit</arg>
                     <arg attribute="exportField">1</arg>
@@ -779,88 +844,67 @@
                       </subarg>
                     </parameters>
                   </component>
-            <!-- <component locate="East">
-              <driver id="Vendedor">client.gui.components.XMLComboBox</driver>
-              <parameters>
-                <arg attribute="importValue">id_bodega</arg>
-                <arg attribute="label">Vendedor:</arg>
-                <arg attribute="sqlCombo">MTSEL0735</arg>
-                <arg attribute="selectedIndex">1</arg>
-                <arg attribute="preferredLength">210</arg>
-                <arg attribute="addAttribute">finalKey</arg>
-                <arg attribute="exportValue">vendedor</arg>
-              </parameters>
-            </component>            -->
           </panel>
           <panel locate="South" type="BorderLayout">
             <panel locate="Center" type="BorderLayout">
               <box locate="West" width="60"/>
               <panel locate="North" type="FlowLayout"/>
               <panel locate="East" type="FlowLayout"/>
-              <!-- <component locate="Center">
-              <driver id="Vendedor">client.gui.components.XMLComboBox</driver>
-              <parameters>
-                <arg attribute="importValue">id_bodega</arg>
-                <arg attribute="label">Vendedor:</arg>
-                <arg attribute="sqlCombo">MTSEL0735</arg>
-                <arg attribute="selectedIndex">1</arg>
-                <arg attribute="preferredLength">210</arg>
-                <arg attribute="addAttribute">finalKey</arg>
-                <arg attribute="exportValue">vendedor</arg>
-              </parameters>
-            </component> -->
-              <!-- <component locate="Center">
-                    <driver id="total">client.gui.components.TableDataFields</driver>
-                    <parameters>
-                      <arg attribute="Panel">false</arg>
-                      <subarg>
-                        <arg attribute="format">NUMERIC</arg>
-                        <arg attribute="label">Total:</arg>
-                        <arg attribute="size">11</arg>
-                        <arg attribute="maxlength">26</arg>
-                        <arg attribute="enabled">false</arg>
-                        <arg attribute="font">Dialog,1,30</arg>
-                        <arg attribute="foreground">0,0,0</arg>
-                        <arg attribute="background">152,251,152</arg>
-                        <arg attribute="alignment">RIGHT</arg>
-                        <arg attribute="calculateExportValue">totalfact-(trfuente+triva+trica)</arg>
-                      </subarg>
-                    </parameters>
-                  </component> -->
-              
 
               <!-- aqui estaba el grupo de tres -->
               <panel locate="Center" type="BorderLayout">
-                <panel cols="1" locate="West" rows="1" type="GridLayout">
+                <panel cols="1" locate="West" rows="2" type="GridLayout">
                   <component locate="West">
                     <driver>common.gui.components.XMLLabel</driver>
                     <parameters>
-                      <arg attribute="text">Número:</arg>
+                      <arg attribute="text">Número Orden Pedido:</arg>
+                      <arg attribute="alignment">0</arg>
+                      <arg attribute="font">Dialog,0,14</arg>
+                    </parameters>
+                  </component>                   
+                  <component locate="West">
+                    <driver>common.gui.components.XMLLabel</driver>
+                    <parameters>
+                      <arg attribute="text">Número Fac:</arg>
                       <arg attribute="alignment">0</arg>
                       <arg attribute="font">Dialog,0,14</arg>
                     </parameters>
                   </component>                   
                 </panel>
-                <panel cols="1" locate="Center" rows="1" type="GridLayout">
-                  <!-- <component locate="West">
-                    <driver id="consecutivopedido">client.gui.components.TableDataFields</driver>
-                    <parameters>
-                      <arg attribute="Panel">false</arg>
-                      <subarg>
-                        <arg attribute="format">TEXT</arg>
-                        <arg attribute="size">13</arg>
-                        <arg attribute="maxlength">12</arg>
-                        <arg attribute="enabled">false</arg>
-                        <arg attribute="clean">false</arg>
-                        <arg attribute="font">Dialog,1,22</arg>
-                        <arg attribute="foreground">249,87,87</arg>
-                        <arg attribute="background">227,243,255</arg>
-                        <arg attribute="alignment">RIGHT</arg>
-                        <arg attribute="getValue">lastnumber</arg>
-                        <arg attribute="printable">true</arg>
-                      </subarg>
-                    </parameters>
-                  </component>-->
+                <panel cols="1" locate="Center" rows="2" type="GridLayout">
+                <component locate="Center">
+                  <driver id="nro_orden_pedido">client.gui.components.TableDataFields</driver>
+                  <parameters>
+                    <arg attribute="Panel">false</arg>
+                    <subarg>
+                      <arg attribute="format">TEXT</arg>
+                      <arg attribute="size">10</arg>
+                      <arg attribute="maxlength">26</arg>
+                      <arg attribute="enabled">true</arg>
+                      <arg attribute="clean">true</arg>
+                      <arg attribute="font">Dialog,1,15</arg>
+                      <arg attribute="foreground">255,255,255</arg>
+                      <arg attribute="background">20,123,108</arg> <!-- highlights the color component so it is easily identifiable -->
+                      <arg attribute="alignment">RIGHT</arg>
+
+                      <arg attribute="idAutoDocument">codigo_tipo_pedido</arg>
+                        <arg attribute="importValue">codigo_tipo_pedido</arg>
+
+                    <!-- queries to load info from the value of nro_orden_pedido 
+                          the attribute sqlCode and sqlCodeExportValue execute queries 
+                          that are going to be referenced in its corresponding component -->
+                        <arg attribute="sqlCode">SEL0169</arg> <!-- tercero -->
+                        <arg attribute="sqlCode">SEL0120</arg> <!-- observaciones -->
+                        <arg attribute="sqlCode">DGSEL0081</arg> <!-- dias vigencia -->
+                        <arg attribute="sqlCode">SEL0177</arg> <!-- fecha factura SEL0177-->
+                        <arg attribute="sqlCode">JBSEL0009</arg> <!-- tabla principal de productos -->
+                        <!-- <arg attribute="sqlCode">MDSEL0001</arg> hora -->
+                        <!-- <arg attribute="sqlCode">SEL00404</arg> estado del documento -->
+                        <arg attribute="sqlCodeExportValue">JBSEL0008,_sigla,_usuario,_norden,_id_char_tercero_referente,_nombre_tercero_referente,_direccion_contacto,_telefono_contacto</arg>
+
+                    </subarg>
+                  </parameters>
+                </component>
                   <component locate="Center">
                   <driver id="nro_fact">client.gui.components.TableDataFields</driver>
                   <parameters>
@@ -872,8 +916,8 @@
                       <arg attribute="enabled">false</arg>
                       <arg attribute="clean">false</arg>
                       <arg attribute="font">Dialog,1,15</arg>
-                      <arg attribute="foreground">249,87,87</arg>
-                      <arg attribute="background">227,243,255</arg>
+                      <arg attribute="foreground">0,0,0</arg>
+                      <arg attribute="background">186,245,248</arg>
                       <arg attribute="alignment">RIGHT</arg>
                       <arg attribute="idAutoDocument">codigo_tipo</arg>
                     </subarg>
@@ -901,7 +945,7 @@
                     <arg attribute="maxlength">200</arg>
                     <arg attribute="enabled">false</arg>
                     <arg attribute="foreground">0,0,0</arg>
-                    <arg attribute="background">227,243,255</arg>
+                    <arg attribute="background">186,245,248</arg>
                     <arg attribute="clean">true</arg>
                     <arg attribute="exportValue">mailto</arg>
                     <arg attribute="printable">true</arg>
@@ -928,6 +972,9 @@
       <component locate="Center">
         <driver id="principal">client.gui.components.TableFindData</driver>
         <parameters>
+          <arg attribute="keySQL">JBSEL0009</arg>
+          <arg attribute="driverEvent" id="nro_orden_pedido">client.gui.components.TableDataFields</arg>
+
           <arg attribute="driverEventRecord" id="sendbuttontemporales">client.gui.components.EmakuSendRecordButton</arg>
 
           <arg attribute="keySQL">SEL0119</arg>
@@ -939,8 +986,8 @@
           <arg attribute="importValue">id_centrocosto</arg>
           <arg attribute="importValue">id_bodega</arg>
           <arg attribute="rows">600</arg>
-          <arg attribute="colorBackground">227,243,255</arg>
-          <arg attribute="colorSelected">167,202,229</arg>
+          <arg attribute="colorBackground">186,245,248</arg>
+          <arg attribute="colorSelected">126,193,188</arg>
           <arg attribute="protectSelected">true</arg>
           <arg attribute="flagReloadData">false</arg>          <!-- Adicionado para evitar que se recargue la tabla -->
 
@@ -1020,7 +1067,7 @@
             <arg attribute="noDataBeep">true</arg>
             <arg attribute="noDataMessage">No se encontro registros</arg>
             <arg attribute="selectedIndex">1</arg>
-            <arg attribute="enabled">true</arg>
+            <arg attribute="enabled">false</arg>
             <arg attribute="printable">true</arg>
             </subarg>
             <!-- 2 (b) -->
@@ -1037,7 +1084,7 @@
             <arg attribute="name">Disp</arg>
             <arg attribute="length">70</arg>
             <arg attribute="type">INTEGER</arg>
-            <arg attribute="enabled">true</arg>
+            <arg attribute="enabled">false</arg>
             <arg attribute="queryCol">5</arg>
             <!-- <arg attribute="minValue">0</arg> -->
             </subarg>
@@ -1046,7 +1093,7 @@
             <arg attribute="name">Cant</arg>
             <arg attribute="length">70</arg>
             <arg attribute="type">INTEGER</arg>
-            <arg attribute="enabled">true</arg>
+            <arg attribute="enabled">false</arg>
             <arg attribute="returnCol">1</arg>
             <arg attribute="recalculate">false</arg>
             <arg attribute="defaultValue">1</arg>
@@ -1059,7 +1106,7 @@
             <arg attribute="name">Lista</arg>
             <arg attribute="length">60</arg>
             <arg attribute="type">INTEGER</arg>
-            <arg attribute="enabled">true</arg>
+            <arg attribute="enabled">false</arg>
             <arg attribute="returnCol">12</arg>
             <arg attribute="defaultValue">1</arg>
             </subarg>
@@ -1092,7 +1139,7 @@
             <arg attribute="length">80</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="roundDecimal">0</arg>
-            <arg attribute="enabled">true</arg>
+            <arg attribute="enabled">false</arg>
             <arg attribute="returnCol">4</arg>
             <arg attribute="printable">true</arg>
             </subarg>
@@ -1511,8 +1558,8 @@
       <arg attribute="driverEvent" id="combotemporales">client.gui.components.XMLComboBox</arg>
 
       <arg attribute="rows">600</arg>
-      <arg attribute="colorBackground">227,243,255</arg>
-      <arg attribute="colorSelected">167,202,229</arg>
+      <arg attribute="colorBackground">186,245,248</arg>
+      <arg attribute="colorSelected">126,193,188</arg>
       <arg attribute="protectSelected">true</arg>
       <arg attribute="totales">d,i,j,k,l,m,r,t,u,v,w,x,y,z,aa,ab,ac,ao</arg>
       <arg attribute="beanshell">i=am&lt;0?(d*f)/(1+(g/100.0)):((f-(an*(am/100.0)))*d)/(1+(g/100.0))</arg>          <!-- subtotal -->
@@ -1912,7 +1959,7 @@
               <arg attribute="return">false</arg>
               <arg attribute="nullValue">true</arg>
               <arg attribute="foreground">0,0,0</arg>
-              <arg attribute="background">227,243,255</arg>
+              <arg attribute="background">186,245,248</arg>
             </subarg>
           </parameters>
         </component> -->
@@ -1930,7 +1977,7 @@
               <arg attribute="alignment">RIGHT</arg>
               <arg attribute="return">false</arg>
               <arg attribute="foreground">0,0,0</arg>
-              <arg attribute="background">227,243,255</arg>
+              <arg attribute="background">186,245,248</arg>
               <arg attribute="calculateExportValue">subtotalsinbolsa</arg>
               <arg attribute="printable">true</arg>
             </subarg>
@@ -1945,7 +1992,7 @@
               <arg attribute="exportValue">vdescuentoglobal</arg>
               <arg attribute="return">false</arg>
               <arg attribute="foreground">0,0,0</arg>
-              <arg attribute="background">227,243,255</arg>
+              <arg attribute="background">186,245,248</arg>
               <arg attribute="printable">true</arg>
             </subarg>
             <subarg>
@@ -1960,7 +2007,7 @@
               <arg attribute="return">false</arg>
               <arg attribute="calculateExportValue">netosinbolsa</arg>
               <arg attribute="foreground">0,0,0</arg>
-              <arg attribute="background">227,243,255</arg>
+              <arg attribute="background">186,245,248</arg>
             </subarg>
             <subarg>
               <arg attribute="label">IVA</arg>
@@ -1973,7 +2020,7 @@
               <arg attribute="totalCol">l</arg>
               <arg attribute="return">false</arg>
               <arg attribute="foreground">0,0,0</arg>
-              <arg attribute="background">227,243,255</arg>
+              <arg attribute="background">186,245,248</arg>
               <arg attribute="printable">true</arg>
             </subarg>
             <subarg>
@@ -1986,7 +2033,7 @@
               <arg attribute="totalCol">r</arg>
               <arg attribute="return">false</arg>
               <arg attribute="foreground">0,0,0</arg>
-              <arg attribute="background">227,243,255</arg>
+              <arg attribute="background">186,245,248</arg>
               <arg attribute="printable">true</arg>
             </subarg>
             <subarg>
@@ -1999,7 +2046,7 @@
               <arg attribute="alignment">RIGHT</arg>
               <arg attribute="totalCol">m</arg>
               <arg attribute="foreground">0,0,0</arg>
-              <arg attribute="background">227,243,255</arg>
+              <arg attribute="background">186,245,248</arg>
               <arg attribute="return">false</arg>
               <arg attribute="printable">true</arg>
             </subarg>
@@ -2012,7 +2059,7 @@
               <arg attribute="enabled">false</arg>
               <arg attribute="alignment">RIGHT</arg>
               <arg attribute="foreground">0,0,0</arg>
-              <arg attribute="background">227,243,255</arg>
+              <arg attribute="background">186,245,248</arg>
               <arg attribute="return">false</arg>
               <arg attribute="printable">true</arg>
             </subarg>
@@ -2025,7 +2072,7 @@
               <arg attribute="enabled">false</arg>
               <arg attribute="alignment">RIGHT</arg>
               <arg attribute="foreground">0,0,0</arg>
-              <arg attribute="background">227,243,255</arg>
+              <arg attribute="background">186,245,248</arg>
               <arg attribute="printable">true</arg>
             </subarg>
           </parameters>
@@ -2045,12 +2092,14 @@
         <component locate="North">
           <driver>common.gui.components.XMLTextArea</driver>
           <parameters>
+            <arg attribute="keySQL">SEL0120</arg>
+            <arg attribute="driverEvent" id="nro_orden_pedido">client.gui.components.TableDataFields</arg>
             <arg attribute="rows">50</arg>
             <arg attribute="cols">300</arg>
           </parameters>
         </component>
         <panel locate="West" type="BorderLayout">
-        <!-- <panel locate="West" type="FlowLayout">
+        <panel locate="West" type="FlowLayout">
         <component>
           <driver id="direccioncontacto">common.gui.components.GenericData</driver>
           <parameters>
@@ -2059,6 +2108,7 @@
               <arg attribute="format">TEXT</arg>
               <arg attribute="label">Dirección Contacto:</arg>
               <arg attribute="size">28</arg>
+              <arg attribute="getValue">_direccion_contacto</arg>
               <arg attribute="alignment">LEFT</arg>
               <arg attribute="maxlength">200</arg>
               <arg attribute="enabled">true</arg>
@@ -2068,7 +2118,7 @@
             </subarg>
           </parameters>
         </component>
-        </panel> -->
+        </panel>
         <panel locate="East" type="FlowLayout">
           <component>
             <driver>common.gui.components.XMLLabel</driver>
@@ -2089,7 +2139,7 @@
               <arg attribute="enabled">false</arg>
               <arg attribute="font">Dialog,1,11</arg>
               <arg attribute="foreground">0,0,0</arg>
-              <arg attribute="background">227,243,255</arg>
+              <arg attribute="background">186,245,248</arg>
               <arg attribute="alignment">RIGHT</arg>
               <arg attribute="calculateExportValue">totalcantidades</arg>
             </subarg>
@@ -2097,7 +2147,7 @@
         </component>
         </panel>
         </panel>
-        <!-- <panel locate="South" type="BorderLayout">
+        <panel locate="South" type="BorderLayout">
         <component locate="Center">
           <driver id="telefonocontacto">common.gui.components.GenericData</driver>
           <parameters>
@@ -2105,6 +2155,7 @@
             <subarg>
               <arg attribute="format">TEXT</arg>
               <arg attribute="label">Teléfono Contacto:</arg>
+              <arg attribute="getValue">_telefono_contacto</arg>
               <arg attribute="size">28</arg>
               <arg attribute="alignment">LEFT</arg>
               <arg attribute="maxlength">200</arg>
@@ -2115,7 +2166,7 @@
             </subarg>
           </parameters>
         </component>
-        </panel> -->
+        </panel>
       </panel>
       <panel locate="South" type="BorderLayout">
         <panel locate="West" type="FlowLayout">
@@ -2241,14 +2292,14 @@
                     <driver id="totalmenosreteglobal">client.gui.components.TableDataFields</driver>
                     <method>clean</method>
                   </component>
-                  <!-- <component>
+                  <component>
                     <driver id="direccioncontacto">common.gui.components.GenericData</driver>
                     <method>clean</method>
                   </component>
                   <component>
                     <driver id="telefonocontacto">common.gui.components.GenericData</driver>
                     <method>clean</method>
-                  </component> -->
+                  </component>
                   <component>
                     <driver id="credit">common.gui.components.GenericData</driver>
                     <method>clean</method>
@@ -2261,14 +2312,14 @@
                     <driver id="tipo_doc">client.gui.components.XMLComboBox</driver>
                     <method>clean</method>
                   </component>
-                  <!-- <component>
-                    <driver id="referrercustomerid">client.gui.components.EmakuSearchField</driver>
+                  <component>
+                    <driver id="referrercustomerid">common.gui.components.GenericData</driver>
                     <method>clean</method>
                   </component>
                   <component>
                     <driver id="referrercustomername">common.gui.components.GenericData</driver>
                     <method>clean</method>
-                  </component> -->
+                  </component>
                   <component>
                     <driver id="principal">client.gui.components.TableFindData</driver>
                     <method>clean</method>
@@ -2329,7 +2380,7 @@
                   <!--  Estos componentes exportan valores, por eso debe ir despues de
             limpiar las llaves externas -->
                   <component>
-                    <driver id="Vendedor">client.gui.components.XMLComboBox</driver>
+                    <driver id="vendedor">common.gui.components.GenericData</driver>
                     <method>clean</method>
                   </component>
                   <component>
@@ -3055,7 +3106,7 @@
                   <!-- impresion lado cliente Carta -->
                   <action>
                     <type>printer</type>
-                    <printerTemplate>/graphics/TNCotizacionJBE.xml</printerTemplate>
+                    <printerTemplate>/graphics/TNFacturaElectronicaJBE.xml</printerTemplate>
                     <!-- 0 codigo tipo -->
                     <!-- <component>
                       <driver>this</driver>
@@ -3072,7 +3123,7 @@
                     </component>
                     <!-- 0 -->
                     <component>
-                      <driver id="Vendedor">client.gui.components.XMLComboBox</driver>
+                      <driver id="vendedor">common.gui.components.GenericData</driver>
                       <method>getPrintPackage</method>
                     </component>
                     <!-- 1 -->
@@ -3298,12 +3349,12 @@
 <driver id="direccioncontacto">common.gui.components.GenericData</driver>
 <driver id="telefonocontacto">common.gui.components.GenericData</driver>
 <driver id="tipo_doc">client.gui.components.XMLComboBox</driver>
-<driver id="Vendedor">client.gui.components.XMLComboBox</driver>
+<driver id="vendedor">common.gui.components.GenericData</driver>
 <driver id="combotemporales">client.gui.components.XMLComboBox</driver>
 <driver id="principal">client.gui.components.TableFindData</driver>
 <driver id="temporales">client.gui.components.TableFindData</driver>
 <driver>client.gui.components.FindThird</driver>
-<driver id="referrercustomerid">client.gui.components.EmakuSearchField</driver>
+<driver id="referrercustomerid">common.gui.components.GenericData</driver>
 <driver>common.gui.components.XMLTextArea</driver>
 
 <driver id="sendbuttontemporales">client.gui.components.EmakuSendRecordButton</driver>

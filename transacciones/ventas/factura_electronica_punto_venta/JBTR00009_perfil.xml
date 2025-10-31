@@ -1,8 +1,8 @@
-<!-- EN DESARROLLO - CONSULTAR COTIZACIONES JBE -->
+<!-- EN DESARROLLO - CONSULTAR FACTURAELECTRONICA JBE -->
 <FORM>
   <preferences>
     <size height="600" width="1150"/>
-    <name>Consultar Cotización</name>
+    <name>Consultar FacturaElectronica</name>
     <icon>SFCREDITO</icon>
     <iconificable/>
     <maximizable/>
@@ -86,7 +86,7 @@
         <arg attribute="maxlength">200</arg>
         <arg attribute="enabled">false</arg>
         <arg attribute="foreground">0,0,0</arg>
-        <arg attribute="background">227,243,255</arg>
+        <arg attribute="background">186,245,248</arg>
         <arg attribute="clean">true</arg>
       </subarg>
     </parameters>
@@ -104,7 +104,7 @@
         <arg attribute="maxlength">200</arg>
         <arg attribute="enabled">false</arg>
         <arg attribute="foreground">0,0,0</arg>
-        <arg attribute="background">227,243,255</arg>
+        <arg attribute="background">186,245,248</arg>
         <arg attribute="clean">true</arg>
       </subarg>
     </parameters>
@@ -750,7 +750,7 @@
                         <arg attribute="clean">false</arg>
                         <arg attribute="font">Dialog,1,15</arg>
                         <arg attribute="foreground">249,87,87</arg>
-                        <arg attribute="background">227,243,255</arg>
+                        <arg attribute="background">186,245,248</arg>
                         <arg attribute="alignment">RIGHT</arg>
                         <arg attribute="idAutoDocument">codigo_tipo</arg>
                         <arg attribute="importValue">codigo_tipo</arg>              
@@ -804,7 +804,7 @@
                         <arg attribute="font">Dialog,0,12</arg>
                         <arg attribute="alignment">RIGHT</arg>
                         <arg attribute="foreground">0,0,0</arg>
-                        <arg attribute="background">227,243,255</arg>
+                        <arg attribute="background">186,245,248</arg>
                       </subarg>
                     </parameters>
                   </component>    
@@ -828,7 +828,7 @@
                         <arg attribute="font">Dialog,0,12</arg>
                         <arg attribute="alignment">RIGHT</arg>
                         <arg attribute="foreground">0,0,0</arg>
-                        <arg attribute="background">227,243,255</arg>
+                        <arg attribute="background">186,245,248</arg>
                       </subarg>
                     </parameters>
                   </component>    
@@ -851,7 +851,7 @@
                     <arg attribute="maxlength">200</arg>
                     <arg attribute="enabled">false</arg>
                     <arg attribute="foreground">0,0,0</arg>
-                    <arg attribute="background">227,243,255</arg>
+                    <arg attribute="background">186,245,248</arg>
                     <arg attribute="clean">true</arg>
                     <arg attribute="exportValue">mailto</arg>
                     <arg attribute="printable">true</arg>
@@ -888,8 +888,8 @@
           <arg attribute="importValue">id_centrocosto</arg>
           <arg attribute="importValue">id_bodega</arg>
           <arg attribute="rows">600</arg>
-          <arg attribute="colorBackground">227,243,255</arg>
-          <arg attribute="colorSelected">167,202,229</arg>
+          <arg attribute="colorBackground">186,245,248</arg>
+          <arg attribute="colorSelected">126,193,188</arg>
           <arg attribute="protectSelected">true</arg>
           <arg attribute="flagReloadData">false</arg>          <!-- Adicionado para evitar que se recargue la tabla -->
 
@@ -1276,7 +1276,7 @@
               <arg attribute="alignment">RIGHT</arg>
               <arg attribute="return">false</arg>
               <arg attribute="foreground">0,0,0</arg>
-              <arg attribute="background">227,243,255</arg>
+              <arg attribute="background">186,245,248</arg>
               <arg attribute="calculateExportValue">subtotalsinbolsa</arg>
               <arg attribute="printable">true</arg>
             </subarg>
@@ -1291,7 +1291,7 @@
               <arg attribute="exportValue">vdescuentoglobal</arg>
               <arg attribute="return">false</arg>
               <arg attribute="foreground">0,0,0</arg>
-              <arg attribute="background">227,243,255</arg>
+              <arg attribute="background">186,245,248</arg>
               <arg attribute="printable">true</arg>
             </subarg>
             <subarg>
@@ -1306,7 +1306,7 @@
               <arg attribute="return">false</arg>
               <arg attribute="calculateExportValue">netosinbolsa</arg>
               <arg attribute="foreground">0,0,0</arg>
-              <arg attribute="background">227,243,255</arg>
+              <arg attribute="background">186,245,248</arg>
             </subarg>
             <subarg>
               <arg attribute="label">IVA</arg>
@@ -1319,7 +1319,7 @@
               <arg attribute="totalCol">l</arg>
               <arg attribute="return">false</arg>
               <arg attribute="foreground">0,0,0</arg>
-              <arg attribute="background">227,243,255</arg>
+              <arg attribute="background">186,245,248</arg>
               <arg attribute="printable">true</arg>
             </subarg>
             <subarg>
@@ -1332,7 +1332,7 @@
               <arg attribute="totalCol">r</arg>
               <arg attribute="return">false</arg>
               <arg attribute="foreground">0,0,0</arg>
-              <arg attribute="background">227,243,255</arg>
+              <arg attribute="background">186,245,248</arg>
               <arg attribute="printable">true</arg>
             </subarg>
             <subarg>
@@ -1345,7 +1345,7 @@
               <arg attribute="alignment">RIGHT</arg>
               <arg attribute="totalCol">m</arg>
               <arg attribute="foreground">0,0,0</arg>
-              <arg attribute="background">227,243,255</arg>
+              <arg attribute="background">186,245,248</arg>
               <arg attribute="return">false</arg>
               <arg attribute="printable">true</arg>
             </subarg>
@@ -1358,7 +1358,7 @@
               <arg attribute="enabled">false</arg>
               <arg attribute="alignment">RIGHT</arg>
               <arg attribute="foreground">0,0,0</arg>
-              <arg attribute="background">227,243,255</arg>
+              <arg attribute="background">186,245,248</arg>
               <arg attribute="return">false</arg>
               <arg attribute="printable">true</arg>
             </subarg>
@@ -1371,7 +1371,7 @@
               <arg attribute="enabled">false</arg>
               <arg attribute="alignment">RIGHT</arg>
               <arg attribute="foreground">0,0,0</arg>
-              <arg attribute="background">227,243,255</arg>
+              <arg attribute="background">186,245,248</arg>
               <arg attribute="printable">true</arg>
             </subarg>
           </parameters>
@@ -1439,7 +1439,7 @@
               <arg attribute="enabled">false</arg>
               <arg attribute="font">Dialog,1,11</arg>
               <arg attribute="foreground">0,0,0</arg>
-              <arg attribute="background">227,243,255</arg>
+              <arg attribute="background">186,245,248</arg>
               <arg attribute="alignment">RIGHT</arg>
               <arg attribute="calculateExportValue">totalcantidades</arg>
             </subarg>
@@ -2163,7 +2163,7 @@
                   <!-- impresion lado cliente Carta -->
                   <action>
                     <type>printer</type>
-                    <printerTemplate>/graphics/TSCotizacionJBE.xml</printerTemplate>
+                    <printerTemplate>/graphics/TSFacturaElectronicaJBE.xml</printerTemplate>
                     <!-- 0 codigo tipo -->
                     <!-- <component>
                       <driver>this</driver>

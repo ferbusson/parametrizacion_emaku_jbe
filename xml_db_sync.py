@@ -108,8 +108,8 @@ class XMLDatabaseSync:
         if not xml_content.strip().startswith('<'):
             return False, "Content doesn't appear to be XML"
         
-        if '<FORM>' not in xml_content:
-            return False, "XML doesn't contain expected <FORM> element"
+        #if '<FORM>' not in xml_content:
+        #   return False, "XML doesn't contain expected <FORM> element"
         
         return True, "XML validation passed"
     

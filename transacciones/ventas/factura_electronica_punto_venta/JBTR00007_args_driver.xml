@@ -1,4 +1,4 @@
-<!-- ARGS_DRIVER COTIZACIONES EN DESARROLLO -->
+<!-- ARGS_DRIVER FACTURAELECTRONICA EN DESARROLLO -->
 <container>
     <subarg>
         <arg attribute="consecutive"/>
