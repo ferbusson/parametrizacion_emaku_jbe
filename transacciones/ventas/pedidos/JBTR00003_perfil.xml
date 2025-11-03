@@ -763,13 +763,11 @@ do the previous step as many times as necessary to all the components that need 
                         <arg attribute="background">196,196,252</arg>
                         <arg attribute="alignment">RIGHT</arg>
                         <arg attribute="idAutoDocument">codigo_tipo</arg>
-                        <arg attribute="importValue">codigo_tipo</arg>              
-                        <arg attribute="sqlCode">LCSEL0437</arg> <!-- vendedor -->
+                        <arg attribute="importValue">codigo_tipo</arg>
                         <arg attribute="sqlCode">SEL0169</arg> <!-- tercero -->
                         <arg attribute="sqlCode">SEL0120</arg> <!-- observaciones -->
                         <arg attribute="sqlCode">DGSEL0081</arg> <!-- dias vigencia -->
                         <arg attribute="sqlCode">SEL0177</arg> <!-- fecha factura SEL0177-->
-                        <arg attribute="sqlCode">DGSEL0088</arg> <!-- numero orden externo -->
                         <arg attribute="sqlCode">JBSEL0009</arg> <!-- tabla principal de productos -->
                         <arg attribute="sqlCode">MDSEL0001</arg> <!-- hora -->
                         <arg attribute="sqlCode">SEL00404</arg> <!-- estado del documento-->
