@@ -352,6 +352,7 @@
       </subarg>
     </parameters>
   </component>
+  
   <!-- total sin retenciones -->
   <component>
     <driver id="totalmenosreteglobal">client.gui.components.TableDataFields</driver>
@@ -496,6 +497,7 @@
       </subarg>
     </parameters>
   </component>
+
   <component>
     <driver id="nitalterno">common.gui.components.GenericData</driver>
     <parameters>
@@ -533,7 +535,7 @@
     <parameters>
       <subarg>
         <arg attribute="format">TEXT</arg>
-        <arg attribute="name">centro</arg>
+        <arg attribute="name">centrocosto</arg>
         <arg attribute="size">5</arg>
         <arg attribute="maxlength">20</arg>
         <arg attribute="sqlInit">MTSEL0682</arg>
@@ -918,7 +920,7 @@
                         <arg attribute="sqlCode">JBSEL0011</arg> <!-- tabla principal de productos -->
                         <!-- <arg attribute="sqlCode">MDSEL0001</arg> hora -->
                         <!-- <arg attribute="sqlCode">SEL00404</arg> estado del documento -->
-                        <arg attribute="sqlCodeExportValue">JBSEL0008,_sigla,_usuario,_norden,_id_char_tercero_referente,_nombre_tercero_referente,_direccion_contacto,_telefono_contacto</arg>
+                        <arg attribute="sqlCodeExportValue">JBSEL0008,_sigla,_usuario,_norden,_id_char_tercero_referente,_nombre_tercero_referente,_direccion_contacto,_telefono_contacto,_id_vendedor</arg>
 
                     </subarg>
                   </parameters>
@@ -1049,7 +1051,7 @@
           <!-- TOTAL -->
           <arg attribute="formula">m=(d*f)-j</arg>          <!-- total -->
           <!-- NETO -->
-          <arg attribute="befnshell">k=ae&lt;0?(d*f-j)/(1+(g/100.0)):(((f-(af*(ae/100.0)))*d)-j)/(1+(g/100.0))</arg>          <!-- neto -->
+          <arg attribute="beanshell">k=ae&lt;0?(d*f-j)/(1+(g/100.0)):(((f-(af*(ae/100.0)))*d)-j)/(1+(g/100.0))</arg>          neto
           <!-- TIVA -->
           <arg attribute="beanshell">l=ae&lt;0?m-k:(((f-(af*(ae/100.0)))*d)-j)-k</arg>          <!-- iva -->
           <!-- vlrunitarioimpr -->
@@ -2023,7 +2025,7 @@
             </parameters>
             <events>
               <objet>
-                <name>SALVE</name>
+                <name>SALVE</name> <!--guarda temporal-->
                 <action>
                   <idManualTransaction>LCTR00205</idManualTransaction>
                   <type>manualTransaction</type>
@@ -4374,7 +4376,7 @@
       </panel>
     </tab>
     <panel locate="South" type="BorderLayout">
-      <!-- Inicia Carta -->
+      <!-- Inicia Carta boton impresora izquierdo-->
       <panel locate="West" type="BorderLayout">
       <!-- %/%/%/%/%/%/%/%/%/%/% C R E D I B A N C O %/%/%/%/%/%/%/%/%/%/ -->
       <!-- <component locate="West">
@@ -4516,28 +4518,31 @@
                 <driver id="id_res_fact">client.gui.components.TableDataFields</driver>
                 <method>getPackage</method>
               </component>
-              <!-- 1 -->
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">vendedor</arg>
-                    <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">dcredit</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <!-- 2 -->
+              <!-- 1 table: info_documento-->
+                    <component>
+                      <driver>this</driver>
+                      <method>getPackage</method>
+                      <parameters>
+                        <arg attribute="nullField">true</arg>
+                        <subarg>
+                          <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">_id_vendedor</arg>
+                          <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">dcredit</arg>
+                          <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">referrercustomerid</arg>
+                          <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">numeroordenexterno</arg>
+                        </subarg>
+                      </parameters>
+                    </component>
+              <!-- 2 observaciones -->
               <component>
                 <driver>common.gui.components.XMLTextArea</driver>
                 <method>getPackage</method>
-              </component>
+              </component>              
               <!-- 3 listado de remisiones que se cruzan en la factura -->
               <!-- <component>
                 <driver id="remisiones">client.gui.components.TableFindData</driver>
                 <method>getPackage</method>
               </component> lust -->
-              <!-- 4 datos_documento-->
+              <!-- 3 datos_documento-->
               <component>
                   <driver>this</driver>
                   <method>getPackage</method>
@@ -4556,12 +4561,12 @@
                       </subarg>
                   </parameters>
               </component>
-              <!-- 5 -->
+              <!-- 4 sodexo -->
               <component>
                 <driver id="sodexo">client.gui.components.TableFindData</driver>
                 <method>getPackage</method>
               </component>
-              <!-- 6 -->
+              <!-- 5 bigpass -->
               <component>
                 <driver id="bigpass">client.gui.components.TableFindData</driver>
                 <method>getPackage</method>
@@ -4594,16 +4599,17 @@
                 <driver id="tcredibanco">client.gui.components.TableFindData</driver>
                 <method>getPackage</method>
               </component> -->
-              <!-- 9 tarjetas - multiples tarjetas - manuales -->
+              <!-- 6 tarjetas - multiples tarjetas - manuales -->
               <component>
                 <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
                 <method>getPackage</method>
               </component>
-              <!-- 10 -->
+              <!-- 7 -->
               <component>
                 <driver>client.gui.components.FindThird</driver>
                 <method>getPackage</method>
-              </component>              
+              </component>  
+
               <!-- 11 -->
               <!-- <component>
                 <driver>this</driver>
@@ -4617,47 +4623,47 @@
                   </subarg>
                 </parameters>
               </component> lust -->
-              <!-- 12 centrocosto -->
+              <!-- 8 centrocosto -->
               <component>
                 <driver id="centrocosto">common.gui.components.GenericData</driver>
                 <method>getPackage</method>
               </component>
-              <!-- 10 B -->
+              <!-- 9 -->
               <component>
                 <driver id="checktable">client.gui.components.TableFindData</driver>
                 <method>getPackage</method>
               </component>
-              <!-- 10 C -->
+              <!-- 10 consignacion -->
               <component>
                 <driver id="consignationtable">client.gui.components.TableFindData</driver>
                 <method>getPackage</method>
               </component>
-              <!-- 13 efectivo neto -->
+              <!-- 11 efectivo neto -->
               <component>
                 <driver id="efectivoneto">common.gui.components.GenericData</driver>
                 <method>getPackage</method>
               </component>
-              <!-- 14 total sodexo -->
+              <!-- 12 total sodexo -->
               <component>
                 <driver id="totalsodexo">client.gui.components.TableDataFields</driver>
                 <method>getPackage</method>
               </component>
-              <!-- 15 total bigpass -->
+              <!-- 13 total bigpass -->
               <component>
                 <driver id="totalbigpass">client.gui.components.TableDataFields</driver>
                 <method>getPackage</method>
               </component>
-              <!-- 16 base -->
+              <!-- 14 base -->
               <component>
                 <driver id="base">client.gui.components.TableFindData</driver>
                 <method>getPackage</method>
               </component>
-              <!-- 17 retiva -->
+              <!-- 15 retiva -->
               <component>
                 <driver id="retiva">client.gui.components.TableFindData</driver>
                 <method>getPackage</method>
               </component>
-              <!-- 18 reteica -->
+              <!-- 16 reteica -->
               <component>
                 <driver id="retica">client.gui.components.TableFindData</driver>
                 <method>getPackage</method>
@@ -4673,12 +4679,12 @@
                 <driver id="totalpagocredito">common.gui.components.GenericData</driver>
                 <method>getPackage</method>
               </component> lust -->
-              <!-- 21 packete en blanco -->
+              <!-- 17 packete en blanco remueve cuenta-->
               <component>
                 <driver id="vpago">common.gui.components.GenericData</driver>
                 <method>getBlankPackage</method>
               </component>
-              <!-- 22 -->
+              <!-- 18 idctabanco -->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -4688,7 +4694,7 @@
                   </subarg>
                 </parameters>
               </component>
-              <!-- 23 -->
+              <!-- 19 tcreditcard -->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -4698,12 +4704,12 @@
                   </subarg>
                 </parameters>
               </component>
-              <!-- 24 -->
+              <!-- 20 remueve idTercero-->
               <component>
                 <driver id="totalbigpass">client.gui.components.TableDataFields</driver>
                 <method>getBlankPackage</method>
               </component>
-              <!-- 25 -->
+              <!-- 21 idtercerobanco -->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -4713,7 +4719,7 @@
                   </subarg>
                 </parameters>
               </component>
-              <!-- 26 -->
+              <!-- 22 comision -->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -4723,7 +4729,7 @@
                   </subarg>
                 </parameters>
               </component>
-              <!-- 27 -->
+              <!-- 23 retefuente -->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -4733,7 +4739,7 @@
                   </subarg>
                 </parameters>
               </component>
-              <!-- 28 -->
+              <!-- 24 reteiva -->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -4743,12 +4749,12 @@
                   </subarg>
                 </parameters>
               </component>
-              <!-- 29 Blank -->
+              <!-- 25 remueve cuenta -->
               <component>
                 <driver id="efectivoneto">common.gui.components.GenericData</driver>
                 <method>getBlankPackage</method>
               </component>
-              <!-- 30 -->
+              <!-- 26 idctagasto -->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -4758,7 +4764,7 @@
                   </subarg>
                 </parameters>
               </component>
-              <!-- 31 -->
+              <!-- 27 comision tarjeta -->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -4768,12 +4774,12 @@
                   </subarg>
                 </parameters>
               </component>
-              <!-- 32 blank  -->
+              <!-- 28 remueve cuenta  -->
               <component>
                 <driver id="efectivoneto">common.gui.components.GenericData</driver>
                 <method>getBlankPackage</method>
               </component>
-              <!-- 33 -->
+              <!-- 29 idctaretefuente -->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -4783,7 +4789,7 @@
                   </subarg>
                 </parameters>
               </component>
-              <!-- 34 -->
+              <!-- 30 retefuente -->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -4793,12 +4799,12 @@
                   </subarg>
                 </parameters>
               </component>
-              <!-- 35 Blank -->
+              <!-- 31 remueve cuenta -->
               <component>
                 <driver id="efectivoneto">common.gui.components.GenericData</driver>
                 <method>getBlankPackage</method>
               </component>
-              <!-- 36 -->
+              <!-- 32 idctareteiva -->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -4808,7 +4814,7 @@
                   </subarg>
                 </parameters>
               </component>
-              <!-- 37 -->
+              <!-- 33 reteiva -->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -4818,12 +4824,12 @@
                   </subarg>
                 </parameters>
               </component>
-              <!-- 38 -->
+              <!-- 34 remueve idTercero-->
               <component>
                 <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
                 <method>getBlankPackage</method>
               </component>
-              <!-- 39-->
+              <!-- 35 idtercero banco-->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -4843,12 +4849,12 @@
                 <driver id="tcredibanco">client.gui.components.TableFindData</driver>
                 <method>getPackage</method>
               </component> -->
-              <!-- 42 -->
+              <!-- 36 remueve idTercero-->
               <component>
                 <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
                 <method>getBlankPackage</method>
               </component>
-              <!-- 43 -->
+              <!-- 37 adiciona idtercero banco-->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -4858,327 +4864,311 @@
                   </subarg>
                 </parameters>
               </component>
-              <!-- 44 Pagos parciales manuales -->
+              <!-- 38 Pagos parciales manuales -->
               <component>
                 <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
                 <method>getPackage</method>
               </component>
-              <!-- 45 Pagos parciales manuales -->
+              <!-- 39 Pagos con tarjeta manuales -->
               <component>
                 <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
                 <method>getPackage</method>
               </component>
-              <!-- 47 remueve key cuenta-->
+              <!-- 40 remueve key cuenta-->
               <component>
                 <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
                 <method>getBlankPackage</method>
               </component>
-              <!-- 48 -->
-              <component>
-                <driver id="bodega">common.gui.components.GenericData</driver>
-                <method>getPackage</method>
-              </component>
-              <!-- 49 -->
-              <component>
-                <driver id="principal">client.gui.components.TableFindData</driver>
-                <method>getPackage</method>
-              </component>
+              <!-- 41 adds key bodega, the java code keeps this key as the first argument subsequenly used by query that corresponds the next getPackage calls -->
+                    <!--inventory outs from this bodega -> -->
+                    <component>
+                      <driver id="bodega">common.gui.components.GenericData</driver>
+                      <method>getPackage</method>
+                    </component>
+                    <!-- 42 table: datos_prod, inventarios-->
+                    <component>
+                      <driver id="principal">client.gui.components.TableFindData</driver>
+                      <method>getPackage</method>
+                    </component>
             </action>
-            <!-- Impresion server -->
-            <action>
+
+            <!-- Impresion server %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- <action>
               <type>saveprintonserver</type>
               <printerTemplate>/graphics/TSFacturaCreditoContadoServer.xml</printerTemplate>
               <component>
-                <driver>gfforma</driver>
-                <method>setVisible</method>
-                <parameters>
-                  <arg>false</arg>
-                </parameters>
-              </component>
-              <!-- cufe -->
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">cufe</arg>
-                  </subarg>
-                </parameters>
+              <driver>gfforma</driver>
+              <method>setVisible</method>
+              <parameters>
+                <arg>false</arg>
+              </parameters>
               </component>
               <component>
-                 <driver>this</driver>
-                 <method>getPrintPackage</method>
-                 <parameters>
-                   <subarg>
-                     <arg attribute="beanshell">formadepago==0.00?pagoacreditoimp:""</arg>
-                   </subarg>
-                 </parameters>
+              <driver>this</driver>
+              <method>getPackage</method>
+              <parameters>
+                <subarg>
+                <arg attribute="importValue">cufe</arg>
+                </subarg>
+              </parameters>
+              </component>
+              <component>
+               <driver>this</driver>
+               <method>getPrintPackage</method>
+               <parameters>
+                 <subarg>
+                 <arg attribute="beanshell">formadepago==0.00?pagoacreditoimp:""</arg>
+                 </subarg>
+               </parameters>
                </component>
                <component>
-                 <driver>this</driver>
-                 <method>getPrintPackage</method>
-                 <parameters>
-                   <subarg>
-                     <arg attribute="beanshell">formadepago==1.00?pagodecontadoimp:""</arg>
-                   </subarg>
-                 </parameters>
+               <driver>this</driver>
+               <method>getPrintPackage</method>
+               <parameters>
+                 <subarg>
+                 <arg attribute="beanshell">formadepago==1.00?pagodecontadoimp:""</arg>
+                 </subarg>
+               </parameters>
                </component>
-              <!-- direccion -->
               <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">direccion</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <!-- telefono -->
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">telefono</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <!-- piepaginados direccion web-->
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">piepaginados</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <!-- ciudad -->
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">ciudad</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <!-- Numero-->
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">lastnumber</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <!-- 0 codigo tipo -->
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">prefix</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <!-- 1 Hora-->
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">detime</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <!-- 0 Numero Resolucion -->
-              <component>
-                <driver id="res_fact">client.gui.components.TableDataFields</driver>
-                <method>getPrintPackage</method>
-              </component>
-              <!-- 1 Fecha Resolucion -->
-              <component>
-                <driver id="res_fact_fecha">client.gui.components.TableDataFields</driver>
-                <method>getPrintPackage</method>
-              </component>
-              <!-- 2 Rango resolucion -->
-              <component>
-                <driver id="res_fact_desde">client.gui.components.TableDataFields</driver>
-                <method>getPrintPackage</method>
-              </component>
-              <!-- 3 Vigencia resolucion -->
-              <component>
-                <driver id="res_fact_vigencia">client.gui.components.TableDataFields</driver>
-                <method>getPrintPackage</method>
-              </component>
-              <!-- fecha procesamiento -->
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">processdate</arg>
-                  </subarg>
-                </parameters>
+              <driver>this</driver>
+              <method>getPackage</method>
+              <parameters>
+                <subarg>
+                <arg attribute="importValue">direccion</arg>
+                </subarg>
+              </parameters>
               </component>
               <component>
-                <driver>client.gui.components.FindThird</driver>
-                <method>getPrintPackage</method>
+              <driver>this</driver>
+              <method>getPackage</method>
+              <parameters>
+                <subarg>
+                <arg attribute="importValue">telefono</arg>
+                </subarg>
+              </parameters>
               </component>
               <component>
-                <driver id="date">common.gui.components.GenericData</driver>
-                <method>getPrintPackage</method>
+              <driver>this</driver>
+              <method>getPackage</method>
+              <parameters>
+                <subarg>
+                <arg attribute="importValue">piepaginados</arg>
+                </subarg>
+              </parameters>
               </component>
               <component>
-                <driver id="credit">common.gui.components.GenericData</driver>
-                <method>getPrintPackage</method>
+              <driver>this</driver>
+              <method>getPackage</method>
+              <parameters>
+                <subarg>
+                <arg attribute="importValue">ciudad</arg>
+                </subarg>
+              </parameters>
               </component>
               <component>
-                <driver id="vencimiento">common.gui.components.GenericData</driver>
-                <method>getPrintPackage</method>
-              </component>
-              <!-- Tabla Productos -->
-              <component>
-                <driver id="principal">client.gui.components.TableFindData</driver>
-                <method>getPrintPackage</method>
-              </component>
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">subtotalglobalsinverde</arg>
-                  </subarg>
-                </parameters>
+              <driver>this</driver>
+              <method>getPackage</method>
+              <parameters>
+                <subarg>
+                <arg attribute="importValue">lastnumber</arg>
+                </subarg>
+              </parameters>
               </component>
               <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">vdescuentoglobal</arg>
-                  </subarg>
-                </parameters>
+              <driver>this</driver>
+              <method>getPackage</method>
+              <parameters>
+                <subarg>
+                <arg attribute="importValue">prefix</arg>
+                </subarg>
+              </parameters>
               </component>
               <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">stotalexcluido</arg>
-                  </subarg>
-                </parameters>
+              <driver>this</driver>
+              <method>getPackage</method>
+              <parameters>
+                <subarg>
+                <arg attribute="importValue">detime</arg>
+                </subarg>
+              </parameters>
               </component>
               <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">stotalexento</arg>
-                  </subarg>
-                </parameters>
+              <driver id="res_fact">client.gui.components.TableDataFields</driver>
+              <method>getPrintPackage</method>
               </component>
               <component>
-                <driver id="baseivagravados">client.gui.components.TableDataFields</driver>
-                <method>getPrintPackage</method>
+              <driver id="res_fact_fecha">client.gui.components.TableDataFields</driver>
+              <method>getPrintPackage</method>
               </component>
               <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">ivaglobal</arg>
-                  </subarg>
-                </parameters>
+              <driver id="res_fact_desde">client.gui.components.TableDataFields</driver>
+              <method>getPrintPackage</method>
               </component>
               <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">verde</arg>
-                  </subarg>
-                </parameters>
+              <driver id="res_fact_vigencia">client.gui.components.TableDataFields</driver>
+              <method>getPrintPackage</method>
               </component>
               <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">trfuente</arg>
-                  </subarg>
-                </parameters>
+              <driver>this</driver>
+              <method>getPackage</method>
+              <parameters>
+                <subarg>
+                <arg attribute="importValue">processdate</arg>
+                </subarg>
+              </parameters>
               </component>
               <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">triva</arg>
-                  </subarg>
-                </parameters>
+              <driver>client.gui.components.FindThird</driver>
+              <method>getPrintPackage</method>
               </component>
               <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">trica</arg>
-                  </subarg>
-                </parameters>
+              <driver id="date">common.gui.components.GenericData</driver>
+              <method>getPrintPackage</method>
               </component>
-              <!-- 27a totalcantidades -->
               <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">totalcantidades</arg>
-                  </subarg>
-                </parameters>
+              <driver id="credit">common.gui.components.GenericData</driver>
+              <method>getPrintPackage</method>
               </component>
-              <!-- contador lineas -->
               <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">totallineas</arg>
-                  </subarg>
-                </parameters>
+              <driver id="vencimiento">common.gui.components.GenericData</driver>
+              <method>getPrintPackage</method>
+              </component>
+              <component>
+              <driver id="principal">client.gui.components.TableFindData</driver>
+              <method>getPrintPackage</method>
+              </component>
+              <component>
+              <driver>this</driver>
+              <method>getPackage</method>
+              <parameters>
+                <subarg>
+                <arg attribute="importValue">subtotalglobalsinverde</arg>
+                </subarg>
+              </parameters>
+              </component>
+              <component>
+              <driver>this</driver>
+              <method>getPackage</method>
+              <parameters>
+                <subarg>
+                <arg attribute="importValue">vdescuentoglobal</arg>
+                </subarg>
+              </parameters>
+              </component>
+              <component>
+              <driver>this</driver>
+              <method>getPackage</method>
+              <parameters>
+                <subarg>
+                <arg attribute="importValue">stotalexcluido</arg>
+                </subarg>
+              </parameters>
+              </component>
+              <component>
+              <driver>this</driver>
+              <method>getPackage</method>
+              <parameters>
+                <subarg>
+                <arg attribute="importValue">stotalexento</arg>
+                </subarg>
+              </parameters>
+              </component>
+              <component>
+              <driver id="baseivagravados">client.gui.components.TableDataFields</driver>
+              <method>getPrintPackage</method>
+              </component>
+              <component>
+              <driver>this</driver>
+              <method>getPackage</method>
+              <parameters>
+                <subarg>
+                <arg attribute="importValue">ivaglobal</arg>
+                </subarg>
+              </parameters>
+              </component>
+              <component>
+              <driver>this</driver>
+              <method>getPackage</method>
+              <parameters>
+                <subarg>
+                <arg attribute="importValue">verde</arg>
+                </subarg>
+              </parameters>
+              </component>
+              <component>
+              <driver>this</driver>
+              <method>getPackage</method>
+              <parameters>
+                <subarg>
+                <arg attribute="importValue">trfuente</arg>
+                </subarg>
+              </parameters>
+              </component>
+              <component>
+              <driver>this</driver>
+              <method>getPackage</method>
+              <parameters>
+                <subarg>
+                <arg attribute="importValue">triva</arg>
+                </subarg>
+              </parameters>
+              </component>
+              <component>
+              <driver>this</driver>
+              <method>getPackage</method>
+              <parameters>
+                <subarg>
+                <arg attribute="importValue">trica</arg>
+                </subarg>
+              </parameters>
+              </component>
+              <component>
+              <driver>this</driver>
+              <method>getPackage</method>
+              <parameters>
+                <subarg>
+                <arg attribute="importValue">totalcantidades</arg>
+                </subarg>
+              </parameters>
+              </component>
+              <component>
+              <driver>this</driver>
+              <method>getPackage</method>
+              <parameters>
+                <subarg>
+                <arg attribute="importValue">totallineas</arg>
+                </subarg>
+              </parameters>
+              </component>
+              <component>
+              <driver>this</driver>
+              <method>getPackage</method>
+              <parameters>
+                <subarg>
+                <arg attribute="importValue">totalmenosreteglobal</arg>
+                </subarg>
+              </parameters>
+              </component>
+              <component>
+              <driver>common.gui.components.XMLTextArea</driver>
+              <method>getPrintPackage</method>
               </component>
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
                 <parameters>
+                  <arg attribute="nullField">true</arg>
                   <subarg>
-                    <arg attribute="importValue">totalmenosreteglobal</arg>
+                    <arg attribute="importValue">pagooacredito</arg>
+                    <arg attribute="importValue">efectivot</arg>
+                    <arg attribute="beanshell">tcreditcard!=0.00?totaltodastarjetas+tcreditcard:tcreditcard</arg>
+                    <arg attribute="importValue">tsodexobigpass</arg>
+                    <arg attribute="importValue">tconsignation</arg>
                   </subarg>
                 </parameters>
               </component>
-              <!-- Observaciones -->
-              <component>
-                <driver>common.gui.components.XMLTextArea</driver>
-                <method>getPrintPackage</method>
-              </component>
-              <!-- medios de pago -->
-              <component>
-                  <driver>this</driver>
-                  <method>getPackage</method>
-                  <parameters>
-                      <arg attribute="nullField">true</arg>
-                      <subarg>
-                          <arg attribute="importValue">pagooacredito</arg> <!-- pago cxc No se si quitarlo-->
-                          <arg attribute="importValue">efectivot</arg>
-                          <arg attribute="beanshell">tcreditcard!=0.00?totaltodastarjetas+tcreditcard:tcreditcard</arg>
-                          <arg attribute="importValue">tsodexobigpass</arg>
-                          <arg attribute="importValue">tconsignation</arg>
-                      </subarg>
-                  </parameters>
-              </component>
-            </action>
+            </action> -->
 
             <!-- impresion lado cliente -->
             <action>
@@ -5415,13 +5405,13 @@
 
             </action>
             <!-- Inicia envio email -->
-            <action>
+            <!-- <action>
               <type>emailprinter</type>
               <to>mailto</to>
               <subjectSQL>LCSEL0383,internaldocument</subjectSQL>
               <bodySQL>LCSEL0384,internaldocument</bodySQL>
               <attachmentSQL>LCSEL0389,internaldocument</attachmentSQL>
-            </action>
+            </action> -->
             <action>
               <type>transaction</type>
               <component>
