@@ -504,47 +504,68 @@
                 <arg attribute="tercero">getName</arg>
                 <subarg>
                     <arg attribute="accountCol">IdProdServ,0</arg>
-                    <!-- 5% -->
-                    <arg attribute="accountCol">4135560501,6</arg>
-                    <!-- 19% -->
-                    <arg attribute="accountCol">4135562001,6</arg>
-                    <arg attribute="accountCol">4135560502,6</arg>
-                    <!-- Excluidas -->
-                    <arg attribute="accountCol">41355610,6</arg>
+
+<!-- 
+JBE ACCOUNTS TABLE:
+================================================================================
+| CODE            | NAME                             | ACCOUNT       | NOTES     |
+================================================================================
+| 13559500002     | AUTORRETENCION 114-1 ET          | 13559502      | no        |
+| 14350100001     | MERCANCIAS GRAVADAS 19%          | 14350101      |           |
+| 14350100002     | MERCANCIA GRAVADAS 5%            | 14350102      |           |
+| 14350100003     | MERCANCIAS NO GRAVADAS EXCLUIDAS | 14350103      |           |
+| 23657000001     | AUTORRETENCION 114-1 ET          | 23657001      | no        |
+| 24080100001     | IVA EN VENTAS GENERADO 19%       | 24080101      |           |
+| 24080100002     | IVA EN VENTAS GENERADO 5%        | 24080102      |           |
+| 41350100001     | MERCANCIAS GRAVADAS              | 41350101      |           |
+| 41350100002     | MERCANCIAS NO GRAVADAS EXCLUIDAS | 41350102      |           |
+| 41350100006     | MERCANCIAS GRAVADAS 5%           | 41350106      |           |
+| 41450500001     | SERVICIO DE TRANSPORTE DE CARGA  | 41450501      |           |
+| 61350100001     | MERCANCIAS GRAVADAS 19%          | 61350101      |           |
+| 61350100002     | MERCANCIAS EXCLUIDAS             | 61350102      |           |
+| 11050500001     | CAJA PRINCIPAL                   | 11050501      | no        |
+================================================================================
+-->
+
+
+                    <!-- mercancia 5% -->
+                    <arg attribute="accountCol">41350106,6</arg>
+                    <!-- mercancia 19% -->
+                    <arg attribute="accountCol">41350101,6</arg>
+                    <!-- servicios transporte-->
+                    <arg attribute="accountCol">41450501,6</arg>
+                    <!-- mercancia Excluidas -->
+                    <arg attribute="accountCol">41350102,6</arg>
                     <!-- Exentas -->
-                    <arg attribute="accountCol">41355615,6</arg>
+                    <!-- <arg attribute="accountCol">41355615,6</arg> -->
                     <!-- Impuesto Bolsas -->
-                    <arg attribute="accountCol">240905,9</arg>
+                    <!-- <arg attribute="accountCol">240905,9</arg> -->
                     <!-- iva 5% -->
-                    <arg attribute="accountCol">24080501,5</arg>
+                    <arg attribute="accountCol">24080102,5</arg>
                     <!-- iva 19 servicios% -->
-                    <arg attribute="accountCol">24080503,5</arg>
+                    <!-- <arg attribute="accountCol">24080503,5</arg> -->
                     <!-- iva 19 ventas% -->
-                    <arg attribute="accountCol">24080502,5</arg>
+                    <arg attribute="accountCol">24080101,5</arg>
                     <!-- asientos de costos -->
                     <!-- 5% -->
-                    <arg attribute="accountCostCol">6135560501,1</arg>
-                    <!-- 19% -->
-                    <arg attribute="accountCostCol">6135560502,1</arg>
-                    <arg attribute="accountCostCol">6135562001,1</arg>
-                    <!-- Excluidas -->
-                    <!-- <arg attribute="accountCostCol">6135561001,1</arg>-->
-                    <arg attribute="accountCostCol">61355610,1</arg>
+                    <!-- <arg attribute="accountCostCol">6135560501,1</arg> -->
+                    <!-- costos 19% -->
+                    <arg attribute="accountCostCol">61350101,1</arg>
+                    <!-- servicios 19% -->
+                    <!-- <arg attribute="accountCostCol">6135562001,1</arg> -->
+                    <!-- costos Excluidas -->
+                    <arg attribute="accountCostCol">61350102,1</arg>
                     <!-- Exentas -->
-                    <!-- <arg attribute="accountCostCol">6135561501,1</arg>-->
-                    <arg attribute="accountCostCol">61355615,1</arg>
-                    <!-- 5% -->
-                    <!-- <arg attribute="accountCostCol">14350501,1</arg>-->
-                    <arg attribute="accountCostCol">1435560501,1</arg>
-                    <!-- 19% -->
-                    <!-- <arg attribute="accountCostCol">14350503,1</arg>-->
-                    <arg attribute="accountCostCol">1435560502,1</arg>
-                    <!-- Excluidas -->
-                    <!-- <arg attribute="accountCostCol">14351001,1</arg>-->
-                    <arg attribute="accountCostCol">14355610,1</arg>
+                    <!-- <arg attribute="accountCostCol">61355615,1</arg> -->
+                    <!-- inventarios 5% -->
+                    <arg attribute="accountCostCol">14350102,1</arg>
+                    <!-- inventarios 19% -->
+                    <arg attribute="accountCostCol">14350101,1</arg>
+                    <!-- inventarios Excluidos -->
+                    <arg attribute="accountCostCol">14350103,1</arg>
                     <!-- Exentas -->
-                    <!-- <arg attribute="accountCostCol">14351501,1</arg>-->
-                    <arg attribute="accountCostCol">14355615,1</arg>
+                    <!-- <arg attribute="accountCostCol">14355615,1</arg> -->
+
                 </subarg>
             </parameters>
         </LNData>
