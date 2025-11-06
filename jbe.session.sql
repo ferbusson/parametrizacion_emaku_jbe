@@ -1,0 +1,4 @@
+SELECT  
+    *
+from
+    migration.puc;
