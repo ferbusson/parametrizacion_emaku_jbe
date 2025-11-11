@@ -485,17 +485,539 @@ class XMLDatabaseSync:
             return False
         finally:
             conn.close()
+    
+    def retrieve_sql_query(self, codigo, output_directory="."):
+        """
+        Retrieve SQL query from sentencia_sql table and create a .sql file.
+        
+        Args:
+            codigo: The codigo value to search for in sentencia_sql table
+            output_directory: Directory where to create the .sql file (default: current directory)
+            
+        Returns:
+            Boolean indicating success
+        """
+        
+        if not codigo:
+            print("❌ Codigo parameter is required")
+            return False
+        
+        print(f"🔍 Searching for SQL query with codigo: {codigo}")
+        
+        # Connect to database
+        conn = self._get_connection()
+        if not conn:
+            return False
+        
+        try:
+            cursor = conn.cursor()
+            
+            # Query the sentencia_sql table
+            cursor.execute(
+                "SELECT codigo, sentencia FROM sentencia_sql WHERE codigo = %s",
+                (codigo,)
+            )
+            
+            result = cursor.fetchone()
+            
+            if not result:
+                print(f"❌ No SQL query found for codigo: {codigo}")
+                return False
+            
+            codigo_found, sql_content = result
+            
+            if not sql_content or not sql_content.strip():
+                print(f"❌ Empty SQL content found for codigo: {codigo}")
+                return False
+            
+            # Create output file path
+            output_path = Path(output_directory) / f"{codigo}.sql"
+            
+            # Ensure output directory exists
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            
+            # Write SQL content to file
+            with open(output_path, 'w', encoding='utf-8') as f:
+                f.write(sql_content)
+            
+            print(f"✅ Successfully retrieved SQL query for codigo: {codigo}")
+            print(f"📁 Created file: {output_path}")
+            print(f"📊 Content size: {len(sql_content)} characters")
+            
+            # Show first few lines of the SQL for verification
+            lines = sql_content.strip().split('\n')
+            preview_lines = min(3, len(lines))
+            print(f"📝 Preview (first {preview_lines} lines):")
+            for i in range(preview_lines):
+                print(f"   {i+1}: {lines[i][:80]}{'...' if len(lines[i]) > 80 else ''}")
+            
+            if len(lines) > preview_lines:
+                print(f"   ... ({len(lines)} total lines)")
+            
+            return True
+            
+        except psycopg2.Error as e:
+            print(f"❌ Database error: {e}")
+            return False
+        except Exception as e:
+            print(f"❌ Error retrieving SQL query: {e}")
+            return False
+        finally:
+            conn.close()
+    
+    def update_sql_query(self, sql_file_path, codigo=None):
+        """
+        Update SQL query in sentencia_sql table from a .sql file.
+        
+        Args:
+            sql_file_path: Path to the .sql file containing the query
+            codigo: Database codigo value (auto-detected from filename if None)
+            
+        Returns:
+            Boolean indicating success
+        """
+        
+        sql_path = Path(sql_file_path)
+        
+        if not sql_path.exists():
+            print(f"❌ File not found: {sql_file_path}")
+            return False
+        
+        if not sql_path.suffix.lower() == '.sql':
+            print(f"❌ File must have .sql extension: {sql_file_path}")
+            return False
+        
+        # Auto-detect codigo from filename if not provided
+        if not codigo:
+            codigo = sql_path.stem  # Gets filename without .sql extension
+            print(f"🔍 Auto-detected codigo from filename: {codigo}")
+        
+        try:
+            # Read SQL content
+            with open(sql_path, 'r', encoding='utf-8') as f:
+                sql_content = f.read()
+            
+            if not sql_content.strip():
+                print(f"❌ SQL file is empty: {sql_file_path}")
+                return False
+            
+            print(f"📄 Read SQL content: {len(sql_content)} characters")
+            
+            # Show preview of content
+            lines = sql_content.strip().split('\n')
+            preview_lines = min(3, len(lines))
+            print(f"📝 Content preview (first {preview_lines} lines):")
+            for i in range(preview_lines):
+                print(f"   {i+1}: {lines[i][:80]}{'...' if len(lines[i]) > 80 else ''}")
+            
+            if len(lines) > preview_lines:
+                print(f"   ... ({len(lines)} total lines)")
+            
+            # Connect to database
+            conn = self._get_connection()
+            if not conn:
+                return False
+            
+            try:
+                cursor = conn.cursor()
+                
+                # Check if record exists in sentencia_sql table
+                cursor.execute(
+                    "SELECT codigo FROM sentencia_sql WHERE codigo = %s",
+                    (codigo,)
+                )
+                
+                exists = cursor.fetchone() is not None
+                
+                if exists:
+                    # Update existing record
+                    cursor.execute(
+                        "UPDATE sentencia_sql SET sentencia = %s WHERE codigo = %s",
+                        (sql_content, codigo)
+                    )
+                    print(f"📝 Updated existing SQL query for codigo: {codigo}")
+                else:
+                    # Insert new record
+                    cursor.execute(
+                        "INSERT INTO sentencia_sql (codigo, sentencia) VALUES (%s, %s)",
+                        (codigo, sql_content)
+                    )
+                    print(f"➕ Created new SQL query record for codigo: {codigo}")
+                
+                # Commit changes
+                conn.commit()
+                
+                print(f"✅ Successfully updated sentencia_sql table")
+                print(f"📊 Record: {codigo} in table sentencia_sql")
+                
+                # Verify update
+                cursor.execute(
+                    "SELECT LENGTH(sentencia) as content_length FROM sentencia_sql WHERE codigo = %s",
+                    (codigo,)
+                )
+                result = cursor.fetchone()
+                if result:
+                    print(f"✅ Verification: Content length in database: {result[0]} characters")
+                
+                return True
+                
+            except psycopg2.Error as e:
+                print(f"❌ Database error: {e}")
+                conn.rollback()
+                return False
+            finally:
+                conn.close()
+                
+        except Exception as e:
+            print(f"❌ Error updating SQL query: {e}")
+            return False
+    
+    def extract_xml_files(self, codigo, output_directory="."):
+        """
+        Extract both perfil and args_driver XML files from transacciones table.
+        
+        Args:
+            codigo: The codigo value to search for in transacciones table
+            output_directory: Directory where to create the XML files (default: current directory)
+            
+        Returns:
+            Boolean indicating success
+        """
+        
+        if not codigo:
+            print("❌ Codigo parameter is required")
+            return False
+        
+        print(f"🔍 Extracting XML files for codigo: {codigo}")
+        
+        # Connect to database
+        conn = self._get_connection()
+        if not conn:
+            return False
+        
+        try:
+            cursor = conn.cursor()
+            
+            # Query the transacciones table for both columns
+            cursor.execute(
+                f"SELECT codigo, perfil, args_driver FROM {self.config['table']} WHERE codigo = %s",
+                (codigo,)
+            )
+            
+            result = cursor.fetchone()
+            
+            if not result:
+                print(f"❌ No transaction found for codigo: {codigo}")
+                return False
+            
+            codigo_found, perfil_content, args_driver_content = result
+            
+            # Ensure output directory exists
+            output_path = Path(output_directory)
+            output_path.mkdir(parents=True, exist_ok=True)
+            
+            success_count = 0
+            files_created = []
+            
+            # Extract perfil XML
+            if perfil_content and perfil_content.strip():
+                perfil_file = output_path / f"{codigo}_perfil.xml"
+                
+                try:
+                    with open(perfil_file, 'w', encoding='utf-8') as f:
+                        f.write(perfil_content)
+                    
+                    print(f"✅ Created perfil file: {perfil_file}")
+                    print(f"   📊 Content size: {len(perfil_content)} characters")
+                    
+                    # Show preview
+                    lines = perfil_content.strip().split('\n')
+                    preview_lines = min(2, len(lines))
+                    for i in range(preview_lines):
+                        preview_line = lines[i][:60]
+                        if len(lines[i]) > 60:
+                            preview_line += "..."
+                        print(f"   📝 Line {i+1}: {preview_line}")
+                    
+                    files_created.append(str(perfil_file))
+                    success_count += 1
+                    
+                except Exception as e:
+                    print(f"❌ Error writing perfil file: {e}")
+            else:
+                print(f"⚠️  No perfil content found for codigo: {codigo}")
+            
+            # Extract args_driver XML
+            if args_driver_content and args_driver_content.strip():
+                args_driver_file = output_path / f"{codigo}_args_driver.xml"
+                
+                try:
+                    with open(args_driver_file, 'w', encoding='utf-8') as f:
+                        f.write(args_driver_content)
+                    
+                    print(f"✅ Created args_driver file: {args_driver_file}")
+                    print(f"   📊 Content size: {len(args_driver_content)} characters")
+                    
+                    # Show preview
+                    lines = args_driver_content.strip().split('\n')
+                    preview_lines = min(2, len(lines))
+                    for i in range(preview_lines):
+                        preview_line = lines[i][:60]
+                        if len(lines[i]) > 60:
+                            preview_line += "..."
+                        print(f"   📝 Line {i+1}: {preview_line}")
+                    
+                    files_created.append(str(args_driver_file))
+                    success_count += 1
+                    
+                except Exception as e:
+                    print(f"❌ Error writing args_driver file: {e}")
+            else:
+                print(f"⚠️  No args_driver content found for codigo: {codigo}")
+            
+            # Summary
+            if success_count > 0:
+                print(f"\n🎉 Successfully extracted {success_count} XML file(s) for codigo: {codigo}")
+                print(f"📁 Output directory: {output_path.absolute()}")
+                print(f"📄 Files created:")
+                for file_path in files_created:
+                    print(f"   • {file_path}")
+                return True
+            else:
+                print(f"❌ No XML files were created - no valid content found for codigo: {codigo}")
+                return False
+            
+        except psycopg2.Error as e:
+            print(f"❌ Database error: {e}")
+            return False
+        except Exception as e:
+            print(f"❌ Error extracting XML files: {e}")
+            return False
+        finally:
+            conn.close()
+    
+    def get_next_sql_codigo(self, prefix):
+        """
+        Get the next codigo value for SQL queries with a given prefix.
+        
+        Args:
+            prefix: Codigo prefix (e.g., 'JBSEL' for JBSEL0001, JBSEL0002, etc.)
+            
+        Returns:
+            Next codigo string (e.g., 'JBSEL0012')
+        """
+        conn = self._get_connection()
+        if not conn:
+            return None
+        
+        try:
+            cursor = conn.cursor()
+            
+            # Query for max codigo with the given prefix from sentencia_sql table
+            cursor.execute(
+                "SELECT MAX(codigo) AS codigo FROM sentencia_sql WHERE codigo LIKE %s",
+                (f"{prefix}%",)
+            )
+            result = cursor.fetchone()
+            max_codigo = result[0] if result and result[0] else None
+            
+            if max_codigo:
+                # Extract the numeric part and increment
+                try:
+                    # Find the position where numbers start after the prefix
+                    numeric_part = max_codigo[len(prefix):]
+                    # Extract leading zeros and number
+                    num_str = numeric_part.lstrip('0') or '0'
+                    next_num = int(num_str) + 1
+                    
+                    # Calculate padding based on original format (4 digits for SQL queries)
+                    original_length = len(numeric_part)
+                    next_codigo = f"{prefix}{next_num:0{original_length}d}"
+                    
+                    print(f"🔍 Found max codigo: {max_codigo}")
+                    print(f"➡️  Next codigo: {next_codigo}")
+                    
+                    return next_codigo
+                    
+                except (ValueError, IndexError) as e:
+                    print(f"⚠️  Error parsing codigo format: {e}")
+                    # Fallback: assume 4-digit format for SQL queries
+                    return f"{prefix}0001"
+            else:
+                # No existing records with this prefix
+                print(f"🆕 No existing records with prefix '{prefix}'")
+                return f"{prefix}0001"
+                
+        except Exception as e:
+            print(f"❌ Error getting next SQL codigo: {e}")
+            return None
+        finally:
+            conn.close()
+    
+    def _get_sql_inputs(self, prefix=None):
+        """
+        Prompt user for SQL query creation inputs.
+        
+        Args:
+            prefix: Optional prefix from command line
+            
+        Returns:
+            Tuple of (prefix, nombre, descripcion)
+        """
+        print("\n📝 Creating new SQL query...")
+        print("=" * 50)
+        
+        # Get prefix if not provided
+        if not prefix:
+            print("\n1️⃣  Enter the codigo prefix:")
+            print("   Format: [Business][Nature] (e.g., 'JBSEL', 'LCUPD', 'ANINS', 'TBDEL')")
+            print("   Business: 2 chars (JB, LC, AN, TB, etc.)")
+            print("   Nature: SEL, UPD, INS, DEL")
+            prefix = self._prompt_for_input("Codigo prefix (e.g., JBSEL)", required=True)
+            
+            # Convert to uppercase
+            prefix = prefix.upper().strip()
+            
+            # Validate prefix format
+            if len(prefix) < 5:
+                print(f"⚠️  Warning: Prefix '{prefix}' is shorter than expected format (BusinessNature)")
+                confirm = input("Continue anyway? (y/N): ").strip().lower()
+                if confirm not in ['y', 'yes']:
+                    print("❌ Operation cancelled")
+                    return None, None, None
+        else:
+            prefix = prefix.upper().strip()
+        
+        # Get nombre
+        print(f"\n2️⃣  Enter the query name (nombre)")
+        print(f"   This will describe what the query does")
+        nombre = self._prompt_for_input("Query name", required=True)
+        
+        # Get descripcion
+        print(f"\n3️⃣  Enter the query description (descripcion)")
+        print(f"💡 Press Enter to use the same value as nombre: '{nombre}'")
+        descripcion = self._prompt_for_input("Query description", default=nombre, required=False)
+        
+        return prefix, nombre, descripcion
+    
+    def create_new_sql_query(self, prefix=None):
+        """
+        Create a new SQL query record in the sentencia_sql table.
+        
+        Args:
+            prefix: Optional codigo prefix from command line
+            
+        Returns:
+            Boolean indicating success
+        """
+        
+        # Get user inputs
+        inputs = self._get_sql_inputs(prefix)
+        if inputs[0] is None:  # User cancelled
+            return False
+        
+        prefix, nombre, descripcion = inputs
+        
+        # Get next codigo
+        next_codigo = self.get_next_sql_codigo(prefix)
+        if not next_codigo:
+            print("❌ Could not generate next codigo")
+            return False
+        
+        # Empty sentencia for initial creation
+        sentencia = ""
+        
+        # Show confirmation
+        print(f"\n📋 SQL Query to be created:")
+        print("=" * 50)
+        print(f"📍 Codigo:      {next_codigo}")
+        print(f"📝 Nombre:      {nombre}")
+        print(f"📄 Descripcion: {descripcion}")
+        print(f"📊 Sentencia:   (empty - will be added later)")
+        print("=" * 50)
+        
+        # Confirmation prompt
+        confirm = input("\n❓ Do you want to create this SQL query? (y/N): ").strip().lower()
+        if confirm not in ['y', 'yes']:
+            print("❌ Operation cancelled by user")
+            return False
+        
+        # Insert into database
+        conn = self._get_connection()
+        if not conn:
+            return False
+        
+        try:
+            cursor = conn.cursor()
+            
+            # Check if codigo already exists (safety check)
+            cursor.execute(
+                "SELECT codigo FROM sentencia_sql WHERE codigo = %s",
+                (next_codigo,)
+            )
+            
+            if cursor.fetchone():
+                print(f"❌ Codigo {next_codigo} already exists!")
+                return False
+            
+            # Insert new SQL query
+            insert_query = """
+                INSERT INTO sentencia_sql (
+                    codigo,
+                    nombre,
+                    descripcion,
+                    sentencia
+                ) VALUES (%s, %s, %s, %s)
+            """
+            
+            cursor.execute(insert_query, (
+                next_codigo,
+                nombre,
+                descripcion,
+                sentencia
+            ))
+            
+            # Commit changes
+            conn.commit()
+            
+            print(f"✅ Successfully created SQL query: {next_codigo}")
+            print(f"📊 Record created in table: sentencia_sql")
+            print(f"💡 You can now edit the query content and use:")
+            print(f"   python xml_db_sync.py update-sql --file {next_codigo}.sql")
+            
+            # Verify creation
+            cursor.execute(
+                "SELECT codigo, nombre FROM sentencia_sql WHERE codigo = %s",
+                (next_codigo,)
+            )
+            result = cursor.fetchone()
+            if result:
+                print(f"✅ Verification: Record exists - {result[0]}: {result[1]}")
+            
+            return True
+            
+        except psycopg2.Error as e:
+            print(f"❌ Database error: {e}")
+            conn.rollback()
+            return False
+        except Exception as e:
+            print(f"❌ Error creating SQL query: {e}")
+            conn.rollback()
+            return False
+        finally:
+            conn.close()
 
 
 def main():
     """Main function for command line usage."""
     
     parser = argparse.ArgumentParser(description="Sync XML files to PostgreSQL database")
-    parser.add_argument('action', choices=['sync', 'test', 'list', 'config', 'create'], 
+    parser.add_argument('action', choices=['sync', 'test', 'list', 'config', 'create', 'get-sql', 'update-sql', 'get-xml', 'insert-sql'], 
                        help='Action to perform')
-    parser.add_argument('--file', '-f', help='XML file path to sync')
+    parser.add_argument('--file', '-f', help='File path (XML for sync, SQL for update-sql)')
     parser.add_argument('--codigo', '-c', help='Database codigo value (auto-detected if not provided)')
-    parser.add_argument('--prefix', '-p', help='Codigo prefix for creating new transactions (e.g., JBTR0)')
+    parser.add_argument('--prefix', '-p', help='Codigo prefix for creating new transactions/queries (e.g., JBTR0, JBSEL)')
+    parser.add_argument('--output', '-o', help='Output directory for get-sql/get-xml actions (default: current directory)')
     parser.add_argument('--config', help='Config file path (default: db_config.json)')
     
     args = parser.parse_args()
@@ -528,6 +1050,39 @@ def main():
     
     elif args.action == 'create':
         success = sync_tool.create_new_transaction(args.prefix)
+        sys.exit(0 if success else 1)
+    
+    elif args.action == 'get-sql':
+        if not args.codigo:
+            print("❌ --codigo parameter is required for get-sql action")
+            print("💡 Usage: python xml_db_sync.py get-sql --codigo LCSEL0857")
+            sys.exit(1)
+        
+        output_dir = args.output or "."
+        success = sync_tool.retrieve_sql_query(args.codigo, output_dir)
+        sys.exit(0 if success else 1)
+    
+    elif args.action == 'update-sql':
+        if not args.file:
+            print("❌ --file parameter is required for update-sql action")
+            print("💡 Usage: python xml_db_sync.py update-sql --file LCSEL0857.sql")
+            sys.exit(1)
+        
+        success = sync_tool.update_sql_query(args.file, args.codigo)
+        sys.exit(0 if success else 1)
+    
+    elif args.action == 'get-xml':
+        if not args.codigo:
+            print("❌ --codigo parameter is required for get-xml action")
+            print("💡 Usage: python xml_db_sync.py get-xml --codigo JBTR00007")
+            sys.exit(1)
+        
+        output_dir = args.output or "."
+        success = sync_tool.extract_xml_files(args.codigo, output_dir)
+        sys.exit(0 if success else 1)
+    
+    elif args.action == 'insert-sql':
+        success = sync_tool.create_new_sql_query(args.prefix)
         sys.exit(0 if success else 1)
 
 
