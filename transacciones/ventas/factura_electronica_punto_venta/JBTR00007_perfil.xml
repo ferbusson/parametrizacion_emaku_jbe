@@ -17,7 +17,7 @@
   fecha, done
   vigencia, done
   vencimiento, done
-  tabla de productos -> al hacer esto la tabla debe generar los puntos automaticamente,
+  tabla de productos -> al hacer esto la tabla debe generar los puntos automaticamente, done
   observaciones, done
   direccion de contacto, done
   telefono de contacto, done
@@ -30,7 +30,7 @@
   adicionar las formas de pago
   en las formas de pago:
   adicionar el pago con javipuntos,
-  adicionar cruce con anticipos
+  adicionar cruce con anticipos done
   adicionar comisiones vendedores
 
   al guardar la factura:
@@ -88,8 +88,9 @@
     <notCleanExportValue>OTRO</notCleanExportValue>
 
     <loadMultiBranch>LCSEL0607</loadMultiBranch>
-    <!-- <notCleanExportValue>charctatipofactura</notCleanExportValue> lust -->
+    <!-- <notCleanExportValue>charctatipofactura</notCleanExportValue> lust -->    
     <notCleanExportValue>trm</notCleanExportValue>
+    <notCleanExportValue>codigo_tipo_pedido</notCleanExportValue>
     <notCleanExportValue>prefix</notCleanExportValue>
     <notCleanExportValue>id_bodega</notCleanExportValue>
     <notCleanExportValue>id_bodega_separado</notCleanExportValue>
@@ -136,6 +137,7 @@
                 <arg attribute="maxlength">20</arg>
                 <arg attribute="importValue">codigo_tipo</arg>
                 <arg attribute="sqlInit">JBSEL0010</arg>
+                <arg attribute="clean">false</arg>
                 <arg attribute="queryOnInit">true</arg>                
                 <arg attribute="nameField">bodegaEntrante</arg>
                 <arg attribute="exportValue">codigo_tipo_pedido</arg>
@@ -210,6 +212,7 @@
                 <arg attribute="size">20</arg>
                 <arg attribute="maxlength">20</arg>
                 <arg attribute="sqlInit">JBSEL0007</arg>
+                <arg attribute="clean">false</arg>
                 <arg attribute="queryOnInit">true</arg>
                 <arg attribute="importValue">constanteBodegaEntrada</arg>
                 <arg attribute="nameField">bodegaEntrante</arg>
@@ -248,6 +251,7 @@
         <arg attribute="name">piepaginauno</arg>
         <arg attribute="size">20</arg>
         <arg attribute="maxlength">200</arg>
+        <arg attribute="clean">false</arg>
         <arg attribute="sqlInit">LCSEL0094</arg>
         <arg attribute="queryOnInit">true</arg>
         <arg attribute="importValue">codigo_tipo</arg>
@@ -262,6 +266,7 @@
         <arg attribute="exportValue">piepaginados</arg>
         <arg attribute="name">piepaginados</arg>
         <arg attribute="size">20</arg>
+        <arg attribute="clean">false</arg>
         <arg attribute="maxlength">200</arg>
         <arg attribute="sqlInit">LCSEL0095</arg>
         <arg attribute="queryOnInit">true</arg>
@@ -278,6 +283,7 @@
         <arg attribute="name">piepaginatres</arg>
         <arg attribute="size">20</arg>
         <arg attribute="maxlength">200</arg>
+        <arg attribute="clean">false</arg>
         <arg attribute="sqlInit">LCSEL0096</arg>
         <arg attribute="queryOnInit">true</arg>
         <arg attribute="importValue">codigo_tipo</arg>
@@ -292,6 +298,7 @@
         <arg attribute="name">horarioatencion</arg>
         <arg attribute="exportValue">horarioatencion</arg>
         <arg attribute="size">20</arg>
+        <arg attribute="clean">false</arg>
         <arg attribute="maxlength">200</arg>
         <arg attribute="sqlInit">LCSEL0093</arg>
         <arg attribute="queryOnInit">true</arg>
@@ -307,6 +314,7 @@
         <arg attribute="name">totaljavipuntosgenerados</arg>
         <arg attribute="format">NUMERIC</arg>
         <arg attribute="size">10</arg>
+        <arg attribute="clean">false</arg>
         <arg attribute="maxlength">26</arg>
         <arg attribute="enabled">false</arg>
         <arg attribute="alignment">RIGHT</arg>
@@ -326,6 +334,7 @@
         <arg attribute="format">NUMERIC</arg>
         <arg attribute="size">10</arg>
         <arg attribute="maxlength">26</arg>
+        <arg attribute="clean">false</arg>
         <arg attribute="enabled">false</arg>
         <arg attribute="alignment">RIGHT</arg>
         <arg attribute="exportValue">baseivagravados</arg>
@@ -344,6 +353,7 @@
         <arg attribute="format">NUMERIC</arg>
         <arg attribute="size">10</arg>
         <arg attribute="maxlength">26</arg>
+        <arg attribute="clean">false</arg>
         <arg attribute="enabled">false</arg>
         <arg attribute="alignment">RIGHT</arg>
         <arg attribute="exportValue">subtotalglobalsinverde</arg>
@@ -363,6 +373,7 @@
         <arg attribute="format">NUMERIC</arg>
         <arg attribute="size">10</arg>
         <arg attribute="maxlength">26</arg>
+        <arg attribute="clean">false</arg>
         <arg attribute="enabled">false</arg>
         <arg attribute="alignment">RIGHT</arg>
         <arg attribute="exportValue">totalmenosreteglobal</arg>
@@ -506,6 +517,7 @@
         <arg attribute="name">nitalterno</arg>
         <arg attribute="size">20</arg>
         <arg attribute="maxlength">200</arg>
+        <arg attribute="clean">false</arg>
         <arg attribute="sqlInit">MTSEL0737</arg>
         <arg attribute="queryOnInit">true</arg>
         <arg attribute="importValue">nombre_suc</arg>
@@ -522,6 +534,7 @@
         <arg attribute="name">terceroal</arg>
         <arg attribute="size">20</arg>
         <arg attribute="maxlength">200</arg>
+        <arg attribute="clean">false</arg>
         <arg attribute="sqlInit">MTSEL0738</arg>
         <arg attribute="queryOnInit">true</arg>
         <arg attribute="importValue">nombre_suc</arg>
@@ -539,6 +552,7 @@
         <arg attribute="size">5</arg>
         <arg attribute="maxlength">20</arg>
         <arg attribute="sqlInit">MTSEL0682</arg>
+        <arg attribute="clean">false</arg>
         <arg attribute="queryOnInit">true</arg>
         <arg attribute="importValue">id_centrocosto</arg>
         <arg attribute="nameField">centrocosto</arg>
@@ -811,7 +825,6 @@
                     <arg attribute="size">3</arg>
                     <arg attribute="maxlength">3</arg>
                     <arg attribute="enabled">false</arg>
-                    <arg attribute="defaultText">1</arg>
                     <arg attribute="exportValue">dcredit</arg>
                     <arg attribute="exportField">1</arg>
                     <arg attribute="clean">true</arg>
@@ -834,8 +847,8 @@
                       <arg attribute="enabled">false</arg>
                       <arg attribute="return">false</arg>
                       <arg attribute="clean">true</arg>
-                      <arg attribute="calculateDate">fechai+dcredit</arg>
-                      <arg attribute="dateFormat">yyyy-MM-dd</arg>
+                      <!-- <arg attribute="calculateDate">fechai+dcredit</arg> -->
+                      <!-- <arg attribute="dateFormat">yyyy-MM-dd</arg> -->
                       <arg attribute="printable">true</arg>
                     </subarg>
                   </parameters>
@@ -856,6 +869,7 @@
                         <arg attribute="size">12</arg>
                         <arg attribute="maxlength">26</arg>
                         <arg attribute="enabled">false</arg>
+                        <arg attribute="clean">true</arg>
                         <arg attribute="font">Dialog,1,30</arg>
                         <arg attribute="foreground">0,0,0</arg>
                         <arg attribute="background">152,251,152</arg>
@@ -1448,6 +1462,7 @@
                             <arg attribute="size">9</arg>
                             <arg attribute="maxlength">26</arg>
                             <arg attribute="font">Dialog,1,13</arg>
+                            <arg attribute="clean">true</arg>
                             <arg attribute="alignment">RIGHT</arg>
                             <arg attribute="printable">true</arg>
                             <arg attribute="enabled">false</arg>
@@ -2092,123 +2107,337 @@
                 </object>
                 <object>
                   <name>NEW</name>
-                  <!--  Limpiando tablas de retenciones  -->
-                <component>
-                  <driver id="base">client.gui.components.TableFindData</driver>
-                  <method>clean</method>
-                </component>
-                <component>
-                  <driver id="tretbase">client.gui.components.TableDataFields</driver>
-                  <method>clean</method>
-                </component>
-                <component>
-                  <driver id="retiva">client.gui.components.TableFindData</driver>
-                  <method>clean</method>
-                </component>
-                <component>
-                  <driver id="tretiva">client.gui.components.TableDataFields</driver>
-                  <method>clean</method>
-                </component>
-                <component>
-                  <driver id="retica">client.gui.components.TableFindData</driver>
-                  <method>clean</method>
-                </component>
-                <component>
-                  <driver id="tretica">client.gui.components.TableDataFields</driver>
-                  <method>clean</method>
-                </component>            
-                  <component>
-                    <driver id="baseivagravados">client.gui.components.TableDataFields</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="subtotalglobalsinverde">client.gui.components.TableDataFields</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="totalmenosreteglobal">client.gui.components.TableDataFields</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="direccioncontacto">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="telefonocontacto">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="credit">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="vencimiento">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
+                  <!--  Limpiando tablas de retenciones  -->                  
                   <!-- <component>
-                    <driver id="tipo_doc">client.gui.components.XMLComboBox</driver>
-                    <method>clean</method>
-                  </component> -->
-                  <component>
-                    <driver id="referrercustomerid">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="referrercustomername">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="principal">client.gui.components.TableFindData</driver>
-                    <method>clean</method>
-                  </component>
-                  <!-- <component>
-                    <driver id="nrogenerador">client.gui.components.TableDataFields</driver>
-                    <method>clean</method>
-                  </component> -->
-                  <component>
-                    <driver id="total">client.gui.components.TableDataFields</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="totalValues">client.gui.components.TableDataFields</driver>
-                    <method>clean</method>
-                  </component>
-                  <!-- <component> descuento global
-                    <driver id="totalValuesDescuento">client.gui.components.TableDataFields</driver>
-                    <method>clean</method>
-                  </component> -->
-                  <component>
-                    <driver>common.gui.components.XMLTextArea</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="totalcanttemp">client.gui.components.TableDataFields</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="temporales">client.gui.components.TableFindData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="combotemporales">client.gui.components.XMLComboBox</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="totalcantidad">client.gui.components.TableDataFields</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="iddirecciontercero">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="idtelefonotercero">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
-                    <driver id="numeroordenexterno">common.gui.components.GenericData</driver>
-                    <method>clean</method>
-                  </component>
+      <driver id="vencimiento">common.gui.components.GenericData</driver>
+      <method>clean</method>
+    </component> -->
+    <component>
+      <driver id="referrercustomerid">common.gui.components.GenericData</driver>
+      <method>clean</method>
+    </component>
+    <component>
+      <driver id="referrercustomername">common.gui.components.GenericData</driver>
+      <method>clean</method>
+    </component>    
+    <component>
+      <driver id="numeroordenexterno">common.gui.components.GenericData</driver>
+      <method>clean</method>
+    </component>    
+    <component>
+      <driver id="credit">common.gui.components.GenericData</driver>
+      <method>clean</method>
+    </component>    
+    <component>
+      <driver id="direccioncontacto">common.gui.components.GenericData</driver>
+      <method>clean</method>
+    </component>
+    <component>
+      <driver id="telefonocontacto">common.gui.components.GenericData</driver>
+      <method>clean</method>
+    </component>
+    <component>
+      <driver id="totaljavipuntosgenerados">client.gui.components.TableDataFields</driver>
+      <method>clean</method>
+    </component>
+    <component>
+      <driver id="baseivagravados">client.gui.components.TableDataFields</driver>
+      <method>clean</method>
+    </component>
+    <component>
+      <driver id="subtotalglobalsinverde">client.gui.components.TableDataFields</driver>
+      <method>clean</method>
+    </component>
+    <component>
+      <driver id="totalmenosreteglobal">client.gui.components.TableDataFields</driver>
+      <method>clean</method>
+    </component>
+    <component>
+      <driver id="total">client.gui.components.TableDataFields</driver>
+      <method>clean</method>
+    </component>
+    <component>
+      <driver id="totalcanttemp">client.gui.components.TableDataFields</driver>
+      <method>clean</method>
+    </component>
+    <component>
+      <driver id="totalValues">client.gui.components.TableDataFields</driver>
+      <method>clean</method>
+    </component>
+    <component>
+      <driver id="totalcantidad">client.gui.components.TableDataFields</driver>
+      <method>clean</method>
+    </component>
+    <component>
+      <driver id="principal">client.gui.components.TableFindData</driver>
+      <method>clean</method>
+    </component>
+    <component>
+      <driver id="temporales">client.gui.components.TableFindData</driver>
+      <method>clean</method>
+    </component>
+    <component>
+      <driver id="combotemporales">client.gui.components.XMLComboBox</driver>
+      <method>clean</method>
+    </component>
+ <!-- Forma de pago -->
+    <compoenent>
+    <driver id="formadepago">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="mediosdepago">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="cajero">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="saldoxpagar">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="baseiva">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="idtregalo">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="fefectivot">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="efectivoneto">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="ttarjetas">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="vpago">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="puntos_acumulados">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="facturasvencidas">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="puntosredimidos">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="fefectivo">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="fefectivous">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="tsodexobigpass">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="totalconsignaciones">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="otrospagostarjeta">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="anticipos">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="tpagar">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="cambio">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="cambious">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="pagosparciales">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="saldodespuesdepagos">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="valorp">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="ivap">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="basep">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="idtarjetacd">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="banco">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="totalpagocredito">common.gui.components.GenericData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="totaltodastarjetas">client.gui.components.TableDataFields</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="totalbonos">client.gui.components.TableDataFields</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="totalmenosreteglobal">client.gui.components.TableDataFields</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="totalbaseiva">client.gui.components.TableDataFields</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="baseivagravados">client.gui.components.TableDataFields</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="tivatarjeta">client.gui.components.TableDataFields</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="ea">client.gui.components.TableDataFields</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="tfacprov">client.gui.components.TableDataFields</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="tretenciones">client.gui.components.TableDataFields</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="tretfte">client.gui.components.TableDataFields</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="tretiva">client.gui.components.TableDataFields</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="tretica">client.gui.components.TableDataFields</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="cven">client.gui.components.TableDataFields</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="tretbase">client.gui.components.TableDataFields</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="total_comprobante">client.gui.components.TableDataFields</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="tcheck">client.gui.components.TableDataFields</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="tconsignation">client.gui.components.TableDataFields</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="totalfactura">client.gui.components.TableDataFields</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="totalcredibanco">client.gui.components.TableDataFields</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="totalpagosmanuales">client.gui.components.TableDataFields</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="totalsodexo">client.gui.components.TableDataFields</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="totalbigpass">client.gui.components.TableDataFields</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="base">client.gui.components.TableFindData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="retiva">client.gui.components.TableFindData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="retica">client.gui.components.TableFindData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="cvendedores">client.gui.components.TableFindData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="cartera">client.gui.components.TableFindData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="checktable">client.gui.components.TableFindData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="consignationtable">client.gui.components.TableFindData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="tcredibanco">client.gui.components.TableFindData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="sodexo">client.gui.components.TableFindData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="bigpass">client.gui.components.TableFindData</driver>
+    <method>clean</method>
+    </compoenent>
+    <compoenent>
+    <driver id="remisiones">client.gui.components.TableFindData</driver>
+    <method>clean</method>
+    </compoenent>
+
                   <!--  limpiando llaves externas -->
                   <component>
                     <driver>this</driver>
@@ -2232,16 +2461,16 @@
                     <driver id="email">common.gui.components.GenericData</driver>
                     <method>clean</method>
                   </component>                  
-                  <!-- <component>
+                  <component>
                     <driver id="pagocarta">common.gui.components.ButtonsPanel</driver>
                     <method>setEnabled</method>
                     <parameters>
                       <arg attribute="button">PRINT</arg>
                       <arg attribute="state">true</arg>
                     </parameters>
-                  </component> -->
+                  </component>
                   <component>
-                    <driver id="pago">common.gui.components.ButtonsPanel</driver>
+                    <driver id="pagotirilla">common.gui.components.ButtonsPanel</driver>
                     <method>setEnabled</method>
                     <parameters>
                       <arg attribute="button">PRINT</arg>
@@ -2261,11 +2490,12 @@
   <!-- Inicia forma de Pago *** -->
   <FORM>
     <preferences>
-      <size height="650" width="880"/>
+      <size height="650" width="980"/>
       <name>PAYMENTFORM</name>
       <icon>PAGO</icon>
       <iconificable/>
       <resizable/>
+      <maximizable/>
       <closable/>
       <id>gfforma</id>
       <visible>false</visible>
@@ -2280,6 +2510,7 @@
           <arg attribute="name">totaltodastarjetas</arg>
           <arg attribute="format">NUMERIC</arg>
           <arg attribute="size">10</arg>
+          <arg attribute="clean">true</arg>
           <arg attribute="maxlength">26</arg>
           <arg attribute="enabled">false</arg>
           <arg attribute="alignment">RIGHT</arg>
@@ -2287,23 +2518,7 @@
           <arg attribute="calculateExportValue">totalcredibancoparcial+totalpagosmanuales</arg>
         </subarg>
       </parameters>
-    </component>    
-    <component locate="Center">
-              <driver id="anticipos">common.gui.components.GenericData</driver>
-              <parameters>
-                <arg attribute="Panel">false</arg>
-                <subarg>
-                  <arg attribute="format">NUMERIC</arg>
-                  <arg attribute="size">15</arg>
-                  <arg attribute="maxlength">26</arg>
-                  <arg attribute="enabled">false</arg>
-                  <arg attribute="alignment">RIGHT</arg>
-                  <arg attribute="font">Dialog,1,20</arg>
-                  <arg attribute="exportValue">oingresos</arg>
-                  <arg attribute="printable">true</arg>
-                </subarg>
-              </parameters>
-            </component>
+    </component>        
 
     <component locate="Center">
               <driver id="totalbonos">client.gui.components.TableDataFields</driver>
@@ -2314,6 +2529,7 @@
                   <arg attribute="size">15</arg>
                   <arg attribute="maxlength">26</arg>
                   <arg attribute="enabled">false</arg>
+                  <arg attribute="clean">true</arg>
                   <arg attribute="alignment">RIGHT</arg>
                   <arg attribute="font">Dialog,1,20</arg>
                   <arg attribute="exportValue">totalbonos</arg>
@@ -2333,6 +2549,7 @@
           <arg attribute="format">NUMERIC</arg>
           <arg attribute="size">10</arg>
           <arg attribute="enabled">false</arg>
+          <arg attribute="clean">true</arg>
           <arg attribute="maxlength">20</arg>
           <arg attribute="exportValue">formadepago</arg>
           <arg attribute="calculateBSExportValue">pagooacredito&gt;0?0:1</arg>
@@ -2349,6 +2566,7 @@
           <arg attribute="size">10</arg>
           <arg attribute="enabled">false</arg>
           <arg attribute="maxlength">20</arg>
+          <arg attribute="clean">true</arg>
           <arg attribute="exportValue">mediosdepago</arg>
           <arg attribute="calculateBSExportValue">(tsodexobigpass&gt;0&amp;&amp;efectivo&gt;0&amp;&amp;ttarjetas&gt;0)||
 (efectivo&gt;0&amp;&amp;ttarjetas&gt;0)||(efectivo&gt;0&amp;&amp;tconsignation&gt;0)||(efectivo&gt;0&amp;&amp;tsodexobigpass&gt;0)||(ttarjetas&gt;0&amp;&amp;tsodexobigpass&gt;0)?999:(sodexo&gt;0||bigpass&gt;0)?1:tconsignation&gt;0?42:tcheck&gt;0?20:efectivo&gt;0?10:&quot;4&quot;.equals(franquicia)?71:ttarjetas&gt;0?48:0</arg>
@@ -2364,6 +2582,7 @@
           <arg attribute="name">cajero</arg>
           <arg attribute="size">20</arg>
           <arg attribute="maxlength">200</arg>
+          <arg attribute="clean">true</arg>
           <arg attribute="sqlInit">LCSEL0100</arg>
           <arg attribute="queryOnInit">true</arg>
           <arg attribute="importValue">hostName</arg>
@@ -2383,6 +2602,7 @@
           <arg attribute="name">totalmenosreteglobal</arg>
           <arg attribute="format">NUMERIC</arg>
           <arg attribute="size">10</arg>
+          <arg attribute="clean">true</arg>
           <arg attribute="maxlength">26</arg>
           <arg attribute="enabled">false</arg>
           <arg attribute="alignment">RIGHT</arg>
@@ -2401,6 +2621,7 @@
           <arg attribute="name">TOTALBASEIVA</arg>
           <arg attribute="format">NUMERIC</arg>
           <arg attribute="size">10</arg>
+          <arg attribute="clean">true</arg>
           <arg attribute="maxlength">26</arg>
           <arg attribute="enabled">false</arg>
           <arg attribute="alignment">RIGHT</arg>
@@ -2419,6 +2640,7 @@
           <arg attribute="name">TOTALBASEIVA</arg>
           <arg attribute="format">NUMERIC</arg>
           <arg attribute="size">10</arg>
+          <arg attribute="clean">true</arg>
           <arg attribute="maxlength">26</arg>
           <arg attribute="enabled">false</arg>
           <arg attribute="alignment">RIGHT</arg>
@@ -2436,6 +2658,7 @@
           <arg attribute="format">NUMERIC</arg>
           <arg attribute="size">10</arg>
           <arg attribute="maxlength">20</arg>
+          <arg attribute="clean">true</arg>
           <arg attribute="font">Dialog,1,14</arg>
           <arg attribute="alignment">RIGHT</arg>
           <arg attribute="exportValue">saldoxpagar</arg>
@@ -2454,6 +2677,7 @@
           <arg attribute="format">NUMERIC</arg>
           <arg attribute="size">10</arg>
           <arg attribute="maxlength">20</arg>
+          <arg attribute="clean">true</arg>
           <arg attribute="font">Dialog,1,15</arg>
           <arg attribute="alignment">RIGHT</arg>
           <arg attribute="exportValue">basetotaliva</arg>
@@ -2472,6 +2696,7 @@
           <arg attribute="name">TIVA</arg>
           <arg attribute="format">NUMERIC</arg>
           <arg attribute="size">10</arg>
+          <arg attribute="clean">true</arg>
           <arg attribute="maxlength">26</arg>
           <arg attribute="enabled">false</arg>
           <arg attribute="alignment">RIGHT</arg>
@@ -2490,6 +2715,7 @@
           <arg attribute="format">STRING</arg>
           <arg attribute="size">14</arg>
           <arg attribute="maxlength">13</arg>
+          <arg attribute="clean">true</arg>
           <arg attribute="addAttribute">key</arg>
           <arg attribute="nameField">idTercero</arg>
           <arg attribute="returnNullValue">true</arg>
@@ -2506,6 +2732,7 @@
           <arg attribute="size">10</arg>
           <arg attribute="maxlength">20</arg>
           <arg attribute="font">Dialog,1,15</arg>
+          <arg attribute="clean">true</arg>
           <arg attribute="alignment">RIGHT</arg>
           <arg attribute="exportValue">efectivot</arg>
           <arg attribute="calculateExportValue">efectivo+(efectivous*trm)</arg>
@@ -2540,6 +2767,7 @@
           <arg attribute="name">EFECTIVO</arg>
           <arg attribute="format">NUMERIC</arg>
           <arg attribute="size">11</arg>
+          <arg attribute="clean">true</arg>
           <arg attribute="nullValue">true</arg>
           <arg attribute="exportValue">efectivoneto</arg>
           <arg attribute="returnNullValue">true</arg>
@@ -2563,6 +2791,7 @@
           <arg attribute="size">11</arg>
           <arg attribute="maxlength">26</arg>
           <arg attribute="alignment">RIGHT</arg>
+          <arg attribute="clean">true</arg>
           <arg attribute="enabled">false</arg>
           <arg attribute="exportValue">ttarjetas</arg>
           <arg attribute="calculateBSExportValue">totaltarjeta+totalcredibancoparcial+totalpagosmanuales</arg>
@@ -2580,7 +2809,7 @@
         <!-- <panel locate="Center" type="FlowLayout" align="center">-->
         <panel locate="Center" type="BorderLayout">
           <panel locate="Center" type="BorderLayout">
-            <panel cols="1" locate="West" rows="6" type="GridLayout">
+            <panel cols="1" locate="West" rows="8" type="GridLayout">
               <component locate="North">
                 <driver>common.gui.components.XMLLabel</driver>
                 <parameters>
@@ -2629,10 +2858,10 @@
                   <arg attribute="font">Dialog,1,16</arg>
                 </parameters>
               </component>
-              <!-- <component locate="North">
+              <component locate="North">
                 <driver>common.gui.components.XMLLabel</driver>
                 <parameters>
-                  <arg attribute="text">Cupo Crédito</arg>
+                  <arg attribute="text">Puntos Acumulados</arg>
                   <arg attribute="alignment">0</arg>
                   <arg attribute="font">Dialog,1,14</arg>
                 </parameters>
@@ -2640,12 +2869,12 @@
               <component locate="North">
                 <driver>common.gui.components.XMLLabel</driver>
                 <parameters>
-                  <arg attribute="text">Facs Vencidas</arg>
+                  <arg attribute="text">Redimir Puntos</arg>
                   <arg attribute="alignment">0</arg>
                   <arg attribute="font">Dialog,1,14</arg>
                 </parameters>
               </component> 
-              <component locate="North">
+              <!--<component locate="North">
                 <driver>common.gui.components.XMLLabel</driver>
                 <parameters>
                   <arg attribute="text">Total a Crédito</arg>
@@ -2654,7 +2883,7 @@
                 </parameters>
               </component>lust -->
             </panel>
-            <panel cols="2" locate="Center" rows="6" type="GridLayout">
+            <panel cols="2" locate="Center" rows="8" type="GridLayout">
               <panel type="FlowLayout"/>
               <component locate="Center">
                 <driver id="tfacprov">client.gui.components.TableDataFields</driver>
@@ -2665,6 +2894,7 @@
                     <arg attribute="format">NUMERIC</arg>
                     <arg attribute="size">10</arg>
                     <arg attribute="maxlength">26</arg>
+                    <arg attribute="clean">true</arg>
                     <arg attribute="enabled">false</arg>
                     <arg attribute="calculateExportValue">totalfact</arg>
                     <arg attribute="exportValue">totalfprov</arg>
@@ -2682,6 +2912,7 @@
                     <arg attribute="name">TRETENCIONES</arg>
                     <arg attribute="format">NUMERIC</arg>
                     <arg attribute="size">10</arg>
+                    <arg attribute="clean">true</arg>
                     <arg attribute="maxlength">26</arg>
                     <arg attribute="enabled">false</arg>
                     <arg attribute="font">Dialog,0,18</arg>
@@ -2700,6 +2931,7 @@
                     <arg attribute="format">NUMERIC</arg>
                     <arg attribute="size">10</arg>
                     <arg attribute="maxlength">26</arg>
+                    <arg attribute="clean">true</arg>
                     <arg attribute="totalCol">e</arg>
                     <arg attribute="enabled">false</arg>
                     <arg attribute="font">Dialog,0,18</arg>
@@ -2717,6 +2949,7 @@
                   <subarg>
                     <arg attribute="name">RETIVA</arg>
                     <arg attribute="format">NUMERIC</arg>
+                    <arg attribute="clean">true</arg>
                     <arg attribute="size">10</arg>
                     <arg attribute="maxlength">26</arg>
                     <arg attribute="totalCol">e</arg>
@@ -2740,6 +2973,7 @@
                     <arg attribute="maxlength">26</arg>
                     <arg attribute="enabled">false</arg>
                     <arg attribute="font">Dialog,0,18</arg>
+                    <arg attribute="clean">true</arg>
                     <arg attribute="alignment">RIGHT</arg>
                     <arg attribute="exportValue">retica</arg>
                     <arg attribute="totalCol">e</arg>
@@ -2758,6 +2992,7 @@
                     <arg attribute="format">NUMERIC</arg>
                     <arg attribute="size">10</arg>
                     <arg attribute="maxlength">26</arg>
+                    <arg attribute="clean">true</arg>
                     <arg attribute="calculateExportValue">(totalfact)-(trfuente+triva+trica)</arg>
                     <arg attribute="font">Dialog,1,18</arg>
                     <arg attribute="alignment">RIGHT</arg>
@@ -2766,8 +3001,8 @@
                   </subarg>
                 </parameters>
               </component>              
-                <!-- <component>
-                  <driver id="cupocredito">common.gui.components.GenericData</driver>
+                <component>
+                  <driver id="puntos_acumulados">common.gui.components.GenericData</driver>
                   <parameters>
                     <arg attribute="Panel">false</arg>
                     <subarg>                      
@@ -2776,19 +3011,20 @@
                       <arg attribute="size">18</arg>
                       <arg attribute="maxlength">50</arg>
                       <arg attribute="font">Dialog,0,14</arg>
+                      <arg attribute="clean">true</arg>
                       <arg attribute="alignment">RIGHT</arg>                      
-                      <arg attribute="sqlInit">DLSEL0038</arg>
+                      <!-- <arg attribute="sqlInit">DLSEL0038</arg>
                       <arg attribute="importValue">idtercero</arg>
                       <arg attribute="importValue">charctatipofactura</arg>
-                      <arg attribute="queryOnInit">true</arg>
-                      <arg attribute="exportValue">cupocredito</arg>
+                      <arg attribute="queryOnInit">true</arg> -->
+                      <arg attribute="exportValue">puntos_acumulados</arg>
                       <arg attribute="printable">true</arg>
                       <arg attribute="enabled">false</arg>
                     </subarg>
                   </parameters>
                 </component>
                 <panel type="FlowLayout"/>
-              <component>
+              <!-- <component>
                   <driver id="facturasvencidas">common.gui.components.GenericData</driver>
                   <parameters>
                     <arg attribute="Panel">false</arg>
@@ -2809,10 +3045,10 @@
                     </subarg>
                   </parameters>
                 </component>
-                <panel type="FlowLayout"/>  
+                <panel type="FlowLayout"/>  -->
               <panel type="FlowLayout"/>
               <component locate="Center">
-                <driver id="totalpagocredito">common.gui.components.GenericData</driver>
+                <driver id="puntosredimidos">common.gui.components.GenericData</driver>
                 <parameters>
                   <arg attribute="Panel">false</arg>
                   <subarg>
@@ -2824,10 +3060,10 @@
                     <arg attribute="clean">true</arg>
                     <arg attribute="alignment">RIGHT</arg>
                     <arg attribute="enabled">true</arg>
-                    <arg attribute="exportValue">pagooacredito</arg>
+                    <arg attribute="exportValue">puntosredimidos</arg>
                   </subarg>
                 </parameters>
-              </component> lust-->
+              </component>
             </panel>
           </panel>
           <panel locate="South" type="BorderLayout">
@@ -2860,7 +3096,7 @@
               <component locate="North">
                 <driver>common.gui.components.XMLLabel</driver>
                 <parameters>
-                  <arg attribute="text">Otros en Tarjeta</arg>
+                  <arg attribute="text">Tarjeta</arg>
                   <arg attribute="alignment">0</arg>
                   <arg attribute="font">Dialog,1,16</arg>
                 </parameters>
@@ -2868,7 +3104,7 @@
               <component locate="North">
                 <driver>common.gui.components.XMLLabel</driver>
                 <parameters>
-                  <arg attribute="text">Pago por Datáfono</arg>
+                  <arg attribute="text">Anticipos</arg>
                   <arg attribute="alignment">0</arg>
                   <arg attribute="font">Dialog,1,16</arg>
                 </parameters>
@@ -2904,6 +3140,7 @@
                       <arg attribute="maxlength">5</arg>
                       <arg attribute="font">Dialog,1,18</arg>
                       <arg attribute="alignment">RIGHT</arg>
+                      <arg attribute="clean">true</arg>
                       <arg attribute="exportValue">efectivo</arg>
                       <arg attribute="printable">true</arg>
                       <arg attribute="returnNullValue">true</arg>
@@ -2920,6 +3157,7 @@
                       <arg attribute="name">EFECTIVOUS</arg>
                       <arg attribute="format">NUMERIC</arg>
                       <arg attribute="size">8</arg>
+                      <arg attribute="clean">true</arg>
                       <arg attribute="maxlength">5</arg>
                       <arg attribute="font">Dialog,1,18</arg>
                       <arg attribute="alignment">RIGHT</arg>
@@ -2940,6 +3178,7 @@
                       <arg attribute="format">NUMERIC</arg>
                       <arg attribute="size">11</arg>
                       <arg attribute="maxlength">26</arg>
+                      <arg attribute="clean">true</arg>
                       <arg attribute="font">Dialog,1,18</arg>
                       <arg attribute="alignment">RIGHT</arg>
                       <arg attribute="enabled">false</arg>
@@ -2959,11 +3198,12 @@
                       <arg attribute="name">totalconsignaciones</arg>
                       <arg attribute="format">NUMERIC</arg>
                       <arg attribute="size">11</arg>
+                      <arg attribute="clean">true</arg>
                       <arg attribute="maxlength">26</arg>
                       <arg attribute="font">Dialog,1,18</arg>
                       <arg attribute="alignment">RIGHT</arg>
                       <arg attribute="enabled">false</arg>
-                      <arg attribute="calculateExportValue">tconsignation+totalanticipos</arg>
+                      <arg attribute="calculateExportValue">tconsignation</arg>
                     </subarg>
                   </parameters>
                 </component>
@@ -2977,6 +3217,7 @@
                       <arg attribute="name">otrospagostarjeta</arg>
                       <arg attribute="format">NUMERIC</arg>
                       <arg attribute="size">11</arg>
+                      <arg attribute="clean">true</arg>
                       <arg attribute="maxlength">26</arg>
                       <arg attribute="font">Dialog,1,18</arg>
                       <arg attribute="alignment">RIGHT</arg>
@@ -2987,43 +3228,20 @@
                 </component>
               </panel>
               <panel type="BorderLayout">
-                <component locate="West">
-                  <driver id="pagomixto">common.gui.components.GenericData</driver>
+                <component locate="Center">
+                  <driver id="anticipos">common.gui.components.GenericData</driver>
                   <parameters>
                     <arg attribute="Panel">false</arg>
                     <subarg>
-                      <arg attribute="name">pagomixto</arg>
                       <arg attribute="format">NUMERIC</arg>
-                      <arg attribute="decimals">0</arg>
-                      <arg attribute="exportValue">totaltarjeta</arg>
-                      <arg attribute="size">16</arg>
+                      <arg attribute="size">15</arg>
                       <arg attribute="maxlength">26</arg>
-                      <arg attribute="font">Dialog,1,18</arg>
-                      <arg attribute="alignment">RIGHT</arg>
                       <arg attribute="enabled">false</arg>
-                      <arg attribute="printable">true</arg>
-                      <!-- <arg attribute="calculateBSExportValue">((totalfact-(trfuente+triva+trica))-efectivoneto-totalcredibancoparcial-totalpagosmanuales-pagooacredito-tsodexobigpass-tconsignation)&lt;0?0:((totalfact-(trfuente+triva+trica))-efectivoneto-totalcredibancoparcial-pagooacredito-totalpagosmanuales-tsodexobigpass-tconsignation)</arg> lust -->
-                      <arg attribute="calculateBSExportValue">((totalfact-(trfuente+triva+trica))-efectivoneto-totalcredibancoparcial-totalpagosmanuales-tsodexobigpass-tconsignation-totalanticipos)&lt;0?0:((totalfact-(trfuente+triva+trica))-efectivoneto-totalcredibancoparcial-totalpagosmanuales-tsodexobigpass-tconsignation-totalanticipos)</arg>
-                    </subarg>
-                  </parameters>
-                </component>
-                <component locate="East">
-                  <driver id="ivatarjeta">common.gui.components.GenericData</driver>
-                  <parameters>
-                    <arg attribute="Panel">false</arg>
-                    <subarg>
-                      <arg attribute="label">IVA: </arg>
-                      <arg attribute="name">ivatarjeta</arg>
-                      <arg attribute="format">NUMERIC</arg>
-                      <arg attribute="decimals">0</arg>
-                      <arg attribute="exportValue">ivatarjeta</arg>
-                      <arg attribute="size">9</arg>
-                      <arg attribute="maxlength">26</arg>
-                      <arg attribute="font">Dialog,1,18</arg>
+                      <arg attribute="clean">true</arg>
                       <arg attribute="alignment">RIGHT</arg>
-                      <arg attribute="enabled">false</arg>
+                      <arg attribute="font">Dialog,1,20</arg>
+                      <arg attribute="calculateExportValue">totalanticipos</arg>
                       <arg attribute="printable">true</arg>
-                      <arg attribute="calculateBSExportValue">(totalfact)-(trfuente+triva+trica)!=0?(totaltarjeta*tiva/(totalfact-(trfuente+triva+trica)):0</arg>
                     </subarg>
                   </parameters>
                 </component>
@@ -3039,10 +3257,11 @@
                       <arg attribute="size">11</arg>
                       <arg attribute="maxlength">26</arg>
                       <arg attribute="font">Dialog,1,18</arg>
+                      <arg attribute="clean">true</arg>
                       <arg attribute="alignment">RIGHT</arg>
                       <arg attribute="enabled">false</arg>
                       <!-- <arg attribute="calculateExportValue">efectivot+tconsignation+tsodexobigpass+tcreditcard+totaltodastarjetas+pagooacredito</arg> lust -->
-                      <arg attribute="calculateExportValue">efectivot+tconsignation+tsodexobigpass+tcreditcard+totaltodastarjetas+totalanticipos</arg>
+                      <arg attribute="calculateExportValue">efectivot+tconsignation+tsodexobigpass+tcreditcard+totaltodastarjetas+totalanticipos+puntosredimidos</arg>
                       <arg attribute="printable">true</arg>
                     </subarg>
                   </parameters>
@@ -3061,11 +3280,12 @@
                       <arg attribute="font">Dialog,1,18</arg>
                       <arg attribute="alignment">RIGHT</arg>
                       <arg attribute="enabled">false</arg>
+                      <arg attribute="clean">true</arg>
                       <arg attribute="exportValue">cambio</arg>
             <!--           <arg attribute="calculateBSExportValue">(tcreditcard+pagooacredito+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+efectivot+tconsignation)&gt;(totalfact-(trfuente+triva+trica))&amp;&amp;(tcreditcard+pagooacredito+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation)&lt;(totalfact-(trfuente+triva+trica))?(efectivot+tcreditcard+pagooacredito+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation)-(totalfact-(trfuente+triva+trica)):0.0
       </arg> lust-->
 
-      <arg attribute="calculateBSExportValue">(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+efectivot+tconsignation+totalanticipos)&gt;(totalfact-(trfuente+triva+trica))&amp;&amp;(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos)&lt;(totalfact-(trfuente+triva+trica))?(efectivot+tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos)-(totalfact-(trfuente+triva+trica)):0.0
+      <arg attribute="calculateBSExportValue">(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+efectivot+tconsignation+totalanticipos+puntosredimidos)&gt;(totalfact-(trfuente+triva+trica))&amp;&amp;(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos+puntosredimidos)&lt;(totalfact-(trfuente+triva+trica))?(efectivot+tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos+puntosredimidos)-(totalfact-(trfuente+triva+trica)):0.0
       </arg>
                       <arg attribute="printable">true</arg>
                     </subarg>
@@ -3081,6 +3301,7 @@
                       <arg attribute="format">NUMERIC</arg>
                       <arg attribute="size">11</arg>
                       <arg attribute="maxlength">26</arg>
+                      <arg attribute="clean">true</arg>
                       <arg attribute="font">Dialog,1,18</arg>
                       <arg attribute="alignment">RIGHT</arg>
                       <arg attribute="enabled">false</arg>
@@ -3095,6 +3316,130 @@
             </panel>
           </panel>
         </panel>
+      </panel>
+      <!--Comisiones-->
+      <panel name="Comisiones" font="Dialog,1,14" type="GridLayout" rows="1" cols="1">
+        <panel font="Dialog,1,14" type="BorderLayout">
+          <panel type="BorderLayout" locate="North">
+            <component locate="West">
+              <driver>common.gui.components.XMLLabel</driver>
+              <parameters>
+                <arg attribute="text">Comision Ventas</arg>
+                <arg attribute="alignment">0</arg>
+                <arg attribute="font">Dialog,1,20</arg>
+              </parameters>
+            </component>
+            <component locate="East">
+              <driver id="cven">client.gui.components.TableDataFields</driver>
+              <parameters>
+                <arg attribute="linkTable">ventas</arg>
+                <subarg>
+                  <arg attribute="name">TOTAL</arg>
+                  <arg attribute="format">NUMERIC</arg>
+                  <arg attribute="size">11</arg>
+                  <arg attribute="maxlength">15</arg>
+                  <arg attribute="clean">true</arg>
+                  <arg attribute="enabled">false</arg>
+                  <arg attribute="totalCol">k</arg>
+                  <arg attribute="font">Dialog,1,20</arg>
+                  <arg attribute="alignment">RIGHT</arg>
+                  <arg attribute="exportValue">cven</arg>
+                </subarg>
+              </parameters>
+            </component>
+          </panel>
+          <component locate="Center">
+            <driver id="cvendedores">client.gui.components.TableFindData</driver>
+            <parameters>
+              <arg attribute="rows">25</arg>
+              <arg attribute="initSQL">JBSEL0013</arg>
+              <arg attribute="colorBackground">152,203,255</arg>
+              <arg attribute="rowHeight">25</arg>
+              <arg attribute="colorSelected">66,160,255</arg>
+              <arg attribute="reload">true</arg>
+              <arg attribute="font">Dialog,1,16</arg>
+              <arg attribute="beanshell">e=a==true?1:0</arg>
+              <arg attribute="superBeanNQ">d=e&gt;0?((e/sum(e))*y)*0.04:0</arg> <!--4% de comision sobre el neto de la venta-->
+              <arg attribute="importTotalCol">y,neto</arg>
+              <subarg>
+                <arg attribute="name">Seleccion</arg>
+                <arg attribute="length">90</arg>
+                <arg attribute="type">BOOLEAN</arg>
+                <arg attribute="enabled">true</arg>
+                <arg attribute="printable">true</arg>
+                <arg attribute="clean">true</arg>
+              </subarg>
+              <subarg>
+                <arg attribute="name">Nit</arg>
+                <arg attribute="type">STRING</arg>
+                <arg attribute="length">180</arg>
+                <arg attribute="enabled">true</arg>
+                <arg attribute="clean">true</arg>
+              </subarg>
+              <subarg>
+                <arg attribute="name">Nombre</arg>
+                <arg attribute="type">STRING</arg>
+                <arg attribute="length">340</arg>
+                <arg attribute="enabled">true</arg>
+                <arg attribute="clean">true</arg>
+              </subarg>
+              <subarg>
+                <arg attribute="name">Valor</arg>
+                <arg attribute="length">120</arg>
+                <arg attribute="type">DECIMAL</arg>
+                <arg attribute="decimals">0</arg>
+                <arg attribute="clean">true</arg>
+                <arg attribute="defaultValue">0</arg>
+                <arg attribute="enabled">false</arg>
+                <arg attribute="returnCol">1</arg>
+              </subarg>
+              <subarg>
+                <arg attribute="name">Contador1</arg>
+                <arg attribute="length">0</arg>
+                <arg attribute="type">DECIMAL</arg>
+                <arg attribute="clean">true</arg>
+                <arg attribute="defaultValue">0</arg>
+                <arg attribute="enabled">false</arg>
+              </subarg>
+              <subarg>
+                <arg attribute="name">ID</arg>
+                <arg attribute="length">0</arg>
+                <arg attribute="type">STRING</arg>
+                <arg attribute="clean">true</arg>
+                <arg attribute="defaultValue">0</arg>
+                <arg attribute="enabled">false</arg>
+                <arg attribute="returnCol">0</arg>
+                <arg attribute="nameField">idTercero</arg>
+              </subarg>
+              <subarg>
+                <arg attribute="name">cta52</arg>
+                <arg attribute="length">0</arg>
+                <arg attribute="type">STRING</arg>
+                <arg attribute="clean">true</arg>
+                <arg attribute="defaultValue">520518</arg>
+                <arg attribute="enabled">false</arg>
+                <arg attribute="returnCol">2</arg>
+              </subarg>
+              <subarg>
+                <arg attribute="name">cta23</arg>
+                <arg attribute="length">0</arg>
+                <arg attribute="type">STRING</arg>
+                <arg attribute="clean">true</arg>
+                <arg attribute="defaultValue">23352001</arg>
+                <arg attribute="enabled">false</arg>
+                <arg attribute="returnCol">3</arg>
+              </subarg>
+              <subarg>
+                <arg attribute="name">sigla</arg>
+                <arg attribute="length">0</arg>
+                <arg attribute="type">STRING</arg>
+                <arg attribute="clean">true</arg>
+                <arg attribute="enabled">false</arg>
+              </subarg>
+            </parameters>
+          </component>
+        </panel>
+        
       </panel>
       <panel icon="RETENCIONES" name="RETENCIONES" type="BorderLayout">
         <panel cols="1" locate="Center" rows="3" type="GridLayout">
@@ -3194,6 +3539,7 @@
                     <arg attribute="enabled">false</arg>
                     <arg attribute="alignment">RIGHT</arg>
                     <arg attribute="exportValue">trfuente</arg>
+                    <arg attribute="clean">true</arg>
                     <arg attribute="totalCol">e</arg>
                     <arg attribute="returnNullValue">true</arg>
                   </subarg>
@@ -3295,6 +3641,7 @@
                     <arg attribute="format">NUMERIC</arg>
                     <arg attribute="size">15</arg>
                     <arg attribute="maxlength">26</arg>
+                    <arg attribute="clean">true</arg>
                     <arg attribute="enabled">false</arg>
                     <arg attribute="alignment">RIGHT</arg>
                     <arg attribute="totalCol">e</arg>
@@ -3400,6 +3747,7 @@
                     <arg attribute="maxlength">26</arg>
                     <arg attribute="enabled">false</arg>
                     <arg attribute="alignment">RIGHT</arg>
+                    <arg attribute="clean">true</arg>
                     <arg attribute="totalCol">e</arg>
                     <arg attribute="exportValue">trica</arg>
                     <arg attribute="returnNullValue">true</arg>
@@ -3414,11 +3762,11 @@
                 <component locate="Center">
                     <driver id="cartera">client.gui.components.TableFindData</driver>
                     <parameters>
-                        <arg attribute="rows">40</arg>
+                        <arg attribute="rows">20</arg>
                         <arg attribute="colorBackground">204,238,255</arg>
                         <arg attribute="colorSelected">240,176,78</arg>
                         <arg attribute="keySQL">JBSEL0012</arg>
-                        <arg attribute="driverEvent" id="sel_separado">client.gui.components.XMLComboBox</arg>
+                        <arg attribute="driverEvent" id="nro_orden_pedido">client.gui.components.TableDataFields</arg>
                         <arg attribute="beanshell">f=e&lt;f?0:f</arg>
                         <arg attribute="beanshell">g=g&gt;100?100:g</arg>
                         <arg attribute="beanshell">h=h&gt;100?100:h</arg>
@@ -3598,6 +3946,7 @@
                                 <arg attribute="format">NUMERIC</arg>
                                 <arg attribute="exportValue">totalanticipos</arg>
                                 <arg attribute="size">9</arg>
+                                <arg attribute="clean">true</arg>
                                 <arg attribute="maxlength">26</arg>
                                 <arg attribute="font">Dialog,0,12</arg>
                                 <arg attribute="alignment">RIGHT</arg>
@@ -3681,6 +4030,7 @@
                 <arg attribute="label">TOTAL</arg>
                 <arg attribute="format">NUMERIC</arg>
                 <arg attribute="size">15</arg>
+                <arg attribute="clean">true</arg>
                 <arg attribute="maxlength">26</arg>
                 <arg attribute="exportValue">tcheck</arg>
                 <arg attribute="maxValue">(totalfact-(trfuente+triva+trica))-(tcreditcard+tchecksodexobigpass+tconsignation+totalanticipos)</arg>
@@ -3744,6 +4094,7 @@
                 <arg attribute="format">NUMERIC</arg>
                 <arg attribute="size">15</arg>
                 <arg attribute="maxlength">26</arg>
+                <arg attribute="clean">true</arg>
                 <arg attribute="exportValue">tconsignation</arg>
                 <arg attribute="maxValue">(totalfact-(trfuente+triva+trica))-(tcreditcard+tchecksodexobigpass+tcheck)</arg>
                 <arg attribute="enabled">false</arg>
@@ -4329,6 +4680,7 @@
                       <arg attribute="exportValue">totalpagosmanuales</arg>
                       <arg attribute="size">9</arg>
                       <arg attribute="maxlength">26</arg>
+                      <arg attribute="clean">true</arg>
                       <arg attribute="font">Dialog,0,15</arg>
                       <arg attribute="alignment">RIGHT</arg>
                       <arg attribute="totalCol">b</arg>
@@ -4420,6 +4772,7 @@
                       <arg attribute="label">TOTAL</arg>
                       <arg attribute="format">NUMERIC</arg>
                       <arg attribute="size">15</arg>
+                      <arg attribute="clean">true</arg>
                       <arg attribute="maxlength">26</arg>
                       <arg attribute="enabled">false</arg>
                       <arg attribute="alignment">RIGHT</arg>
@@ -4507,6 +4860,7 @@
                       <arg attribute="size">15</arg>
                       <arg attribute="maxlength">26</arg>
                       <arg attribute="enabled">false</arg>
+                      <arg attribute="clean">true</arg>
                       <arg attribute="alignment">RIGHT</arg>
                       <arg attribute="totalCol">c</arg>
                       <arg attribute="exportValue">bigpass</arg>
@@ -4543,6 +4897,7 @@
               <arg attribute="label">id tarjeta cd</arg>
               <arg attribute="maxlength">10</arg>
               <arg attribute="alignment">RIGHT</arg>
+              <arg attribute="clean">true</arg>
               <arg attribute="importValue">franquicia</arg>
               <arg attribute="exportValue">idtarjetacd</arg>
               <arg attribute="returnNullValue">true</arg>
@@ -4565,6 +4920,7 @@
               <arg attribute="maxlength">20</arg>
               <arg attribute="alignment">RIGHT</arg>
               <arg attribute="withoutButton">true</arg>
+              <arg attribute="clean">true</arg>
               <arg attribute="nullValue">true</arg>
               <arg attribute="printable">true</arg>
               <arg attribute="key">true</arg>
@@ -5098,6 +5454,10 @@
                               <arg attribute="validValue">0</arg>
                           </parameters>
                       </component>
+                    <component><!--35-->
+                                <driver id="cvendedores">client.gui.components.TableFindData</driver>
+                                <method>getPackage</method>
+                        </component>
             </action>
 
             <!-- Impresion server %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
@@ -5663,10 +6023,6 @@
                 <method>clean</method>
               </component>
               <component>
-                <driver id="tipo_doc">client.gui.components.XMLComboBox</driver>
-                <method>clean</method>
-              </component>
-              <component>
                 <driver id="principal">client.gui.components.TableFindData</driver>
                 <method>clean</method>
               </component>
@@ -5680,10 +6036,6 @@
               </component>
               <component>
                 <driver id="totalValues">client.gui.components.TableDataFields</driver>
-                <method>clean</method>
-              </component>
-              <component>
-                <driver id="totalValuesDescuento">client.gui.components.TableDataFields</driver>
                 <method>clean</method>
               </component>
               <component>
@@ -5708,14 +6060,6 @@
                 <method>cleanExternalValues</method>
               </component>
               <!--  Estos componentes exportan valores, por eso debe ir despues de limpiar las llaves externas -->
-              <component>
-                <driver id="Vendedor">client.gui.components.XMLComboBox</driver>
-                <method>clean</method>
-              </component>
-              <component>
-                <driver id="tipofactura">client.gui.components.XMLComboBox</driver>
-                <method>clean</method>
-              </component>
               <component>
                 <driver id="date">common.gui.components.GenericData</driver>
                 <method>clean</method>
@@ -6423,303 +6767,307 @@
                               <arg attribute="validValue">0</arg>
                           </parameters>
                       </component>
+                      <component><!--35-->
+                                <driver id="cvendedores">client.gui.components.TableFindData</driver>
+                                <method>getPackage</method>
+                        </component>
             </action>
             <!-- Impresion server -->
-            <action>
-              <type>saveprintonserver</type>
-              <printerTemplate>/graphics/TSFacturaCreditoContadoServer.xml</printerTemplate>
-              <component>
-                <driver>gfforma</driver>
-                <method>setVisible</method>
-                <parameters>
-                  <arg>false</arg>
-                </parameters>
-              </component>
-              <!-- cufe -->
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">cufe</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <component>
-                 <driver>this</driver>
-                 <method>getPrintPackage</method>
-                 <parameters>
-                   <subarg>
-                     <arg attribute="beanshell">formadepago==0.00?pagoacreditoimp:""</arg>
-                   </subarg>
-                 </parameters>
-               </component>
-               <component>
-                 <driver>this</driver>
-                 <method>getPrintPackage</method>
-                 <parameters>
-                   <subarg>
-                     <arg attribute="beanshell">formadepago==1.00?pagodecontadoimp:""</arg>
-                   </subarg>
-                 </parameters>
-               </component>
-              <!-- direccion -->
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">direccion</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <!-- telefono -->
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">telefono</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <!-- piepaginados direccion web-->
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">piepaginados</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <!-- ciudad -->
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">ciudad</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <!-- Numero-->
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">lastnumber</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <!-- 0 codigo tipo -->
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">prefix</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <!-- 1 Hora-->
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">detime</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <!-- 0 Numero Resolucion -->
-              <component>
-                <driver id="res_fact">client.gui.components.TableDataFields</driver>
-                <method>getPrintPackage</method>
-              </component>
-              <!-- 1 Fecha Resolucion -->
-              <component>
-                <driver id="res_fact_fecha">client.gui.components.TableDataFields</driver>
-                <method>getPrintPackage</method>
-              </component>
-              <!-- 2 Rango resolucion -->
-              <component>
-                <driver id="res_fact_desde">client.gui.components.TableDataFields</driver>
-                <method>getPrintPackage</method>
-              </component>
-              <!-- 3 Vigencia resolucion -->
-              <component>
-                <driver id="res_fact_vigencia">client.gui.components.TableDataFields</driver>
-                <method>getPrintPackage</method>
-              </component>
-              <!-- fecha procesamiento -->
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">processdate</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <component>
-                <driver>client.gui.components.FindThird</driver>
-                <method>getPrintPackage</method>
-              </component>
-              <component>
-                <driver id="date">common.gui.components.GenericData</driver>
-                <method>getPrintPackage</method>
-              </component>
-              <component>
-                <driver id="credit">common.gui.components.GenericData</driver>
-                <method>getPrintPackage</method>
-              </component>
-              <component>
-                <driver id="vencimiento">common.gui.components.GenericData</driver>
-                <method>getPrintPackage</method>
-              </component>
-              <!-- Tabla Productos -->
-              <component>
-                <driver id="principal">client.gui.components.TableFindData</driver>
-                <method>getPrintPackage</method>
-              </component>
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">subtotalglobalsinverde</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">vdescuentoglobal</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">stotalexcluido</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">stotalexento</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <component>
-                <driver id="baseivagravados">client.gui.components.TableDataFields</driver>
-                <method>getPrintPackage</method>
-              </component>
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">ivaglobal</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">verde</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">trfuente</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">triva</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">trica</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <!-- 27a totalcantidades -->
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">totalcantidades</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <!-- contador lineas -->
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">totallineas</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue">totalmenosreteglobal</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <!-- Observaciones -->
-              <component>
-                <driver>common.gui.components.XMLTextArea</driver>
-                <method>getPrintPackage</method>
-              </component>
-              <!-- medios de pago -->
-              <component>
-                  <driver>this</driver>
-                  <method>getPackage</method>
-                  <parameters>
-                      <arg attribute="nullField">true</arg>
-                      <subarg>
-                          <arg attribute="importValue">pagooacredito</arg> <!-- pago cxc -->
-                          <arg attribute="importValue">efectivot</arg>
-                          <arg attribute="beanshell">tcreditcard!=0.00?totaltodastarjetas+tcreditcard:tcreditcard</arg>
-                          <arg attribute="importValue">tsodexobigpass</arg>
-                          <arg attribute="importValue">tconsignation</arg>
-                      </subarg>
-                  </parameters>
-              </component>
+            <!-- <action>
+        <type>saveprintonserver</type>
+        <printerTemplate>/graphics/TSFacturaCreditoContadoServer.xml</printerTemplate>
+        <component>
+        <driver>gfforma</driver>
+        <method>setVisible</method>
+        <parameters>
+          <arg>false</arg>
+        </parameters>
+        </component>
+        cufe
+        <component>
+        <driver>this</driver>
+        <method>getPackage</method>
+        <parameters>
+          <subarg>
+          <arg attribute="importValue">cufe</arg>
+          </subarg>
+        </parameters>
+        </component>
+        <component>
+         <driver>this</driver>
+         <method>getPrintPackage</method>
+         <parameters>
+           <subarg>
+           <arg attribute="beanshell">formadepago==0.00?pagoacreditoimp:""</arg>
+           </subarg>
+         </parameters>
+         </component>
+         <component>
+         <driver>this</driver>
+         <method>getPrintPackage</method>
+         <parameters>
+           <subarg>
+           <arg attribute="beanshell">formadepago==1.00?pagodecontadoimp:""</arg>
+           </subarg>
+         </parameters>
+         </component>
+        direccion
+        <component>
+        <driver>this</driver>
+        <method>getPackage</method>
+        <parameters>
+          <subarg>
+          <arg attribute="importValue">direccion</arg>
+          </subarg>
+        </parameters>
+        </component>
+        telefono
+        <component>
+        <driver>this</driver>
+        <method>getPackage</method>
+        <parameters>
+          <subarg>
+          <arg attribute="importValue">telefono</arg>
+          </subarg>
+        </parameters>
+        </component>
+        piepaginados direccion web
+        <component>
+        <driver>this</driver>
+        <method>getPackage</method>
+        <parameters>
+          <subarg>
+          <arg attribute="importValue">piepaginados</arg>
+          </subarg>
+        </parameters>
+        </component>
+        ciudad
+        <component>
+        <driver>this</driver>
+        <method>getPackage</method>
+        <parameters>
+          <subarg>
+          <arg attribute="importValue">ciudad</arg>
+          </subarg>
+        </parameters>
+        </component>
+        Numero
+        <component>
+        <driver>this</driver>
+        <method>getPackage</method>
+        <parameters>
+          <subarg>
+          <arg attribute="importValue">lastnumber</arg>
+          </subarg>
+        </parameters>
+        </component>
+        0 codigo tipo
+        <component>
+        <driver>this</driver>
+        <method>getPackage</method>
+        <parameters>
+          <subarg>
+          <arg attribute="importValue">prefix</arg>
+          </subarg>
+        </parameters>
+        </component>
+        1 Hora
+        <component>
+        <driver>this</driver>
+        <method>getPackage</method>
+        <parameters>
+          <subarg>
+          <arg attribute="importValue">detime</arg>
+          </subarg>
+        </parameters>
+        </component>
+        0 Numero Resolucion
+        <component>
+        <driver id="res_fact">client.gui.components.TableDataFields</driver>
+        <method>getPrintPackage</method>
+        </component>
+        1 Fecha Resolucion
+        <component>
+        <driver id="res_fact_fecha">client.gui.components.TableDataFields</driver>
+        <method>getPrintPackage</method>
+        </component>
+        2 Rango resolucion
+        <component>
+        <driver id="res_fact_desde">client.gui.components.TableDataFields</driver>
+        <method>getPrintPackage</method>
+        </component>
+        3 Vigencia resolucion
+        <component>
+        <driver id="res_fact_vigencia">client.gui.components.TableDataFields</driver>
+        <method>getPrintPackage</method>
+        </component>
+        fecha procesamiento
+        <component>
+        <driver>this</driver>
+        <method>getPackage</method>
+        <parameters>
+          <subarg>
+          <arg attribute="importValue">processdate</arg>
+          </subarg>
+        </parameters>
+        </component>
+        <component>
+        <driver>client.gui.components.FindThird</driver>
+        <method>getPrintPackage</method>
+        </component>
+        <component>
+        <driver id="date">common.gui.components.GenericData</driver>
+        <method>getPrintPackage</method>
+        </component>
+        <component>
+        <driver id="credit">common.gui.components.GenericData</driver>
+        <method>getPrintPackage</method>
+        </component>
+        <component>
+        <driver id="vencimiento">common.gui.components.GenericData</driver>
+        <method>getPrintPackage</method>
+        </component>
+        Tabla Productos
+        <component>
+        <driver id="principal">client.gui.components.TableFindData</driver>
+        <method>getPrintPackage</method>
+        </component>
+        <component>
+        <driver>this</driver>
+        <method>getPackage</method>
+        <parameters>
+          <subarg>
+          <arg attribute="importValue">subtotalglobalsinverde</arg>
+          </subarg>
+        </parameters>
+        </component>
+        <component>
+        <driver>this</driver>
+        <method>getPackage</method>
+        <parameters>
+          <subarg>
+          <arg attribute="importValue">vdescuentoglobal</arg>
+          </subarg>
+        </parameters>
+        </component>
+        <component>
+        <driver>this</driver>
+        <method>getPackage</method>
+        <parameters>
+          <subarg>
+          <arg attribute="importValue">stotalexcluido</arg>
+          </subarg>
+        </parameters>
+        </component>
+        <component>
+        <driver>this</driver>
+        <method>getPackage</method>
+        <parameters>
+          <subarg>
+          <arg attribute="importValue">stotalexento</arg>
+          </subarg>
+        </parameters>
+        </component>
+        <component>
+        <driver id="baseivagravados">client.gui.components.TableDataFields</driver>
+        <method>getPrintPackage</method>
+        </component>
+        <component>
+        <driver>this</driver>
+        <method>getPackage</method>
+        <parameters>
+          <subarg>
+          <arg attribute="importValue">ivaglobal</arg>
+          </subarg>
+        </parameters>
+        </component>
+        <component>
+        <driver>this</driver>
+        <method>getPackage</method>
+        <parameters>
+          <subarg>
+          <arg attribute="importValue">verde</arg>
+          </subarg>
+        </parameters>
+        </component>
+        <component>
+        <driver>this</driver>
+        <method>getPackage</method>
+        <parameters>
+          <subarg>
+          <arg attribute="importValue">trfuente</arg>
+          </subarg>
+        </parameters>
+        </component>
+        <component>
+        <driver>this</driver>
+        <method>getPackage</method>
+        <parameters>
+          <subarg>
+          <arg attribute="importValue">triva</arg>
+          </subarg>
+        </parameters>
+        </component>
+        <component>
+        <driver>this</driver>
+        <method>getPackage</method>
+        <parameters>
+          <subarg>
+          <arg attribute="importValue">trica</arg>
+          </subarg>
+        </parameters>
+        </component>
+        27a totalcantidades
+        <component>
+        <driver>this</driver>
+        <method>getPackage</method>
+        <parameters>
+          <subarg>
+          <arg attribute="importValue">totalcantidades</arg>
+          </subarg>
+        </parameters>
+        </component>
+        contador lineas
+        <component>
+        <driver>this</driver>
+        <method>getPackage</method>
+        <parameters>
+          <subarg>
+          <arg attribute="importValue">totallineas</arg>
+          </subarg>
+        </parameters>
+        </component>
+        <component>
+        <driver>this</driver>
+        <method>getPackage</method>
+        <parameters>
+          <subarg>
+          <arg attribute="importValue">totalmenosreteglobal</arg>
+          </subarg>
+        </parameters>
+        </component>
+        Observaciones
+        <component>
+        <driver>common.gui.components.XMLTextArea</driver>
+        <method>getPrintPackage</method>
+        </component>
+        medios de pago
+        <component>
+          <driver>this</driver>
+          <method>getPackage</method>
+          <parameters>
+            <arg attribute="nullField">true</arg>
+            <subarg>
+              <arg attribute="importValue">pagooacredito</arg> pago cxc
+              <arg attribute="importValue">efectivot</arg>
+              <arg attribute="beanshell">tcreditcard!=0.00?totaltodastarjetas+tcreditcard:tcreditcard</arg>
+              <arg attribute="importValue">tsodexobigpass</arg>
+              <arg attribute="importValue">tconsignation</arg>
+            </subarg>
+          </parameters>
+        </component>
 
-            </action>
+      </action> -->
 
             <!-- impresion cliente tirilla -->
             
@@ -7249,10 +7597,6 @@
                 <method>clean</method>
               </component>
               <component>
-                <driver id="tipo_doc">client.gui.components.XMLComboBox</driver>
-                <method>clean</method>
-              </component>              
-              <component>
                 <driver id="principal">client.gui.components.TableFindData</driver>
                 <method>clean</method>
               </component>
@@ -7266,10 +7610,6 @@
               </component>
               <component>
                 <driver id="totalValues">client.gui.components.TableDataFields</driver>
-                <method>clean</method>
-              </component>
-              <component>
-                <driver id="totalValuesDescuento">client.gui.components.TableDataFields</driver>
                 <method>clean</method>
               </component>
               <component>
@@ -7294,10 +7634,6 @@
                 <method>cleanExternalValues</method>
               </component>
               <!--  Estos componentes exportan valores, por eso debe ir despues de limpiar las llaves externas -->
-              <component>
-                <driver id="Vendedor">client.gui.components.XMLComboBox</driver>
-                <method>clean</method>
-              </component>
               <!-- <component>
                 <driver id="tipofactura">client.gui.components.XMLComboBox</driver>
                 <method>clean</method>
@@ -7466,3 +7802,6 @@
   </FORM>
   <!-- Termina forma de Pago *** -->
 </FORM>
+
+
+    

@@ -477,7 +477,8 @@
 
     <!-- 41 adiciona key bodega out: bodegaSaliente -->
     <arg attribute="addKey"/>
-    <!-- 42  datos_prod, inventarios-->
+
+    <!-- 42  tabla principal de productos inserta en datos_prod, inventarios-->
     <subarg>
         <LNData>
           <driver>LNSelectedField</driver>
@@ -579,6 +580,8 @@ JBE ACCOUNTS TABLE:
         </LNData>
 
     </subarg>
+
+    <!-- Cruce con Anticipos -->
     <subarg>
         <LNData>
             <driver>LNSelectedField</driver>
@@ -607,4 +610,46 @@ JBE ACCOUNTS TABLE:
             </parameters>
         </LNData>
     </subarg>
+<!-- comisiones en ventas -->
+  <subarg>  <!--35-->
+    <LNData>
+      <driver>LNSelectedField</driver>
+      <method>getFields</method>
+      <parameters>
+        <arg attribute="sql">JBINS0002</arg>
+        <arg attribute="conditional">B>0</arg>
+        <arg attribute="fields">0,1,1</arg>
+        <arg attribute="discartKey">bodegaSaliente</arg>
+      </parameters>
+    </LNData>
+    <LNData>
+      <driver>LNContabilidad</driver>
+      <method>columnDataAccount</method>
+      <parameters>
+        <arg attribute="debuging">true</arg>
+        <arg attribute="Concepto">Venta segun factura de contado</arg>
+        <arg attribute="naturaleza">D</arg>
+        <subarg>
+          <arg attribute="accountKey">2</arg>
+          <arg attribute="accountTh">0</arg>
+          <arg attribute="accountData">1</arg>
+        </subarg>
+      </parameters>
+    </LNData>
+    <LNData>
+      <driver>LNContabilidad</driver>
+      <method>columnDataAccount</method>
+      <parameters>
+        <arg attribute="debuging">true</arg>
+        <arg attribute="Concepto">Venta segun factura de contado</arg>
+        <arg attribute="naturaleza">C</arg>
+        <subarg>
+          <arg attribute="accountKey">3</arg>
+          <arg attribute="accountTh">0</arg>
+          <arg attribute="accountData">1</arg>
+        </subarg>
+      </parameters>
+    </LNData>
+  </subarg>
+
 </container>
