@@ -579,4 +579,32 @@ JBE ACCOUNTS TABLE:
         </LNData>
 
     </subarg>
+    <subarg>
+        <LNData>
+            <driver>LNSelectedField</driver>
+            <method>getSubpackage</method>
+            <parameters>
+                <arg attribute="sql">HCINS0023</arg>
+                <arg attribute="fields">0,2,3,4,5,6,8</arg>
+                <arg attribute="discartKey">bodegaSaliente</arg>
+                <arg attribute="discartKey">centrocosto</arg>
+                <arg attribute="discartKey">cuenta</arg>
+            </parameters>
+        </LNData>
+        <LNData>
+            <driver>LNContabilidad</driver>
+            <method>columnDataAccount</method>
+            <parameters>
+                <arg attribute="Concepto">Cruce de anticipo con facturacion</arg>
+                <arg attribute="naturaleza">D</arg>
+                <arg attribute="debuging">true</arg>
+                <arg attribute="tercero">getName</arg>
+                <arg attribute="centrocosto">getName</arg>
+                <subarg>
+                    <arg attribute="accountKey">7</arg>
+                    <arg attribute="accountData">1</arg>
+                </subarg>
+            </parameters>
+        </LNData>
+    </subarg>
 </container>

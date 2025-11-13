@@ -19,7 +19,6 @@ SELECT
     '?'::INT AS tercero,
     '?'::INTEGER AS id_centrocosto,
     '?'::INTEGER AS id_bodega,
-    --'interrogacion'::VARCHAR AS cuenta_plataforma, comentado Oct 13 2025
     '1'::INTEGER AS dia_siniva;
 
 DROP TABLE IF EXISTS rev_ter;
@@ -35,27 +34,6 @@ FROM
         a.tercero = -1 or
         a.tercero is null) AS f;
     
-/*
-DROP TABLE IF EXISTS error_msg;
-CREATE TEMP TABLE error_msg AS
-SELECT 
-    1
-FROM
-    (SELECT
-        error_text(''||foo.mensaje)
-    FROM
-        (SELECT
-            'Seleccione el tipo de factura (Credito, Addi, Sistecredito, Domicilios).'::text as mensaje
-        FROM
-            aux_params_antes_de_validaciones a
-        WHERE
-            trim(a.cuenta_plataforma) = '' or
-            a.cuenta_plataforma is null
-            ) AS foo) AS foo;
-            
-comentado Oct 13 2025            
-*/
-
 
 DROP TABLE IF EXISTS aux_params;
 CREATE TEMP TABLE aux_params AS
@@ -66,11 +44,7 @@ SELECT
     foo.tercero,
     foo.id_bodega,
     foo.dia_siniva,
-    --TRIM(foo.cuenta_plataforma) AS cuenta_plataforma, comentado Oct 13 2025
-    -- Julio 8 2025: se agrega condición por solicitud de Maria E, los clientes con precio mayorista solo
-    -- tienen derecho a este beneficio cuando el tipo de factura es CREDITO (130505)
-    --case when pt.id_catalogo = 2 and TRIM(foo.cuenta_plataforma) != '130505' then 1::integer else pt.id_catalogo end as id_catalogo, quito comentado Oct 13 2025
-    pt.id_catalogo, -- agrego comentado Oct 13 2025
+    pt.id_catalogo,
     case when pt.es_pintor then 1 else 0 end as es_pintor,
     case when pt.tiene_precio_base then 1 else 0 end as tiene_precio_base
 FROM
@@ -116,9 +90,8 @@ DROP TABLE IF EXISTS item_a_previo;
 CREATE TEMP TABLE item_a_previo AS
 SELECT
     ps.id_prod_serv,
-    --CASE WHEN a.dia_siniva=1 OR sdsi.id_sgrupo IS NULL OR (sdsi.id_sgrupo IS NOT NULL AND ROUND((pv.pventa/(1.0+(ps.iva/100)))::numeric,0) > sdsi.tope) THEN ps.iva ELSE 0 END AS iva, -- porcentahe de iva dia sin iva
     ps.iva,
-    ps.iva AS iva_auxiliar, -- porcentaje de iva del producto, se usa para calculos de pventa mas abajo
+    ps.iva AS iva_auxiliar,
     ps.id_asiento_generico,
     i.id_linea,
     i.id_grupo,
@@ -133,8 +106,6 @@ SELECT
     a.codigo_tipo,
     a.id_bodega,
     a.id_catalogo,
-    --pv.id_lista 
-    --trim(lp.nombre)||' '||lp.id_lista as nombre_lista, --agrego esto retornar el nombre de la lista a la tabla
     coalesce(tbe.porcentaje,-1) as porcentaje_bp,
     inc.inc,
     a.es_pintor,
@@ -378,10 +349,8 @@ FROM
         coalesce(a2.narticulos,0) as narticulosxysg,
         coalesce(a2.pdescuento,0) AS pdescuentoxysg,
         coalesce(a4.narticulos,0)+coalesce(a5.narticulos,0)+coalesce(a6.narticulos,0)+coalesce(a10.narticulos,0) as narticulosm,
-        --coalesce(a4.pdescuento,0)+coalesce(a5.pdescuento,0)+coalesce(a6.pdescuento,0)+coalesce(a10.pdescuento,0) AS pdescuentom,
         COALESCE(CASE WHEN coalesce(a6.pdescuento,0) > 0 THEN coalesce(a6.pdescuento,0) WHEN coalesce(a5.pdescuento,0) > 0 THEN coalesce(a5.pdescuento,0) WHEN coalesce(a4.pdescuento,0) > 0 THEN coalesce(a4.pdescuento,0) WHEN coalesce(a10.pdescuento,0) > 0 THEN coalesce(a10.pdescuento,0) END,0) AS pdescuentom,
         coalesce(a7.narticulos,0)+coalesce(a8.narticulos,0)+coalesce(a9.narticulos,0)+coalesce(a11.narticulos,0)+COALESCE(a12.narticulos,0) AS narticulosxysm,
-        --coalesce(a7.pdescuento,0)+coalesce(a8.pdescuento,0)+coalesce(a9.pdescuento,0)+coalesce(a11.pdescuento,0) AS pdescuentoxysm,
         COALESCE(CASE WHEN coalesce(a12.pdescuento,0) > 0 THEN coalesce(a12.pdescuento,0) WHEN coalesce(a9.pdescuento,0) > 0 THEN coalesce(a9.pdescuento,0) WHEN coalesce(a8.pdescuento,0) > 0 THEN coalesce(a8.pdescuento,0) WHEN coalesce(a7.pdescuento,0) > 0 THEN coalesce(a7.pdescuento,0) WHEN coalesce(a11.pdescuento,0) > 0 THEN coalesce(a11.pdescuento,0) END,0) AS pdescuentoxysm,
         coalesce(a3.narticulos,0) AS narticulosi,
         coalesce(a3.pdescuento,0) AS pdescuentoi,       
@@ -853,9 +822,7 @@ FROM
         i.id_marca = pbdi.id_marca AND
         i.id_item = pbdi.id_item
     WHERE 
-        i.id_marca = ma.id_marca --AND
-        --i.id_prod_serv=pv1.id_prod_serv AND
-        --i.id_prod_serv=pv2.id_prod_serv
+        i.id_marca = ma.id_marca
         ) AS foo
 LEFT OUTER JOIN
     (SELECT
@@ -877,7 +844,6 @@ ON
 DROP TABLE IF EXISTS pventa_ok;
 CREATE TEMP TABLE pventa_ok AS 
 SELECT
-    --au.cuenta_plataforma, comentado Oct 13 2025
     pt.id_regimen,
     ps.id_asiento_generico,
     pv.id_catalogo,
@@ -920,25 +886,18 @@ SELECT
     a.descripcion,
     CASE WHEN pvo.id_regimen='E' THEN ROUND((pvo.pventa/(1+(piva/100)))::numeric,0) ELSE pvo.pventa::NUMERIC END AS pventa,
     CASE WHEN pvo.id_regimen='E' THEN 0 ELSE pvo.piva END AS piva,
-    --pvo.pventa,
-    --pvo.piva,
     a.tag,
     a.disponible,
-    --pvo.pventa,
-    --pvo.pventa,
     CASE WHEN pvo.id_regimen='E' THEN ROUND((pvo.pventa/(1+(piva/100)))::numeric,0) ELSE pvo.pventa::NUMERIC END AS pventa,
     CASE WHEN pvo.id_regimen='E' THEN ROUND((pvo.pventa/(1+(piva/100)))::numeric,0) ELSE pvo.pventa::NUMERIC END AS pventa,
     a.trm,
     a.id_marcap,
     a.id_itemp,
     a.narticulosa,
-    --CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentoa ELSE 0 END AS pdescuentoa, --t12 comentado Oct 13 2025
     a.pdescuentoa,
     a.narticulosm,
-    --CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentom ELSE 0 END AS pdescuentom, --u14 comentado Oct 13 2025
     a.pdescuentom,
     a.narticulosi,
-    --CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentoi ELSE 0 END AS pdescuentoi, --v16 comentado Oct 13 2025
     a.pdescuentoi,
     a.id_marca_pc,
     a.id_item_pc,
@@ -953,22 +912,17 @@ SELECT
     a.id_sgrupop,
     a.id_submarcap,
     a.narticulosxyl,
-    --CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentoxyl ELSE 0 END AS pdescuentoxyl, --w30 comentado Oct 13 2025
     a.pdescuentoxyl,
     a.narticulosxyg,
-    --CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentoxyg ELSE 0 END AS pdescuentoxyg, --x32 comentado Oct 13 2025
     a.pdescuentoxyg,
     a.narticulosxysg,
-    --CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentoxysg ELSE 0 END AS pdescuentoxysg, --y34 comentado Oct 13 2025
     a.pdescuentoxysg,
     a.narticulosxysm,
-    --CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentoxysm ELSE 0 END AS pdescuentoxysm, --z36 comentado Oct 13 2025
     a.pdescuentoxysm,
     a.codigo,
     a.ref_proveedor,
     a.contador,
     pvo.id_regimen,
-    --pvo.cuenta_plataforma, comentado Oct 13 2025
     '' as cuenta_plataforma,
     a.porcentaje_bp,
     a.inc,

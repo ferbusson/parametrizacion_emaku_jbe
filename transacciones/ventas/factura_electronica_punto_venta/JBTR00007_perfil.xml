@@ -918,6 +918,7 @@
                         <arg attribute="sqlCode">DGSEL0081</arg> <!-- dias vigencia -->
                         <arg attribute="sqlCode">SEL0177</arg> <!-- fecha factura SEL0177-->
                         <arg attribute="sqlCode">JBSEL0011</arg> <!-- tabla principal de productos -->
+                        <arg attribute="sqlCode">JBSEL0012</arg> <!-- tabla de anticipos -->
                         <!-- <arg attribute="sqlCode">MDSEL0001</arg> hora -->
                         <!-- <arg attribute="sqlCode">SEL00404</arg> estado del documento -->
                         <arg attribute="sqlCodeExportValue">JBSEL0008,_sigla,_usuario,_norden,_id_char_tercero_referente,_nombre_tercero_referente,_direccion_contacto,_telefono_contacto,_id_vendedor</arg>
@@ -2439,7 +2440,7 @@
           <arg attribute="alignment">RIGHT</arg>
           <arg attribute="exportValue">saldoxpagar</arg>
           <arg attribute="enabled">false</arg>
-          <arg attribute="calculateExportValue">(totalfact-(trfuente+triva+trica))-(efectivot+tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation)</arg>
+          <arg attribute="calculateExportValue">(totalfact-(trfuente+triva+trica))-(efectivot+tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos)</arg>
           <arg attribute="printable">true</arg>
           <arg attribute="returnNullValue">true</arg>
         </subarg>
@@ -2547,7 +2548,7 @@
           <arg attribute="enabled">false</arg>
       <!--     <arg attribute="calculateBSExportValue">(totalfact)-(trfuente+triva+trica)&lt;=0||((totalfact-(trfuente+triva+trica))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+pagooacredito))&lt;=0||efectivot&lt;((totalfact-(trfuente+triva+trica))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+pagooacredito))?efectivot:(totalfact-(trfuente+triva+trica))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+pagooacredito)
 </arg> lust -->
-<arg attribute="calculateBSExportValue">(totalfact)-(trfuente+triva+trica)&lt;=0||((totalfact-(trfuente+triva+trica))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation))&lt;=0||efectivot&lt;((totalfact-(trfuente+triva+trica))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation))?efectivot:(totalfact-(trfuente+triva+trica))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation)
+<arg attribute="calculateBSExportValue">(totalfact)-(trfuente+triva+trica)&lt;=0||((totalfact-(trfuente+triva+trica))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos))&lt;=0||efectivot&lt;((totalfact-(trfuente+triva+trica))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos))?efectivot:(totalfact-(trfuente+triva+trica))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos)
 </arg>
         </subarg>
       </parameters>
@@ -2962,7 +2963,7 @@
                       <arg attribute="font">Dialog,1,18</arg>
                       <arg attribute="alignment">RIGHT</arg>
                       <arg attribute="enabled">false</arg>
-                      <arg attribute="calculateExportValue">tconsignation</arg>
+                      <arg attribute="calculateExportValue">tconsignation+totalanticipos</arg>
                     </subarg>
                   </parameters>
                 </component>
@@ -3002,7 +3003,7 @@
                       <arg attribute="enabled">false</arg>
                       <arg attribute="printable">true</arg>
                       <!-- <arg attribute="calculateBSExportValue">((totalfact-(trfuente+triva+trica))-efectivoneto-totalcredibancoparcial-totalpagosmanuales-pagooacredito-tsodexobigpass-tconsignation)&lt;0?0:((totalfact-(trfuente+triva+trica))-efectivoneto-totalcredibancoparcial-pagooacredito-totalpagosmanuales-tsodexobigpass-tconsignation)</arg> lust -->
-                      <arg attribute="calculateBSExportValue">((totalfact-(trfuente+triva+trica))-efectivoneto-totalcredibancoparcial-totalpagosmanuales-tsodexobigpass-tconsignation)&lt;0?0:((totalfact-(trfuente+triva+trica))-efectivoneto-totalcredibancoparcial-totalpagosmanuales-tsodexobigpass-tconsignation)</arg>
+                      <arg attribute="calculateBSExportValue">((totalfact-(trfuente+triva+trica))-efectivoneto-totalcredibancoparcial-totalpagosmanuales-tsodexobigpass-tconsignation-totalanticipos)&lt;0?0:((totalfact-(trfuente+triva+trica))-efectivoneto-totalcredibancoparcial-totalpagosmanuales-tsodexobigpass-tconsignation-totalanticipos)</arg>
                     </subarg>
                   </parameters>
                 </component>
@@ -3041,7 +3042,7 @@
                       <arg attribute="alignment">RIGHT</arg>
                       <arg attribute="enabled">false</arg>
                       <!-- <arg attribute="calculateExportValue">efectivot+tconsignation+tsodexobigpass+tcreditcard+totaltodastarjetas+pagooacredito</arg> lust -->
-                      <arg attribute="calculateExportValue">efectivot+tconsignation+tsodexobigpass+tcreditcard+totaltodastarjetas</arg>
+                      <arg attribute="calculateExportValue">efectivot+tconsignation+tsodexobigpass+tcreditcard+totaltodastarjetas+totalanticipos</arg>
                       <arg attribute="printable">true</arg>
                     </subarg>
                   </parameters>
@@ -3064,7 +3065,7 @@
             <!--           <arg attribute="calculateBSExportValue">(tcreditcard+pagooacredito+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+efectivot+tconsignation)&gt;(totalfact-(trfuente+triva+trica))&amp;&amp;(tcreditcard+pagooacredito+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation)&lt;(totalfact-(trfuente+triva+trica))?(efectivot+tcreditcard+pagooacredito+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation)-(totalfact-(trfuente+triva+trica)):0.0
       </arg> lust-->
 
-      <arg attribute="calculateBSExportValue">(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+efectivot+tconsignation)&gt;(totalfact-(trfuente+triva+trica))&amp;&amp;(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation)&lt;(totalfact-(trfuente+triva+trica))?(efectivot+tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation)-(totalfact-(trfuente+triva+trica)):0.0
+      <arg attribute="calculateBSExportValue">(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+efectivot+tconsignation+totalanticipos)&gt;(totalfact-(trfuente+triva+trica))&amp;&amp;(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos)&lt;(totalfact-(trfuente+triva+trica))?(efectivot+tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos)-(totalfact-(trfuente+triva+trica)):0.0
       </arg>
                       <arg attribute="printable">true</arg>
                     </subarg>
@@ -3595,7 +3596,7 @@
                                 <arg attribute="label">Total Anticipos:</arg>
                                 <arg attribute="name">TOTAL</arg>
                                 <arg attribute="format">NUMERIC</arg>
-                                <arg attribute="exportValue">totalcomp</arg>
+                                <arg attribute="exportValue">totalanticipos</arg>
                                 <arg attribute="size">9</arg>
                                 <arg attribute="maxlength">26</arg>
                                 <arg attribute="font">Dialog,0,12</arg>
@@ -3682,7 +3683,7 @@
                 <arg attribute="size">15</arg>
                 <arg attribute="maxlength">26</arg>
                 <arg attribute="exportValue">tcheck</arg>
-                <arg attribute="maxValue">(totalfact-(trfuente+triva+trica))-(tcreditcard+tchecksodexobigpass+tconsignation)</arg>
+                <arg attribute="maxValue">(totalfact-(trfuente+triva+trica))-(tcreditcard+tchecksodexobigpass+tconsignation+totalanticipos)</arg>
                 <arg attribute="enabled">false</arg>
                 <arg attribute="alignment">RIGHT</arg>
                 <arg attribute="totalCol">e</arg>
@@ -3793,7 +3794,7 @@
                     <arg attribute="alignment">RIGHT</arg>
                     <arg attribute="exportValue">pagosparciales</arg>
                     <arg attribute="enabled">false</arg>
-                    <arg attribute="calculateExportValue">(anticipos+efectivot+pagooacredito+tcreditcard+tsodexobigpass+tconsignation+totalcredibancoparcial+totalpagosmanuales)</arg>
+                    <arg attribute="calculateExportValue">(anticipos+efectivot+pagooacredito+tcreditcard+tsodexobigpass+tconsignation+totalanticipos+totalcredibancoparcial+totalpagosmanuales)</arg>
                     <arg attribute="printable">true</arg>
                     <arg attribute="returnNullValue">true</arg>
                   </subarg>
@@ -5089,6 +5090,14 @@
                       <driver id="principal">client.gui.components.TableFindData</driver>
                       <method>getPackage</method>
                     </component>
+                    <component>
+                          <driver id="cartera">client.gui.components.TableFindData</driver>
+                          <method>getPackage</method>
+                          <parameters>
+                              <arg attribute="validMinValue">5</arg>
+                              <arg attribute="validValue">0</arg>
+                          </parameters>
+                      </component>
             </action>
 
             <!-- Impresion server %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
@@ -5820,6 +5829,10 @@
                 <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
                 <method>clean</method>
               </component>
+              <component>
+                <driver id="cartera">client.gui.components.TableFindData</driver>
+                <method>clean</method>
+              </component>
               <!-- <component>
                 <driver id="basep">common.gui.components.GenericData</driver>
                 <method>clean</method>
@@ -6030,28 +6043,31 @@
                 <driver id="id_res_fact">client.gui.components.TableDataFields</driver>
                 <method>getPackage</method>
               </component>
-              <!-- 1 -->
-              <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">vendedor</arg>
-                    <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">dcredit</arg>
-                  </subarg>
-                </parameters>
-              </component>
-              <!-- 2 -->
+              <!-- 1 table: info_documento-->
+                    <component>
+                      <driver>this</driver>
+                      <method>getPackage</method>
+                      <parameters>
+                        <arg attribute="nullField">true</arg>
+                        <subarg>
+                          <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">_id_vendedor</arg>
+                          <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">dcredit</arg>
+                          <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">referrercustomerid</arg>
+                          <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">numeroordenexterno</arg>
+                        </subarg>
+                      </parameters>
+                    </component>
+              <!-- 2 observaciones -->
               <component>
                 <driver>common.gui.components.XMLTextArea</driver>
                 <method>getPackage</method>
-              </component>
+              </component>              
               <!-- 3 listado de remisiones que se cruzan en la factura -->
               <!-- <component>
                 <driver id="remisiones">client.gui.components.TableFindData</driver>
                 <method>getPackage</method>
-              </component> -->
-              <!-- 4 datos_documento-->
+              </component> lust -->
+              <!-- 3 datos_documento-->
               <component>
                   <driver>this</driver>
                   <method>getPackage</method>
@@ -6070,12 +6086,12 @@
                       </subarg>
                   </parameters>
               </component>
-              <!-- 5 -->
+              <!-- 4 sodexo -->
               <component>
                 <driver id="sodexo">client.gui.components.TableFindData</driver>
                 <method>getPackage</method>
               </component>
-              <!-- 6 -->
+              <!-- 5 bigpass -->
               <component>
                 <driver id="bigpass">client.gui.components.TableFindData</driver>
                 <method>getPackage</method>
@@ -6108,17 +6124,18 @@
                 <driver id="tcredibanco">client.gui.components.TableFindData</driver>
                 <method>getPackage</method>
               </component> -->
-              <!-- 9 tarjetas - multiples tarjetas - manuales -->
+              <!-- 6 tarjetas - multiples tarjetas - manuales -->
               <component>
                 <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
                 <method>getPackage</method>
               </component>
-              <!-- 10 -->
+              <!-- 7 -->
               <component>
                 <driver>client.gui.components.FindThird</driver>
                 <method>getPackage</method>
-              </component>              
-              <!-- 11 el valor de registro para cartera se condiciona porque en el caso de pago con datafono por valor total de factura solo podemos saber que se hizo por este medio cuando se recibe la respuesta del datafono en tcreditcard-->
+              </component>  
+
+              <!-- 11 -->
               <!-- <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -6127,51 +6144,51 @@
                     <arg attribute="importValue">dcredit</arg>
                     <arg attribute="importValue">netosinbolsa</arg>
                     <arg attribute="importValue">pagooacredito</arg>
-                    <arg attribute="importValue">charctatipofactura</arg> lust
+                    <arg attribute="importValue">charctatipofactura</arg>
                   </subarg>
                 </parameters>
               </component> lust -->
-              <!-- 12 centrocosto -->
+              <!-- 8 centrocosto -->
               <component>
                 <driver id="centrocosto">common.gui.components.GenericData</driver>
                 <method>getPackage</method>
               </component>
-              <!-- 10 B -->
+              <!-- 9 -->
               <component>
                 <driver id="checktable">client.gui.components.TableFindData</driver>
                 <method>getPackage</method>
               </component>
-              <!-- 10 C -->
+              <!-- 10 consignacion -->
               <component>
                 <driver id="consignationtable">client.gui.components.TableFindData</driver>
                 <method>getPackage</method>
               </component>
-              <!-- 13 efectivo neto -->
+              <!-- 11 efectivo neto -->
               <component>
                 <driver id="efectivoneto">common.gui.components.GenericData</driver>
                 <method>getPackage</method>
               </component>
-              <!-- 14 total sodexo -->
+              <!-- 12 total sodexo -->
               <component>
                 <driver id="totalsodexo">client.gui.components.TableDataFields</driver>
                 <method>getPackage</method>
               </component>
-              <!-- 15 total bigpass -->
+              <!-- 13 total bigpass -->
               <component>
                 <driver id="totalbigpass">client.gui.components.TableDataFields</driver>
                 <method>getPackage</method>
               </component>
-              <!-- 16 base -->
+              <!-- 14 base -->
               <component>
                 <driver id="base">client.gui.components.TableFindData</driver>
                 <method>getPackage</method>
               </component>
-              <!-- 17 retiva -->
+              <!-- 15 retiva -->
               <component>
                 <driver id="retiva">client.gui.components.TableFindData</driver>
                 <method>getPackage</method>
               </component>
-              <!-- 18 reteica -->
+              <!-- 16 reteica -->
               <component>
                 <driver id="retica">client.gui.components.TableFindData</driver>
                 <method>getPackage</method>
@@ -6182,26 +6199,17 @@
                 <method>getPackage</method>
               </component> lust -->
               <!-- 20 valor pago -->
-              <!-- <component>
-                <driver>this</driver>
-                <method>getPackage</method>
-                <parameters>
-                  <subarg>
-                    <arg attribute="beanshell">tcreditcard!=0.00?valorcero:pagooacredito</arg>
-                    </subarg>
-                </parameters>
-              </component> -->
-
+              
               <!-- <component>
                 <driver id="totalpagocredito">common.gui.components.GenericData</driver>
                 <method>getPackage</method>
               </component> lust -->
-              <!-- 21 packete en blanco -->
+              <!-- 17 packete en blanco remueve cuenta-->
               <component>
                 <driver id="vpago">common.gui.components.GenericData</driver>
                 <method>getBlankPackage</method>
               </component>
-              <!-- 22 -->
+              <!-- 18 idctabanco -->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -6211,7 +6219,7 @@
                   </subarg>
                 </parameters>
               </component>
-              <!-- 23 -->
+              <!-- 19 tcreditcard -->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -6221,12 +6229,12 @@
                   </subarg>
                 </parameters>
               </component>
-              <!-- 24 -->
+              <!-- 20 remueve idTercero-->
               <component>
                 <driver id="totalbigpass">client.gui.components.TableDataFields</driver>
                 <method>getBlankPackage</method>
               </component>
-              <!-- 25 -->
+              <!-- 21 idtercerobanco -->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -6236,7 +6244,7 @@
                   </subarg>
                 </parameters>
               </component>
-              <!-- 26 -->
+              <!-- 22 comision -->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -6246,7 +6254,7 @@
                   </subarg>
                 </parameters>
               </component>
-              <!-- 27 -->
+              <!-- 23 retefuente -->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -6256,7 +6264,7 @@
                   </subarg>
                 </parameters>
               </component>
-              <!-- 28 -->
+              <!-- 24 reteiva -->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -6266,12 +6274,12 @@
                   </subarg>
                 </parameters>
               </component>
-              <!-- 29 Blank -->
+              <!-- 25 remueve cuenta -->
               <component>
                 <driver id="efectivoneto">common.gui.components.GenericData</driver>
                 <method>getBlankPackage</method>
               </component>
-              <!-- 30 -->
+              <!-- 26 idctagasto -->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -6281,7 +6289,7 @@
                   </subarg>
                 </parameters>
               </component>
-              <!-- 31 -->
+              <!-- 27 comision tarjeta -->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -6291,12 +6299,12 @@
                   </subarg>
                 </parameters>
               </component>
-              <!-- 32 blank  -->
+              <!-- 28 remueve cuenta  -->
               <component>
                 <driver id="efectivoneto">common.gui.components.GenericData</driver>
                 <method>getBlankPackage</method>
               </component>
-              <!-- 33 -->
+              <!-- 29 idctaretefuente -->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -6306,7 +6314,7 @@
                   </subarg>
                 </parameters>
               </component>
-              <!-- 34 -->
+              <!-- 30 retefuente -->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -6316,12 +6324,12 @@
                   </subarg>
                 </parameters>
               </component>
-              <!-- 35 Blank -->
+              <!-- 31 remueve cuenta -->
               <component>
                 <driver id="efectivoneto">common.gui.components.GenericData</driver>
                 <method>getBlankPackage</method>
               </component>
-              <!-- 36 -->
+              <!-- 32 idctareteiva -->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -6331,7 +6339,7 @@
                   </subarg>
                 </parameters>
               </component>
-              <!-- 37 -->
+              <!-- 33 reteiva -->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -6341,12 +6349,12 @@
                   </subarg>
                 </parameters>
               </component>
-              <!-- 38 -->
+              <!-- 34 remueve idTercero-->
               <component>
                 <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
                 <method>getBlankPackage</method>
               </component>
-              <!-- 39-->
+              <!-- 35 idtercero banco-->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -6366,12 +6374,12 @@
                 <driver id="tcredibanco">client.gui.components.TableFindData</driver>
                 <method>getPackage</method>
               </component> -->
-              <!-- 42 -->
+              <!-- 36 remueve idTercero-->
               <component>
                 <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
                 <method>getBlankPackage</method>
               </component>
-              <!-- 43 -->
+              <!-- 37 adiciona idtercero banco-->
               <component>
                 <driver>this</driver>
                 <method>getPackage</method>
@@ -6381,31 +6389,40 @@
                   </subarg>
                 </parameters>
               </component>
-              <!-- 44 Pagos parciales manuales -->
+              <!-- 38 Pagos parciales manuales -->
               <component>
                 <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
                 <method>getPackage</method>
               </component>
-              <!-- 45 Pagos parciales manuales -->
+              <!-- 39 Pagos con tarjeta manuales -->
               <component>
                 <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
                 <method>getPackage</method>
               </component>
-              <!-- 47 remueve key cuenta-->
+              <!-- 40 remueve key cuenta-->
               <component>
                 <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
                 <method>getBlankPackage</method>
               </component>
-              <!-- 48 -->
-              <component>
-                <driver id="bodega">common.gui.components.GenericData</driver>
-                <method>getPackage</method>
-              </component>
-              <!-- 49 -->
-              <component>
-                <driver id="principal">client.gui.components.TableFindData</driver>
-                <method>getPackage</method>
-              </component>
+              <!-- 41 adds key bodega, the java code keeps this key as the first argument subsequenly used by query that corresponds the next getPackage calls -->
+                    <!--inventory outs from this bodega -> -->
+                    <component>
+                      <driver id="bodega">common.gui.components.GenericData</driver>
+                      <method>getPackage</method>
+                    </component>
+                    <!-- 42 table: datos_prod, inventarios-->
+                    <component>
+                      <driver id="principal">client.gui.components.TableFindData</driver>
+                      <method>getPackage</method>
+                    </component>
+                    <component>
+                          <driver id="cartera">client.gui.components.TableFindData</driver>
+                          <method>getPackage</method>
+                          <parameters>
+                              <arg attribute="validMinValue">5</arg>
+                              <arg attribute="validValue">0</arg>
+                          </parameters>
+                      </component>
             </action>
             <!-- Impresion server -->
             <action>
@@ -7387,6 +7404,10 @@
               </component> -->
               <component>
                 <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
+                <method>clean</method>
+              </component>
+              <component>
+                <driver id="cartera">client.gui.components.TableFindData</driver>
                 <method>clean</method>
               </component>
               <component>
