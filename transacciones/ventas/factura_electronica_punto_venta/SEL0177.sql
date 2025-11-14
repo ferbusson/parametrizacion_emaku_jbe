@@ -1,0 +1,1 @@
+SELECT CAST(fecha AS date) FROM  documentos d WHERE codigo_tipo='?' AND d.numero=LPAD('?',10,'0');
