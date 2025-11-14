@@ -22,7 +22,7 @@
 			<field row="170" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="1">DATOS CLIENTE</field>
 
 			<!-- <qr row="10" col="470" width="115" height="115"/> -->
-            <rectangle row="10" col="470" width="115" height="115" /> <!--emula el QR -->
+            <rectangle row="3" col="470" width="115" height="115" /> <!--emula el QR -->
 			<!-- <cufe multipage="true" rownewpage="155" colnewpage="40" row="155" col="40" /> -->
 
 			<field row="130" center="950" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">FACTURA ELECTRÓNICA DE VENTA</field>

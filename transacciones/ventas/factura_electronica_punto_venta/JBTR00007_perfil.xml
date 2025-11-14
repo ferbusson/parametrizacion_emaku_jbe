@@ -34,6 +34,8 @@
   adicionar comisiones vendedores
 
   al guardar la factura:
+  guardar en datos_prod los javipuntos generados
+  guardar en info_documento el ndocumento del pedido asociado a la factura
   validar que la suma de los valores en las formas de pago sea igual o mayor al total de la factura
   si el pago es con javipuntos, validar que el cliente tenga los puntos suficientes
   si el pago es en efectivo el valor ingresado puede ser mayor al total de la factura, en este caso calcular el cambio
@@ -2831,14 +2833,6 @@
                   <arg attribute="font">Dialog,1,14</arg>
                 </parameters>
               </component>
-              <!--<component locate="North">
-                <driver>common.gui.components.XMLLabel</driver>
-                <parameters>
-                  <arg attribute="text">Total a Crédito</arg>
-                  <arg attribute="alignment">0</arg>
-                  <arg attribute="font">Dialog,1,16</arg>
-                </parameters>
-              </component>lust -->
             </panel>
             <panel cols="2" locate="Center" rows="8" type="GridLayout">
               <panel type="FlowLayout"/>
