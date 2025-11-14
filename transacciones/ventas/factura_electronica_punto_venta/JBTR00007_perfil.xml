@@ -5717,7 +5717,7 @@
               <!-- IMPRESION CARTA EN IMPRESORA LOCAL-->
               <action>
                 <type>printer</type>
-                <printerTemplate>/graphics/TNFacturaCreditoContado.xml</printerTemplate>
+                <printerTemplate>/graphics/TNFacturaElectronicaCartaJBE.xml</printerTemplate>
                 <!-- 0 codigo tipo -->
                 <component>
                   <driver>this</driver>
@@ -5766,8 +5766,8 @@
                   <driver id="res_fact_vigencia">client.gui.components.TableDataFields</driver>
                   <method>getPrintPackage</method>
                 </component>
-                <!-- fecha procesamiento -->
-                <component>
+                <!-- fecha procesamiento habilitar cuando se entre en produccion-->
+                <!-- <component>
                   <driver>this</driver>
                   <method>getPackage</method>
                   <parameters>
@@ -5775,7 +5775,7 @@
                       <arg attribute="importValue">processdate</arg>
                     </subarg>
                   </parameters>
-                </component>
+                </component> -->
                 <!-- 5 -->
                 <component>
                   <driver>client.gui.components.FindThird</driver>
