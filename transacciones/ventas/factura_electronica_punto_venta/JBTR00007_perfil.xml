@@ -1075,23 +1075,23 @@
           <!-- VERDE vlr unitarfo imp -->
           <arg attribute="beanshell">r="28312".equals(n)?d*e:ae&gt;0?d*(af*(ae/100.0)):0</arg>          <!-- verde -->
           <!-- basecinco -->
-          <arg attribute="beanshell">t=s==&quot;10&quot;?j:0</arg>
+          <arg attribute="beanshell">t=s==&quot;10&quot;?k:0</arg>
           <!-- base 5% -->
-          <arg attribute="beanshell">u=s==&quot;10&quot;?k:0</arg>
+          <arg attribute="beanshell">u=s==&quot;10&quot;?l:0</arg>
           <!-- IVA 5% -->
-          <arg attribute="beanshell">v=s==&quot;5&quot;?j:0</arg>
+          <arg attribute="beanshell">v=s==&quot;5&quot;?k:0</arg>
           <!-- base 19% -->
-          <arg attribute="beanshell">w=s==&quot;5&quot;?k:0</arg>
+          <arg attribute="beanshell">w=s==&quot;5&quot;?l:0</arg>
           <!-- IVA 19% -->
-          <arg attribute="beanshell">x=s==&quot;13&quot;&amp;&amp;!&quot;28312&quot;.equals(n)?j:0</arg>
+          <arg attribute="beanshell">x=s==&quot;13&quot;&amp;&amp;!&quot;28312&quot;.equals(n)?k:0</arg>
           <!-- base exento -->
-          <arg attribute="beanshell">y=s==&quot;13&quot;?k:0</arg>
+          <arg attribute="beanshell">y=s==&quot;13&quot;?l:0</arg>
           <!-- IVA exento -->
-          <arg attribute="beanshell">z=s==&quot;12&quot;&amp;&amp;!&quot;28312&quot;.equals(n)?j:0</arg>
+          <arg attribute="beanshell">z=s==&quot;12&quot;&amp;&amp;!&quot;28312&quot;.equals(n)?k:0</arg>
           <!-- base excluido -->
-          <arg attribute="beanshell">aa=s==&quot;12&quot;?k:0</arg>
+          <arg attribute="beanshell">aa=s==&quot;12&quot;?l:0</arg>
           <!-- IVA excluido -->
-          <arg attribute="beanshell">ab=&quot;28312&quot;.equals(n)?0:k</arg>          <!-- netosinbolsa sin bolsa -->
+          <arg attribute="beanshell">ab=&quot;28312&quot;.equals(n)?0:l</arg>          <!-- netosinbolsa sin bolsa -->
           <arg attribute="beanshell">ag="28312".equals(n)?0:i</arg>          <!-- subtotal sin bolsa -->
           <arg attribute="beanshell">ai=(ah&amp;&amp;(m/1000)&gt;1)?(m/1000):0</arg>          <!-- javipuntos -->
           <!-- 0 (a) -->
@@ -4965,6 +4965,7 @@
               <name>PRINT</name>
               <action>
                 <type>transaction</type>
+                <!-- BOTON GUARDAR CARTA -->
                 <component>
                   <driver>this</driver>
                   <method>validMultiPackage</method>
@@ -5713,7 +5714,7 @@
               </component>
             </action> -->
 
-              <!-- impresion lado cliente -->
+              <!-- IMPRESION CARTA EN IMPRESORA LOCAL-->
               <action>
                 <type>printer</type>
                 <printerTemplate>/graphics/TNFacturaCreditoContado.xml</printerTemplate>
@@ -6377,14 +6378,11 @@
             </subarg>
           </parameters>
           <events>
-
-
-
-            <!-- Boton Impresion Tirilla -->
             <object>
               <name>PRINT</name>
               <action>
                 <type>transaction</type>
+                <!-- BOTON GUARDAR TIRILLA -->
                 <component>
                   <driver id="pagotirilla">common.gui.components.ButtonsPanel</driver>
                   <method>setEnabled</method>
@@ -7147,11 +7145,11 @@
 
       </action> -->
 
-              <!-- impresion cliente tirilla -->
+              <!--IMPRESION TIRILLA EN IMPRESORA LOCAL  -->
 
               <action>
                 <type>printer</type>
-                <printerTemplate>/graphics/TNFacturaCreditoContadoTirilla.xml</printerTemplate>
+                <printerTemplate>/graphics/TNFacturaElectronicaTirillaJBE.xml</printerTemplate>
 
                 <!-- 0 Numero Resolucion -->
                 <component>
@@ -7562,7 +7560,7 @@
 
                 <!-- 48 Usted ahorró -->
                 <!-- 8 Descuento -->
-                <component>
+                <!-- <component>
                   <driver>this</driver>
                   <method>getPackage</method>
                   <parameters>
@@ -7570,7 +7568,7 @@
                       <arg attribute="importValue">vdescuentoglobal</arg>
                     </subarg>
                   </parameters>
-                </component>
+                </component> -->
 
                 <!-- 49 Paquete Blanco Gracias por su compra -->
                 <component>
@@ -7579,13 +7577,13 @@
                 </component>
 
                 <!-- 50 Paquete Blanco visita www.lacalionline.com -->
-                <component>
+                <!-- <component>
                   <driver id="vpago">common.gui.components.GenericData</driver>
                   <method>getBlankPackage</method>
-                </component>
+                </component> -->
 
                 <!-- 51 cufe -->
-                <component>
+                <!-- <component>
                   <driver>this</driver>
                   <method>getPackage</method>
                   <parameters>
@@ -7593,10 +7591,10 @@
                       <arg attribute="importValue">cufe</arg>
                     </subarg>
                   </parameters>
-                </component>
+                </component> -->
 
                 <!-- 52 fecha procesamiento -->
-                <component>
+                <!-- <component>
                   <driver>this</driver>
                   <method>getPackage</method>
                   <parameters>
@@ -7604,7 +7602,7 @@
                       <arg attribute="importValue">processdate</arg>
                     </subarg>
                   </parameters>
-                </component>
+                </component> -->
 
                 <!-- 53 Paquete Blanco linea -->
                 <component>
@@ -7625,13 +7623,14 @@
 
 
               <!-- Inicia envio email -->
-              <action>
+              <!-- <action>
                 <type>emailprinter</type>
                 <to>mailto</to>
                 <subjectSQL>LCSEL0383,internaldocument</subjectSQL>
                 <bodySQL>LCSEL0384,internaldocument</bodySQL>
                 <attachmentSQL>LCSEL0389,internaldocument</attachmentSQL>
-              </action>
+              </action> -->
+              
               <action>
                 <type>transaction</type>
                 <!--  LIMPIEZA DE COMPONENTES 3  -->
