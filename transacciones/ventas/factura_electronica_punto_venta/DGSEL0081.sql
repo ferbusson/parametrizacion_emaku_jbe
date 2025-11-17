@@ -1,0 +1,1 @@
+SELECT vencimiento FROM info_documento i,documentos d WHERE i.ndocumento=d.ndocumento AND d.codigo_tipo='?' AND numero=LPAD('?',10,'0')

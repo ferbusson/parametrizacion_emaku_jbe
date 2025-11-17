@@ -121,6 +121,12 @@
 		<field row="650" col="390" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">NETO A PAGAR</field>		
 		<field row="665" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Dirección Contacto:</field>
 		<field row="675" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Teléfono Contacto:</field>
+
+		<field row="728" col="120" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">______________________________________</field>
+		<field row="736" col="140" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Firma Aceptación Cliente</field>
+		<field row="728" col="360" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">______________________________________</field>
+		<field row="736" col="390" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Firma Elaboró</field>
+		
 		<field row="690" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Observaciones:</field>
 		
 		<field row="756" col="290" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Software E-MAKU</field>

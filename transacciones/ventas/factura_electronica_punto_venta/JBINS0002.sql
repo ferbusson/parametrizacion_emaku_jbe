@@ -6,4 +6,4 @@ VALUES
 	 '?',
 	 '?',
 	 false,
-	 (select id from cuentas where char_cta= '233520' ))) --COMISION POR VENTAS 
+	 (select id_cta from cuentas where char_cta= '233520' )) --COMISION POR VENTAS 

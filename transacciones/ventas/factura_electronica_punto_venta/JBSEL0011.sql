@@ -40,12 +40,19 @@ SELECT
 FROM 
     datos_prod dp,
     documentos d,
+    info_documento id,
     tercero_def t,
     perfil_tercero pt,
     prod_serv ps,
     item it,
     marcas mar
 WHERE 
+    d.ndocumento = id.ndocumento
+    and case 
+                        when d.fecha::date + interval '1 day'*id.vencimiento < CURRENT_DATE then false
+                        when d.estado = false then false
+                        when id.procesado = true then false
+                        else true end and
     dp.ndocumento=d.ndocumento and
     t.ndocumento=d.ndocumento and
     t.id = pt.id and

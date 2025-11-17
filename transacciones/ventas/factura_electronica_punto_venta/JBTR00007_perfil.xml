@@ -34,8 +34,10 @@
   adicionar comisiones vendedores
 
   al guardar la factura:
-  guardar en datos_prod los javipuntos generados
-  guardar en info_documento el ndocumento del pedido asociado a la factura
+  guardar en datos_prod los javipuntos generados done
+  guardar administrativamente los javipuntos
+
+  guardar en info_documento el ndocumento del pedido asociado a la factura done
   validar que la suma de los valores en las formas de pago sea igual o mayor al total de la factura
   si el pago es con javipuntos, validar que el cliente tenga los puntos suficientes
   si el pago es en efectivo el valor ingresado puede ser mayor al total de la factura, en este caso calcular el cambio
@@ -574,7 +576,7 @@
           <parameters>
             <!-- <arg attribute="keySQL">SEL0157</arg>
             <arg attribute="driverEvent" id="nrogenerador">client.gui.components.TableDataFields</arg> -->
-            <arg attribute="keySQL">SEL0169</arg>
+            <arg attribute="keySQL">JBSEL0018</arg>
             <arg attribute="driverEvent" id="nro_orden_pedido">client.gui.components.TableDataFields</arg>
 
             <arg attribute="sqlSizeRecords">SEL0132</arg>            <!-- cuenta los records -->
@@ -798,8 +800,8 @@
             <component locate="West">
               <driver id="date">common.gui.components.GenericData</driver>
               <parameters>
-                <arg attribute="keySQL">SEL0177</arg>
-                <arg attribute="driverEvent" id="nro_orden_pedido">client.gui.components.TableDataFields</arg>
+                <!-- <arg attribute="keySQL">SEL0177</arg>
+                <arg attribute="driverEvent" id="nro_orden_pedido">client.gui.components.TableDataFields</arg> -->
                 <subarg>
                   <arg attribute="label">DATE</arg>
                   <arg attribute="format">TEXT</arg>
@@ -810,6 +812,7 @@
                   <arg attribute="clean">TRUE</arg>
                   <arg attribute="alignment">CENTER</arg>
                   <arg attribute="exportValue">fechai</arg>
+                  <arg attribute="systemDate">yyyy-MM-dd</arg>
                   <arg attribute="printable">true</arg>
                 </subarg>
               </parameters>
@@ -818,7 +821,7 @@
               <component locate="West">
                 <driver id="credit">common.gui.components.GenericData</driver>
                 <parameters>
-                  <arg attribute="keySQL">DGSEL0081</arg>
+                  <arg attribute="keySQL">JBSEL0019</arg>
                   <arg attribute="driverEvent" id="nro_orden_pedido">client.gui.components.TableDataFields</arg>
                   <subarg>
                     <arg attribute="label">Vigencia:</arg>
@@ -930,15 +933,16 @@
                         <!-- queries to load info from the value of nro_orden_pedido 
                           the attribute sqlCode and sqlCodeExportValue execute queries 
                           that are going to be referenced in its corresponding component -->
-                        <arg attribute="sqlCode">SEL0169</arg>                        <!-- tercero -->
-                        <arg attribute="sqlCode">SEL0120</arg>                        <!-- observaciones -->
-                        <arg attribute="sqlCode">DGSEL0081</arg>                        <!-- dias vigencia -->
-                        <arg attribute="sqlCode">SEL0177</arg>                        <!-- fecha factura SEL0177-->
+                        <arg attribute="sqlCode">JBSEL0017</arg>                        <!-- observaciones -->
+                        <arg attribute="sqlCode">JBSEL0018</arg>                        <!-- tercero -->                        
+                        <arg attribute="sqlCode">JBSEL0019</arg>                        <!-- dias vigencia -->
+                        <!--<arg attribute="sqlCode">SEL0177</arg>-->                        <!-- fecha factura SEL0177-->
                         <arg attribute="sqlCode">JBSEL0011</arg>                        <!-- tabla principal de productos -->
                         <arg attribute="sqlCode">JBSEL0012</arg>                        <!-- tabla de anticipos -->
+                        <!--<arg attribute="sqlCode">JBSEL0017</arg>-->                        <!-- estado pedido -->
                         <!-- <arg attribute="sqlCode">MDSEL0001</arg> hora -->
                         <!-- <arg attribute="sqlCode">SEL00404</arg> estado del documento -->
-                        <arg attribute="sqlCodeExportValue">JBSEL0014,_sigla,_usuario,_norden,_id_char_tercero_referente,_nombre_tercero_referente,_direccion_contacto,_telefono_contacto,_id_vendedor,_vencimiento,_ndocumento_factura,_numero_pedido</arg>
+                        <arg attribute="sqlCodeExportValue">JBSEL0014,_sigla,_usuario,_norden,_id_char_tercero_referente,_nombre_tercero_referente,_direccion_contacto,_telefono_contacto,_id_vendedor,_vencimiento,_ndocumento_pedido,_numero_pedido</arg>
 
                       </subarg>
                     </parameters>
@@ -1948,7 +1952,7 @@
         <component locate="North">
           <driver>common.gui.components.XMLTextArea</driver>
           <parameters>
-            <arg attribute="keySQL">SEL0120</arg>
+            <arg attribute="keySQL">JBSEL0017</arg>
             <arg attribute="driverEvent" id="nro_orden_pedido">client.gui.components.TableDataFields</arg>
             <arg attribute="rows">50</arg>
             <arg attribute="cols">300</arg>
@@ -3284,7 +3288,7 @@
             <component locate="East">
               <driver id="cven">client.gui.components.TableDataFields</driver>
               <parameters>
-                <arg attribute="linkTable">ventas</arg>
+                <arg attribute="linkTable">principal</arg>
                 <subarg>
                   <arg attribute="name">TOTAL</arg>
                   <arg attribute="format">NUMERIC</arg>
@@ -6466,6 +6470,7 @@
                   <parameters>
                     <arg attribute="nullField">true</arg>
                     <subarg>
+                      <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">_ndocumento_pedido</arg>
                       <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">_id_vendedor</arg>
                       <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">dcredit</arg>
                       <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">referrercustomerid</arg>

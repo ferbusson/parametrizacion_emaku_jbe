@@ -6,7 +6,7 @@ SELECT
 	0 AS contador,
 	g.id AS id_empleado,
 	'52051801',
-	'23352001',
+	'233520',
         sigla
 FROM 
 	general g,

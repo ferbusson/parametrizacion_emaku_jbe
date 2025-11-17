@@ -1503,7 +1503,6 @@ do the previous step as many times as necessary to all the components that need 
               <driver id="nro_fact">client.gui.components.TableDataFields</driver>
               <method>getPackage</method>
             </component>
-
             <component>
               <driver>this</driver>
               <method>getPackage</method>
@@ -1513,6 +1512,11 @@ do the previous step as many times as necessary to all the components that need 
                 </subarg>
               </parameters>
             </component>            
+            <!-- Anula inventarios -->
+            <component>
+              <driver id="principal">client.gui.components.TableFindData</driver>
+              <method>getBlankPackage</method>
+            </component>
 
           </action>
         </object>

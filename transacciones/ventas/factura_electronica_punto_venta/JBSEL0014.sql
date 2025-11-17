@@ -37,5 +37,10 @@ left JOIN
 on
     d2.ndocumento = i.rf_documento
 where
-	d.codigo_tipo = '?'
+	case 
+                        when d.fecha::date + interval '1 day'*i.vencimiento < CURRENT_DATE then false
+                        when d.estado = false then false
+                        when i.procesado = true then false
+                        else true end
+	and d.codigo_tipo = '?'
 	and d.numero = lpad('?',10,'0');

@@ -1,0 +1,1 @@
+INSERT INTO emails(id,descripcion,direccion) VALUES((SELECT id FROM general WHERE id_char='?'),'?','?')
