@@ -898,7 +898,7 @@ el boton cerrar cierra el formulario
                         <arg attribute="size">13</arg>
                         <arg attribute="maxlength">12</arg>
                         <arg attribute="enabled">false</arg>
-                        <arg attribute="clean">false</arg>
+                        <arg attribute="clean">true</arg>
                         <arg attribute="font">Dialog,1,22</arg>
                         <arg attribute="foreground">249,87,87</arg>
                         <arg attribute="background">196,196,252</arg>
@@ -2541,7 +2541,11 @@ el boton cerrar cierra el formulario
                   </component>
                 </object>
                 <object>
-                  <name>NEW</name>
+                  <name>NEW</name>                  
+                  <component>
+                    <driver id="consecutivopedido">client.gui.components.TableDataFields</driver>
+                    <method>clean</method>
+                  </component>
                   <component>
                     <driver id="baseivagravados">client.gui.components.TableDataFields</driver>
                     <method>clean</method>

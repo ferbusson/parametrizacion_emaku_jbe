@@ -747,11 +747,12 @@
                       <subarg>
                         <arg attribute="format">TEXT</arg>
                         <arg attribute="size">10</arg>
+                        <arg attribute="getValue">_numero_pedido</arg>                        
                         <arg attribute="maxlength">26</arg>
                         <arg attribute="enabled">false</arg>
                         <arg attribute="clean">true</arg>
                         <arg attribute="font">Dialog,1,15</arg>
-                        <arg attribute="foreground">255,255,255</arg>
+                        <arg attribute="foreground">186,245,24</arg>
                         <arg attribute="background">20,123,108</arg>                        <!-- highlights the color component so it is easily identifiable -->
                         <arg attribute="alignment">RIGHT</arg>
                       </subarg>
@@ -768,8 +769,8 @@
                         <arg attribute="enabled">TRUE</arg>
                         <arg attribute="printable">TRUE</arg>
                         <arg attribute="clean">false</arg>
-                        <arg attribute="font">Dialog,1,15</arg>
-                        <arg attribute="foreground">249,87,87</arg>
+                        <arg attribute="font">Dialog,1,18</arg>
+                        <arg attribute="foreground">0,0,0</arg>
                         <arg attribute="background">186,245,248</arg>
                         <arg attribute="alignment">RIGHT</arg>
                         <arg attribute="idAutoDocument">codigo_tipo</arg>
@@ -799,7 +800,7 @@
                         <arg attribute="sqlCode">RFSEL015</arg> <!--hasta resolucion -->
                         <arg attribute="sqlCode">LCSEL0091</arg> <!-- vigencia meses resolucion-->
                         <arg attribute="sqlCode">RFSEL016</arg> <!-- prefijo resolucion -->
-                        <arg attribute="sqlCodeExportValue">JBSEL0008,_sigla,_usuario,_norden,_id_char_tercero_referente,_nombre_tercero_referente,_direccion_contacto,_telefono_contacto,_id_vendedor,_vencimiento</arg>
+                        <arg attribute="sqlCodeExportValue">JBSEL0014,_sigla,_usuario,_norden,_id_char_tercero_referente,_nombre_tercero_referente,_direccion_contacto,_telefono_contacto,_id_vendedor,_vencimiento,_ndocumento_factura,_numero_pedido</arg>
                       </subarg>
                     </parameters>
                   </component>
@@ -1511,7 +1512,11 @@
                   <component>
                   <driver id="estado">common.gui.components.XMLLabel</driver>
                   <method>clean</method>
-                </component>                  
+                </component>            
+                <component>
+                  <driver id="nro_orden_pedido">client.gui.components.TableDataFields</driver>      
+                  <method>clean</method>
+                </component>            
                   <!--  Limpiando tablas de retenciones  -->
                 <component>
                   <driver id="base">client.gui.components.TableFindData</driver>

@@ -938,7 +938,7 @@
                         <arg attribute="sqlCode">JBSEL0012</arg>                        <!-- tabla de anticipos -->
                         <!-- <arg attribute="sqlCode">MDSEL0001</arg> hora -->
                         <!-- <arg attribute="sqlCode">SEL00404</arg> estado del documento -->
-                        <arg attribute="sqlCodeExportValue">JBSEL0008,_sigla,_usuario,_norden,_id_char_tercero_referente,_nombre_tercero_referente,_direccion_contacto,_telefono_contacto,_id_vendedor,_vencimiento</arg>
+                        <arg attribute="sqlCodeExportValue">JBSEL0014,_sigla,_usuario,_norden,_id_char_tercero_referente,_nombre_tercero_referente,_direccion_contacto,_telefono_contacto,_id_vendedor,_vencimiento,_ndocumento_factura,_numero_pedido</arg>
 
                       </subarg>
                     </parameters>
@@ -1415,6 +1415,7 @@
             <arg attribute="length">100</arg>
             <arg attribute="type">INTEGER</arg>
             <arg attribute="enabled">false</arg>
+            <arg attribute="returnCol">13</arg>
           </subarg>
         </parameters>
       </component>
@@ -5050,7 +5051,8 @@
                   <method>getPackage</method>
                   <parameters>
                     <arg attribute="nullField">true</arg>
-                    <subarg>
+                    <subarg>                      
+                      <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">_ndocumento_pedido</arg>
                       <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">_id_vendedor</arg>
                       <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">dcredit</arg>
                       <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">referrercustomerid</arg>

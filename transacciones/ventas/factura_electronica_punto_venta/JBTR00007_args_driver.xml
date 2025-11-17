@@ -9,7 +9,7 @@
     <!-- 0  res fac -->
     <arg>RFINS002</arg>
     <!-- 1  info_documento -->
-    <arg>JBUPD0001</arg>
+    <arg>JBUPD0003</arg>
     <!-- 2  obs_documento -->
     <arg>INS0037</arg>
     <!-- 3  datos documento -->
@@ -484,8 +484,8 @@
           <driver>LNSelectedField</driver>
           <method>getSubpackage</method>
           <parameters>
-            <arg attribute="sql">LCINS0211</arg>
-            <arg attribute="fields">0,1,2,3,4,10,11,12</arg>
+            <arg attribute="sql">JBINS0003</arg>
+            <arg attribute="fields">0,1,2,3,4,10,11,12,13</arg>
             <arg attribute="discartKey">idTercero</arg>
             <arg attribute="discartKey">centrocosto</arg>
             <arg attribute="discartKey">bodegaEntrante</arg>

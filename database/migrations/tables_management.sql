@@ -1,0 +1,1 @@
+alter table datos_prod add column javipuntos integer default null;
