@@ -5063,7 +5063,8 @@
                       <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">numeroordenexterno</arg>
                     </subarg>
                   </parameters>
-                </component>
+                </component>                
+                
                 <!-- 2 observaciones -->
                 <component>
                   <driver>common.gui.components.XMLTextArea</driver>
@@ -5142,6 +5143,11 @@
                   <method>getPackage</method>
                 </component>
 
+                <component>
+                  <driver id="totaljavipuntosgenerados">client.gui.components.TableDataFields</driver>
+                  <method>getPackage</method>
+                </component>
+                
                 <!-- 11 -->
                 <!-- <component>
                 <driver>this</driver>
