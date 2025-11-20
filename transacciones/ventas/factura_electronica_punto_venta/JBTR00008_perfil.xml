@@ -4143,6 +4143,12 @@
               <method>getBlankPackage</method>
             </component>
 
+            <!-- elimina registros del documento en puntos_tercero -->
+            <component>
+              <driver id="principal">client.gui.components.TableFindData</driver>
+              <method>getBlankPackage</method>
+            </component>
+
           </action>
         </object>
                 <object>

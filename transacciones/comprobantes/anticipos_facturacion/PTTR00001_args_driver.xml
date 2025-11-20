@@ -1,0 +1,182 @@
+<container>
+  <subarg>
+    <arg attribute="consecutive" />
+    <arg attribute="date" />
+    <arg attribute="actionDocument">createDocument</arg>
+  </subarg> 
+
+<!-- 1 concepto -->
+  <arg>INS0037</arg>
+<!-- 2 datos documento -->
+ <arg>MTINS0136</arg> 
+
+<!-- 3 tabla: tarjetas  -->
+  <LNData>
+      <driver>LNSelectedField</driver>
+      <method>getSubpackage</method>
+      <parameters>
+          <arg attribute="sql">LCINS0018</arg>
+          <arg attribute="fields">0,1,2,3,4,5,7,8,9,13,14</arg>
+          <arg attribute="discartKey">idTercero</arg>
+          <arg attribute="discartKey">centrocosto</arg></parameters>
+  </LNData>
+  
+    <!-- 4 cheques -->
+    <arg>LCINS0023</arg>
+
+    <!-- 5 consignaciones -->
+    <arg>LCINS0024</arg>
+
+    <!-- 6 sodexo -->
+    <arg>LCINS0022</arg>
+
+    <!-- 7 bigpass -->
+    <arg>LCINS0022</arg> 
+
+    <!-- 8 tercero -->
+    <arg>INS0048</arg>
+
+    <!-- 9 centro costo-->
+    <arg attribute="addKey"/>
+
+<!-- 10 pago en efectivo -->
+  <LNData>
+      <driver>LNContabilidad</driver>
+      <method>fieldData</method>
+      <parameters>
+        <arg attribute="debuging">true</arg>
+        <arg attribute="Concepto">Anticipo en efectivo</arg>
+        <arg attribute="centrocosto">getName</arg>
+        <subarg>
+          <arg attribute="accountField">11053501,D</arg>
+        </subarg>
+      </parameters>
+    </LNData>
+
+  <!-- 11 tercero -->
+   <arg attribute="addKey"/>
+  
+  <!-- 12 tarjetas -->
+   <LNData>
+        <driver>LNContabilidad</driver>
+        <method>columnDataAccount</method>
+        <parameters>
+            <arg attribute="Concepto">Anticipos por tarjeta</arg>
+            <arg attribute="naturaleza">D</arg>
+            <arg attribute="debuging">true</arg>
+            <arg attribute="tercero">getName</arg>
+            <arg attribute="centrocosto">getName</arg>
+            <subarg>
+                <arg attribute="accountKey">0</arg>
+                <arg attribute="accountData">1</arg>
+            </subarg>
+        </parameters>
+    </LNData>
+  
+
+  <!-- 13 CHEQUES -->
+      <subarg>
+        <LNData>
+            <driver>LNSelectedField</driver>
+            <method>getSubpackage</method>
+            <parameters>
+                <arg attribute="sql">LCINS0023</arg>
+                <arg attribute="fields">0,1,2,3,4</arg>
+                <arg attribute="discartKey">idTercero</arg>
+                <arg attribute="discartKey">centrocosto</arg></parameters>
+        </LNData>
+        <LNData>
+          <driver>LNContabilidad</driver>
+          <method>columnData</method>
+          <parameters>
+            <arg attribute="debuging">true</arg>
+            <arg attribute="Base">0</arg>
+            <arg attribute="naturaleza">D</arg>
+            <arg attribute="Concepto">Anticipo cheque</arg>
+            <arg attribute="centrocosto">getName</arg>
+            <arg attribute="tercero">getName</arg>
+            <subarg>
+              <arg attribute="accountCol">11053501,4</arg>
+            </subarg>
+          </parameters>
+        </LNData>
+      </subarg>
+
+      <!-- 14  CONSIGNACIONES -->
+      <subarg>
+        <LNData>
+            <driver>LNSelectedField</driver>
+            <method>getSubpackage</method>
+            <parameters>
+                <arg attribute="sql">INS0107</arg>
+                <arg attribute="fields">0,1,2</arg>
+                <arg attribute="discartKey">idTercero</arg>
+                <arg attribute="discartKey">centrocosto</arg></parameters>
+        </LNData>    
+        <LNData>
+          <driver>LNContabilidad</driver>
+          <method>columnDataAccount</method>
+          <parameters>
+            <arg attribute="debuging">true</arg>
+            <arg attribute="Concepto">Anticipo Consignacion</arg> <!-- No quitar la palabra consignacion, se usa en sentencias arqueo LCSEL0207 -->
+            <arg attribute="naturaleza">D</arg>
+            <arg attribute="centrocosto">getName</arg>
+            <arg attribute="tercero">getName</arg>
+            <subarg>
+              <arg attribute="accountKey">0</arg>
+              <!-- <arg attribute="accountTh">1</arg> comentado Ene 28 2025 -->
+              <arg attribute="accountData">2</arg>
+            </subarg>
+          </parameters>
+        </LNData>
+      </subarg> 
+   
+  
+   <!-- 15 cheque sodexo -->
+    <LNData>
+        <driver>LNContabilidad</driver>
+        <method>fieldData</method>
+        <parameters>
+            <arg attribute="debuging">true</arg>
+            <arg attribute="CodeAPS">9</arg>
+            <arg attribute="Concepto">Anticipo sodexo</arg>
+            <arg attribute="centrocosto">getName</arg>
+            <arg attribute="tercero">getName</arg>
+            <subarg>
+                <arg attribute="accountField">11052001,D</arg>
+            </subarg>
+        </parameters>
+    </LNData>
+  <!-- 16  cheque bigpass -->
+    <LNData>
+        <driver>LNContabilidad</driver>
+        <method>fieldData</method>
+        <parameters>
+            <arg attribute="debuging">true</arg>
+            <arg attribute="CodeAPS">9</arg>
+            <arg attribute="Concepto">Anticipo bigpass</arg>
+            <arg attribute="centrocosto">getName</arg>
+            <arg attribute="tercero">getName</arg>
+            <subarg>
+                <arg attribute="accountField">11052501,D</arg>
+            </subarg>
+        </parameters>
+    </LNData>
+  <!-- 17 total anticipo -->
+  <subarg>
+    <arg>JBINS0010</arg>
+    <LNData>
+        <driver>LNContabilidad</driver>
+        <method>fieldData</method>
+        <parameters>
+          <arg attribute="debuging">true</arg>
+          <arg attribute="Concepto">Anticipo facturacion</arg>
+          <arg attribute="centrocosto">getName</arg>
+          <arg attribute="tercero">getName</arg>
+          <subarg>
+            <arg attribute="accountField">28050501,C</arg>
+          </subarg>
+        </parameters>
+      </LNData>
+    </subarg>
+</container>

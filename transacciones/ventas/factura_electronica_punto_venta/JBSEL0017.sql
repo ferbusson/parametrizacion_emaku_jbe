@@ -8,6 +8,7 @@ create temp table aux_parametros as
         d.codigo_tipo = '?'
         and d.numero = lpad('?',10,'0');
 
+/*
 DROP TABLE IF EXISTS error_msg;
 CREATE TEMP TABLE error_msg AS
 select 1
@@ -32,7 +33,7 @@ from
                         when d.estado = false then true
                         when id.procesado = true then true
                         else false end 
-			) AS foo);
+			) AS foo);*/
 
  SELECT 
     TRIM(observacion) AS observacion

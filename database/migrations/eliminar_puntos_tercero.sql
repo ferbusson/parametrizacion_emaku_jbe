@@ -15,6 +15,6 @@ BEGIN
     DELETE FROM puntos_tercero WHERE ndocumento = p_ndocumento;
     
     -- Recalcular saldos desde este punto
-    PERFORM recalcular_saldos_tercero(v_id_tercero, v_fecha::TIMESTAMP);
+    PERFORM recalcular_saldos_puntos_tercero(v_id_tercero, v_fecha);
 END;
 $$ LANGUAGE plpgsql;

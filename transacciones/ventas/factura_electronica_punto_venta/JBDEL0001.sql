@@ -1,0 +1,1 @@
+CALL eliminar_puntos_tercero('?');

@@ -15,5 +15,7 @@
     </LNData>
   <!-- libera pedido asociado a la factura -->
   <arg>JBUPD0004</arg>      
+  <!-- elimina registros del documento en puntos_tercero -->
+  <arg>JBDEL0001</arg>
 
 </container>

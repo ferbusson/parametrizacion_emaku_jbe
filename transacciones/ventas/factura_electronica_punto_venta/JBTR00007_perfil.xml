@@ -922,9 +922,10 @@
                         <arg attribute="maxlength">26</arg>
                         <arg attribute="enabled">true</arg>
                         <arg attribute="clean">true</arg>
-                        <arg attribute="font">Dialog,1,15</arg>
-                        <arg attribute="foreground">255,255,255</arg>
-                        <arg attribute="background">20,123,108</arg>                        <!-- highlights the color component so it is easily identifiable -->
+                        <arg attribute="font">Dialog,1,22</arg>
+                        <arg attribute="foreground">249,87,87</arg>
+                        <!--<arg attribute="background">20,123,108</arg>-->                        <!-- highlights the color component so it is easily identifiable -->
+                        <arg attribute="background">255,255,255</arg>
                         <arg attribute="alignment">RIGHT</arg>
 
                         <arg attribute="idAutoDocument">codigo_tipo_pedido</arg>
@@ -937,6 +938,7 @@
                         <arg attribute="sqlCode">JBSEL0018</arg>                        <!-- tercero -->                        
                         <arg attribute="sqlCode">JBSEL0019</arg>                        <!-- dias vigencia -->
                         <arg attribute="sqlCode">JBSEL0020</arg>                        <!-- puntos tercero -->
+                        <arg attribute="sqlCode">JBSEL0021</arg>                        <!-- estado del pedido -->
                         <!--<arg attribute="sqlCode">SEL0177</arg>-->                        <!-- fecha factura SEL0177-->
                         <arg attribute="sqlCode">JBSEL0011</arg>                        <!-- tabla principal de productos -->
                         <arg attribute="sqlCode">JBSEL0012</arg>                        <!-- tabla de anticipos -->
@@ -2070,7 +2072,19 @@
               </objet>
             </events>
           </component>
-          <!-- AQUI ESTABA -->
+          <!-- working here -->
+          <component>
+            <driver>common.gui.components.XMLLabel</driver>
+            <parameters>
+              <arg attribute="keySQL">JBSEL0021</arg>
+              <arg attribute="driverEvent" id="nro_orden_pedido">client.gui.components.TableDataFields</arg>
+              <arg attribute="text">:</arg>
+              <arg attribute="alignment">0</arg>
+              <arg attribute="font">Dialog,1,14</arg>
+              <!-- <arg attribute="background">230,255,230</arg> -->
+              <arg attribute="foreground">46,83,57</arg>
+            </parameters>
+          </component>
         </panel>
         <panel locate="East" type="BorderLayout">
           <!-- aqui estaba el fragmento del segundo boton que permitia originalmente guardar con impresion carta:
