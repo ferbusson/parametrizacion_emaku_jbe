@@ -14,10 +14,14 @@ set
     rf_documento = null
 where
     ndocumento = (select ndocumento from aux_parametros)
-)
+),
+aux_actualiza_procesado_factura as(
 update
     info_documento
 set
     procesado = false
 where
-    ndocumento = (select rf_documento from aux_parametros);
+    ndocumento = (select rf_documento from aux_parametros)
+)
+
+CALL eliminar_puntos_tercero((select ndocumento from aux_parametros));

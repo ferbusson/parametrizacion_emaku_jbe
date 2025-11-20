@@ -322,7 +322,7 @@
         <arg attribute="maxlength">26</arg>
         <arg attribute="enabled">false</arg>
         <arg attribute="alignment">RIGHT</arg>
-        <arg attribute="calculateExportValue">totaljavipuntosgenerados</arg>
+        <arg attribute="calculateBSExportValue">(puntosredimidos*25)/1000&gt;1?totaljavipuntosgenerados-(puntosredimidos*25)/1000:totaljavipuntosgenerados</arg> <!-- si se redimen puntos estos se restan del total de puntos que se estan generando -->
         <arg attribute="printable">true</arg>
       </subarg>
     </parameters>
@@ -936,6 +936,7 @@
                         <arg attribute="sqlCode">JBSEL0017</arg>                        <!-- observaciones -->
                         <arg attribute="sqlCode">JBSEL0018</arg>                        <!-- tercero -->                        
                         <arg attribute="sqlCode">JBSEL0019</arg>                        <!-- dias vigencia -->
+                        <arg attribute="sqlCode">JBSEL0020</arg>                        <!-- puntos tercero -->
                         <!--<arg attribute="sqlCode">SEL0177</arg>-->                        <!-- fecha factura SEL0177-->
                         <arg attribute="sqlCode">JBSEL0011</arg>                        <!-- tabla principal de productos -->
                         <arg attribute="sqlCode">JBSEL0012</arg>                        <!-- tabla de anticipos -->
@@ -2948,6 +2949,7 @@
                     <arg attribute="format">NUMERIC</arg>
                     <arg attribute="size">10</arg>
                     <arg attribute="maxlength">26</arg>
+                    <arg attribute="exportValue">totalfacturamenosretenciones</arg>
                     <arg attribute="clean">true</arg>
                     <arg attribute="calculateExportValue">(totalfact)-(trfuente+triva+trica)</arg>
                     <arg attribute="font">Dialog,1,18</arg>
@@ -2961,6 +2963,8 @@
                 <driver id="puntos_acumulados">common.gui.components.GenericData</driver>
                 <parameters>
                   <arg attribute="Panel">false</arg>
+                  <arg attribute="keySQL">JBSEL0020</arg>
+                  <arg attribute="driverEvent" id="nro_orden_pedido">client.gui.components.TableDataFields</arg>
                   <subarg>
                     <arg attribute="name">cupo</arg>
                     <arg attribute="format">NUMERIC</arg>
@@ -2979,7 +2983,7 @@
                   </subarg>
                 </parameters>
               </component>
-              <panel type="FlowLayout"/>
+              
               <!-- <component>
                   <driver id="facturasvencidas">common.gui.components.GenericData</driver>
                   <parameters>
@@ -3017,6 +3021,27 @@
                     <arg attribute="alignment">RIGHT</arg>
                     <arg attribute="enabled">true</arg>
                     <arg attribute="exportValue">puntosredimidos</arg>
+                  </subarg>
+                </parameters>
+              </component>
+            <!-- </panel> -->
+            <!-- <panel type="FlowLayout"/> -->
+              <component locate="Center">
+                <driver id="puntosredimidosenpesos">common.gui.components.GenericData</driver>
+                <parameters>
+                  <arg attribute="Panel">false</arg>
+                  <subarg>
+                    <arg attribute="name">VR_PAGAR</arg>
+                    <arg attribute="label">     Puntos en $</arg>
+                    <arg attribute="format">NUMERIC</arg>
+                    <arg attribute="size">10</arg>
+                    <arg attribute="maxlength">26</arg>
+                    <arg attribute="font">Dialog,0,18</arg>
+                    <arg attribute="clean">true</arg>
+                    <arg attribute="alignment">RIGHT</arg>
+                    <arg attribute="enabled">false</arg>
+                    <arg attribute="calculateExportValue">puntosredimidos*25</arg>
+                    <arg attribute="exportValue">puntosredimidosenpesos</arg>
                   </subarg>
                 </parameters>
               </component>
@@ -3217,7 +3242,7 @@
                       <arg attribute="alignment">RIGHT</arg>
                       <arg attribute="enabled">false</arg>
                       <!-- <arg attribute="calculateExportValue">efectivot+tconsignation+tsodexobigpass+tcreditcard+totaltodastarjetas+pagooacredito</arg> lust -->
-                      <arg attribute="calculateExportValue">efectivot+tconsignation+tsodexobigpass+tcreditcard+totaltodastarjetas+totalanticipos+puntosredimidos</arg>
+                      <arg attribute="calculateExportValue">efectivot+tconsignation+tsodexobigpass+tcreditcard+totaltodastarjetas+totalanticipos+puntosredimidosenpesos</arg>
                       <arg attribute="printable">true</arg>
                     </subarg>
                   </parameters>
@@ -3241,7 +3266,7 @@
                       <!--           <arg attribute="calculateBSExportValue">(tcreditcard+pagooacredito+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+efectivot+tconsignation)&gt;(totalfact-(trfuente+triva+trica))&amp;&amp;(tcreditcard+pagooacredito+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation)&lt;(totalfact-(trfuente+triva+trica))?(efectivot+tcreditcard+pagooacredito+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation)-(totalfact-(trfuente+triva+trica)):0.0
       </arg> lust-->
 
-                      <arg attribute="calculateBSExportValue">(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+efectivot+tconsignation+totalanticipos+puntosredimidos)&gt;(totalfact-(trfuente+triva+trica))&amp;&amp;(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos+puntosredimidos)&lt;(totalfact-(trfuente+triva+trica))?(efectivot+tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos+puntosredimidos)-(totalfact-(trfuente+triva+trica)):0.0
+                      <arg attribute="calculateBSExportValue">(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+efectivot+tconsignation+totalanticipos+puntosredimidosenpesos)&gt;(totalfact-(trfuente+triva+trica))&amp;&amp;(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos+puntosredimidosenpesos)&lt;(totalfact-(trfuente+triva+trica))?(efectivot+tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos+puntosredimidosenpesos)-(totalfact-(trfuente+triva+trica)):0.0
                       </arg>
                       <arg attribute="printable">true</arg>
                     </subarg>
@@ -5143,10 +5168,17 @@
                   <method>getPackage</method>
                 </component>
 
+                <!-- redencion de puntos administrativo -->
+                <component>
+                  <driver id="puntosredimidos">common.gui.components.GenericData</driver>
+                  <method>getPackage</method>
+                </component>
+                <!-- generacion de puntos administrativo -->
                 <component>
                   <driver id="totaljavipuntosgenerados">client.gui.components.TableDataFields</driver>
                   <method>getPackage</method>
                 </component>
+
                 
                 <!-- 11 -->
                 <!-- <component>
@@ -5179,6 +5211,11 @@
                 <!-- 11 efectivo neto -->
                 <component>
                   <driver id="efectivoneto">common.gui.components.GenericData</driver>
+                  <method>getPackage</method>
+                </component>
+                <!-- redencion de puntos contable -->
+                <component>
+                  <driver id="puntosredimidosenpesos">common.gui.components.GenericData</driver>
                   <method>getPackage</method>
                 </component>
                 <!-- 12 total sodexo -->
@@ -6095,6 +6132,10 @@
                     <method>clean</method>
                   </component>
                   <component>
+                    <driver id="puntosredimidosenpesos">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                  </component>
+                  <component>
                     <driver id="fefectivo">common.gui.components.GenericData</driver>
                     <method>clean</method>
                   </component>
@@ -6390,22 +6431,6 @@
                 <type>transaction</type>
                 <!-- BOTON GUARDAR TIRILLA -->
                 <component>
-                  <driver id="pagotirilla">common.gui.components.ButtonsPanel</driver>
-                  <method>setEnabled</method>
-                  <parameters>
-                    <arg attribute="button">PRINT</arg>
-                    <arg attribute="state">false</arg>
-                  </parameters>
-                </component>
-                <component>
-                  <driver id="pagocarta">common.gui.components.ButtonsPanel</driver>
-                  <method>setEnabled</method>
-                  <parameters>
-                    <arg attribute="button">PRINT</arg>
-                    <arg attribute="state">false</arg>
-                  </parameters>
-                </component>
-                <component>
                   <driver>this</driver>
                   <method>validMultiPackage</method>
                   <parameters>
@@ -6437,6 +6462,7 @@
                     <arg attribute="errorMessage">Error, Falta el correo electrónico del tercero</arg>
                   </parameters>
                 </component>
+
                 <!-- <component>
                 <driver id="efectivoneto">common.gui.components.GenericData</driver>
                 <method>validPackage</method>
@@ -6454,6 +6480,25 @@
                   <arg attribute="errorMessage">Error, debe cancelar facturas crédito vencidas antes de poder acceder a un nuevo crédito</arg>
                 </parameters>
               </component> lust -->
+
+                <component>
+                  <driver id="pagocarta">common.gui.components.ButtonsPanel</driver>
+                  <method>setEnabled</method>
+                  <parameters>
+                    <arg attribute="button">PRINT</arg>
+                    <arg attribute="state">false</arg>
+                  </parameters>
+                </component>
+
+                <component>
+                  <driver id="pagotirilla">common.gui.components.ButtonsPanel</driver>
+                  <method>setEnabled</method>
+                  <parameters>
+                    <arg attribute="button">PRINT</arg>
+                    <arg attribute="state">false</arg>
+                  </parameters>
+                </component>
+
                 <!-- NA -->
                 <component>
                   <driver>this</driver>
@@ -6475,7 +6520,7 @@
                   <method>getPackage</method>
                   <parameters>
                     <arg attribute="nullField">true</arg>
-                    <subarg>
+                    <subarg>                      
                       <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">_ndocumento_pedido</arg>
                       <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">_id_vendedor</arg>
                       <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">dcredit</arg>
@@ -6483,7 +6528,8 @@
                       <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">numeroordenexterno</arg>
                     </subarg>
                   </parameters>
-                </component>
+                </component>                
+                
                 <!-- 2 observaciones -->
                 <component>
                   <driver>common.gui.components.XMLTextArea</driver>
@@ -6562,6 +6608,17 @@
                   <method>getPackage</method>
                 </component>
 
+                <!-- redencion de puntos administrativo -->
+                <component>
+                  <driver id="puntosredimidos">common.gui.components.GenericData</driver>
+                  <method>getPackage</method>
+                </component>
+                <!-- generacion de puntos administrativo -->
+                <component>
+                  <driver id="totaljavipuntosgenerados">client.gui.components.TableDataFields</driver>
+                  <method>getPackage</method>
+                </component>
+
                 <!-- 11 -->
                 <!-- <component>
                 <driver>this</driver>
@@ -6593,6 +6650,11 @@
                 <!-- 11 efectivo neto -->
                 <component>
                   <driver id="efectivoneto">common.gui.components.GenericData</driver>
+                  <method>getPackage</method>
+                </component>
+                <!-- redencion de puntos contable-->
+                <component>
+                  <driver id="puntosredimidosenpesos">common.gui.components.GenericData</driver>
                   <method>getPackage</method>
                 </component>
                 <!-- 12 total sodexo -->
