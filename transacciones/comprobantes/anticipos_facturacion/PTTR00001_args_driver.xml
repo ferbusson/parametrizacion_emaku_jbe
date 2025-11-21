@@ -22,10 +22,10 @@
   </LNData>
   
     <!-- 4 cheques -->
-    <arg>LCINS0023</arg>
+    <!-- <arg>LCINS0023</arg> se repite -->
 
     <!-- 5 consignaciones -->
-    <arg>LCINS0024</arg>
+    <!-- <arg>LCINS0024</arg> se repite -->
 
     <!-- 6 sodexo -->
     <arg>LCINS0022</arg>

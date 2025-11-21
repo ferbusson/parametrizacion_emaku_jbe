@@ -1,0 +1,21 @@
+<container>
+  <subarg>
+    
+    <arg attribute="actionDocument">annulDocument</arg>
+    <arg attribute="date" />
+
+  </subarg>
+
+  <LNData>
+		<driver>LNContabilidad</driver>
+		<method>anular</method>
+		<parameters>
+			<arg attribute="Concepto">Anticipo Anulado</arg>
+		</parameters>
+	</LNData>
+
+  <!-- elimina registro en cartera por ncomprobante-->
+  <arg>GRDEL0004</arg>      
+
+
+</container>

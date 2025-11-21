@@ -20,6 +20,54 @@
   </preferences>
   <!-- ocultos -->
 
+
+  <component>
+    <driver id="nitalterno">common.gui.components.GenericData</driver>
+    <parameters>
+      <subarg>
+        <arg attribute="format">TEXT</arg>
+        <arg attribute="name">nitalterno</arg>
+        <arg attribute="size">20</arg>
+        <arg attribute="maxlength">200</arg>
+        <arg attribute="sqlInit">MTSEL0737</arg>
+        <arg attribute="queryOnInit">true</arg>
+        <arg attribute="importValue">nombre_suc</arg>
+        <arg attribute="nameField">nitalterno</arg>
+        <arg attribute="exportValue">nitalterno</arg>
+      </subarg>
+    </parameters>
+  </component>
+  <component>
+    <driver id="terceroal">common.gui.components.GenericData</driver>
+    <parameters>
+      <subarg>
+        <arg attribute="format">TEXT</arg>
+        <arg attribute="name">terceroal</arg>
+        <arg attribute="size">20</arg>
+        <arg attribute="maxlength">200</arg>
+        <arg attribute="sqlInit">MTSEL0738</arg>
+        <arg attribute="queryOnInit">true</arg>
+        <arg attribute="importValue">nombre_suc</arg>
+        <arg attribute="nameField">terceroal</arg>
+        <arg attribute="exportValue">terceroal</arg>
+      </subarg>
+    </parameters>
+  </component>
+   <component>
+    <driver id="nombrecentrocosto">common.gui.components.GenericData</driver>
+    <parameters>
+      <subarg>
+        <arg attribute="format">TEXT</arg>
+        <arg attribute="name">centro</arg>
+        <arg attribute="size">5</arg>
+        <arg attribute="maxlength">20</arg>
+        <arg attribute="sqlInit">JBSEL0022</arg>
+        <arg attribute="queryOnInit">true</arg>
+        <arg attribute="importValue">id_centrocosto</arg>
+        <arg attribute="printable">true</arg>
+      </subarg>
+    </parameters>
+  </component>
    <component locate="Center">
       <driver id="usuario">common.gui.components.GenericData</driver>
       <parameters>
@@ -73,6 +121,7 @@
         <arg attribute="nameField">centrocosto</arg>
         <arg attribute="addAttribute">key</arg>
         <arg attribute="nullValue">true</arg>
+        <arg attribute="printable">true</arg>
         <arg attribute="exportValue">keyCentro</arg>
       </subarg>
     </parameters>
@@ -302,11 +351,11 @@
       <object>
         <name>NEW</name>
         <component>
-          <driver>this</driver>
-          <method>cleanExternalValues</method>
+          <driver id="terceros">common.gui.components.XMLTextArea</driver>
+          <method>clean</method>
         </component>
         <component>
-          <driver>client.gui.components.FindThird</driver>
+          <driver id="fecha">common.gui.components.GenericData</driver>
           <method>clean</method>
         </component>
         <component>
@@ -317,6 +366,155 @@
           <driver>common.gui.components.XMLTextArea</driver>
           <method>clean</method>
         </component>
+        <component>
+          <driver id="estado">common.gui.components.XMLLabel</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="totaltodastarjetas">client.gui.components.TableDataFields</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="anticipos">common.gui.components.GenericData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="totalbonos">client.gui.components.TableDataFields</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="formadepago">common.gui.components.GenericData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="mediosdepago">common.gui.components.GenericData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="totalmenosreteglobal">client.gui.components.TableDataFields</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="totalbaseiva">client.gui.components.TableDataFields</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="baseivagravados">client.gui.components.TableDataFields</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="saldoxpagar">common.gui.components.GenericData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="baseiva">common.gui.components.GenericData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="tivatarjeta">client.gui.components.TableDataFields</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="idtregalo">common.gui.components.GenericData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="fefectivot">common.gui.components.GenericData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="ea">client.gui.components.TableDataFields</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="ttarjetas">common.gui.components.GenericData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="tfacprov">client.gui.components.TableDataFields</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="fefectivo">common.gui.components.GenericData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="tsodexobigpass">common.gui.components.GenericData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="totalconsignaciones">common.gui.components.GenericData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="otrospagostarjeta">common.gui.components.GenericData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="tpagar">common.gui.components.GenericData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="contab">client.gui.components.TableFindData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="sum_debe">client.gui.components.TableDataFields</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="sum_haber">client.gui.components.TableDataFields</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="diff">client.gui.components.TableDataFields</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="checktable">client.gui.components.TableFindData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="tcheck">client.gui.components.TableDataFields</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="consignationtable">client.gui.components.TableFindData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="tconsignation">client.gui.components.TableDataFields</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="totalpagosmanuales">client.gui.components.TableDataFields</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="sodexo">client.gui.components.TableFindData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="totalsodexo">client.gui.components.TableDataFields</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="bigpass">client.gui.components.TableFindData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="totalbigpass">client.gui.components.TableDataFields</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver>this</driver>
+          <method>cleanExternalValues</method>
+        </component>        
+        
         <component>
           <driver id="pago">common.gui.components.ButtonsPanel</driver>
           <method>setEnabled</method>
@@ -332,7 +530,7 @@
 
   <FORM>
     <preferences>
-      <size height="500" width="700"/>
+      <size height="500" width="840"/>
       <name>PAYMENTFORM</name>
       <icon>PAGO</icon>
       <iconificable/>
@@ -716,6 +914,7 @@
                     <arg attribute="calculateExportValue">totalcomp</arg>
                     <arg attribute="exportValue">totalfprov</arg>
                     <arg attribute="font">Dialog,0,18</arg>
+                    <arg attribute="printable">true</arg>
                     <arg attribute="alignment">RIGHT</arg>
                   </subarg>
                 </parameters>
@@ -1618,7 +1817,7 @@
 
             7
             <component>
-               <driver id="centrocosto">common.gui.components.GenericData</driver>              
+               <driver id="nombrecentrocosto">common.gui.components.GenericData</driver>
               <method>getPrintPackage</method>
             </component>                
              

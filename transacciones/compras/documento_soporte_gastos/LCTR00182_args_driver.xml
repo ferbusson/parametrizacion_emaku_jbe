@@ -1,0 +1,243 @@
+<container>
+  <subarg>
+    <arg attribute="idDocument">DQ</arg>
+    <arg attribute="consecutive" />
+    <arg attribute="actionDocument">createDocument</arg>
+    <arg attribute="cash" />
+  </subarg>
+  
+  <!-- 0 res fac -->
+  <arg>RFINS002</arg>
+  <!-- 0 observaciones o concepto-->
+  <arg>INS0037</arg>
+  <!-- 1 datos_documento-->
+  <arg>LCINS0188</arg>
+
+  <!--  datos_prod-->
+  <arg>LCINS0185</arg>  
+  
+  <!-- Forma de Pago -->  
+    <!-- 3 Consignacion -->
+    <LNData>
+        <driver>LNSelectedField</driver>
+        <method>getSubpackage</method>
+        <parameters>
+          <arg attribute="sql">LCINS0110</arg>
+          <arg attribute="fields">0,1,2,3</arg>
+          <arg attribute="conditional">c&gt;0</arg>
+        </parameters>
+      </LNData>
+  <!-- 4 Tarjetas -->
+  <LNData>
+      <driver>LNSelectedField</driver>
+      <method>getSubpackage</method>
+      <parameters>
+        <arg attribute="sql">INS0045</arg>
+        <arg attribute="fields">0,1,2,3,4</arg>
+      </parameters>
+    </LNData>
+    <!-- 5 Cheques -->
+  <LNData>
+        <driver>LNSelectedField</driver>
+        <method>getSubpackage</method>
+        <parameters>
+          <arg attribute="sql">LCINS0108</arg>
+          <arg attribute="fields">0,1,2,3</arg>
+          <arg attribute="conditional">b&gt;0</arg>
+        </parameters>
+  </LNData>
+  <!-- 6 Transferencias -->
+  <LNData>
+        <driver>LNSelectedField</driver>
+        <method>getSubpackage</method>
+        <parameters>
+          <arg attribute="sql">LCINS0109</arg>
+          <arg attribute="fields">0,1,2</arg>
+          <arg attribute="conditional">c&gt;0</arg>
+        </parameters>
+      </LNData>
+  
+  <!--  Tercero -->
+  <arg>INS0048</arg>
+  
+      <!-- cxc -->
+  <subarg>
+    <LNData>
+      <driver>LNSelectedField</driver>
+      <method>getSubpackage</method>
+      <parameters>
+        <arg attribute="sql">INS0082</arg>
+        <arg attribute="fields">0,2,3,4,5</arg>
+      </parameters>
+    </LNData>
+  </subarg>
+  <!--  cxp  -->
+  <subarg>
+    <LNData>
+      <driver>LNSelectedField</driver>
+      <method>getSubpackage</method>
+      <parameters>
+        <arg attribute="sql">DGINS0026</arg>
+        <arg attribute="fields">0,2,4,3,5,6,8</arg>
+      </parameters>
+    </LNData>
+  </subarg>
+  
+
+  <!--  centrocosto -->
+  <arg attribute="addKey"/>
+
+ 6<!--  Ret. Fuente -->
+    <subarg>
+      <LNData>
+        <driver>LNSelectedField</driver>
+        <method>getSubpackage</method>
+        <parameters>
+          <arg attribute="sql">LEINS0102</arg>
+          <arg attribute="fields">2,3,4,5,1,6</arg>
+          <arg attribute="discartKey">idTercero</arg>
+          <arg attribute="discartKey">centrocosto</arg>
+          <arg attribute="conditional">B&gt;0</arg>
+        </parameters>
+      </LNData>     
+    </subarg>
+    7<!--  Ret. I.V.A. -->
+    <subarg>
+      <LNData>
+        <driver>LNSelectedField</driver>
+        <method>getSubpackage</method>
+        <parameters>
+          <arg attribute="sql">LEINS0102</arg>
+          <arg attribute="fields">2,3,4,5,1,6</arg>
+          <arg attribute="discartKey">idTercero</arg>
+          <arg attribute="discartKey">centrocosto</arg>
+          <arg attribute="conditional">B&gt;0</arg>
+        </parameters>
+      </LNData>     
+    </subarg>
+    8<!-- Ret. I.C.A. -->
+    <subarg>
+      <LNData>
+        <driver>LNSelectedField</driver>
+        <method>getSubpackage</method>
+        <parameters>
+          <arg attribute="sql">LEINS0102</arg>
+          <arg attribute="fields">2,3,4,5,1,6</arg>
+          <arg attribute="discartKey">idTercero</arg>
+          <arg attribute="discartKey">centrocosto</arg>
+          <arg attribute="conditional">B&gt;0</arg>
+          <arg attribute="tercero">getName</arg>
+        </parameters>
+      </LNData>   
+    </subarg>
+    9<!--  Información de retencion contrapartida al R. Simplificado -->
+    <!-- <subarg>
+      <LNData>
+        <driver>LNSelectedField</driver>
+        <method>getSubpackage</method>
+        <parameters>
+          <arg attribute="sql">LEINS0102</arg>
+          <arg attribute="fields">2,3,4</arg>
+          <arg attribute="discartKey">idTercero</arg>
+          <arg attribute="discartKey">centrocosto</arg>
+          <arg attribute="conditional">B&gt;0</arg>
+        </parameters>
+      </LNData>     
+    </subarg> -->
+    
+
+  <!--  subcentrocosto -->
+  <!-- <arg attribute="addKey"/> -->
+  
+  <subarg>
+      <!--  Afecto cartera -->  
+    <LNData>
+          <driver>LNSelectedField</driver>
+          <method>getSubpackage</method>
+          <parameters>
+              <arg attribute="sql">FIINS0002</arg>
+              <arg attribute="fields">5,5,7</arg>
+              <arg attribute="conditional">"c".startsWith("13") </arg>
+              <arg attribute="discartKey">centrocosto</arg>
+              <arg attribute="discartKey">scentrocosto</arg>              
+          </parameters>
+      </LNData>
+
+
+    <!--  Afecto cxp -->  
+    <LNData>
+      <driver>LNSelectedField</driver>
+      <method>getSubpackage</method>
+      <parameters>
+        <arg attribute="sql">GRINS0003</arg>
+        <arg attribute="fields">7,5,6,8</arg>
+        <arg attribute="discartKey">idTercero</arg>       
+              <arg attribute="discartKey">centrocosto</arg>
+              <arg attribute="discartKey">scentrocosto</arg>              
+      </parameters>
+    </LNData>   
+
+
+
+    <LNData>
+          <driver>LNSelectedField</driver>
+          <method>getSubpackage</method>
+          <parameters>
+              <arg attribute="sql">DGINS0023</arg>
+              <arg attribute="fields">6,6,7</arg>
+              <arg attribute="conditional">"c".startsWith("2") &amp;&amp; !"c".startsWith("24") &amp;&amp; !"c".startsWith("2365") &amp;&amp; !"c".startsWith("2370")</arg>
+              <arg attribute="discartKey">centrocosto</arg>
+              <arg attribute="discartKey">scentrocosto</arg>              
+          </parameters>
+      </LNData>
+
+    <!-- Cartera Negativa -->
+    <LNData>
+          <driver>LNSelectedField</driver>
+          <method>getSubpackage</method>
+          <parameters>
+              <arg attribute="sql">FIINS0003</arg>
+              <arg attribute="fields">6,6,7</arg>
+              <arg attribute="conditional">"c".startsWith("1") &amp;&amp; "i".equals("TRUE") &amp;&amp; f&gt;0</arg>
+              <arg attribute="discartKey">centrocosto</arg>
+              <arg attribute="discartKey">scentrocosto</arg>              
+          </parameters>
+      </LNData>
+
+
+    <!-- Cartera Negativa -->
+    <LNData>
+          <driver>LNSelectedField</driver>
+          <method>getSubpackage</method>
+          <parameters>
+              <arg attribute="sql">FIINS0003</arg>
+              <arg attribute="fields">5,5,7</arg>
+              <arg attribute="conditional">"c".startsWith("2") &amp;&amp; "i".equals("TRUE") &amp;&amp; e&gt;0</arg>
+              <arg attribute="discartKey">centrocosto</arg>
+              <arg attribute="discartKey">scentrocosto</arg>              
+          </parameters>
+      </LNData>
+
+      <LNData>
+          <driver>LNContabilidad</driver>
+          <method>rowDataAccountSC</method>
+          <parameters>
+            <arg attribute="centrocosto">getName</arg>
+            <arg attribute="scentrocosto">getName</arg>
+            <arg attribute="tercero">getname</arg>
+            <arg attribute="inventario">notData</arg>
+          </parameters>
+      </LNData>
+    </subarg>
+  
+    <LNData>
+      <driver>LNContabilidad</driver>
+      <method>recoverDocument</method>
+    </LNData>
+
+    <!--  actualiza centrocosto en libro_auxiliar | hago esto porque cambiar la logica de sendRecord me toma mas tiempo y no lo tengo, podría solucionar las cosas haciendo que el returnCol = 1 de la tabla contab sea el codigo del centrocosto Sep 08 2022 -->
+  <arg>LCUPD0043</arg>  
+  <!-- 19 Actualiza dias de credito en cartera e info_documento -->
+  <arg>LCUPD0044</arg>  
+    
+</container>
