@@ -18,8 +18,8 @@ WITH aux_info_pedido AS (
     JOIN documentos_standar dst3 ON dst3.id_documento = ds3.id_documento
     WHERE dst2.nombre = 'MOSTRADOR'
       AND dst3.nombre = 'ANTICIPOS FACTURACION'
-      AND d.codigo_tipo = '00' 
-      and d.numero = lpad('10',10,'0')
+      AND d.codigo_tipo = '?' 
+      and d.numero = lpad('?',10,'0')
 )
 
 -- Pre-aggregate comprobante data to improve join performance
@@ -30,7 +30,7 @@ WITH aux_info_pedido AS (
     CAST(d.fecha + CAST(c.dcredito || ' days' AS INTERVAL) AS DATE) AS vencimiento,
     d.codigo_tipo||'-'||d.numero::bigint as numero,
     c.abono_comprobante,
-    c.abono_comprobante,           -- Duplicate column as in original
+    0 as valor_a_usar,           -- Duplicate column as in original
     0 AS col6,       -- Zero columns as in original
     0 AS col7,
     0 AS col8,
@@ -55,5 +55,6 @@ WITH aux_info_pedido AS (
     JOIN cuentas cu ON c.id_cta = cu.id_cta
     join aux_info_pedido a on c.idtercero =  a.tercero_pedido
     WHERE d.estado = true
+    and c.nfactura is NULL
     --GROUP BY c.ncomprobante
 ORDER BY fecha, numero;

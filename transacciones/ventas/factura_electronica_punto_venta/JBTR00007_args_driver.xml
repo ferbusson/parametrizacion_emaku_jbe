@@ -607,7 +607,7 @@ JBE ACCOUNTS TABLE:
             <driver>LNSelectedField</driver>
             <method>getSubpackage</method>
             <parameters>
-                <arg attribute="sql">HCINS0023</arg>
+                <arg attribute="sql">JBINS0011</arg>
                 <arg attribute="fields">0,2,3,4,5,6,8</arg>
                 <arg attribute="discartKey">bodegaSaliente</arg>
                 <arg attribute="discartKey">centrocosto</arg>
