@@ -1,0 +1,597 @@
+<FORM>
+    <preferences>
+        <size width="490" height="630" />
+        <name>Maestro de Productos</name>
+        <icon>NART</icon>
+        <iconificable />
+        <resizable />
+        <closable />
+    </preferences>
+    <panel locate="North" type="FlowLayout" />
+    <panel locate="West" type="FlowLayout" />
+    <panel locate="East" type="FlowLayout" />
+    <tab>
+    <panel type="BorderLayout" name="Info General">
+        <panel locate="West" type="FlowLayout" />
+        <panel locate="East" type="FlowLayout" />
+        <panel locate="Center" type="BorderLayout">
+            <panel locate="West" type="GridLayout" rows="20" cols="1">
+                <component>
+                    <driver>common.gui.components.XMLLabel</driver>
+                    <parameters>
+                        <arg attribute="text">Código</arg>
+                        <arg attribute="alignment">0</arg>
+                    </parameters>
+                </component>
+                <component>
+                    <driver>common.gui.components.XMLLabel</driver>
+                    <parameters>
+                        <arg attribute="text">Ref. Proveedor</arg>
+                        <arg attribute="alignment">0</arg>
+                    </parameters>
+                </component>                
+                <component>
+                    <driver>common.gui.components.XMLLabel</driver>
+                    <parameters>
+                        <arg attribute="text">Descripción</arg>
+                        <arg attribute="alignment">0</arg>
+                    </parameters>
+                </component>
+                <component>
+                    <driver>common.gui.components.XMLLabel</driver>
+                    <parameters>
+                        <arg attribute="text">Línea</arg>
+                        <arg attribute="alignment">0</arg>
+                    </parameters>
+                </component>
+                <component>
+                    <driver>common.gui.components.XMLLabel</driver>
+                    <parameters>
+                        <arg attribute="text">Grupo</arg>
+                        <arg attribute="alignment">0</arg>
+                    </parameters>
+                </component>
+                <component>
+                    <driver>common.gui.components.XMLLabel</driver>
+                    <parameters>
+                        <arg attribute="text">Sub Grupo</arg>
+                        <arg attribute="alignment">0</arg>
+                    </parameters>
+                </component>
+                <component>
+                    <driver>common.gui.components.XMLLabel</driver>
+                    <parameters>
+                        <arg attribute="text">Marca</arg>
+                        <arg attribute="alignment">0</arg>
+                    </parameters>
+                </component>
+                <component>
+                    <driver>common.gui.components.XMLLabel</driver>
+                    <parameters>
+                        <arg attribute="text">Submarca</arg>
+                        <arg attribute="alignment">0</arg>
+                    </parameters>
+                </component>
+                <component>
+                    <driver>common.gui.components.XMLLabel</driver>
+                    <parameters>
+                        <arg attribute="text">Talla</arg>
+                        <arg attribute="alignment">0</arg>
+                    </parameters>
+                </component>
+                <component>
+                    <driver>common.gui.components.XMLLabel</driver>
+                    <parameters>
+                        <arg attribute="text">Color</arg>
+                        <arg attribute="alignment">0</arg>
+                    </parameters>
+                </component>
+                <component>
+                    <driver>common.gui.components.XMLLabel</driver>
+                    <parameters>
+                        <arg attribute="text">Tipo Asiento Cont.</arg>
+                        <arg attribute="alignment">0</arg>
+                    </parameters>
+                </component>
+                <component>
+                    <driver>common.gui.components.XMLLabel</driver>
+                    <parameters>
+                        <arg attribute="text">IVA</arg>
+                        <arg attribute="alignment">0</arg>
+                    </parameters>
+                </component>
+                <component>
+                    <driver>common.gui.components.XMLLabel</driver>
+                    <parameters>
+                        <arg attribute="text">Presentación</arg>
+                        <arg attribute="alignment">0</arg>
+                    </parameters>
+                </component>                
+                <component>
+                    <driver>common.gui.components.XMLLabel</driver>
+                    <parameters>
+                        <arg attribute="text">Costo</arg>
+                        <arg attribute="alignment">0</arg>
+                    </parameters>
+                </component>
+                <component>
+                    <driver>common.gui.components.XMLLabel</driver>
+                    <parameters>
+                        <arg attribute="text">Costo Últ Compra</arg>
+                        <arg attribute="alignment">0</arg>
+                    </parameters>
+                </component>
+                <component>
+                    <driver>common.gui.components.XMLLabel</driver>
+                    <parameters>
+                        <arg attribute="text">PV. Mostrador</arg>
+                        <arg attribute="alignment">0</arg>
+                    </parameters>
+                </component>
+                <component>
+                    <driver>common.gui.components.XMLLabel</driver>
+                    <parameters>
+                        <arg attribute="text">PV. Subdis Pasto</arg>
+                        <arg attribute="alignment">0</arg>
+                    </parameters>
+                </component>
+                <component>
+                    <driver>common.gui.components.XMLLabel</driver>
+                    <parameters>
+                        <arg attribute="text">PV. Subdis Poblaciones</arg>
+                        <arg attribute="alignment">0</arg>
+                    </parameters>
+                </component>
+                <component>
+                    <driver>common.gui.components.XMLLabel</driver>
+                    <parameters>
+                        <arg attribute="text">Ultima Fecha de Compra</arg>
+                        <arg attribute="alignment">0</arg>
+                    </parameters>
+                </component>
+                <component>
+                    <driver>common.gui.components.XMLLabel</driver>
+                    <parameters>
+                        <arg attribute="text">Ultima Fecha de Venta</arg>
+                        <arg attribute="alignment">0</arg>
+                    </parameters>
+                </component>
+                <!-- <component>
+                    <driver>common.gui.components.XMLLabel</driver>
+                    <parameters>
+                        <arg attribute="text">Saldo</arg>
+                        <arg attribute="alignment">0</arg>
+                    </parameters>
+                </component> -->
+            </panel>
+            <panel locate="Center" type="GridLayout" rows="20" cols="1">
+                <component locate="North">
+                    <driver id="codigo">client.gui.components.EmakuSearchField</driver>
+                    <parameters>
+                        <arg attribute="size">23</arg>
+                        <arg attribute="maxlength">26</arg>
+                        <arg attribute="nullValue">true</arg>
+                        <arg attribute="exportValue">tallas</arg>
+                        <arg attribute="format">TEXT</arg>
+                        <arg attribute="sqlCombo">MTSEL0154</arg>
+                        <arg attribute="blankArgs">false</arg>
+                        <arg attribute="keyDataSearch">searchProd</arg>
+                        <arg attribute="repeatData">2</arg>
+                        <arg attribute="noDataBeep">true</arg>
+                        <arg attribute="noDataMessage">No se encontro registros</arg>
+                        <arg attribute="selectedIndex">1</arg>
+                        <arg attribute="enabled">true</arg>
+                        <arg attribute="clean">true</arg>
+                        <arg attribute="sqlCode">MTSEL0155</arg>
+                        <arg attribute="sqlCode">MTSEL0156</arg>
+                        <arg attribute="sqlCode">MTSEL0157</arg>
+                        <arg attribute="sqlCode">MTSEL0158</arg>
+                        <arg attribute="sqlCode">MTSEL0159</arg>
+                        <arg attribute="sqlCode">MTSEL0160</arg>
+                        <arg attribute="sqlCode">MTSEL0161</arg>
+                        <arg attribute="sqlCode">MTSEL0162</arg>
+                        <arg attribute="sqlCode">MTSEL0163</arg>
+                        <arg attribute="sqlCode">LCSEL0726</arg>                        
+                        <arg attribute="sqlCode">MTSEL0164</arg>
+                        <arg attribute="sqlCode">MTSEL0165</arg>
+                        <arg attribute="sqlCode">MTSEL0166</arg>
+                        <arg attribute="sqlCode">MTSEL0167</arg>
+                        <arg attribute="sqlCode">MTSEL0169</arg>
+                        <arg attribute="sqlCode">LCSEL0363</arg>
+                        <arg attribute="sqlCode">LCSEL0376</arg>
+                        <arg attribute="sqlCodeExportValue">LCSEL0428,pventa3,asiento_generico,piva</arg>                       
+                    </parameters>
+                </component>
+                <component locate="Center">
+                    <driver id="refprov">common.gui.components.GenericData</driver>
+                    <parameters>
+                        <arg attribute="keySQL">MTSEL0162</arg>
+                        <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+                        <subarg>
+                            <arg attribute="format">TEXT</arg>                            
+                            <arg attribute="maxlength">50</arg>
+                            <arg attribute="enabled">false</arg>
+                            <arg attribute="size">23</arg>
+                        </subarg>
+                    </parameters>
+                </component>
+                <component>
+                    <driver id="descripcion">common.gui.components.GenericData</driver>
+                    <parameters>
+                        <arg attribute="keySQL">LCSEL0363</arg>
+                        <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+                        <subarg>
+                            <arg attribute="format">TEXT</arg>                            
+                            <arg attribute="maxlength">200</arg>
+                            <arg attribute="enabled">false</arg>
+                            <arg attribute="size">23</arg>
+                        </subarg>
+                    </parameters>
+                </component>
+                <component>
+                    <driver id="seccion">common.gui.components.GenericData</driver>
+                    <parameters>
+                        <arg attribute="keySQL">MTSEL0155</arg>
+                        <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+                        <subarg>
+                            <arg attribute="format">TEXT</arg>                            
+                            <arg attribute="maxlength">50</arg>
+                            <arg attribute="enabled">false</arg>
+                            <arg attribute="size">23</arg>
+                        </subarg>
+                    </parameters>
+                </component>
+                <component>
+                    <driver id="grupo">common.gui.components.GenericData</driver>
+                    <parameters>
+                        <arg attribute="keySQL">MTSEL0156</arg>
+                        <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+                        <subarg>
+                            <arg attribute="format">TEXT</arg>                            
+                            <arg attribute="maxlength">50</arg>
+                            <arg attribute="enabled">false</arg>
+                            <arg attribute="size">23</arg>
+                        </subarg>
+                    </parameters>
+                </component>
+                <component>
+                    <driver id="subgrupo">common.gui.components.GenericData</driver>
+                    <parameters>
+                        <arg attribute="keySQL">MTSEL0157</arg>
+                        <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+                        <subarg>
+                            <arg attribute="format">TEXT</arg>                            
+                            <arg attribute="maxlength">50</arg>
+                            <arg attribute="enabled">false</arg>
+                            <arg attribute="size">23</arg>
+                        </subarg>
+                    </parameters>
+                </component>
+                <component locate="Center">
+                    <driver id="marca">common.gui.components.GenericData</driver>
+                    <parameters>
+                        <arg attribute="keySQL">MTSEL0158</arg>
+                        <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+                        <subarg>
+                            <arg attribute="format">TEXT</arg>                            
+                            <arg attribute="maxlength">50</arg>
+                            <arg attribute="enabled">false</arg>
+                            <arg attribute="size">23</arg>
+                        </subarg>
+                    </parameters>
+                </component>
+                <component locate="Center">
+                    <driver id="submarca">common.gui.components.GenericData</driver>
+                    <parameters>
+                        <arg attribute="keySQL">LCSEL0376</arg>
+                        <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+                        <subarg>
+                            <arg attribute="format">TEXT</arg>                            
+                            <arg attribute="maxlength">50</arg>
+                            <arg attribute="enabled">false</arg>
+                            <arg attribute="size">23</arg>
+                        </subarg>
+                    </parameters>
+                </component>
+                <component locate="Center">
+                    <driver id="talla">common.gui.components.GenericData</driver>
+                    <parameters>
+                        <arg attribute="keySQL">MTSEL0159</arg>
+                        <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+                        <subarg>
+                            <arg attribute="format">TEXT</arg>                            
+                            <arg attribute="maxlength">50</arg>
+                            <arg attribute="enabled">false</arg>
+                            <arg attribute="size">23</arg>
+                        </subarg>
+                    </parameters>
+                </component>
+                <component locate="Center">
+                    <driver id="color">common.gui.components.GenericData</driver>
+                    <parameters>
+                        <arg attribute="keySQL">MTSEL0160</arg>
+                        <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+                        <subarg>
+                            <arg attribute="format">TEXT</arg>                            
+                            <arg attribute="maxlength">50</arg>
+                            <arg attribute="enabled">false</arg>
+                            <arg attribute="size">23</arg>
+                        </subarg>
+                    </parameters>
+                </component>
+
+                <component locate="Center">
+                    <driver id="asientogenerico">common.gui.components.GenericData</driver>
+                    <parameters>
+                        <subarg>
+                            <arg attribute="format">TEXT</arg>                            
+                            <arg attribute="maxlength">50</arg>
+                            <arg attribute="getValue">asiento_generico</arg>
+                            <arg attribute="enabled">false</arg>
+                            <arg attribute="size">23</arg>
+                        </subarg>
+                    </parameters>
+                </component>
+
+                <component locate="Center">
+                    <driver id="piva">common.gui.components.GenericData</driver>
+                    <parameters>
+                        <subarg>
+                            <arg attribute="format">TEXT</arg>
+                            <arg attribute="getValue">piva</arg>                            
+                            <arg attribute="maxlength">50</arg>
+                            <arg attribute="enabled">false</arg>
+                            <arg attribute="size">23</arg>
+                        </subarg>
+                    </parameters>
+                </component>
+
+                <component locate="Center">
+                    <driver id="presentacion">common.gui.components.GenericData</driver>
+                    <parameters>
+                        <arg attribute="keySQL">MTSEL0161</arg>
+                        <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+                        <subarg>
+                            <arg attribute="format">TEXT</arg>                            
+                            <arg attribute="maxlength">50</arg>
+                            <arg attribute="enabled">false</arg>
+                            <arg attribute="size">23</arg>
+                        </subarg>
+                    </parameters>
+                </component>
+
+                <component locate="Center">
+                    <driver id="costo">common.gui.components.GenericData</driver>
+                    <parameters>
+                        <arg attribute="keySQL">MTSEL0163</arg>
+                        <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+                        <subarg>
+                            <arg attribute="format">TEXT</arg>                            
+                            <arg attribute="maxlength">50</arg>
+                            <arg attribute="enabled">false</arg>
+                            <arg attribute="size">23</arg>
+                        </subarg>
+                    </parameters>
+                </component>
+                <component locate="Center">
+                    <driver id="pcostoultcompra">common.gui.components.GenericData</driver>
+                    <parameters>
+                        <arg attribute="keySQL">LCSEL0726</arg>
+                        <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+                        <subarg>
+                            <arg attribute="format">TEXT</arg>                            
+                            <arg attribute="maxlength">50</arg>
+                            <arg attribute="enabled">false</arg>
+                            <arg attribute="size">23</arg>
+                        </subarg>
+                    </parameters>
+                </component>
+                <component locate="Center">
+                    <driver id="preciodetal">common.gui.components.GenericData</driver>
+                    <parameters>
+                        <arg attribute="keySQL">MTSEL0164</arg>
+                        <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+                        <subarg>
+                            <arg attribute="format">TEXT</arg>                            
+                            <arg attribute="maxlength">50</arg>
+                            <arg attribute="enabled">false</arg>
+                            <arg attribute="size">23</arg>
+                        </subarg>
+                    </parameters>
+                </component>
+                <component locate="Center">
+                    <driver id="preciomayor">common.gui.components.GenericData</driver>
+                    <parameters>
+                        <arg attribute="keySQL">MTSEL0165</arg>
+                        <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+                        <subarg>
+                            <arg attribute="format">TEXT</arg>                            
+                            <arg attribute="maxlength">50</arg>
+                            <arg attribute="enabled">false</arg>
+                            <arg attribute="size">23</arg>
+                        </subarg>
+                    </parameters>
+                </component>
+                <component locate="Center">
+                    <driver id="precioplatweb">common.gui.components.GenericData</driver>
+                    <parameters>
+                        <subarg>
+                            <arg attribute="format">TEXT</arg>                            
+                            <arg attribute="maxlength">50</arg>
+                            <arg attribute="getValue">pventa3</arg>
+                            <arg attribute="enabled">false</arg>
+                            <arg attribute="size">23</arg>
+                        </subarg>
+                    </parameters>
+                </component>
+                <component locate="Center">
+                    <driver id="ufechacompra">common.gui.components.GenericData</driver>
+                    <parameters>
+                        <arg attribute="keySQL">MTSEL0166</arg>
+                        <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+                        <subarg>
+                            <arg attribute="format">TEXT</arg>                            
+                            <arg attribute="maxlength">50</arg>
+                            <arg attribute="enabled">false</arg>
+                            <arg attribute="size">23</arg>
+                        </subarg>
+                    </parameters>
+                </component>
+                <component locate="Center">
+                    <driver id="ufechaventa">common.gui.components.GenericData</driver>
+                    <parameters>
+                        <arg attribute="keySQL">MTSEL0167</arg>
+                        <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+                        <subarg>
+                            <arg attribute="format">TEXT</arg>                            
+                            <arg attribute="maxlength">50</arg>
+                            <arg attribute="enabled">false</arg>
+                            <arg attribute="size">23</arg>
+                        </subarg>
+                    </parameters>
+                </component>
+                <!-- <component locate="Center">
+                    <driver id="saldo">common.gui.components.GenericData</driver>
+                    <parameters>
+                        <arg attribute="keySQL">MTSEL0169</arg>
+                        <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+                        <subarg>
+                            <arg attribute="format">TEXT</arg>                            
+                            <arg attribute="maxlength">50</arg>
+                            <arg attribute="enabled">false</arg>
+                            <arg attribute="size">23</arg>
+                        </subarg>
+                    </parameters>
+                </component> -->
+            </panel>
+        </panel>
+    </panel>
+
+    <panel type="BorderLayout" name="Saldo">
+      <component locate="Center">
+          <driver id="saldos">client.gui.components.TableFindData</driver>
+          <parameters>
+            <arg attribute="keySQL">MTSEL0169</arg>
+            <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+            <arg attribute="rows">1000</arg>
+            <arg attribute="colorBackground">204,255,204</arg>
+            <arg attribute="colorSelected">149,255,128</arg>
+            <subarg><!-- b -->
+              <arg attribute="name">Bodega</arg>
+              <arg attribute="length">337</arg>
+              <arg attribute="type">STRING</arg>
+              <arg attribute="enabled">true</arg>
+            </subarg>
+            <subarg><!-- b -->
+              <arg attribute="name">Saldo</arg>
+              <arg attribute="length">100</arg>
+              <arg attribute="type">INTEGER</arg>
+              <arg attribute="enabled">true</arg>
+            </subarg>
+          </parameters>
+        </component>
+    </panel>
+  </tab>
+    <component locate="South">
+        <driver>common.gui.components.ButtonsPanel</driver>
+        <parameters>
+            <arg>NEW</arg>
+            <arg>EXIT</arg>
+        </parameters>
+        <events>
+            <object>
+                <name>NEW</name>
+                <component>
+                    <driver id="codigo">client.gui.components.EmakuSearchField</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="descripcion">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>                
+                <component>
+                    <driver id="seccion">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="grupo">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="subgrupo">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="marca">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="submarca">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="talla">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="color">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="presentacion">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="refprov">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="costo">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="preciodetal">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="preciomayor">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="ufechacompra">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="ufechaventa">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="saldos">client.gui.components.TableFindData</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="asientogenerico">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="piva">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="pcostoultcompra">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="precioplatweb">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>
+
+                <!--  limpiando llaves externas -->
+                <component>
+                    <driver>this</driver>
+                    <method>cleanExternalValues</method>
+                </component>
+            </object>
+        </events>
+    </component>
+</FORM>

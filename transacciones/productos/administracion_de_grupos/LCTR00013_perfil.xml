@@ -1,0 +1,226 @@
+<FORM>
+  <preferences>
+    <size width="840" height="700" />
+    <name>Agrupar Productos</name>
+    <icon>AGRUPARPRODSERV</icon>
+    <iconificable />
+    <resizable />
+    <closable />
+    <maximizable />
+    <notCleanExportValue>ndocumento</notCleanExportValue>
+  </preferences>
+  <panel locate="North" type="FlowLayout" />
+  <panel locate="West" type="FlowLayout" />
+  <panel locate="East" type="FlowLayout" />
+  <panel locate="Center" type="BorderLayout">
+    <panel locate="North" type="BorderLayout">
+      <panel locate="West" type="FlowLayout" />
+      <panel locate="East" type="FlowLayout" />
+      <box locate="South" length="8" />
+      <panel locate="Center" type="BorderLayout">
+        <panel locate="West" type="GridLayout" rows="4" cols="1">
+          <component>
+            <driver id="plantilla">common.gui.components.XMLLabel</driver>
+            <parameters>
+              <arg attribute="text">Plantilla</arg>
+            </parameters>
+          </component>
+          <component>
+            <driver id="linea">common.gui.components.XMLLabel</driver>
+            <parameters>
+              <arg attribute="text">Sección</arg>
+            </parameters>
+          </component>
+          <component>
+            <driver id="grupo">common.gui.components.XMLLabel</driver>
+            <parameters>
+              <arg attribute="text">GROUP</arg>
+            </parameters>
+          </component>
+          <component>
+            <driver id="sgrupo">common.gui.components.XMLLabel</driver>
+            <parameters>
+              <arg attribute="text">SGROUP</arg>
+            </parameters>
+          </component>
+        </panel>
+        <panel locate="Center" type="GridLayout" rows="4" cols="1">
+          <component>
+            <driver id="plantilla">client.gui.components.XMLComboBox</driver>
+            <parameters>
+              <arg attribute="sqlCombo">LCSEL0034</arg>
+              <arg attribute="exportValue">ndocumento</arg>
+              <arg attribute="clean">false</arg>
+              <arg attribute="preferredLength">300</arg>
+              <arg attribute="addAttribute">key</arg>
+              <arg attribute="nameField">linea</arg>
+              <arg attribute="sqlCode">LCSEL0038</arg>
+            </parameters>
+          </component>
+          <component>
+            <driver id="linea">client.gui.components.XMLComboBox</driver>
+            <parameters>
+              <arg attribute="sqlCombo">SEL0368</arg>              
+              <arg attribute="importValueCode">ndocumento</arg>
+              <arg attribute="clean">false</arg>
+              <arg attribute="exportValue">linea</arg>
+              <arg attribute="preferredLength">300</arg>
+              <arg attribute="addAttribute">key</arg>
+              <arg attribute="nameField">linea</arg>
+              <arg attribute="sqlCode">LCSEL0035</arg>
+              <arg attribute="nullValue">true</arg>
+              <arg attribute="returnNullValue">true</arg>
+            </parameters>
+          </component>
+          <component>
+            <driver id="grupo">client.gui.components.XMLComboBox</driver>
+            <parameters>
+              <arg attribute="nameField">grupo</arg>
+              <arg attribute="sqlCombo">SEL0370</arg>
+              <arg attribute="clean">false</arg>
+              <arg attribute="importValueCode">ndocumento</arg>
+              <arg attribute="importValue">linea</arg>
+              <arg attribute="importValueCode">linea</arg>
+              <arg attribute="exportValue">grupo</arg>
+              <arg attribute="addAttribute">key</arg>
+              <arg attribute="preferredLength">300</arg>
+              <arg attribute="sqlCode">LCSEL0036</arg>
+              <arg attribute="nullValue">true</arg>
+              <arg attribute="returnNullValue">true</arg>
+            </parameters>
+          </component>
+          <component>
+            <driver id="sgrupo">client.gui.components.XMLComboBox</driver>
+            <parameters>
+              <arg attribute="nameField">sgrupo</arg>
+              <arg attribute="sqlCombo">SEL0372</arg>
+              <arg attribute="clean">false</arg>
+              <arg attribute="importValueCode">ndocumento</arg>
+              <arg attribute="importValue">linea</arg>
+              <arg attribute="importValue">grupo</arg>
+              <arg attribute="importValueCode">linea</arg>
+              <arg attribute="importValueCode">grupo</arg>
+              <arg attribute="exportValue">sgrupo</arg>
+              <arg attribute="addAttribute">key</arg>
+              <arg attribute="preferredLength">300</arg>
+              <arg attribute="sqlCode">LCSEL0037</arg>
+              <arg attribute="nullValue">true</arg>
+              <arg attribute="returnNullValue">true</arg>              
+            </parameters>
+          </component>
+        </panel>
+      </panel>
+    </panel>
+    <component locate="Center">
+      <driver>client.gui.components.TableFindData</driver>
+      <parameters>
+        <arg attribute="rows">100</arg>
+        <!-- <arg attribute="initSQL">MTSEL0035</arg> -->
+        <arg attribute="driverEvent" id="linea">client.gui.components.XMLComboBox</arg>
+        <arg attribute="keySQL">LCSEL0035</arg>
+        <arg attribute="driverEvent" id="grupo">client.gui.components.XMLComboBox</arg>
+        <arg attribute="keySQL">LCSEL0036</arg>
+        <arg attribute="driverEvent" id="sgrupo">client.gui.components.XMLComboBox</arg>
+        <arg attribute="keySQL">LCSEL0037</arg>
+        <arg attribute="driverEvent" id="plantilla">client.gui.components.XMLComboBox</arg>
+        <arg attribute="keySQL">LCSEL0038</arg>
+        <subarg>
+          <arg attribute="name">SELECTION</arg>
+          <arg attribute="length">85</arg>
+          <arg attribute="type">BOOLEAN</arg>
+          <arg attribute="enabled">true</arg>
+          <arg attribute="clean">true</arg>
+          <arg attribute="returnCol">1</arg>
+        </subarg>
+        <subarg>
+          <arg attribute="name">CODE</arg>
+          <arg attribute="length">120</arg>
+          <arg attribute="type">STRING</arg>
+          <arg attribute="enabled">false</arg>
+          <arg attribute="returnCol">0</arg>
+          <arg attribute="clean">true</arg>
+        </subarg>
+        <subarg>
+          <arg attribute="name">NAME</arg>
+          <arg attribute="length">575</arg>
+          <arg attribute="type">STRING</arg>
+          <arg attribute="enabled">false</arg>
+          <arg attribute="clean">true</arg>
+        </subarg>
+      </parameters>
+    </component>
+  </panel>
+  <component locate="South">
+    <driver>common.gui.components.ButtonsPanel</driver>
+    <parameters>
+      <subarg>
+        <arg attribute="label">SALVE</arg>
+        <arg attribute="icon">/icons/ico_guardar.png</arg>
+      </subarg>
+      <arg>NEW</arg>
+      <arg>EXIT</arg>
+    </parameters>
+    <events>
+      <object>
+        <name>SALVE</name>
+        <component>
+          <driver id="linea">client.gui.components.XMLComboBox</driver>
+          <method>getPackage</method>
+        </component>
+        <component>
+          <driver id="grupo">client.gui.components.XMLComboBox</driver>
+          <method>getPackage</method>
+        </component>
+        <component>
+          <driver id="sgrupo">client.gui.components.XMLComboBox</driver>
+          <method>getPackage</method>
+        </component>
+
+        <component>
+          <driver>client.gui.components.TableFindData</driver>
+          <method>getPackage</method>
+        </component>
+        <component>
+            <driver>common.gui.components.ButtonsPanel</driver>
+            <method>setEnabled</method>
+            <parameters>
+               <arg attribute="button">SALVE</arg>
+               <arg attribute="state">true</arg>
+            </parameters>
+         </component>        
+      </object>
+      <object>
+        <name>NEW</name>
+        <component>
+          <driver id="sgrupo">client.gui.components.XMLComboBox</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="grupo">client.gui.components.XMLComboBox</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="linea">client.gui.components.XMLComboBox</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver>client.gui.components.TableFindData</driver>
+          <method>clean</method>
+        </component>
+        <!--  limpiando llaves externas -->
+        <component>
+          <driver>this</driver>
+          <method>cleanExternalValues</method>
+        </component>
+        <component>
+            <driver>common.gui.components.ButtonsPanel</driver>
+            <method>setEnabled</method>
+            <parameters>
+               <arg attribute="button">SALVE</arg>
+               <arg attribute="state">true</arg>
+            </parameters>
+         </component>                
+      </object>
+    </events>
+  </component>
+</FORM>
