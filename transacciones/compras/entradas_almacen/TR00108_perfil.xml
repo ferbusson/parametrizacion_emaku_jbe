@@ -153,6 +153,7 @@
                                 <arg attribute="preferredLength">260</arg>
                                 <arg attribute="sqlCombo">MTSEL0143</arg>
                                 <arg attribute="clean">false</arg>
+                                <arg attribute="nullValue">true</arg>
                                 <arg attribute="font">Dialog,0,11</arg>
                                 <arg attribute="exportValue">transportadora</arg>
                                 <arg attribute="exportTextValue">transportadoranombre</arg>
@@ -165,6 +166,7 @@
                                 <subarg>                                    
                                     <arg attribute="format">TEXT</arg>
                                     <arg attribute="size">20</arg>
+                                    <arg attribute="nullValue">true</arg>
                                     <arg attribute="font">Dialog,0,11</arg>
                                     <arg attribute="maxlength">26</arg>
                                     <arg attribute="exportValue">guia</arg>
@@ -178,6 +180,7 @@
                             <parameters>                                
                                 <arg attribute="dateFormatString">yyyy-MM-dd HH:mm:ss</arg>
                                 <arg attribute="font">Dialog,0,11</arg>
+                                <arg attribute="nullValue">true</arg>
                                 <arg attribute="exportValue">fechar</arg>
                             </parameters>
                         </component>
@@ -187,6 +190,7 @@
                                 <subarg>                                    
                                     <arg attribute="format">TEXT</arg>
                                     <arg attribute="size">4</arg>
+                                    <arg attribute="nullValue">true</arg>
                                     <arg attribute="font">Dialog,0,11</arg>
                                     <arg attribute="maxlength">4</arg>
                                     <arg attribute="exportValue">cajas</arg>
@@ -308,7 +312,7 @@
                                     <arg attribute="enabled">false</arg>
                                     <arg attribute="return">false</arg>
                                     <arg attribute="clean">true</arg>
-                                    <arg attribute="calculateDate">fechar+dcredit</arg> <!-- tiene en cuenta la fecha recepcion -->
+                                    <arg attribute="calculateDate">fechai+dcredit</arg> <!-- tiene en cuenta la fecha factura proveedor para el vencimiento -->
                                     <arg attribute="dateFormat">yyyy/MM/dd</arg>
                                     <arg attribute="printable">true</arg>
                                 </subarg>
@@ -347,7 +351,7 @@
                                 <arg attribute="exportValue">keyBodega</arg>
                                 <arg attribute="sqlCombo">LCSEL0433</arg>
                                 <arg attribute="clean">false</arg>
-                                <arg attribute="selectedIndex">0</arg>
+                                <arg attribute="selectedIndex">1</arg>
                                 <arg attribute="name">BODEGA</arg>
                                 <arg attribute="addAttribute">key</arg>
                                 <arg attribute="nameField">bodegaEntrante</arg>
@@ -359,7 +363,7 @@
                                 <arg attribute="keySQL">LCSEL0745</arg>
                                 <arg attribute="driverEvent" id="info_documento">client.gui.components.TableDataFields</arg>
                                 <arg attribute="sqlCombo">LCSEL0047</arg>
-                                <arg attribute="selectedIndex">0</arg>
+                                <arg attribute="selectedIndex">1</arg>
                                 <arg attribute="exportValue">temporada</arg>
                                 <arg attribute="clean">false</arg>
                                 <arg attribute="printable">true</arg>
@@ -2943,7 +2947,7 @@
                                 <arg attribute="importTotalCol">w,netomasflete</arg>
                                 <arg attribute="beanshell">e=w&gt;c?(w*d)/100:0</arg>
                                 <arg attribute="formula">g=w</arg>
-                                <arg attribute="enabled">false</arg>
+                                <arg attribute="enabled">true</arg>
                                 <!-- a -->
                                 <subarg>
                                     <arg attribute="name">CUENTA</arg>
@@ -3046,7 +3050,7 @@
                                 <arg attribute="importTotalCol">q,netomasflete</arg>
                                 <arg attribute="beanshell">e=q&gt;c?(w*d)/100:0</arg>
                                 <arg attribute="formula">g=w</arg> <!-- el valor base es el iva -->
-                                <arg attribute="enabled">false</arg>
+                                <arg attribute="enabled">true</arg>
                                 <!-- a -->
                                 <subarg>
                                     <arg attribute="name">CUENTA</arg>
@@ -3149,7 +3153,7 @@
                                 <arg attribute="importTotalCol">k,netomasflete</arg>
                                 <arg attribute="beanshell">e=n*d/100:0</arg>
                                 <arg attribute="formula">g=n</arg>
-                                <arg attribute="enabled">false</arg>
+                                <arg attribute="enabled">true</arg>
                                 <subarg>
                                     <arg attribute="name">CUENTA</arg>
                                     <arg attribute="length">120</arg>
@@ -3245,7 +3249,7 @@
                                 <arg attribute="importTotalCol">k,netomasflete</arg>
                                 <arg attribute="beanshell">e=k&gt;c?(k*d)/100:0</arg>
                                 <arg attribute="formula">g=k</arg>
-                                <arg attribute="enabled">false</arg>
+                                <arg attribute="enabled">true</arg>
                                 <!-- a -->
                                 <subarg>
                                     <arg attribute="name">CUENTA</arg>
@@ -3629,6 +3633,8 @@
                                 <driver>this</driver>
                                 <method>getPackage</method>
                                 <parameters>
+                                    <arg attribute="blankPackage">true</arg>
+                                    <arg attribute="nullField">true</arg>
                                     <subarg>
                                         <arg attribute="importValue">transportadora</arg>
                                         <arg attribute="importValue">guia</arg>
@@ -3834,6 +3840,8 @@
                                 <driver>this</driver>
                                 <method>getPackage</method>
                                 <parameters>
+                                <arg attribute="nullField">true</arg>
+                                <arg attribute="blankPackage">true</arg>
                                     <subarg>
                                         <arg attribute="importValue">transportadoranombre</arg>
                                         <arg attribute="importValue">guia</arg>

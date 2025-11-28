@@ -131,6 +131,27 @@
 
   </preferences>
 
+<!-- este componente va a cargar el idtercero que aplica para javipuntos, puede ser el tercero principal de la factura
+o el carpintero asociado -->
+<component>
+    <driver id="idtercerojavipuntos">common.gui.components.GenericData</driver>
+    <parameters>
+      <arg attribute="keySQL">JBSEL0023</arg>
+      <arg attribute="driverEvent" id="nro_orden_pedido">client.gui.components.TableDataFields</arg>
+      <subarg>
+        <arg attribute="format">TEXT</arg>
+        <arg attribute="name">idtercerojavipuntos</arg>
+        <arg attribute="size">20</arg>
+        <arg attribute="maxlength">20</arg>
+        <arg attribute="clean">true</arg>
+        <arg attribute="nameField">idTercero</arg>
+        <arg attribute="exportValue">idtercerojavipuntos</arg>
+        <arg attribute="nullValue">FALSE</arg>
+        <arg attribute="addAttribute">key</arg>
+      </subarg>
+    </parameters>
+  </component>
+
   <component>
     <driver id="prefijo_pedido">common.gui.components.GenericData</driver>
     <parameters>
@@ -939,6 +960,7 @@
                         <arg attribute="sqlCode">JBSEL0019</arg>                        <!-- dias vigencia -->
                         <arg attribute="sqlCode">JBSEL0020</arg>                        <!-- puntos tercero -->
                         <arg attribute="sqlCode">JBSEL0021</arg>                        <!-- estado del pedido -->
+                        <arg attribute="sqlCode">JBSEL0023</arg>                        <!-- id tercero para javipuntos -->
                         <!--<arg attribute="sqlCode">SEL0177</arg>-->                        <!-- fecha factura SEL0177-->
                         <arg attribute="sqlCode">JBSEL0011</arg>                        <!-- tabla principal de productos -->
                         <arg attribute="sqlCode">JBSEL0012</arg>                        <!-- tabla de anticipos -->
@@ -5180,18 +5202,7 @@
                 <component>
                   <driver>client.gui.components.FindThird</driver>
                   <method>getPackage</method>
-                </component>
-
-                <!-- redencion de puntos administrativo -->
-                <component>
-                  <driver id="puntosredimidos">common.gui.components.GenericData</driver>
-                  <method>getPackage</method>
-                </component>
-                <!-- generacion de puntos administrativo -->
-                <component>
-                  <driver id="totaljavipuntosgenerados">client.gui.components.TableDataFields</driver>
-                  <method>getPackage</method>
-                </component>
+                </component>                
 
                 
                 <!-- 11 -->
@@ -5491,6 +5502,24 @@
                   <driver id="cvendedores">client.gui.components.TableFindData</driver>
                   <method>getPackage</method>
                 </component>
+
+                <!--35-->
+                <component>
+                  <driver id="idtercerojavipuntos">common.gui.components.GenericData</driver>
+                  <method>getPackage</method>
+                </component>                
+
+                <!-- redencion de puntos administrativo -->
+                <component>
+                  <driver id="puntosredimidos">common.gui.components.GenericData</driver>
+                  <method>getPackage</method>
+                </component>
+                <!-- generacion de puntos administrativo -->
+                <component>
+                  <driver id="totaljavipuntosgenerados">client.gui.components.TableDataFields</driver>
+                  <method>getPackage</method>
+                </component>
+
               </action>
 
               <!-- Impresion server %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->

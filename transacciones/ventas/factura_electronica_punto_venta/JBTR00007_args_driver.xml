@@ -30,11 +30,7 @@
         </parameters>
     </LNData>
     <!-- 7  tercero_def -->
-    <arg>INS0048</arg>      
-    <!-- inserta en puntos_tercero redencion de puntos-->
-    <arg>JBINS0009</arg>
-    <!-- inserta en puntos_tercero generacion de puntos-->
-    <arg>JBINS0008</arg>
+    <arg>INS0048</arg>          
 
     <!-- contacto_pedidos -->
     <!-- <arg>JBINS0001</arg>-->
@@ -675,5 +671,12 @@ JBE ACCOUNTS TABLE:
       </parameters>
     </LNData>
   </subarg>
+
+    <!-- id tercero para javipuntos -->
+    <arg attribute="addKey"/>
+  <!-- inserta en puntos_tercero redencion de puntos-->
+    <arg>JBINS0009</arg>
+    <!-- inserta en puntos_tercero generacion de puntos-->
+    <arg>JBINS0008</arg>
 
 </container>

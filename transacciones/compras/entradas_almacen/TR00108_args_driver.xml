@@ -267,9 +267,9 @@
         <subarg>
           <arg attribute="accountCol">IdProdServ,0</arg>
           <!-- mercancia 5% -->
-          <arg attribute="accountCol">14350101,5</arg>             
+          <arg attribute="accountCol">14350102,5</arg>             
           <!-- mercancia 19% -->
-          <arg attribute="accountCol">14350102,5</arg>          
+          <arg attribute="accountCol">14350101,5</arg>          
           <!-- mercancia excluida -->
           <arg attribute="accountCol">14350103,5</arg>        
 
@@ -282,7 +282,7 @@
           <!-- iva 5% -->
           <arg attribute="accountCol">24080104,6</arg>
           <!-- iva 19% -->
-          <arg attribute="accountCol">24081003,6</arg>
+          <arg attribute="accountCol">24080103,6</arg>
         </subarg>
       </parameters>
     </LNData>
