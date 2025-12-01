@@ -672,6 +672,18 @@ JBE ACCOUNTS TABLE:
     </LNData>
   </subarg>
 
+    <arg attribute="removeKey">idTercero</arg>
+
+    <arg attribute="removeKey">cuenta</arg>
+
+    <arg attribute="removeKey">centrocosto</arg>
+
+    <arg attribute="removeKey">bodegaSaliente</arg>
+
+    <arg attribute="removeKey"/>
+
+    <arg attribute="removeKey">idTercero</arg>
+
     <!-- id tercero para javipuntos -->
     <arg attribute="addKey"/>
   <!-- inserta en puntos_tercero redencion de puntos-->

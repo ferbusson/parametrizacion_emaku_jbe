@@ -537,7 +537,7 @@
           <driver id="nitcc">client.gui.components.EmakuSearchField</driver>
           <method>validPackage</method>
         </component>
-        <component>
+        <!-- <component>
           <driver id="nombre1">common.gui.components.GenericData</driver>
           <method>validPackage</method>
         </component>
@@ -552,7 +552,7 @@
         <component>
           <driver id="apellido2">common.gui.components.GenericData</driver>
           <method>validPackage</method>
-        </component>
+        </component> -->
         <component>
           <driver id="email">common.gui.components.GenericData</driver>
           <method>validPackage</method>

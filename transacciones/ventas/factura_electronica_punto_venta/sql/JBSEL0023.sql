@@ -25,7 +25,16 @@ on
 	a.ndocumento = i.ndocumento
 )
 select
-	pt.id
+	CASE -- este case hace que retorne null aunque la subconsulta retorne vacio, con esto evito errores al guardar puntos
+		WHEN COUNT(pt.id) > 0 THEN 
+			(SELECT pt.id FROM aux_terceros_documento a
+			inner join perfil_tercero pt
+			on (a.id = pt.id or a.id_tercero_referente = pt.id)
+			and pt.es_pintor = true 
+			and pt.id_catalogo = 1 
+			LIMIT 1)
+		ELSE NULL 
+	END as id
 from
 	aux_terceros_documento a
 inner join

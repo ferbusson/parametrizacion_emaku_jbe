@@ -6,14 +6,15 @@ insert into
         fecha)
 select
     foo.ndocumento,
-    foo.id_tercero,
+    CASE WHEN TRIM(foo.id_tercero) != '' THEN foo.id_tercero::integer ELSE -1 END as id_tercero,
     foo.puntos_generados,
     foo.fecha
 from        
     (select
-        ?::bigint as ndocumento,
-        ?::integer as id_tercero,
-        ?::numeric as puntos_generados,
+        '?'::bigint as ndocumento,
+        '?'::varchar as id_tercero,
+        '?'::numeric as puntos_generados,
         CURRENT_TIMESTAMP as fecha) as foo
 WHERE
-    foo.puntos_generados > 0;
+    foo.puntos_generados > 0
+    and TRIM(foo.id_tercero) != '';

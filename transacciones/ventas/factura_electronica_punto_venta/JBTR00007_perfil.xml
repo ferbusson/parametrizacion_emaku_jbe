@@ -146,7 +146,7 @@ o el carpintero asociado -->
         <arg attribute="clean">true</arg>
         <arg attribute="nameField">idTercero</arg>
         <arg attribute="exportValue">idtercerojavipuntos</arg>
-        <arg attribute="nullValue">FALSE</arg>
+        <arg attribute="nullValue">true</arg>
         <arg attribute="addAttribute">key</arg>
       </subarg>
     </parameters>
@@ -5503,6 +5503,36 @@ o el carpintero asociado -->
                   <method>getPackage</method>
                 </component>
 
+                <!-- 40 remueve key idTercero-->
+                <component>
+                  <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
+                  <method>getBlankPackage</method>
+                </component>
+                <!-- 40 remueve key cuenta-->
+                <component>
+                  <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
+                  <method>getBlankPackage</method>
+                </component>
+                <!-- 40 remueve key centrocosto-->
+                <component>
+                  <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
+                  <method>getBlankPackage</method>
+                </component>
+                <!-- 40 remueve key bodega saliente -->
+                <component>
+                  <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
+                  <method>getBlankPackage</method>
+                </component>
+                <!-- 40 remueve key sin nombre-->
+                <component>
+                  <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
+                  <method>getBlankPackage</method>
+                </component>
+                <!-- 40 remueve key idTercero-->
+                <component>
+                  <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
+                  <method>getBlankPackage</method>
+                </component>
                 <!--35-->
                 <component>
                   <driver id="idtercerojavipuntos">common.gui.components.GenericData</driver>
