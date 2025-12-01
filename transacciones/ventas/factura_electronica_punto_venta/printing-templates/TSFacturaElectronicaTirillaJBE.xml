@@ -29,7 +29,8 @@
       <field row="403" col="15" type="STRING">Numero:</field>
       <field row="413" col="15" type="STRING">Fecha:</field>
       <field row="423" col="15" type="STRING">Hora:</field>
-      <field row="433" col="15" type="STRING">Cajero:</field>
+      <field row="433" col="15" type="STRING">Vendedor:</field>
+      <field row="443" col="15" type="STRING">Cajero:</field>
       <!-- <barcodeImage row="240" col="30" width="10" type="NUMERIC" mask="0000000000" /> -->
 
       <!-- <ndocument row="403" col="66" format="Integer"/>
@@ -37,20 +38,20 @@
       <time row="423" col="53" /> -->
 
       <!-- Informacion detallada de productos -->
-      <line row="443" col="2" row2="443" col2="218" />
-      <field row="453" col="177" type="STRING">Item #</field>
-      <field row="453" col="10" type="STRING">Código</field>
-      <field row="463" col="10" type="STRING">Descripcion</field>
-      <field row="473" col="10" type="STRING">Cant</field>
-      <field row="473" col="60" type="STRING">%IVA</field>
-      <field row="473" col="110" type="STRING">V. Unit</field>
-      <field row="473" col="180" type="STRING">Total</field>
-      <line row="483" col="2" row2="483" col2="218" />
+      <line row="448" col="2" row2="448" col2="218" />
+      <field row="458" col="177" type="STRING">Item #</field>
+      <field row="458" col="10" type="STRING">Código</field>
+      <field row="468" col="10" type="STRING">Descripcion</field>
+      <field row="478" col="10" type="STRING">Cant</field>
+      <field row="478" col="60" type="STRING">%IVA</field>
+      <field row="478" col="110" type="STRING">V. Unit</field>
+      <field row="478" col="180" type="STRING">Total</field>
+      <line row="488" col="2" row2="488" col2="218" />
    </metadata>
 
    	<!-- 0 Numero fac -->
 	<package validate="true">
-		<field row="403" fontName="Dialog" fontSize="8" fontStyle="0" rowAcum="10"  col="66" type="STRING" />
+		<field row="403" fontName="Dialog" fontSize="8" fontStyle="0" rowAcum="10"  col="86" type="STRING" />
 	</package>
     	<!-- 0 fecha fac -->
 	<package validate="true">
@@ -88,12 +89,17 @@
      
    <!-- 5 vendedor -->
    <package>
-      <field row="433" col="53" fontName="Dialog" fontSize="7" fontStyle="0" type="STRING" />
+      <field row="433" col="60" fontName="Dialog" fontSize="7" fontStyle="0" type="STRING" />
+   </package>
+
+   <!-- 5 cajero -->
+   <package>
+      <field row="443" col="60" fontName="Dialog" fontSize="7" fontStyle="0" type="STRING" />
    </package>
 
    <!-- 6 tabla productos -->
    <package>
-      <subpackage rowInit="493" rowAcum="10" colCounter="200">
+      <subpackage rowInit="498" rowAcum="10" colCounter="200">
          <field col="10" type="STRING" incrementRow="true" /> <!-- codigo -->
          <field col="10" incrementRow="true" type="STRING" /> <!-- descripcion -->
          <field col="15" width="3" type="NUMERIC" mask="###" /> <!-- cantidad -->
@@ -338,6 +344,9 @@
    <!-- 49 -->
    <package>
       <field textLine="¡¡GRACIAS POR SU COMPRA!!" rowAcum="15" textCol="43" row="last" col="200" type="STRING"/>
+   </package>
+   <package>
+      <field textLine="ICA Actividad Comercial: 211 - Tarifa 5x1000" rowAcum="15" textCol="20" row="last" col="200" type="STRING"/>
    </package>
    
    <!-- 50 -->

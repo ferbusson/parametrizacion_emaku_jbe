@@ -775,7 +775,7 @@
                         <arg attribute="alignment">RIGHT</arg>
                         <arg attribute="idAutoDocument">codigo_tipo</arg>
                         <arg attribute="importValue">codigo_tipo</arg>              
-                        <arg attribute="sqlCode">LCSEL0437</arg> <!-- vendedor -->
+                        <arg attribute="sqlCode">LCSEL0437</arg> <!-- cajero -->
                         <arg attribute="sqlCode">SEL0169</arg> <!-- tercero -->
                         <arg attribute="sqlCode">SEL0120</arg> <!-- observaciones -->
                         <arg attribute="sqlCode">DGSEL0081</arg> <!-- dias vigencia -->
@@ -800,7 +800,7 @@
                         <arg attribute="sqlCode">RFSEL015</arg> <!--hasta resolucion -->
                         <arg attribute="sqlCode">LCSEL0091</arg> <!-- vigencia meses resolucion-->
                         <arg attribute="sqlCode">RFSEL016</arg> <!-- prefijo resolucion -->
-                        <arg attribute="sqlCodeExportValue">JBSEL0014,_sigla,_usuario,_norden,_id_char_tercero_referente,_nombre_tercero_referente,_direccion_contacto,_telefono_contacto,_id_vendedor,_vencimiento,_ndocumento_factura,_numero_pedido</arg>
+                        <arg attribute="sqlCodeExportValue">JBSEL0024,_sigla,_usuario,_norden,_id_char_tercero_referente,_nombre_tercero_referente,_direccion_contacto,_telefono_contacto,_id_vendedor,_vencimiento,_ndocumento_factura,_numero_pedido</arg>
                       </subarg>
                     </parameters>
                   </component>
@@ -1747,7 +1747,7 @@
         </subarg>
       </parameters>
     </component>
-    <component>
+    <!-- <component>
       <driver id="cajero">common.gui.components.GenericData</driver>
       <parameters>
         <subarg>
@@ -1765,7 +1765,29 @@
           <arg attribute="printable">true</arg>
         </subarg>
       </parameters>
-    </component>
+    </component> -->
+
+    <component locate="North">
+            <driver id="cajero">common.gui.components.GenericData</driver>
+            <parameters>
+              <arg attribute="Panel">false</arg>
+              <subarg>
+                <arg attribute="format">TEXT</arg>
+                <arg attribute="getValue">_usuario</arg>
+                <arg attribute="exportValue">cajero</arg>
+                <arg attribute="name">cajero</arg>
+                <arg attribute="maxlength">80</arg>
+                <arg attribute="size">15</arg>
+                <arg attribute="printable">TRUE</arg>
+                <arg attribute="enabled">false</arg>
+                <arg attribute="clean">true</arg>
+                <arg attribute="font">Dialog,0,12</arg>
+                <arg attribute="alignment">RIGHT</arg>
+                <arg attribute="foreground">0,0,0</arg>
+                <arg attribute="background">186,245,248</arg>
+              </subarg>
+            </parameters>
+          </component>
     <!-- total sin retenciones -->
     <component>
       <driver id="totalmenosreteglobal">client.gui.components.TableDataFields</driver>
@@ -4586,6 +4608,11 @@
                       <driver id="vendedor">common.gui.components.GenericData</driver>
                       <method>getPrintPackage</method>
                     </component>
+                  <!-- cajero -->
+                    <component>
+                      <driver id="cajero">common.gui.components.GenericData</driver>
+                      <method>getPrintPackage</method>
+                    </component>
 
                     <!-- 5 tabla productos -->
                     <component>
@@ -5010,6 +5037,11 @@
                 </component> -->
 
                 <!-- 49 Paquete Blanco Gracias por su compra -->
+                <component>
+                  <driver id="vpago">common.gui.components.GenericData</driver>
+                  <method>getBlankPackage</method>
+                </component>
+                <!-- ICA -->
                 <component>
                   <driver id="vpago">common.gui.components.GenericData</driver>
                   <method>getBlankPackage</method>

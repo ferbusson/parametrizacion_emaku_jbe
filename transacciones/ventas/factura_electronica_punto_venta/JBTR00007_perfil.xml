@@ -7326,6 +7326,10 @@ o el carpintero asociado -->
                   </parameters>
                 </component>
 
+                <component>
+                  <driver id="vendedor">common.gui.components.GenericData</driver>
+                  <method>getPrintPackage</method>
+                </component>
                 <!-- 5 -->
                 <component>
                   <driver id="cajero">common.gui.components.GenericData</driver>
@@ -7713,6 +7717,11 @@ o el carpintero asociado -->
                 </component> -->
 
                 <!-- 49 Paquete Blanco Gracias por su compra -->
+                <component>
+                  <driver id="vpago">common.gui.components.GenericData</driver>
+                  <method>getBlankPackage</method>
+                </component>
+                <!-- ICA -->
                 <component>
                   <driver id="vpago">common.gui.components.GenericData</driver>
                   <method>getBlankPackage</method>
