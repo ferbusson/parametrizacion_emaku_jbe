@@ -136,24 +136,28 @@
                         <field row="660" col="440" type="STRING" fontName="Dialog" fontSize="7" fontStyle="1">Consignación</field>
 
 
-                        <field row="698" col="140" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Esta Factura se asimila en sus efectos legales a la letra de cambio (Según el articulo 774 del Código de Comercio).</field>
-			<field row="704" col="200" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Aplican Políticas de Cambio, Conserve este documento para cualquier novedad.</field>			
+                        
+			<!-- <field row="704" col="200" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Aplican Políticas de Cambio, Conserve este documento para cualquier novedad.</field>			 -->
 			<!--<field row="688" col="40" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">novedad.</field>-->
+
+			<field row="698" col="40" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">Dirección de Contacto:</field>
+			<field row="708" col="40" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">Teléfono de Contacto:</field>
 
 			<field row="728" col="120" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">______________________________________</field>
 			<field row="736" col="140" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Firma Aceptación Cliente</field>
 			<field row="728" col="360" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">______________________________________</field>
 			<field row="736" col="390" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Firma Autorización</field>
 
-			<field row="746" col="135" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Factura elaborada, impresa y enviada electrónicamente por: JAVIER BENAVIDES ERAZO SAS S.A.S Nit. 891.224.230-2</field>
-			<field row="766" col="290" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Software E-MAKU</field>
+			<field row="746" col="140" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Esta Factura se asimila en sus efectos legales a la letra de cambio (Según el articulo 774 del Código de Comercio).</field>
+			<field row="762" col="135" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Factura elaborada, impresa y enviada electrónicamente por: JAVIER BENAVIDES ERAZO SAS S.A.S Nit. 891.224.230-2</field>
+			<field row="770" col="290" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Software E-MAKU</field>
 
                 </endofpage>
 
 
 		<!-- cufe -->
 		<package>
-			<field multipage="true" rownewpage="756" colnewpage="150" row="756" center="612" fontName="Dialog" fontSize="6" fontStyle="0" type="STRING"/>
+			<field multipage="true" rownewpage="754" colnewpage="150" row="754" center="612" fontName="Dialog" fontSize="6" fontStyle="0" type="STRING"/>
 		</package>
 		<!-- 0 codigo tipo -->
 		<package>
@@ -176,7 +180,7 @@
 
         <!--  Numero orden -->
 	     <package>
-		<field multipage="true" rownewpage="149" colnewpage="400" row="149" col="400" width="10" type="STRING" mask="0" fontName="Dialog" fontSize="8" fontStyle="0"/>
+		<field multipage="true" rownewpage="149" colnewpage="445" row="149" col="445" width="10" type="STRING" mask="0" fontName="Dialog" fontSize="8" fontStyle="0"/>
 	     </package>
 
          		<!-- 7 hora -->
@@ -323,6 +327,14 @@
 				<!-- Observaciones -->
 				<package>
 					<field row="672" col="40" type="TEXT" width="180" height="3" rowAcum="7" fontName="Dialog" fontSize="6" fontStyle="0" />
+				</package>
+				<!-- direccion de contacto -->
+				<package>
+					<field row="698" col="120" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0" />
+				</package>
+				<!-- telefono de contacto -->
+				<package>
+					<field row="708" col="120" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0" />
 				</package>
 
 

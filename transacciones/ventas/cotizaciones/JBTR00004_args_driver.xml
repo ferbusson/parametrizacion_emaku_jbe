@@ -71,9 +71,5 @@
             <arg attribute="discartKey">bodegaEntrante</arg>
           </parameters>
         </LNData>        
-        <LNData>
-            <driver>LNInventarios</driver>
-            <method>traslados</method>
-        </LNData>        
     </subarg>
 </container>
