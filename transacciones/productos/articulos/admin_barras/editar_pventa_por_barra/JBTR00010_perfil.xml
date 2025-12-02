@@ -330,14 +330,14 @@
           </parameters>
         </component>
         <component locate="Center">
-          <driver id="putilidad1">common.gui.components.GenericData</driver>
+          <driver id="putilidad1a">common.gui.components.GenericData</driver>
           <parameters>
             <subarg>
               <arg attribute="format">NUMERIC</arg>
               <arg attribute="size">7</arg>
               <arg attribute="maxlength">26</arg>
               <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="calculateBSExportValue">pventauno!=0?((pventauno/(1+(tarifaasientogenerico/100)))-pcostoultcompraexport)/(pventauno/(1+(tarifaasientogenerico/100)))*100:0</arg>
+              <arg attribute="calculateBSExportValue">abanicouno!=0?((abanicouno/(1+(tarifaasientogenerico/100)))-pcostoultcompraexport)/(abanicouno/(1+(tarifaasientogenerico/100)))*100:0</arg>
               <arg attribute="enabled">false</arg>
               <arg attribute="clean">true</arg>
             </subarg>
@@ -370,14 +370,14 @@
           </parameters>
         </component>
         <component locate="Center">
-          <driver id="putilidad1">common.gui.components.GenericData</driver>
+          <driver id="putilidad1b">common.gui.components.GenericData</driver>
           <parameters>
             <subarg>
               <arg attribute="format">NUMERIC</arg>
               <arg attribute="size">7</arg>
               <arg attribute="maxlength">26</arg>
               <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="calculateBSExportValue">pventauno!=0?((pventauno/(1+(tarifaasientogenerico/100)))-pcostoultcompraexport)/(pventauno/(1+(tarifaasientogenerico/100)))*100:0</arg>
+              <arg attribute="calculateBSExportValue">baseuno!=0?((baseuno/(1+(tarifaasientogenerico/100)))-pcostoultcompraexport)/(baseuno/(1+(tarifaasientogenerico/100)))*100:0</arg>
               <arg attribute="enabled">false</arg>
               <arg attribute="clean">true</arg>
             </subarg>
@@ -451,14 +451,14 @@
           </parameters>
         </component>
         <component locate="Center">
-          <driver id="putilidad1">common.gui.components.GenericData</driver>
+          <driver id="putilidad2a">common.gui.components.GenericData</driver>
           <parameters>
             <subarg>
               <arg attribute="format">NUMERIC</arg>
               <arg attribute="size">7</arg>
               <arg attribute="maxlength">26</arg>
               <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="calculateBSExportValue">pventauno!=0?((pventauno/(1+(tarifaasientogenerico/100)))-pcostoultcompraexport)/(pventauno/(1+(tarifaasientogenerico/100)))*100:0</arg>
+              <arg attribute="calculateBSExportValue">abanicodos!=0?((abanicodos/(1+(tarifaasientogenerico/100)))-pcostoultcompraexport)/(abanicodos/(1+(tarifaasientogenerico/100)))*100:0</arg>
               <arg attribute="enabled">false</arg>
               <arg attribute="clean">true</arg>
             </subarg>
@@ -491,14 +491,14 @@
           </parameters>
         </component>
         <component locate="Center">
-          <driver id="putilidad1">common.gui.components.GenericData</driver>
+          <driver id="putilidad2b">common.gui.components.GenericData</driver>
           <parameters>
             <subarg>
               <arg attribute="format">NUMERIC</arg>
               <arg attribute="size">7</arg>
               <arg attribute="maxlength">26</arg>
               <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="calculateBSExportValue">pventauno!=0?((pventauno/(1+(tarifaasientogenerico/100)))-pcostoultcompraexport)/(pventauno/(1+(tarifaasientogenerico/100)))*100:0</arg>
+              <arg attribute="calculateBSExportValue">basedos!=0?((basedos/(1+(tarifaasientogenerico/100)))-pcostoultcompraexport)/(basedos/(1+(tarifaasientogenerico/100)))*100:0</arg>
               <arg attribute="enabled">false</arg>
               <arg attribute="clean">true</arg>
             </subarg>
@@ -572,14 +572,14 @@
           </parameters>
         </component>
         <component locate="Center">
-          <driver id="putilidad1">common.gui.components.GenericData</driver>
+          <driver id="putilidad3a">common.gui.components.GenericData</driver>
           <parameters>
             <subarg>
               <arg attribute="format">NUMERIC</arg>
               <arg attribute="size">7</arg>
               <arg attribute="maxlength">26</arg>
               <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="calculateBSExportValue">pventauno!=0?((pventauno/(1+(tarifaasientogenerico/100)))-pcostoultcompraexport)/(pventauno/(1+(tarifaasientogenerico/100)))*100:0</arg>
+              <arg attribute="calculateBSExportValue">abanicotres!=0?((abanicotres/(1+(tarifaasientogenerico/100)))-pcostoultcompraexport)/(abanicotres/(1+(tarifaasientogenerico/100)))*100:0</arg>
               <arg attribute="enabled">false</arg>
               <arg attribute="clean">true</arg>
             </subarg>
@@ -612,14 +612,14 @@
           </parameters>
         </component>
         <component locate="Center">
-          <driver id="putilidad1">common.gui.components.GenericData</driver>
+          <driver id="putilidad3b">common.gui.components.GenericData</driver>
           <parameters>
             <subarg>
               <arg attribute="format">NUMERIC</arg>
               <arg attribute="size">7</arg>
               <arg attribute="maxlength">26</arg>
               <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="calculateBSExportValue">pventauno!=0?((pventauno/(1+(tarifaasientogenerico/100)))-pcostoultcompraexport)/(pventauno/(1+(tarifaasientogenerico/100)))*100:0</arg>
+              <arg attribute="calculateBSExportValue">basetres!=0?((basetres/(1+(tarifaasientogenerico/100)))-pcostoultcompraexport)/(basetres/(1+(tarifaasientogenerico/100)))*100:0</arg>
               <arg attribute="enabled">false</arg>
               <arg attribute="clean">true</arg>
             </subarg>
@@ -676,6 +676,55 @@
          <driver id="costoultcompra">common.gui.components.GenericData</driver>
           <method>clean</method>
         </component>
+
+        <component>
+          <driver id="abanicouno">common.gui.components.GenericData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="putilidad1a">common.gui.components.GenericData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="baseuno">common.gui.components.GenericData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="putilidad1b">common.gui.components.GenericData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="abanicodos">common.gui.components.GenericData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="putilidad2a">common.gui.components.GenericData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="basedos">common.gui.components.GenericData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="putilidad2b">common.gui.components.GenericData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="abanicotres">common.gui.components.GenericData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="putilidad3a">common.gui.components.GenericData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="basetres">common.gui.components.GenericData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="putilidad3b">common.gui.components.GenericData</driver>
+          <method>clean</method>
+        </component>
         
 
         <!--  limpiando llaves externas -->
@@ -723,6 +772,8 @@
           <parameters>
             <subarg>
               <arg attribute="importValue">pventauno</arg>
+              <arg attribute="importValue">abanicouno</arg>
+              <arg attribute="importValue">baseuno</arg>
               <arg attribute="importValue">barra</arg>
             </subarg>
           </parameters>
@@ -734,6 +785,8 @@
           <parameters>
             <subarg>
               <arg attribute="importValue">pventados</arg>
+              <arg attribute="importValue">abanicodos</arg>
+              <arg attribute="importValue">basedos</arg>
               <arg attribute="importValue">barra</arg>
             </subarg>
           </parameters>
@@ -745,6 +798,8 @@
           <parameters>
             <subarg>
               <arg attribute="importValue">pventatres</arg>
+              <arg attribute="importValue">abanicotres</arg>
+              <arg attribute="importValue">basetres</arg>
               <arg attribute="importValue">barra</arg>
             </subarg>
           </parameters>
@@ -778,7 +833,7 @@
           </parameters>
         </component>
         <!-- 5 inserta en items_pendientes_traslado para ser enviado por el cron -->
-        <component>
+        <!-- <component>
           <driver>this</driver>
           <method>getPackage</method>
           <parameters>
@@ -786,7 +841,7 @@
               <arg attribute="importValue">barra</arg>
             </subarg>
           </parameters>
-        </component>       
+        </component>        -->
         
       </object>
     </events>

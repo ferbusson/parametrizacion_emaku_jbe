@@ -2,16 +2,16 @@
      <!-- 0 actualiza prod_serv -->
      <arg>MTUPD0009</arg>
      <!-- 1 actualiza pventa1 -->
-     <arg>MTUPD0010</arg>
+     <arg>JBUPD0005</arg>
      <!-- 2 actualiza pventa2 -->
-     <arg>MTUPD0011</arg>
+     <arg>JBUPD0006</arg>
      <!-- 3 actualiza pventa3 -->
-     <arg>LCUPD0018</arg>
+     <arg>JBUPD0007</arg>
      <!-- 4 actualiza nombre en item -->
      <arg>LCUPD0017</arg>
      <!-- inserta auditoria_producto -->
          <arg>LCSEL0906</arg>
      <!-- inserta en items_pendientes_traslado para ser enviado por el cron -->
-      <arg>LCINS0112</arg>         
+      <!-- <arg>LCINS0112</arg> -->
 
 </container>
