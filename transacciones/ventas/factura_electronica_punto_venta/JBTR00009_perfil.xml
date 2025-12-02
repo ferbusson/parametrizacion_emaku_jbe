@@ -19,6 +19,7 @@
     <exportValue>bonos,BONOS</exportValue>
     <exportValue>instrumentond,INSTRUMENTO NO DEFINIDO</exportValue>
     <exportValue>otro,OTRO*</exportValue>
+    <exportValue>ejemplocufe,CUFE: 8123456789112345678901234567890123456789012345678901234567894521</exportValue>
 
     <exportValue>valorcero,0</exportValue>
     <exportValue>vigenciadefault,1</exportValue>
@@ -800,7 +801,7 @@
                         <arg attribute="sqlCode">RFSEL015</arg> <!--hasta resolucion -->
                         <arg attribute="sqlCode">LCSEL0091</arg> <!-- vigencia meses resolucion-->
                         <arg attribute="sqlCode">RFSEL016</arg> <!-- prefijo resolucion -->
-                        <arg attribute="sqlCodeExportValue">JBSEL0024,_sigla,_usuario,_norden,_id_char_tercero_referente,_nombre_tercero_referente,_direccion_contacto,_telefono_contacto,_id_vendedor,_vencimiento,_ndocumento_factura,_numero_pedido</arg>
+                        <arg attribute="sqlCodeExportValue">JBSEL0024,_sigla,_usuario,_norden,_id_char_tercero_referente,_nombre_tercero_referente,_direccion_contacto,_telefono_contacto,_id_vendedor,_vencimiento,_ndocumento_factura,_numero_pedido,_prefix,_cufe</arg>
                         <arg attribute="sqlCodeExportValue">JBSEL0025,_javipuntosgenerados,_javipuntosredimidos</arg>
                       </subarg>
                     </parameters>
@@ -4143,24 +4144,50 @@
                   <action>
                     <type>printer</type>
                     <printerTemplate>/graphics/TSFacturaElectronicaCartaJBE.xml</printerTemplate>
+                    <component>
+                  <driver>this</driver>
+                  <method>getPackage</method>
+                  <parameters>
+                    <subarg>
+                      <arg attribute="importValue">ejemplocufe</arg>
+                    </subarg>
+                  </parameters>
+                </component>
                 <!-- 0 codigo tipo -->
                 <component>
                   <driver>this</driver>
                   <method>getPackage</method>
                   <parameters>
                     <subarg>
-                      <arg attribute="importValue">prefix</arg>
+                      <arg attribute="importValue">_prefix</arg>
                     </subarg>
                   </parameters>
                 </component>
+                <!-- cajero -->
+                    <component>
+                      <driver id="cajero">common.gui.components.GenericData</driver>
+                      <method>getPrintPackage</method>
+                    </component>
+
+                <!-- 0 -->
+                    <component>
+                      <driver id="vendedor">common.gui.components.GenericData</driver>
+                      <method>getPrintPackage</method>
+                    </component>
+                  
                   <!-- 5 prefijo segun resolucion-->
                   <!-- <component>
                     <driver id="pre_res_fact">client.gui.components.TableDataFields</driver>
                     <method>getPrintPackage</method>
                   </component> -->
 
-                                    <component>
+                    <component>
                       <driver id="nro_fact">client.gui.components.TableDataFields</driver>
+                      <method>getPrintPackage</method>
+                    </component>
+
+                    <component>
+                      <driver id="numeroordenexterno">common.gui.components.GenericData</driver>
                       <method>getPrintPackage</method>
                     </component>
 

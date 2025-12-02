@@ -11,7 +11,9 @@ select
 	i.id_vendedor,
 	d.fecha::date + i.vencimiento as vencimiento,
 	d.ndocumento,
-    d2.codigo_tipo||'-'||d2.numero::bigint as numero_pedido
+    d2.codigo_tipo||'-'||d2.numero::bigint as numero_pedido,
+	coalesce(rf.prefijo,d.codigo_tipo) as prefijo,
+	'CUFE: '||coalesce(cd.cufe,'') as cufe
 from
 	documentos d
 inner join
@@ -38,6 +40,18 @@ left JOIN
     documentos d2
 on
     d2.ndocumento = i.rf_documento
+LEFT JOIN
+	resolucion_documento rd
+on
+	d.ndocumento = rd.ndocumento
+left JOIN
+	resolucion_facturacion rf
+on
+	rf.id_resolucion_facturacion = rd.id_resolucion_facturacion
+LEFT JOIN
+	cufe_documentos cd
+on
+	cd.ndocumento = d.ndocumento
 where
 	d.codigo_tipo = '?'
 	and d.numero = lpad('?',10,'0');
