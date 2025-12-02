@@ -402,7 +402,7 @@ o el carpintero asociado -->
         <arg attribute="enabled">false</arg>
         <arg attribute="alignment">RIGHT</arg>
         <arg attribute="exportValue">totalmenosreteglobal</arg>
-        <arg attribute="calculateExportValue">totalfact-(trfuente+triva+trica)</arg>
+        <arg attribute="calculateExportValue">totalfact-(trfuente+triva+trica+puntosredimidosenpesos)</arg>
         <arg attribute="printable">true</arg>
       </subarg>
     </parameters>
@@ -901,7 +901,7 @@ o el carpintero asociado -->
                   <arg attribute="foreground">0,0,0</arg>
                   <arg attribute="background">152,251,152</arg>
                   <arg attribute="alignment">RIGHT</arg>
-                  <arg attribute="calculateExportValue">totalfact-(trfuente+triva+trica)</arg>
+                  <arg attribute="calculateExportValue">totalfact-(trfuente+triva+trica+puntosredimidosenpesos)</arg>
                 </subarg>
               </parameters>
             </component>
@@ -1953,7 +1953,7 @@ o el carpintero asociado -->
               <arg attribute="format">NUMERIC</arg>
               <arg attribute="size">10</arg>
               <arg attribute="maxlength">26</arg>
-              <arg attribute="calculateExportValue">totalfact-(trfuente+triva+trica)</arg>
+              <arg attribute="calculateExportValue">totalfact-(trfuente+triva+trica+puntosredimidosenpesos)</arg>
               <arg attribute="enabled">false</arg>
               <arg attribute="alignment">RIGHT</arg>
               <arg attribute="foreground">0,0,0</arg>
@@ -2608,7 +2608,7 @@ o el carpintero asociado -->
           <arg attribute="enabled">false</arg>
           <arg attribute="alignment">RIGHT</arg>
           <arg attribute="exportValue">totalmenosreteglobal</arg>
-          <arg attribute="calculateExportValue">totalfact-(trfuente+triva+trica)</arg>
+          <arg attribute="calculateExportValue">totalfact-(trfuente+triva+trica+puntosredimidosenpesos)</arg>
           <arg attribute="printable">true</arg>
         </subarg>
       </parameters>
@@ -2664,7 +2664,7 @@ o el carpintero asociado -->
           <arg attribute="alignment">RIGHT</arg>
           <arg attribute="exportValue">saldoxpagar</arg>
           <arg attribute="enabled">false</arg>
-          <arg attribute="calculateExportValue">(totalfact-(trfuente+triva+trica))-(efectivot+tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos)</arg>
+          <arg attribute="calculateExportValue">(totalfact-(trfuente+triva+trica+puntosredimidosenpesos))-(efectivot+tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos)</arg>
           <arg attribute="printable">true</arg>
           <arg attribute="returnNullValue">true</arg>
         </subarg>
@@ -2775,9 +2775,9 @@ o el carpintero asociado -->
           <arg attribute="maxlength">26</arg>
           <arg attribute="alignment">RIGHT</arg>
           <arg attribute="enabled">false</arg>
-          <!--     <arg attribute="calculateBSExportValue">(totalfact)-(trfuente+triva+trica)&lt;=0||((totalfact-(trfuente+triva+trica))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+pagooacredito))&lt;=0||efectivot&lt;((totalfact-(trfuente+triva+trica))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+pagooacredito))?efectivot:(totalfact-(trfuente+triva+trica))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+pagooacredito)
+          <!--     <arg attribute="calculateBSExportValue">(totalfact)-(trfuente+triva+trica+puntosredimidosenpesos)&lt;=0||((totalfact-(trfuente+triva+trica+puntosredimidosenpesos))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+pagooacredito))&lt;=0||efectivot&lt;((totalfact-(trfuente+triva+trica+puntosredimidosenpesos))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+pagooacredito))?efectivot:(totalfact-(trfuente+triva+trica+puntosredimidosenpesos))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+pagooacredito)
 </arg> lust -->
-          <arg attribute="calculateBSExportValue">(totalfact)-(trfuente+triva+trica)&lt;=0||((totalfact-(trfuente+triva+trica))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos))&lt;=0||efectivot&lt;((totalfact-(trfuente+triva+trica))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos))?efectivot:(totalfact-(trfuente+triva+trica))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos)
+          <arg attribute="calculateBSExportValue">(totalfact)-(trfuente+triva+trica+puntosredimidosenpesos)&lt;=0||((totalfact-(trfuente+triva+trica+puntosredimidosenpesos))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos))&lt;=0||efectivot&lt;((totalfact-(trfuente+triva+trica+puntosredimidosenpesos))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos))?efectivot:(totalfact-(trfuente+triva+trica+puntosredimidosenpesos))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos)
           </arg>
         </subarg>
       </parameters>
@@ -2987,7 +2987,7 @@ o el carpintero asociado -->
                     <arg attribute="maxlength">26</arg>
                     <arg attribute="exportValue">totalfacturamenosretenciones</arg>
                     <arg attribute="clean">true</arg>
-                    <arg attribute="calculateExportValue">(totalfact)-(trfuente+triva+trica)</arg>
+                    <arg attribute="calculateExportValue">(totalfact)-(trfuente+triva+trica+puntosredimidosenpesos)</arg>
                     <arg attribute="font">Dialog,1,18</arg>
                     <arg attribute="alignment">RIGHT</arg>
                     <arg attribute="enabled">false</arg>
@@ -3299,10 +3299,10 @@ o el carpintero asociado -->
                       <arg attribute="enabled">false</arg>
                       <arg attribute="clean">true</arg>
                       <arg attribute="exportValue">cambio</arg>
-                      <!--           <arg attribute="calculateBSExportValue">(tcreditcard+pagooacredito+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+efectivot+tconsignation)&gt;(totalfact-(trfuente+triva+trica))&amp;&amp;(tcreditcard+pagooacredito+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation)&lt;(totalfact-(trfuente+triva+trica))?(efectivot+tcreditcard+pagooacredito+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation)-(totalfact-(trfuente+triva+trica)):0.0
+                      <!--           <arg attribute="calculateBSExportValue">(tcreditcard+pagooacredito+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+efectivot+tconsignation)&gt;(totalfact-(trfuente+triva+trica+puntosredimidosenpesos))&amp;&amp;(tcreditcard+pagooacredito+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation)&lt;(totalfact-(trfuente+triva+trica+puntosredimidosenpesos))?(efectivot+tcreditcard+pagooacredito+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation)-(totalfact-(trfuente+triva+trica+puntosredimidosenpesos)):0.0
       </arg> lust-->
 
-                      <arg attribute="calculateBSExportValue">(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+efectivot+tconsignation+totalanticipos+puntosredimidosenpesos)&gt;(totalfact-(trfuente+triva+trica))&amp;&amp;(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos+puntosredimidosenpesos)&lt;(totalfact-(trfuente+triva+trica))?(efectivot+tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos+puntosredimidosenpesos)-(totalfact-(trfuente+triva+trica)):0.0
+                      <arg attribute="calculateBSExportValue">(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+efectivot+tconsignation+totalanticipos+puntosredimidosenpesos)&gt;(totalfact-(trfuente+triva+trica+puntosredimidosenpesos))&amp;&amp;(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos+puntosredimidosenpesos)&lt;(totalfact-(trfuente+triva+trica+puntosredimidosenpesos))?(efectivot+tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos+puntosredimidosenpesos)-(totalfact-(trfuente+triva+trica+puntosredimidosenpesos)):0.0
                       </arg>
                       <arg attribute="printable">true</arg>
                     </subarg>
@@ -4051,7 +4051,7 @@ o el carpintero asociado -->
                 <arg attribute="clean">true</arg>
                 <arg attribute="maxlength">26</arg>
                 <arg attribute="exportValue">tcheck</arg>
-                <arg attribute="maxValue">(totalfact-(trfuente+triva+trica))-(tcreditcard+tchecksodexobigpass+tconsignation+totalanticipos)</arg>
+                <arg attribute="maxValue">(totalfact-(trfuente+triva+trica+puntosredimidosenpesos))-(tcreditcard+tchecksodexobigpass+tconsignation+totalanticipos)</arg>
                 <arg attribute="enabled">false</arg>
                 <arg attribute="alignment">RIGHT</arg>
                 <arg attribute="totalCol">e</arg>
@@ -4114,7 +4114,7 @@ o el carpintero asociado -->
                 <arg attribute="maxlength">26</arg>
                 <arg attribute="clean">true</arg>
                 <arg attribute="exportValue">tconsignation</arg>
-                <arg attribute="maxValue">(totalfact-(trfuente+triva+trica))-(tcreditcard+tchecksodexobigpass+tcheck)</arg>
+                <arg attribute="maxValue">(totalfact-(trfuente+triva+trica+puntosredimidosenpesos))-(tcreditcard+tchecksodexobigpass+tcheck)</arg>
                 <arg attribute="enabled">false</arg>
                 <arg attribute="alignment">RIGHT</arg>
                 <arg attribute="totalCol">c</arg>
@@ -4145,7 +4145,7 @@ o el carpintero asociado -->
                     <arg attribute="alignment">RIGHT</arg>
                     <arg attribute="enabled">false</arg>
                     <arg attribute="printable">true</arg>
-                    <arg attribute="calculateExportValue">(totalfact)-(trfuente+triva+trica)</arg>
+                    <arg attribute="calculateExportValue">(totalfact)-(trfuente+triva+trica+puntosredimidosenpesos)</arg>
                   </subarg>
                 </parameters>
               </component>
@@ -4183,7 +4183,7 @@ o el carpintero asociado -->
                     <arg attribute="enabled">false</arg>
                     <arg attribute="alignment">RIGHT</arg>
                     <arg attribute="exportValue">saldodespuesdepagos</arg>
-                    <arg attribute="calculateBSExportValue">((totalfact-(trfuente+triva+trica))-pagosparciales)&lt;0?0:((totalfact-(trfuente+triva+trica))-pagosparciales)</arg>
+                    <arg attribute="calculateBSExportValue">((totalfact-(trfuente+triva+trica+puntosredimidosenpesos))-pagosparciales)&lt;0?0:((totalfact-(trfuente+triva+trica+puntosredimidosenpesos))-pagosparciales)</arg>
                     <arg attribute="printable">true</arg>
                     <arg attribute="returnNullValue">true</arg>
                   </subarg>
@@ -5239,10 +5239,10 @@ o el carpintero asociado -->
                   <method>getPackage</method>
                 </component>
                 <!-- redencion de puntos contable -->
-                <component>
+                <!-- <component>
                   <driver id="puntosredimidosenpesos">common.gui.components.GenericData</driver>
                   <method>getPackage</method>
-                </component>
+                </component> -->
                 <!-- 12 total sodexo -->
                 <component>
                   <driver id="totalsodexo">client.gui.components.TableDataFields</driver>
@@ -5547,6 +5547,12 @@ o el carpintero asociado -->
                 <!-- generacion de puntos administrativo -->
                 <component>
                   <driver id="totaljavipuntosgenerados">client.gui.components.TableDataFields</driver>
+                  <method>getPackage</method>
+                </component>
+
+                <!-- redencion de puntos contable-->
+                <component>
+                  <driver id="puntosredimidosenpesos">common.gui.components.GenericData</driver>
                   <method>getPackage</method>
                 </component>
 
@@ -6682,15 +6688,15 @@ o el carpintero asociado -->
                 </component>
 
                 <!-- redencion de puntos administrativo -->
-                <component>
+                <!-- <component>
                   <driver id="puntosredimidos">common.gui.components.GenericData</driver>
                   <method>getPackage</method>
-                </component>
+                </component> -->
                 <!-- generacion de puntos administrativo -->
-                <component>
+                <!-- <component>
                   <driver id="totaljavipuntosgenerados">client.gui.components.TableDataFields</driver>
                   <method>getPackage</method>
-                </component>
+                </component> -->
 
                 <!-- 11 -->
                 <!-- <component>
@@ -6726,10 +6732,10 @@ o el carpintero asociado -->
                   <method>getPackage</method>
                 </component>
                 <!-- redencion de puntos contable-->
-                <component>
+                <!-- <component>
                   <driver id="puntosredimidosenpesos">common.gui.components.GenericData</driver>
                   <method>getPackage</method>
-                </component>
+                </component> -->
                 <!-- 12 total sodexo -->
                 <component>
                   <driver id="totalsodexo">client.gui.components.TableDataFields</driver>
@@ -6987,6 +6993,58 @@ o el carpintero asociado -->
                 </component>
                 <component>                  <!--35-->
                   <driver id="cvendedores">client.gui.components.TableFindData</driver>
+                  <method>getPackage</method>
+                </component>
+
+                <!-- 40 remueve key idTercero-->
+                <component>
+                  <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
+                  <method>getBlankPackage</method>
+                </component>
+                <!-- 40 remueve key cuenta-->
+                <component>
+                  <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
+                  <method>getBlankPackage</method>
+                </component>
+                <!-- 40 remueve key centrocosto-->
+                <component>
+                  <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
+                  <method>getBlankPackage</method>
+                </component>
+                <!-- 40 remueve key bodega saliente -->
+                <component>
+                  <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
+                  <method>getBlankPackage</method>
+                </component>
+                <!-- 40 remueve key sin nombre-->
+                <component>
+                  <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
+                  <method>getBlankPackage</method>
+                </component>
+                <!-- 40 remueve key idTercero-->
+                <component>
+                  <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
+                  <method>getBlankPackage</method>
+                </component>
+                <!--35-->
+                <component>
+                  <driver id="idtercerojavipuntos">common.gui.components.GenericData</driver>
+                  <method>getPackage</method>
+                </component>                
+
+                <!-- redencion de puntos administrativo -->
+                <component>
+                  <driver id="puntosredimidos">common.gui.components.GenericData</driver>
+                  <method>getPackage</method>
+                </component>
+                <!-- generacion de puntos administrativo -->
+                <component>
+                  <driver id="totaljavipuntosgenerados">client.gui.components.TableDataFields</driver>
+                  <method>getPackage</method>
+                </component>
+                <!-- redencion de puntos contable-->
+                <component>
+                  <driver id="puntosredimidosenpesos">common.gui.components.GenericData</driver>
                   <method>getPackage</method>
                 </component>
               </action>

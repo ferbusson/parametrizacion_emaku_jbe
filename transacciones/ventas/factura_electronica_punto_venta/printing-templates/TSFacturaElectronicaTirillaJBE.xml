@@ -51,7 +51,7 @@
 
    	<!-- 0 Numero fac -->
 	<package validate="true">
-		<field row="403" fontName="Dialog" fontSize="8" fontStyle="0" rowAcum="10"  col="86" type="STRING" />
+		<field row="403" fontName="Dialog" fontSize="8" fontStyle="0" rowAcum="10"  col="76" type="STRING" />
 	</package>
     	<!-- 0 fecha fac -->
 	<package validate="true">

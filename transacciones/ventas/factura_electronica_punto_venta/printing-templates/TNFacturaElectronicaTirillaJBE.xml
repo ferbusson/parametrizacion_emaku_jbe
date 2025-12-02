@@ -32,7 +32,7 @@
       <field row="433" col="15" type="STRING">Vendedor:</field>
       <field row="443" col="15" type="STRING">Cajero:</field>
       <!-- <barcodeImage row="240" col="30" width="10" type="NUMERIC" mask="0000000000" /> -->
-      <ndocument row="403" col="66" format="Integer"/>
+      <ndocument row="403" col="76" format="Integer"/>
       <date row="413" col="53" mask="EEEEEE dd MMMM yyyy"/>
       <time row="423" col="53" />
 
