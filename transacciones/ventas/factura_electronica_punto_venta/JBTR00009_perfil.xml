@@ -4465,10 +4465,6 @@
                     <method>clean</method>
                   </component>
                   <component>
-                    <driver id="referrercustomerid">client.gui.components.EmakuSearchField</driver>
-                    <method>clean</method>
-                  </component>
-                  <component>
                     <driver id="referrercustomername">common.gui.components.GenericData</driver>
                     <method>clean</method>
                   </component>

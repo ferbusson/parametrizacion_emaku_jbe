@@ -330,11 +330,11 @@
 				</package>
 				<!-- direccion de contacto -->
 				<package>
-					<field row="698" col="120" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0" />
+					<field row="698" col="125" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0" />
 				</package>
 				<!-- telefono de contacto -->
 				<package>
-					<field row="708" col="120" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0" />
+					<field row="708" col="125" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0" />
 				</package>
 
 
