@@ -551,7 +551,7 @@ el boton cerrar cierra el formulario
             <driver id="tipo_doc">client.gui.components.XMLComboBox</driver>
             <parameters>
               <arg attribute="importValue">codigo_tipo</arg>
-              <arg attribute="sqlCombo">LCSEL0252</arg>
+              <arg attribute="sqlCombo">JBSEL0032</arg>
               <arg attribute="selectedIndex">0</arg>
               <arg attribute="clean">false</arg>
               <arg attribute="exportValue">tipo_doc</arg>
@@ -582,9 +582,8 @@ el boton cerrar cierra el formulario
                   <arg attribute="background">196,196,252</arg>
                   <arg attribute="alignment">RIGHT</arg>
                   <arg attribute="importValue">tipo_doc</arg>
-                  <arg attribute="sqlCode">SEL0119</arg>
-                  <arg attribute="sqlCode">SEL0157</arg>
-                  <arg attribute="sqlCode">SEL0156</arg>
+                  <arg attribute="sqlCode">JBSEL0033</arg> <!--tabla principal-->
+                  <arg attribute="sqlCode">JBSEL0034</arg> <!--busqueda tercero-->
                 </subarg>
               </parameters>
             </component>
@@ -958,7 +957,7 @@ el boton cerrar cierra el formulario
         <parameters>
           <arg attribute="driverEventRecord" id="sendbuttontemporales">client.gui.components.EmakuSendRecordButton</arg>
 
-          <arg attribute="keySQL">SEL0119</arg>
+          <arg attribute="keySQL">JBSEL0033</arg>
           <arg attribute="driverEvent" id="nrogenerador">client.gui.components.TableDataFields</arg>
           <arg attribute="rowHeight">24</arg>
           <arg attribute="font">Dialog,1,13</arg>
