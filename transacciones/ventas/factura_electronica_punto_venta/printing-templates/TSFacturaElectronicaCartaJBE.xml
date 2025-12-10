@@ -140,7 +140,7 @@
 			<!-- <field row="704" col="200" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Aplican Políticas de Cambio, Conserve este documento para cualquier novedad.</field>			 -->
 			<!--<field row="688" col="40" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">novedad.</field>-->
 
-			<field row="698" col="40" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">Dirección de Contacto:</field>
+			<field row="698" col="40" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">Dirección de Despacho:</field>
 			<field row="708" col="40" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">Teléfono de Contacto:</field>
 
 			<field row="728" col="120" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">______________________________________</field>
