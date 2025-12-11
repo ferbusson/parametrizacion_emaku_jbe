@@ -1,23 +1,55 @@
 <FORM>
   <preferences>
-    <size height="500" width="448"/>
+    <size height="260" width="450"/>
     <name>Activar Vigencia Cotizaciones - Pedidos</name>
     <icon>/icons/ico_ext_diurno_16x16.png</icon>
     <iconificable/>
     <resizable />
+    <date/>
     <closable/>
 
     <exportValue>delete,-1</exportValue>
     <notCleanExportValue>delete</notCleanExportValue>
 
   </preferences>
+<component>
+    <driver id="date">common.gui.components.GenericData</driver>
+    <parameters>
+      <subarg>
+        <arg attribute="format">TEXT</arg>
+        <arg attribute="size">10</arg>
+        <arg attribute="maxlength">50</arg>
+        <arg attribute="enabled">false</arg>
+        <arg attribute="return">false</arg>
+        <arg attribute="clean">false</arg>
+        <arg attribute="alignment">CENTER</arg>
+        <arg attribute="exportValue">fechaactual</arg>
+        <arg attribute="systemDate">yyyy-MM-dd</arg>
+        <arg attribute="printable">true</arg>
+      </subarg>
+    </parameters>
+  </component>
+  <component>
+    <driver id="ndocumento">common.gui.components.GenericData</driver>
+    <parameters>
+      <arg attribute="keySQL">JBSEL0036</arg>
+        <arg attribute="driverEvent" id="numero">common.gui.components.GenericData</arg>
+      <subarg>
+        <arg attribute="format">STRING</arg>
+        <arg attribute="size">20</arg>
+        <arg attribute="maxlength">20</arg>
+        <arg attribute="exportValue">ndocumento</arg>
+      </subarg>
+    </parameters>
+  </component>
+
   <panel locate="North" type="FlowLayout"/>
   <panel locate="East" type="FlowLayout"/>
   <panel type="BorderLayout" locate="Center">
     <!-- <panel font="Dialog,1,12" icon="CUENTAB" name="Registro de Software" type="BorderLayout"> -->
     <panel type="BorderLayout">
       <panel locate="North" type="BorderLayout">
-        <panel cols="1" locate="West" rows="4" type="GridLayout">
+        <panel cols="1" locate="West" rows="5" type="GridLayout">
           <component>
             <driver>common.gui.components.XMLLabel</driver>
             <parameters>
@@ -35,27 +67,34 @@
           <component>
             <driver>common.gui.components.XMLLabel</driver>
             <parameters>
-              <arg attribute="text">Vigencia Actual</arg>
+              <arg attribute="text">Fecha Vencimiento</arg>
               <arg attribute="alignment">0</arg>
             </parameters>
           </component>
           <component>
             <driver>common.gui.components.XMLLabel</driver>
             <parameters>
-              <arg attribute="text">Vigencia al activar</arg>
+              <arg attribute="text">Días Adicionales</arg>
+              <arg attribute="alignment">0</arg>
+            </parameters>
+          </component>
+          <component>
+            <driver>common.gui.components.XMLLabel</driver>
+            <parameters>
+              <arg attribute="text">Nueva Fecha Vencimiento</arg>
               <arg attribute="alignment">0</arg>
             </parameters>
           </component>
         </panel>
-        <panel cols="1" locate="Center" rows="4" type="GridLayout">
+        <panel cols="1" locate="Center" rows="5" type="GridLayout">
           <component locate="Center">
             <driver id="tipo_doc">client.gui.components.XMLComboBox</driver>
             <parameters>
-              <arg attribute="importValue">codigo_tipo</arg>
-              <arg attribute="sqlCombo">JBSEL0032</arg>
+              <arg attribute="sqlCombo">JBSEL0035</arg>
+              <arg attribute="preferredLength">250</arg>
               <arg attribute="selectedIndex">0</arg>
               <arg attribute="clean">false</arg>
-              <arg attribute="exportValue">tipo_doc</arg>
+              <arg attribute="exportValue">codigotipo</arg>
             </parameters>
           </component>
           <component>
@@ -64,28 +103,29 @@
                   <!-- arg attribute="sqlInit">MDSEL0265</arg-->
                   <subarg>
                     <arg attribute="format">INTEGER</arg>
-                    <arg attribute="size">3</arg>
+                    <arg attribute="size">10</arg>
                     <arg attribute="maxlength">2</arg>
-                    <arg attribute="exportValue">dseparado</arg>
-                    <arg attribute="getValue">_dseparado</arg>
+                    <arg attribute="exportValue">numerodocumento</arg>
+                    <arg attribute="importValue">codigotipo</arg>
+                    <arg attribute="sqlCode">JBSEL0036</arg> <!--ndocumento-->
+                    <arg attribute="sqlCode">JBSEL0037</arg> <!--vigenciaactual-->
                   </subarg>
                 </parameters>
               </component>
               <component>
                 <driver id="vigenciaactual">common.gui.components.GenericData</driver>
                 <parameters>
-                  <!-- arg attribute="sqlInit">MDSEL0265</arg-->
+                  <arg attribute="keySQL">JBSEL0037</arg>
+                    <arg attribute="driverEvent" id="numero">common.gui.components.GenericData</arg>
                   <subarg>
-                    <arg attribute="format">INTEGER</arg>
-                    <arg attribute="size">3</arg>
-                    <arg attribute="maxlength">2</arg>
-                    <arg attribute="exportValue">dseparado</arg>
-                    <arg attribute="getValue">_dseparado</arg>
+                    <arg attribute="format">STRING</arg>
+                    <arg attribute="size">10</arg>
+                    <arg attribute="enabled">false</arg>
+                    <arg attribute="maxlength">50</arg>
                   </subarg>
                 </parameters>
               </component>
           <!-- <component><driver id="nombre">client.gui.components.EmakuSearchField</driver><parameters><subarg><arg attribute="size">20</arg><arg attribute="maxlength">20</arg><arg attribute="nullValue">true</arg><arg attribute="exportValue">nombre</arg><arg attribute="format">TEXT</arg><arg attribute="enabled">true</arg><arg attribute="clean">true</arg><arg attribute="sqlCode">LCSEL0277</arg><arg attribute="sqlCodeExportValue">DESEL0001,_pin,_fecha,_id_software,_ambiente,_url_ambiente,_test_sed_id,_url_busqueda,_ciiu</arg></subarg></parameters></component>-->
-          <panel type="FlowLayout">
               <component>
                 <driver id="dias">common.gui.components.GenericData</driver>
                 <parameters>
@@ -94,25 +134,27 @@
                     <arg attribute="format">INTEGER</arg>
                     <arg attribute="size">3</arg>
                     <arg attribute="maxlength">2</arg>
-                    <arg attribute="exportValue">dseparado</arg>
+                    <arg attribute="exportValue">dias</arg>
                   </subarg>
                 </parameters>
               </component>
-              <component>
-                <driver>common.gui.components.XMLLabel</driver>
-                <parameters>
-                  <arg attribute="text"> - </arg>
-                  <arg attribute="alignment">0</arg>
-                </parameters>
-              </component>              
-              <component>
-                <driver id="fechalimite">common.gui.components.XMLDateField</driver>
-                <parameters>
-                  <arg attribute="dateFormatString">yyyy-MM-dd HH:mm:ss</arg>
-                  <arg attribute="exportValue">fechal</arg>
-                </parameters>
-              </component>
-          </panel>
+              <component locate="West">
+                  <driver id="vencimiento">common.gui.components.GenericData</driver>
+                  <parameters>
+                    <arg attribute="panel">true</arg>
+                    <subarg>
+                      <arg attribute="format">TEXT</arg>
+                      <arg attribute="size">10</arg>
+                      <arg attribute="maxlength">50</arg>
+                      <arg attribute="enabled">false</arg>
+                      <arg attribute="return">false</arg>
+                      <arg attribute="clean">true</arg>
+                      <arg attribute="calculateDate">fechaactual+dias</arg>
+                      <arg attribute="dateFormat">yyyy-MM-dd</arg>
+                      <arg attribute="printable">true</arg>
+                    </subarg>
+                  </parameters>
+                </component>
 
             <!-- <component locate="Center">
               <driver id="estado">client.gui.components.XMLCheckBox</driver>
@@ -135,87 +177,7 @@
   </panel>
 
 <panel locate="South" type="BorderLayout">
-  <component locate="West">
-    <driver id="delete">common.gui.components.ButtonsPanel</driver>
-    <parameters>
-      <subarg>
-            <arg attribute="label">DELETE</arg>
-            <arg attribute="icon">/icons/ico_deshabilitar_16x16.png</arg>
-      </subarg>
-    </parameters>
-    <events>
-      <objet>
-        <name>DELETE</name>
-
-        <!-- 0 Inserta info general en registro_software -->
-        <component>
-          <driver>this</driver>
-          <method>getPackage</method>
-          <parameters>
-            <arg attribute="blankPackage">true</arg>
-            <subarg>
-              <arg attribute="importValue">nombre</arg>
-              <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="key">delete</arg>
-              <arg attribute="importValue">dseparado</arg>
-              <arg attribute="importValue">fechal</arg>
-              <arg attribute="importValue">pvalorseparado</arg>
-              <arg attribute="importValue">estado</arg>
-            </subarg>
-          </parameters>
-        </component>
-        <!-- 1 borra lineas asociadas a la temporada -->
-        <component>
-          <driver id="lineas">client.gui.components.TableFindData</driver>
-          <method>getBlankPackage</method>
-        </component>
-        <!-- 2 inserta lineas en lineas_temporada -->
-        <component>
-          <driver id="lineas">client.gui.components.TableFindData</driver>
-          <method>getPackage</method>
-        </component>
-
-        <!-- <component>
-          <driver id="delete">common.gui.components.ButtonsPanel</driver>
-          <method>setEnabled</method>
-          <parameters>
-            <arg attribute="button">DELETE</arg>
-            <arg attribute="state">false</arg>
-          </parameters>
-        </component> -->
-
-        <component>
-          <driver id="nombre">client.gui.components.EmakuSearchField</driver>
-          <method>clean</method>
-        </component>
-        <component>
-          <driver id="dseparado">common.gui.components.GenericData</driver>
-          <method>clean</method>
-        </component>
-        <component>
-          <driver id="pvalorseparado">common.gui.components.GenericData</driver>
-          <method>clean</method>
-        </component>
-        <component>
-          <driver id="lineas">client.gui.components.TableFindData</driver>
-          <method>clean</method>
-        </component>
-        <component>
-          <driver id="estado">client.gui.components.XMLCheckBox</driver>
-          <method>clean</method>
-        </component>        
-        <component>
-           <driver id="fechalimite">common.gui.components.XMLDateField</driver>
-          <method>clean</method>
-        </component>                        
-        <!--  limpiando llaves externas -->
-        <component>
-          <driver>this</driver>
-          <method>cleanExternalValues</method>
-        </component>        
-
-      </objet>
-    </events>
-  </component>
+ 
 
   <component locate="East">
     <driver>common.gui.components.ButtonsPanel</driver>
@@ -235,32 +197,27 @@
             <arg attribute="button">DELETE</arg>
             <arg attribute="state">true</arg>
           </parameters>
-        </component>
-
+        </component>        
         <component>
-          <driver id="nombre">client.gui.components.EmakuSearchField</driver>
+          <driver id="tipo_doc">client.gui.components.XMLComboBox</driver>
           <method>clean</method>
         </component>
         <component>
-          <driver id="dseparado">common.gui.components.GenericData</driver>
+          <driver id="numero">common.gui.components.GenericData</driver>
           <method>clean</method>
         </component>
         <component>
-          <driver id="pvalorseparado">common.gui.components.GenericData</driver>
+          <driver id="vencimiento">common.gui.components.GenericData</driver>
           <method>clean</method>
         </component>
         <component>
-          <driver id="lineas">client.gui.components.TableFindData</driver>
+          <driver id="vigenciaactual">common.gui.components.GenericData</driver>
           <method>clean</method>
         </component>
         <component>
-          <driver id="estado">client.gui.components.XMLCheckBox</driver>
+          <driver id="dias">common.gui.components.GenericData</driver>
           <method>clean</method>
         </component>
-        <component>
-           <driver id="fechalimite">common.gui.components.XMLDateField</driver>
-          <method>clean</method>
-        </component>                                        
         <!--  limpiando llaves externas -->
         <component>
           <driver>this</driver>
@@ -269,31 +226,30 @@
       </object>
       <object>
         <name>SAVE</name>
-        <component>
+        <!-- <component>
           <driver>this</driver>
           <method>validMultiPackage</method>
           <parameters>
             <arg attribute="driver" id="nombre">client.gui.components.EmakuSearchField</arg>
             <arg attribute="errorMessage">Error, Falta el nombre de la temporada</arg>
           </parameters>
-        </component>
+        </component> -->
         <component>
           <driver>this</driver>
           <method>validMultiPackage</method>
           <parameters>
-            <driver id="dseparado">common.gui.components.GenericData</driver>
-            <driver attribute="driver" id="dseparado">common.gui.components.GenericData</driver>
-            <arg attribute="errorMessage">Error, Faltan los días de separado</arg>
+            <driver attribute="driver" id="dias">common.gui.components.GenericData</driver>
+            <arg attribute="errorMessage">Error, Seleccione dias adicionales para activar Pedido/Cotización</arg>
           </parameters>
         </component>
-        <component>
+        <!-- <component>
           <driver>this</driver>
           <method>validMultiPackage</method>
           <parameters>
             <driver attribute="driver" id="pvalorseparado">common.gui.components.GenericData</driver>
             <arg attribute="errorMessage">Error, Falta el porcentaje del valor mínimo para retirar el separado</arg>
           </parameters>
-        </component>
+        </component> -->
         
 
 
@@ -304,24 +260,11 @@
           <parameters>
             <arg attribute="blankPackage">true</arg>
             <subarg>
-              <arg attribute="importValue">nombre</arg>
-              <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="key">_temporada</arg>
-              <arg attribute="importValue">dseparado</arg>
-              <arg attribute="importValue">fechal</arg>
-              <arg attribute="importValue">pvalorseparado</arg>
-              <arg attribute="importValue">estado</arg>
+              <arg attribute="importValue">ndocumento</arg>
+              <!-- <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="key">_temporada</arg> -->
+              <arg attribute="importValue">dias</arg>
             </subarg>
           </parameters>
-        </component>
-        <!-- 1 borra lineas asociadas a la temporada -->
-        <component>
-          <driver id="lineas">client.gui.components.TableFindData</driver>
-          <method>getBlankPackage</method>
-        </component>
-        <!-- 2 inserta lineas en lineas_temporada -->
-        <component>
-          <driver id="lineas">client.gui.components.TableFindData</driver>
-          <method>getPackage</method>
         </component>
       </object>
 
