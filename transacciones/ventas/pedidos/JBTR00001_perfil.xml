@@ -1515,7 +1515,7 @@ el boton cerrar cierra el formulario
                             <arg attribute="alignment">RIGHT</arg>
                             <arg attribute="printable">true</arg>
                             <arg attribute="enabled">false</arg>
-                            <arg attribute="totalCol">c</arg>
+                            <arg attribute="totalCol">d</arg>
                         </subarg>
                     </parameters>
                 </component>
@@ -1571,6 +1571,12 @@ el boton cerrar cierra el formulario
         <arg attribute="length">220</arg>
         <arg attribute="type">STRING</arg>
         <arg attribute="enabled">false</arg>
+      </subarg>
+      <subarg>
+        <arg attribute="name">Disp</arg>
+        <arg attribute="length">50</arg>
+        <arg attribute="type">INTEGER</arg>
+        <arg attribute="enabled">true</arg>
       </subarg>
       <!-- 3 CANTIDAD (c) -->
       <subarg>
