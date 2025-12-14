@@ -35,10 +35,13 @@
 		    <field row="158" col="380" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">Fecha Procesamiento:</field>
 			<field row="167" col="380" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">ICA Actividad Comercial 211 - Tarifa 5 x 1000</field>
 
-			<field row="212" col="380" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">Para Consignaciones o transferencias:</field>
+			<!-- <field row="212" col="380" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">Para Consignaciones o transferencias:</field>
 			<field row="220" col="380" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">DAVIVIENDA CTA CTE 106869999255 Conv 1493543</field>
 			<field row="228" col="380" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">BANCO DE BOGOTÁ CTA CTE 121054597 Conv 14885</field>
-			<field row="236" col="380" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">BANCO AGRARIO CTA CTE 048010029097 Conv 17411</field>
+			<field row="236" col="380" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">BANCO AGRARIO CTA CTE 048010029097 Conv 17411</field> -->
+
+
+
 
 			<!-- <ndocument multipage="true" rownewpage="140" colnewpage="475" fontName="Dialog" fontSize="8" fontStyle="0" row="140" center="1010" format="Integer"/>	 -->
 			<field row="130" col="230" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">-</field>
@@ -137,8 +140,13 @@
 
 
                         
-			<!-- <field row="704" col="200" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Aplican Políticas de Cambio, Conserve este documento para cualquier novedad.</field>			 -->
+			
 			<!--<field row="688" col="40" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">novedad.</field>-->
+
+			<field row="688" col="380" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">Para Consignaciones o transferencias:</field>
+			<field row="696" col="380" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">DAVIVIENDA CTA CTE 106869999255 Conv 1493543</field>
+			<field row="704" col="380" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">BANCO DE BOGOTÁ CTA CTE 121054597 Conv 14885</field>
+			<field row="712" col="380" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">BANCO AGRARIO CTA CTE 048010029097 Conv 17411</field>
 
 			<field row="698" col="40" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">Dirección de Despacho:</field>
 			<field row="708" col="40" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">Teléfono de Contacto:</field>
@@ -149,8 +157,9 @@
 			<field row="736" col="390" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Firma Autorización</field>
 
 			<field row="746" col="140" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Esta Factura se asimila en sus efectos legales a la letra de cambio (Según el articulo 774 del Código de Comercio).</field>
-			<field row="762" col="135" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Factura elaborada, impresa y enviada electrónicamente por: JAVIER BENAVIDES ERAZO SAS S.A.S Nit. 891.224.230-2</field>
-			<field row="770" col="290" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Software E-MAKU</field>
+			<field row="754" col="200" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Aplican Políticas de Cambio, Conserve este documento para cualquier novedad.</field>
+			<field row="760" col="135" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Factura elaborada, impresa y enviada electrónicamente por: JAVIER BENAVIDES ERAZO SAS S.A.S Nit. 891.224.230-2</field>
+			<field row="766" col="290" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Software E-MAKU - Fabricante del Software: Gramagroup SAS</field>
 
                 </endofpage>
 

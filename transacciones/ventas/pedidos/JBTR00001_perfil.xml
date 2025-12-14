@@ -1492,7 +1492,7 @@ el boton cerrar cierra el formulario
                         <arg attribute="clean">false</arg>
                         <arg attribute="importValue">userLogin</arg>
                         <arg attribute="importValueCode">idtercero</arg>
-                        <arg attribute="sqlCode">LCSEL0947</arg>
+                        <arg attribute="sqlCode">JBSEL0039</arg>
                     </parameters>
                 </component>
                 <component>
@@ -1533,7 +1533,7 @@ el boton cerrar cierra el formulario
     <parameters>
       
 
-      <arg attribute="keySQL">LCSEL0947</arg>
+      <arg attribute="keySQL">JBSEL0039</arg>
       <arg attribute="driverEvent" id="combotemporales">client.gui.components.XMLComboBox</arg>
 
       <arg attribute="rows">600</arg>
@@ -2089,7 +2089,7 @@ el boton cerrar cierra el formulario
             <arg attribute="panel">false</arg>
             <subarg>
               <arg attribute="format">TEXT</arg>
-              <arg attribute="label">Dirección Contacto:</arg>
+              <arg attribute="label">Dirección Despacho:</arg>
               <arg attribute="size">28</arg>
               <arg attribute="alignment">LEFT</arg>
               <arg attribute="maxlength">200</arg>

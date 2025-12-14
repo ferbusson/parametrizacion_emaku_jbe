@@ -1465,7 +1465,7 @@
                         <arg attribute="clean">false</arg>
                         <arg attribute="importValue">userLogin</arg>
                         <arg attribute="importValueCode">idtercero</arg>
-                        <arg attribute="sqlCode">LCSEL0947</arg>
+                        <arg attribute="sqlCode">JBSEL0039</arg>
                     </parameters>
                 </component>
                 <component>
@@ -1488,7 +1488,7 @@
                             <arg attribute="alignment">RIGHT</arg>
                             <arg attribute="printable">true</arg>
                             <arg attribute="enabled">false</arg>
-                            <arg attribute="totalCol">c</arg>
+                            <arg attribute="totalCol">d</arg>
                         </subarg>
                     </parameters>
                 </component>
@@ -1506,7 +1506,7 @@
     <parameters>
       
 
-      <arg attribute="keySQL">LCSEL0947</arg>
+      <arg attribute="keySQL">JBSEL0039</arg>
       <arg attribute="driverEvent" id="combotemporales">client.gui.components.XMLComboBox</arg>
 
       <arg attribute="rows">600</arg>
@@ -1544,6 +1544,12 @@
         <arg attribute="length">220</arg>
         <arg attribute="type">STRING</arg>
         <arg attribute="enabled">false</arg>
+      </subarg>
+      <subarg>
+        <arg attribute="name">Disp</arg>
+        <arg attribute="length">50</arg>
+        <arg attribute="type">INTEGER</arg>
+        <arg attribute="enabled">true</arg>
       </subarg>
       <!-- 3 CANTIDAD (c) -->
       <subarg>
