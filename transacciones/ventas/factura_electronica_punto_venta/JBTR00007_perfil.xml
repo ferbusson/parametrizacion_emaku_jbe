@@ -3212,6 +3212,23 @@ o el carpintero asociado -->
                     </subarg>
                   </parameters>
                 </component>
+                <component locate="East">
+                  <driver id="tipofactura">client.gui.components.XMLComboBox</driver>
+                  <parameters>
+                    <arg attribute="sqlCombo">LCSEL0469</arg>
+                    <arg attribute="selectedIndex">0</arg>
+                    <arg attribute="label">Tipo:</arg>
+                    <arg attribute="preferredLength">170</arg>
+                    <!-- <arg attribute="enableField">habilitarcombo,1</arg> -->
+                    <arg attribute="addAttribute">key</arg>
+                    <arg attribute="clean">false</arg>
+                    <arg attribute="exportValue">charctatipofactura</arg>
+                    <arg attribute="printable">true</arg>
+                    <arg attribute="addAttribute">key</arg>
+                    <arg attribute="nameField">cuenta</arg>                
+                    <!-- <arg attribute="sqlCode">LCSEL0946</arg> -->
+                  </parameters>
+                </component>
               </panel>
               <panel type="BorderLayout">
                 <component locate="Center">
