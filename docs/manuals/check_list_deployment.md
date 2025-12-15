@@ -33,9 +33,43 @@
 - [ ] Migrar saldos puntos (si los hay)
 - [ ] Migrar saldos iniciales contabilidad
 
+### 1.4 Migracion de Tarjetas
+  - [ ] Migrar Tarjetas Credito
+  - [ ] Migrar Tarjetas Debito
+
+### 1.4 Migracion de Bancos
+  - [ ] Migrar Bancos
+
+
 ---
 
 ## 2. Opciones del Programa que Deben Estar Listas
+
+## 0.0 Configuracion
+
+  ### 0.1 Administracion de Sucursales
+    Crear
+    Editar
+    Borrar
+    Asignar usuario a Sucursal
+  ### 0.2 Administracion de Usuarios Emaku
+    Crear
+    Agregar permisos
+    Cambiar Contraseña
+    Eliminar
+  ### 0.3 Restriccion de modificaciones
+  ### 0.4 Transacciones Temporales
+  ### 0.5 Localidad (paises, departramentos, municipios)
+  ### 0.6 Moneda
+  ### 0.7 Administrar Tarjetas
+    (Pendiente verifcar si agregamos reteica)
+  ### 0.8 Tarjetas Credito
+  ### 0.9 Actividades Economicas
+  ### 0.10 Regímenes
+  ### 0.11 Bancos
+  ### 0.12 Bodega
+  ### 0.13 Registro de Software DIAN
+  ### 0.14 Recarga de Transacciones y Sentencias
 
 ### 2.1. Terceros
 - [ ] Nuevo Tercero
@@ -46,6 +80,7 @@
 - [ ] Consultar
 - [ ] Consultar Terceros WS DIAN
 - [ ] Cambio de terceros a Documentos
+
 ### 2.2. Productos
 
 #### 2.2.1. Artículos
@@ -212,6 +247,7 @@
 - [ ] Consultar Arqueos Caja (Revisión de faltantes sobrantes)
 
 #### 2.8.3. Informe Diario de Facturación
+
 ### 2.9. Contabilidad
 
 #### 2.9.1. Reportes Administrativos
@@ -252,6 +288,13 @@
 - [ ] Reporte General de Impuestos
 - [ ] Reporte de IVA compras contado
 - [ ] Reporte de IVA compras crédito
+- [ ] Reporte de IVA en gastos
+- [ ] Reporte de IVA generado
+- [ ] Certificados de Retencion en la Fuente
+- [ ] Listado de Certificados de Retencion en la Fuente
+- [ ] Informes de Auditoria
+      - [ ] Reporte de Elaboracion de Documentos por Usuario Sistema
+
 ### 2.10. Kardex
 
 #### 2.10.1. Operaciones Básicas
@@ -275,30 +318,3 @@
 - [ ] Reporte extendido de Productos
 - [ ] Reporte final inventario desglosado - Tercero y Marca
 - [ ] Reporte final inventario desglosado - Línea y Grupo
-                Numeracion de libros oficiales
-            Informe de Impuestos
-                Reporte General de Impuestos
-                Reporte de IVA compras contado
-                Reporte de IVA compras crédito
-                Reporte de IVA en gastos
-                Reporte de IVA generado
-                Certificados de Retencion en la Fuente
-                Listado de Certificados de Retencion en la Fuente
-            Informes de Auditoria
-                Reporte de Elaboracion de Documentos por Usuario Sistema
-    Kardex
-        Consultar Bodegas
-        Traslados
-            Multisucursal
-            Entradas Almacen
-        Informes
-            Informe traslados por Sucursal Y Fechas
-            Informe traslados detallado por proveedor, sucursal y fecha
-        Ajuste Inventarios - Fragmentacion
-        Ajuste Inventarios - Composicion
-        Ajuste General Inventarios
-        Conteos Inventario
-        Informes de Inventarios
-            Reporte exendido de Productos
-            Reporte final inventario desglosado - Tercero y Marca
-            Reporte final inventario desglosado - Linea y Grupo

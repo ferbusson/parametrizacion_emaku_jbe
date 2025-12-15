@@ -1,0 +1,1 @@
+SELECT id_linea,descripcion FROM linea ORDER BY descripcion
