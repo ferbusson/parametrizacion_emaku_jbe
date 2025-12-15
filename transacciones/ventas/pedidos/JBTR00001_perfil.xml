@@ -29,7 +29,7 @@ el boton cerrar cierra el formulario
 
 <FORM>
   <preferences>
-    <size height="600" width="1140"/>
+    <size height="600" width="1170"/>
     <name>Nuevo Pedido Mostrador</name>
     <icon>NFCREDITO</icon>
     <iconificable/>
@@ -63,7 +63,7 @@ el boton cerrar cierra el formulario
     <notCleanExportValue>OTRO</notCleanExportValue>
 
     <loadMultiBranch>JBSEL0001</loadMultiBranch>
-    <!-- <notCleanExportValue>charctatipofactura</notCleanExportValue> lust -->
+    <notCleanExportValue>charctatipofactura</notCleanExportValue> lust
     <notCleanExportValue>trm</notCleanExportValue>
     <notCleanExportValue>prefix</notCleanExportValue>
     <notCleanExportValue>id_bodega</notCleanExportValue>
@@ -155,6 +155,24 @@ el boton cerrar cierra el formulario
       </subarg>
     </parameters>
   </component>
+
+  <component>
+          <driver id="habilitarcombo">common.gui.components.GenericData</driver>
+          <parameters>
+            <arg attribute="panel">true</arg>
+            <arg attribute="keySQL">LCSEL0946</arg>
+            <arg attribute="driverEvent" id="tipofactura">client.gui.components.XMLComboBox</arg>
+            <subarg>
+              <arg attribute="format">TEXT</arg>
+              <arg attribute="size">10</arg>
+              <arg attribute="defaultText">1</arg>
+              <arg attribute="maxlength">50</arg>
+              <arg attribute="enabled">false</arg>
+              <arg attribute="clean">true</arg>
+              <arg attribute="exportValue">habilitarcombo</arg>
+            </subarg>
+          </parameters>
+        </component>
 
   <component>
     <driver id="terceroempleado">common.gui.components.GenericData</driver>
@@ -652,15 +670,15 @@ el boton cerrar cierra el formulario
     <panel locate="Center" type="BorderLayout">
                 <panel locate="Center" type="BorderLayout">
                 <panel cols="1" locate="West" rows="4" type="GridLayout">
-                <panel locate="South" type="FlowLayout"/>
-                  <!-- <component locate="West">
+                <!-- <panel locate="South" type="FlowLayout"/> -->
+                  <component locate="West">
                     <driver>common.gui.components.XMLLabel</driver>
                     <parameters>
-                      <arg attribute="text">Pedido No:</arg>
+                      <arg attribute="text">Tipo de Factura:</arg>
                       <arg attribute="alignment">0</arg>
                       <arg attribute="font">Dialog,0,14</arg>
                     </parameters>
-                  </component>  -->
+                  </component> 
                   <component locate="West">
                     <driver>common.gui.components.XMLLabel</driver>
                     <parameters>
@@ -681,7 +699,25 @@ el boton cerrar cierra el formulario
                   <panel locate="South" type="FlowLayout"/>
                 </panel>
                 <panel cols="1" locate="Center" rows="4" type="GridLayout">
-                <panel locate="South" type="FlowLayout"/>
+                <!-- <panel locate="South" type="FlowLayout"/> -->
+                <component locate="West">
+                    <driver id="tipofactura">client.gui.components.XMLComboBox</driver>
+                    <parameters>
+                      <arg attribute="sqlCombo">JBSEL0041</arg>
+                      <arg attribute="selectedIndex">0</arg>
+                      <!-- <arg attribute="label">Tipo:</arg> -->
+                      <arg attribute="preferredLength">140</arg>
+                      <arg attribute="enableField">habilitarcombo,1</arg>
+                      <arg attribute="addAttribute">key</arg>
+                      <arg attribute="clean">false</arg>
+                      <arg attribute="exportValue">charctatipofactura</arg>
+                      <arg attribute="printable">true</arg>
+                      <arg attribute="addAttribute">key</arg>
+                      <arg attribute="nameField">cuenta</arg>                
+                      <arg attribute="sqlCode">LCSEL0946</arg>
+                    </parameters>
+                </component>
+
                   <!-- <component locate="West">
                     <driver id="consecutivopedido">client.gui.components.TableDataFields</driver>
                     <parameters>
@@ -961,10 +997,12 @@ el boton cerrar cierra el formulario
           <arg attribute="driverEvent" id="nrogenerador">client.gui.components.TableDataFields</arg>
           <arg attribute="rowHeight">24</arg>
           <arg attribute="font">Dialog,1,13</arg>
-          <arg attribute="Query">LCSEL0857</arg>
+          <!-- <arg attribute="Query">LCSEL0857</arg> Esta query funciona pero no tiene en cuenta la cuenta a credito 1305-->
+          <arg attribute="Query">JBSEL0040</arg> <!--query que tiene en cuenta la cuenta a credito-->
           <arg attribute="importValue">idtercero</arg>
           <arg attribute="importValue">id_centrocosto</arg>
           <arg attribute="importValue">id_bodega</arg>
+          <arg attribute="importValue">charctatipofactura</arg>
           <arg attribute="rows">600</arg>
           <arg attribute="colorBackground">196,196,252</arg>
           <arg attribute="colorSelected">114,126,255</arg>
@@ -2546,7 +2584,15 @@ el boton cerrar cierra el formulario
                   </component>
                 </object>
                 <object>
-                  <name>NEW</name>                  
+                  <name>NEW</name>     
+                  <component>
+                    <driver id="tipofactura">client.gui.components.XMLComboBox</driver>
+                    <method>clean</method>
+                  </component>
+                  <component>
+                    <driver id="habilitarcombo">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                  </component>
                   <component>
                     <driver id="consecutivopedido">client.gui.components.TableDataFields</driver>
                     <method>clean</method>

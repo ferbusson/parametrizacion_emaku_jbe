@@ -3084,12 +3084,20 @@ o el carpintero asociado -->
             </panel>
           </panel>
           <panel locate="South" type="BorderLayout">
-            <panel cols="1" locate="West" rows="8" type="GridLayout">
+            <panel cols="1" locate="West" rows="9" type="GridLayout">
               <panel type="FlowLayout"/>
               <component locate="North">
                 <driver>common.gui.components.XMLLabel</driver>
                 <parameters>
                   <arg attribute="text">Efectivo Pesos</arg>
+                  <arg attribute="alignment">0</arg>
+                  <arg attribute="font">Dialog,1,16</arg>
+                </parameters>
+              </component>
+              <component locate="North">
+                <driver>common.gui.components.XMLLabel</driver>
+                <parameters>
+                  <arg attribute="text">Crédito</arg>
                   <arg attribute="alignment">0</arg>
                   <arg attribute="font">Dialog,1,16</arg>
                 </parameters>
@@ -3143,7 +3151,7 @@ o el carpintero asociado -->
                 </parameters>
               </component>
             </panel>
-            <panel cols="1" locate="Center" rows="8" type="GridLayout">
+            <panel cols="1" locate="Center" rows="9" type="GridLayout">
               <panel type="FlowLayout"/>
               <panel type="BorderLayout">
                 <component locate="West">
@@ -3181,6 +3189,26 @@ o el carpintero asociado -->
                       <arg attribute="exportValue">efectivous</arg>
                       <arg attribute="printable">true</arg>
                       <arg attribute="returnNullValue">true</arg>
+                    </subarg>
+                  </parameters>
+                </component>
+              </panel>
+              <panel type="BorderLayout">
+                <component locate="Center">
+                  <driver id="pagoacredito">common.gui.components.GenericData</driver>
+                  <parameters>
+                    <arg attribute="Panel">false</arg>
+                    <subarg>
+                      <arg attribute="name">pagoacredito</arg>
+                      <arg attribute="format">NUMERIC</arg>
+                      <arg attribute="size">11</arg>
+                      <arg attribute="maxlength">26</arg>
+                      <arg attribute="clean">true</arg>
+                      <arg attribute="font">Dialog,1,18</arg>
+                      <arg attribute="alignment">RIGHT</arg>
+                      <arg attribute="enabled">false</arg>
+                      <arg attribute="exportValue">pagoacredito</arg>
+                      <arg attribute="printable">true</arg>
                     </subarg>
                   </parameters>
                 </component>
