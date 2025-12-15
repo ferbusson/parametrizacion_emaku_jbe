@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emaku_template type="POSTSCRIPT" requestNumeration="false" copies="1" silent="false" printer="EPSON_TM-T20">
+	<settings width="612" height="792" />
+	<metadata>
+		<!-- Encabezado -->
+		<font row="0" col="0" name="Dialog" size="8" />
+		<image row="30" col="25" width="100" height="75">/icons/logo_fac.png</image>
+		<pagenumber row="80" col="530" fontName="Dialog" fontSize="6" fontStyle="0" />
+		<field color="0,0,0" row="37" center="612" fontName="Dialog" fontSize="8" fontStyle="0" type="NAMEDB">razon_social</field>
+
+		<field color="0,0,0" row="49" center="612" fontName="Dialog" fontSize="8" fontStyle="0" type="NAMEDB">nit</field>			
+
+		<field row="61" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Responsable del Impuesto sobre las ventas - IVA</field>
+
+		<field row="73" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">ALMACEN PRINCIPAL / Carrera 21 No. 15-68 Centro</field>
+
+		<field row="85" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Tel: 7219070 - 3218028591</field>
+		<field row="97" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">www.lacalionline.com</field>
+		<field row="109" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Pasto - Nariño</field>
+
+
+		<!-- <barcodeImage row="37" col="390" /> -->
+		<!-- cuadros de la forma -->
+		<roundedRectangle row="120" col="20" width="565" height="630" />
+		<!-- Informacion del Solicitante -->
+		<!-- Numero de documento -->
+		<!-- <field row="25" col="250" type="STRING">NOTA DE CONTABILIDAD (Copia)</field>
+		<field row="37" col="250" type="Numero">NUMERO:</field> -->
+
+		<field row="97" col="395" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">NOTA MULTIREGISTRO (Copia)</field>
+		<field row="107" col="395" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Número Ref:</field>
+		<!-- <field col="350" row="140" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0">En adquisiciones efectuadas a no obligados a facturar</field> -->
+		<field row="140" col="395" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Número:</field>
+		<!-- Horizontales -->
+		<line row="145" col="20" row2="145" col2="585" />
+		<line row="170" col="20" row2="170" col2="585" />
+		
+
+		<!-- Verticales -->
+		<line row="145" col="47" row2="750" col2="47" /> <!-- antes de cuenta -->
+		<line row="145" col="107" row2="750" col2="107" /> <!-- antes de nombre -->
+		<line row="145" col="257" row2="750" col2="257" /> <!-- antes de tercero -->
+		<line row="145" col="317" row2="750" col2="317" /> <!-- antes de documento -->
+		<line row="145" col="377" row2="750" col2="377" /> <!-- antes de productos -->
+		<line row="145" col="437" row2="750" col2="437" /> <!-- antes de debitos -->
+		<line row="145" col="511" row2="750" col2="511" /> <!-- antes de creditos -->
+
+		<field row="163" col="27" type="STRING">CC</field>
+		<field row="163" col="60" type="STRING">CUENTA</field>
+		<field row="163" col="168" type="STRING">NOMBRE</field>
+		<field row="163" col="267" type="STRING">TERCERO</field>
+		<field row="163" col="321" type="STRING">DOCUMENTO</field>
+		<field row="163" col="385" type="STRING">PRODUCTO</field>
+		<field row="163" col="454" type="STRING">DEBITOS</field>
+		<field row="163" col="528" type="STRING">CREDITOS</field>
+	</metadata>	
+
+	<newpage>
+		<pagenumber row="80" col="530" fontName="Dialog" fontSize="6" fontStyle="0"/>
+		<!-- Encabezado -->
+		<font row="0" col="0" name="Dialog" size="8" />
+		<image row="30" col="25" width="100" height="75">/icons/logo_fac.png</image>
+
+		<field color="0,0,0" row="37" center="612" fontName="Dialog" fontSize="8" fontStyle="0" type="NAMEDB">razon_social</field>
+
+		<field color="0,0,0" row="49" center="612" fontName="Dialog" fontSize="8" fontStyle="0" type="NAMEDB">nit</field>			
+
+		<field row="61" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Responsable del Impuesto sobre las ventas - IVA</field>
+
+		<field row="73" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">ALMACEN PRINCIPAL / Carrera 21 No. 15-68 Centro</field>
+
+		<field row="85" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Tel: 7219070 - 3218028591</field>
+		<field row="97" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">www.lacalionline.com</field>
+		<field row="109" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Pasto - Nariño</field>
+
+
+		<!-- cuadros de la forma -->
+		<roundedRectangle row="120" col="20" width="565" height="630" />
+		
+		<field row="97" col="395" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">NOTA MULTIREGISTRO (Copia)</field>
+		<field row="107" col="395" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Número Ref:</field>
+		<field row="140" col="395" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Número:</field>
+		<!-- Horizontales -->
+		<line row="145" col="20" row2="145" col2="585" />
+		<line row="170" col="20" row2="170" col2="585" />
+		
+		
+		<!-- Verticales -->
+		<line row="145" col="47" row2="750" col2="47" /> <!-- antes de cuenta -->
+		<line row="145" col="107" row2="750" col2="107" /> <!-- antes de nombre -->
+		<line row="145" col="257" row2="750" col2="257" /> <!-- antes de tercero -->
+		<line row="145" col="317" row2="750" col2="317" /> <!-- antes de documento -->
+		<line row="145" col="377" row2="750" col2="377" /> <!-- antes de productos -->
+		<line row="145" col="437" row2="750" col2="437" /> <!-- antes de debitos -->
+		<line row="145" col="511" row2="750" col2="511" /> <!-- antes de creditos -->
+
+		<field row="163" col="27" type="STRING">CC</field>
+		<field row="163" col="60" type="STRING">CUENTA</field>
+		<field row="163" col="168" type="STRING">NOMBRE</field>
+		<field row="163" col="267" type="STRING">TERCERO</field>
+		<field row="163" col="321" type="STRING">DOCUMENTO</field>
+		<field row="163" col="385" type="STRING">PRODUCTO</field>
+		<field row="163" col="454" type="STRING">DEBITOS</field>
+		<field row="163" col="528" type="STRING">CREDITOS</field>	
+
+	</newpage>
+
+	<!-- No borrar, le sirve al pagenumber para el calculo del total de hojas -->
+	<endofpage>
+		<froundedRectangle row="625" col="20" width="565" height="125" />
+		
+		<line row="640" col="20" row2="640" col2="585" />
+		<line row="735" col="190" row2="735" col2="400" />
+
+		<line row="625" col="437" row2="640" col2="437" />
+		<line row="625" col="511" row2="640" col2="511" />
+
+		<field row="635" col="340" type="STRING">SUMAS IGUALES</field>
+		<field row="650" col="23" type="STRING">Observaciones</field>
+		<field row="745" col="200" type="STRING">ELABORO</field>
+		<field row="745" col="280" type="STRING">REVISO</field>
+		<field row="745" col="340" type="STRING">CONTABILIZO</field>
+
+	</endofpage>
+
+	<!--  5 Numero fac -->
+	     <package>
+		<field multipage="true" rownewpage="140" colnewpage="460" row="140" col="460" width="10" type="STRING" mask="0" fontName="Dialog" fontSize="8" fontStyle="0"/>
+	     </package>
+
+	<!-- 6 codigo tipo nombre largo-->
+		<package>
+			<field multipage="true" rownewpage="130" colnewpage="345" row="130" col="345" fontName="Dialog" fontSize="8" fontStyle="0" type="STRING"/>
+		</package>
+	<!-- 6 codigo tipo -->
+		<package>
+			<field multipage="true" rownewpage="140" colnewpage="440" row="140" col="440" fontName="Dialog" fontSize="8" fontStyle="0" type="STRING"/>
+		</package>
+
+	<!-- numero ref -->
+		<package>
+			<field multipage="true" rownewpage="107" colnewpage="448" row="107" col="448" fontName="Dialog" fontSize="8" fontStyle="0" type="STRING"/>
+		</package>
+	<!-- 3 fecha -->
+	<package>
+		<field multipage="true" rownewpage="135" colnewpage="30" row="135" col="30" type="DATE" mask="EEEEEE, dd MMMM yyyy" fontName="Dialog" fontSize="8" fontStyle="0" />
+	</package>
+	<!-- 4 tabla-->
+	<package generateMultiPage="true">
+		<subpackage rowInit="180" rowAcum="10" maxRowsAcum="57" rowInitNewPage="170" maxRowsAcumNewPage="57" maxRowsFootPage="44" maxRowsFootNewPage="44" >
+			<field col="50" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" /> <!-- cuenta -->
+			<field col="109" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0" /> <!-- nombre -->
+			<field col="258" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" /> <!-- tercero -->
+			<field col="320" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" /> <!-- documento -->
+			<field col="380" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" /> <!-- producto -->
+			<field col="508" width="18" type="NUMERIC" mask="###,###,###,###.00" fontName="Dialog" fontSize="8" fontStyle="0" /> <!-- debito -->
+			<field col="582" width="18" type="NUMERIC" mask="###,###,###,###.00" fontName="Dialog" fontSize="8" fontStyle="0" /> <!-- credito -->
+			<field col="22" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" /> <!-- CC -->
+		</subpackage>
+	</package>
+	<!-- 5 sumas iguales debitos -->
+	<package>
+		<field row="635" col="508" width="18" type="NUMERIC" mask="###,###,###,###.00" fontName="Dialog" fontSize="8" fontStyle="0" />
+	</package>
+	<!-- 6 sumas iguales creditos -->
+	<package>
+		<field row="635" col="582" width="18" type="NUMERIC" mask="###,###,###,###.00" fontName="Dialog" fontSize="8" fontStyle="0" />
+	</package>
+	<!-- 7 -->
+	<package>
+		<field row="660" col="23" type="TEXT" width="94" height="5" rowAcum="12" fontName="Dialog" fontSize="8" fontStyle="0" />
+	</package>
+
+	<!-- elaboro -->
+		<package>
+			<field multipage="true" rownewpage="733" colnewpage="200" row="733" col="200" fontName="Dialog" fontSize="8" fontStyle="0" type="STRING"/>
+		</package>
+
+</emaku_template>

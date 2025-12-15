@@ -1,0 +1,152 @@
+<emaku_template type="GRAPHIC" requestNumeration="true" silence="false" printer="EPSON_TM-T20">
+	<settings width="612" height="792" />
+	<metadata>
+		<font row="0" col="0" name="Sans" size="16" />
+		<field row="80" col="250" type="STRING">AJUSTE DE INVENTARIOS</field>
+		<font row="0" col="0" name="Sans" size="6" />
+		<pagenumber row="80" col="530" fontName="Dialog" fontSize="6" fontStyle="0" />	
+		<font row="0" col="0" name="Sans" size="10" />
+		<!-- Encabezado MT -->
+		<image row="30" col="25" width="100" height="75">/icons/logo_fac.png</image>
+		<!-- <barcodeImage row="145" col="390" /> -->
+		<roundedRectangle row="220" col="20" width="565" height="520" />
+		<roundedRectangle row="220" col="20" width="565" height="15" />
+		<roundedRectangle row="700" col="20" width="565" height="40" />
+		
+		<!--  <font row="0" col="0" name="Sans" size="14"/>-->
+		<ndocument row="132" col="480" fontName="Dialog" fontSize="10" fontStyle="0" />
+		<!-- <field row="130" col="45" type="STRING">Cantidades Faltantes</field>
+		<field row="142" col="45" type="STRING">Cantidades Sobrantes</field>
+		<field row="154" col="45" type="STRING">Valor Faltantes</field>
+		<field row="166" col="45" type="STRING">Valor Sobrantes</field> -->
+		<field row="120" col="45" type="STRING">Total Productos Ajustados</field>
+		<field row="132" col="45" type="STRING">Total Conteo Físico</field>
+		
+		<field row="120" col="365" type="STRING">Fecha Gen Doc:</field>
+		<field row="132" col="365" type="STRING">Número:</field>
+		<field row="132" col="450" type="STRING">IJ -</field>
+		<field row="144" col="365" type="STRING">Usuario:</field>
+
+		<field row="144" col="45" type="STRING">Bodega:</field>
+		<field row="156" col="45" type="STRING">Fecha Efectiva Ajuste:</field>
+		<field row="168" col="45" type="STRING">Recolector Desde:</field>
+		<field row="180" col="45" type="STRING">Recolector Hasta:</field>
+		
+
+		<field row="710" col="30" type="STRING">Observaciones:</field>
+		<font row="0" col="0" name="Sans" size="8" />
+		<!-- Detalles -->
+		<line row="220" col="97" row2="700" col2="97" /> <!-- antes referencia -->
+		<line row="220" col="145" row2="700" col2="145" /> <!-- antes descripciom -->
+		<line row="220" col="355" row2="700" col2="355" /> <!-- antes marca -->
+		<line row="220" col="425" row2="700" col2="425" /> <!-- antes linea -->
+		<line row="220" col="475" row2="700" col2="475" /> <!-- antes s sistema -->
+		<line row="220" col="515" row2="700" col2="515" /> <!-- antes s fisico -->
+		<line row="220" col="555" row2="700" col2="555" /> <!-- antes diferencia -->
+
+		<field row="230" col="35" type="STRING">Codigo</field>
+		<field row="230" col="100" type="STRING">Referencia</field>
+		<field row="230" col="167" type="STRING">Descripcion</field>
+		<field row="230" col="376" type="STRING">Marca</field>
+		<field row="230" col="436" type="STRING">Línea</field>
+		<field row="230" col="480" type="STRING">S. Sist</field>
+		<field row="230" col="516" type="STRING">S. Fisico</field>
+		<field row="230" col="562" type="STRING">Dif.</field>
+		
+	</metadata>
+	<newpage>
+		<font row="0" col="0" name="Sans" size="16" />
+		<field row="80" col="240" type="STRING">AJUSTE DE INVENTARIOS</field>
+		<image row="30" col="25" width="100" height="75">/icons/logo_fac.png</image>	
+		<font row="0" col="0" name="Sans" size="6" />
+		<pagenumber row="80" col="530" fontName="Dialog" fontSize="6" fontStyle="0"/>	
+		<font row="0" col="0" name="Sans" size="7" />
+		<roundedRectangle row="140" col="20" width="565" height="620" />
+
+		<line row="156" col="20" row2="156" col2="585" />
+		<line row="140" col="97" row2="760" col2="97" /> <!-- antes referencia -->
+		<line row="140" col="145" row2="760" col2="145" /> <!-- antes descripciom -->
+		<line row="140" col="355" row2="760" col2="355" /> <!-- antes marca -->
+		<line row="140" col="425" row2="760" col2="425" /> <!-- antes linea -->
+		<line row="140" col="475" row2="760" col2="475" /> <!-- antes s sistema -->
+		<line row="140" col="515" row2="760" col2="515" /> <!-- antes s fisico -->
+		<line row="140" col="555" row2="760" col2="555" /> <!-- antes diferencia -->
+
+		<field row="150" col="35" type="STRING">Codigo</field>
+		<field row="150" col="100" type="STRING">Referencia</field>
+		<field row="150" col="167" type="STRING">Descripcion</field>
+		<field row="150" col="376" type="STRING">Marca</field>
+		<field row="150" col="436" type="STRING">Línea</field>
+		<field row="150" col="480" type="STRING">S. Sist</field>
+		<field row="150" col="516" type="STRING">S. Fisico</field>
+		<field row="150" col="562" type="STRING">Dif</field>
+	</newpage>	
+
+	<!-- No borrar, le sirve al pagenumber para el calculo del total de hojas -->
+	<endofpage>
+	</endofpage>
+
+	<!-- 0 -->
+	<package>
+		<field row="120" col="450" fontName="Dialog" fontSize="10" fontStyle="0" type="DATE" mask="yyyy-MM-dd" />
+	</package>
+	<!-- Usuario -->
+	<package>
+		<field row="144" col="450" fontName="Dialog" fontSize="9" fontStyle="0" type="STRING"/>
+	</package>	
+	<!-- Bodega -->
+	<package>
+		<field row="144" col="190" fontName="Dialog" fontSize="9" fontStyle="0" type="STRING"/>
+	</package>	
+	<!-- Fecha efectiva ajuste -->
+	<package>
+		<field row="156" col="190" fontName="Dialog" fontSize="9" fontStyle="0" type="STRING"/>
+	</package>	
+	<!-- Recolector desde  -->
+	<package>
+		<field row="168" col="190" fontName="Dialog" fontSize="9" fontStyle="0" type="STRING"/>
+	</package>	
+	<!-- Recolector hasta -->
+	<package>
+		<field row="180" col="190" fontName="Dialog" fontSize="9" fontStyle="0" type="STRING"/>
+	</package>	
+	<!-- 5 alcance ajuste -->
+	<package>
+		<field row="208" col="45" fontName="Dialog" fontSize="9" fontStyle="0" type="STRING"/>
+	</package>		
+	<!-- 2 -->
+	<!-- <package>
+			<field row="130" col="250" fontName="Dialog" fontSize="10" fontStyle="0" type="NUMERIC" mask="#,###,###" />
+			<field row="142" col="250" fontName="Dialog" fontSize="10" fontStyle="0" type="NUMERIC" mask="#,###,###" />
+			<field row="154" col="250" fontName="Dialog" fontSize="10" fontStyle="0" type="NUMERIC" mask="#,###,###" />
+			<field row="166" col="250" fontName="Dialog" fontSize="10" fontStyle="0" type="NUMERIC" mask="#,###,###" />
+	</package> -->
+	<!-- 6 total productos -->
+	<package>
+		<!-- <field row="120" col="250" fontName="Dialog" fontSize="10" fontStyle="0" type="NUMERIC" mask="#,###,###" /> -->
+		<field row="120" col="190" fontName="Dialog" fontSize="10" fontStyle="0" type="STRING" />
+	</package>
+	<!-- 7 total conteo fisico-->
+	<package>
+		<!-- <field row="132" col="250" fontName="Dialog" fontSize="10" fontStyle="0" type="NUMERIC" mask="#,###,###" /> -->
+		<field row="132" col="190" fontName="Dialog" fontSize="10" fontStyle="0" type="STRING" />
+	</package>
+
+	<!-- 8 -->
+	<package>
+		<field row="720" col="25" type="TEXT" width="140" height="3" rowAcum="9" />
+	</package>
+	<!-- 9 -->
+	<package generateMultiPage="true">
+		<subpackage rowInit="250" rowAcum="12" maxRowsAcum="37" rowInitNewPage="155" maxRowsAcumNewPage="50" maxRowsFootPage="37" maxRowsFootNewPage="50">
+			<field col="25" fontName="Dialog" fontSize="8" fontStyle="0" type="STRING" />
+			<field col="98" fontName="Dialog" fontSize="7" fontStyle="0" type="STRING" />
+			<field col="150" fontName="Dialog" fontSize="8" fontStyle="0" type="STRING" />
+			<field col="356" fontName="Dialog" fontSize="8" fontStyle="0" type="STRING" />
+			<field col="426" fontName="Dialog" fontSize="8" fontStyle="0" type="STRING" />
+			<field col="513" fontName="Dialog" fontSize="8" fontStyle="0" type="NUMERIC" mask="##,###" />
+			<field col="553" fontName="Dialog" fontSize="8" fontStyle="0" type="NUMERIC" mask="##,###" />
+			<field col="583" fontName="Dialog" fontSize="8" fontStyle="0" type="NUMERIC" mask="##,###" />
+		</subpackage>
+	</package>
+</emaku_template>

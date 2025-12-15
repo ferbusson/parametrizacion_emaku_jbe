@@ -1,0 +1,213 @@
+<emaku_template printer="EPSON_TM-T20" requestNumeration="true" silence="false" type="POSTSCRIPT">
+	<settings height="792" width="612"/>
+	<metadata>
+		<font col="0" name="Sans" row="0" size="15"/>
+		<field col="190" row="70" type="STRING">DEVOLUCIÓN MERCANCIA EN CONSIGNACIÓN</field>
+		<font col="0" name="Sans" row="0" size="10"/>
+		<!-- Encabezado MT -->
+		<image col="25" height="75" row="10" width="100">/icons/logo_fac.png</image>
+		<barcodeImage col="380" row="160"/>
+		<roundedRectangle col="20" height="17" row="110" width="150"/>
+		<roundedRectangle col="20" height="65" row="145" width="335"/>
+		<roundedRectangle col="20" height="530" row="220" width="565"/>
+		<roundedRectangle col="20" height="15" row="220" width="565"/>
+		<roundedRectangle col="20" height="100" row="650" width="565"/>
+		<field col="25" row="120" type="STRING">Fecha:</field>
+		<field col="25" row="140" type="STRING">Señores</field>
+		<ndocument col="500" row="155" fontName="Dialog" fontSize="10" fontStyle="1"/>
+		<field col="390" fontName="Dialog" fontSize="10" fontStyle="1" row="155" type="STRING">Numero:         DM -</field>
+		<!-- <field col="390" fontName="Dialog" fontSize="9" fontStyle="0" row="125" type="STRING">Documento Aplicado</field>
+		<field col="390" fontName="Dialog" fontSize="9" fontStyle="0" row="135" type="STRING">Número:</field>
+		<field col="390" fontName="Dialog" fontSize="9" fontStyle="0" row="145" type="STRING">Fac Proveedor:</field>
+		<field col="390" fontName="Dialog" fontSize="9" fontStyle="0" row="155" type="STRING">Fecha Fac. Prov:</field> -->
+		<field col="390" fontName="Dialog" fontSize="9" fontStyle="0" row="194" type="STRING">SALE DE:</field>
+		<field col="390" fontName="Dialog" fontSize="9" fontStyle="0" row="204" type="STRING">Usuario:</field>
+		<font col="0" name="Sans" row="0" size="8"/>
+		<!-- Detalles -->
+
+		<line row="650" col="425" row2="750" col2="425" /> <!-- linea antes de letreros pie pagina -->
+		<line row="650" col="500" row2="750" col2="500" /> <!-- linea antes de totales pie pagina -->
+
+		<line col="92"  col2="92" row="220" row2="650"/> <!-- linea antes de referencia -->
+		<line col="165"  col2="165" row="220" row2="650"/> <!-- linea antes de descripcion -->
+		<line col="368"  col2="368" row="220" row2="650"/> <!-- linea antes de %Desc -->
+		<line col="400"  col2="400" row="220" row2="650"/> <!-- linea antes de %IVA -->
+		<line col="435"  col2="435" row="220" row2="650"/> <!-- linea antes de cantidad -->
+		<line col="470"  col2="470" row="220" row2="650"/> <!-- linea antes de vunitario -->
+		<line col="527"  col2="527" row="220" row2="650"/> <!-- linea antes de total -->
+
+		<field row="230" col="35" type="STRING">Codigo</field>
+		<field row="230" col="115" type="STRING">Referencia</field>
+		<field row="230" col="197" type="STRING">Descripcion</field>
+		<field row="230" col="369" type="STRING">% Desc</field>
+		<field row="230" col="407" type="STRING">% IVA</field>
+		<field row="230" col="442" type="STRING">Cant</field>
+		<field row="230" col="477" type="STRING">V. Unitario</field>
+		<field row="230" col="540" type="STRING">Total</field>
+
+		<!-- <line col="97" col2="97" row="220" row2="650"/>
+		<line col="175" col2="175" row="220" row2="650"/>
+		<line col="290" col2="290" row="220" row2="650"/>
+		<line col="350" col2="350" row="220" row2="650"/>
+		<line col="395" col2="395" row="220" row2="750"/>
+		<line col="440" col2="440" row="220" row2="650"/>
+		<line col="517" col2="517" row="220" row2="750"/>
+
+		<field col="35" row="230" type="STRING">Codigo</field>
+		<field col="115" row="230" type="STRING">Referencia</field>
+		<field col="197" row="230" type="STRING">Descripcion</field>
+		<field col="305" row="230" type="STRING">% Desc</field>
+		<field col="365" row="230" type="STRING">% IVA</field>
+		<field col="400" row="230" type="STRING">Cantidad</field>
+		<field col="450" row="230" type="STRING">V. Unitario</field>
+		<field col="540" row="230" type="STRING">Total</field> -->
+
+
+		<field col="25" row="664" type="STRING">Observaciones:</field>
+		<!-- Sub totales -->
+		<field col="430" row="700" type="STRING">Sub. Total</field>
+		<field col="430" row="712" type="STRING">Descuento</field>
+		<field col="430" row="724" type="STRING">IVA</field>
+		<field col="430" row="736" type="STRING">Total</field>
+		<!-- <field col="430" row="712" type="STRING">Ret. Fuente</field>
+		<field col="430" row="724" type="STRING">Ret. ICA</field>
+		<field col="430" row="736" type="STRING">Total a Pagar</field> -->
+		<!-- Pie de pagina -->
+		<field col="250" row="664" type="STRING">Total Articulos</field>		
+	</metadata>
+	<newpage>
+		<font col="0" name="Sans" row="0" size="15"/>
+		<field col="190" row="80" type="STRING">DEVOLUCIÓN MERCANCIA EN CONSIGNACIÓN</field>
+		<image col="25" height="75" row="30" width="100">/icons/logo_fac.png</image>
+		<generateBarCodeImage col="380" row="160"/>
+		<field col="430" row="80" type="STRING">PAGINA:</field>
+		<pagenumber col="530" row="80"/>
+		<font col="0" name="Sans" row="0" size="7"/>
+		<roundedRectangle col="20" height="630" row="140" width="565"/>
+		<line col="20" col2="585" row="156" row2="156"/>
+
+		<line col="92"  col2="92" row="220" row2="650"/> <!-- linea antes de referencia -->
+		<line col="165"  col2="165" row="220" row2="650"/> <!-- linea antes de descripcion -->
+		<line col="368"  col2="368" row="220" row2="650"/> <!-- linea antes de %Desc -->
+		<line col="400"  col2="400" row="220" row2="650"/> <!-- linea antes de %IVA -->
+		<line col="435"  col2="435" row="220" row2="650"/> <!-- linea antes de cantidad -->
+		<line col="470"  col2="470" row="220" row2="650"/> <!-- linea antes de vunitario -->
+		<line col="527"  col2="527" row="220" row2="650"/> <!-- linea antes de total -->
+
+		<field row="230" col="35" type="STRING">Codigo</field>
+		<field row="230" col="115" type="STRING">Referencia</field>
+		<field row="230" col="197" type="STRING">Descripcion</field>
+		<field row="230" col="369" type="STRING">% Desc</field>
+		<field row="230" col="407" type="STRING">% IVA</field>
+		<field row="230" col="442" type="STRING">Cant</field>
+		<field row="230" col="477" type="STRING">V. Unitario</field>
+		<field row="230" col="540" type="STRING">Total</field>
+
+		<!-- <line col="97" col2="97" row="140" row2="770"/>
+		<line col="175" col2="175" row="140" row2="770"/>
+		<line col="290" col2="290" row="140" row2="770"/>
+		<line col="350" col2="350" row="140" row2="770"/>
+		<line col="395" col2="395" row="140" row2="770"/>
+		<line col="440" col2="440" row="140" row2="770"/>
+		<line col="517" col2="517" row="140" row2="770"/>
+		<field col="35" row="150" type="STRING">Codigo</field>
+		<field col="115" row="150" type="STRING">Referencia</field>
+		<field col="197" row="150" type="STRING">Descripcion</field>
+		<field col="305" row="150" type="STRING">% Desc</field>
+		<field col="365" row="150" type="STRING">% IVA</field>
+		<field col="400" row="150" type="STRING">Cantidad</field>
+		<field col="450" row="150" type="STRING">V. Unitario</field>
+		<field col="540" row="150" type="STRING">Total</field> -->
+	</newpage>
+	<!-- 0 cantidades -->
+	<package>
+		<field col="340" row="664" type="STRING"/>
+	</package>
+	<!-- 1 guia -->
+	<!-- <package>
+		<field col="110" row="688" type="STRING"/>
+		<field col="110" row="700" type="STRING"/>
+	</package> -->
+	<!-- 1 tercero -->
+	<package>
+		<field col="25" row="154" type="STRING"/>
+		<field col="25" row="164" type="STRING"/>
+		<field col="25" row="174" type="STRING"/>
+		<field col="25" row="184" type="STRING"/>
+		<field col="25" row="194" type="STRING"/>
+		<field col="25" row="204" type="STRING"/>
+	</package>
+	<!-- 3 fac ea -->
+	<!-- <package>
+		<field col="470" fontName="Sans" fontSize="9" row="135" type="STRING"/>
+	</package> -->
+	<!-- 3b fac proveedor ea -->
+	<!-- <package>
+		<field col="470" fontName="Sans" fontSize="9" row="145" type="STRING"/>
+	</package> -->
+	<!-- 3c fecha fac proveedor -->
+	<!-- <package>
+		<field col="470" fontName="Sans" fontSize="9" row="155" type="STRING"/>
+	</package> -->
+	<!-- bodega salida -->
+	<package>
+		<field col="470" fontName="Sans" fontSize="10" row="194" type="STRING"/>
+	</package>
+	<!-- 2 usuario -->
+	<package>
+		<field col="470" fontName="Sans" fontSize="9" row="204" type="STRING"/>
+	</package>
+	<!-- 3 fecha actual reg en sistema -->
+	<package>
+		<field col="80" row="120" mask="yyyy-MM-dd"  fontName="Dialog" fontSize="10" fontStyle="0" type="DATE"/>
+	</package>
+	<!-- 4 subtotales-->
+	<package>
+		<field col="580" mask="#,###,###,##0.00" row="700" type="NUMERIC"/>
+		<field col="580" mask="#,###,###,##0.00" row="712" type="NUMERIC"/>
+		<field col="580" mask="#,###,###,##0.00" row="724" type="NUMERIC"/>
+		<field col="580" mask="#,###,###,##0.00" row="736" type="NUMERIC"/>
+	</package>
+	<!-- 8 retefuente-->
+	<!-- <package>
+		<field col="580" mask="#,###,###,##0.00" row="712" type="NUMERIC"/>
+	</package> -->
+	<!-- 8b reteica-->
+	<!-- <package>
+		<field col="580" mask="#,###,###,##0.00" row="724" type="NUMERIC"/>
+	</package> -->
+	<!-- 9 total fac -->
+	<!-- <package>
+		<field col="580" mask="#,###,###,##0.00" row="736" type="NUMERIC"/>
+	</package> -->
+	<!-- 5 tabla principal -->
+	<package>
+		<subpackage maxRowsAcum="34" maxRowsAcumNewPage="49" rowAcum="12" rowInit="250" rowInitNewPage="170">
+			<field col="25" fontSize="7" fontName="Sans" fontStyle="0" type="STRING"/>
+			<field col="94" fontSize="7" fontName="Sans" fontStyle="0" type="STRING"/>
+			<field col="167" fontSize="7" fontName="Sans" fontStyle="0" type="STRING"/>
+			<field col="468" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###" type="NUMERIC"/>
+			<field col="525" fontSize="7" fontName="Sans" fontStyle="0" mask="#,###,###,##0.00" type="NUMERIC"/>
+			<field col="433" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###" type="NUMERIC"/>
+			<field col="398" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###" type="NUMERIC"/>
+			<field col="580" fontSize="7" fontName="Sans" fontStyle="0" mask="#,###,###,##0.00" type="NUMERIC"/>
+		</subpackage>
+	</package>
+	<!-- <package>
+		<subpackage maxRowsAcum="34" maxRowsAcumNewPage="49" rowAcum="12" rowInit="250" rowInitNewPage="170">
+			<field col="25" type="STRING"/>
+			<field col="100" type="STRING"/>
+			<field col="180" type="STRING"/>
+			<field col="435" mask="##,###" type="NUMERIC"/>
+			<field col="500" mask="#,###,###,##0.00" type="NUMERIC"/>
+			<field col="380" mask="##,###" type="NUMERIC"/>
+			<field col="330" mask="##,###" type="NUMERIC"/>
+			<field col="580" mask="#,###,###,##0.00" type="NUMERIC"/>
+		</subpackage>
+	</package> -->
+	<!-- 6 obs -->
+	<package>
+		<field col="25" height="5" row="674" rowAcum="10" type="TEXT" width="93"/>
+	</package>
+
+</emaku_template>

@@ -1,0 +1,161 @@
+<emaku_template type="GRAPHIC" requestNumeration="false" silence="false" printer="EPSON_TM-T20">
+		<settings width="612" height="792"/>
+		<metadata>
+			<image row="30" col="30" width="25" height="12">/icons/logo_fac.png</image>
+			<font row="0" col="0" name="Sans" size="10"/>
+
+			<field row="37" center="612" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1" importValue="true">terceroal</field>
+			<field row="52" center="612" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0" importValue="true">nitalterno</field>
+			<field row="67" center="612" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0">Responsable del Impuesto sobre las ventas - IVA</field>
+			<field row="82" center="612" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0" importValue="true">direccion</field>
+			<field row="97" center="612" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0" importValue="true">ciudad</field>
+			
+			<field row="120" center="612" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">COMPROBANTE INFORME DIARIO POR CAJA</field>
+			<field row="150" col="50" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">Número:</field>
+			<field row="162" col="50" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1" >Fecha:</field>
+			<field row="174" col="50" type="STRING" >Cajero:</field>
+
+	        	<field row="195" center="612" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1" >DOCUMENTOS GENERADOS</field>
+
+                	<field row="210" col="50" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1" >POS</field>
+			<field row="210" col="140" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">POS-CAMBIO</field>
+			<field row="210" col="290" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">FV E. CREDITO</field>
+			<field row="210" col="440" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">FV E. CONTADO</field>
+
+			<field row="225" col="50" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">FV CONTINGENCIA CREDITO</field>
+			<field row="225" col="290" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">FV CONTINGENCIA CONTADO</field>
+
+			<field row="251" center="612" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1" >DISCRIMINACION DE VENTAS</field>
+
+			<field row="405" col="50" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">TOTAL FACTURADO</field>
+
+				<field row="425" center="612" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">MOVIMIENTOS DEL DIA</field>
+
+				<field row="439" col="50" type="STRING" >MEDIOS DE PAGO</field>
+				<field row="439" col="300" type="STRING" >CANTIDAD</field>
+				<field row="439" col="530" type="STRING" >VALOR</field>
+
+				<field row="560" col="50" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">TOTAL</field>
+
+				<field row="587" center="612" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1" >DISCRIMINACION POR EQUIPOS EMISORES DE FACTURAS</field>
+
+				<field row="603" col="50" type="STRING" >CAJA</field>
+				<field row="603" col="120" type="STRING" >USUARIO</field>
+				<field row="603" col="210" type="STRING" >UBICACION</field>
+				<field row="603" col="330" type="STRING" >SERIE</field>
+				<field row="603" col="400" type="STRING" >CANT. FACTURAS</field>
+				<field row="603" col="530" type="STRING" >VALOR</field>
+
+				<field row="630" col="50" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">TOTAL</field>
+
+
+		</metadata>
+
+     <!-- Prefijo -->
+	<package>
+               <field row="150" col="105" type="STRING" textLine="-" textCol="120" fontName="Dialog" fontSize="10" fontStyle="0"/>
+        </package>
+
+ <!-- Numero fac -->
+     <package>
+        <field row="150" col="125" width="10" type="STRING" mask="0" fontName="Dialog" fontSize="10" fontStyle="0"/>
+     </package>
+
+   <!-- fecha fac -->
+   <package>
+      <field row="162" col="105" type="DATE" mask="EEEEEE dd MMMM yyyy" fontName="Dialog" fontSize="10" fontStyle="0"/>
+   </package>
+
+	<!-- vendedor -->
+   <package>
+      <field row="174" col="105" fontName="Dialog" fontSize="10" fontStyle="0" type="STRING" />
+   </package>
+
+
+	<!-- 3 POS CANTIDAD -->
+        <package>
+                <field fontName="Dialog" fontSize="10" fontStyle="0" row="210" col="87" width="13" type="STRING"/>
+        </package>
+
+	<!-- 6 CAMBIO CANTIDAD -->
+        <package>
+                <field fontName="Dialog" fontSize="10" fontStyle="0" row="210" col="230" width="13" type="STRING"/>
+        </package>
+
+	<!-- 9 CREDITO CANTIDAD -->
+        <package>
+                <field fontName="Dialog" fontSize="10" fontStyle="0" row="210" col="390" width="13" type="STRING"/>
+        </package>
+
+	<!-- ELECTRONICA CONTADO -->
+        <package>
+                <field fontName="Dialog" fontSize="10" fontStyle="0" row="210" col="540" width="13" type="STRING"/>
+        </package>
+
+        <!-- CONTINGENCIA CONTADO -->
+        <package>
+                <field fontName="Dialog" fontSize="10" fontStyle="0" row="225" col="230" width="13" type="STRING"/>
+        </package>
+
+        <!-- CONTINGENCIA CONTADO -->
+        <package>
+                <field fontName="Dialog" fontSize="10" fontStyle="0" row="225" col="470" width="13" type="STRING"/>
+        </package>
+
+
+	<!-- 10 DISCRIMINACION DE VENTAS -->
+
+	   <package>
+	      <subpackage rowInit="271" rowAcum="15">
+		 <field col="50" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0" incrementRow="false" /> 
+		 <field col="570" type="NUMERIC" width="13" fontName="Dialog" fontSize="10" fontStyle="0" mask="###,###,###" />
+	      </subpackage>
+	   </package>
+
+
+	<!-- 11 TOTAL FACTURADO -->
+        <package>
+                <field fontName="Dialog" fontSize="10" fontStyle="1" row="405" col="570" width="13" type="NUMERIC" mask="###,###,###"/>
+        </package>
+
+
+	<!-- MOVIMIENTOS DEL DIA -->
+
+	   <package>
+	      <subpackage rowInit="453" rowAcum="15">
+		 <field col="50" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0" incrementRow="false" /> 
+		 <field col="330" type="NUMERIC" width="13" fontName="Dialog" fontSize="10" fontStyle="0" mask="###,###,###" />
+		 <field col="570" type="NUMERIC" width="13" fontName="Dialog" fontSize="10" fontStyle="0" mask="###,###,###" />
+	      </subpackage>
+	   </package>
+
+
+	<!-- 13 TOTAL FACTURADO -->
+        <package>
+                <field fontName="Dialog" fontSize="10" fontStyle="1" row="560" col="570" width="13" type="NUMERIC" mask="###,###,###"/>
+        </package>
+
+
+	<!-- 14 DISCRIMINACION EQUIPO -->
+
+	   <package>
+	      <subpackage rowInit="617" rowAcum="15">
+		 <field col="50" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0" incrementRow="false" /> 
+		 <field col="120" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0" incrementRow="false" /> 
+		 <field col="210" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0" incrementRow="false" /> 
+		 <field col="330" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0" incrementRow="false" /> 
+		 <field col="450" type="NUMERIC" width="9" fontName="Dialog" fontSize="10" fontStyle="0" mask="#,###" />
+		 <field col="570" type="NUMERIC" width="13" fontName="Dialog" fontSize="10" fontStyle="0" mask="###,###,###" />
+	      </subpackage>
+	   </package>
+
+
+	<!-- 15 TOTAL DISCRIMINACION -->
+        <package>
+                <field fontName="Dialog" fontSize="10" fontStyle="1" row="630" col="570" width="13" type="NUMERIC" mask="###,###,###"/>
+        </package>
+
+
+
+
+</emaku_template>

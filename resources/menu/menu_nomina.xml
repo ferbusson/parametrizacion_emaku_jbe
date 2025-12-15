@@ -1,0 +1,413 @@
+<JMenu>
+        <Text>NOMINA</Text>
+        <Mnemonic>NEMO-NOMINA</Mnemonic>
+        <Activo/>
+        <JMenu>
+            <Text>CONCEPTOS_CAUSACION</Text>
+            <Icon>/icons/ico_concepto_causacion_16x16.png</Icon>
+            <Mnemonic>C</Mnemonic>
+            <Activo/>
+            <JMenuItem>
+                <Text>NUEVO</Text>
+                <Icon>/icons/ico_nuevo.png</Icon>
+                <Mnemonic>NEMO-NUEVO</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00001</Transaction>
+            </JMenuItem>
+            <JMenuItem>
+                <Text>EDITAR</Text>
+                <Icon>/icons/ico_editar.png</Icon>
+                <Mnemonic>NEMO-EDITAR</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00012</Transaction>
+            </JMenuItem>
+            <JSeparator/>
+            <JMenuItem>
+                <Text>CONSULTAR</Text>
+                <Icon>/icons/ico_eliminar.png</Icon>
+                <Mnemonic>NEMO-CONSULTAR</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00013</Transaction>
+            </JMenuItem>
+            <JMenu>
+                <Mnemonic>e</Mnemonic>
+                <Icon>GREPORTS</Icon>
+                <Text>Informes</Text>
+                <Activo/>
+                <JMenuItem>
+                    <Text>Reporte General de Conceptos Causación</Text>
+                    <Icon>REPORT</Icon>
+                    <Mnemonic>f</Mnemonic>
+                    <Activo/>
+                    <Transaction>NMTR00038</Transaction>
+                </JMenuItem>
+            </JMenu>
+        </JMenu>
+        <JMenu>
+            <Text>Novedades Nómina</Text>
+            <Icon>/icons/ico_definiciona.png</Icon>
+            <Mnemonic>C</Mnemonic>
+            <Activo/>
+            <JMenuItem>
+                <Text>NUEVO</Text>
+                <Icon>/icons/ico_nuevo.png</Icon>
+                <Mnemonic>NEMO-NUEVO</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00019</Transaction>
+            </JMenuItem>
+            <JMenuItem>
+                <Text>Editar</Text>
+                <Icon>/icons/ico_editar.png</Icon>
+                <Mnemonic>NEMO-EDITAR</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00040</Transaction>
+            </JMenuItem>
+            <JMenuItem>
+                <Text>ANULAR</Text>
+                <Icon>/icons/ico_anular.png</Icon>
+                <Mnemonic>NEMO-EDITAR</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00020</Transaction>
+            </JMenuItem>
+            <JMenuItem>
+                <Text>CONSULTAR</Text>
+                <Icon>/icons/ico_eliminar.png</Icon>
+                <Mnemonic>NEMO-CONSULTAR</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00021</Transaction>
+            </JMenuItem>
+            <JMenu>
+                <Mnemonic>e</Mnemonic>
+                <Icon>GREPORTS</Icon>
+                <Text>Informes</Text>
+                <Activo/>
+                <JMenuItem>
+                    <Text>Informe Novedades Nómina por Fecha y Tercero</Text>
+                    <Icon>REPORT</Icon>
+                    <Mnemonic>f</Mnemonic>
+                    <Activo/>
+                    <Transaction>NMTR00036</Transaction>
+                </JMenuItem>
+            </JMenu>
+        </JMenu>
+        <JMenu>
+            <Text>Registro Conceptos Nómina por Valor</Text>
+            <Icon>/icons/ico_devengado_provisionado_16x16.png</Icon>
+            <Mnemonic>C</Mnemonic>
+            <Activo/>
+            <JMenuItem>
+                <Text>NUEVO</Text>
+                <Icon>/icons/ico_nuevo.png</Icon>
+                <Mnemonic>NEMO-NUEVO</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00022</Transaction>
+            </JMenuItem>
+            <JMenuItem>
+                <Text>Editar</Text>
+                <Icon>/icons/ico_editar.png</Icon>
+                <Mnemonic>NEMO-EDITAR</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00039</Transaction>
+            </JMenuItem>
+            <JMenuItem>
+                <Text>ANULAR</Text>
+                <Icon>/icons/ico_anular.png</Icon>
+                <Mnemonic>NEMO-EDITAR</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00023</Transaction>
+            </JMenuItem>
+            <JMenuItem>
+                <Text>CONSULTAR</Text>
+                <Icon>/icons/ico_consultar.png</Icon>
+                <Mnemonic>NEMO-CONSULTAR</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00024</Transaction>
+            </JMenuItem>
+            <JMenu>
+                <Mnemonic>e</Mnemonic>
+                <Icon>GREPORTS</Icon>
+                <Text>Informes</Text>
+                <Activo/>
+                <JMenuItem>
+                    <Text>Informe Conceptos Nómina por Valor | Por Fecha y División</Text>
+                    <Icon>REPORT</Icon>
+                    <Mnemonic>f</Mnemonic>
+                    <Activo/>
+                    <Transaction>NMTR00035</Transaction>
+                </JMenuItem>
+            </JMenu>
+        </JMenu>
+        <JMenu>
+            <Text>Importación de Extras y Recargos</Text>
+            <Icon>/icons/ico_aporte_patronal_16x16.png</Icon>
+            <Mnemonic>C</Mnemonic>
+            <Activo/>
+            <JMenuItem>
+                <Text>NUEVO</Text>
+                <Icon>/icons/ico_nuevo.png</Icon>
+                <Mnemonic>NEMO-NUEVO</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00025</Transaction>
+            </JMenuItem>
+            <JMenuItem>
+                <Text>ANULAR</Text>
+                <Icon>/icons/ico_anular.png</Icon>
+                <Mnemonic>NEMO-EDITAR</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00026</Transaction>
+            </JMenuItem>
+            <JMenuItem>
+                <Text>CONSULTAR</Text>
+                <Icon>/icons/ico_consultar.png</Icon>
+                <Mnemonic>NEMO-CONSULTAR</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00027</Transaction>
+            </JMenuItem>
+        </JMenu>
+        <JMenu>
+            <Text>Generación de XML nómina electrónica</Text>
+            <Icon>/icons/ico_salida_material.png</Icon>
+            <Mnemonic>C</Mnemonic>
+            <Activo/>
+            <JMenuItem>
+                <Text>NUEVO</Text>
+                <Icon>/icons/ico_nuevo.png</Icon>
+                <Mnemonic>NEMO-NUEVO</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00030</Transaction>
+            </JMenuItem>
+            <JMenuItem>
+                <Text>CONSULTAR</Text>
+                <Icon>/icons/ico_consultar.png</Icon>
+                <Mnemonic>NEMO-CONSULTAR</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00034</Transaction>
+            </JMenuItem>
+        </JMenu>
+        <JMenuItem>
+            <Text>Nómina Electrónica Ajuste</Text>
+            <Icon>/icons/ico_salida_alquiler.png</Icon>
+            <Mnemonic>NEMO-NUEVO</Mnemonic>
+            <Activo/>
+            <Transaction>NMTR00031</Transaction>
+        </JMenuItem>
+        <JMenuItem>
+            <Text>Nómina Electrónica Eliminar</Text>
+            <Icon>/icons/ico_salida_material.png</Icon>
+            <Mnemonic>NEMO-NUEVO</Mnemonic>
+            <Activo/>
+            <Transaction>NMTR00032</Transaction>
+        </JMenuItem>
+        <JMenu>
+            <Text>ADMIN_CAUSACION</Text>
+            <Icon>/icons/ico_administrar_causacion_16x16.png</Icon>
+            <Mnemonic>A</Mnemonic>
+            <Activo/>
+            <JMenuItem>
+                <Text>POR_EMPLEADO</Text>
+                <Icon>PAGO_NOMINA</Icon>
+                <Mnemonic>E</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00002</Transaction>
+            </JMenuItem>
+            <JMenuItem>
+                <Text>COMUNES</Text>
+                <Icon>PAGO_NOMINA1</Icon>
+                <Mnemonic>C</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00003</Transaction>
+            </JMenuItem>
+            <JMenuItem>
+                <Text>Trasladar Conceptos Causacion</Text>
+                <Icon>/icons/ico_trasladar_causacion_16x16.png</Icon>
+                <Mnemonic>C</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00018</Transaction>
+            </JMenuItem>
+        </JMenu>
+        <JSeparator/>
+        <JMenu>
+            <Text>Administración de Divisiones</Text>
+            <Icon>/icons/ico_administrar_division_16x16.png</Icon>
+            <Mnemonic>A</Mnemonic>
+            <Activo/>
+            <JMenuItem>
+                <Text>POR_EMPLEADO</Text>
+                <Icon>/icons/ico_trasladar_causacion_16x16.png</Icon>
+                <Mnemonic>E</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00017</Transaction>
+            </JMenuItem>
+            <JMenu>
+                <Text>Division Empresarial</Text>
+                <Icon>/icons/ico_division_empresarial_16x16.png</Icon>
+                <Mnemonic>C</Mnemonic>
+                <Activo/>
+                <JMenuItem>
+                    <Text>NUEVO</Text>
+                    <Icon>/icons/ico_nuevo.png</Icon>
+                    <Mnemonic>NEMO-NUEVO</Mnemonic>
+                    <Activo/>
+                    <Transaction>NMTR00014</Transaction>
+                </JMenuItem>
+                <JMenuItem>
+                    <Text>EDITAR</Text>
+                    <Icon>/icons/ico_editar.png</Icon>
+                    <Mnemonic>NEMO-EDITAR</Mnemonic>
+                    <Activo/>
+                    <Transaction>NMTR00015</Transaction>
+                </JMenuItem>
+                <JSeparator/>
+                <JMenuItem>
+                    <Text>BORRAR</Text>
+                    <Icon>/icons/ico_consultar.png</Icon>
+                    <Mnemonic>NEMO-CONSULTAR</Mnemonic>
+                    <Activo/>
+                    <Transaction>NMTR00016</Transaction>
+                </JMenuItem>
+            </JMenu>
+        </JMenu>
+        <JSeparator/>
+        <JMenu>
+            <Text>CAUSACION_NOMINA</Text>
+            <Icon>/icons/ico_causacion_nomina_16x16.png</Icon>
+            <Mnemonic>S</Mnemonic>
+            <Activo/>
+            <JMenuItem>
+                <Text>NUEVO</Text>
+                <Icon>/icons/ico_nuevo.png</Icon>
+                <Mnemonic>NEMO-NUEVO</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00004</Transaction>
+            </JMenuItem>
+            <JMenuItem>
+                <Text>ANULAR</Text>
+                <Icon>/icons/ico_anular.png</Icon>
+                <Mnemonic>NEMO-ANULAR</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00007</Transaction>
+            </JMenuItem>
+            <JMenuItem>
+                <Text>CONSULTAR</Text>
+                <Icon>/icons/ico_consultar.png</Icon>
+                <Mnemonic>NEMO-CONSULTAR</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00011</Transaction>
+            </JMenuItem>
+            <JSeparator/>            
+            <JMenuItem>
+                <Text>Temporal Nomina</Text>
+                <Icon>/icons/ico_editar.png</Icon>
+                <Mnemonic>NEMO-EDITAR</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00037</Transaction>
+            </JMenuItem>            
+        </JMenu>
+    <JMenu>
+            <Text>Causación CxC Empleados</Text>
+            <Icon>/icons/ico_liquidacion_16x16.png</Icon>
+            <Mnemonic>L</Mnemonic>
+<Activo/>
+<JMenuItem>
+<Text>NUEVO</Text>
+<Icon>/icons/ico_nuevo.png</Icon>
+<Mnemonic>NEMO-NUEVO</Mnemonic>
+<Activo/>
+<Transaction>NMTR00043</Transaction>
+</JMenuItem>
+<JMenuItem>
+<Text>ANULAR</Text>
+<Icon>/icons/ico_anular.png</Icon>
+<Mnemonic>NEMO-ANULAR</Mnemonic>
+<Activo/>
+<Transaction>NMTR00044</Transaction>
+</JMenuItem>
+<JSeparator/>
+<JMenuItem>
+<Text>CONSULTAR</Text>
+<Icon>/icons/ico_consultar.png</Icon>
+<Mnemonic>NEMO-CONSULTAR</Mnemonic>
+<Activo/>
+<Transaction>NMTR00045</Transaction>
+</JMenuItem>
+<JMenu>
+<Mnemonic>NEMO-REPORTE</Mnemonic>
+<Icon>GREPORTS</Icon>
+<Text>REPORTS</Text>
+<JMenuItem>
+<Text>Informe Causacion CxC Empleados</Text>
+<Icon>REPORT</Icon>
+<Mnemonic>NEMO-REPORTE-NUMERO</Mnemonic>
+<Activo/>
+<Transaction>NMTR00046</Transaction>
+        </JMenuItem>
+          </JMenu>
+        </JMenu>
+
+        <JMenu>
+            <Mnemonic>NEMO-REPORTE</Mnemonic>
+            <Icon>GREPORTS</Icon>
+            <Text>REPORTS</Text>
+            <JMenuItem>
+                <Text>Informe Consolidado de Nómina</Text>
+                <Icon>REPORT</Icon>
+                <Mnemonic>NEMO-REPORTE-NUMERO</Mnemonic>
+                <Activo/>
+                <Transaction>MTR00090</Transaction>
+            </JMenuItem>
+            <JMenuItem>
+                <Text>Informes Administrativos Nómina</Text>
+                <Icon>REPORT</Icon>
+                <Mnemonic>NEMO-REPORTE-NUMERO</Mnemonic>
+                <Activo/>
+                <Transaction>LCTR00109</Transaction>
+            </JMenuItem>
+            <JMenuItem>
+                <Text>Informe Consolidado de Extras Importadas</Text>
+                <Icon>REPORT</Icon>
+                <Mnemonic>NEMO-REPORTE-NUMERO</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00028</Transaction>
+            </JMenuItem>
+            <JMenuItem>
+                <Text>Informe de Recargos desfasados por Mes</Text>
+                <Icon>REPORT</Icon>
+                <Mnemonic>NEMO-REPORTE-NUMERO</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00029</Transaction>
+            </JMenuItem>
+            <JSeparator/>
+            <JMenuItem>
+                <Text>Informe Terceros Nomina - Envio DIAN</Text>
+                <Icon>REPORT</Icon>
+                <Mnemonic>NEMO-REPORTE-NUMERO</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00033</Transaction>
+            </JMenuItem>
+            <JSeparator/>
+            <JMenuItem>
+                <Text>Soporte de Nómina Electrónica x Fecha y Tercero</Text>
+                <Icon>REPORT</Icon>
+                <Mnemonic>NEMO-REPORTE-NUMERO</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00041</Transaction>
+	</JMenuItem>
+
+	  <JMenuItem>
+                <Text>Desprendibles de Pago de Nómina x Fecha y Tercero</Text>
+                <Icon>REPORT</Icon>
+                <Mnemonic>NEMO-REPORTE-NUMERO</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00047</Transaction>
+            </JMenuItem>
+
+            <JSeparator/>
+            <JMenuItem>
+                <Text>Informe Plancha Borrador Nómina</Text>
+                <Icon>REPORT</Icon>
+                <Mnemonic>NEMO-REPORTE-NUMERO</Mnemonic>
+                <Activo/>
+                <Transaction>NMTR00042</Transaction>
+            </JMenuItem>
+        </JMenu>
+    </JMenu>

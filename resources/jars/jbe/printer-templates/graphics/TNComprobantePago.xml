@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emaku_template type="POSTSCRIPT" requestNumeration="true" copies="1"
+	silent="false" printer="EPSON_TM-T20">
+	<settings width="612" height="792" />
+	<metadata>
+		<!-- Encabezado -->
+		<image row="0" col="25" width="100" height="75">
+			/icons/logo_fac.png
+		</image>
+		<barcodeImage row="10" col="410" />
+		<font row="0" col="0" name="Dialog" size="10" />
+		<!--  <field row="25" col="30" type="STRING">BERCELI MEDINA</field>
+			<field row="37" col="30" type="STRING">ALMACENES MT</field>
+			<field row="49" col="30" type="STRING">CRA 6 No 13-87</field>
+			<field row="61" col="30" type="STRING">IPIALES</field> -->
+		<!-- cuadros de la forma -->
+		<roundedRectangle row="85" col="20" width="565" height="695" />
+		<!-- Informacion del Solicitante -->
+		<!-- Numero de documento -->
+		<field row="25" col="240" type="STRING">
+			COMPROBANTE DE PAGO
+		</field>
+		<field row="39" col="240" type="Numero">NUMERO:</field>
+		<ndocument row="39" col="285" />
+		<field row="132" col="390" type="Numero">VALOR $</field>
+		<field row="162" col="30" type="Numero">LA SUMA DE:</field>
+		<field row="190" col="78" type="Numero">Concepto</field>
+		<field row="632" col="30" type="Numero">
+			Forma de Pago:      Efectivo [  ]          Cheque [  ]          Transferencia [  ]         T. Credito [  ]
+		</field>
+		<field row="650" col="50" type="Numero">Código</field>
+		<field row="650" col="160" type="Numero">Débitos</field>
+		<field row="650" col="265" type="Numero">Créditos</field>
+		<field row="760" col="25" type="Numero">Elaboro</field>
+		<field row="760" col="125" type="Numero">Aprobo</field>
+		<field row="760" col="245" type="Numero">Contabilizo</field>
+		<field row="775" col="360" type="Numero">Firma y Sello</field>
+		<!-- lineas horizontales -->
+		<line row="120" col="20" row2="120" col2="585" />
+		<line row="150" col="20" row2="150" col2="585" />
+		<line row="190" col="20" row2="190" col2="73" />
+		<line row="190" col="135" row2="190" col2="585" />
+		<line row="620" col="20" row2="620" col2="585" />
+		<line row="640" col="20" row2="640" col2="585" />
+		<line row="655" col="20" row2="655" col2="340" />
+		<line row="750" col="20" row2="750" col2="340" />
+		<line row="765" col="355" row2="765" col2="575" />
+		<!-- lineas verticales -->
+		<line row="640" col="120" row2="780" col2="120" />
+		<line row="640" col="240" row2="780" col2="240" />
+		<line row="640" col="340" row2="780" col2="340" />
+		<field row="790" col="20" type="STRING">
+			BERCELI MEDINA - Nit. 79.719.543-2 - Kra. 6 # 13-87 - Tel.
+			7733324
+		</field>
+	</metadata>
+	<package>
+		<field row="99" col="30" type="DATE"
+			mask="EEEEEE, dd MMMM yyyy" />
+	</package>
+	<package>
+		<field row="132" col="30" type="STRING" />
+		<field row="145" col="30" type="STRING" />
+		<field row="0" col="0" />
+		<field row="0" col="0" />
+		<field row="0" col="0" />
+		<field row="0" col="0" />
+	</package>
+	<package>
+		<field row="132" col="510" width="18" type="NUMERIC" mask="##,###,###,##0.00" />
+	</package>
+	<package>
+		<field row="145" col="300" width="80" height="3" type="TEXT" rowAcum="12" />
+	</package>
+	<package>
+		<field row="162" col="95" type="NUMTOLETTERS" width="75" height="2" rowAcum="12" />
+	</package>
+	<package>
+		<field row="210" col="30" width="240" height="100" type="TEXT" rowAcum="12" />
+	</package>
+	<package>
+		<subpackage rowInit="665" rowAcum="10">
+			<field col="30" type="STRING" />
+			<field col="220" width="14" type="NUMERIC"
+				mask="##,###,###,###" />
+			<field col="320" width="14" type="NUMERIC"
+				mask="##,###,###,###" />
+		</subpackage>
+	</package>
+	<package>
+		<field row="632" col="169" type="STRING" />
+		<field row="632" col="253" type="STRING" />
+		<field row="632" col="366" type="STRING" />
+		<field row="632" col="459" type="STRING" />
+	</package>
+</emaku_template>

@@ -1,0 +1,61 @@
+NuevoCheque.xml:10:		<field row="480" col="65" type="STRING">JAVIER BENAVIDES ERAZO WEB S.A.S</field>
+TFormaPagoEgreso.xml:5:		<field row="72" col="75" type="STRING">JAVIER BENAVIDES ERAZO S.A.S.</field>
+TNCambiosMulti.xml:367:        <text fontName="Dialog" fontSize="6" fontStyle="0" rowAcum="10" row="last" col="54" type="STRING">Factura impresa por JAVIER BENAVIDES ERAZO S.A.S.</text>
+TNCertificacionLaboral.xml:11:    <field col="200" row="175" fontName="Arial" fontSize="10" fontStyle="1" type="STRING">JAVIER BENAVIDES ERAZO S.A.S.</field>
+TNContratoPag3.xml:14:		<field row="520" col="90" type="STRING" fontName="Arial" fontSize="10" fontStyle="1">JAVIER BENAVIDES ERAZO S.A.S.</field>
+TNContrato.xml:15:		<field row="80" col="210" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">JAVIER BENAVIDES ERAZO S.A.S..</field>
+TNCotizacionConPiePagina.xml:106:			<field row="738" col="250" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Impreso por JAVIER BENAVIDES ERAZO S.A.S.</field>
+TNDevVentaFacElectronicaCarta.xml:108:			<field row="738" col="135" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Nota Crédito elaborada, impresa y enviada electrónicamente por: JAVIER BENAVIDES ERAZO S.A.S. NIT.891224230-2</field>
+TNDevVentaFacPlataformaWebCarta.xml:108:			<field row="738" col="135" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Nota Crédito elaborada, impresa y enviada electrónicamente por: JAVIER BENAVIDES ERAZO S.A.S. NIT.891224230-2</field>
+TNFacturaContingenciaMultiPagosCarta.xml:134:			<field row="746" col="135" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Factura elaborada, impresa y enviada electrónicamente por: JAVIER BENAVIDES ERAZO S.A.S. NIT.891224230-2</field>
+TNFacturaContingenciaMultiPagosTirilla.xml:358:        <text fontName="Dialog" fontSize="6" fontStyle="0" rowAcum="10" row="last" col="54" type="STRING">JAVIER BENAVIDES ERAZO S.A.S. Nit. 891224230-2</text>
+TNFacturaContingenciaPlataformaOnlineConPiePagina.xml:127:			<field row="738" col="135" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Factura elaborada e impresa por: JAVIER BENAVIDES ERAZO S.A.S. NIT.891224230-2</field>
+TNFacturaContingenciaPosE.xml:327:        <text fontName="Dialog" fontSize="6" fontStyle="0" rowAcum="10" row="last" col="54" type="STRING">JAVIER BENAVIDES ERAZO S.A.S. Nit. 891224230-2</text>
+TNFacturaContingencia.xml:120:			<field row="738" col="135" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Factura elaborada e impresa por: JAVIER BENAVIDES ERAZO S.A.S. NIT.891224230-2</field>
+TNFacturaCreditoConPiePagina.xml:121:			<field row="738" col="135" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Factura elaborada, impresa y enviada electrónicamente por: JAVIER BENAVIDES ERAZO S.A.S. NIT.891224230-2</field>
+TNFacturaCreditoContadoTirilla.xml:358:        <text fontName="Dialog" fontSize="6" fontStyle="0" rowAcum="10" row="last" col="54" type="STRING">JAVIER BENAVIDES ERAZO S.A.S. Nit. 891224230-2</text>
+TNFacturaCreditoContado.xml:134:			<field row="746" col="135" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Factura elaborada, impresa y enviada electrónicamente por: JAVIER BENAVIDES ERAZO S.A.S. NIT.891224230-2</field>
+TNFacturaCredito.xml:58:                        <field row="738" col="235" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Factura Impresa por JAVIER BENAVIDES ERAZO S.A.S.</field>
+TNFacturaPlataformaOnlineConPiePagina.xml:123:			<field row="738" col="135" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Factura elaborada, impresa y enviada electrónicamente por: JAVIER BENAVIDES ERAZO S.A.S. NIT.891224230-2</field>
+TNFacturaPosMultiElectronica.xml:341:        <text fontName="Dialog" fontSize="6" fontStyle="0" rowAcum="10" row="last" col="54" type="STRING">JAVIER BENAVIDES ERAZO S.A.S. Nit. 891224230-2</text>
+TNFacturaPosMulti.xml:291:        <text fontName="Dialog" fontSize="6" fontStyle="0" rowAcum="10" row="last" col="54" type="STRING">Factura impresa por JAVIER BENAVIDES ERAZO S.A.S.</text>
+TNMemorando.xml:6:                <!-- <field col="90" row="75" fontName="Arial" fontSize="10" fontStyle="0" type="STRING">JAVIER BENAVIDES ERAZO S.A.S.</field>
+TNOrdenCompraBodegas.xml:127:		<field row="727" col="25" fontSize="8" fontName="Sans" fontStyle="0" type="STRING">E: JAVIER BENAVIDES ERAZO WEB</field>
+TNRemisionEnVenta.xml:109:			<field row="738" col="235" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Documento Impreso por JAVIER BENAVIDES ERAZO S.A.S.</field>
+TNSeparadoMultiOct182019.xml:244:        <text fontName="Dialog" fontSize="6" fontStyle="0" rowAcum="10" row="last" col="54" type="STRING">Factura impresa por JAVIER BENAVIDES ERAZO S.A.S.</text>
+TNSeparadoMulti.xml:196:        <text fontName="Dialog" fontSize="7" fontStyle="0" rowAcum="15" row="last" col="8" type="STRING">JAVIER BENAVIDES ERAZO se reserva el derecho sobre la mercancía que</text>
+TNTrasladoDespachoMercancia.xml:40:		<field row="753" col="20" type="STRING">JAVIER BENAVIDES ERAZO S.A.S. - Nit. 891224230-2 - Pasto - Nariño</field>
+TNTrasladoEntradaAlmacen.xml:42:		<field row="753" col="20" type="STRING">JAVIER BENAVIDES ERAZO S.A.S. - Nit. 891224230-2 - Pasto - Nariño</field>
+TNTraslado.xml:43:		<field col="20" row="753" type="STRING">JAVIER BENAVIDES ERAZO S.A.S. - Nit. 891224230-2 - Pasto - Nariño</field>
+TSCambiosMulti.xml:389:        <text fontName="Dialog" fontSize="6" fontStyle="0" rowAcum="10" row="last" col="54" type="STRING">Factura impresa por JAVIER BENAVIDES ERAZO S.A.S.</text>
+TSCotizacionConPiePagina.xml:104:			<field row="738" col="250" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Impreso por JAVIER BENAVIDES ERAZO S.A.S.</field>
+TSDevVentaFacElectronicaCartaServer.xml:100:			<field row="738" col="135" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Nota Crédito elaborada, impresa y enviada electrónicamente por: JAVIER BENAVIDES ERAZO S.A.S. NIT.891224230-2</field>
+TSDevVentaFacElectronicaCarta.xml:100:			<field row="738" col="135" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Nota Crédito elaborada, impresa y enviada electrónicamente por: JAVIER BENAVIDES ERAZO S.A.S. NIT.891224230-2</field>
+TSDevVentaFacPlataformaWebCarta.xml:100:			<field row="738" col="135" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Nota Crédito elaborada, impresa y enviada electrónicamente por: JAVIER BENAVIDES ERAZO S.A.S. NIT.891224230-2</field>
+TSFacturaContingenciaElectronicaContado.xml:110:			<field row="738" col="135" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Factura elaborada, impresa y enviada electrónicamente por: JAVIER BENAVIDES ERAZO S.A.S. NIT.891224230-2</field>
+TSFacturaContingenciaMultiPagosCarta.xml:125:			<!-- <field row="738" col="235" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Factura Impresa por JAVIER BENAVIDES ERAZO S.A.S.</field> -->
+TSFacturaContingenciaMultiPagosCarta.xml:126:			<field row="746" col="135" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Factura elaborada, impresa y enviada electrónicamente por: JAVIER BENAVIDES ERAZO S.A.S. NIT.891224230-2</field>
+TSFacturaContingenciaMultiPagosTirilla.xml:380:        <text fontName="Dialog" fontSize="6" fontStyle="0" rowAcum="10" row="last" col="54" type="STRING">JAVIER BENAVIDES ERAZO S.A.S. Nit. 891224230-2</text>
+TSFacturaContingenciaPlataformaOnlineConPiePagina.xml:116:			<field row="738" col="135" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Factura elaborada e impresa por: JAVIER BENAVIDES ERAZO S.A.S. NIT.891224230-2</field>
+TSFacturaContingenciaPosE.xml:349:        <text fontName="Dialog" fontSize="6" fontStyle="0" rowAcum="10" row="last" col="54" type="STRING">JAVIER BENAVIDES ERAZO S.A.S. Nit. 891224230-2</text>
+TSFacturaContingencia.xml:116:			<!-- <field row="738" col="235" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Factura Impresa por JAVIER BENAVIDES ERAZO S.A.S.</field> -->
+TSFacturaContingencia.xml:117:			<field row="738" col="135" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Factura elaborada e impresa por: JAVIER BENAVIDES ERAZO S.A.S. NIT.891224230-2</field>
+TSFacturaCreditoConPiePagina.xml:116:			<!-- <field row="738" col="235" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Factura Impresa por JAVIER BENAVIDES ERAZO S.A.S.</field> -->
+TSFacturaCreditoConPiePagina.xml:117:			<field row="738" col="135" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Factura elaborada, impresa y enviada electrónicamente por: JAVIER BENAVIDES ERAZO S.A.S. NIT.891224230-2</field>
+TSFacturaCreditoContadoTirilla.xml:380:        <text fontName="Dialog" fontSize="6" fontStyle="0" rowAcum="10" row="last" col="54" type="STRING">JAVIER BENAVIDES ERAZO S.A.S. Nit. 891224230-2</text>
+TSFacturaCreditoContado.xml:125:			<!-- <field row="738" col="235" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Factura Impresa por JAVIER BENAVIDES ERAZO S.A.S.</field> -->
+TSFacturaCreditoContado.xml:126:			<field row="746" col="135" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Factura elaborada, impresa y enviada electrónicamente por: JAVIER BENAVIDES ERAZO S.A.S. NIT.891224230-2</field>
+TSFacturaCreditoOK.xml:56:                        <field row="738" col="235" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Factura Impresa por JAVIER BENAVIDES ERAZO S.A.S.</field>
+TSFacturaCredito.xml:56:                        <field row="738" col="235" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Factura Impresa por JAVIER BENAVIDES ERAZO S.A.S.</field>
+TSFacturaPlataformaOnlineConPiePagina.xml:111:			<field row="738" col="135" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Factura elaborada, impresa y enviada electrónicamente por: JAVIER BENAVIDES ERAZO S.A.S. NIT.891224230-2</field>
+TSFacturaPOSElectronicaServer.xml:110:			<field row="738" col="135" type="STRING" fontName="Dialog" fontSize="6" fontStyle="0">Factura elaborada, impresa y enviada electrónicamente por: JAVIER BENAVIDES ERAZO S.A.S. NIT.891224230-2</field>
+TSFacturaPosMultiElectronica-prueba.xml:359:        <text fontName="Dialog" fontSize="6" fontStyle="0" rowAcum="10" row="last" col="54" type="STRING">JAVIER BENAVIDES ERAZO S.A.S. Nit. 891224230-2</text>
+TSFacturaPosMultiElectronicaServer.xml:335:        <text fontName="Dialog" fontSize="6" fontStyle="0" rowAcum="10" row="last" col="54" type="STRING">Factura impresa por JAVIER BENAVIDES ERAZO S.A.S.</text>
+TSFacturaPosMultiElectronica.xml:359:        <text fontName="Dialog" fontSize="6" fontStyle="0" rowAcum="10" row="last" col="54" type="STRING">JAVIER BENAVIDES ERAZO S.A.S. Nit. 891224230-2</text>
+TSFacturaPosMulti.xml:317:        <text fontName="Dialog" fontSize="6" fontStyle="0" rowAcum="10" row="last" col="54" type="STRING">Factura impresa por JAVIER BENAVIDES ERAZO S.A.S.</text>
+TSInformeVentasCentrosComerciales.xml:81:        <text fontName="Dialog" fontSize="6" fontStyle="0" rowAcum="10" row="last" col="18" type="STRING">Informe impreso por JAVIER BENAVIDES ERAZO S.A.S.</text>
+TSOrdenCompraBodegas.xml:136:		<field row="727" col="25" fontSize="8" fontName="Sans" fontStyle="0" type="STRING">E: JAVIER BENAVIDES ERAZO WEB</field>
+TSRemisionEnVenta.xml:74:		<field col="235" fontName="Dialog" fontSize="6" fontStyle="0" row="738" type="STRING">Documento Impreso por JAVIER BENAVIDES ERAZO S.A.S.</field>
+TSSeparadoMulti.xml:199:        <text fontName="Dialog" fontSize="7" fontStyle="0" rowAcum="15" row="last" col="8" type="STRING">JAVIER BENAVIDES ERAZO se reserva el derecho sobre la mercancía que</text>
+TSTrasladoEntradaAlmacen.xml:42:		<field row="753" col="20" type="STRING">JAVIER BENAVIDES ERAZO S.A.S. - Nit. 891224230-2 - Pasto - Nariño</field>
+TSTraslado.xml:42:		<field row="753" col="20" type="STRING">JAVIER BENAVIDES ERAZO S.A.S. - Nit. 891224230-2 - Pasto - Nariño</field>

@@ -1,0 +1,183 @@
+<emaku_template type="PLAIN" requestNumeration="false" silent="false" printer="lp">
+	<metadata>
+		<field row="last" col="11" type="STRING">BERCELI MEDINA</field>
+		<field row="last" col="16" type="STRING">ALMACENES</field>
+		<field row="last" col="10" type="STRING">MT</field>
+		<field row="last" col="8" type="STRING">CRA 6 N° 13 - 62 </field>
+		<field row="last" col="8" type="STRING"> IPIALES</field>
+		<field row="last" col="12" type="STRING">NIT </field>
+		<scp row="last" col="1" >NL</scp>
+		<field row="last" col="13" type="STRING">ARQUEO DE CAJA</field>
+		<scp row="last" col="1" >NL</scp>
+		<field row="last" col="1" type="STRING">Numero:</field>
+		<field row="last" col="1" type="STRING">Fecha:</field>
+		<field row="last" col="1" type="STRING">Cajero:</field>
+		<field row="last" col="1" type="STRING">F. POS:</field>
+		<field row="last" col="1" type="STRING">F. Manual:</field>
+		<field row="last" col="1" type="STRING">Vales:</field>
+		<field row="last" col="1" type="STRING">Compras:</field>
+		<field row="13" col="24" type="STRING">-</field>
+		<field row="14" col="24" type="STRING">-</field>
+		<field row="15" col="24" type="STRING">-</field>
+		<field row="16" col="24" type="STRING">-</field>
+		<scp row="last" col="1" >NL</scp>
+	</metadata>
+	<package>
+			<field row="10" col="11" type="NUMERIC" width="10" mask="0000000000"/>
+	</package>
+	<package>
+			<field row="11" col="11" type="DATE" mask="EEEEEE dd MMMM yyyy"/>
+	</package>
+	<package>
+			<field row="12" col="11" type="STRING" />
+	</package>
+	<package>
+			<field row="13" col="13" type="NUMERIC" width="10" mask="0000000000"/>
+	</package>
+	<package>
+			<field row="13" col="26" type="NUMERIC" width="10" mask="0000000000"/>
+	</package>
+	<package>
+			<field row="14" col="13" type="NUMERIC" width="10" mask="0000000000"/>
+	</package>
+	<package>
+			<field row="14" col="26" type="NUMERIC" width="10" mask="0000000000"/>
+	</package>
+	<package>
+			<field row="15" col="13" type="NUMERIC" width="10" mask="0000000000"/>
+	</package>
+	<package>
+			<field row="15" col="26" type="NUMERIC" width="10" mask="0000000000"/>
+	</package>
+	<package>
+			<field row="16" col="13" type="NUMERIC" width="10" mask="0000000000"/>
+	</package>
+	<package>
+			<field row="16" col="26" type="NUMERIC" width="10" mask="0000000000"/>
+	</package>
+	<package>
+		<field row="last" separatorchar="TOTAL ING:"  separatorcol="1"  incrementRow="true" col="21"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="+ BASE:"  separatorcol="1"  incrementRow="true" col="15"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="+ VENTAS POS:"  separatorcol="1"  incrementRow="true" col="9"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="+ F. MANUAL"  separatorcol="1"  incrementRow="true" col="11"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<scp row="last" col="1" >NL</scp>
+	<package>
+		<field row="last" separatorchar="TOTAL EGR:"  separatorcol="1"  incrementRow="true" col="21"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="+ VALES:"  separatorcol="1"  incrementRow="true" col="14"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="+ COMPRAS C.:"  separatorcol="1"  incrementRow="true" col="9"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<scp row="last" col="1" >NL</scp>
+	<package>
+		<field row="last" separatorchar="S A L D O :"  separatorcol="1"  incrementRow="true" col="20"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<scp row="last" col="1" >NL</scp>
+	<package>
+		<field row="last" separatorchar="EFECTIVO:"  separatorcol="1"  incrementRow="true" col="22"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="T. CREDITO:"  separatorcol="1"  incrementRow="true" col="20"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="CONSIGNACIONES:"  separatorcol="1"  incrementRow="true" col="16"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="CHEQUES:"  separatorcol="1"  incrementRow="true" col="23"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="CARTERA:"  separatorcol="1"  incrementRow="true" col="23"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<line row="last" col="1" length="40" charfill="-" align="horizontal" />
+	<field row="last" col="14" type="STRING">FACTURACION POS</field>
+	<field row="last" col="1" type="STRING"> FECHA            NUMERO         VALOR</field>
+	<line row="last" col="1" length="40" charfill="-" align="horizontal" />
+	<package validate="true">
+		<subpackage rowInit="last">
+		    <field col="1" type="STRING"/>
+			<field col="17" type="STRING" />
+			<field col="30" width="11" type="NUMERIC" mask="#,###,###" />
+		</subpackage>
+	</package>
+	<line row="last" col="1" length="40" charfill="-" align="horizontal" />
+	<package>
+		<field row="last" separatorchar="TOTAL F. POS:"  separatorcol="1"  incrementRow="true" col="18"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<line row="last" col="1" length="40" charfill="-" align="horizontal" />
+	<field row="last" col="12" type="STRING">FACTURACION MANUAL</field>
+	<field row="last" col="1" type="STRING"> FECHA            NUMERO         VALOR</field>
+	<line row="last" col="1" length="40" charfill="-" align="horizontal" />
+	<package validate="true">
+		<subpackage rowInit="last">
+		    <field col="1" type="STRING"/>
+			<field col="17" type="STRING" />
+			<field col="30" width="11" type="NUMERIC" mask="#,###,###" />
+		</subpackage>
+	</package>
+	<line row="last" col="1" length="40" charfill="-" align="horizontal" />
+	<package>
+		<field row="last" separatorchar="TOTAL F. MANUAL:"  separatorcol="1"  incrementRow="true" col="15"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<line row="last" col="1" length="40" charfill="-" align="horizontal" />
+	<field row="last" col="13" type="STRING">VALES DE RETIRO</field>
+	<field row="last" col="1" type="STRING"> FECHA            NUMERO         VALOR</field>
+	<line row="last" col="1" length="40" charfill="-" align="horizontal" />
+	<package validate="true">
+		<subpackage rowInit="last">
+		    <field col="1" type="STRING"/>
+			<field col="17" type="STRING" />
+			<field col="30" width="11" type="NUMERIC" mask="#,###,###" />
+		</subpackage>
+	</package>
+	<line row="last" col="1" length="40" charfill="-" align="horizontal" />
+	<package>
+		<field row="last" separatorchar="TOTAL V. RETIRO:"  separatorcol="1"  incrementRow="true" col="15"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<line row="last" col="1" length="40" charfill="-" align="horizontal" />
+	<field row="last" col="13" type="STRING">COMPRAS CONTADO</field>
+	<field row="last" col="1" type="STRING"> FECHA            NUMERO         VALOR</field>
+	<line row="last" col="1" length="40" charfill="-" align="horizontal" />
+	<package validate="true">
+		<subpackage rowInit="last">
+		    <field col="1" type="STRING"/>
+			<field col="17" type="STRING" />
+			<field col="30" width="11" type="NUMERIC" mask="#,###,###" />
+		</subpackage>
+	</package>
+	<line row="last" col="1" length="40" charfill="-" align="horizontal" />
+	<package>
+		<field row="last" separatorchar="TOTAL COMPRAS C.:"  separatorcol="1"  incrementRow="true" col="14"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<line row="last" col="1" length="40" charfill="-" align="horizontal" />
+	<field row="last" col="12" type="STRING">DOCUMENTOS ANULADOS</field>
+	<field row="last" col="1" type="STRING"> FECHA            NUMERO         VALOR</field>
+	<line row="last" col="1" length="40" charfill="-" align="horizontal" />
+	<package validate="true">
+		<subpackage rowInit="last">
+		    <field col="1" type="STRING"/>
+			<field col="17" type="STRING" />
+			<field col="30" width="11" type="NUMERIC" mask="#,###,###" />
+		</subpackage>
+	</package>
+	<line row="last" col="1" length="40" charfill="-" align="horizontal" />
+	<scp row="last" col="1" >NL</scp>
+	<field row="last" col="1" type="STRING">OBSERVACIONES:</field>
+	<package>
+		<field row="last" col="1"  width="40"  height="4" type="TEXT"/>
+	</package>
+	<scp row="last" col="1" >NL</scp>
+	<line row="last" col="10" length="21" charfill="-" align="horizontal" />
+	<field row="last" col="17" type="STRING">ELABORO</field>
+	<scp row="last" col="1" >NL</scp>
+	<scp row="last" col="1" >NL</scp>
+	<scp row="last" col="1" >NL</scp>
+</emaku_template>

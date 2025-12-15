@@ -1,0 +1,93 @@
+<emaku_template type="POSTSCRIPT" requestNumeration="false" copies="1" silent="false" printer="EPSON_TM-T20">
+	<settings width="220" height="10000" />
+	<metadata>
+		<!--<image row="1" col="10" width="100" height="75">/icons/logo_fac.png</image>-->
+		<field row="90" col="10" type="STRING">F A B F L Y</field>
+		<!--<barcodeImage row="100" col="10" />-->
+		<font row="0" col="0" name="Sans" size="13" />
+		<field row="200" col="5" type="STRING">Bono de Descuento</field>
+		<font row="0" col="0" name="Sans" size="8" />
+		<field row="210" col="5" type="STRING">Numero:</field>
+		<field row="220" col="5" type="STRING">Ipiales,</field>
+		<!--<field row="230" col="5" type="STRING">Cajero:</field>-->
+		<field row="230" col="5" type="STRING">Hora:</field>
+		
+		
+		<field row="250" col="5" type="STRING">Bono Redimible</field>
+		<field row="260" col="5" type="STRING">Desde:</field>
+		<field row="270" col="5" type="STRING">Hasta:</field>
+		<field row="336" col="5" type="STRING">Valor a Redimir: $</field>
+		<!--<ndocument row="220" col="63" />
+		<time row="230" col="33" />-->
+		<!-- Informacion detallada de productos -->
+		<line row="275" col="2" row2="275" col2="190" />
+		<line row="349" col="2" row2="349" col2="190" />
+	</metadata>
+	<!--barcode-->
+	<package>
+                <generateBarCodeImage row="100" col="10" width="10" type="NUMERIC" mask="0000000000" />
+        </package>
+	<!--numero-->
+	<package>
+		<field row="210" col="60" type="STRING" fontName="Dialog" fontSize="8" fontStyle="1"/>
+	</package>
+	<!--fecha documento-->
+	<package>
+		<field row="220" col="35" type="DATE" mask="EEEEEE dd MMMM yyyy" />
+	</package>
+	<!--cajero-->
+	<!--<package>
+		<field row="230" col="40" type="STRING" />
+	</package>-->	
+	<!--hora documento
+	<package>
+		<field row="240" col="35" type="STRING" />
+	</package>-->
+	<!--vigencia desde-->
+	<package>
+		<field row="260" col="35" type="DATE" mask="EEEEEE dd MMMM yyyy" />
+	</package>
+	<!--vigencia hasta-->
+	<package>
+		<field row="270" col="35" type="DATE" mask="EEEEEE dd MMMM yyyy" />
+	</package>
+	<!--texto-->
+	<package>
+		<field rowAcum="12" row="290" col="5" width="100" height="7"  type="TEXT"/>
+	</package>	
+	<!--valor	-->
+	
+	<package>
+		<field row="336" col="180" type="NUMERIC" mask="#,###,###.##" rowAcum="35" fontName="Dialog" fontSize="12" fontStyle="1"/>
+	</package>	
+	<!--<package>
+		<field textLine="Valor a redimir: $" rowAcum="20" textCol="5" row="last" col="190" width="13" fontName="Dialog" fontSize="11" fontStyle="1" type="NUMERIC" mask="#,###,###.##" />
+	</package>-->
+	<!--pie pagina-->
+<!--
+	<package>		
+                <text fontName="Dialog" fontSize="7" fontStyle="1" rowAcum="10" row="last" col="5" type="STRING">.</text>
+	
+		<text rowAcum="0" row="last" col="15" type="STRING">Inscríbete</text>
+		<text rowAcum="10" row="last" col="101" type="STRING">Visitanos</text>
+		<image rowAcum="0" row="last" col="10" width="100" height="75">/icons/crmweb.png</image>
+		<image rowAcum="90" row="last" col="101" width="100" height="75">/icons/mtweb.png</image>
+		<text rowAcum="0" row="last" col="15" type="STRING">CRM Puntos</text>
+		<text rowAcum="20" row="last" col="101" type="STRING">www.almacenesmt.com</text>
+	</package>	
+-->	
+	<package>
+		<text fontName="Dialog" fontSize="7" fontStyle="0"  rowAcum="10" row="last" col="15" type="STRING">BONO VALIDO UNICAMENTE</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">EN LAS FECHAS, ALMACEN, MARCA</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">Y REFERENCIAS ESTABLECIDAS</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">DEBE PRESENTAR ESTE DESPRENDIBLE</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">AL MOMENTO DE HACERLO EFECTIVO</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">CONSERVESE EN BUEN ESTADO</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">ELIZABETH VIVIANA LAZO</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">NIT: 36.862.695-8</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">REGIMEN SIMPLIFICADO</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">CC GRAN PLAZA</text>
+		<text rowAcum="20" row="last" col="15" type="STRING">IPIALES</text>
+
+	</package>
+</emaku_template>

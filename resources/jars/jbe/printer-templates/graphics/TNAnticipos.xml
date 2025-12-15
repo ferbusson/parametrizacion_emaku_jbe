@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emaku_template type="GRAPHIC" requestNumeration="true" copies="1" silent="false" printer="EPSON_TM-T20">
+<settings width="612" height="792" />
+
+	<metadata>
+
+	<!-- cuadros de la forma -->
+	<roundedRectangle row="218" col="40" width="535" height="170" />
+
+	<image row="20" col="30" width="25" height="12">/icons/logo_fac.png</image>
+
+	<pagenumber row="17" center="612" fontName="Dialog" fontSize="7" fontStyle="0"/>
+
+	<field row="37" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" importValue="true">terceroal</field>
+	<field row="49" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" importValue="true">nitalterno</field>
+
+	<field row="61" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Responsable del Impuesto sobre las ventas - IVA</field>
+
+	<field row="73" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Carrera 21A 15-42</field>
+
+	<field row="85" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Tel: 3122589821</field>
+	<field row="97" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">contabilidad@javierbenavideserazosas.com</field>
+	<field row="109" center="612" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Pasto - Nariño</field>
+		
+    <ndocument multipage="true" rownewpage="150" colnewpage="410" fontName="Dialog" fontSize="8" fontStyle="0" row="150" col="410" format="Integer"/>	
+	<field row="130" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">FECHA - HORA:</field>
+	<field row="140" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Centrocosto:</field>
+
+	<field row="152" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="1">DATOS TERCERO</field>
+
+	<field row="130" col="350" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">ANTICIPO FACTURACIÓN</field>
+	<field row="150" col="350" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0">Número:</field>
+
+
+		<font row="0" col="0" name="Dialog" size="8" />
+		<field row="228" col="42" type="Numero">VALOR TOTAL: $</field>
+		<field row="243" col="42" type="Numero">LA SUMA DE:</field>
+		<line row="258" col="40" row2="258" col2="73" />
+		<line row="258" col="135" row2="258" col2="575" />
+		<field row="261" col="79" type="Numero">CONCEPTO</field>
+
+		<field row="300" col="42" type="Numero">
+			Forma de Pago: Efectivo[  ] Cheque[  ] Consignación[  ] Tarjeta[  ] Transferencia[  ] CxP[  ] Días:
+		</field>
+		<field row="318" col="80" type="Numero">Código</field>
+		<field row="318" col="190" type="Numero">Débitos</field>
+		<field row="318" col="300" type="Numero">Créditos</field>
+		<field row="378" col="42" type="Numero">Elaboro:</field>
+		<field row="378" col="155" type="Numero">Aprobo</field>
+		<field row="378" col="265" type="Numero">Contabilizo</field>
+		<field row="373" col="440" type="Numero">Firma y Sello</field>
+
+		<!-- Horizontales encierran formas de pago -->
+		<line row="288" col="40" row2="288" col2="575" />
+		<line row="308" col="40" row2="308" col2="575" />
+
+		<!-- Horizontales encierran titulos asiento contable -->
+		<line row="323" col="40" row2="323" col2="370" />
+		<line row="368" col="40" row2="368" col2="370" />
+
+		<!-- Linea firma -->
+		<line row="363" col="375" row2="363" col2="570" />
+		<!-- lineas verticales -->
+		<line row="308" col="150" row2="388" col2="150" />
+		<line row="308" col="260" row2="388" col2="260" />
+		<line row="308" col="370" row2="388" col2="370" />
+
+	</metadata>
+
+	1
+	     <!-- <package>
+		<field multipage="true" rownewpage="150" colnewpage="410" row="150" col="410" width="10" type="STRING" mask="0" fontName="Dialog" fontSize="8" fontStyle="0"/>
+	     </package> -->
+
+
+        <!-- tercero -->
+		<package>
+			<field multipage="true" rownewpage="164" colnewpage="40" row="164" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
+			<field multipage="true" rownewpage="175" colnewpage="40" row="175" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
+			<field multipage="true" rownewpage="186" colnewpage="40" row="186" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
+			<field multipage="true" rownewpage="197" colnewpage="40" row="197" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
+			<field multipage="true" rownewpage="208" colnewpage="40" row="208" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
+		</package>
+
+	3
+		<package>
+			<field multipage="true" rownewpage="130" colnewpage="100" row="130" col="100" type="DATE" mask="EEEEEE, dd MMMM yyyy" fontName="Dialog" fontSize="8" fontStyle="0"/>
+		</package>
+	4
+	<package>
+		<field row="228" col="280" width="18" type="NUMERIC" fontName="Dialog" fontSize="8" fontStyle="0"
+			mask="##,###,###,##0.00" />
+	</package>
+	5
+	<package>
+		<field row="243" col="100" type="NUMTOLETTERS" width="75" fontName="Dialog" fontSize="8" fontStyle="0"
+			height="2" rowAcum="12" />
+	</package>
+	6
+	<package>
+		<field row="271" col="42" width="108" height="150" type="TEXT" rowAcum="12" fontName="Dialog" fontSize="8" fontStyle="0" />
+	</package>
+	7
+         <package>
+            <field row="140" col="100" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
+         </package>
+
+	 8 
+	<package>
+		<subpackage rowInit="333" rowAcum="10">
+			<field col="42" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
+			<field col="258" width="14" type="NUMERIC" fontName="Dialog" fontSize="8" fontStyle="0"
+				mask="##,###,###,###" />
+			<field col="368" width="14" type="NUMERIC" fontName="Dialog" fontSize="8" fontStyle="0"
+				mask="##,###,###,###" />
+		</subpackage>
+	</package>
+	9
+	<package>
+		<field row="300" col="132" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" /> efectivo
+		<field row="300" col="171" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" /> cheques
+		<field row="300" col="231" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" /> consignacion
+		<field row="300" col="267" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" /> tarjeta
+		<field row="300" col="327" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" /> transferencia
+		<field row="300" col="353" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" /> cruce cxp
+	</package>
+
+	10
+	<!-- usuario elaboro -->
+		<package validate="true">
+			<field multipage="true" rownewpage="378" colnewpage="78" row="378" fontName="Dialog" fontSize="8" fontStyle="0" rowAcum="10" col="78" type="STRING" />
+		</package>
+
+</emaku_template>
+

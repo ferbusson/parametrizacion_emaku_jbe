@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emaku_template type="POSTSCRIPT" requestNumeration="true" copies="1"
+	silent="false" printer="EPSON_TM-T20">
+	<settings width="612" height="792" />
+	<metadata>
+		<!-- Encabezado -->
+		<font row="0" col="0" name="Dialog" size="8" />
+		<!-- <field row="25" col="30" type="STRING">BERCELI MEDINA</field>
+			<field row="37" col="30" type="STRING">ALMACENES MT</field>
+			<field row="49" col="30" type="STRING">CRA 6 No 13-87</field>
+			<field row="61" col="30" type="STRING">IPIALES</field> -->
+		<image row="1" col="25" width="100" height="75">
+			/icons/logo_fac.png
+		</image>
+		<barcodeImage row="1" col="390" />
+		<!-- cuadros de la forma -->
+		<roundedRectangle row="85" col="20" width="565" height="310" />
+		<!-- Informacion del Solicitante -->
+		<!-- Numero de documento -->
+		<field row="25" col="250" type="STRING">NOTA DE CONSIGNACION</field>
+		<field row="37" col="250" type="Numero">NUMERO:</field>
+		<ndocument row="37" col="300" />
+		<!-- Horizontales -->
+		<line row="110" col="20" row2="110" col2="585" />
+		<line row="135" col="20" row2="135" col2="585" />
+		<line row="325" col="20" row2="325" col2="585" />
+		<line row="340" col="20" row2="340" col2="585" />
+		<line row="435" col="190" row2="435" col2="400" />
+		<!-- Verticales -->
+		<line row="110" col="47" row2="325" col2="47" />
+		<line row="110" col="107" row2="325" col2="107" />
+		<line row="110" col="257" row2="325" col2="257" />
+		<line row="110" col="317" row2="325" col2="317" />
+		<line row="110" col="377" row2="325" col2="377" />
+		<line row="110" col="437" row2="340" col2="437" />
+		<line row="110" col="507" row2="340" col2="507" />
+
+		<field row="128" col="30" type="STRING">CC</field>
+		<field row="128" col="50" type="STRING">CUENTA</field>
+		<field row="128" col="110" type="STRING">NOMBRE</field>
+		<field row="128" col="260" type="STRING">TERCERO</field>
+		<field row="128" col="320" type="STRING">DOCUMENTO</field>
+		<field row="128" col="380" type="STRING">PRODUCTO</field>
+		<field row="128" col="445" type="STRING">DEBITOS</field>
+		<field row="128" col="515" type="STRING">CREDITOS</field>
+		<field row="335" col="340" type="STRING">SUMAS IGUALES</field>
+
+		<field row="350" col="32" type="STRING">Observaciones</field>
+		<field row="445" col="200" type="STRING">ELABORO</field>
+		<field row="445" col="280" type="STRING">REVISO</field>
+		<field row="445" col="340" type="STRING">CONTABILIZO</field>
+
+	</metadata>
+	<package>
+		<field row="100" col="30" type="DATE"
+			mask="EEEEEE, dd MMMM yyyy" />
+	</package>
+	<package>
+		<subpackage rowInit="145" rowAcum="10">
+			<field col="40" type="STRING" />
+			<field col="60" type="STRING" />
+			<field col="115" type="STRING" />
+			<field col="260" type="STRING" />
+			<field col="382" type="STRING" />
+			<field col="442" type="STRING" />
+			<field col="500" width="18" type="NUMERIC"
+				mask="###,###,###,###.00" />
+			<field col="570" width="18" type="NUMERIC"
+				mask="###,###,###,###.00" />
+		</subpackage>
+	</package>
+	<package>
+		<field row="335" col="500" width="18" type="NUMERIC"
+			mask="###,###,###,###.00" />
+	</package>
+	<package>
+		<field row="335" col="570" width="18" type="NUMERIC"
+			mask="###,###,###,###.00" />
+	</package>
+	<package>
+		<field row="360" col="30" type="TEXT" width="84" height="3"
+			rowAcum="12" />
+	</package>
+</emaku_template>

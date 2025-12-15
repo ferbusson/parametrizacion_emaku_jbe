@@ -1,0 +1,93 @@
+<emaku_template type="PLAIN" printer="lp">
+  <settings width="137" height="33" />
+  <metadata>
+    <scp row="last" incrementRow="false" col="1">ESC</scp>
+    <scp row="last" incrementRow="false" col="2">C</scp>
+    <scp row="last" incrementRow="false" col="3">33</scp>
+    <scp row="last" incrementRow="false" col="5">ETB</scp>
+    <scp row="last" incrementRow="false" col="6">SI</scp>
+    <scp row="last" incrementRow="false" col="7">ETB</scp>
+    <line row="last" col="8" length="135" charfill="=" align="horizontal" />
+    <field row="last" col="1" type="STRING" incrementRow="false">BERCELI MEDINA</field>
+    <field row="last" col="1" type="STRING" incrementRow="false">ALMACENES MT</field>
+    <field row="last" col="1" type="STRING" incrementRow="false">CRA 6 N° 13 - 87</field>
+    <field row="last" col="1" type="STRING" incrementRow="false">IPIALES</field>
+    <field row="last" col="100" type="STRING">NOTA DE AJUSTE DE INVENTARIOS</field>
+    <field row="last" col="1" type="STRING" incrementRow="false">Nit. </field>
+    <field row="last" col="100" type="STRING">Nro.</field>
+    <line row="last" col="1" length="137" charfill="=" align="horizontal" />
+    <field row="last" col="2" type="STRING">Ipiales,</field>
+    <field row="last" col="2" type="STRING">Bodega:</field>
+    <line row="last" col="1" length="137" charfill="=" align="horizontal" />
+    <field row="last" col="3" incrementRow="false" type="STRING">Referencia</field>
+    <field row="last" col="15" incrementRow="false" type="STRING">|</field>
+    <field row="last" col="35" incrementRow="false" type="STRING">Descripcion</field>
+    <field row="last" col="76" incrementRow="false" type="STRING">|</field>
+    <field row="last" col="80" incrementRow="false" type="STRING">Saldo Sistema</field>
+    <field row="last" col="99" incrementRow="false" type="STRING">|</field>
+    <field row="last" col="102" incrementRow="false" type="STRING">Saldo Real</field>
+    <field row="last" col="115" incrementRow="false" type="STRING">|</field>
+    <field row="last" col="125" type="STRING">Ajuste</field>
+    <!-- Dibujo de lineas -->
+    <line row="last" col="1" length="137" charfill="=" align="horizontal" />
+    <header repeatEach="32">
+      <!-- Informacion detallada de productos -->
+      <scp row="last" incrementRow="false" col="1">ESC</scp>
+      <scp row="last" incrementRow="false" col="2">C</scp>
+      <scp row="last" incrementRow="false" col="3">33</scp>
+      <scp row="last" incrementRow="false" col="5">ETB</scp>
+      <line row="last" col="8" length="135" charfill="=" align="horizontal" />
+      <field row="last" col="2" type="STRING" incrementRow="false">BERCELI MEDINA</field>
+      <field row="last" col="100" type="STRING">NOTA DE AJUSTE DE INVENTARIOS</field>
+      <field row="last" col="3" type="STRING" incrementRow="false">Nit. </field>
+      <field row="last" col="93" type="STRING" incrementRow="false">Nro.</field>
+      <var name="ndocument" row="last" incrementRow="false" col="105" />
+      <field row="last" col="61" incrementRow="false" type="STRING">PAGINA</field>
+      <pageNumeration row="last" col="69" type="STRING" />
+      <line row="last" col="1" length="137" charfill="=" align="horizontal" />
+      <field row="last" col="3" incrementRow="false" type="STRING">Referencia</field>
+      <field row="last" col="15" incrementRow="false" type="STRING">|</field>
+      <field row="last" col="35" incrementRow="false" type="STRING">Descripcion</field>
+      <field row="last" col="76" incrementRow="false" type="STRING">|</field>
+      <field row="last" col="80" incrementRow="false" type="STRING">Saldo Sistema</field>
+      <field row="last" col="99" incrementRow="false" type="STRING">|</field>
+      <field row="last" col="102" incrementRow="false" type="STRING">Saldo Real</field>
+      <field row="last" col="115" incrementRow="false" type="STRING">|</field>
+      <field row="last" col="125" type="STRING">Ajuste</field>
+      <!-- Dibujo de lineas -->
+      <line row="last" col="1" length="137" charfill="=" align="horizontal" />
+    </header>
+  </metadata>
+  <package>
+    <field row="3" col="105" width="10" var="ndocument" type="NUMERIC" mask="0000000000" />
+  </package>
+  <package>
+    <field row="5" col="9" type="DATE" mask="EEEEEE dd MMMM yyyy" />
+  </package>
+  <package>
+    <field row="6" col="11" type="STRING" />
+  </package>
+  <package>
+    <subpackage rowInit="last">
+      <field col="2" type="STRING" separatorchar="|" separatorcol="15" />
+      <field col="17" type="STRING" separatorchar="|" separatorcol="76" />
+      <field col="88" width="7" type="NUMERIC" mask="###,###" separatorchar="|" separatorcol="99" />
+      <field col="107" width="7" type="NUMERIC" mask="###,###" separatorchar="|" separatorcol="115" />
+      <field col="126" width="7" type="NUMERIC" mask="###,###" />
+    </subpackage>
+  </package>
+  <line row="last" col="1" length="137" charfill="=" align="horizontal" />
+  <field row="last" col="1" type="STRING">Observaciones</field>
+  <package>
+    <field row="last" col="1" type="TEXT" width="84" height="3" />
+  </package>
+  <scp row="last" col="1">NL</scp>
+  <scp row="last" col="1">NL</scp>
+  <scp row="last" col="1">NL</scp>
+  <field row="last" col="35" type="STRING" incrementRow="false">Elaboro</field>
+  <field row="last" col="65" type="STRING" incrementRow="false">Reviso</field>
+  <field row="last" col="91" type="STRING">Contabilizo</field>
+  <scp row="last" incrementRow="false" col="1">FF</scp>
+  <scp row="last" incrementRow="false" col="2">DC2</scp>
+  <scp row="last" incrementRow="false" col="3">EOT</scp>
+</emaku_template>

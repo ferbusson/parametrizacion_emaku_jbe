@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emaku_template type="POSTSCRIPT" requestNumeration="false" copies="1" silent="false" printer="EPSON_TM-T20">
+<settings width="612" height="792" />
+
+	<metadata>
+		<!-- Encabezado -->
+		<image row="0" col="25" width="100" height="75">
+			/icons/logo_fac.png
+		</image>
+
+		<font row="0" col="0" name="Dialog" size="8" />
+		<field row="20" col="240" type="NAMEDB">nit</field>
+                <field row="30" col="240" type="NAMEDB">direccion</field>
+                <field row="40" col="240" type="NAMEDB">ciudad</field>
+
+		<!-- cuadros de la forma -->
+		<roundedRectangle row="85" col="20" width="565" height="695" />
+
+		<!-- Numero de documento -->
+
+		<font row="0" col="0" name="Dialog" size="12" />
+		<field row="57" col="200" type="STRING">COMPROBANTE DE EGRESO (Copia)</field>
+		<field row="71" col="240" type="Numero">NUMERO: CE -</field>
+
+		<!-- <ndocument row="71" col="340" /> -->
+
+		<font row="0" col="0" name="Dialog" size="10" />
+		<field row="99" col="30" type="Numero">Fecha:</field>
+		<field row="99" col="270" type="Numero">Centrocosto:</field>
+		<field row="111" col="270" type="Numero">Subcentro:</field>
+		<field row="130" col="30" type="Numero">Tercero:</field>
+		<field row="150" col="390" type="Numero">VALOR $</field>
+		<field row="200" col="30" type="Numero">LA SUMA DE:</field>
+		<field row="223" col="79" type="Numero">Concepto</field>
+
+		<field row="532" col="25" type="Numero">
+			Forma de Pago: Efectivo[  ] Cheque[  ] Consignación[  ] Tarjeta[  ] Cruce CxP[  ] Cruce CxC[  ]
+		</field>
+		<field row="550" col="50" type="Numero">Código</field>
+		<field row="550" col="160" type="Numero">Débitos</field>
+		<field row="550" col="265" type="Numero">Créditos</field>
+		<field row="760" col="25" type="Numero">Elaboro</field>
+		<field row="760" col="125" type="Numero">Aprobo</field>
+		<field row="760" col="245" type="Numero">Contabilizo</field>
+		<field row="775" col="360" type="Numero">Firma y Sello</field>
+		<!-- lineas horizontales -->
+		<line row="120" col="20" row2="120" col2="585" />
+		<line row="180" col="20" row2="180" col2="585" />
+		<line row="220" col="20" row2="220" col2="73" />
+		<line row="220" col="135" row2="220" col2="585" />
+
+		<line row="520" col="20" row2="520" col2="585" />
+		<line row="540" col="20" row2="540" col2="585" />
+		<line row="555" col="20" row2="555" col2="340" />
+		<line row="750" col="20" row2="750" col2="340" />
+		<line row="765" col="355" row2="765" col2="575" />
+		<!-- lineas verticales -->
+		<line row="540" col="120" row2="780" col2="120" />
+		<line row="540" col="240" row2="780" col2="240" />
+		<line row="540" col="340" row2="780" col2="340" />
+
+
+
+
+		
+
+	</metadata>
+	<!-- 00 numero documento -->
+   <package>
+		<field row="71" col="340" type="STRING" fontSize="10" fontName="Sans" />
+	</package>
+	<!-- 0 -->
+	<package>
+		<field row="99" col="70" type="DATE"
+			mask="EEEEEE, dd MMMM yyyy" />
+	</package>
+	<!-- 1 -->
+	<package>
+		<field row="144" col="30" type="STRING" />
+		<field row="154" col="30" type="STRING" />
+		<field row="164" col="30" type="STRING" />
+		<field row="174" col="30" type="STRING" />
+	</package>
+	<!-- 2 -->
+	<package>
+		<field row="150" col="550" width="18" type="NUMERIC"
+			mask="##,###,###,##0.00" />
+	</package>
+	<!-- 3 -->
+	<package>
+		<field row="200" col="105" type="NUMTOLETTERS" width="75"
+			height="2" rowAcum="12" />
+	</package>
+	<!-- 4 -->
+	<package>
+		<field row="240" col="30" width="108" height="150" type="TEXT" rowAcum="12" />
+	</package>
+	
+	<!-- 5 cc -->
+         <package>
+            <field row="99" col="390" type="STRING" />
+         </package>
+
+        <!-- 6 scc -->
+        <package>
+            <field row="111" col="390" type="STRING" />
+        </package>
+
+	<!-- 7 -->
+	<package>
+		<subpackage rowInit="565" rowAcum="10">
+			<field col="30" type="STRING" />
+			<field col="220" width="14" type="NUMERIC"
+				mask="##,###,###,###" />
+			<field col="320" width="14" type="NUMERIC"
+				mask="##,###,###,###" />
+		</subpackage>
+	</package>
+	<!-- 8 -->
+	<package>
+		<field row="532" col="151" type="STRING" /> <!--efectivo-->
+		<field row="532" col="206" type="STRING" /> <!--cheques-->
+		<field row="532" col="291" type="STRING" /> <!--consignacion-->
+		<field row="532" col="343" type="STRING" /> <!--tarjeta-->
+		<field row="532" col="412" type="STRING" /> <!--cruce cxp-->
+		<field row="532" col="482" type="STRING" /> <!--cruce cxc-->
+		<!-- <field row="532" col="522" type="STRING" /> cruce cxp -->
+	</package>
+
+</emaku_template>

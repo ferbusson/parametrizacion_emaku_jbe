@@ -1,0 +1,154 @@
+<emaku_template type="PLAIN" requestNumeration="false" silent="true" printer="TMU">
+	<metadata>
+		<scp row="1" col="1">NL</scp>
+	<field row="last" col="15" type="STRING">CALZADO LA ELEGANCIA</field>
+		<field row="last" col="15" type="STRING">JOSE ASDRUBAL ISAZA</field>
+			<field row="last" col="17" type="STRING">NIT 16724819-0</field>
+		<field row="last" col="16" type="STRING">Cll 14  Nro 10 - 80</field>
+		<field row="last" col="17" type="STRING">Tel: (57) (2) 7737442</field>
+		<field row="last" col="20" type="STRING">IPIALES</field>
+		<scp row="last" col="1">NL</scp>
+		<!-- Datod personales -->
+		<!-- Informacion documento -->
+		<field row="last" col="1" type="STRING">Factura de Venta</field>
+		<field row="last" col="1" type="STRING">Numero:</field>
+		<field row="last" col="1" type="STRING">Fecha:</field>
+		<field row="last" col="1" type="STRING">Vendedor:</field>
+		<!-- Informacion detallada de productos -->
+		<line row="last" col="1" length="40" charfill="-" align="horizontal" />
+		<field row="last" col="1" type="STRING">D E V O L U C I O N</field>
+		<field row="last" col="1" type="STRING">Codigo</field>
+		<field row="last" col="1" type="STRING">Descripcion</field>
+		<field row="last" incrementRow="false" col="1" type="STRING">Cant</field>
+		<field row="last" incrementRow="false" col="14" type="STRING">V. Unit</field>
+		<field row="last" col="30" type="STRING">Total</field>
+		<line row="last" col="1" length="40" charfill="-" align="horizontal" />
+	</metadata>
+	<package>
+		<field row="9" col="12" width="16" type="STRING"/>
+	</package><package>
+		<field row="0" col="0" width="16" type="STRING"/>
+	</package>
+	<package>
+		<field row="10" col="10" type="DATE" mask="EEEEEE dd MMMM yyyy" />
+	</package>
+	<package>
+		<field row="11" col="11" width="16" type="STRING"/>
+	</package>
+	<package validate="true">
+		<subpackage rowInit="last">
+			<field col="1" type="STRING" />
+			<field col="45" type="STRING" />
+			<field col="90" width="3" type="NUMERIC" mask="###" />
+			<field col="98" width="13" type="NUMERIC" mask="#,###,###.##" />
+			<field col="117" width="13" type="NUMERIC" mask="#,###,###.##" />
+		</subpackage>
+	</package>
+	<package>
+		<field row="0" col="0" width="16" type="STRING"/>
+	</package>
+	<package>
+		<field row="0" col="0" width="16" type="STRING"/>
+	</package>
+	<package>
+		<field row="0" col="0" width="16" type="STRING"/>
+	</package>
+	<scp row="last" col="1">NL</scp>
+	<line row="last" col="1" length="40" charfill="-" align="horizontal" />
+	<field row="last" col="1" type="STRING">F A C TU R A C I O N</field>
+	<field row="last" col="1" type="STRING">Codigo</field>
+	<field row="last" col="1" type="STRING">Descripcion</field>
+	<field row="last" incrementRow="false" col="1" type="STRING">Cant</field>
+	<field row="last" incrementRow="false" col="14" type="STRING">V. Unit</field>
+	<field row="last" col="30" type="STRING">Total</field>
+	<line row="last" col="1" length="40" charfill="-" align="horizontal" />
+	<package validate="true">
+		<subpackage rowInit="last">
+			<field col="1" type="STRING" />
+			<field col="45" type="STRING" />
+			<field col="90" width="3" type="NUMERIC" mask="###" />
+			<field col="98" width="13" type="NUMERIC" mask="#,###,###.##" />
+			<field col="117" width="13" type="NUMERIC" mask="#,###,###.##" />
+		</subpackage>
+	</package>
+	<package>
+		<field row="0" col="0" width="16" type="STRING"/>
+	</package>
+	<!-- SubTotales -->
+	<line row="last" col="1" length="40" charfill="-" align="horizontal" />
+	<package>
+		<field row="last" separatorchar="TOTAL" separatorcol="1" incrementRow="true" col="19" width="16" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="EFECTIVO" separatorcol="1" incrementRow="true" col="16" width="16" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="CAMBIO" separatorcol="1" incrementRow="true" col="18" width="16" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="0" col="0" width="16" type="STRING"/>
+	</package>
+	<package>
+		<field row="0" col="0" width="16" type="STRING"/>
+	</package>
+	<line row="last" col="1" length="40" charfill="-" align="horizontal" />
+	<package>
+		<field row="last" separatorchar="Base Impuesto IVA 16%" separatorcol="1" incrementRow="true" col="1" width="18" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="Total IVA" separatorcol="1" incrementRow="true" col="11" width="20" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<line row="last" col="1" length="40" charfill="-" align="horizontal" />
+	<package>
+		<field row="0" col="0" width="16" type="STRING"/>
+	</package>
+<!-- 	<package>
+		<field row="last" separatorchar="TOTAL A PAGAR" separatorcol="1" incrementRow="true" col="10" width="16" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="EFECTIVO" separatorcol="1" incrementRow="true" col="15" width="16" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="CAMBIO" separatorcol="1" incrementRow="true" col="17" width="16" type="NUMERIC" mask="#,###,###" />
+	</package>-->
+	<scp row="last" col="1">NL</scp>
+	<package validate="true">
+		<field row="last" incrementRow="true" col="1" type="STRING"/>
+		<field row="last" incrementRow="true" col="1" type="STRING"/>
+		<field row="last" incrementRow="true" col="1" type="STRING"/>
+		<field row="last" incrementRow="true" col="1" type="STRING"/>
+		<field row="last" incrementRow="true" col="1" type="STRING"/>
+	</package>
+	<package validate="true">
+		<field row="last" separatorchar="DIAS CREDITO:" separatorcol="1" incrementRow="true" col="18" type="STRING" />
+	</package>
+	<package validate="true">
+		<field row="last" separatorchar="FECHA VENCIMIENTO:" separatorcol="1" incrementRow="true" col="13" type="STRING" />
+	</package>
+	<package>
+		<field row="0" col="0" width="16" type="STRING"/>
+	</package>
+	<package>
+		<field row="0" col="0" width="16" type="STRING"/>
+	</package>
+	<package>
+		<field row="0" col="1" width="16" type="STRING"/>
+	</package>
+	<package>
+		<field row="0" col="0" width="16" type="STRING"/>
+	</package><package>
+		<field row="0" col="0" width="16" type="STRING"/>
+	</package>
+	<scp row="last" col="1">NL</scp>
+	<field row="last" col="2" type="STRING">NUMERO RESOLUCION DIAN: 140000026196</field>
+	<field row="last" col="9" type="STRING">NUMERACION AUTORIZADA:</field>
+	<field row="last" col="6" type="STRING">del 528600 al 1000000</field>
+	<field row="last" col="1" type="STRING">Fecha de Autorizacion: 02 DE JULIO DE 2008</field>
+	<field row="last" col="11" type="STRING">Reimpresion</field>
+	<field row="last" col="5" type="STRING">**** GRACIAS POR SU COMPRA ****</field>
+	<scp row="last" col="1">NL</scp>
+	<scp row="last" col="1">NL</scp>
+	<scp row="last" col="1">NL</scp>
+	<scp row="last" col="1">NL</scp>
+	<scp row="last" col="1">NL</scp>
+	</emaku_template>

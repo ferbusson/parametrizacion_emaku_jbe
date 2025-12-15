@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emaku_template type="PLAIN" requestNumeration="true" copies="1" silent="true" printer="TMU">
+	<metadata>
+		<scp row="last" incrementRow="false" col="1">27</scp>
+		<scp row="last" incrementRow="false" col="2">112</scp>
+		<scp row="last" incrementRow="false" col="3">48</scp>
+		<!-- Encabezado -->
+
+		<font row="last" col="0" name="Dialog" size="10" />
+		<field row="last" center="40" type="STRING"></field>
+                <field row="last" center="40" type="NAMEDB">razon_social</field>
+                <field row="last" center="40" type="NAMEDB">nit</field>
+                <field row="last" center="40" type="NAMEDB">direccion</field>
+                <field row="last" center="40" type="NAMEDB">telefono</field>
+                <field row="last" center="40" type="NAMEDB">ciudad</field>
+
+
+		<scp row="last" col="1">NL</scp>
+		<field row="last" col="13" type="STRING">ARQUEO DE CAJA</field>
+		<scp row="last" col="1">NL</scp>
+		<field row="8" col="1" type="STRING">Numero:</field>
+		<field row="9" col="1" type="STRING">Fecha:</field>
+		<field row="10" col="1" type="STRING">Cajero:</field>
+		<field row="18" col="1" type="STRING">OBSERVACIONES:</field>
+		<ndocument row="8" col="9" />
+		<scp row="last" col="1">NL</scp>
+	</metadata>
+	<package>
+		<field row="9" col="9" type="DATE" mask="EEEEEE dd MMMM yyyy" />
+	</package>
+	<package>
+		<field row="10" col="9" type="STRING" />
+	</package>
+	<package>
+		<field row="last" separatorchar="EFECTIVO:   " separatorcol="1" incrementRow="true" col="12" width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="T. DEBITO:  " separatorcol="1" incrementRow="true" col="12" width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="T. CREDITO: " separatorcol="1" incrementRow="true" col="12" width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="F. CREDITO: " separatorcol="1" incrementRow="true" col="12" width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="TOTAL:      " separatorcol="1" incrementRow="true" col="12" width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<scp row="last" col="1">NL</scp>
+	<scp row="last" col="1">NL</scp>
+	<package>
+		<field row="last" col="1" width="40" height="4" type="TEXT" />
+	</package>
+	<scp row="last" col="1">NL</scp>
+	<scp row="last" col="1">NL</scp>
+	<scp row="last" col="1">NL</scp>
+	<scp row="last" col="1">NL</scp>
+	<field row="last" col="1" type="STRING">'</field>
+	<scp row="last" incrementRow="false" col="1">27</scp>
+	<scp row="last" incrementRow="false" col="2">105</scp>
+</emaku_template>

@@ -1,0 +1,107 @@
+<emaku_template type="PLAIN" requestNumeration="true" printer="epsonoffice">
+		<metadata>
+				<scp row="1" col="1">ESC</scp>
+				<scp row="1" col="2">C</scp>
+				<scp row="1" col="3">66</scp>
+				<scp row="1" col="5">ETB</scp>
+				<scp row="1" col="6">SI</scp>
+				<scp row="1" col="7">ETB</scp>
+				<scp row="66" col="1">DC2</scp>
+				<scp row="66" col="2">FF</scp>
+				<scp row="66" col="2">EOT</scp>
+				<!-- Encabezado -->
+				<abstract row="1" col="8" height="6"><![CDATA[
+             BERCELI MEDINA   
+              ALMACENES MT
+             NIT. 
+            CRA 6 N° 13 - 87 ]]>
+				</abstract>
+				<!-- Datod personales -->
+				<field row="9" col="1" type="STRING">Nombre:</field>
+				<field row="10" col="1" type="STRING">NIT/CC:</field>
+				<field row="11" col="1" type="STRING">Direccion:</field>
+				<field row="12" col="1" type="STRING">Telefono:</field>
+				<field row="13" col="1" type="STRING">Ciudad:</field>
+				<!-- Informacion documento -->
+				<field row="9" col="107" type="STRING">ORDEN DE COMPRA</field>
+				<field row="10" col="107" type="STRING">Fecha</field>
+				<field row="11" col="107" type="STRING">Numero</field>
+				<ndocument row="11" col="123"/>
+				<!-- Informacion detallada de productos -->
+				<field row="17" col="5" type="STRING">Codigo</field>
+				<field row="17" col="25" type="STRING">Descripcion</field>
+				<field row="17" col="48" type="STRING">U. Venta</field>
+				<field row="17" col="64" type="STRING">Cant</field>
+				<field row="17" col="70" type="STRING">V. Unitar.</field>
+				<field row="17" col="85" type="STRING">Desc.</field>
+				<field row="17" col="95" type="STRING">Sub. Total</field>
+				<field row="17" col="111" type="STRING">Total IVA</field>
+				<field row="17" col="126" type="STRING">Total</field>
+				<!-- Observaciones -->
+				<field row="56" col="1" type="STRING">Observaciones</field>
+				<!-- Totales -->
+				<field row="56" col="104" type="STRING"><![CDATA[Sub Total $]]></field>
+				<field row="57" col="104" type="STRING"><![CDATA[Descuento $]]></field>
+				<field row="58" col="104" type="STRING"><![CDATA[IVA       $]]></field>
+				<field row="59" col="104" type="STRING"><![CDATA[Total     $]]></field>
+				<!-- Pie de pagina -->
+				<field row="63" col="11" type="STRING">ACEPTADA</field>
+				<!-- Dibujo de lineas -->
+				<line row="16" col="1" length="137" charfill="=" align="horizontal" />
+				<line row="18" col="1" length="137" charfill="=" align="horizontal" />
+				<line row="55" col="1" length="137" charfill="=" align="horizontal" />
+				<line row="62" col="2" length="31" charfill="_" align="horizontal" />
+				<line row="19" col="15" length="36" charfill="|" align="vertical" />
+				<line row="19" col="45" length="36" charfill="|" align="vertical" />
+				<line row="19" col="63" length="36" charfill="|" align="vertical" />
+				<line row="19" col="69" length="36" charfill="|" align="vertical" />
+				<line row="19" col="81" length="36" charfill="|" align="vertical" />
+				<line row="19" col="94" length="36" charfill="|" align="vertical" />
+				<line row="19" col="108" length="36" charfill="|" align="vertical" />
+				<line row="19" col="122" length="36" charfill="|" align="vertical" />
+				<!-- Dibujo con texto -->
+				<field row="17" col="15" type="STRING">|</field>
+				<field row="17" col="45" type="STRING">|</field>
+				<field row="17" col="63" type="STRING">|</field>
+				<field row="17" col="69" type="STRING">|</field>
+				<field row="17" col="81" type="STRING">|</field>
+				<field row="17" col="94" type="STRING">|</field>
+				<field row="17" col="108" type="STRING">|</field>
+				<field row="17" col="122" type="STRING">|</field>
+		</metadata>
+		<!-- Paquetes -->
+		<!-- Tercero -->
+		<package>
+				<field row="9" col="12" type="STRING" />
+				<field row="10" col="12" type="STRING" />
+				<field row="11" col="12" type="STRING" />
+				<field row="12" col="12" type="STRING" />
+				<field row="13" col="12" type="STRING" />
+		</package>
+		<package>
+				<field row="10" col="123" type="STRING" />
+		</package>
+		<package>
+				<subpackage rowInit="19">
+						<field col="1" type="STRING" />
+						<field col="16" type="STRING" />
+						<field col="46" type="STRING" />
+						<field col="64" width="5" type="NUMERIC" mask="#,###" />
+						<field col="71" width="10" type="NUMERIC" mask="###,##0.00" />
+						<field col="82" width="12" type="NUMERIC" mask="#,###,##0.00" />
+						<field col="96" width="12" type="NUMERIC" mask="#,###,##0.00" />
+						<field col="110" width="12" type="NUMERIC" mask="#,###,##0.00" />
+						<field col="124" width="14" type="NUMERIC" mask="###,###,##0.00" />
+				</subpackage>
+		</package>
+		<package>
+				<field row="56" col="120" width="16" type="NUMERIC" mask="#,###,###,##0.00" />
+				<field row="57" col="120" width="16" type="NUMERIC" mask="#,###,###,##0.00" />
+				<field row="58" col="120" width="16" type="NUMERIC" mask="#,###,###,##0.00" />
+				<field row="59" col="120" width="16" type="NUMERIC" mask="#,###,###,##0.00" />
+				<field row="60" col="120" width="16" type="NUMERIC" mask="#,###,###,##0.00" />
+		</package>
+		<package>
+				<field row="57" col="1" type="TEXT" width="90" height="3" />
+		</package>
+</emaku_template>

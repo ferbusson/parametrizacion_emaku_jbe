@@ -1,0 +1,60 @@
+<emaku_template type="PLAIN" requestNumeration="true" silent="true" printer="TMU">
+	<metadata>
+		<scp row="last" col="1" >NL</scp>
+		<scp row="last" incrementRow="false" col="1">27</scp>
+		<scp row="last" incrementRow="false" col="2">112</scp>
+		<scp row="last" incrementRow="false" col="3">48</scp>
+		<scp row="last" incrementRow="false" col="4">40</scp>
+
+		<field row="last" center="40" type="NAMEDB">razon_social</field>
+		<field row="last" center="40" type="NAMEDB">nit</field>
+		<field row="last" center="40" type="NAMEDB">direccion</field>
+		<field row="last" center="40" type="NAMEDB">telefono</field>
+		<field row="last" center="40" type="NAMEDB">ciudad</field>
+		<scp row="last" col="1" >NL</scp>
+		<field row="last" col="13" type="STRING">VALE DE RETIRO</field>
+		<scp row="last" col="1" >NL</scp>
+		<field row="last" col="1" type="STRING">Numero:</field>
+		<field row="last" col="1" type="STRING">Pasto,</field>
+		<field row="last" col="1" type="STRING">Cajero:</field>
+		<scp row="last" col="1" >NL</scp>
+		<field row="last" col="13" type="STRING">BENEFICIARIO</field>
+		<line row="last"   col="1" length="40" charfill="-" align="horizontal" />
+		<ndocument row="10" col="9" />
+	</metadata>
+	<package>
+			<field row="11" col="11" type="DATE" mask="EEEEEE dd MMMM yyyy"/>
+	</package>
+	<package>
+		<field row="12" col="9" type="STRING"/>
+	</package>
+	<package>
+		<field row="last" col="7" incrementRow="true" type="STRING"/>
+		<field row="last" col="7" incrementRow="true" type="STRING"/>
+		<field row="last" col="7" incrementRow="true" type="STRING"/>
+		<field row="last" col="7" incrementRow="true" type="STRING"/>
+		<field row="last" col="7" incrementRow="true" type="STRING"/>
+	</package>
+	<line row="last"   col="1" length="40" charfill="-" align="horizontal" />
+	<package>
+		<field row="last" separatorchar="LA SUMA DE" separatorcol="1" incrementRow="true" col="15" width="16" type="NUMERIC" mask="[##,###,###]" />
+	</package>
+	<package>
+		<field row="last"  incrementRow="true" col="1" width="40" height="3" type="NUMTOLETTERS"/>
+	</package>
+	<line row="last"   col="1" length="40" charfill="-" align="horizontal" />
+	<field row="last" col="13">POR CONCEPTO</field>
+	<package validate="true">
+		<field row="last" col="1"  width="40"  height="4" type="TEXT"/>
+	</package>
+	<scp row="last" col="1" >NL</scp>
+	<scp row="last" col="1" >NL</scp>
+	<line row="last"   col="10" length="20" charfill="_" align="horizontal" />
+	<field row="last" col="15">ACEPTADA</field>
+	<scp row="last" col="1" >NL</scp>
+	<scp row="last" col="1" >NL</scp>
+	<scp row="last" col="1" >NL</scp>
+	<scp row="last" col="1" >NL</scp>
+	<scp row="last" incrementRow="false" col="1">27</scp>
+	<scp row="last" incrementRow="false" col="2">105</scp>
+</emaku_template>

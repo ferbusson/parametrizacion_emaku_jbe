@@ -1,0 +1,143 @@
+<emaku_template type="POSTSCRIPT" requestNumeration="true" copies="1" silent="false" printer="EPSON_TM-T20">
+	<settings width="220" height="10000" />
+	<metadata>
+		<image row="1" col="10" width="100" height="75">/icons/logo_fac.png</image>
+		<field row="90" col="10" type="STRING">Almacen Mt Sport</field>
+		<barcodeImage row="100" col="10" />
+		<font row="0" col="0" name="Sans" size="8" />
+		<field row="200" col="5" type="STRING">Factura de Venta</field>
+		<field row="210" col="5" type="STRING">Numero: 4451-</field>
+		<field row="220" col="5" type="STRING">Ipiales,</field>
+		<field row="230" col="5" type="STRING">Cajero:</field>
+		<field row="240" col="5" type="STRING">Hora:</field>
+		<ndocument row="210" col="63" />
+		<time row="240" col="33" />
+		<!-- Informacion detallada de productos -->
+		<line row="250" col="2" row2="250" col2="190" />
+		<field row="260" col="5" type="STRING">Código</field>
+		<field row="270" col="110" type="STRING">Descripcion</field>
+		<field row="280" col="10" type="STRING">Cant</field>
+		<field row="280" col="80" type="STRING">V. Unit</field>
+		<field row="280" col="150" type="STRING">Total</field>
+		<line row="290" col="2" row2="290" col2="200" />
+	</metadata>
+	<package>
+		<field row="220" col="35" type="DATE" mask="EEEEEE dd MMMM yyyy" />
+	</package>
+	<package>
+		<field row="230" col="35" type="STRING" />
+	</package>
+	<package>
+		<subpackage rowInit="300" rowAcum="10">
+			<field col="15" type="STRING" incrementRow="true" />
+			<field col="15" incrementRow="true" type="STRING" />
+			<field col="15" width="3" type="NUMERIC" mask="###" />
+			<field col="100" width="13" type="NUMERIC" mask="#,###,###.##" />
+			<field col="180" width="13" type="NUMERIC" mask="#,###,###.##" />
+		</subpackage>
+	</package>
+	<package>
+		<line row="last" rowAcum="20" col="2" row2="last" col2="200" />
+	</package>	
+	<package>
+		<field textLine="TOTAL ......" rowAcum="20" textCol="5" fontName="Dialog" fontSize="16" fontStyle="1" row="last" col="190" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="Paga Puntos" rowAcum="20" textCol="5" fontName="Dialog" fontSize="16" fontStyle="1" row="last" col="190" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="T. Regalo" rowAcum="20" textCol="5" fontName="Dialog" fontSize="16" fontStyle="1" row="last" col="190" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="Efectivo ......" rowAcum="20" textCol="5" fontName="Dialog" fontSize="16" fontStyle="1" row="last" col="190" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="Tarjetas ......" rowAcum="20" textCol="5" fontName="Dialog" fontSize="16" fontStyle="1" row="last" col="190" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="Credito ......" rowAcum="20" textCol="5" fontName="Dialog" fontSize="16" fontStyle="1" row="last" col="190" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="Cambio ......" rowAcum="15" textCol="5" fontName="Dialog" fontSize="16" fontStyle="1" row="last" col="190" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<line rowAcum="12" row="last" col="2" row2="last" col2="200" />
+	</package>	
+	<package>
+		<field textLine="Base Impuesto                                 IVA 19%" rowAcum="12" textCol="5" row="last" col="190" type="STRING"/>
+	</package>	
+	<package>
+		<field textCol="30" row="last" col="60"  width="13" type="NUMERIC" mask="#,###,###.##"/>
+	</package>	
+	<package>
+		<field rowAcum="10" textCol="5" row="last" col="190"  width="13" type="NUMERIC" mask="#,###,###.##"/>
+	</package>	
+	<package>
+		<line row="last" rowAcum="20" col="2" row2="last" col2="200" />
+	</package>	
+	<package>
+		<field textLine="Total Articulos:" rowAcum="15" textCol="5" fontName="Dialog" fontSize="12" fontStyle="0" row="last" col="190" width="13" type="NUMERIC" mask="#,###,###" />
+	</package>	
+	<package>
+		<line row="last" rowAcum="15" col="2" row2="last" col2="200" />
+	</package>	
+	<package>
+		<text fontName="Dialog" fontSize="14" fontStyle="1" rowAcum="17" row="last" col="15" type="STRING">PUNTOS POR REDIMIR</text>
+	</package>	
+	<package>
+		<field rowAcum="13" fontName="Dialog" fontSize="14" fontStyle="1" row="last" col="140" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<line row="last" rowAcum="10" col="2" row2="last" col2="200" />
+	</package>	
+	<package validate="true">
+		<field row="last" rowAcum="15"  col="15" type="STRING"/>
+		<field row="last" rowAcum="15"  col="15" type="STRING"/>
+		<field row="last" rowAcum="15"  col="15" type="STRING"/>
+		<field row="last" rowAcum="15"  col="15" type="STRING"/>
+		<field row="last" rowAcum="15"  col="15" type="STRING"/>
+	</package>
+	<package validate="true">
+		<field row="last" textLine="DIAS DE CREDITO" rowAcum="15" textCol="5"  col="180" type="STRING"/>
+	</package>
+	<package validate="true">
+		<field row="last"  textLine="VENCIMIENTO" rowAcum="15" textCol="5"  col="180"  type="STRING"/>
+	</package>
+	<package>
+		<line row="last" rowAcum="20" col="2" row2="last" col2="200" />
+	</package>	
+	<package>
+		<field textLine="TRM ......" rowAcum="15" textCol="5" fontName="Dialog" fontSize="12" fontStyle="1" row="last" col="190" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<field textLine="Total US $ ......" rowAcum="15" textCol="5" fontName="Dialog" fontSize="12" fontStyle="1" row="last" col="190" width="13" type="NUMERIC" mask="#,###,###.##" />
+	</package>	
+	<package>
+		<line row="last" rowAcum="20" col="2" row2="last" col2="200" />
+	</package>	
+	<package>
+		<text fontName="Dialog" fontSize="7" fontStyle="0"  rowAcum="10" row="last" col="10" type="STRING">NUMERO RESOLUCION DIAN: 140000030559</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">NUMERACION AUTORIZADA:</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">del 4451-1 al 20000</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">FECHA AUTORIZACION: </text>
+		<text rowAcum="10" row="last" col="15" type="STRING">14 de Diciembre de 2009</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">NO SE ACEPTA CAMBIOS DE</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">MERCANCIA DE PROMOCION</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">EL PLAZO MAXIMO PARA CAMBIO</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">DE MERCANCIA ES DE 3O DIAS</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">Y POR RECLAMO FRENTE A CALIDAD</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">EN PRENDAS DE 60 DIAS, EL CALZADO</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">POR FALLAS DE FABRICACION TIENE</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">3O DIAS DE GARANTIA, PARA</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">CUALQUIER TIPO DE RECLAMO DEBE</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">PRESENTAR ESTA FACTURA.</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">BERCELI MEDINA</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">NIT: 79719543-2</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">REGIMEN COMUN</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">CRA 6 N° 13 - 87</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">www.almacenesmt.com</text>
+		<text rowAcum="10" row="last" col="15" type="STRING">almacenesmt@gmail.com</text>
+		<text rowAcum="20" row="last" col="15" type="STRING">IPIALES</text>
+		<text  fontName="Dialog" fontSize="14" fontStyle="1"  rowAcum="30" row="last" col="2" type="STRING">GRACIAS POR SU COMPRA</text>
+	</package>
+</emaku_template>

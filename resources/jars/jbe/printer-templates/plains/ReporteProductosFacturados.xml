@@ -1,0 +1,47 @@
+<emaku_template type="PLAIN" silent="true" printer="epsonoffice">
+	<metadata>
+		<!-- Encabezado -->
+		<abstract row="2" col="1" height="6">
+			<![CDATA[
+           ALMACENES MT
+          NIT. 
+   CR 6 N° 13 - 87 IPIALES (NAR)
+          Telefono: 77343462]]>
+		</abstract>
+		<!-- Informacion documento -->
+		<field row="8" col="1" type="STRING">REPORTE DE PRODUCTOS FACTURADOS POR DIA
+</field>
+		<field row="10" col="1" type="STRING">Fecha:</field>
+		<!-- Informacion detallada de productos -->
+		<line row="11" col="1" length="40" charfill="-" align="horizontal" />
+		<field row="12" col="1" type="STRING">CODIGO</field>
+		<field row="12" col="13" type="STRING">DESCRIPCION</field>
+		<field row="13" col="19" type="STRING">CANTIDAD</field>
+		<field row="13" col="34" type="STRING">TOTAL</field>
+		<line row="14" col="1" length="40" charfill="-" align="horizontal" />
+	</metadata>
+	<package>
+			<field row="10" col="8" type="DATE" mask="EEEEEE dd MMMM yyyy"/>
+	</package>
+	<package validate="true">
+		<subpackage rowInit="15">
+			<field col="1" type="STRING" />
+			<field col="10" type="STRING" />
+			<field col="58" width="7" type="NUMERIC" mask="#,###" />
+			<field col="69" width="11" type="NUMERIC" mask="#,###,###" />
+		</subpackage>
+	</package>
+	<!-- SubTotales -->
+	<package>
+		<field row="last" col="1" width="16" type="STRING"/>
+	</package>
+	<package>
+		<field row="current" col="20" width="15" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" col="1" width="16" type="STRING"/>
+	</package>
+	<package>
+		<field row="last" col="1" width="16" type="STRING"/>
+	</package>
+</emaku_template>

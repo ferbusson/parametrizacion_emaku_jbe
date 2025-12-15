@@ -1,0 +1,127 @@
+<emaku_template type="POSTSCRIPT" requestNumeration="false" silent="true" nativeprinter="true" printer="EPSON_TM-T20">
+	<settings width="220" height="10000" />
+	<metadata>
+		<image row="1" col="15" width="25" height="12">/icons/logo_transsandona.png</image>
+		<!--<barcodeImage row="1" col="20"/>-->
+		<font row="0" col="0" name="Sans" size="6" />	
+		<field row="70" center="200" type="NAMEDB">razon_social</field>
+		<field row="80" center="200" type="NAMEDB">nit</field>
+		<font row="0" col="0" name="Sans" size="5" />	
+
+		<font row="0" col="0" name="Sans" size="7" />
+
+		<font row="0" col="0" name="Sans" size="12" />
+		<field row="106" col="65" type="STRING">RE-IMPRESION</field>
+		<field row="118" col="50" type="STRING">RECIBO DE CAJA</field>
+
+		<line row="125" col="2" row2="125" col2="210"/>
+		<font row="0" col="0" name="Sans" size="7" />
+		<field row="135" col="5" type="STRING">FECHA:</field>
+		<field row="144" col="5" type="STRING">EXPEDIDO EN:</field>
+		<field row="153" col="5" type="STRING">NÚMERO:</field>
+		<field row="162" col="5" type="STRING">N. ORDEN VEHÍCULO:</field>
+		<line row="167" col="2" row2="167" col2="210"/>
+
+		<font row="0" col="0" name="Sans" size="14" />
+		<field row="183" col="5" type="STRING">VALOR $</field>
+		<font row="0" col="0" name="Sans" size="8" />
+		<line row="188" col="2" row2="188" col2="210"/>
+		<line row="220" col="2" row2="220" col2="210"/>
+		<field row="231" center="200" type="STRING">CONCEPTO</field>
+
+	</metadata>
+
+	0 DOCUMENTO
+	<package>
+		<field row="153" col="100" width="10" type="STRING"/>
+	</package>
+
+	1 HORA
+	<package>
+		<field row="135" col="170" width="10" type="TIME"/>
+	</package>
+
+	2 FECHA
+	<package>
+		<field row="135" col="30" width="10" type="DATE" mask="EEEEEE dd MMMM yyyy"/>
+	</package>
+
+	3 PREFIJOS
+	<package>
+		<field row="153" col="60" width="10" type="STRING"/>
+	</package>
+	4 SUCURSAL
+	<package>
+		<field row="144" col="60" width="10" type="STRING"/>
+	</package>
+	
+	5 NORDEN
+	<package>
+		<field row="162" col="82" width="10" type="STRING"/>
+	</package>
+	6 VALOR
+	<package>
+		<field row="183" col="170" width="10" type="NUMERIC" mask="#,###,###" fontSize="14" fontName="Sans"/>
+	</package>
+	7 NOMBRE
+	<package>
+		<field row="202" col="5" width="10" type="STRING" fontSize="10" fontName="Sans"/>
+	</package>
+	8 DOCUMENTO
+	<package>
+		<field row="215" col="5" width="10" type="STRING" fontSize="10" fontName="Sans"/>
+	</package>
+
+	9 CONCEPTO
+	<package>
+		<field row="245" rowAcum="10" col="5" width="50" height="4" type="TEXT" fontSize="8" fontName="Sans"/>
+	</package>
+
+	10 LINEA ABAJO CONCEPTO
+        <package>
+                <line row="last" col="5" row2="last" col2="210" rowAcum="40"/>
+        </package>
+
+	11 LINEA FIRMA ELABORO
+        <package>
+                <line row="last" col="42" row2="last" col2="155" rowAcum="10"/>
+        </package>
+
+	12 FIELD
+        <package validate="true">
+                <text row="last" col="72" rowAcum="30" type="STRING" fontSize="5" fontName="Sans" >Firma Elaboró</text>
+        </package>
+
+	13 LINEA FIRMA RECIBE
+        <package>
+                <line row="last" col="42" row2="last" col2="155" rowAcum="10"/>
+        </package>
+
+	14 FIELD
+        <package validate="true">
+                <text row="last" col="72" rowAcum="10" type="STRING" fontSize="5" fontName="Sans" >Firma Recibió</text>
+        </package>
+
+	15 Documento Anulado
+        <package>
+		<field row="last" col="40" type="STRING" fontSize="10" fontName="Sans" rowAcum="10" />
+        </package>
+
+ 	16 Elaboro
+        <package>
+                <field textLine="Usuario:" textCol="72" row="last" rowAcum="11" col="104" width="10" type="STRING" fontSize="7" fontName="Sans"/>
+        </package>
+
+	17 FIELD
+        <package validate="true">
+
+                <text fontName="Dialog" fontSize="7" fontStyle="0" rowAcum="10" row="last" col="10" type="STRING"></text>
+                <text fontName="Dialog" fontSize="7" fontStyle="0" rowAcum="10" row="last" col="10" type="STRING">Calle 17 No 35 - 52 B/Maridíaz -  Pasto Tel: 7300997</text>
+                <text fontName="Dialog" fontSize="7" fontStyle="0" rowAcum="10" row="last" col="2" type="STRING">Oficinas: Terminal de Transportes de Pasto Tel: 7309211</text>
+                <text fontName="Dialog" fontSize="7" fontStyle="0" rowAcum="10" row="last" col="20" type="STRING">Ipiales Tel: 7253741 - La Unión Tel: 3136513118</text>
+                 <text fontName="Dialog" fontSize="7" fontStyle="0" rowAcum="10" row="last" col="21" type="STRING">E-mail: servicioalcliente@transsandona.com</text>
+
+        </package>
+
+
+</emaku_template>

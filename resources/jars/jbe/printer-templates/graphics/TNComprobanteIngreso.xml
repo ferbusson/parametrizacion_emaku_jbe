@@ -1,0 +1,135 @@
+<emaku_template type="POSTSCRIPT" requestNumeration="true" copies="2" silent="true" nativeprinter="true" printer="EPSON_TM-T20">
+   <settings width="220" height="10000" />
+   <metadata>
+      <image row="1" col="30" width="25" height="12">/icons/logo_fac.png</image>
+      <font row="0" col="0" name="Sans" size="8" />
+      <field row="117" center="218" type="STRING" importValue="true">terceroal</field>
+      <font row="0" col="0" name="Sans" size="7" />
+      <field row="127" center="218" type="STRING" importValue="true">nitalterno</field>
+      <field row="137" center="218" type="STRING">Responsable del Impuesto sobre las ventas - IVA</field>
+      <field row="147" center="218" type="STRING" importValue="true">direccion</field>
+      <field row="157" center="218" type="STRING" importValue="true">telefono</field>
+      <field row="167" center="218" type="STRING" importValue="true">piepaginados</field>
+      <field row="177" center="218" type="STRING" importValue="true">ciudad</field>
+      
+      <font row="0" col="0" name="Sans" size="11" />
+      <field row="203" center="218" type="STRING">RECIBO DE CAJA</field>
+
+      <font row="0" col="0" name="Sans" size="8" />
+    
+      <field row="230" col="15" type="STRING">Numero:</field>
+      <field row="240" col="15" type="STRING">Fecha:</field>
+      <field row="250" col="15" type="STRING">Hora:</field>
+      <field row="260" col="15" type="STRING">Cajero:</field>
+
+      <barcodeImage row="80" col="20" />
+      <ndocument row="230" col="70" format="Integer"/>
+      <date row="240" col="53" mask="EEEEEE dd MMMM yyyy"/>
+      <time row="250" col="53" />
+
+      <line row="267" col="2" row2="267" col2="218" />
+     
+      <field row="280" col="10" type="STRING">Identificación:</field>
+      <field row="290" col="10" type="STRING">Cliente:</field>
+      <field row="300" col="10" type="STRING">Dirección:</field>
+      <field row="310" col="10" type="STRING">Ciudad:</field>
+      <field row="320" col="10" type="STRING">Contacto:</field>
+
+   </metadata>
+
+	<!-- 0 Prefijo -->
+	<package>
+	       <field row="230" col="53" type="STRING" textLine="-" textCol="63" fontName="Dialog" fontSize="8" fontStyle="0" />
+	</package>   
+
+ 	<!-- 1 vendedor -->
+   	<package>
+      		<field row="260" col="53" fontName="Dialog" fontSize="7" fontStyle="0" type="STRING" />
+   	</package>
+
+	   <!-- 2 tercero -->
+	   <package validate="true">
+	      <field row="290" rowAcum="15"  col="80" type="STRING"/>
+	      <field row="280" rowAcum="15"  col="80" type="STRING"/>
+	      <field row="300" rowAcum="15"  col="80" type="STRING"/>
+	      <field row="320" rowAcum="15"  col="80" type="STRING"/>
+	      <field row="310" rowAcum="15"  col="80" type="STRING"/>
+	   </package>
+
+	<!-- 3 linea -->
+  	 <package>
+     		 <line row="last" rowAcum="15" col="2" row2="last" col2="218" />
+  	 </package>  
+   
+	<!-- 4 letrero concepto -->
+	<package>
+        	 <text fontName="Dialog" fontSize="10" fontStyle="0" rowAcum="5" row="last" col="79" type="STRING">Abonos</text>
+        </package>
+
+	<!-- 3 linea -->
+  	 <package>
+     		 <line row="last" rowAcum="15" col="2" row2="last" col2="218" />
+  	 </package>  
+
+        <!-- 5 Concepto -->
+	<package>
+              <subpackage rowInit="last" rowAcum="15">
+                 <field textLine="Documento" textCol="10" col="120" type="STRING" incrementRow="true" fontName="Dialog" fontSize="10" fontStyle="0" />
+                 <field textLine="Abono" textCol="10" col="198" width="13" type="NUMERIC" mask="#,###,###.##" incrementRow="true" fontName="Dialog" fontSize="10" fontStyle="0" />
+                 <field textLine="Descuento" textCol="10" col="198" width="13" type="NUMERIC" mask="#,###,###.##" incrementRow="true" fontName="Dialog" fontSize="10" fontStyle="0"/>
+                 <field textLine="Saldo" textCol="10" col="198" width="13" type="NUMERIC" mask="#,###,###.##" incrementRow="true" fontName="Dialog" fontSize="10" fontStyle="0" />
+              </subpackage>
+        </package>
+
+        <!-- 6 Linea -->
+        <package>
+                <line row="last" col="5" row2="last" col2="210" rowAcum="20"/>
+        </package>
+	
+	<!-- 7 Valor numeros --> 
+   	<package>
+      		<field textLine="Valor" rowAcum="20" textCol="5" validZero="true" fontName="Dialog" fontSize="12" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,###.##" />
+   	</package>
+  	
+	<!-- 8 Valor en letras -->
+        <package>
+                <field fontName="Dialog" fontSize="8" fontStyle="0" row="last" col="5" type="NUMTOLETTERS" width="47" height="2" rowAcum="15" />
+        </package>
+	
+	<!-- 9 linea -->
+  	 <package>
+     		 <line row="last" rowAcum="20" col="2" row2="last" col2="218" />
+  	 </package>  
+
+	<!-- 10 -->
+  	<package>
+      		<field textLine="Efectivo" rowAcum="20" textCol="5" validZero="true" fontName="Dialog" fontSize="12" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,###.##" />
+   	</package>  
+   	
+	<!-- 11 --> 
+   	<package>
+      		<field textLine="Cheques" rowAcum="20" textCol="5" validZero="true" fontName="Dialog" fontSize="12" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,###.##" />
+   	</package>
+   
+   	<!-- 12 -->
+	<package>
+      		<field textLine="Tarjetas" rowAcum="20" textCol="5" validZero="true" fontName="Dialog" fontSize="12" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,###.##" />
+   	</package>  
+   
+   	<!-- 13 -->
+	<package>
+      		<field textLine="Consignación" rowAcum="20" textCol="5" validZero="true" fontName="Dialog" fontSize="12" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,###.##" />
+   	</package>  
+
+   	<!-- 14 -->
+   	<package>
+   	   <field textLine="Cambio" rowAcum="15" textCol="5" fontName="Dialog" fontSize="12" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,###.##" />
+  	</package> 
+ 
+   	<!-- 15 --> 
+	<package>
+	        <line row="last" rowAcum="20" col="2" row2="last" col2="218" />
+   	</package>  
+
+
+</emaku_template>

@@ -1,0 +1,99 @@
+<emaku_template type="GRAPHIC" requestNumeration="false" silence="false" printer="DeskJet-3920-1">
+		<settings width="612" height="792"/>
+		<metadata>
+				<font row="0" col="0" name="Sans" size="16"/>
+				<field row="70" col="250" type="STRING" >FACTURA CAMBIARIA DE COMPRAVENTA</field>
+				<font row="0" col="0" name="Sans" size="10"/>
+				<!-- Encabezado SEPAL -->
+				<field row="42" col="75" type="STRING">BERCELI MEDINA</field>
+				<field row="54" col="75" type="STRING">REGIMEN COMUN</field>
+				<field row="66" col="75" type="STRING">CRA 6 N° 13 87</field>
+				<field row="78" col="75" type="STRING">TEL. 7733324</field>
+				<field row="90" col="75" type="STRING">IPIALES</field>
+				<roundedRectangle row="110" col="20" width="300" height="17"/>
+				<roundedRectangle row="145" col="20" width="300" height="60"/>
+				<roundedRectangle row="220" col="20" width="565" height="520"/>
+				<roundedRectangle row="220" col="20" width="565" height="15"/>
+				<roundedRectangle row="660" col="20" width="565" height="80"/>
+				<field row="120" col="25" type="STRING" >Fecha:                   Crédito:        Vencimiento:</field>
+				<field row="140" col="25" type="STRING" >Señores</field>
+				<field row="200" col="170" type="STRING" >Vendedor:</field>
+				<!--  <font row="0" col="0" name="Sans" size="14"/>-->
+				<field row="130" col="390" type="STRING">Numero:</field>
+        		<field row="130" col="455" type="STRING">AC-</field>
+				<field row="170" col="360" type="STRING" >Resolucion Dian No. </field>
+				<field row="180" col="360" type="STRING" >Del </field>
+				<field row="190" col="360" type="STRING" >Autorizacion desde a </field>
+        		<font row="0" col="0" name="Sans" size="8"/>
+				<!-- Detalles -->
+				<line row="220" col="70" row2="660" col2="70" />
+				<line row="220" col="250" row2="660" col2="250" />
+				<line row="220" col="285" row2="660" col2="285" />
+				<line row="220" col="345" row2="660" col2="345" />
+				<line row="220" col="410" row2="740" col2="410" />
+				<line row="220" col="460" row2="660" col2="460" />
+				<line row="220" col="517" row2="740" col2="517" />
+				<field row="230" col="35" type="STRING" >Codigo</field>
+				<field row="230" col="150" type="STRING" >Descripcion</field>
+				<field row="230" col="260" type="STRING" >Cant</field>
+				<field row="230" col="295" type="STRING" >V. Unitario</field>
+				<field row="230" col="360" type="STRING" >S. Total</field>
+				<field row="230" col="420" type="STRING" >Dcto</field>
+				<field row="230" col="480" type="STRING" >IVA</field>
+				<field row="230" col="540" type="STRING" >Total</field>
+				<!-- Sub totales -->
+				<field row="674" col="430" type="STRING" >Sub. Total</field>
+				<field row="686" col="430" type="STRING" >Descuento</field>
+				<field row="698" col="430" type="STRING" >IVA</field>
+				<field row="710" col="430" type="STRING" >Total</field>
+				<field row="722" col="430" type="STRING" >Retenciones</field>
+				<field row="734" col="430" type="STRING" >Total - Ret</field>
+        <!-- Pie de pagina -->        
+				<field row="750" col="100" type="STRING" >Esta Factura se asimila en sus efectos legales a la letra de cambio (según art. 774 del codigo de comercio)</field>
+		</metadata>
+		<package>
+				<field row="160" col="25" type="STRING" />
+				<field row="170" col="25" type="STRING" />
+				<field row="180" col="25" type="STRING" />
+				<field row="190" col="25" type="STRING" />
+				<field row="200" col="25" type="STRING" />
+		</package>
+		<package>
+			<field row="120" col="57" type="DATE" mask="yyyy-MM-dd"/>
+		</package>
+		<package>
+			<field row="120" col="158" type="STRING"/>
+		</package>
+		<package>
+			<field row="120" col="249" type="DATE" mask="yyyy-MM-dd"/>
+		</package>
+		<package>
+			<field row="200" col="240" type="STRING"/>
+		</package>
+		<package>
+				<field row="130" col="540" width="10" type="NUMERIC" mask="0000000000" fontSize="10" fontName="Sans" />
+		</package>
+		<package>
+				<subpackage rowInit="245" rowAcum="10">
+						<field col="25" type="STRING" />
+						<field col="73" type="STRING" />
+						<field col="282" type="NUMERIC" mask="##,###" />
+						<field col="342" type="NUMERIC" mask="#,###,###,##0.00" />
+						<field col="408" type="NUMERIC" mask="#,###,###,##0.00" />
+						<field col="458" type="NUMERIC" mask="#,###,###,##0.00" />
+						<field col="514" type="NUMERIC" mask="#,###,###,##0.00" />
+						<field col="582" type="NUMERIC" mask="#,###,###,##0.00" />
+				</subpackage>
+		</package>
+		<package>
+				<field row="674" col="580" type="NUMERIC" mask="#,###,###,##0.00" />
+				<field row="686" col="580" type="NUMERIC" mask="#,###,###,##0.00" />
+				<field row="698" col="580" type="NUMERIC" mask="#,###,###,##0.00" />
+				<field row="710" col="580" type="NUMERIC" mask="#,###,###,##0.00" />
+				<field row="722" col="580" type="NUMERIC" mask="#,###,###,##0.00" />
+				<field row="734" col="580" type="NUMERIC" mask="#,###,###,##0.00" />
+		</package>
+		<package>
+				<field row="670" col="25" type="TEXT" width="60" height="3" rowAcum="10" />
+		</package> 
+</emaku_template>

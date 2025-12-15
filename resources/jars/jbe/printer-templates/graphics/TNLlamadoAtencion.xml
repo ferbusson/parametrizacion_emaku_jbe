@@ -1,0 +1,37 @@
+<emaku_template type="GRAPHIC" requestNumeration="false" copies="2" silence="true" printer="DeskJet-3920-1">
+	<settings width="612" height="792" />
+
+	<metadata>
+
+		<font row="0" col="0" name="Sans" size="14" />
+		<field row="120" center="612" type="STRING">LLAMADO ATENCION</field>
+		<font row="0" col="0" name="Sans" size="10" />
+		<image row="20" col="220" width="100" height="75">/icons/logo_solo_mt.png</image>	
+
+	</metadata>
+
+	<newpage>
+		<field row="80" col="430" type="STRING">PAGINA:</field>
+		<pagenumber row="80" col="530" />
+		<font row="0" col="0" name="Sans" size="10" />
+	</newpage>
+	
+	<!-- Empiezan los paquetes que vienen del formulario-->
+	
+	0<!-- Imagen firma--> 
+	<package>
+		<dbimage row="545" width="100" height="75" col="70" type="STRING" />
+	</package>
+
+	1<!-- Texto principal -->
+	<package>
+		<field row="150" col="75" type="TEXT" fontSize="10" fontName="Sans" width="100" height="90" rowAcum="12" fullJustify="490"/>
+	</package>
+
+	2<!-- Pie Página -->
+	<package>
+		<field row="670" col="75" type="TEXT" fontSize="10" fontName="Sans" width="100" height="90" rowAcum="11" fullJustify="490"/>
+	</package>
+
+
+</emaku_template>

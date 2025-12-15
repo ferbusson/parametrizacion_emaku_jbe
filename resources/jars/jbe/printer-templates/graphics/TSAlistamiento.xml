@@ -1,0 +1,121 @@
+<!--
+   Los tags que se agregaron para soportar impresion multi centrocosto fueron:
+   metadata: importValue nombre_suc
+   paquete final: importValue direccion
+   paquete final: importValue ciudad
+
+   *Para la impresion del logo se adiciono la etiqueta dbimage, la cual recibe la imagen a imprimir
+   En esta plantilla es el primer paquete que se recibe luego del metadata
+-->
+<!--EPSON_TM-T20 -->
+<emaku_template type="POSTSCRIPT" requestNumeration="false" copies="1" silent="false" printer="EPSON_TM-T20">
+   <settings width="220" height="10000" />
+   <metadata>
+     
+      <image row="1" col="30" width="25" height="12">/icons/logo_fac.png</image>
+      <font row="0" col="0" name="Sans" size="8" />
+      <!--<field row="117" center="218" type="STRING" importValue="true">terceroal</field>-->
+
+      <!--<font row="0" col="0" name="Sans" size="7" />
+      <field row="127" center="218" type="STRING" importValue="true">nitalterno</field>
+      <field row="137" center="218" type="STRING">Responsable del Impuesto sobre las ventas - IVA</field>
+      <field row="147" center="218" type="STRING" importValue="true">direccion</field>
+      <field row="157" center="218" type="STRING" importValue="true">telefono</field>
+      <field row="167" center="218" type="STRING" importValue="true">piepaginados</field>
+      <field row="177" center="218" type="STRING" importValue="true">ciudad</field>
+      <field row="190" center="218" type="STRING" importValue="true">horarioatencion</field>
+      <field row="202" center="218" type="STRING" importValue="true">piepaginauno</field>-->
+
+      
+      <font row="0" col="0" name="Sans" size="14" />
+
+      <field row="85" center="220" type="STRING">ALISTAMIENTO MERCANCIA</field>
+
+      <font row="0" col="0" name="Sans" size="8" />
+      <field row="100" col="15" type="STRING">Numero:</field>
+      <field row="110" col="15" type="STRING">Fecha:</field>
+      <field row="120" col="15" type="STRING">Cajero:</field>
+      <field row="130" col="15" type="STRING">Línea:</field>
+      <field row="140" col="15" type="STRING">Despachar a:</field>
+
+      <!-- Informacion detallada de productos -->
+      <line row="155" col="2" row2="155" col2="218" />
+      <field row="165" col="10" type="STRING">Código</field>
+      <field row="165" col="120" type="STRING">Cantidad</field>
+      <field row="175" col="10" type="STRING">Descripción</field>
+      <field row="175" col="180" type="STRING">Revisado</field>
+      <line row="185" col="2" row2="185" col2="218" />
+
+   </metadata>
+
+
+     <!-- 0 Numero fac -->
+     <package>
+        <field row="100" col="70" width="10" type="STRING" mask="0" />
+     </package>
+
+   <!-- 1 fecha fac -->
+   <package>
+      <field row="110" col="53" type="DATE" mask="EEEEEE dd MMMM yyyy" />
+   </package>
+
+   <!-- 2 cajero -->
+   <package>
+      <field row="120" col="53" fontName="Dialog" fontSize="7" fontStyle="0" type="STRING" />
+   </package>
+
+   <!-- 3 linea -->
+   <package>
+      <field row="130" col="53" fontName="Dialog" fontSize="7" fontStyle="0" type="STRING" />
+   </package>
+
+   <!-- 4 bodega -->
+   <package>
+      <field row="140" col="80" fontName="Dialog" fontSize="7" fontStyle="0" type="STRING" />
+   </package>
+
+   <!-- 5 tabla productos -->
+   <package>
+      <subpackage rowInit="195" rowAcum="10">
+         <field col="10" type="STRING" incrementRow="false" />  codigo 
+         <field col="-500" type="STRING" incrementRow="false" />  ref
+         <field col="-500" width="3" type="NUMERIC" mask="###" incrementRow="true"/>  salto pventa
+         <field col="150" width="3" type="NUMERIC" mask="###" incrementRow="true"/>  solicitado 
+         <field col="-500" width="3" type="NUMERIC" mask="###" incrementRow="false"/>  traslado
+         <field col="10" incrementRow="false" type="STRING" />  descripcion
+         <field col="-500" incrementRow="false" type="STRING" />  linea
+         <field col="-500" incrementRow="false" type="STRING" />  marca
+	 <field col="202" width="13" type="STRING" />  Revisado 
+      </subpackage>
+   </package>
+
+   <!-- 6 linea -->
+   <package>
+      <line row="last" rowAcum="20" col="2" row2="last" col2="218" />
+   </package>  
+
+   <!-- 7 -->
+   <package>
+      <field textLine="Total Articulos:" rowAcum="15" textCol="13" fontName="Dialog" fontSize="12" fontStyle="0" row="last" col="205" width="13" type="NUMERIC" mask="#,###,###" />
+   </package> 
+ 
+   <!-- 8 -->
+   <package>
+      <line row="last" rowAcum="20" col="2" row2="last" col2="218" />
+   </package> 
+ 
+  <!-- label -->
+  <package>
+          <field textLine="Observaciones:" rowAcum="10" textCol="10" row="last" col="10" width="13" type="STRING" fontName="Dialog" fontSize="7" fontStyle="0" />
+  </package>
+   <!-- Observaciones -->
+  <package>
+          <field row="last" col="10" type="TEXT" width="58" height="7" rowAcum="10" fontName="Dialog" fontSize="7" fontStyle="0" />
+  </package>
+
+   <!-- 9 -->
+   <package>
+        <text fontName="Dialog" fontSize="6" fontStyle="0" rowAcum="10" row="last" col="77" type="STRING">Software E-MAKU</text>
+   </package>
+
+</emaku_template>

@@ -1,0 +1,1763 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: 52l1WYSeNMH6EJ5T3H5q2DkymwkD3
+ hCQQRsLsn0TjGI=
+SHA-256-Digest-Manifest: BetoqyD4cMB3LJQK7ybqoSivLwwRSz75BFTMb6N7994=
+Created-By: 1.8.0_211 (Oracle Corporation)
+
+Name: jbe/printer-templates/plains/.svn/text-base/ReportePostRangoFech
+ a.xml.svn-base
+SHA-256-Digest: +gfNeMtqB6BZvXH6Z5OeFt8wVs8H5e694VJgX+zOrhc=
+
+Name: jbe/printer-templates/plains/.svn/text-base/ReporteAPostRangoFec
+ ha.xml.svn-base
+SHA-256-Digest: DSlRWfn8OgP5LwZQBGOyr9+zxABuX94eLhh0wcbWrME=
+
+Name: jbe/printer-templates/plains/TNSeparados.xml
+SHA-256-Digest: NUxuTMr/crB+2WoBl0zZYhcFoSIGIp3EngCXW5+ll/c=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TSFacturaCredito.x
+ ml.svn-base
+SHA-256-Digest: HzroKUF6ZoOHQbjWK+FE+Y9CjNor6tTGJT3z2J7RLrw=
+
+Name: jbe/printer-templates/graphics/TSComprobantePago.xml
+SHA-256-Digest: Z4rnsjxPVtNqyepWSde+SZTPUCEeLAsuUtVsiOQCShc=
+
+Name: jbe/printer-templates/plains/TSNotaDebito.xml
+SHA-256-Digest: v79WkfBxptDsFB/Cm23sdsho9etovr5M/LkgwxyoTws=
+
+Name: jbe/conf/.svn/text-base/menu.xml.svn-base
+SHA-256-Digest: QKHY7sO2k6MxugrRyBd0d/bsm20QxmkeNMWkOmbZM+I=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNEgresoPos.xml.svn-
+ base
+SHA-256-Digest: e35Z8xKVgFShrNpwMA0fj/UxBuyoPDqW/HR6oXT36j4=
+
+Name: jbe/printer-templates/graphics/TNFacturaElectronicaTirillaJBE.xm
+ l
+SHA-256-Digest: yyZ1LlPmiW3FTLIlP29yrhM6WVjpwSD1CgRgU4/Hcz4=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TSFacturaPos.xml.s
+ vn-base
+SHA-256-Digest: 1bOmHFJIE09623Wjjg6uJ7nO4CXweZRb3q7w/aUC92c=
+
+Name: jbe/conf/.svn/text-base/icons.xml.svn-base
+SHA-256-Digest: 1dBKaoPqFhSIwaa90sfRSbtS/y9eS7QYGkcq1CBQTaA=
+
+Name: jbe/printer-templates/plains/.svn/text-base/ReporteMeseroDia.xml
+ .svn-base
+SHA-256-Digest: ubFLjgkMtm5WDzBUS0LycFVHYjQwt9a09WSIcCstv4U=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSNotaAjusteInventar
+ io.xml.svn-base
+SHA-256-Digest: iBo9fxcSzfzV4FXTsF8dqu6Go1vk8Rg6wpfn0EXwF68=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TNCompraRemisionad
+ aResumida.xml.svn-base
+SHA-256-Digest: ATqtHJpJk29y2h5sWaMwRcnDCUReDR6BpeLt6Bt9PAo=
+
+Name: jbe/printer-templates/graphics/TSPedidoMostradorTirilla.xml
+SHA-256-Digest: kTkKRDi1ukbspUa7o8Nr9fg4Fp42w/5d6KuM35DZaM4=
+
+Name: jbe/printer-templates/graphics/TSSeparadoMulti.xml
+SHA-256-Digest: R9SoXw1Y/5sPb9zu/ry293yRSQ2X5kshLqUfHF5vuPA=
+
+Name: jbe/printer-templates/plains/.svn/text-base/ReportePostFactura.x
+ ml.svn-base
+SHA-256-Digest: dK97SCG9uOa+QlVLXpeslwgC5Rjpa/hSMdvbueU4a2o=
+
+Name: jbe/printer-templates/plains/TNEgresoPos.xml
+SHA-256-Digest: VS+9vum6tQ3HuyLHHTrLZDCO3plz52irGPS7sncjHGQ=
+
+Name: jbe/printer-templates/graphics/TNArqueoCajaPOS.xml
+SHA-256-Digest: ApyxLGo0xWUH/ANxEO/6ODRD1zuaVOsTtQFUGXWlxDk=
+
+Name: jbe/printer-templates/plains/TNIngresoPos.xml
+SHA-256-Digest: 356eFtTmLU7e0q/TLWmEalF0Z3r0kM8ePFw3N05qZlA=
+
+Name: jbe/printer-templates/graphics/TSRetiroParcial.xml
+SHA-256-Digest: uy4moB7S4Ob/veaHcZZ3PqBtB3OqpCiHRCe0i0onUPA=
+
+Name: jbe/printer-templates/plains/NArqueoProductos.xml
+SHA-256-Digest: IIDREAdR9jSn4mkgwYKPsKrTJk6FnHaR6/ObrlEIMdI=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TSDevolucionCompra
+ sRemision.xml.svn-base
+SHA-256-Digest: OjVk0MZhpolmAVBYcnFlYE2a/dJVUcDWz/DppUjCUXY=
+
+Name: jbe/printer-templates/plains/TSOrdenCompra.xml
+SHA-256-Digest: 81s9D6LxLTnFIEqzc9EGRX93ox+Cp136w2agOLEklsk=
+
+Name: jbe/lang/es_CO.xml
+SHA-256-Digest: ZNCmZ83s2cL9NOgr8LKXlQFOJxdi5RSgVOJqe9xsbaI=
+
+Name: jbe/printer-templates/graphics/TSFacturaPos.xml
+SHA-256-Digest: VlidnqJerre9+k/p0FF8lphlr2iAcJKxXiRmnc4uFOM=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNDevolucionVentas1.
+ xml.svn-base
+SHA-256-Digest: Tw/CYiyu0IVuXcoeIj1FvKf+idE/Fj8tHUdgvlPBaMI=
+
+Name: jbe/printer-templates/graphics/TNFacturaPosMultiElectronica.xml
+SHA-256-Digest: OGpVDdByeI84PXLwl+I2WivmD8C/ZF2DrVMdsb9FrYE=
+
+Name: jbe/printer-templates/graphics/TFormaPagoEgreso.xml
+SHA-256-Digest: UbjotY2NInkp3uxYJEq2F1oJ8Op5mBQuahgXQwG4i6I=
+
+Name: jbe/printer-templates/plains/NArqueoModificado.xml
+SHA-256-Digest: BwUaZJ2NG3zQnd55yfxlYpUKsCVART12Q4qCSCRdZK8=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TNDevolucionCompra
+ s.xml.svn-base
+SHA-256-Digest: VJwXhTPuoRpQOHE9AD6pHJ9ExhGxOVo1k2ew6JQaEz0=
+
+Name: jbe/printer-templates/graphics/TNFacturaElectronicaCartaJBE.xml
+SHA-256-Digest: oB0qzhiUXzXh8GHZP/mBGyH0Lzq3a7aVdjYMpIJ2hV4=
+
+Name: jbe/printer-templates/graphics/TSFacturaCreditoContadoTirilla.xm
+ l
+SHA-256-Digest: Et2cMvvdiFnTiIm7Dpxt0wZJnUgOyM1mEQJFtwW0Do4=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSDevolucionCompras.
+ xml.svn-base
+SHA-256-Digest: YNWPPgsuaMv45hkUoNDzS8soAG/SnZNuBnqtFQJzCa8=
+
+Name: jbe/printer-templates/graphics/TNComprobanteIngresoOld.xml
+SHA-256-Digest: n4StPv8Wx78cpv0vUrn6UqwKAlY1Q6aiN0cFCfJeVTY=
+
+Name: jbe/printer-templates/graphics/TSComprobanteEgreso.xml
+SHA-256-Digest: 4uvdUdtgyJRJl57n/X7hdHHxgiUXIL5V4Z48Hk81YyY=
+
+Name: jbe/misc/.svn/text-base/icons.xml.svn-base
+SHA-256-Digest: 1unx7q2XKFEhiyup0qJyiFvsiyONrBOYlQ/vb2JphVI=
+
+Name: jbe/printer-templates/graphics/TSArqueoCajaPrincipalUni.xml
+SHA-256-Digest: F/H8gQotqycXuNtwGbtMhfTcpOKM1/xesx2adP1b2/4=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TNNotaContabilidad
+ .xml.svn-base
+SHA-256-Digest: 3h6QY3Pi3c4w1yMxFOvU9cAjmjH1DKiD1+1nMBlZn3Y=
+
+Name: jbe/printer-templates/plains/TSDevolucionVentasPOS.xml
+SHA-256-Digest: 8ShbB5kzTmE22o0zH6ZZR+9dJjUWvgb42shOw9QAXYo=
+
+Name: jbe/printer-templates/graphics/TSCambiosMulti.xml
+SHA-256-Digest: dOEnohz1vr/EnG4hSGi4IRfBKqGmD4ELMs5mcy9aAWQ=
+
+Name: jbe/conf/.svn/text-base/toolbar.xml.svn-base
+SHA-256-Digest: tarm+3lcdejtURyWn59SBHpygo8El+LCqQ1tifubrnM=
+
+Name: jbe/printer-templates/graphics/TNFacturaPosMulti.xml
+SHA-256-Digest: kD0pTu8brrD7EShksDizHHfNMqw2cnK3Rc3oGxUV460=
+
+Name: jbe/printer-templates/plains/TNTrasladoBodega.xml
+SHA-256-Digest: gtI5Cx5+QL57H680WNEXWlyUNlp/3a+xpy5iBJvbrIM=
+
+Name: jbe/printer-templates/graphics/TNRetiroParcial.xml
+SHA-256-Digest: hBJcBJ9bUNeA4sEj+FMkHv95QbIHS1zqx1bdX1fC690=
+
+Name: jbe/printer-templates/plains/META-INF/.svn/entries
+SHA-256-Digest: XzdF5dR0JmMskZJ7qrCbwShqAtu01HjQKLEzwz0eUhc=
+
+Name: jbe/printer-templates/graphics/TSArqueoCajaPrincipal.xml
+SHA-256-Digest: ef1t0BM4dxqPZFR/PK+FJWGliIyvE+ZIagEfn5cubXc=
+
+Name: jbe/printer-templates/graphics/TNBoleta.xml
+SHA-256-Digest: Xu3G3ifv4h50iyt0JnJgLfo0rouOhckWxeBFKizbsLw=
+
+Name: jbe/printer-templates/graphics/TNCompraMercanciaConsignacion.xml
+SHA-256-Digest: 32Un8OiEXs5K/Kv4JbrlYyAJSJqwcF05HcHRwFIU2P8=
+
+Name: jbe/printer-templates/plains/.svn/tmp/tempfile.4.tmp
+SHA-256-Digest: 260IWJwdKbANXBDh03Y3Keyz4WdHJLx9SMmvSsFd3b4=
+
+Name: jbe/printer-templates/graphics/TNBonoDescuento.xml
+SHA-256-Digest: zE7oTE2pB3GjWzQ9eBViqX0yoYKz8YngIReYOlL8l/E=
+
+Name: jbe/printer-templates/graphics/TNCambiosMultiOct182019.xml
+SHA-256-Digest: /pJLpV1d+8M7NG+St5JAtF+MfLFl95yv5k+SL6so8QI=
+
+Name: jbe/printer-templates/plains/ReporteProductosFacturados.xml
+SHA-256-Digest: C7KwngWIz6CysaDfUeeUAbVjoccOsEA9BRaCajtkDpg=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSNotaAjuste.xml.svn
+ -base
+SHA-256-Digest: nc3wRD03FclL1dcLgATytlxK3ESXFA7OOC+DEwTmtb0=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNComprobanteIngreso
+ .xml.svn-base
+SHA-256-Digest: lix7+mZWprp6o1f+kHUda2cifo47Lwq58TA7P0zbwBo=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSGuia.xml.svn-base
+SHA-256-Digest: aGcFoblo217DYFXOg0TLJt+L4fI4r7sqauLDH186FRM=
+
+Name: jbe/printer-templates/plains/.svn/text-base/SArqueoModificado.xm
+ l.svn-base
+SHA-256-Digest: a60PPHZIfD9LS43p6vmlSZpdBjLJ3BKjW1fo5NE0GGY=
+
+Name: jbe/xls/.svn/prop-base/inventario_final.xls.svn-base
+SHA-256-Digest: i1EE1NLdSV/bJPWQVvDbd/dk1xbyLA/bbdIjcMuzehA=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNGuia.xml.svn-base
+SHA-256-Digest: avyczoPKqz44k4NCPiB1qo0dDzu77o2tGJC5NGrs/mA=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSNotaCredito.xml.sv
+ n-base
+SHA-256-Digest: eG2CwKZihcVw8Aw8Xx2zuDPOjHVo72oL26J1771OAnQ=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNDevolucionCompras.
+ xml.svn-base
+SHA-256-Digest: f1J68En/mECE4KcXY/LT3hW9GZ38oQLwWz7Jz6p7yvo=
+
+Name: jbe/printer-templates/graphics/TNDevVentaFacElectronicaCarta.xml
+SHA-256-Digest: fE8T5ErJZqfxmu/3r56E4FOEYCZqLIC+8x7RxT1anIM=
+
+Name: jbe/printer-templates/plains/TSPedido.xml
+SHA-256-Digest: KXxrSWS4oIweRiADrJ9g6p5L9iLebUL74PH8KFxGZEQ=
+
+Name: jbe/printer-templates/graphics/TNDevolucionComprasRemision.xml
+SHA-256-Digest: eCyiAkML57vVoMj1BYsGcqNX/bj4o81Aubzkh1bdTt8=
+
+Name: jbe/printer-templates/plains/TSAbonoSeparadoLocal121.xml
+SHA-256-Digest: y8tj7q1AGCnEgcCnzV7gUJGOh+PbZLONIrPnR9NBjTA=
+
+Name: jbe/printer-templates/plains/TFormaPagoIngreso.xml
+SHA-256-Digest: RZFPtCvdBou7wg1YgC8Lh+tOKgUFuohFLXLxUGY9xO8=
+
+Name: jbe/xls/.svn/prop-base/detallado_compras_proveedor.xls.svn-base
+SHA-256-Digest: t33pouDMjExsy4JS4uUoKhod4l7IILLNuaUyd3zokPE=
+
+Name: jbe/printer-templates/plains/TNFacturaContado.xml
+SHA-256-Digest: CDR16Nxt+Y3gLuwX5NuOqNPLgZq6U4mgOOGevuGBYhA=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNDevolucionVentasPO
+ S.xml.svn-base
+SHA-256-Digest: FflYKIK5rZM/3IdkCpKJ9jVEGrhjkZBZvtQJ7gxOIPg=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TSNotaDebito.xml.s
+ vn-base
+SHA-256-Digest: n3Jye6lDnJZ/0b9rhy7hvh+y1+aQfFt8fFQ10v3TjL4=
+
+Name: jbe/printer-templates/graphics/TNRecarga_tarjeta_prepago.xml
+SHA-256-Digest: Ja1T8ccoSz7d/d8BdY/UPi1PpgoMkskfOvjSoP/SsUk=
+
+Name: jbe/xls/.svn/text-base/ventas_referencia.xls.svn-base
+SHA-256-Digest: 713VMG6DpHSYSZN3NP1nngAlt+EZptcNIj0EjNKC6gA=
+
+Name: jbe/printer-templates/graphics/TSInformeDiarioAlmacenII.xml
+SHA-256-Digest: dZiwEOebSKq7SD6/QbAlDjQBqRHdAEBaY6eD7YpXriw=
+
+Name: jbe/xls/reporteVentasPOSxProveedorMarca.xls
+SHA-256-Digest: kjnGMNv2aMgprG207PxxuySJjVTOae/pRKLhjpBA8o0=
+
+Name: jbe/printer-templates/graphics/TNSeparadoMulti0.xml
+SHA-256-Digest: 2vZMxzCDQqKYsME+I68Bxw9874+NKJNErA0wc6qLPpc=
+
+Name: jbe/printer-templates/plains/SArqueoModificado.xml
+SHA-256-Digest: iAfhIClqmjeOiUzYh5dWQOP1oyGiXf43YFvilm6Y9DY=
+
+Name: jbe/jbe.jar
+SHA-256-Digest: SHzxjp2hkkThgYzhKW0w/Af2pSXNKwFdd8Zfmm2QydY=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSNotaMPrimas.xml.sv
+ n-base
+SHA-256-Digest: pKGoTR43f31/JfnOaHhwb7X582Tdr8VTZq+bDIMDPXU=
+
+Name: jbe/printer-templates/plains/TNNotaProduccion.xml
+SHA-256-Digest: hyUz0Ol7Vnl5OwWkZ021NAKFgLUwe63B8rfY+oN7TSE=
+
+Name: jbe/printer-templates/plains/.svn/text-base/SPrearqueo.xml.svn-b
+ ase
+SHA-256-Digest: koVgMsnZTivC5t81y3vQCbCw+G50iqvVZdzNkEr30Ms=
+
+Name: jbe/printer-templates/plains/TNIngresoPosUni.xml
+SHA-256-Digest: NGT+brT2Fa+hMX8HI6SSrIpGZxujNy4xCmE3K7JFGwE=
+
+Name: jbe/misc/menu.xml
+SHA-256-Digest: pzOAw2HeH0/m33wuIH2Q13YR1Vuqet23eSIu9IgKdo8=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSEntradaAlmacen.xml
+ .svn-base
+SHA-256-Digest: hN2s2OmMjEFmAlNl12NsqGQHC2esQQPJrZYdKM89FXQ=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNNotaMPrimas.xml.sv
+ n-base
+SHA-256-Digest: gIEWAo8flEYtXPr1zFgyIXyiFx8t8xiG1GJZnNV5bwU=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TNCotizacion.xml.s
+ vn-base
+SHA-256-Digest: 7iXu1tkZ6S11z5mgL7iWXcBPBk7ou8mqagvQ20XyMGM=
+
+Name: jbe/printer-templates/graphics/TNDevolucionDocSopComprasElectron
+ ico.xml
+SHA-256-Digest: ZrrcC28cSVeVjoRboRgyP8a6aGUZK/AV1AHzvSgzKsg=
+
+Name: jbe/conf/menu.xml.contabilidad
+SHA-256-Digest: hEt5OVJOB7vXN8sSHOsWG3POqbzbdSGE9q81qWb3szk=
+
+Name: jbe/printer-templates/plains/TSFacturaPosVA.xml
+SHA-256-Digest: jNsEIwBPOYEGPNP9IY0JA0wt4EnzOWDLOdUSXiLR/YM=
+
+Name: jbe/printer-templates/graphics/TNContrato.xml
+SHA-256-Digest: WhL12VG/xgXvcQBRzmDoqUgY+yT7TSsXSU+V+Hh4JQM=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TNEntradaAlmacen.x
+ ml.svn-base
+SHA-256-Digest: i7PQ6XakgAzAYI4nytB2IMCPw6kvAg2ltRj7qeqyHV8=
+
+Name: jbe/printer-templates/graphics/TSCompraRemisionadaResumida.xml
+SHA-256-Digest: xr3tiWhWxUpAyyY0XLNSPV6hgiIWZKQDq5+NVtC2lYM=
+
+Name: jbe/printer-templates/graphics/TSValeRetiroMulti.xml
+SHA-256-Digest: H1ACd2gEFu9iaxlwl1YWi3wjqzASuge1/khGZ6VqIUc=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TNTraslado.xml.svn
+ -base
+SHA-256-Digest: IinZ7uwRGEyQbNefDUCsfkKUlQFYCecbo2e3mDhUx9Y=
+
+Name: jbe/printer-templates/graphics/TSInformeDiarioAlmacen.xml
+SHA-256-Digest: gfnfvIrU7ALMT/ReYl2APmvPqk4ivNQzDSLApvyWitI=
+
+Name: jbe/printer-templates/plains/META-INF/MANIFEST.MF
+SHA-256-Digest: d/QlghBKFrSARTnAKlDPOS628BpmRwIlexet81sCLvY=
+
+Name: jbe/printer-templates/graphics/TSOrdenCompra.xml
+SHA-256-Digest: ckkcWQlO8fyoV1Q94NCAUvKLB+9PaZcw5645AUaqbY0=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TNBoleta.xml.svn-b
+ ase
+SHA-256-Digest: 7MkXSRLJuX4pyQFFfu7OytIdLyP4fgm4wnsgP/jHNXw=
+
+Name: jbe/printer-templates/graphics/TNFacturaPosMultiOld.xml
+SHA-256-Digest: i9NeLJsRTbxtNWrP2mLLhH/KToY4+XC8DtMzJk4h754=
+
+Name: jbe/printer-templates/plains/ArqueoUni.xml
+SHA-256-Digest: rBtOvDk5/0NB2cxl6HrPw75kZ5xnjA6BGMMGgfwDO0g=
+
+Name: jbe/printer-templates/graphics/TSFormaPagoEgreso.xml
+SHA-256-Digest: y6+SH2VKYBgrJO/12BmT7Qj88y45wnkWUhE5Lm5/nyI=
+
+Name: jbe/printer-templates/graphics/TNSeparadoMulti.xml
+SHA-256-Digest: MXSOVdybb4oKFz18vNIOAvzs84BHw00G/0dEawhL9t8=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNCambios.xml.svn-ba
+ se
+SHA-256-Digest: cnBXszhAtn3fBZbV7RO0rY0TilEoUGfZSitkWinDySI=
+
+Name: jbe/printer-templates/graphics/TSFacturaPlataformaOnlineConPiePa
+ gina.xml
+SHA-256-Digest: SQC+URnPfzjoE/R39IwsGaawKExDEYrzBEoiO2bgf10=
+
+Name: jbe/printer-templates/plains/Arqueo.xml
+SHA-256-Digest: mdYax8o07m4aWU+6/fY7OizUzEa0rQ5IqgP1Mgei5zI=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TFormaPagoEgreso.xml
+ .svn-base
+SHA-256-Digest: +FuAjsGrMtvlkVwNUBZU7WjViiQZKcn0FYhX6I4F324=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TSComprobanteIngre
+ so.xml.svn-base
+SHA-256-Digest: NP1skLmCHP/vcWnfeRpRCrfl6RnjkBrgBzFWmjXe9F8=
+
+Name: jbe/printer-templates/graphics/TSIngresoMercanciaConsignacion.xm
+ l
+SHA-256-Digest: ZXc7xVyggLjKn30ER+rGxmeWZlzRyP54SGZv0XSDeRM=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TSCompraRemisionad
+ a.xml.svn-base
+SHA-256-Digest: k0ZvBAd5lEibNK1eafbaW7tbdd/u93CIVL42d6QprTk=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNNotaCredito.xml.sv
+ n-base
+SHA-256-Digest: xCipT+9Xckfk7odZxh87siJqG8y6W/hh20GhvE4U2cM=
+
+Name: jbe/printer-templates/plains/SArqueoModificadoUni.xml
+SHA-256-Digest: hNbLPAiZ4G5tXGIhHxJYirObh4Tz7NzxbqluVB0NLvU=
+
+Name: jbe/printer-templates/graphics/TSDevolucionCompras-old.xml
+SHA-256-Digest: mC/wCpykzXcLsji0cBrZC3hmh8zUEJ1/jD+HRTlfGns=
+
+Name: jbe/printer-templates/plains/TNDevolucionVentas1.xml
+SHA-256-Digest: bt8QW136dMed/nlDXNTEdl2vPUNAc531tWOnytdqUxg=
+
+Name: jbe/printer-templates/graphics/TSAbonoSeparadoMultiOct182019.xml
+SHA-256-Digest: fMW3MlfvZhMYjZYkVxOnt11joH1rlqwxnJ2CX30r+Bo=
+
+Name: jbe/printer-templates/graphics/TNInformeDiarioAlmacenII.xml
+SHA-256-Digest: p4F3+I2R8MBW+Hz0PNbw+SWvlv141r0iniR+oSW2wnM=
+
+Name: jbe/xls/.svn/prop-base/resumido_compras_proveedor.xls.svn-base
+SHA-256-Digest: 9UBzEho6KJfyrJKOfYW9teBnY9755naShJdS6UkknOY=
+
+Name: jbe/printer-templates/graphics/TNFacturaContado.xml
+SHA-256-Digest: WnAf/KiLudbh20c6oHJSGyMn0N/atTX1WYc6UQB3d9c=
+
+Name: jbe/printer-templates/graphics/TNDevolucionCompras.xml
+SHA-256-Digest: szF6rCg71ohorBKXxLpIYg2AbXh3PYKpk2lpqQOHae0=
+
+Name: jbe/printer-templates/graphics/TSFacturaContingenciaPlataformaOn
+ lineConPiePagina.xml
+SHA-256-Digest: ZzH2QSrTclBt39ejuepU6oJ7bj7T58/4InY3euplM2o=
+
+Name: jbe/printer-templates/graphics/TNInformeDiarioAlmacen.xml
+SHA-256-Digest: qTHLLX7BDRneBvn4WjhLyci6/wX5/Sjcc6052NKgjRI=
+
+Name: jbe/xls/.svn/text-base/orden de compra.xls.svn-base
+SHA-256-Digest: 1RqnMHM41VZO3V8ejqJ08PFjbNEjQvM2sFk9142w6O4=
+
+Name: jbe/printer-templates/graphics/TNNotaAjuste.xml
+SHA-256-Digest: EpEzX2GBWsJAbf8Zh976C21yQObHHHAqSEV/aUoxnn8=
+
+Name: jbe/printer-templates/plains/.svn/tmp/tempfile.3.tmp
+SHA-256-Digest: c7bqsS/asDL4xI6wpjuAK5lCpSVGfUQqc3e11s1reKk=
+
+Name: jbe/xls/resumido_compras_proveedor.xls
+SHA-256-Digest: Gly0EHGjLf9DtH7ropspLZPa2ttrqs8SbebBRbSMeW0=
+
+Name: jbe/misc/.svn/text-base/language.xml.svn-base
+SHA-256-Digest: swa2khDhndHt16YGzkz0HXb16wzCL6hzo46eA7kzTIs=
+
+Name: jbe/printer-templates/plains/.svn/text-base/ReporteProdRangoNume
+ ros.xml.svn-base
+SHA-256-Digest: eqod/pf8qnFgX19Cva1PiwgDNaGTInIH7wW/z7UqS6M=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TSEntradaAlmacenRe
+ sumida.xml.svn-base
+SHA-256-Digest: nKn7HtikKXJGHdyZcB9aigWUa4Rtrv7V/ZIwVFiU0BE=
+
+Name: jbe/printer-templates/plains/TSAbonoRemisionUni.xml
+SHA-256-Digest: DgcPStjj9Tq8JZWijXK45r1yF7dAst7G2yyI1XuF21I=
+
+Name: jbe/printer-templates/copia_graphics.tar.gz
+SHA-256-Digest: 1WzxAu5d6S7ieEjehZkqENI9rsTL+rfg/1k+7qoerzk=
+
+Name: jbe/xls/booking_proveedor_anio_mes.xls
+SHA-256-Digest: 6faYFMmfZd7zF7bfkWtmSeRRzOANkyi/H2c/HUvjDW0=
+
+Name: jbe/printer-templates/graphics/TNFacturaCreditoConPiePagina.xml
+SHA-256-Digest: ManXoUPn7QRRirf6GogtBblo5lZ9mti/IZEcvHtum8U=
+
+Name: jbe/printer-templates/graphics/TNComprobanteIngreso_old.xml
+SHA-256-Digest: uPl2V0cb+Tm1mF7cdyl4x3wLAYFiqCen4XO8wyoJCoI=
+
+Name: jbe/printer-templates/graphics/lacali.jar
+SHA-256-Digest: M/brySKJ3CeuMXKY9G3rOMAGgGtZJ+DPaI7CaAd4zGI=
+
+Name: jbe/printer-templates/plains/TSNotaProduccion.xml
+SHA-256-Digest: 6fI9tRzUD0i21+AGhukleRCnPFeywzIFRh7sbfAxu4w=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TSFacturaPosMTS.xm
+ l.svn-base
+SHA-256-Digest: KnXEut8CDL2alAnLF9ydeLKW9yXWtmwyUpNMVa9abFU=
+
+Name: jbe/lang/.svn/text-base/es_CO.xml.svn-base
+SHA-256-Digest: rhNC95vwy3QnfwJwcw70PraGevcrJQYY/2pWEt1OfNk=
+
+Name: jbe/printer-templates/plains/TNRemisiones.xml
+SHA-256-Digest: DbnX/pfaGAyDJT2WCmr+92uag/Dwm9Pa5vbgA1nfkAI=
+
+Name: jbe/misc/.svn/text-base/toolbar.xml.svn-base
+SHA-256-Digest: UKBrtZju5r+Vb7JwCpBreRHP+mqmO9a3TVfFaCGfB6c=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TNCompraRemisionad
+ a.xml.svn-base
+SHA-256-Digest: rKP9y9/Se6762rRaUZNbieeIN91Fvqq7BKdrpffpg60=
+
+Name: jbe/xls/.svn/prop-base/ventas_resumido_proveedor.xls.svn-base
+SHA-256-Digest: G2K8kY9zVashlJK+fe3kiW0WWqhBuofNtZ+f5f36PcQ=
+
+Name: jbe/xls/plantilla_facturacion.xls
+SHA-256-Digest: WDGqDbABs8L5dpirLW2SCRPwM0H4kjAzthWjvJcY850=
+
+Name: jbe/printer-templates/plains/TSRemisiones.xml
+SHA-256-Digest: iSeiVzP+sqmFJNlShc/Jcyd6Jybo2fAx3Rxb0Y4jfMY=
+
+Name: jbe/printer-templates/graphics/TSNotaDebito.xml
+SHA-256-Digest: daH4oECJHtFBMDANV/DHbnT8EUl8RN1efe5M00i22ds=
+
+Name: jbe/printer-templates/graphics/TNComprobanteEgresoPaginaCompleta
+ .xml
+SHA-256-Digest: vh42Ki6RTQVB5+xYY0VIS9FyDcZPb3Ngp5D/eBkhC/0=
+
+Name: jbe/printer-templates/plains/.svn/text-base/SArqueoProductos.xml
+ .svn-base
+SHA-256-Digest: F9hjTjRfAGYwOs8teR6/Mr7rrjCJ/YEAb0ObLBJ8JKw=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSCompraContado.xml.
+ svn-base
+SHA-256-Digest: wckoJUeFy97IS24OiH1pJxzkf/JWcWPE9QX2tZcQcGI=
+
+Name: jbe/printer-templates/plains/TSFacturaPostUni.xml
+SHA-256-Digest: jghNUi/cDTF6vIMTM2D03KA7fkhpLajX//q85j5sgmY=
+
+Name: jbe/printer-templates/graphics/TSDocumentoEquivalente2.xml
+SHA-256-Digest: PHwiTLi0cRLjhafUg6VZB9uFdLhlsCEOtFmd/9zY3K0=
+
+Name: jbe/printer-templates/graphics/TNFacturaCreditoContadoTirilla.xm
+ l
+SHA-256-Digest: T93kOI7AJo44UC+7E6ETNq6J2m4qdxQdwa7TWK5sBJ0=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TSCambios.xml.svn-
+ base
+SHA-256-Digest: reCUFGoBSppfv5SDE+TrJfuBCTHPbDC56E6h7bmHr2c=
+
+Name: jbe/printer-templates/plains/ReporteProdRangoNumeros.xml
+SHA-256-Digest: z5VGRQU6mxfIfceHxRucUM2Mx1CqVCbWciu30/hFAQc=
+
+Name: jbe/printer-templates/graphics/TNComprobanteIngresoOct192019.xml
+SHA-256-Digest: rmdkzLVshW9N8llWqeHA9lFnj3rWu/KmiLOlTBIxggc=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TNRecarga_tarjeta_
+ prepago.xml.svn-base
+SHA-256-Digest: 18qjMQUsM8lavjq5CSbJ2VwbK90VCYPtF4IGF+Nm8Q0=
+
+Name: jbe/printer-templates/graphics/TNEntregaBaseSencilla.xml
+SHA-256-Digest: cNtX30BMEyvhhVtsbfgxn/x6vT3nzYF699Cbk6x2RD0=
+
+Name: jbe/printer-templates/plains/TNSeparadosUni.xml
+SHA-256-Digest: cshvSSTdS8OzPRg7nTDx24DL1/hchls90w1J90HGam0=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TNFacturaCredito.x
+ ml.svn-base
+SHA-256-Digest: MMYxLak1Y3BO2s98roo0c7BHpEg2uVYBk78BpZcNK2U=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNFCredito.xml.svn-b
+ ase
+SHA-256-Digest: 3fkFxjtsVbo8qfYiZdI3zMbQwM9/56cLysW982jRtZw=
+
+Name: jbe/conf/.svn/text-base/toolbar2.xml.svn-base
+SHA-256-Digest: utRyjjKfGR9OTRuHKBfam3og/vFdB+IsgpIqdYDqovE=
+
+Name: jbe/misc/icons.xml
+SHA-256-Digest: Q4XNAwgahk9TCzqeUdgYPDshQltEyovUn1KFWy2yNM4=
+
+Name: jbe/printer-templates/plains/.svn/tmp/tempfile.6.tmp
+SHA-256-Digest: aLB7lks356oYFJbf8U4dEELZVsqn84Oc0ZHh3pcn6R8=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TNComprobanteIngre
+ so.xml.svn-base
+SHA-256-Digest: KHaJP66C+dfTKFs3px9w0Yv5uTEDgG1HUfvEeawxM+M=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSbarras.xml.svn-bas
+ e
+SHA-256-Digest: mIRIBbkbA8MDXcaVyge1yspedFbHZ2X6W8Js3YBwLWs=
+
+Name: jbe/printer-templates/graphics/TNComprobanteIngresoMediaPagina.x
+ ml
+SHA-256-Digest: wasBDoPkopC16bTkKC6OHQlT2/rMD0e1M5+cu53oE+k=
+
+Name: jbe/printer-templates/graphics/TNCambios.xml
+SHA-256-Digest: AKcD+BQdHgfsriqZ8Kstduzec0H3GKVtMSZSSUn1DEg=
+
+Name: jbe/printer-templates/graphics/TSCambios.xml
+SHA-256-Digest: CkucDlhIsUxl3ro9zfWd+Lo5lueZ7NB6PoYu9/PBE/g=
+
+Name: jbe/xls/inventario_final.xls
+SHA-256-Digest: RBoDoDUtELOy2m4wD559+TJ2Aje10LqYrqKPDgkXHGQ=
+
+Name: jbe/printer-templates/plains/TSTraslado.xml
+SHA-256-Digest: rOOBfJJHcU94eW8TOaUBOfuY/STzrbL5KUwAgrx3V7U=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNComprobanteEgreso.
+ xml.svn-base
+SHA-256-Digest: DvK0Vn7qXg8wb0QrfOHy8rNxkEO7aI3JBChAyqrcUas=
+
+Name: jbe/printer-templates/graphics/TSFacturaCredito.xml
+SHA-256-Digest: rpDvZKc1MzQrMqId8GfD84KSIIFiT8WMtdUpbYlGUEY=
+
+Name: jbe/printer-templates/plains/TNCotizacion.xml
+SHA-256-Digest: tvTB+oCiJ86BBxGPn0pxNKSw05YbQoapTdApa7VnIqo=
+
+Name: jbe/printer-templates/graphics/TNRecarga_tarjeta_regalo.xml
+SHA-256-Digest: tBc54LMGtJ7PPeXb+D4euts2zdtOu6sPLzLy8QC6Dos=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TNDevolucionCompra
+ sRemision.xml.svn-base
+SHA-256-Digest: mWzyRKx6HdlVE3kAnqzuMpxZxdY1581otaa9nfHcYX0=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSNotaContabilidad.x
+ ml.svn-base
+SHA-256-Digest: 5elKvx7/MH1NFO/+x/ol9J9H9KFpOG7z21BUg4yvVXU=
+
+Name: jbe/printer-templates/plains/TNFacturaPosVA.xml
+SHA-256-Digest: /iDd3ri7T9M7x/v7RF4Yixf5wq/p1BoBko9XphvUsFA=
+
+Name: jbe/printer-templates/plains/.svn/entries
+SHA-256-Digest: qceD2ob2DMlCFb95Ea5qhhQSk3HGsjvr5OzHxG7M/Sg=
+
+Name: jbe/printer-templates/graphics/TSDevVentaFacElectronica.xml
+SHA-256-Digest: 1L/p3Bwvak+d63BTBC6BAvX5ipDfRyUswzAIxF4dXMU=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSValeRetiro.xml.svn
+ -base
+SHA-256-Digest: mB3QHauSmhR05BWVXEib3j2opvw5VP7Jj1KegLEUZ6I=
+
+Name: jbe/printer-templates/plains/SPrearqueo.xml
+SHA-256-Digest: t5fjpxoUpifV2JoF2WdgIati/Y2xbLENFKpn36jd0g0=
+
+Name: jbe/printer-templates/plains/TNNotaAjusteInventario.xml
+SHA-256-Digest: CXZs39USvW7SY/fRfCim/fkbDNY6pxlloEPq3KfOhEw=
+
+Name: jbe/printer-templates/graphics/TSReciboCajaMultisucursal.xml
+SHA-256-Digest: hnL3GMcN4XIjLPG/YdQxBSzZr+V7reeOlheVKjgaUng=
+
+Name: jbe/conf/transacciones_menu.xml
+SHA-256-Digest: rmOtlg3jJXeb0/br3umqjcIdGXpUe6+1Nx7h2y8RB3s=
+
+Name: jbe/printer-templates/graphics/TNTraslado.xml
+SHA-256-Digest: 80XUeGPgZKySXqMNefpRENmvJzmomrKA4q3VcArlVYM=
+
+Name: jbe/printer-templates/graphics/TSCompraRemisionada.xml
+SHA-256-Digest: Umn5IfWgttknHM2IT0f6/0ZssN1bKKCESCeUMftrlHg=
+
+Name: jbe/printer-templates/plains/TSCambiosUni.xml
+SHA-256-Digest: dUwLvmGlRE5t4d6tATMUxA3iQTHqKzyjzrUtr1uW3co=
+
+Name: jbe/printer-templates/graphics/TNLlamadoAtencion.xml
+SHA-256-Digest: 1Ve6RIYtDlDGtqORGZxc7Ix8eYlcodSs+kcHBYLNE/A=
+
+Name: jbe/xls/.svn/text-base/resumido_compras_proveedor.xls.svn-base
+SHA-256-Digest: ZWkmS+2UDAS0p7/s7BaZ/4lBzSL/f4nDjfd9UK47hVA=
+
+Name: jbe/printer-templates/graphics/TSCotizacionConPiePagina.xml
+SHA-256-Digest: Z4eUV3CdowtaValHm+b8WlIBvl5MYQzWq0x2GT20DHA=
+
+Name: jbe/xls/ventas_referencia.xls
+SHA-256-Digest: KqsxXFsq7sR7/zlE5Q94Py9lZIX8SXE4M0MQ8QEJhRM=
+
+Name: jbe/printer-templates/plains/TNNotaContabilidad.xml
+SHA-256-Digest: 2TzBTSvygMnCAEDv/17W0ROo4Qp9ScFiK4/792T496M=
+
+Name: jbe/printer-templates/graphics/TSFacturaPosMTS.xml
+SHA-256-Digest: 0xGD30M6qq5OsDx/6ybWM/znewfv4CfsP9VJMj04nig=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TFormaPagoIngreso.xm
+ l.svn-base
+SHA-256-Digest: wr1SP2hyAY1GSu+5qOwgZeOR93joeb2a3An7I1gkCv0=
+
+Name: jbe/printer-templates/graphics/TSComprobanteIngresoPaginaComplet
+ a.xml
+SHA-256-Digest: v8+I5FGbflgsUo5qoh6ylGWxPseeUi823PcJdGG901w=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TSEntradaAlmacen.x
+ ml.svn-base
+SHA-256-Digest: EyWLAZVuyn3ckwZvqdT2qchWbJkSOjbJjnZMnh2Xj4U=
+
+Name: jbe/printer-templates/graphics/TSConsultarArqueo.xml
+SHA-256-Digest: 7VW3gmOBjKLo/sSPN8llFesl/3pPxm/QWkxiStw/MoM=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSRemisiones.xml.svn
+ -base
+SHA-256-Digest: I0zVZpeI+WtkpMq7oegpYYOFpnZ/veVpGf5+tn/UWXs=
+
+Name: jbe/printer-templates/plains/META-INF/.svn/text-base/MANIFEST.MF
+ .svn-base
+SHA-256-Digest: nvcDXJl4/qeUDYFOxG5IqMc+nUJfabmLZqfBE7E9zfc=
+
+Name: jbe/xls/.svn/prop-base/ventas_referencia.xls.svn-base
+SHA-256-Digest: tFlM2ihZmbilcT5YmuBnOxmNRVqLPG9CfyZChVGfjw0=
+
+Name: jbe/printer-templates/graphics/TSComprobanteEgresoPaginaCompleta
+ .xml
+SHA-256-Digest: xDSVBv9+2R3qbVnf+DkBS/H81TjIarGf2JVxHv9IlLk=
+
+Name: jbe/printer-templates/graphics/TFormaPagoIngreso.xml
+SHA-256-Digest: U+AI0pD77E5KrXHs5hzjEUDb/YyryI9h2dAo/r40Q8o=
+
+Name: jbe/printer-templates/graphics/TNFacturaContingenciaMultiPagosCa
+ rta.xml
+SHA-256-Digest: PQjjo57xVtH8XVJ4VUSvTSLIQw4AJzszhEuyq7xbiN0=
+
+Name: jbe/printer-templates/graphics/TENotaContabilidad.xml
+SHA-256-Digest: qfd923q+dTyTMwClbfKYts6ulfmS1qK+G5MUWfWFkgU=
+
+Name: jbe/conf/toolbar.xml
+SHA-256-Digest: JtY3LtezBYem44zuAyhXXOZzd4OceI/AnCXN/00XVro=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSFormaPagoEgreso.xm
+ l.svn-base
+SHA-256-Digest: OoqR3w0bAkn+NWWn3ocBt15zWWcTnkD9MUGafWO0I/4=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TSFacturaContado.x
+ ml.svn-base
+SHA-256-Digest: h3Y3/oNHKQbHpjOA2N6GPl2/LikntuB2mdA+MgwjSt0=
+
+Name: jbe/printer-templates/graphics/TSFacturaPosMulti.xml
+SHA-256-Digest: ryC5XpGeB6cV6pLEslbZ28lFQ/k5Lazemldv2LQtslo=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TNComprobantePago.
+ xml.svn-base
+SHA-256-Digest: THphkQif0umbAi87UUYp85v4EH1her4jOStvmron+ZU=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNNotaAjuste.xml.svn
+ -base
+SHA-256-Digest: kTtFQHCwxGB8URBddb8lbenN2vUtAiN1N0iXu6x+GZc=
+
+Name: jbe/printer-templates/plains/TNFacturaPost.xml
+SHA-256-Digest: wa6k2kslJZ2WxYbJ7PNXv1dWRbpdyh1f3jCxHxigQAA=
+
+Name: jbe/printer-templates/graphics/TSArqueoCajaPOS.xml
+SHA-256-Digest: wN1Qw24PXJasHY2jizrd4dhhst71TpA/PfDkJqTd7Hs=
+
+Name: jbe/xls/.svn/prop-base/orden de compra.xls.svn-base
+SHA-256-Digest: scRi8itdGkMq5vDNKuK7AW0ZJoT+eSyy6Lvt74asYKw=
+
+Name: jbe/printer-templates/plains/TNNotaCredito.xml
+SHA-256-Digest: 72OuX3fSOOFZMY12Y+vf15Hlhalf+0FxGBjH0q23WZE=
+
+Name: jbe/printer-templates/graphics/TNComprobantePago.xml
+SHA-256-Digest: uXzW94zZEX4Yms1iRA7eTvIOZyc+cSM0d4LhMPwahAs=
+
+Name: jbe/printer-templates/plains/SArqueo.xml
+SHA-256-Digest: nO6V7+L2Pjj4iSDthKdv6hcEq1xbxa6PxxS53Guvrws=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNOrdenCompra.xml.sv
+ n-base
+SHA-256-Digest: I8fibwMUbndkuE+pJS+oQH4ZgQcIOYayYIpxA2SawAY=
+
+Name: jbe/printer-templates/plains/.svn/text-base/SArqueo.xml.svn-base
+SHA-256-Digest: sxbxp72o2a+8X5eqSPJ9Xe0gysuEVrqmswHxTg4mFyU=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSCotizacion.xml.svn
+ -base
+SHA-256-Digest: SBNxO06t6ilE5Dk/Vusop8nyNT0gU/HpI+PcjbaPC64=
+
+Name: jbe/printer-templates/plains/.svn/text-base/VentasMeseroRangoFec
+ ha.xml.svn-base
+SHA-256-Digest: HrBK/qSkQt9qFEHIGpk+v/uTdoDhxGu8S9JRl5eBJis=
+
+Name: jbe/xls/.svn/prop-base/orden_de_compra.xls.svn-base
+SHA-256-Digest: gnCZ0yA77g1kVV7QTSVnxk3DvxhmxVWliFkTXrX5Msc=
+
+Name: jbe/printer-templates/plains/TSEntradaAlmacen.xml
+SHA-256-Digest: WcOYClnTzgRpExyCJbyfx0AhdUXWwmGXn1BuW61sJVs=
+
+Name: jbe/printer-templates/plains/.svn/text-base/ReportePostFactRango
+ Fecha.xml.svn-base
+SHA-256-Digest: gpqHYuyohyNV+Z2Dx6ixEBhae8KpOxV5nR1zTmhVAz8=
+
+Name: jbe/printer-templates/graphics/TSFacturaElectronicaTirillaJBE.xm
+ l
+SHA-256-Digest: 3pfTMKJpBZEKWsjGvh+3ozXjlnCidmRq5LgDutQOeW0=
+
+Name: jbe/printer-templates/plains/TSFormaPagoEgreso.xml
+SHA-256-Digest: mxTWmCIWCajbRNNgosS4LHzZONYzNOjxBS5+eI8OVuw=
+
+Name: jbe/printer-templates/plains/.svn/text-base/ReporteVentasRangoNu
+ mero.xml.svn-base
+SHA-256-Digest: OxbGOrcxbA2QEwBWknRWP42g+OxzSLNZGKAcocViwgo=
+
+Name: jbe/printer-templates/plains/.svn/tmp/tempfile.5.tmp
+SHA-256-Digest: 1vA06ST1t/pTfz+xKlnqu6pLafK27qY+4DS+wShfHQ4=
+
+Name: jbe/printer-templates/graphics/TNComprobanteIngresoPaginaComplet
+ a.xml
+SHA-256-Digest: 6iZcqo/je+4ZQ9fwFSh7e6PnAqca2BotuE/aIg9NJRA=
+
+Name: jbe/printer-templates/graphics/TSArqueoMulti.xml
+SHA-256-Digest: 47d0Lz/z17PiFHnakWXlSFxLohPP0jWg2Qqhux4UMGA=
+
+Name: jbe/printer-templates/graphics/TNEntradaAlmacenResumida.xml
+SHA-256-Digest: bNW08XzwhP2tZeZZ9fLI1ItzKg+fUu24t3nNSKXjLc8=
+
+Name: jbe/printer-templates/graphics/TNInformeDiario.xml
+SHA-256-Digest: GtM4oIecZhC15CuQ+WopBMCwBFnVrbFMjxtazPloH/M=
+
+Name: jbe/printer-templates/plains/TNCambiosUni.xml
+SHA-256-Digest: NFNqxMbvcADfq1c/hYz9/qKm+nQ1ZqTVM6tnkijvcj4=
+
+Name: jbe/printer-templates/graphics/TSFacturaPOSElectronicaServer.xml
+SHA-256-Digest: 5TPBR/IlXSiiKSy8hKau1SX34FexMbvURxyA24Qf11o=
+
+Name: jbe/printer-templates/plains/TNComprobanteEgreso.xml
+SHA-256-Digest: lJht1Ga3vHutWRx5CMe/MlPif/JgQZLl1oICmZSVi+I=
+
+Name: jbe/printer-templates/plains/TSbarras.xml
+SHA-256-Digest: oGBKyCrx/ewI1XOO/7isRwrz+2YFQFu1k/IP7Q2jLHQ=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TNNotaDebito.xml.s
+ vn-base
+SHA-256-Digest: kM5LMjvgfKnUR9St2japCN9d8AkO7yYyxBFXyk4uphs=
+
+Name: jbe/printer-templates/graphics/TNComprobanteEgreso.xml
+SHA-256-Digest: s4QnIcg434px6dSuI4HFtZKIRXv9RwZ+1gkI5P3pKls=
+
+Name: jbe/printer-templates/graphics/TNFacturaContingenciaMultiPagosTi
+ rilla.xml
+SHA-256-Digest: Dm1JSHtDr+7Dr2x4YwmKiGkFuXfMXFncEIhCAOQwjwE=
+
+Name: jbe/xls/ventas_por_barra.xls
+SHA-256-Digest: HpU6NfAI1RT7ZI/s4SXgHWECSDAuybz6nx66mkrSQJY=
+
+Name: jbe/printer-templates/graphics/TSDevolucionDocSopComprasElectron
+ ico.xml
+SHA-256-Digest: z17H85leJRHUhJf53L1Vur2OlLod8NvyJe86aK5Is74=
+
+Name: jbe/printer-templates/graphics/TNSeparadoMulti_16oct.xml
+SHA-256-Digest: qJGmMeJDnOnJbASXgxpWnCu8RNvSoUbbYtChfGORUDk=
+
+Name: jbe/conf/icons.xml
+SHA-256-Digest: VglDt0dPg1752aafCuTEKEC1bOVapm5AOzYorBrUIwg=
+
+Name: jbe/printer-templates/plains/TSFCredito.xml
+SHA-256-Digest: CVhvuXro2P7vv8o0Nwa8fGoAW4YGXke2iozQGnpihN8=
+
+Name: jbe/printer-templates/graphics/TSDevolucionMercanciaConsignacion
+ .xml
+SHA-256-Digest: 1wQ3IWjVFSLV8kINx5keF8dWvYTOfQ+jq7PFH1X0yWc=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSDevolucionVentas.x
+ ml.svn-base
+SHA-256-Digest: aW/55FSCbMNe1Cw9gI15Adh2Z/89KONgs4B7yJ/zElg=
+
+Name: jbe/printer-templates/plains/TSNotaAjusteInventarioLX300.xml
+SHA-256-Digest: OiIYZjUGz8bIo3IM0/ssBGcCiaoPzhytpnUx0efp42w=
+
+Name: jbe/printer-templates/graphics/NuevoCheque.xml
+SHA-256-Digest: jm1HuvdajYgdHc0d3EoDQFgVHZwg3flSQSF1rvQzh70=
+
+Name: jbe/printer-templates/graphics/TNDocumentoEquivalente2.xml
+SHA-256-Digest: W00CYlBqT4b5PwU8gnbpIYS85QAbP1A3uyRCdu6sr/w=
+
+Name: jbe/printer-templates/graphics/TNFacturaContingencia.xml
+SHA-256-Digest: 8kwZeH+HYKWykDily/aiaN8Lk/Vw9h3lOxNNdmfIZKE=
+
+Name: jbe/printer-templates/graphics/TSDocumentoEquivalente.xml
+SHA-256-Digest: IZ+UCb5zI2oEn4aXA1pOW7h3V7RzWtfwNliCTUBTNQU=
+
+Name: jbe/printer-templates/graphics/ConsultaFacturaMT.xml
+SHA-256-Digest: zDgoICvz6OFY0gqjzzz6zKMqZnp9Isorqr2/l7JC1F0=
+
+Name: jbe/printer-templates/plains/TNDevolucionVentasPOS.xml
+SHA-256-Digest: kGidCk9VkJIRYQ0ior2rv1JCm5mTduc9RQKQQJ4wa7c=
+
+Name: jbe/printer-templates/graphics/TNPedidoMostradorTirilla.xml
+SHA-256-Digest: iouiS6WG+hHq/T+wPCjPSdNM2s9C2ANHBRJzXRNwGUk=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TSNotaAjuste.xml.s
+ vn-base
+SHA-256-Digest: RIuVpAewNa7krF/nw4iOvPnQMTzD75Twon0TpR+SZzk=
+
+Name: jbe/printer-templates/plains/TFormaPagoEgreso.xml
+SHA-256-Digest: 3Xytaa9/BV8oWCV3kpLRst6uL001R8oadvqleeF8Nsg=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNCompraContado.xml.
+ svn-base
+SHA-256-Digest: nHiOqMCCfJEA+eEIkDAQKOpDQRTqfhcQ6reYy/NTcdw=
+
+Name: jbe/printer-templates/graphics/ocurrencias_lacali.txt
+SHA-256-Digest: u6GdmyfM/CSxGSFFjuCYQ7yQPWJHbS6A4qSfEC4sfxg=
+
+Name: jbe/printer-templates/plains/TSCompraContado.xml
+SHA-256-Digest: c9ANxKyDvLxGwdPtcIUSf2xBOVRO39lTCAgxOrsdUiA=
+
+Name: jbe/printer-templates/graphics/TNMemorando.xml
+SHA-256-Digest: JXbq7nRSyTjC70xluH40D9o7SVNknE9ZllfwhqOM73c=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSPedido.xml.svn-bas
+ e
+SHA-256-Digest: kdBjaQb5H/wklzzbqOG6XOc0N+NAR3qO5+p8fAcU4XQ=
+
+Name: jbe/printer-templates/plains/TSNotaContabilidad.xml
+SHA-256-Digest: VZa4gTufhflj/kIjYrJ9crqwM9bxrWXYSAIS2OLgz7s=
+
+Name: jbe/printer-templates/plains/NArqueo.xml
+SHA-256-Digest: oI1/i5Cs6TMJSnq/pxP2hCZT8wrAjXWypOhvHBHOb0I=
+
+Name: jbe/printer-templates/plains/.svn/text-base/Prearqueo.xml.svn-ba
+ se
+SHA-256-Digest: sGAwCHqvwijl55iBzAuwT/uTeKGXVda0jyKg+VRlCRA=
+
+Name: jbe/printer-templates/plains/SArqueoModificado_mt.xml
+SHA-256-Digest: rGbadIISfPXNtKhoh3VkhsjHvnsVuthzQAT4z0TW2TE=
+
+Name: jbe/misc/toolbar.xml
+SHA-256-Digest: wQOWk55Ptu5l/fNX/ojND9UGNbwlIfHJe+icJikuzR0=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSComprobanteIngreso
+ .xml.svn-base
+SHA-256-Digest: 9HokxsYuHoCALczB4KgJz7HjVPeKeodTquVRVfAIUiA=
+
+Name: jbe/printer-templates/plains/TSSeparadosLocal121.xml
+SHA-256-Digest: b3OqvnKBNyuS01Y5Z3c6Rwo2fd2YNA9oIAiWr2ZE7Q4=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNDevolucionVentas.x
+ ml.svn-base
+SHA-256-Digest: LOHY8BnkDVIFSkypHNd3XlphvLjLTEbNkdjWLI2o+ds=
+
+Name: jbe/printer-templates/plains/TSAbonoRemision.xml
+SHA-256-Digest: DVDg38go9ZhKDxDLUEMFh9hiubkfe8ILhBtFi03w2Bc=
+
+Name: jbe/printer-templates/plains/ReportePostFactura.xml
+SHA-256-Digest: d/JZ+vefJEFoowqgGMNI4K40p0NNYraZFL53Kym3L6Q=
+
+Name: jbe/printer-templates/plains/.svn/text-base/ReportePostDia.xml.s
+ vn-base
+SHA-256-Digest: acdnyhMck5lLgDXSpdZe/IiYNdNzCLn/95KZrRgOl/w=
+
+Name: jbe/printer-templates/plains/TNNotaDebito.xml
+SHA-256-Digest: o69uwG3oJthVU70aZRSJmX4gBnuwuuvLGYlH9pL/oT4=
+
+Name: jbe/printer-templates/plains/TNEntradaAlmacen.xml
+SHA-256-Digest: GhBQ1u5Wh87XlmxTLaegqMFlMHyVQzkVd3KCxTUDDUg=
+
+Name: jbe/printer-templates/plains/TNCambios.xml
+SHA-256-Digest: VWM68EH8ZHETb91acX2yfuQWnSavXLv2Opd+UyCmwhU=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNIngresoPos.xml.svn
+ -base
+SHA-256-Digest: uS5y9YmSLs+D1arAelu45gJo86s49ZaO0cnJEQ3vNdo=
+
+Name: jbe/printer-templates/plains/.svn/text-base/Arqueo.xml.svn-base
+SHA-256-Digest: TF2EbNLCsYG7iTyhPyft8Y9l3AWOdCg24DRxIYkFgZ0=
+
+Name: jbe/printer-templates/graphics/TSRemisionEnVenta.xml
+SHA-256-Digest: QsLo2724ab88fp4vPK2UtDkSw48+YOXW3lOfuBM3XXY=
+
+Name: jbe/printer-templates/plains/VentasMeseroRangoFecha.xml
+SHA-256-Digest: bRaUfHesJf9j9d942HVrVKhoHoAKuaf5Ek4sTA7wyWk=
+
+Name: jbe/xls/.svn/prop-base/ventas_proveedor.xls.svn-base
+SHA-256-Digest: LFOPnv8VgTiuWQ8WSVo1b9y9ujj18NVU9F6IRaUoiJs=
+
+Name: jbe/xls/.svn/prop-base/inventario_desglosado.xls.svn-base
+SHA-256-Digest: chQUEiAWMTjKFtuhd3XBuJ2dgxwamzPjy2jEUOX3ju4=
+
+Name: jbe/conf/menu.xml.copia
+SHA-256-Digest: 6x7lE4EHkRc+9srrVkyTVRFXULb0VSG8v+9zTrJHRMw=
+
+Name: jbe/xls/orden de compra.xls
+SHA-256-Digest: v1UKHREHHM5rBRTz+bJ+HxMPctC2TmJ7YSZJ4lYe2PM=
+
+Name: jbe/printer-templates/graphics/TNRemision.xml
+SHA-256-Digest: EB9UrBwqk5xUkYPqmCMBUvLYUIuPzwnF1DAuaZGYdc0=
+
+Name: jbe/printer-templates/plains/TSIngresoPos.xml
+SHA-256-Digest: QvoVHfp0gTyNULDd7aVaB8U9+CAX42CfHw0WR7gVsDo=
+
+Name: jbe/printer-templates/graphics/TNAbonoSeparadoMultiOct182019.xml
+SHA-256-Digest: P40A1hyPP10x4L0rmYt9ykCSdD1aA5XEpG+8JiKId4w=
+
+Name: jbe/printer-templates/graphics/TNValeRetiroMulti.xml
+SHA-256-Digest: HvvVYUPsSDFBcsTlHP+mALrCs/HHmSBDKIpBAL53DOg=
+
+Name: jbe/printer-templates/graphics/TNFacturaPos.xml
+SHA-256-Digest: 5YCuz/HtH6uHpi/SIFedbQWNOBA/hvrW9ZILAIBrk9k=
+
+Name: jbe/xls/.svn/text-base/ventas_resumido_proveedor.xls.svn-base
+SHA-256-Digest: HvSjuUdICWOTFHN+FxqzcvQHOlvkEI9VgbLZ6YPpikA=
+
+Name: jbe/printer-templates/plains/ReporteAPostRangoFecha.xml
+SHA-256-Digest: nMzlNH5s2VXM1rhk0vcn4iZ+nflxDo0K4gXeZ+wwSAs=
+
+Name: jbe/printer-templates/graphics/TNAjusteInventarios.xml
+SHA-256-Digest: Sgh04jZ1jPyDqXci9IF4kRbp1oS/i0/O2upwh886EmA=
+
+Name: jbe/printer-templates/graphics/TSTrasladoEntradaAlmacen.xml
+SHA-256-Digest: ucBtT8k4BByVv3AmHabjDc0Qiza5mJjq8fR/BxSrq5A=
+
+Name: jbe/printer-templates/graphics/TSRemision.xml
+SHA-256-Digest: lc7MWPkQZEY2wtPGhsLF+m7Hdc0QBJBDmSkOj/a8Jgs=
+
+Name: jbe/printer-templates/graphics/TSNotaAjuste.xml
+SHA-256-Digest: u8RvDxaWyaEDxwi3kH0r5FKrcOehh1y7WAyMUK6v7Zc=
+
+Name: jbe/printer-templates/graphics/TSCompraMercanciaConsignacion.xml
+SHA-256-Digest: C+TMa/901fRfcWWuHM5x7VMtzDFIY7CIFVlaET+uj5c=
+
+Name: jbe/printer-templates/graphics/TSOrdenCompraTotales.xml
+SHA-256-Digest: NqC+iyXa1OFXpgJIf5q8CvnkyGt8bYtpjTPBGz0zYkE=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNFacturaPost.xml.sv
+ n-base
+SHA-256-Digest: vY3E4MnoBEk3JE8m+Zxvsp+3Kte5kI6FIWi/7pLYtxM=
+
+Name: jbe/printer-templates/graphics/TSNotaCredito.xml
+SHA-256-Digest: AR9TqxFwQaLo4U3L9KkFCyVfrh/x7iZsF+8oo7uUZMM=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/NuevoCheque.xml.sv
+ n-base
+SHA-256-Digest: pKSZawR1q51vMpT7HO9I09rZcqmSVnLk4UdFr502Nm4=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TSRemision.xml.svn
+ -base
+SHA-256-Digest: /BaXK9M+D11Gcj/DCEn6LxbdcsC7wL19ReWUghnxVu8=
+
+Name: jbe/printer-templates/graphics/TSInformeVentasCentrosComerciales
+ .xml
+SHA-256-Digest: szSgxjbTHEhkRPhkj6l7uehN0S/6k9g1s3adcdyu8qY=
+
+Name: jbe/printer-templates/graphics/TSDevolucionComprasRemision.xml
+SHA-256-Digest: FzS/uXb9yx3e2++sOiAQlPfZUZma1ny6Yhj2UqyFmPI=
+
+Name: jbe/xls/.svn/entries
+SHA-256-Digest: jfTBrjH7WFKaXIR6yFBYMmz3OijhYote1ViqdeyNXF4=
+
+Name: jbe/xls/resumido_de_ventas.xls
+SHA-256-Digest: WQEKOqli8n7r+fqxJv6dNtRkpSAyA9C7EmBHKaudYCw=
+
+Name: jbe/printer-templates/graphics/TSDevVentaFacPlataformaWebCarta.x
+ ml
+SHA-256-Digest: 4rwRbp6eYDACnMzmct4c4ISawPZgCTiqRUunns5YjgI=
+
+Name: jbe/printer-templates/plains/TNComprobanteIngreso.xml
+SHA-256-Digest: oLnseIBLQb/hwoh4mrSKoUWQu1oIkvV1BZTqzVABBuQ=
+
+Name: jbe/printer-templates/graphics/TSFacturaCreditoContado.xml
+SHA-256-Digest: a/AoxxJeHBb4FsjaPrlAvtzdX1sYropMBPdlRicfKQc=
+
+Name: jbe/printer-templates/graphics/TNCotizacionConPiePagina.xml
+SHA-256-Digest: wtz3EAQWXdTXbK0gkMzCTTaCzx6zcj7GCNSRd3wZbhw=
+
+Name: jbe/printer-templates/plains/TSDevolucionVentas.xml
+SHA-256-Digest: cR5AsuEwXqRW78g7YPgUoH7+z+ORfY7J4Xl9d/kBZ+g=
+
+Name: jbe/printer-templates/plains/TNAbonoRemision.xml
+SHA-256-Digest: tQUUCr7/s0MGC3jYcEOV6c0RkoioJfjwmFuq1W10SD0=
+
+Name: jbe/printer-templates/graphics/TSFacturaContingenciaMultiPagosCa
+ rta.xml
+SHA-256-Digest: Fxo3Vahrl1Ag2Ga+bg6CEhe7UtM5+c/jK/jLUpYo2AU=
+
+Name: jbe/printer-templates/graphics/TSAbonoSeparadoMulti.xml
+SHA-256-Digest: gFL2kezdk/z4ZUv/nxC1DEVOG4oksVeaOqELtRjn2as=
+
+Name: jbe/printer-templates/plains/TSFContado.xml
+SHA-256-Digest: 4nzKJddSC2TCZRE+aP251WvBVgQmqKbt1lFruh3LKbc=
+
+Name: jbe/printer-templates/graphics/TSFacturaCreditoConPiePagina.xml
+SHA-256-Digest: 1xIIEHuPrdouZ9oKsPQ/UKF/lK80exmbZukTSqzLIuY=
+
+Name: jbe/printer-templates/graphics/TSDevVentaFacPlataformaWeb.xml
+SHA-256-Digest: /GCP9C3HGP4DNBziZfgjMzvFe3xFZUa5SW7HEFUkSFk=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TSComprobanteEgres
+ o.xml.svn-base
+SHA-256-Digest: soPg2cioAp8Ko9qG6/cmxfmt6v6t2IQjIrv9UOnzqdg=
+
+Name: jbe/printer-templates/plains/TNValeRetiro.xml
+SHA-256-Digest: wepnx2vg+ZwfLAF902xOZmG/yf9VNTZpdYDulYnCa6w=
+
+Name: jbe/printer-templates/plains/.svn/text-base/ReporteProductosDia.
+ xml.svn-base
+SHA-256-Digest: gK1IhNB5+huEhVxqpN+B89pe3ZwLlqydgF79OyxRDpk=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TFormaPagoEgreso.x
+ ml.svn-base
+SHA-256-Digest: 9eEU0OB/lOmXyfMNK+SdoqS0yxJ5dDmlzAzOn5OkZhw=
+
+Name: jbe/xls/.svn/text-base/orden_de_compra.xls.svn-base
+SHA-256-Digest: lCb/Omqpy32z/X6HCZ7ZCon7Fq6LsAaMs//PeY9Jo5M=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSNotaAjusteInventar
+ ioLX300.xml.svn-base
+SHA-256-Digest: IFdRV/jk6dL45FUHiMyJn2hZLszLB/MtfAMPIlaJ7a8=
+
+Name: jbe/printer-templates/graphics/TNPedidoMostradorCarta.xml
+SHA-256-Digest: yIrxinvofS7Wvf8jgPhOLau1MefjGBf+5axy3qYacKY=
+
+Name: jbe/misc/language.xml
+SHA-256-Digest: RWUB93CJ+75w/EPYqsU5JKvgRXEGLWrduJtPjPZa7V8=
+
+Name: jbe/printer-templates/plains/TNAbonoSeparadoLocal121.xml
+SHA-256-Digest: WB3J3Gr4aEra1Txnilvgkc42Lh7dls7vjp9sZFq0JYQ=
+
+Name: jbe/printer-templates/graphics/TSAlistamiento.xml
+SHA-256-Digest: Bj5KS61RYfRwqQTLBumYKRu2hncSjtOA7M7QV568f1w=
+
+Name: jbe/printer-templates/graphics/TNDevVentaFacPlataformaWeb.xml
+SHA-256-Digest: b6mfWka5ExDsEFOBumO8DsJ7PFEemgNy+pP4goCLZFc=
+
+Name: jbe/printer-templates/graphics/TSCotizacion.xml
+SHA-256-Digest: xEIbiZ8yeJSP3h4RU8WdN4zxgSdLRNE+fiRU2qN0Kas=
+
+Name: jbe/xls/.svn/text-base/ventas_por_barra.xls.svn-base
+SHA-256-Digest: L5T92+Nz5uXbSFpKFLBVHC+mWi8EC63/t9CX9uStbNM=
+
+Name: jbe/printer-templates/graphics/TSNotaContabilidad.xml
+SHA-256-Digest: K6PP5+GkFeAHogxDEvc7m2nxG99G4LKI5SUsPhwIHyo=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TSOrdenCompra.xml.
+ svn-base
+SHA-256-Digest: kmOS3E3jKMb1m8NByt49gVDslqqcFy19gDfcp7/I5pQ=
+
+Name: jbe/printer-templates/graphics/TSPedidoMostradorCarta.xml
+SHA-256-Digest: D/jiGY44TK15f0mNHRa3E+YRWlQ3amCITluzrBunsjw=
+
+Name: jbe/printer-templates/plains/TNFacturaPostUni.xml
+SHA-256-Digest: 2cr9mNYlbZWYm2iNO0jaiQ0PnUHLWLK+wJR/r4ZFfZk=
+
+Name: jbe/printer-templates/graphics/TNTrasladoDespachoMercancia.xml
+SHA-256-Digest: gj2Fqe4/VCxfanKYZd1bdAdtg3iy5Q5YC9k+kWQsy4M=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TSNotaCredito.xml.
+ svn-base
+SHA-256-Digest: GFkCvVAT+IHbflPba5XI2cd8qo96zXP8UUKQbT3CZF0=
+
+Name: jbe/printer-templates/graphics/TSComprobanteIngresoOct192019.xml
+SHA-256-Digest: e2ocYKd44NOEJCuB/Uw8ALS+Fv13/T2tntYAkNsWwpM=
+
+Name: jbe/printer-templates/graphics/TNSeparadoMultiOct182019.xml
+SHA-256-Digest: xXo36pYEdEyEjw3EdUd2L2VXqETkO/wdDDn5lhBboq8=
+
+Name: jbe/printer-templates/graphics/TSFacturaPosMultiElectronicaServe
+ r.xml
+SHA-256-Digest: dudwaRumtWDeHRYbznRb8efM200f148nLOT5ZnMZtNw=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSFormaPagoEntradaAl
+ macen.xml.svn-base
+SHA-256-Digest: MGHO/RATu21NCdGXnn+Z5XNL37ZTuPp2rQRSQHRmMs8=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TNNotaCredito.xml.
+ svn-base
+SHA-256-Digest: trAIBeQag1hyH02kaVWZ3UO1J0W2UqZbvC51DgtmNvs=
+
+Name: jbe/printer-templates/plains/TNBonoDescuento.xml
+SHA-256-Digest: aQgqw5EhK1Rm2AvDP1NOuv17EwsP/cRWOnZStIxdOf4=
+
+Name: jbe/printer-templates/graphics/TNAbonoSeparadoMulti.xml
+SHA-256-Digest: Kwi5cRZ3BAnaBw9XPtnoUx2tEUYCIMSK2cFMdI+C0gk=
+
+Name: jbe/printer-templates/graphics/TNFacturaPlataformaOnlineConPiePa
+ gina.xml
+SHA-256-Digest: aQeQOEyw0y5lW6EwwTCQNsSpzff/sbWD3iyJRUtloNY=
+
+Name: jbe/printer-templates/graphics/TNCambiosMTS.xml
+SHA-256-Digest: lEAgiu4UIOW8qzmQP6Sq4a17uXQcIpt7I5SI74J1vzU=
+
+Name: jbe/printer-templates/graphics/TSAjusteInventarios.xml
+SHA-256-Digest: CsvYhdO6wzBNOcDoLiRT88PTsaL3LOaJKm/hjUsoI90=
+
+Name: jbe/printer-templates/graphics/TNEntradaAlmacen.xml
+SHA-256-Digest: uzdeAG+kwN6pIgdzHalCM/IXwgUHFtz545j3kgxZTZo=
+
+Name: jbe/xls/ventas_proveedor.xls
+SHA-256-Digest: s+IL/NV7lrAxPCnWHCnujSV92glhtWiXVTtwobpcIuM=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TEComprobanteEgreso.
+ xml.svn-base
+SHA-256-Digest: fp7UMhp2kpiI642u2sBwuET/cQCM6+ZgugbVGuAX66k=
+
+Name: jbe/printer-templates/plains/TNOrdenCompra.xml
+SHA-256-Digest: 7+C2IcNysS8Am+kB20FFwY4spCQEkSqSK+v5mVSKuV4=
+
+Name: jbe/printer-templates/graphics/TSCotizacionJBE.xml
+SHA-256-Digest: I89SVyX0+PVrZWREsWvqgyASZ6+N//YgpREF2zcP7zM=
+
+Name: jbe/printer-templates/plains/TNNotaAjusteInventarioLX300.xml
+SHA-256-Digest: fQWhZvROia6WP2SD4nkuDo95U9vWvZtjJjvXi7mOIko=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNCotizacion.xml.svn
+ -base
+SHA-256-Digest: eeaZXdE8RCK+UK86Imugt4c2P9nGFL1Pd8IUk9r35wc=
+
+Name: jbe/printer-templates/plains/TSCambios.xml
+SHA-256-Digest: 2AM7KMjuutKczJltKF9g7/Fc8puAFbGhSgTwkJJeEOI=
+
+Name: jbe/printer-templates/graphics/TNCompraRemisionada.xml
+SHA-256-Digest: tEVg2GFGt7wuq14yO1I0STzVO5ZtV1TieaOxUn9oBvY=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNValeRetiro.xml.svn
+ -base
+SHA-256-Digest: jyGrlGgt8KFnxAu/UXk5HhvF6nBYP0j6ayGpQ6iFru4=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TNComprobanteEgres
+ o.xml.svn-base
+SHA-256-Digest: 5X1HmjbjJtjTw3qefZIwqsnLIdB3tmT+rasnWF1QoIs=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TSArqueoCajaPrinci
+ pal.xml.svn-base
+SHA-256-Digest: FJwKvcCPX6132V1LGIvvoLLzIROlPVin4SOfE0i50vs=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TNCambios.xml.svn-
+ base
+SHA-256-Digest: 1eYlQFdOfC25IC86G4r9rStx580MhImSOaltHAPyWNY=
+
+Name: jbe/printer-templates/graphics/.svn/entries
+SHA-256-Digest: oHFycQwJqoh29064hUShOq8NfgJKwvt+u0QioYq4/5c=
+
+Name: jbe/printer-templates/graphics/TSFacturaContingenciaElectronicaC
+ ontado.xml
+SHA-256-Digest: CkIH1AbmhyKVZ6cWyIztfd5Yaa8UhhyuLszFoBhyNCk=
+
+Name: jbe/printer-templates/plains/.svn/text-base/ReporteProductosFact
+ urados.xml.svn-base
+SHA-256-Digest: 7io4reBMolA1PwvWSR2nwza8vL+HLQkPcmST2FoR3wI=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TSComprobantePago.
+ xml.svn-base
+SHA-256-Digest: tk6nGx/hu0M4qEM+dtwmZ0/7BwLMitxPqnGp46tLE0I=
+
+Name: jbe/printer-templates/graphics/TNCotizacionJBE.xml
+SHA-256-Digest: mksdgQU1XbIetMuA0DT077XKuTqyhvOvfnJEqCUoo90=
+
+Name: jbe/printer-templates/plains/TSFacturaPost.xml.copia
+SHA-256-Digest: 1wScTxjzKTYOyQFJaJniIL2z3JeA0qPZV8W+kCgrhQY=
+
+Name: jbe/printer-templates/plains/TSFormaPagoEntradaAlmacen.xml
+SHA-256-Digest: wOPWKAxW7RykemL5hI/5nVeTcYXyHgSiSLiN43W4i80=
+
+Name: jbe/printer-templates/plains/TNFCredito.xml
+SHA-256-Digest: Kbe9IBmMiM3pjxtYNMESDMfjFkibsW/eD7Sa/nJN7SM=
+
+Name: jbe/printer-templates/graphics/TSConsultarArqueoTirilla.xml
+SHA-256-Digest: SZAs7q/YpUX8vAttpyRSum4G1JXZHW9ezg+Ps3nWTZ4=
+
+Name: jbe/printer-templates/plains/.svn/tmp/tempfile.7.tmp
+SHA-256-Digest: Z3IHkS3kz8/Ej+m9aWdcm7lghi7JsU0Bb5hG/6MMkVw=
+
+Name: jbe/printer-templates/plains/.svn/tmp/tempfile.tmp
+SHA-256-Digest: 2nhAwZiImTKs4FX/80nLLkxDOw+oC/8MN86ZJ096nlc=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TFormaPagoIngreso.
+ xml.svn-base
+SHA-256-Digest: YwV18FKIPQckP6uDMn4bY0/lW5lQdoxmzhjLo7E2PEs=
+
+Name: jbe/printer-templates/graphics/TSRecarga_tarjeta_regalo.xml
+SHA-256-Digest: AIHE4wGO51sYxfCOMKk/XZSZzi2wWt+CTZC/rGvhXCU=
+
+Name: jbe/printer-templates/plains/TNCompraContado.xml
+SHA-256-Digest: beczSEVMuO4cSXgnzBxDACTC/Tvg3k699IF92cpimlA=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TSTraslado.xml.svn
+ -base
+SHA-256-Digest: 0xi2TKp2EkVwAslGHKaSYKee01BNrYAnXadQkEshYfk=
+
+Name: jbe/conf/toolbar2.xml.copia
+SHA-256-Digest: PmSvGK4f/Ii86CJEFppOvkCg7RXeqeLm4nNMUnpfVqE=
+
+Name: jbe/printer-templates/plains/TNDevolucionVentas.xml
+SHA-256-Digest: UEWMf10FGGdFqQFs1U5j18k5rO/n0YH+kzkCLXWdg8I=
+
+Name: jbe/printer-templates/graphics/TNDevolucion.xml
+SHA-256-Digest: EK3aOgAaXDjptpSyq7oCx58vjv9V5ZJSC3x/gw0ujvM=
+
+Name: jbe/printer-templates/graphics/TNDocumentoRetiroCesantias.xml
+SHA-256-Digest: vGw7nNxPXv4EZR0/4PB3dgXz9/S6+XCgcehQP7Mhyyo=
+
+Name: jbe/printer-templates/plains/ReporteProdRangoFecha.xml
+SHA-256-Digest: BVImyYKi6+JTEBvrKPKSfarEhD+/MUXo0JM2rOcqEDg=
+
+Name: jbe/xls/detallado_compras_proveedor.xls
+SHA-256-Digest: akWgyhvjROgKKgrzWTaiITNnm16b/vD6/g0W51w9yVU=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TSCambiosMTS.xml.s
+ vn-base
+SHA-256-Digest: PSUF7elSpkpZm0Tc09iqpj1QBIFibQYRdER5/eqbIOk=
+
+Name: jbe/printer-templates/plains/ReporteAPostFactRangoFecha.xml
+SHA-256-Digest: tpKBCIKCCcGBcGCixT/cUYcgw3TdhR+6RNAmwEWoqc0=
+
+Name: jbe/printer-templates/plains/TSDevolucionCompras.xml
+SHA-256-Digest: sy+0ef0sN26ixMCpbgTGcOm29JwSh7a5ooUaiAMSHGM=
+
+Name: jbe/printer-templates/graphics/TSFacturaPosMultiElectronica-prue
+ ba.xml
+SHA-256-Digest: Q9zMihcF2M1KPbH6vQ2va0PgpGzEp0fc9TLn2xo4w6k=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSNotaDebito.xml.svn
+ -base
+SHA-256-Digest: Am10dRVF0knyke8xLDpb96yCyDu8TJlbCu/8A608mN8=
+
+Name: jbe/printer-templates/graphics/TNDevVentaFacPlataformaWebCarta.x
+ ml
+SHA-256-Digest: Eay+GZ3g4d4EQzeYpxECGdm9B3TTN7MBol5zOCGopKA=
+
+Name: jbe/printer-templates/graphics/TNComprobanteIngreso.xml
+SHA-256-Digest: wZ7a/5YMRh+cYMwWpCHBXs2VSEGddPDysNEg2rpb4iY=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNNotaProduccion.xml
+ .svn-base
+SHA-256-Digest: 57g8tN6U/dPbXLauu1FFg9MqKYaTkX3Rb0n7IIZ8tPQ=
+
+Name: jbe/xls/.svn/text-base/inventario_desglosado.xls.svn-base
+SHA-256-Digest: 4IYuyKCznpG/YAWZ/nWLdxxMHmpGSASsYNMpcRpfXnk=
+
+Name: jbe/printer-templates/graphics/TNArqueoMulti.xml
+SHA-256-Digest: CAtP+Aafhne80aH6zVlaU6ekkUj24FwRd3FORXta/kw=
+
+Name: jbe/printer-templates/graphics/TNDevVentaFacElectronica.xml
+SHA-256-Digest: 4T/t8yMGgkMcsebzcbaI0tFSQCgcEZCdFGUluxQkSpI=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TSAjusteInventario
+ s.xml.svn-base
+SHA-256-Digest: J9GJ0Rekkkcrc0KhCuOcHcShzBGdjYuk6aojDM55F+g=
+
+Name: jbe/printer-templates/plains/TSFacturaPost.xml
+SHA-256-Digest: DNstIgG5SpiuLiTYlgyVEyDS8xgcWYY/KcEVJ0QdOic=
+
+Name: jbe/printer-templates/graphics/TSFacturaCreditoOK.xml
+SHA-256-Digest: k/N9rg+0FyH1OLZq0ugAtXeZu1X4N4VIiG+NVueCg44=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TNFacturaContado.x
+ ml.svn-base
+SHA-256-Digest: IjsqPlAnQg5nPQAc34fdersTkYUhMWQigrIOcScHSt0=
+
+Name: jbe/printer-templates/plains/TSCotizacion.xml
+SHA-256-Digest: S+QZ772BKoNdxvLhlF95neCb7TcrZuk0mV/ZIeLf0MQ=
+
+Name: jbe/xls/.svn/text-base/resumido_de_ventas.xls.svn-base
+SHA-256-Digest: gL7likmKzFLM5cm+G0f22aBWdh67y37Ht3RJzu/L8Kg=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TNAjusteInventario
+ s.xml.svn-base
+SHA-256-Digest: Yn3A54kzGHFWYcuj38GFNhMzb9joHSRYhAG3lPVcbCQ=
+
+Name: jbe/printer-templates/graphics/TSDevVentaFacElectronicaCarta.xml
+SHA-256-Digest: WeYcWUD39p12YoB398NkR56um/bnEwrUrJKIYtBM264=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNNotaContabilidad.x
+ ml.svn-base
+SHA-256-Digest: NcMwY6YmAnbr49J7PwARUszEZU0bu2KAUHh9bw0hBMs=
+
+Name: jbe/printer-templates/graphics/TNDevolucionMercanciaConsignacion
+ .xml
+SHA-256-Digest: /cONH7LbcM1rlrozA+A+pAYAMFuu8v1NTq752+6Fszw=
+
+Name: jbe/xls/ventas_resumido_proveedor.xls
+SHA-256-Digest: 19kVUaCbIKPL527SLmwKYeZNoAlh8TKcK7je3+HhwRI=
+
+Name: jbe/printer-templates/plains/TSEgresoPos.xml
+SHA-256-Digest: 6UvcHOqVoSV8VianuGRFWREuWIt8n3MEzJHEBFECFpU=
+
+Name: jbe/printer-templates/graphics/TNArqueoCajaPrincipal.xml
+SHA-256-Digest: dili7YShbq2BXRn38NA6lJkPtvcuy2UksBovXUOWcmQ=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TEComprobanteIngreso
+ .xml.svn-base
+SHA-256-Digest: DjsK4RxVChBov5pggdRuuoGk0Peyp6oyJhrLV7Am/Pw=
+
+Name: jbe/printer-templates/graphics/TNCambiosMulti.xml
+SHA-256-Digest: tD0kGAIvIVH06cguwXnmHoQyD8MhC9/+aEdJJUIPBI4=
+
+Name: jbe/printer-templates/graphics/TSAnticipos.xml
+SHA-256-Digest: FBJURy2ogaKTJ43JCWy3pBTPgthaLOKDtrOreA5CKok=
+
+Name: jbe/printer-templates/plains/TSSeparadosUni.xml
+SHA-256-Digest: aRhFYstdf4pSyRBMmXDGWfvB+ionbdWt2XFp0RDqplI=
+
+Name: jbe/printer-templates/graphics/TNOrdenCompraBodegas.xml
+SHA-256-Digest: /x6B+WjCCu9sat4+8L5HaWJ8+eFnYvj8q/Zq2FKpJFI=
+
+Name: jbe/.svn/entries
+SHA-256-Digest: uN/u9LppShPr2ZwwmU54L/eEiKVTyZu1GMVUBtF9BV8=
+
+Name: jbe/printer-templates/plains/ReporteVentasRangoNumero.xml
+SHA-256-Digest: MGVsn3WuRHUR7Rpbppii3VnpviaOuKIfWvNR/Tc+tys=
+
+Name: jbe/printer-templates/plains/TSNotaCredito.xml
+SHA-256-Digest: 0+Z2NNmQwYcViulUPe314VBLBjiNi3kpS3aZfGJLGK4=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TNRemision.xml.svn
+ -base
+SHA-256-Digest: G4lfE67VCdW2lxUkIbOM737L4Ad/a0qExe8r8S+lqc4=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TNFacturaPosMTS.xm
+ l.svn-base
+SHA-256-Digest: MjBG9L7no32vtLzQ+OW/g3WxpBchWIsa9UdspIVwsbc=
+
+Name: jbe/printer-templates/graphics/TNNotaContabilidad.xml
+SHA-256-Digest: mZ8SS3sWX8PLG3Ku+mqEGdL9I40fJNL+vPu5sw8aJNs=
+
+Name: jbe/printer-templates/graphics/TSOrdenCompraBodegas.xml
+SHA-256-Digest: +HJZ4VFxV6Ys/A7qgUSLI2udLfrubwyDwCA6e3YfPHk=
+
+Name: jbe/printer-templates/graphics/TSSeparadoMulti16oct.xml
+SHA-256-Digest: ka+cUZKV5SlovGmqsQ1FrzkaaKMd4c68EGMii1FNwjY=
+
+Name: jbe/conf/menu.xml
+SHA-256-Digest: BLWbRk1j/cHdTGWx6XMlN+sAzyGsGaejjTbOR+6pZtw=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNNotaDebito.xml.svn
+ -base
+SHA-256-Digest: 0H67RGY66rG56voStez9GlOeC3ml5evjWeGxoht2Oas=
+
+Name: jbe/printer-templates/plains/TSNotaAjuste.xml
+SHA-256-Digest: Uy1Zg85T5ua8xJ/MYYc8M2BwtRRUkAc0NC4Wi4x4sL0=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TSCotizacion.xml.s
+ vn-base
+SHA-256-Digest: BeVeV8H7WfdhO1llTnOFEv3bo8P6b7U5FaYxU7LW8kQ=
+
+Name: jbe/printer-templates/plains/.svn/text-base/NArqueo.xml.svn-base
+SHA-256-Digest: dQZVFR96zuUuJSf5eQa+7IxaefoGRjXZrb+QlAh1oMU=
+
+Name: jbe/printer-templates/graphics/TNDocumentoEquivalente.xml
+SHA-256-Digest: 5unFvSdYxNKcE87V3Vt/NI1qaAFhaX7RsK1BiZUSfQs=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNNotaAjusteInventar
+ io.xml.svn-base
+SHA-256-Digest: QU4cwI5nbqYqKiOIUSxspfF+uCW9bo424+WJGl8asFY=
+
+Name: jbe/printer-templates/graphics/TSEntradaAlmacen.xml
+SHA-256-Digest: JecV6dU1Kon5XJ+w55iCRV0r6wUkFfhbI+ccOy3G/k8=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TSDevolucionCompra
+ s.xml.svn-base
+SHA-256-Digest: cWC+jhY1nNVMsuc2V20ArS8MbC3E5nOCVI46XkHlWCo=
+
+Name: jbe/printer-templates/graphics/TNFacturaContingenciaPosE.xml
+SHA-256-Digest: 61aQkqVvTiPNkYpwcCGr/6lakCGJx4hD6FogE5RoVB8=
+
+Name: jbe/printer-templates/graphics/TNFacturaContingenciaPlataformaOn
+ lineConPiePagina.xml
+SHA-256-Digest: tw9cfKv0Ab0pbeKETLPSCezOMWW6R2uZWdEAofO3/x4=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TSNotaContabilidad
+ .xml.svn-base
+SHA-256-Digest: nkMZ1ZZdlUiXE2TGzwxSlLmbm82dCFKPTD3N3OCOigk=
+
+Name: jbe/printer-templates/graphics/TSDevVentaFacElectronicaCartaServ
+ er.xml
+SHA-256-Digest: vCMaMtQRbLKLRYKmovdP0Kr5DtkBzuSxVWKJPcEvxIk=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TSFormaPagoEgreso.
+ xml.svn-base
+SHA-256-Digest: Zba4eDU0fF1B89Mmww8uuuWki04mpIyzhU13XGm7gn0=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TNCambiosMTS.xml.s
+ vn-base
+SHA-256-Digest: cp886mYeeODn0Zhh2tEFqh2mo/eYTaDZsW8TAcMFtY8=
+
+Name: jbe/xls/.svn/text-base/detallado_compras_proveedor.xls.svn-base
+SHA-256-Digest: SCCHgWJkJH9/+oPXZOYjmaxxsYaQRgbf+lMjhJ060zY=
+
+Name: jbe/xls/.svn/prop-base/ventas_por_barra.xls.svn-base
+SHA-256-Digest: YD745gddq6JLFGD6jOX9gKznSI8b1iUZveO0pW4IH0o=
+
+Name: jbe/printer-templates/plains/TNDevolucionCompras.xml
+SHA-256-Digest: CxxRQXHhFcoK1C8ReKrS1hfqi+lbOIzor8jvSzFYs3I=
+
+Name: jbe/lang/.svn/entries
+SHA-256-Digest: GMh3sz2bi8iy9Li3pfpC2Hbf46V2jTB1Fu24yzIURGE=
+
+Name: jbe/printer-templates/plains/.svn/text-base/ReporteAPostFactRang
+ oFecha.xml.svn-base
+SHA-256-Digest: 68COnXQeNxqmYt4SIpMhMsxeOIuWIRUflmxC4caHTFk=
+
+Name: jbe/printer-templates/graphics/TSCambiosMultiOct162019.xml
+SHA-256-Digest: 6yOmKhy6IFffpHQdG9AVSzlnH0/qZS6FP76Yweestds=
+
+Name: jbe/printer-templates/graphics/TNDevolucionCompras-old.xml
+SHA-256-Digest: SJR6iiPFmd143tln6ieBLglVtxHgApKPvhcwm/HOuJw=
+
+Name: jbe/printer-templates/plains/.svn/text-base/NArqueoModificado.xm
+ l.svn-base
+SHA-256-Digest: N708fUz0kuJGzc5dxu3SUBrewljbkn0l3Ycz7dqEb/Q=
+
+Name: jbe/printer-templates/graphics/TSDevolucion.xml
+SHA-256-Digest: 02b4kXNqa2sqfZ+z91xBzwfacSFTb4KSTzkMpVuRHLQ=
+
+Name: jbe/misc/.svn/text-base/menu.xml.svn-base
+SHA-256-Digest: DakliAHwjmUYSepPeF2OecCVVxvPwXlSY8pbty6OdQM=
+
+Name: jbe/printer-templates/plains/TSNotaMPrimas.xml
+SHA-256-Digest: gBjxMxT0M7IYdMXJaOBjpaiR5etD9KNWwIfl1c+g5j8=
+
+Name: jbe/printer-templates/plains/TSNotaAjusteInventario.xml
+SHA-256-Digest: WqPI6x7/OehITTdpdt4pTttytog8HULMLX1AnRoDCCs=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSEgresoPos.xml.svn-
+ base
+SHA-256-Digest: 5iI2vnf297KBF+CC+QVUW3H+NMBeEAvLgFpDZX0/QIo=
+
+Name: jbe/printer-templates/graphics/TNNotaCredito.xml
+SHA-256-Digest: ePbT0mo/xHo2NWEIyfPL///pPVD5beqGyoM9i/3x6kk=
+
+Name: jbe/xls/nomia_extras.xls
+SHA-256-Digest: 8uN8tDeLFrEQ4BXXMFn6xeGVSQ1TSerpY1Mlu79JB6k=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSCambios.xml.svn-ba
+ se
+SHA-256-Digest: 3q6AuG8ZHdb/c3Akvtku1mq/Hxy1IkLxjUxBzXFWELo=
+
+Name: jbe/printer-templates/plains/TNNotaMPrimas.xml
+SHA-256-Digest: +uF8dDfSMZQ0rcsiY/TwWEqBRY2i17LXj9qH1hI1cFY=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSFCredito.xml.svn-b
+ ase
+SHA-256-Digest: h34yh2HoGU4H6yp2xgJegbBijgdgXhp4yvaCnr6/uB4=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSDevolucionVentasPO
+ S.xml.svn-base
+SHA-256-Digest: rt9lTEWQwN/3H8M06x+aOJSLZnyttsKeZnJaAb5e4Z4=
+
+Name: jbe/printer-templates/plains/TNPedido.xml
+SHA-256-Digest: IUYLtYkCpaFZLJO6GNCqBcepUgbGDKvie/TfLHT5oxQ=
+
+Name: jbe/printer-templates/graphics/TSDevolucionCompras.xml
+SHA-256-Digest: CgFY4r8f1xxkzc10ybeZZzFznTPNOxyhdD78UhADV7w=
+
+Name: jbe/printer-templates/graphics/TNContratoPag3.xml
+SHA-256-Digest: Ed/lTHJUGNE2pXFgZ2iFNGSVmI+jgRUO8+6q19MCkJw=
+
+Name: jbe/printer-templates/plains/ReportePostRangoFecha.xml
+SHA-256-Digest: VG5veeuxZMZdR2dyHMGCmMICHyvau7iapjxDv6RJKMU=
+
+Name: jbe/printer-templates/graphics/TNFacturaCreditoContado.xml
+SHA-256-Digest: 2v9H1a1DgWC3UL4drkRNqSCv7epaGPtFhLPHhbBPymM=
+
+Name: jbe/printer-templates/graphics/TNNotaDebito.xml
+SHA-256-Digest: 1h3kVQtRlU3GZAvaJUwM5h41b/0TCnv1JjpvJhh6og4=
+
+Name: jbe/printer-templates/plains/.svn/text-base/ReporteProdRangoFech
+ a.xml.svn-base
+SHA-256-Digest: EH1L6z/rDAkrG9JRe1OGnil4ku/QLuY7jkK6/Tc4cow=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TNNotaAjuste.xml.s
+ vn-base
+SHA-256-Digest: J4le9NpMVTjI+bKlnxtdK1djuTW56od9lom1YYoUT4c=
+
+Name: jbe/printer-templates/plains/.svn/text-base/NArqueoProductos.xml
+ .svn-base
+SHA-256-Digest: uOT3Z+oGadLc0gJnfnVy+FUr+OxlUbS/rIFKhqG/HsM=
+
+Name: jbe/printer-templates/plains/TEComprobanteIngreso.xml
+SHA-256-Digest: RliR96XygpOpSZWbXzMXmn4YPsU+v3LEgmSzDIamPDs=
+
+Name: jbe/printer-templates/graphics/TNAnticipos.xml
+SHA-256-Digest: oEWQnCM85o9IN+Y18ag4VR2R5C/3IirijgR9Fa8l8zg=
+
+Name: jbe/xls/.svn/text-base/inventario_final.xls.svn-base
+SHA-256-Digest: e2Xj9eCLVOjYsh7isQHAIbN+3tJBG5VrHFphwiD91hQ=
+
+Name: jbe/printer-templates/plains/TSIngresoPosUni.xml
+SHA-256-Digest: MJPFzBb+6V5rATSsnPcbm0bVTSaErl2eq/R3TtI1qI8=
+
+Name: jbe/printer-templates/.svn/entries
+SHA-256-Digest: LQTqTQnKGsoOji2tiQNGLpTSzdatsJaWDwE5Pv8W//I=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSComprobanteEgreso.
+ xml.svn-base
+SHA-256-Digest: DZjSOdGoNKQDgUmcnfcUbN1WSvwx8h/Ky1ZwDelm3dk=
+
+Name: jbe/printer-templates/plains/.svn/text-base/SArqueoModificado_mt
+ .xml.svn-base
+SHA-256-Digest: CgMrAe1Vf8cIHA5eNr4xK6DBTPHAK8bOOqa3oochrAI=
+
+Name: jbe/printer-templates/graphics/TSFacturaContingencia.xml
+SHA-256-Digest: 95NK0rpfrdQMVDWeFtUg7j+u4GEXi8fiHKIS7IF5klM=
+
+Name: jbe/printer-templates/graphics/TNTrasladoEntradaAlmacen.xml
+SHA-256-Digest: Ey2iR9nzfIpSvOALfa5VDdJeuIDnySTfsh2JW7OnIoc=
+
+Name: jbe/printer-templates/plains/.svn/tmp/tempfile.2.tmp
+SHA-256-Digest: tLRS4Lq/MH4HDJYyW+SY/oSbvGrJYgtrL+nRdPYA49k=
+
+Name: jbe/xls/informeConsolidadoExtrasImportadas.xls
+SHA-256-Digest: OyNN1+88RYzybPUCd3F3OoRtbc3J+dpsbqOCBjk6Q5A=
+
+Name: jbe/xls/reporteProductosGeneral.xls
+SHA-256-Digest: jysdOQaZ+cNqJRa7HMzFpfJ2krtyWqTnqTMQLL1UhLc=
+
+Name: jbe/printer-templates/plains/TNTraslado.xml
+SHA-256-Digest: Eyt204QILfsEuxUErGCAhmuo2q1yqq6ujA26A9SwITs=
+
+Name: jbe/printer-templates/plains/TSSeparados.xml
+SHA-256-Digest: 493hfOPfvdMENfcL7ieQZHEWKs3e0Cb/ycY4hxpRmFU=
+
+Name: jbe/printer-templates/graphics/TSFacturaElectronicaCartaJBE.xml
+SHA-256-Digest: yducdXIpOp4FVyr5JnLcHVKK9ADlzVgtnMe+Jmm6o3w=
+
+Name: jbe/printer-templates/plains/TNNotaAjuste.xml
+SHA-256-Digest: OhoH+18WRDrQBerKPBUhn9XO2Z/AlyB4OlRB0+/Quz8=
+
+Name: jbe/printer-templates/graphics/TSArqueoCajaPOSeditar.xml
+SHA-256-Digest: BP7+fnEGiHCgYuhAIEqcZ42F3e892cT4/xeFbRkgrfs=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSOrdenCompra.xml.sv
+ n-base
+SHA-256-Digest: FDtjdu31IC0lCtgxLeruwCT4kRFXXg2/xVUkIqhE0Lk=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNFacturaContado.xml
+ .svn-base
+SHA-256-Digest: Rli69ul8CCQQdPlfJzhmF2wDB/M3GSky/31CqDvY1P4=
+
+Name: jbe/printer-templates/plains/ReportePostDia.xml
+SHA-256-Digest: W+wj68t9N64hsry18Kdjzfw9Iww5ECIV6KPJxPvDUag=
+
+Name: jbe/xls/reporteDiaSinIVAPag1porFecha.xls
+SHA-256-Digest: s/jqYkkS6ZlxmM3MaH8RymdF6EzPSrH/k+rH5gLL5fc=
+
+Name: jbe/xls/inventario_desglosado.xls
+SHA-256-Digest: KR0Sl84m+JwvJaN4dYnMzpzea16z7izvFyILs6Ai9DI=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TNOrdenCompra.xml.
+ svn-base
+SHA-256-Digest: iSD+uIxCf2fqVRY/BWRDj9bUPbUk6J4/cK76gy027Mc=
+
+Name: jbe/printer-templates/graphics/TSInformeDiario.xml
+SHA-256-Digest: auE1E2ApJdxJJe4odG0PWQHv69YGux6ddw0B3UcLUTs=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TNArqueoCajaPrinci
+ pal.xml.svn-base
+SHA-256-Digest: wzwdj1QLk3WNcvUAvWE3EWprYAN6qdpIqzzmu0PWXSQ=
+
+Name: jbe/printer-templates/plains/ReporteProductosDia.xml
+SHA-256-Digest: 6keAQjqCnr2zUC2jYujT9MhXbX5Xvzqn89EgGNoi/ZI=
+
+Name: jbe/printer-templates/plains/TNSeparadosLocal121.xml
+SHA-256-Digest: Y8cZtiOKXghCeFeBWVFEMVNBfynsyuj3QgGlVSmHWRo=
+
+Name: jbe/printer-templates/graphics/TNOrdenCompraTotales.xml
+SHA-256-Digest: I/QlqInmbQAe3Qbo8VSsiqRc5J/6pZo0JAyIoFeiPRA=
+
+Name: jbe/printer-templates/graphics/TSTraslado.xml
+SHA-256-Digest: 8s7s+4nEapKCFQi9Er7oNdanRxqYW0IXC7zZ6bOy/8g=
+
+Name: jbe/printer-templates/plains/TSGuia.xml
+SHA-256-Digest: cssX8b+x4YGwmMKaxdfS0Y/OfSAolRN7WTgqP2JI/0A=
+
+Name: jbe/printer-templates/graphics/TNIngresoMercanciaConsignacion.xm
+ l
+SHA-256-Digest: vsz1rQ5A/kd4oYU4bQEAnCaw/JWykQOEgwnzYHFlGiA=
+
+Name: jbe/printer-templates/graphics/TSFacturaContado.xml
+SHA-256-Digest: naPaPBqx9NY1SXNVuo3JQb12fmmohMyz4psaWNOtGo8=
+
+Name: jbe/printer-templates/plains/Prearqueo.xml
+SHA-256-Digest: V2YeMtfpGWZn4rMDr2xOSxOfutdylcPuY3oMNBw9fEI=
+
+Name: jbe/printer-templates/graphics/TSEntradaAlmacenResumida.xml
+SHA-256-Digest: UEhlljFxMj6TS4dYOwxNgNoUcE725kPYNuZLPqYUK1s=
+
+Name: jbe/printer-templates/graphics/TSEntregaBaseSencilla.xml
+SHA-256-Digest: +mlqn6RJTJeX/yIlzIemfjNyu5bcfIdEuT63+2yJSA8=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TNEntradaAlmacenRe
+ sumida.xml.svn-base
+SHA-256-Digest: H9Qv2d4BLg1A9EM3biI5mpj71rvb9euA35HzFWzsppQ=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNEntradaAlmacen.xml
+ .svn-base
+SHA-256-Digest: oizMBl5DniUPz/c3Ol41eZJgglokZCYRtRc/rBnvXF8=
+
+Name: jbe/printer-templates/plains/TSComprobanteIngreso.xml
+SHA-256-Digest: 3Yum8hG7xjUZwNvPzwnnx/ZRQCiEbo/aUT/0FVJB7Oo=
+
+Name: jbe/printer-templates/graphics/TNArqueoCajaPOS_old.xml
+SHA-256-Digest: xwmlsVXydRKre68rmB0eN6Qzlvex9klRMmvP8WhaQXo=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSFContado.xml.svn-b
+ ase
+SHA-256-Digest: NE6onWfSgNbcmLJ9hal1fDwpelqX5LortqP24qMd9zM=
+
+Name: jbe/printer-templates/graphics/TSComprobanteIngreso.xml
+SHA-256-Digest: w5n/L4EWZdd4JgqBOTxAZHPU7RpiQrAnSd/02ouKUtI=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TNFacturaPos.xml.s
+ vn-base
+SHA-256-Digest: TP+mDiCOQAysrJBaCpulZhd4VCasIp0jgFUyvX+hUJ4=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSFacturaPost.xml.sv
+ n-base
+SHA-256-Digest: 75IqDnujeh+TMVkgmn6vZSQVm6dpfdtJL3fz3PIs/bU=
+
+Name: jbe/printer-templates/plains/ReportePostFactRangoFecha.xml
+SHA-256-Digest: xY8Ho65FPRdHAPj6o3HyqWPKWtlIutc5h4th46OEc0k=
+
+Name: jbe/xls/orden_de_compra.xls
+SHA-256-Digest: Gq1ry8qyt9XcjiMsbuOf6niJdWYXLQ917WSsGz51a9w=
+
+Name: jbe/printer-templates/plains/TNAbonoRemisionUni.xml
+SHA-256-Digest: qmuTpRZPhLQlMFpsf1QIYBNntffH6ggplZted1lmsXk=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSNotaProduccion.xml
+ .svn-base
+SHA-256-Digest: OXYA0V2xffKbLEUILL10dgLPjITM55qSviTlD+yBnfU=
+
+Name: jbe/printer-templates/graphics/TNFacturaCredito.xml
+SHA-256-Digest: anersbHnBf2cAhlBL8F5KDHDcL1m/aWnX2O+qvcy4Lk=
+
+Name: jbe/printer-templates/graphics/TNCompraRemisionadaResumida.xml
+SHA-256-Digest: wPAUTmYHPp4/fuBEYlCi0HPE3maTC5OQp8fqwW9b/jI=
+
+Name: jbe/printer-templates/plains/SArqueoProductos.xml
+SHA-256-Digest: MFkvtGnSoWXpf85W83vR4XSCvIF69oVE0AfKR3dPEuo=
+
+Name: jbe/printer-templates/graphics/TNOrdenCompra.xml
+SHA-256-Digest: yGWqaUZmMlvVnQiGsAlPzt2CypXc9Nk49ERAzfdtiqY=
+
+Name: jbe/xls/.svn/prop-base/resumido_de_ventas.xls.svn-base
+SHA-256-Digest: /wank1Mvdqx4GqYc/+TqmhwpRdjZmXlDhmzlegO+hs4=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNNotaAjusteInventar
+ ioLX300.xml.svn-base
+SHA-256-Digest: lgoLyEG3GJkHdFLTFqSsBuLRTxTO/GlF5cNQMwrZ1S0=
+
+Name: jbe/printer-templates/graphics/TNCertificacionLaboral.xml
+SHA-256-Digest: bpfDHgFLHWGK0dTRK+hAa6vDEyF8T2DRNR4qXKWZ45g=
+
+Name: jbe/printer-templates/graphics/TSInformeDiarioCaja.xml
+SHA-256-Digest: f1y7KYmKA9LF7FCgkKFM6+zhcLiMotrv07tZlEQiNVM=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TSIngresoPos.xml.svn
+ -base
+SHA-256-Digest: TUufVklQaK8jiZbN9jTKtwmDpKxYBdZlP+Xt7cuCVxU=
+
+Name: jbe/printer-templates/plains/TSComprobanteEgreso.xml
+SHA-256-Digest: fnRvHSdhIVVejk56b+EMMt7iJkYSna0+n1m71e9HkDw=
+
+Name: jbe/printer-templates/graphics/TSFacturaPosMultiElectronica.xml
+SHA-256-Digest: E0fYV0gAjVGUeQ67riLc4Kr73FmvIQfgEgqFDpp08PM=
+
+Name: jbe/printer-templates/graphics/TNFacturaPosMTS.xml
+SHA-256-Digest: O1h7Xv6mEOJnNgus/JpkbWdde2a3p4QYb0T7/B3hIBw=
+
+Name: jbe/printer-templates/graphics/TNReemplazarPagosParciales.xml
+SHA-256-Digest: YKyZlHxUO50H1Y368RcoaKpxO+KTfPVuS3EYNdr9mP8=
+
+Name: jbe/printer-templates/plains/TNGuia.xml
+SHA-256-Digest: ySdPBEs7GSEFa/l2kguvz52j1MHxHt+GR1ATDjNpcXw=
+
+Name: jbe/printer-templates/graphics/TNRemisionEnVenta.xml
+SHA-256-Digest: uPe0mfxvKiGSRR9wS5z7uJ03iZ1HRmOCg9Y1/1aNxt4=
+
+Name: jbe/printer-templates/graphics/TSCompraRemisionadaConQR.xml
+SHA-256-Digest: RSsHt1qywuaohRLCQmHmatqUefmeMdMTh/UmKuxy8DI=
+
+Name: jbe/xls/.svn/text-base/ventas_proveedor.xls.svn-base
+SHA-256-Digest: /ajtl7xe4r0ZoL2iXnLRtMxwoDQwSySTzD4wUvI5Jdc=
+
+Name: jbe/printer-templates/graphics/TSFacturaContingenciaMultiPagosTi
+ rilla.xml
+SHA-256-Digest: pjc5iyyF94xD0TpYFlmQ1qNuVgXv4fyGp0TlGP5eF5I=
+
+Name: jbe/printer-templates/plains/TEComprobanteEgreso.xml
+SHA-256-Digest: o9JcHWiCgsOYeyR69Lc7RE/+LFz5bMdpby5z2+2hwG0=
+
+Name: jbe/printer-templates/graphics/TNContratoPag2.xml
+SHA-256-Digest: ulU+aLyy9LOER8w1XlA1iLYRA1rRgrmF9UCG9MYLU4o=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNRemisiones.xml.svn
+ -base
+SHA-256-Digest: V2Svy1KSKoDl4sFH/B84QDiOEO52mqbCLZA6w/3xLWg=
+
+Name: jbe/misc/.svn/entries
+SHA-256-Digest: 6SFQ3B6kFTpjZacuPpqKdOsj+QaLx9VJtPs5/ruhY8k=
+
+Name: jbe/printer-templates/graphics/TNCotizacion.xml
+SHA-256-Digest: 80/bCVFTFHRbwspa96Jp7UmCV6/26luHUnM00b1B31A=
+
+Name: jbe/printer-templates/graphics/TSCambiosMTS.xml
+SHA-256-Digest: yDoQ89NywmgXR0Y2FkT8BhkbZLuRpT49EUzjjAE/MN4=
+
+Name: jbe/printer-templates/plains/ReporteMeseroDia.xml
+SHA-256-Digest: vF+ZTFqyCz9U2zH6liIZfyd711ufBSzoyWRVzKUEBnY=
+
+Name: jbe/printer-templates/graphics/.svn/text-base/TSCompraRemisionad
+ aResumida.xml.svn-base
+SHA-256-Digest: Hv1Nc7hMKldKDDCwLoLbS2sP3DFG50BmUoAgfwAtb0o=
+
+Name: jbe/printer-templates/plains/TSValeRetiro.xml
+SHA-256-Digest: 7VYBlCHpBm5b4G9xXW8NSHK+P+DLOW+sD5M9YkBjC9M=
+
+Name: jbe/conf/.svn/entries
+SHA-256-Digest: Z4C1V1VAZ02lTy5ZsgcD/RPXBVqH9DNP5UVE0uikjwc=
+
+Name: jbe/printer-templates/plains/.svn/text-base/TNPedido.xml.svn-bas
+ e
+SHA-256-Digest: FWxf42R3CpWDTLmuIeyu2X546c4/owq7uSICWMhHxFs=
+
+Name: jbe/printer-templates/graphics/TSFacturaContingenciaPosE.xml
+SHA-256-Digest: vd9+l2aDC0TbKxgePieSO+lvUDqUK4/Raxieb506ks4=
+

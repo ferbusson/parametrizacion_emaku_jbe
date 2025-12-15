@@ -1,0 +1,165 @@
+<emaku_template type="PLAIN" requestNumeration="false" silent="true" printer="TMU">
+	<metadata>
+	 	<scp row="last" incrementRow="false" col="1">27</scp>
+	    <scp row="last" incrementRow="false" col="2">112</scp>
+	    <scp row="last" incrementRow="false" col="3">48</scp>
+	    <scp row="last" incrementRow="false" col="4">40</scp>
+	    <scp row="last" incrementRow="false" col="5">168</scp>
+		<field row="last" col="16" type="STRING">** E L S I T I O **</field>
+		<field row="last" col="10" type="STRING">YENNY ROCIO SANCHEZ</field>
+		<field row="last" col="13" type="STRING">NIT 27314494-1</field>
+		<field row="last" col="7" type="STRING">CC UNICENTRO LOCAL 135</field>
+		<field row="last" col="13" type="STRING"></field> <!--Aqui iba el telefono-->
+		<field row="last" col="17" type="STRING">PASTO</field>
+		<field row="last" col="13" type="STRING">ARQUEO DE CAJA</field>
+		<scp row="last" col="1" >NL</scp>
+		<field row="last" col="1" type="STRING">Numero:</field>
+		<field row="last" col="1" type="STRING">Fecha:</field>
+		<field row="last" col="1" type="STRING">Cajero:</field>
+		<field row="last" col="1" type="STRING">F. POS:</field>
+                <field row="last" col="1" type="STRING">Separados:</field>
+                <field row="last" col="1" type="STRING">Abonos Sep:</field>
+		<field row="last" col="1" type="STRING">F. Manual:</field>
+		<field row="last" col="1" type="STRING">Vales:</field>		
+		<field row="last" col="1" type="STRING">Compras:</field>
+		<field row="last" col="1" type="STRING">Devoluciones:</field>		
+		<field row="11" col="24" type="STRING">-</field>
+		<field row="12" col="24" type="STRING">-</field>
+		<field row="13" col="24" type="STRING">-</field>
+		<field row="14" col="24" type="STRING">-</field>
+		<field row="15" col="24" type="STRING">-</field>		
+		<scp row="last" col="1" >NL</scp>
+	</metadata>
+	<package>
+		<field row="9" col="11" width="10" type="NUMERIC" mask="0000000000" />
+	</package>
+	<package>
+			<field row="10" col="11" type="DATE" mask="EEEEEE dd MMMM yyyy"/>
+	</package>
+	<package>
+			<field row="11" col="11" type="STRING" />
+	</package>
+	<package>
+			<field row="12" col="13" type="NUMERIC" width="10" mask="0000000000"/>
+	</package>
+	<package>
+			<field row="12" col="26" type="NUMERIC" width="10" mask="0000000000"/>
+	</package>
+	<!-- SEPARADOS -->
+	<package>
+                        <field row="13" col="13" type="NUMERIC" width="10" mask="0000000000"/>
+        </package>
+        <package>
+                        <field row="13" col="26" type="NUMERIC" width="10" mask="0000000000"/>
+        </package>
+	<!-- ABONOS SEP-->
+	<package>
+                        <field row="14" col="13" type="NUMERIC" width="10" mask="0000000000"/>
+        </package>
+        <package>
+                        <field row="14" col="26" type="NUMERIC" width="10" mask="0000000000"/>
+        </package>
+	<!-- FIN -->
+
+	<package>
+			<field row="15" col="13" type="NUMERIC" width="10" mask="0000000000"/>
+	</package>
+	<package>
+			<field row="15" col="26" type="NUMERIC" width="10" mask="0000000000"/>
+	</package>
+	<package>
+			<field row="15" col="13" type="NUMERIC" width="10" mask="0000000000"/>
+	</package>
+	<package>
+			<field row="15" col="26" type="NUMERIC" width="10" mask="0000000000"/>
+	</package>
+	<package>
+			<field row="16" col="13" type="NUMERIC" width="10" mask="0000000000"/>
+	</package>
+	<package>
+			<field row="16" col="26" type="NUMERIC" width="10" mask="0000000000"/>
+	</package>
+	<package>
+			<field row="17" col="13" type="NUMERIC" width="10" mask="0000000000"/>
+	</package>
+	<package>
+			<field row="17" col="26" type="NUMERIC" width="10" mask="0000000000"/>
+	</package>
+	
+<!--      Cuerpo del reporte      -->	
+
+	<package>
+		<field row="last" separatorchar="SALDO ANTERIOR (Base caja):"  separatorcol="1"  incrementRow="true" col="2"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<field row="last" col="1" type="STRING">INGRESOS DEL TURNO</field>				
+	<package>
+		<field row="last" separatorchar="  F.POS (Efectivo):"  separatorcol="1"  incrementRow="true" col="10"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	
+	<package>
+                <field row="last" separatorchar="  SEPARADOS"  separatorcol="1"  incrementRow="true" col="10"  width="10" type="NUMERIC" mask="#,###,###" />
+        </package>
+	<package>
+                <field row="last" separatorchar="  ABONOS SEP."  separatorcol="1"  incrementRow="true" col="10"  width="10" type="NUMERIC" mask="#,###,###" />
+        </package>	
+
+	<package>
+		<field row="last" separatorchar="  F.MANUAL (Efectivo):"  separatorcol="1"  incrementRow="true" col="7"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="  O.INGRESOS (Efectivo):"  separatorcol="1"  incrementRow="true" col="5"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="  SUB TOTAL (Efectivo):"  separatorcol="1"  incrementRow="true" col="6"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<scp row="last" col="1" >NL</scp>
+	<package>
+		<field row="last" separatorchar="  F.POS (Credito):"  separatorcol="1"  incrementRow="true" col="11"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="  F.MANUAL (Credito):"  separatorcol="1"  incrementRow="true" col="8"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="  SUB TOTAL (Credito):"  separatorcol="1"  incrementRow="true" col="7"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="  TOTAL VENTA TURNO:"  separatorcol="1"  incrementRow="true" col="9"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<scp row="last" col="1" >NL</scp>
+	<field row="last" col="1" type="STRING">EGRESOS DEL TURNO</field>					
+	<package>
+		<field row="last" separatorchar="  VALES:"  separatorcol="1"  incrementRow="true" col="21"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="  COMPRAS:"  separatorcol="1"  incrementRow="true" col="19"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="  DEVOLUCIONES:"  separatorcol="1"  incrementRow="true" col="14"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="  TOTAL EGRESOS:"  separatorcol="1"  incrementRow="true" col="13"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<scp row="last" col="1" >NL</scp>
+	<package>
+		<field row="last" separatorchar="SALDO CAJA:"  separatorcol="1"  incrementRow="true" col="18"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="EFECTIVO ENTREGADO:"  separatorcol="1"  incrementRow="true" col="10"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<package>
+		<field row="last" separatorchar="DIFERENCIA:"  separatorcol="1"  incrementRow="true" col="18"  width="10" type="NUMERIC" mask="#,###,###" />
+	</package>
+	<scp row="last" col="1" >NL</scp>
+	<field row="last" col="1" type="STRING">OBSERVACIONES:</field>
+	<package>
+		<field row="last" col="1"  width="40"  height="4" type="TEXT"/>
+	</package>
+	<scp row="last" col="1" >NL</scp>
+	<scp row="last" col="1" >NL</scp>
+	<scp row="last" col="1" >NL</scp>
+	<scp row="last" col="1" >NL</scp>
+	<scp row="last" incrementRow="false" col="1">27</scp>
+	<scp row="last" incrementRow="false" col="2">105</scp>
+	<scp row="last" col="1" >NL</scp>
+	<field row="last" col="1" type="STRING">'</field>
+</emaku_template>

@@ -1,0 +1,50 @@
+<emaku_template type="POSTSCRIPT" requestNumeration="true" copies="1" silent="false" printer="EPSON_TM-T20">
+	<settings width="220" height="10000" />
+	<metadata>
+		<image row="1" col="10" width="100" height="75">/icons/logo_fac.png</image>
+		<field row="95" col="10" type="STRING">Marcas &amp; Tendencias COLOMBIA</field>
+		<barcodeImage row="100" col="10" />
+		<font row="0" col="0" name="Sans" size="8" />
+		<field row="200" col="5" type="STRING">RECARGA DE TARJETA REGALO MT</field>
+		<field row="210" col="5" type="STRING">Numero:</field>
+		<field row="220" col="5" type="STRING">Ipiales,</field>
+		<field row="230" col="5" type="STRING">Cajero:</field>
+		<field row="240" col="5" type="STRING">Hora:</field>
+		<ndocument row="210" col="40" />
+		<time row="240" col="33" />
+		<!-- Informacion detallada de productos -->
+		<line row="250" col="2" row2="250" col2="190" />
+		<field row="260" col="5" type="STRING">Tarjeta No:</field>
+		<field row="275" col="5" type="STRING">Saldo Anterior:</field>
+		<field row="290" col="5" type="STRING">Valor Recarga:</field>
+		<field row="305" col="5" type="STRING">Total Saldo:</field>
+		<line row="320" col="2" row2="320" col2="190" />
+	</metadata>
+	<package>
+		<field row="220" col="35" type="DATE" mask="EEEEEE dd MMMM yyyy" />
+	</package>
+	<package>
+		<field row="230" col="35" type="STRING" />
+	</package>
+	<package>
+		<field row="260" col="80" type="STRING" />
+	</package>
+	<package>
+		<field row="275" col="140" type="NUMERIC" mask="#,###,###.##" />
+	</package>
+	<package>
+		<field row="290" col="140" type="NUMERIC" mask="#,###,###.##" />
+	</package>
+	<package>
+		<field rowAcum="30" row="305" col="140" type="NUMERIC" mask="#,###,###.##" />
+	</package>
+	<package>
+		<text rowAcum="10" row="last" col="5" type="STRING">BERCELI MEDINA</text>
+		<text rowAcum="10" row="last" col="5" type="STRING">NIT: 79719543-2</text>
+		<text rowAcum="10" row="last" col="5" type="STRING">REGIMEN COMUN</text>
+		<text rowAcum="10" row="last" col="5" type="STRING">CRA 6 N° 13 - 87</text>
+		<text rowAcum="10" row="last" col="5" type="STRING">www.almacenmt.com</text>
+		<text rowAcum="10" row="last" col="5" type="STRING">almacenesmt@gmail.com</text>
+		<text rowAcum="20" row="last" col="5" type="STRING">IPIALES</text>
+	</package>
+</emaku_template>

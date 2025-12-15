@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emaku_template type="POSTSCRIPT" requestNumeration="false" copies="1" silent="false" printer="EPSON_TM-T20">
+<settings width="612" height="792" />
+
+	<metadata>
+		<!-- Poner en el metadata -->
+        <font row="0" col="0" name="Sans" size="3" />
+<!-- numeros vertical left-->
+        <field row="10" col="3" type="NUMERIC">10</field>
+        <field row="20" col="3" type="NUMERIC">20</field>
+        <field row="30" col="3" type="NUMERIC">30</field>
+        <field row="40" col="3" type="NUMERIC">40</field>
+        <field row="50" col="3" type="NUMERIC">50</field>
+        <field row="60" col="3" type="NUMERIC">60</field>
+        <field row="70" col="3" type="NUMERIC">70</field>
+        <field row="80" col="3" type="NUMERIC">80</field>
+        <field row="90" col="3" type="NUMERIC">90</field>
+        <field row="100" col="3" type="NUMERIC">100</field>
+        <field row="110" col="3" type="NUMERIC">110</field>
+        <field row="120" col="3" type="NUMERIC">120</field>
+        <field row="130" col="3" type="NUMERIC">130</field>
+        <field row="140" col="3" type="NUMERIC">140</field>
+        <field row="150" col="3" type="NUMERIC">150</field>
+        <field row="160" col="3" type="NUMERIC">160</field>
+        <field row="170" col="3" type="NUMERIC">170</field>
+        <field row="180" col="3" type="NUMERIC">180</field>
+        <field row="190" col="3" type="NUMERIC">190</field>
+        <field row="200" col="3" type="NUMERIC">200</field>
+        <field row="210" col="3" type="NUMERIC">210</field>
+        <field row="220" col="3" type="NUMERIC">220</field>
+        <field row="230" col="3" type="NUMERIC">230</field>
+        <field row="240" col="3" type="NUMERIC">240</field>
+        <field row="250" col="3" type="NUMERIC">250</field>
+        <field row="260" col="3" type="NUMERIC">260</field>
+        <field row="270" col="3" type="NUMERIC">270</field>
+        <field row="280" col="3" type="NUMERIC">280</field>
+        <field row="290" col="3" type="NUMERIC">290</field>
+        <field row="300" col="3" type="NUMERIC">300</field>
+        <field row="310" col="3" type="NUMERIC">310</field>
+        <field row="320" col="3" type="NUMERIC">320</field>
+        <field row="330" col="3" type="NUMERIC">330</field>
+        <field row="340" col="3" type="NUMERIC">340</field>
+        <field row="350" col="3" type="NUMERIC">350</field>
+        <field row="360" col="3" type="NUMERIC">360</field>
+        <field row="370" col="3" type="NUMERIC">370</field>
+        <field row="380" col="3" type="NUMERIC">380</field>
+        <field row="390" col="3" type="NUMERIC">390</field>
+        <field row="400" col="3" type="NUMERIC">400</field>
+        <field row="410" col="3" type="NUMERIC">410</field>
+        <field row="420" col="3" type="NUMERIC">420</field>
+        <field row="430" col="3" type="NUMERIC">430</field>
+        <field row="440" col="3" type="NUMERIC">440</field>
+        <field row="450" col="3" type="NUMERIC">450</field>
+        <field row="460" col="3" type="NUMERIC">460</field>
+        <field row="470" col="3" type="NUMERIC">470</field>
+        <field row="480" col="3" type="NUMERIC">480</field>
+        <field row="490" col="3" type="NUMERIC">490</field>
+        <field row="500" col="3" type="NUMERIC">500</field>
+        <field row="510" col="3" type="NUMERIC">510</field>
+        <field row="520" col="3" type="NUMERIC">520</field>
+        <field row="530" col="3" type="NUMERIC">530</field>
+        <field row="540" col="3" type="NUMERIC">540</field>
+        <field row="550" col="3" type="NUMERIC">550</field>
+        <field row="560" col="3" type="NUMERIC">560</field>
+        <field row="570" col="3" type="NUMERIC">570</field>
+        <field row="580" col="3" type="NUMERIC">580</field>
+        <field row="590" col="3" type="NUMERIC">590</field>
+        <field row="600" col="3" type="NUMERIC">600</field>
+        <field row="610" col="3" type="NUMERIC">610</field>
+        <field row="620" col="3" type="NUMERIC">620</field>
+        <field row="630" col="3" type="NUMERIC">630</field>
+        <field row="640" col="3" type="NUMERIC">640</field>
+        <field row="650" col="3" type="NUMERIC">650</field>
+        <field row="660" col="3" type="NUMERIC">660</field>
+        <field row="670" col="3" type="NUMERIC">670</field>
+        <field row="680" col="3" type="NUMERIC">680</field>
+        <field row="690" col="3" type="NUMERIC">690</field>
+        <field row="700" col="3" type="NUMERIC">700</field>
+        <field row="710" col="3" type="NUMERIC">710</field>
+        <field row="720" col="3" type="NUMERIC">720</field>
+        <field row="730" col="3" type="NUMERIC">730</field>
+        <field row="740" col="3" type="NUMERIC">740</field>
+        <field row="750" col="3" type="NUMERIC">750</field>
+        <field row="760" col="3" type="NUMERIC">760</field>
+        <field row="770" col="3" type="NUMERIC">770</field>
+        <field row="780" col="3" type="NUMERIC">780</field>
+
+        <!-- numeros vertical right -->
+        <field row="13" col="603" type="NUMERIC">10</field>
+        <field row="20" col="603" type="NUMERIC">20</field>
+        <field row="30" col="603" type="NUMERIC">30</field>
+        <field row="40" col="603" type="NUMERIC">40</field>
+        <field row="50" col="603" type="NUMERIC">50</field>
+        <field row="60" col="603" type="NUMERIC">60</field>
+        <field row="70" col="603" type="NUMERIC">70</field>
+        <field row="80" col="603" type="NUMERIC">80</field>
+        <field row="90" col="603" type="NUMERIC">90</field>
+        <field row="100" col="603" type="NUMERIC">100</field>
+        <field row="110" col="603" type="NUMERIC">110</field>
+        <field row="120" col="603" type="NUMERIC">120</field>
+        <field row="130" col="603" type="NUMERIC">130</field>
+        <field row="140" col="603" type="NUMERIC">140</field>
+        <field row="150" col="603" type="NUMERIC">150</field>
+        <field row="160" col="603" type="NUMERIC">160</field>
+        <field row="170" col="603" type="NUMERIC">170</field>
+        <field row="180" col="603" type="NUMERIC">180</field>
+        <field row="190" col="603" type="NUMERIC">190</field>
+        <field row="200" col="603" type="NUMERIC">200</field>
+        <field row="210" col="603" type="NUMERIC">210</field>
+        <field row="220" col="603" type="NUMERIC">220</field>
+        <field row="230" col="603" type="NUMERIC">230</field>
+        <field row="240" col="603" type="NUMERIC">240</field>
+        <field row="250" col="603" type="NUMERIC">250</field>
+        <field row="260" col="603" type="NUMERIC">260</field>
+        <field row="270" col="603" type="NUMERIC">270</field>
+        <field row="280" col="603" type="NUMERIC">280</field>
+        <field row="290" col="603" type="NUMERIC">290</field>
+        <field row="300" col="603" type="NUMERIC">300</field>
+        <field row="310" col="603" type="NUMERIC">310</field>
+        <field row="320" col="603" type="NUMERIC">320</field>
+        <field row="330" col="603" type="NUMERIC">330</field>
+        <field row="340" col="603" type="NUMERIC">340</field>
+        <field row="350" col="603" type="NUMERIC">350</field>
+        <field row="360" col="603" type="NUMERIC">360</field>
+        <field row="370" col="603" type="NUMERIC">370</field>
+        <field row="380" col="603" type="NUMERIC">380</field>
+        <field row="390" col="603" type="NUMERIC">390</field>
+        <field row="400" col="603" type="NUMERIC">400</field>
+        <field row="410" col="603" type="NUMERIC">410</field>
+        <field row="420" col="603" type="NUMERIC">420</field>
+        <field row="430" col="603" type="NUMERIC">430</field>
+        <field row="440" col="603" type="NUMERIC">440</field>
+        <field row="450" col="603" type="NUMERIC">450</field>
+        <field row="460" col="603" type="NUMERIC">460</field>
+        <field row="470" col="603" type="NUMERIC">470</field>
+        <field row="480" col="603" type="NUMERIC">480</field>
+        <field row="490" col="603" type="NUMERIC">490</field>
+        <field row="500" col="603" type="NUMERIC">500</field>
+        <field row="510" col="603" type="NUMERIC">510</field>
+        <field row="520" col="603" type="NUMERIC">520</field>
+        <field row="530" col="603" type="NUMERIC">530</field>
+        <field row="540" col="603" type="NUMERIC">540</field>
+        <field row="550" col="603" type="NUMERIC">550</field>
+        <field row="560" col="603" type="NUMERIC">560</field>
+        <field row="570" col="603" type="NUMERIC">570</field>
+        <field row="580" col="603" type="NUMERIC">580</field>
+        <field row="590" col="603" type="NUMERIC">590</field>
+        <field row="600" col="603" type="NUMERIC">600</field>
+        <field row="610" col="603" type="NUMERIC">610</field>
+        <field row="620" col="603" type="NUMERIC">620</field>
+        <field row="630" col="603" type="NUMERIC">630</field>
+        <field row="640" col="603" type="NUMERIC">640</field>
+        <field row="650" col="603" type="NUMERIC">650</field>
+        <field row="660" col="603" type="NUMERIC">660</field>
+        <field row="670" col="603" type="NUMERIC">670</field>
+        <field row="680" col="603" type="NUMERIC">680</field>
+        <field row="690" col="603" type="NUMERIC">690</field>
+        <field row="700" col="603" type="NUMERIC">700</field>
+        <field row="710" col="603" type="NUMERIC">710</field>
+        <field row="720" col="603" type="NUMERIC">720</field>
+        <field row="730" col="603" type="NUMERIC">730</field>
+        <field row="740" col="603" type="NUMERIC">740</field>
+        <field row="750" col="603" type="NUMERIC">750</field>
+        <field row="760" col="603" type="NUMERIC">760</field>
+        <field row="770" col="603" type="NUMERIC">770</field>
+        <field row="783" col="603" type="NUMERIC">780</field>
+
+        <!-- numeros horizontal up-->
+        <field col="10" row="9" type="NUMERIC">10</field>
+        <field col="20" row="9" type="NUMERIC">20</field>
+        <field col="30" row="9" type="NUMERIC">30</field>
+        <field col="40" row="9" type="NUMERIC">40</field>
+        <field col="50" row="9" type="NUMERIC">50</field>
+        <field col="60" row="9" type="NUMERIC">60</field>
+        <field col="70" row="9" type="NUMERIC">70</field>
+        <field col="80" row="9" type="NUMERIC">80</field>
+        <field col="90" row="9" type="NUMERIC">90</field>
+        <field col="100" row="9" type="NUMERIC">100</field>
+        <field col="110" row="9" type="NUMERIC">110</field>
+        <field col="120" row="9" type="NUMERIC">120</field>
+        <field col="130" row="9" type="NUMERIC">130</field>
+        <field col="140" row="9" type="NUMERIC">140</field>
+        <field col="150" row="9" type="NUMERIC">150</field>
+        <field col="160" row="9" type="NUMERIC">160</field>
+        <field col="170" row="9" type="NUMERIC">170</field>
+        <field col="180" row="9" type="NUMERIC">180</field>
+        <field col="190" row="9" type="NUMERIC">190</field>
+        <field col="200" row="9" type="NUMERIC">200</field>
+        <field col="210" row="9" type="NUMERIC">210</field>
+        <field col="220" row="9" type="NUMERIC">220</field>
+        <field col="230" row="9" type="NUMERIC">230</field>
+        <field col="240" row="9" type="NUMERIC">240</field>
+        <field col="250" row="9" type="NUMERIC">250</field>
+        <field col="260" row="9" type="NUMERIC">260</field>
+        <field col="270" row="9" type="NUMERIC">270</field>
+        <field col="280" row="9" type="NUMERIC">280</field>
+        <field col="290" row="9" type="NUMERIC">290</field>
+        <field col="300" row="9" type="NUMERIC">300</field>
+        <field col="310" row="9" type="NUMERIC">310</field>
+        <field col="320" row="9" type="NUMERIC">320</field>
+        <field col="330" row="9" type="NUMERIC">330</field>
+        <field col="340" row="9" type="NUMERIC">340</field>
+        <field col="350" row="9" type="NUMERIC">350</field>
+        <field col="360" row="9" type="NUMERIC">360</field>
+        <field col="370" row="9" type="NUMERIC">370</field>
+        <field col="380" row="9" type="NUMERIC">380</field>
+        <field col="390" row="9" type="NUMERIC">390</field>
+        <field col="400" row="9" type="NUMERIC">400</field>
+        <field col="410" row="9" type="NUMERIC">410</field>
+        <field col="420" row="9" type="NUMERIC">420</field>
+        <field col="430" row="9" type="NUMERIC">430</field>
+        <field col="440" row="9" type="NUMERIC">440</field>
+        <field col="450" row="9" type="NUMERIC">450</field>
+        <field col="460" row="9" type="NUMERIC">460</field>
+        <field col="470" row="9" type="NUMERIC">470</field>
+        <field col="480" row="9" type="NUMERIC">480</field>
+        <field col="490" row="9" type="NUMERIC">490</field>
+        <field col="500" row="9" type="NUMERIC">500</field>
+        <field col="510" row="9" type="NUMERIC">510</field>
+        <field col="520" row="9" type="NUMERIC">520</field>
+        <field col="530" row="9" type="NUMERIC">530</field>
+        <field col="540" row="9" type="NUMERIC">540</field>
+        <field col="550" row="9" type="NUMERIC">550</field>
+        <field col="560" row="9" type="NUMERIC">560</field>
+        <field col="570" row="9" type="NUMERIC">570</field>
+        <field col="580" row="9" type="NUMERIC">580</field>
+        <field col="590" row="9" type="NUMERIC">590</field>
+        <field col="600" row="9" type="NUMERIC">600</field>
+
+        <!-- numeros horizontal down-->
+        <field col="10" row="779" type="NUMERIC">10</field>
+        <field col="20" row="779" type="NUMERIC">20</field>
+        <field col="30" row="779" type="NUMERIC">30</field>
+        <field col="40" row="779" type="NUMERIC">40</field>
+        <field col="50" row="779" type="NUMERIC">50</field>
+        <field col="60" row="779" type="NUMERIC">60</field>
+        <field col="70" row="779" type="NUMERIC">70</field>
+        <field col="80" row="779" type="NUMERIC">80</field>
+        <field col="90" row="779" type="NUMERIC">90</field>
+        <field col="100" row="779" type="NUMERIC">100</field>
+        <field col="110" row="779" type="NUMERIC">110</field>
+        <field col="120" row="779" type="NUMERIC">120</field>
+        <field col="130" row="779" type="NUMERIC">130</field>
+        <field col="140" row="779" type="NUMERIC">140</field>
+        <field col="150" row="779" type="NUMERIC">150</field>
+        <field col="160" row="779" type="NUMERIC">160</field>
+        <field col="170" row="779" type="NUMERIC">170</field>
+        <field col="180" row="779" type="NUMERIC">180</field>
+        <field col="190" row="779" type="NUMERIC">190</field>
+        <field col="200" row="779" type="NUMERIC">200</field>
+        <field col="210" row="779" type="NUMERIC">210</field>
+        <field col="220" row="779" type="NUMERIC">220</field>
+        <field col="230" row="779" type="NUMERIC">230</field>
+        <field col="240" row="779" type="NUMERIC">240</field>
+        <field col="250" row="779" type="NUMERIC">250</field>
+        <field col="260" row="779" type="NUMERIC">260</field>
+        <field col="270" row="779" type="NUMERIC">270</field>
+        <field col="280" row="779" type="NUMERIC">280</field>
+        <field col="290" row="779" type="NUMERIC">290</field>
+        <field col="300" row="779" type="NUMERIC">300</field>
+        <field col="310" row="779" type="NUMERIC">310</field>
+        <field col="320" row="779" type="NUMERIC">320</field>
+        <field col="330" row="779" type="NUMERIC">330</field>
+        <field col="340" row="779" type="NUMERIC">340</field>
+        <field col="350" row="779" type="NUMERIC">350</field>
+        <field col="360" row="779" type="NUMERIC">360</field>
+        <field col="370" row="779" type="NUMERIC">370</field>
+        <field col="380" row="779" type="NUMERIC">380</field>
+        <field col="390" row="779" type="NUMERIC">390</field>
+        <field col="400" row="779" type="NUMERIC">400</field>
+        <field col="410" row="779" type="NUMERIC">410</field>
+        <field col="420" row="779" type="NUMERIC">420</field>
+        <field col="430" row="779" type="NUMERIC">430</field>
+        <field col="440" row="779" type="NUMERIC">440</field>
+        <field col="450" row="779" type="NUMERIC">450</field>
+        <field col="460" row="779" type="NUMERIC">460</field>
+        <field col="470" row="779" type="NUMERIC">470</field>
+        <field col="480" row="779" type="NUMERIC">480</field>
+        <field col="490" row="779" type="NUMERIC">490</field>
+        <field col="500" row="779" type="NUMERIC">500</field>
+        <field col="510" row="779" type="NUMERIC">510</field>
+        <field col="520" row="779" type="NUMERIC">520</field>
+        <field col="530" row="779" type="NUMERIC">530</field>
+        <field col="540" row="779" type="NUMERIC">540</field>
+        <field col="550" row="779" type="NUMERIC">550</field>
+        <field col="560" row="779" type="NUMERIC">560</field>
+        <field col="570" row="779" type="NUMERIC">570</field>
+        <field col="580" row="779" type="NUMERIC">580</field>
+        <field col="590" row="779" type="NUMERIC">590</field>
+        <field col="600" row="779" type="NUMERIC">600</field>
+
+        <!-- lineas horizontales -->
+        <line row="10" col="10" row2="10" col2="602" />
+        <line row="20" col="10" row2="20" col2="602" />
+        <line row="30" col="10" row2="30" col2="602" />
+        <line row="40" col="10" row2="40" col2="602" />
+        <line row="50" col="10" row2="50" col2="602" />
+        <line row="60" col="10" row2="60" col2="602" />
+        <line row="70" col="10" row2="70" col2="602" />
+        <line row="80" col="10" row2="80" col2="602" />
+        <line row="90" col="10" row2="90" col2="602" />
+        <line row="100" col="10" row2="100" col2="602" />
+        <line row="110" col="10" row2="110" col2="602" />
+        <line row="120" col="10" row2="120" col2="602" />
+        <line row="130" col="10" row2="130" col2="602" />
+        <line row="140" col="10" row2="140" col2="602" />
+        <line row="150" col="10" row2="150" col2="602" />
+        <line row="160" col="10" row2="160" col2="602" />
+        <line row="170" col="10" row2="170" col2="602" />
+        <line row="180" col="10" row2="180" col2="602" />
+        <line row="190" col="10" row2="190" col2="602" />
+        <line row="200" col="10" row2="200" col2="602" />
+        <line row="210" col="10" row2="210" col2="602" />
+        <line row="220" col="10" row2="220" col2="602" />
+        <line row="230" col="10" row2="230" col2="602" />
+        <line row="240" col="10" row2="240" col2="602" />
+        <line row="250" col="10" row2="250" col2="602" />
+        <line row="260" col="10" row2="260" col2="602" />
+        <line row="270" col="10" row2="270" col2="602" />
+        <line row="280" col="10" row2="280" col2="602" />
+        <line row="290" col="10" row2="290" col2="602" />
+        <line row="300" col="10" row2="300" col2="602" />
+        <line row="310" col="10" row2="310" col2="602" />
+        <line row="320" col="10" row2="320" col2="602" />
+        <line row="330" col="10" row2="330" col2="602" />
+        <line row="340" col="10" row2="340" col2="602" />
+        <line row="350" col="10" row2="350" col2="602" />
+        <line row="360" col="10" row2="360" col2="602" />
+        <line row="370" col="10" row2="370" col2="602" />
+        <line row="380" col="10" row2="380" col2="602" />
+        <line row="390" col="10" row2="390" col2="602" />
+        <line row="400" col="10" row2="400" col2="602" />
+        <line row="410" col="10" row2="410" col2="602" />
+        <line row="420" col="10" row2="420" col2="602" />
+        <line row="430" col="10" row2="430" col2="602" />
+        <line row="440" col="10" row2="440" col2="602" />
+        <line row="450" col="10" row2="450" col2="602" />
+        <line row="460" col="10" row2="460" col2="602" />
+        <line row="470" col="10" row2="470" col2="602" />
+        <line row="480" col="10" row2="480" col2="602" />
+        <line row="490" col="10" row2="490" col2="602" />
+        <line row="500" col="10" row2="500" col2="602" />
+        <line row="510" col="10" row2="510" col2="602" />
+        <line row="520" col="10" row2="520" col2="602" />
+        <line row="530" col="10" row2="530" col2="602" />
+        <line row="540" col="10" row2="540" col2="602" />
+        <line row="550" col="10" row2="550" col2="602" />
+        <line row="560" col="10" row2="560" col2="602" />
+        <line row="570" col="10" row2="570" col2="602" />
+        <line row="580" col="10" row2="580" col2="602" />
+        <line row="590" col="10" row2="590" col2="602" />
+        <line row="600" col="10" row2="600" col2="602" />
+        <line row="610" col="10" row2="610" col2="602" />
+        <line row="620" col="10" row2="620" col2="602" />
+        <line row="630" col="10" row2="630" col2="602" />
+        <line row="640" col="10" row2="640" col2="602" />
+        <line row="650" col="10" row2="650" col2="602" />
+        <line row="660" col="10" row2="660" col2="602" />
+        <line row="670" col="10" row2="670" col2="602" />
+        <line row="680" col="10" row2="680" col2="602" />
+        <line row="690" col="10" row2="690" col2="602" />
+        <line row="700" col="10" row2="700" col2="602" />
+        <line row="710" col="10" row2="710" col2="602" />
+        <line row="720" col="10" row2="720" col2="602" />
+        <line row="730" col="10" row2="730" col2="602" />
+        <line row="740" col="10" row2="740" col2="602" />
+        <line row="750" col="10" row2="750" col2="602" />
+        <line row="760" col="10" row2="760" col2="602" />
+        <line row="770" col="10" row2="770" col2="602" />       
+        <line row="780" col="10" row2="780" col2="602" />       
+
+        <!-- lineas verticales -->
+        <line col="10" row="10" col2="10" row2="782" />
+        <line col="20" row="10" col2="20" row2="782" />
+        <line col="30" row="10" col2="30" row2="782" />
+        <line col="40" row="10" col2="40" row2="782" />
+        <line col="50" row="10" col2="50" row2="782" />
+        <line col="60" row="10" col2="60" row2="782" />
+        <line col="70" row="10" col2="70" row2="782" />
+        <line col="80" row="10" col2="80" row2="782" />
+        <line col="90" row="10" col2="90" row2="782" />
+        <line col="100" row="10" col2="100" row2="782" />
+        <line col="110" row="10" col2="110" row2="782" />
+        <line col="120" row="10" col2="120" row2="782" />
+        <line col="130" row="10" col2="130" row2="782" />
+        <line col="140" row="10" col2="140" row2="782" />
+        <line col="150" row="10" col2="150" row2="782" />
+        <line col="160" row="10" col2="160" row2="782" />
+        <line col="170" row="10" col2="170" row2="782" />
+        <line col="180" row="10" col2="180" row2="782" />
+        <line col="190" row="10" col2="190" row2="782" />
+        <line col="200" row="10" col2="200" row2="782" />
+        <line col="210" row="10" col2="210" row2="782" />
+        <line col="220" row="10" col2="220" row2="782" />
+        <line col="230" row="10" col2="230" row2="782" />
+        <line col="240" row="10" col2="240" row2="782" />
+        <line col="250" row="10" col2="250" row2="782" />
+        <line col="260" row="10" col2="260" row2="782" />
+        <line col="270" row="10" col2="270" row2="782" />
+        <line col="280" row="10" col2="280" row2="782" />
+        <line col="290" row="10" col2="290" row2="782" />
+        <line col="300" row="10" col2="300" row2="782" />
+        <line col="310" row="10" col2="310" row2="782" />
+        <line col="320" row="10" col2="320" row2="782" />
+        <line col="330" row="10" col2="330" row2="782" />
+        <line col="340" row="10" col2="340" row2="782" />
+        <line col="350" row="10" col2="350" row2="782" />
+        <line col="360" row="10" col2="360" row2="782" />
+        <line col="370" row="10" col2="370" row2="782" />
+        <line col="380" row="10" col2="380" row2="782" />
+        <line col="390" row="10" col2="390" row2="782" />
+        <line col="400" row="10" col2="400" row2="782" />
+        <line col="410" row="10" col2="410" row2="782" />
+        <line col="420" row="10" col2="420" row2="782" />
+        <line col="430" row="10" col2="430" row2="782" />
+        <line col="440" row="10" col2="440" row2="782" />
+        <line col="450" row="10" col2="450" row2="782" />
+        <line col="460" row="10" col2="460" row2="782" />
+        <line col="470" row="10" col2="470" row2="782" />
+        <line col="480" row="10" col2="480" row2="782" />
+        <line col="490" row="10" col2="490" row2="782" />
+        <line col="500" row="10" col2="500" row2="782" />
+        <line col="510" row="10" col2="510" row2="782" />
+        <line col="520" row="10" col2="520" row2="782" />
+        <line col="530" row="10" col2="530" row2="782" />
+        <line col="540" row="10" col2="540" row2="782" />
+        <line col="550" row="10" col2="550" row2="782" />
+        <line col="560" row="10" col2="560" row2="782" />
+        <line col="570" row="10" col2="570" row2="782" />
+        <line col="580" row="10" col2="580" row2="782" />
+        <line col="590" row="10" col2="590" row2="782" />
+        <line col="600" row="10" col2="600" row2="782" />
+
+		
+		<!-- Encabezado -->
+		<image row="0" col="25" width="100" height="75">
+			/icons/logo_fac.png
+		</image>
+
+		<font row="0" col="0" name="Dialog" size="8" />
+		<field row="20" col="240" type="NAMEDB">nit</field>
+                <field row="30" col="240" type="NAMEDB">direccion</field>
+                <field row="40" col="240" type="NAMEDB">ciudad</field>
+
+		<!-- cuadros de la forma -->
+		<roundedRectangle row="85" col="20" width="565" height="695" />
+
+		<!-- Numero de documento -->
+
+		<font row="0" col="0" name="Dialog" size="12" />
+		<field row="57" col="240" type="STRING">DOCUMENTO SOPORTE EN GASTOS (Copia)</field>
+		<field row="71" col="240" type="Numero">NUMERO: SA -</field>
+		<font col="0" name="Dialog" row="0" size="8"/>
+		<field col="240" row="81" type="STRING">Este es un documento soporte en adquisiciones efectuadas a no obligados a facturar.</field>
+		<!-- <ndocument row="71" col="340" /> -->
+
+		<font row="0" col="0" name="Dialog" size="10" />
+		<field row="99" col="30" type="Numero">Fecha:</field>
+		<field row="99" col="270" type="Numero">Centrocosto:</field>
+		<field row="111" col="270" type="Numero">Subcentro:</field>
+		<field row="130" col="30" type="Numero">Tercero:</field>
+		<field row="150" col="390" type="Numero">VALOR $</field>
+		<field row="200" col="30" type="Numero">LA SUMA DE:</field>
+		<field row="223" col="79" type="Numero">Concepto</field>
+
+		<field row="532" col="25" type="Numero">
+			Forma de Pago: Efectivo[  ] Cheque[  ] Consignación[  ] Tarjeta[  ] Transferencia[  ] Cruce CxP[  ] 
+		</field>
+		<field row="550" col="50" type="Numero">Código</field>
+		<field row="550" col="160" type="Numero">Débitos</field>
+		<field row="550" col="265" type="Numero">Créditos</field>
+		<field row="760" col="25" type="Numero">Elaboro</field>
+		<field row="760" col="125" type="Numero">Aprobo</field>
+		<field row="760" col="245" type="Numero">Contabilizo</field>
+		<field row="775" col="360" type="Numero">Firma y Sello</field>
+		<!-- lineas horizontales -->
+		<line row="120" col="20" row2="120" col2="585" />
+		<line row="180" col="20" row2="180" col2="585" />
+		<line row="220" col="20" row2="220" col2="73" />
+		<line row="220" col="135" row2="220" col2="585" />
+
+		<line row="520" col="20" row2="520" col2="585" />
+		<line row="540" col="20" row2="540" col2="585" />
+		<line row="555" col="20" row2="555" col2="340" />
+		<line row="750" col="20" row2="750" col2="340" />
+		<line row="765" col="355" row2="765" col2="575" />
+		<!-- lineas verticales -->
+		<line row="540" col="120" row2="780" col2="120" />
+		<line row="540" col="240" row2="780" col2="240" />
+		<line row="540" col="340" row2="780" col2="340" />
+
+	</metadata>
+	<!-- 00 numero documento -->
+   	<package>
+		<field row="71" col="340" type="STRING" fontSize="10" fontName="Sans" />
+	</package>
+	<!-- 0 -->
+	<package>
+		<field row="99" col="70" type="DATE"
+			mask="EEEEEE, dd MMMM yyyy" />
+	</package>
+	<!-- 1 -->
+	<package>
+		<field row="144" col="30" type="STRING" />
+		<field row="154" col="30" type="STRING" />
+		<field row="164" col="30" type="STRING" />
+		<field row="174" col="30" type="STRING" />
+	</package>
+	<!-- 2 -->
+	<package>
+		<field row="150" col="550" width="18" type="NUMERIC"
+			mask="##,###,###,##0.00" />
+	</package>
+	<!-- 3 -->
+	<package>
+		<field row="200" col="105" type="NUMTOLETTERS" width="75"
+			height="2" rowAcum="12" />
+	</package>
+	<!-- 4 -->
+	<package>
+		<field row="240" col="30" width="108" height="150" type="TEXT" rowAcum="12" />
+	</package>
+	
+	<!-- 5 cc -->
+         <package>
+            <field row="99" col="390" type="STRING" />
+         </package>
+
+        <!-- 6 scc -->
+        <package>
+            <field row="111" col="390" type="STRING" />
+        </package>
+
+	<!-- 7 -->
+	<package>
+		<subpackage rowInit="565" rowAcum="10">
+			<field col="30" type="STRING" />
+			<field col="220" width="14" type="NUMERIC"
+				mask="##,###,###,###" />
+			<field col="320" width="14" type="NUMERIC"
+				mask="##,###,###,###" />
+		</subpackage>
+	</package>
+	<!-- resolucion facturacion -->
+        <!-- 8 -->
+        <package>
+                <field row="25" fontName="Dialog" fontSize="5" fontStyle="0" col="480" type="STRING" />
+        </package>
+        <!-- 9 -->
+        <package>
+                <field row="35" fontName="Dialog" fontSize="5" fontStyle="0" col="480" type="STRING" />
+        </package>
+        <!-- 10 -->
+        <package>
+                <field row="45" fontName="Dialog" fontSize="5" fontStyle="0" rowAcum="10" col="490" type="STRING" />
+        </package>
+        <!-- 11 -->
+        <package>
+                <field row="55" fontName="Dialog" fontSize="5" fontStyle="0" col="502" type="STRING" />
+        </package>
+        <!-- fin resolucion -->
+	<!-- 12 -->
+	<package>
+		<field row="532" col="151" type="STRING" /> <!--efectivo-->
+		<field row="532" col="206" type="STRING" /> <!--cheques-->
+		<field row="532" col="291" type="STRING" /> <!--consignacion-->
+		<field row="532" col="343" type="STRING" /> <!--tarjeta-->
+		<field row="532" col="428" type="STRING" /> <!--transferencia-->
+		<field row="532" col="499" type="STRING" /> <!--cruce cxp-->
+	</package>
+
+</emaku_template>

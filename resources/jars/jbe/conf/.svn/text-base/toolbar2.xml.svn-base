@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ToolBar>
+	<JToolBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>MTR00049</Transaction>
+			<Icon>/icons/ico_actividad_economica_32x32.png</Icon>
+			<ToolTipText>Editar Pventa de una Referencia</ToolTipText>
+		</JButtonBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>MTR00009</Transaction>
+			<Icon>/icons/ico_marca_registrada_32x32.png</Icon>
+			<ToolTipText>Marcas</ToolTipText>
+		</JButtonBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>MTR00006</Transaction>
+			<Icon>/icons/ico_colores_32x32.png</Icon>
+			<ToolTipText>Nuevo color</ToolTipText>
+		</JButtonBar>
+	</JToolBar>
+	<JToolBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>MTR00021</Transaction>
+			<Icon>/icons/ico_trm_32x32.png</Icon>
+			<ToolTipText>TRM</ToolTipText>
+		</JButtonBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>MTR00012</Transaction>
+			<Icon>/icons/ico_agrupar_color_32x32.png</Icon>
+			<ToolTipText>Grupo de colores</ToolTipText>
+		</JButtonBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>MTR00016</Transaction>
+			<Icon>/icons/ico_presentacion_32x32.png</Icon>
+			<ToolTipText>Nueva presentacion de productos</ToolTipText>
+		</JButtonBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>MTR00042</Transaction>
+			<Icon>/icons/ico_transporte_32x32.png</Icon>
+			<ToolTipText>Nueva Transportadora</ToolTipText>
+		</JButtonBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>MTR00002</Transaction>
+			<Icon>/icons/ico_talla_32x32.png</Icon>
+			<ToolTipText>Nueva Talla</ToolTipText>
+		</JButtonBar>
+	</JToolBar>
+	<JToolBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>MTR00052</Transaction>
+			<Icon>/icons/ico_inventario_maestro_32x32.png</Icon>
+			<ToolTipText>Maestro de Productos</ToolTipText>
+		</JButtonBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>MTR00053</Transaction>
+			<Icon>/icons/ico_compras_remision_32x32.png</Icon>
+			<ToolTipText>Compras Remisionadas</ToolTipText>
+		</JButtonBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>MTR00077</Transaction>
+			<Icon>/icons/ico_pago_remision_32x32.png</Icon>
+			<ToolTipText>Pago Remisiones</ToolTipText>
+		</JButtonBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>MTR00051</Transaction>
+			<Icon>/icons/ico_importar_x_plantilla_32x32.png</Icon>
+			<ToolTipText>Importar Plantilla de Compras</ToolTipText>
+		</JButtonBar>
+		</JToolBar>
+		<JToolBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>TR00284</Transaction>
+			<Icon>/icons/ico_vales_consumo_32x32.png</Icon>
+			<ToolTipText>Vales de Retiro</ToolTipText>
+		</JButtonBar>
+		</JToolBar>
+		<JToolBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>MTR00050</Transaction>
+			<Icon>/icons/ico_barra_manual_32x32.png</Icon>
+			<ToolTipText>Nuevo Item con barra manual</ToolTipText>
+		</JButtonBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>MTR00048</Transaction>
+			<Icon>/icons/ico_item_sin_barra_32x32.png</Icon>
+			<ToolTipText>Crear Item sin Barra</ToolTipText>
+		</JButtonBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>MTR00045</Transaction>
+			<Icon>/icons/ico_talla_color_32x32.png</Icon>
+			<ToolTipText>Editar Color y Talla</ToolTipText>
+		</JButtonBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>MTR00059</Transaction>
+			<Icon>/icons/ico_importar_productos_32x32.png</Icon>
+			<ToolTipText>Importar Productos</ToolTipText>
+		</JButtonBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>MTR00059</Transaction>
+			<Icon>/icons/ico_informe_grafico_32x32.png</Icon>
+			<ToolTipText>Informe Grafico</ToolTipText>
+		</JButtonBar>
+		</JToolBar>
+		<JToolBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>MTR00061</Transaction>
+			<Icon>/icons/ico_estado_pos_32x32.png</Icon>
+			<ToolTipText>Estado de Cajas</ToolTipText>
+		</JButtonBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>TR00001</Transaction>
+			<Icon>/icons/ico_concepto_causacion_32x32.png</Icon>
+			<ToolTipText>Conceptos de Causacion</ToolTipText>
+		</JButtonBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>TR00001</Transaction>
+			<Icon>/icons/ico_administrar_causacion_32x32.png</Icon>
+			<ToolTipText>ADMIN_CAUSACION</ToolTipText>
+		</JButtonBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>TR00001</Transaction>
+			<Icon>/icons/ico_causacion_nomina_32x32.png</Icon>
+			<ToolTipText>CAUSACION_NOMINA</ToolTipText>
+		</JButtonBar>
+		</JToolBar>
+		<JToolBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>TR00001</Transaction>
+			<Icon>/icons/mano.png</Icon>
+			<ToolTipText>mano</ToolTipText>
+		</JButtonBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>TR00001</Transaction>
+			<Icon>/icons/mano.png</Icon>
+			<ToolTipText>mano</ToolTipText>
+		</JButtonBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>TR00001</Transaction>
+			<Icon>/icons/mano.png</Icon>
+			<ToolTipText>mano</ToolTipText>
+		</JButtonBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>TR00001</Transaction>
+			<Icon>/icons/mano.png</Icon>
+			<ToolTipText>mano</ToolTipText>
+		</JButtonBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>TR00001</Transaction>
+			<Icon>/icons/mano.png</Icon>
+			<ToolTipText>mano</ToolTipText>
+		</JButtonBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>TR00001</Transaction>
+			<Icon>/icons/mano.png</Icon>
+			<ToolTipText>mano</ToolTipText>
+		</JButtonBar>
+		<JButtonBar>
+			<Activo />
+			<Transaction>TR00001</Transaction>
+			<Icon>/icons/mano.png</Icon>
+			<ToolTipText>mano</ToolTipText>
+		</JButtonBar>
+		</JToolBar>
+	</ToolBar>
