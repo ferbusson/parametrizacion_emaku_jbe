@@ -1,6 +1,6 @@
 <FORM>
   <preferences>
-    <size width="770" height="420" />
+    <size width="820" height="420" />
     <name>Nuevo item con Barra Autogenerada</name>
     <icon>NART</icon>
     <iconificable />
@@ -10,7 +10,6 @@
 <component>
     <driver id="idasientogenerico">client.gui.components.TableDataFields</driver>
     <parameters>
-        <arg attribute="linkTable">listas</arg>
         <arg attribute="keySQL">LCSEL0438</arg>
         <arg attribute="driverEvent" id="idasiento">client.gui.components.XMLComboBox</arg>          
       <subarg>
@@ -19,7 +18,7 @@
         <arg attribute="maxlength">26</arg>
         <arg attribute="alignment">RIGHT</arg>
         <arg attribute="exportValue">idasientogenerico</arg>
-        <arg attribute="keyExternalValue">aa</arg>
+        <arg attribute="keyExternalValue">x</arg>
         <arg attribute="background">196,196,252</arg>
       </subarg>
     </parameters>
@@ -213,34 +212,47 @@
       <panel locate="North" type="FlowLayout" />
       <panel locate="West" type="FlowLayout" />
       <panel locate="East" type="FlowLayout" />
-      <panel locate="Center" type="GridLayout" rows="2" cols="1">
-        <component>
-    <driver id="valorcosto">client.gui.components.TableDataFields</driver>
-    <parameters>
-        <arg attribute="linkTable">listas</arg>
-      <subarg>
-        <arg attribute="format">NUMERIC</arg>
-        <arg attribute="size">10</arg>
-        <arg attribute="maxlength">26</arg>
-        <arg attribute="alignment">RIGHT</arg>
-        <arg attribute="exportValue">valorcosto</arg>
-        <arg attribute="keyExternalValue">ab</arg>
-        <arg attribute="background">196,196,252</arg>
-      </subarg>
-    </parameters>
-  </component>            
-
+      <panel locate="Center" type="BorderLayout">
+      <panel locate="North" type="BorderLayout">
+        <component locate="North">
+          <driver id="valorcosto">client.gui.components.TableDataFields</driver>
+          <parameters>
+            <subarg>
+              <arg attribute="label">Costo:</arg>
+              <arg attribute="format">NUMERIC</arg>
+              <arg attribute="size">10</arg>
+              <arg attribute="maxlength">26</arg>
+              <arg attribute="alignment">RIGHT</arg>
+              <arg attribute="exportValue">valorcosto</arg>
+              <arg attribute="keyExternalValue">y</arg>
+              <arg attribute="background">94,234,212</arg>
+              <arg attribute="nameField">pcosto</arg>
+              <arg attribute="addAttribute">key</arg>
+            </subarg>
+          </parameters>
+        </component>  
         <component locate="South">
+            <driver>common.gui.components.XMLLabel</driver>
+            <parameters>
+              <arg attribute="text">Catálogos y Precios de Venta Por Lista</arg>
+              <arg attribute="alignment">0</arg>
+            </parameters>
+          </component>          
+      </panel>
+        <component locate="Center">
           <driver id="listas">client.gui.components.TableFindData</driver>
           <parameters>
             <arg attribute="rows">1</arg>
             <arg attribute="name">Listas</arg>
-            <arg attribute="externalValue">idasientogenerico,client.gui.components.TableDataFields,aa</arg>
-            <arg attribute="externalValue">valorcosto,client.gui.components.TableDataFields,ab</arg>
-            <arg attribute="beanshellNQ">e=b!=0?((b/(1+(aa/100))-ab)/(b/(1+(aa/100))))*100:0</arg> <!-- utilidad 2-->
-            <arg attribute="beanshellNQ">f=c!=0?((c/(1+(aa/100))-ab)/(c/(1+(aa/100))))*100:0</arg> <!-- utilidad 3-->
-            <arg attribute="beanshellNQ">g=d!=0?((d/(1+(aa/100))-ab)/(d/(1+(aa/100))))*100:0</arg> <!-- utilidad 3-->
-            <arg attribute="initSQL">JBSEL0042</arg>
+            <arg attribute="colorBackground">94,234,212</arg>
+            <arg attribute="externalValue">idasientogenerico,client.gui.components.TableDataFields,x</arg>
+            <arg attribute="externalValue">valorcosto,client.gui.components.TableDataFields,y</arg>
+            <arg attribute="beanshell">c=(b!=0&amp;&amp;y&gt;=0)?((b/(1+(x/100))-y)/(b/(1+(x/100))))*100:0</arg> <!-- utilidad 2-->
+            <arg attribute="beanshell">e=(d!=0&amp;&amp;y&gt;=0)?((d/(1+(x/100))-y)/(d/(1+(x/100))))*100:0</arg> <!-- utilidad 3-->
+            <arg attribute="beanshell">g=(f!=0&amp;&amp;y&gt;=0)?((f/(1+(x/100))-y)/(f/(1+(x/100))))*100:0</arg> <!-- utilidad 3-->
+            <arg attribute="sqlInit">JBSEL0042</arg>
+            <arg attribute="reload">true</arg>
+            <arg attribute="queryOnInit">true</arg> 
             <subarg> <!--0a-->
               <arg attribute="name">Catalogo / Lista</arg>
               <arg attribute="type">STRING</arg>
@@ -254,7 +266,15 @@
               <arg attribute="length">120</arg>
               <arg attribute="roundDecimal">0</arg>
               <arg attribute="enabled">true</arg>
-              <arg attribute="returnCol">3</arg>
+              <arg attribute="returnCol">0</arg>
+              <arg attribute="clean">true</arg>
+            </subarg>
+            <subarg> <!--4e-->
+              <arg attribute="name">%Ut. Mos</arg>
+              <arg attribute="type">DECIMAL</arg>
+              <arg attribute="length">75</arg>
+              <arg attribute="roundDecimal">2</arg>
+              <arg attribute="enabled">false</arg>
               <arg attribute="clean">true</arg>
             </subarg>
             <subarg><!--2c-->
@@ -263,7 +283,15 @@
               <arg attribute="length">120</arg>
               <arg attribute="roundDecimal">0</arg>
               <arg attribute="enabled">true</arg>
-              <arg attribute="returnCol">3</arg>
+              <arg attribute="returnCol">1</arg>
+              <arg attribute="clean">true</arg>
+            </subarg>
+            <subarg> <!--5f-->
+              <arg attribute="name">%Ut. Aba</arg>
+              <arg attribute="type">DECIMAL</arg>
+              <arg attribute="length">75</arg>
+              <arg attribute="roundDecimal">2</arg>
+              <arg attribute="enabled">false</arg>
               <arg attribute="clean">true</arg>
             </subarg>
             <subarg><!--3d-->
@@ -272,46 +300,23 @@
               <arg attribute="length">120</arg>
               <arg attribute="roundDecimal">0</arg>
               <arg attribute="enabled">true</arg>
-              <arg attribute="returnCol">4</arg>
-              <arg attribute="clean">true</arg>
-            </subarg>
-            <subarg> <!--4e-->
-              <arg attribute="name">%Ut. Mostrador</arg>
-              <arg attribute="type">DECIMAL</arg>
-              <arg attribute="length">75</arg>
-              <arg attribute="roundDecimal">2</arg>
-              <arg attribute="enabled">false</arg>
-              <arg attribute="clean">true</arg>
-            </subarg>
-            <subarg> <!--5f-->
-              <arg attribute="name">%Ut. Abanico</arg>
-              <arg attribute="type">DECIMAL</arg>
-              <arg attribute="length">75</arg>
-              <arg attribute="roundDecimal">2</arg>
-              <arg attribute="enabled">false</arg>
+              <arg attribute="returnCol">2</arg>
               <arg attribute="clean">true</arg>
             </subarg>
             <subarg> <!--6g-->
-              <arg attribute="name">%Ut. Base</arg>
+              <arg attribute="name">%Ut. Bas</arg>
               <arg attribute="type">DECIMAL</arg>
               <arg attribute="length">75</arg>
               <arg attribute="roundDecimal">2</arg>
               <arg attribute="enabled">false</arg>
               <arg attribute="clean">true</arg>
             </subarg>            
-            <subarg> <!--7h-->
-              <arg attribute="name">Costo</arg>
-              <arg attribute="type">DECIMAL</arg>
-              <arg attribute="length">75</arg>
-              <arg attribute="roundDecimal">2</arg>
-              <arg attribute="enabled">false</arg>
-              <arg attribute="clean">true</arg>
-            </subarg>            
-          <subarg> <!--8i -->
+          <subarg> <!--7h -->
               <arg attribute="name">id_catalogo</arg>
               <arg attribute="type">INTEGER</arg>
               <arg attribute="length">0</arg>
               <arg attribute="enabled">false</arg>
+              <arg attribute="returnCol">3</arg>
               <arg attribute="clean">true</arg>
             </subarg>            
           </parameters>
@@ -368,9 +373,14 @@
           <method>clean</method>
         </component>
         <component>
-          <driver id="barras">client.gui.components.TableFindData</driver>
+          <driver id="listas">client.gui.components.TableFindData</driver>
           <method>clean</method>
         </component>
+        <component>
+          <driver id="valorcosto">client.gui.components.TableDataFields</driver>
+          <method>clean</method>
+        </component>
+        
 
         <!--  limpiando llaves externas -->
         <component>
@@ -474,16 +484,26 @@
             <driver id="idasiento">client.gui.components.XMLComboBox</driver>
             <method>getPackage</method>
         </component>
+        <!--2 costo -->
+        <component>
+            <driver id="valorcosto">client.gui.components.TableDataFields</driver>
+            <method>getPackage</method>
+        </component>
         <!-- 2 -->
         <component>
-          <driver id="barras">client.gui.components.TableFindData</driver>
+          <driver id="listas">client.gui.components.TableFindData</driver>
+          <method>getBlankPackage</method>
+        </component>
+        <!-- 2 -->
+        <component>
+          <driver id="listas">client.gui.components.TableFindData</driver>
           <method>getPackage</method>
         </component>
         <!-- 3 inserta en items_pendientes_traslado para ser enviado por el cron -->
-        <component>
+        <!-- <component>
           <driver id="barras">client.gui.components.TableFindData</driver>
           <method>getBlankPackage</method>
-        </component>
+        </component> -->
       </object>
     </events>
   </component>

@@ -209,88 +209,136 @@
         </panel>
       </panel>
     </panel>
-    <panel name="Barras" icon="/icons/ico_codigo_barras_16x16.png" type="BorderLayout">
+    <panel name="Costo Y PVenta" icon="/icons/ico_codigo_barras_16x16.png" type="BorderLayout">
       <panel locate="North" type="FlowLayout" />
       <panel locate="West" type="FlowLayout" />
       <panel locate="East" type="FlowLayout" />
       <panel locate="Center" type="BorderLayout">
+      <panel locate="North" type="BorderLayout">
+        <panel locate="North" type="FlowLayout" align="0">
+          <component locate="North">
+            <driver id="valorcosto">client.gui.components.TableDataFields</driver>
+            <parameters>
+              <subarg>
+                <arg attribute="label">Costo:</arg>
+                <arg attribute="format">NUMERIC</arg>
+                <arg attribute="size">10</arg>
+                <arg attribute="maxlength">26</arg>
+                <arg attribute="alignment">RIGHT</arg>
+                <arg attribute="exportValue">valorcosto</arg>
+                <arg attribute="keyExternalValue">y</arg>
+                <arg attribute="background">94,234,212</arg>
+                <arg attribute="nameField">pcosto</arg>
+                <arg attribute="addAttribute">key</arg>
+              </subarg>
+            </parameters>
+          </component>  
+          <component locate="North">
+            <driver id="codigobarras">client.gui.components.TableDataFields</driver>
+            <parameters>
+              <subarg>
+                <arg attribute="label">Codigo barras:</arg>
+                <arg attribute="format">TEXT</arg>
+                <arg attribute="size">12</arg>
+                <arg attribute="maxlength">14</arg>
+                <arg attribute="alignment">RIGHT</arg>
+                <arg attribute="exportValue">codigobarras</arg>
+                <arg attribute="keyExternalValue">y</arg>
+                <arg attribute="background">94,234,212</arg>
+                <arg attribute="nameField">codigobarras</arg>
+                <arg attribute="addAttribute">key</arg>
+              </subarg>
+            </parameters>
+          </component>  
+        </panel>
+        <component locate="South">
+            <driver>common.gui.components.XMLLabel</driver>
+            <parameters>
+              <arg attribute="text">Catálogos y Precios de Venta Por Lista</arg>
+              <arg attribute="alignment">0</arg>
+            </parameters>
+          </component>          
+        </panel>
         <component locate="Center">
-          <driver id="barras">client.gui.components.TableFindData</driver>
+          <driver id="listas">client.gui.components.TableFindData</driver>
           <parameters>
-            <arg attribute="rows">2</arg>
-            <arg attribute="name">Barras</arg>
-            <arg attribute="externalValue">idasientogenerico,client.gui.components.TableDataFields,aa</arg>
-            <arg attribute="beanshellNQ">f=c!=0?((c/(1+(aa/100))-b)/(c/(1+(aa/100))))*100:0</arg> <!-- utilidad 1 -->
-            <arg attribute="beanshellNQ">g=d!=0?((d/(1+(aa/100))-b)/(d/(1+(aa/100))))*100:0</arg> <!-- utilidad 2 -->
-            <arg attribute="beanshellNQ">h=e!=0?((e/(1+(aa/100))-b)/(e/(1+(aa/100))))*100:0</arg> <!-- utilidad 3 -->
-            <subarg> <!-- a -->
-              <arg attribute="name">Barras</arg>
-              <arg attribute="length">130</arg>
+            <arg attribute="rows">1</arg>
+            <arg attribute="name">Listas</arg>
+            <arg attribute="colorBackground">94,234,212</arg>
+            <arg attribute="externalValue">idasientogenerico,client.gui.components.TableDataFields,x</arg>
+            <arg attribute="externalValue">valorcosto,client.gui.components.TableDataFields,y</arg>
+            <arg attribute="beanshell">c=(b!=0&amp;&amp;y&gt;=0)?((b/(1+(x/100))-y)/(b/(1+(x/100))))*100:0</arg> <!-- utilidad 2-->
+            <arg attribute="beanshell">e=(d!=0&amp;&amp;y&gt;=0)?((d/(1+(x/100))-y)/(d/(1+(x/100))))*100:0</arg> <!-- utilidad 3-->
+            <arg attribute="beanshell">g=(f!=0&amp;&amp;y&gt;=0)?((f/(1+(x/100))-y)/(f/(1+(x/100))))*100:0</arg> <!-- utilidad 3-->
+            <arg attribute="sqlInit">JBSEL0042</arg>
+            <arg attribute="reload">true</arg>
+            <arg attribute="queryOnInit">true</arg> 
+            <subarg> <!--0a-->
+              <arg attribute="name">Catalogo / Lista</arg>
               <arg attribute="type">STRING</arg>
-              <!-- <arg attribute="queryCol">0</arg> -->
+              <arg attribute="length">160</arg>
+              <arg attribute="enabled">FALSE</arg>
+              <arg attribute="clean">true</arg>
+            </subarg>
+            <subarg><!--1b-->
+              <arg attribute="name">Mostrador</arg>
+              <arg attribute="type">DECIMAL</arg>
+              <arg attribute="length">120</arg>
+              <arg attribute="roundDecimal">0</arg>
               <arg attribute="enabled">true</arg>
               <arg attribute="returnCol">0</arg>
+              <arg attribute="clean">true</arg>
             </subarg>
-            <subarg> <!-- b -->
-              <arg attribute="name">Costo</arg>
+            <subarg> <!--4e-->
+              <arg attribute="name">%Ut. Mos</arg>
               <arg attribute="type">DECIMAL</arg>
-              <arg attribute="length">100</arg>
-              <arg attribute="roundDecimal">0</arg>
+              <arg attribute="length">75</arg>
+              <arg attribute="roundDecimal">2</arg>
               <arg attribute="enabled">false</arg>
+              <arg attribute="clean">true</arg>
+            </subarg>
+            <subarg><!--2c-->
+              <arg attribute="name">Abanico</arg>
+              <arg attribute="type">DECIMAL</arg>
+              <arg attribute="length">120</arg>
+              <arg attribute="roundDecimal">0</arg>
+              <arg attribute="enabled">true</arg>
               <arg attribute="returnCol">1</arg>
               <arg attribute="clean">true</arg>
             </subarg>
-            <subarg> <!-- c -->
-              <arg attribute="name">Pventa1</arg>
+            <subarg> <!--5f-->
+              <arg attribute="name">%Ut. Aba</arg>
               <arg attribute="type">DECIMAL</arg>
-              <arg attribute="length">100</arg>
+              <arg attribute="length">75</arg>
+              <arg attribute="roundDecimal">2</arg>
+              <arg attribute="enabled">false</arg>
+              <arg attribute="clean">true</arg>
+            </subarg>
+            <subarg><!--3d-->
+              <arg attribute="name">Base</arg>
+              <arg attribute="type">DECIMAL</arg>
+              <arg attribute="length">120</arg>
               <arg attribute="roundDecimal">0</arg>
               <arg attribute="enabled">true</arg>
               <arg attribute="returnCol">2</arg>
               <arg attribute="clean">true</arg>
             </subarg>
-            <subarg> <!-- d -->
-              <arg attribute="name">Pventa2</arg>
+            <subarg> <!--6g-->
+              <arg attribute="name">%Ut. Bas</arg>
               <arg attribute="type">DECIMAL</arg>
-              <arg attribute="length">100</arg>
-              <arg attribute="roundDecimal">0</arg>
-              <arg attribute="enabled">true</arg>
+              <arg attribute="length">75</arg>
+              <arg attribute="roundDecimal">2</arg>
+              <arg attribute="enabled">false</arg>
+              <arg attribute="clean">true</arg>
+            </subarg>            
+          <subarg> <!--7h -->
+              <arg attribute="name">id_catalogo</arg>
+              <arg attribute="type">INTEGER</arg>
+              <arg attribute="length">0</arg>
+              <arg attribute="enabled">false</arg>
               <arg attribute="returnCol">3</arg>
               <arg attribute="clean">true</arg>
-            </subarg>
-            <subarg> <!-- e -->
-              <arg attribute="name">Pventa3</arg>
-              <arg attribute="type">DECIMAL</arg>
-              <arg attribute="length">100</arg>
-              <arg attribute="roundDecimal">0</arg>
-              <arg attribute="enabled">true</arg>
-              <arg attribute="returnCol">4</arg>
-              <arg attribute="clean">true</arg>
-            </subarg>
-            <subarg> <!-- f -->
-              <arg attribute="name">%Utilidad1</arg>
-              <arg attribute="type">DECIMAL</arg>
-              <arg attribute="length">75</arg>
-              <arg attribute="roundDecimal">2</arg>
-              <arg attribute="enabled">false</arg>              
-              <arg attribute="clean">true</arg>
-            </subarg>
-            <subarg> <!-- g -->
-              <arg attribute="name">%Utilidad2</arg>
-              <arg attribute="type">DECIMAL</arg>
-              <arg attribute="length">75</arg>
-              <arg attribute="roundDecimal">2</arg>
-              <arg attribute="enabled">false</arg>
-              <arg attribute="clean">true</arg>
-            </subarg>
-            <subarg> <!-- h -->
-              <arg attribute="name">%Utilidad3</arg>
-              <arg attribute="type">DECIMAL</arg>
-              <arg attribute="length">75</arg>
-              <arg attribute="roundDecimal">2</arg>
-              <arg attribute="enabled">false</arg>
-              <arg attribute="clean">true</arg>
-            </subarg>
+            </subarg>            
           </parameters>
         </component>
       </panel>
@@ -343,7 +391,7 @@
           <method>clean</method>
         </component>
         <component>
-          <driver id="barras">client.gui.components.TableFindData</driver>
+          <driver id="listas">client.gui.components.TableFindData</driver>
           <method>clean</method>
         </component>
 
@@ -449,16 +497,31 @@
             <driver id="idasiento">client.gui.components.XMLComboBox</driver>
             <method>getPackage</method>
         </component>
+        <!--2 costo -->
+        <component>
+            <driver id="valorcosto">client.gui.components.TableDataFields</driver>
+            <method>getPackage</method>
+        </component>
+        <component>
+            <driver id="codigobarras">client.gui.components.TableDataFields</driver>
+            <method>getPackage</method>
+        </component>
+        
         <!-- 2 -->
         <component>
-          <driver id="barras">client.gui.components.TableFindData</driver>
+          <driver id="listas">client.gui.components.TableFindData</driver>
+          <method>getBlankPackage</method>
+        </component>
+        <!-- 2 -->
+        <component>
+          <driver id="listas">client.gui.components.TableFindData</driver>
           <method>getPackage</method>
         </component>
         <!-- 3 inserta en items_pendientes_traslado para ser enviado por el cron -->
-        <component>
-          <driver id="barras">client.gui.components.TableFindData</driver>
+        <!-- <component>
+          <driver id="listas">client.gui.components.TableFindData</driver>
           <method>getBlankPackage</method>
-        </component>
+        </component> -->
       </object>
     </events>
   </component>
