@@ -1,0 +1,1187 @@
+<FORM>
+  <preferences>
+    <size width="1200" height="510" />
+    <name>Consultar Bodegas</name>
+    <icon>/icons/ico_comuna.png</icon>
+    <iconificable />
+    <resizable />
+    <closable />
+    <maximizable />
+
+    <!-- <exportValue>bprincipal,138</exportValue>
+    <exportValue>bunico,912</exportValue>
+    <exportValue>blascuadras,914</exportValue>
+    <exportValue>bipiales,918</exportValue> -->
+
+  </preferences>
+
+  <panel locate="North" type="FlowLayout" />
+  <panel locate="West" type="FlowLayout" />
+  <panel locate="East" type="FlowLayout" />
+  <panel locate="North" type="BorderLayout">
+  <panel locate="West" type="BorderLayout">
+      <panel locate="North" type="FlowLayout">
+          <component>
+            <driver>common.gui.components.XMLLabel</driver>
+            <parameters>
+              <arg attribute="text">Código Producto</arg>
+            </parameters>
+          </component>
+          <component>
+            <driver id="codigo">client.gui.components.EmakuSearchField</driver>
+            <parameters>
+              <arg attribute="size">20</arg>
+              <arg attribute="maxlength">26</arg>
+              <arg attribute="nullValue">true</arg>
+              <arg attribute="exportValue">keyword</arg>
+              <arg attribute="format">TEXT</arg>
+              <arg attribute="sqlCombo">MTSEL0083</arg>
+              <arg attribute="blankArgs">false</arg>
+              <arg attribute="keyDataSearch">searchProd</arg>
+              <arg attribute="repeatData">1</arg>
+              <arg attribute="noDataBeep">true</arg>
+              <arg attribute="noDataMessage">No se encontro registros</arg>
+              <arg attribute="selectedIndex">1</arg>
+              <arg attribute="enabled">true</arg>
+              <arg attribute="clean">true</arg>
+              <arg attribute="sqlCode">MTSEL0512</arg> <!-- Principal -->
+              <arg attribute="sqlCode">MTSEL0560</arg> <!-- Las Cuadras -->
+              <arg attribute="sqlCode">MTSEL0565</arg> <!-- Gran Plaza -->
+              <arg attribute="sqlCode">MTSEL0586</arg> <!-- Unico -->
+              <arg attribute="sqlCode">LCSEL0527</arg> <!-- Las Americas -->
+              <arg attribute="sqlCode">LCSEL0528</arg> <!-- Bodega -->
+              <arg attribute="sqlCode">LCSEL0529</arg> <!-- Cali Web -->
+              <arg attribute="sqlCode">LCSEL0530</arg> <!-- Mercado Libre -->
+              <arg attribute="sqlCode">LCSEL0531</arg> <!-- Linio -->
+            </parameters>
+          </component>
+        </panel>
+      </panel>
+</panel>
+      <tab>
+      <panel locate="Center" type="BorderLayout" name="Principal" icon="/icons/ico_checkin.png">
+      <component locate="Center">
+        <driver id="principal">client.gui.components.TableFindData</driver>
+        <parameters>
+          <arg attribute="keySQL">MTSEL0512</arg>
+          <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+          <arg attribute="rows">100</arg>
+          <!-- <arg attribute="importValue">bprincipal</arg>
+          <arg attribute="Query">LCSEL0160</arg> -->
+          <arg attribute="colorBackground">225,247,235</arg>
+          <arg attribute="colorSelected">66,199,126</arg>
+          <arg attribute="protectSelected">true</arg>
+          <subarg><!--0 a-->
+            <arg attribute="name">CODE</arg>
+            <arg attribute="length">115</arg>
+            <arg attribute="type">DATASEARCH</arg>
+            <arg attribute="sqlCombo">LCSEL0253</arg>
+            <arg attribute="keyDataSearch">searchp</arg>
+            <arg attribute="repeatData">1</arg>
+            <arg attribute="noDataBeep">true</arg>
+            <arg attribute="noDataMessage">No se encontro registros</arg>
+            <arg attribute="selectedIndex">1</arg>
+            <arg attribute="printable">true</arg>
+            <arg attribute="enabled">true</arg>
+            <arg attribute="clean">true</arg>
+          </subarg>
+          <subarg><!-- 1 -->
+            <arg attribute="name">Referencia</arg>
+            <arg attribute="length">105</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="printable">true</arg>
+            <arg attribute="returnCol">1</arg>
+            <arg attribute="queryCol">1</arg>
+          </subarg>
+          <subarg><!-- 2 -->
+            <arg attribute="name">Descripcion</arg>
+            <arg attribute="length">260</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="queryCol">2</arg>
+          </subarg>
+          <subarg><!-- 3 -->
+            <arg attribute="name">SALDO</arg>
+            <arg attribute="length">50</arg>
+            <arg attribute="type">INTEGER</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">3</arg>
+          </subarg>          
+          <subarg><!-- 4 -->
+            <arg attribute="name">Línea</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">4</arg>
+          </subarg>
+          <subarg><!-- 5 -->
+            <arg attribute="name">Grupo</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">5</arg>
+          </subarg>
+          <subarg><!-- 6 -->
+            <arg attribute="name">Subgrupo</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">6</arg>
+          </subarg>
+          <subarg><!-- 7 -->
+            <arg attribute="name">Marca</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">7</arg>
+          </subarg>
+          <subarg><!-- 8 -->
+            <arg attribute="name">Submarca</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">8</arg>
+          </subarg>
+          <subarg><!-- 11 -->
+            <arg attribute="name">Pventa 1</arg>
+            <arg attribute="length">80</arg>
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">11</arg>
+          </subarg>
+          <subarg><!-- 12 -->
+            <arg attribute="name">Pventa 2</arg>
+            <arg attribute="length">80</arg>
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">12</arg>
+          </subarg>
+          <subarg><!-- 13 -->
+            <arg attribute="name">idprodserv</arg>
+            <arg attribute="length">0</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">13</arg>
+          </subarg>
+        </parameters>
+      </component>
+    </panel>
+    <panel locate="Center" type="BorderLayout" name="Las Americas" icon="/icons/ico_checkin.png">
+      <component locate="Center">
+        <driver id="americas">client.gui.components.TableFindData</driver>
+        <parameters>
+          <arg attribute="keySQL">LCSEL0527</arg>
+          <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+          <arg attribute="rows">100</arg>
+          <!-- <arg attribute="importValue">bprincipal</arg>
+          <arg attribute="Query">LCSEL0160</arg> -->
+          <arg attribute="colorBackground">225,247,235</arg>
+          <arg attribute="colorSelected">66,199,126</arg>
+          <arg attribute="protectSelected">true</arg>
+          <subarg><!--0 a-->
+            <arg attribute="name">CODE</arg>
+            <arg attribute="length">115</arg>
+            <arg attribute="type">DATASEARCH</arg>
+            <arg attribute="sqlCombo">LCSEL0253</arg>
+            <arg attribute="keyDataSearch">searchp</arg>
+            <arg attribute="repeatData">1</arg>
+            <arg attribute="noDataBeep">true</arg>
+            <arg attribute="noDataMessage">No se encontro registros</arg>
+            <arg attribute="selectedIndex">1</arg>
+            <arg attribute="printable">true</arg>
+            <arg attribute="enabled">true</arg>
+            <arg attribute="clean">true</arg>
+          </subarg>
+          <subarg><!-- 1 -->
+            <arg attribute="name">Referencia</arg>
+            <arg attribute="length">105</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="printable">true</arg>
+            <arg attribute="returnCol">1</arg>
+            <arg attribute="queryCol">1</arg>
+          </subarg>
+          <subarg><!-- 2 -->
+            <arg attribute="name">Descripcion</arg>
+            <arg attribute="length">260</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="queryCol">2</arg>
+          </subarg>
+          <subarg><!-- 3 -->
+            <arg attribute="name">SALDO</arg>
+            <arg attribute="length">50</arg>
+            <arg attribute="type">INTEGER</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">3</arg>
+          </subarg>          
+          <subarg><!-- 4 -->
+            <arg attribute="name">Línea</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">4</arg>
+          </subarg>
+          <subarg><!-- 5 -->
+            <arg attribute="name">Grupo</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">5</arg>
+          </subarg>
+          <subarg><!-- 6 -->
+            <arg attribute="name">Subgrupo</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">6</arg>
+          </subarg>
+          <subarg><!-- 7 -->
+            <arg attribute="name">Marca</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">7</arg>
+          </subarg>
+          <subarg><!-- 8 -->
+            <arg attribute="name">Submarca</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">8</arg>
+          </subarg>
+          <subarg><!-- 11 -->
+            <arg attribute="name">Pventa 1</arg>
+            <arg attribute="length">80</arg>
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">11</arg>
+          </subarg>
+          <subarg><!-- 12 -->
+            <arg attribute="name">Pventa 2</arg>
+            <arg attribute="length">80</arg>
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">12</arg>
+          </subarg>
+          <subarg><!-- 13 -->
+            <arg attribute="name">idprodserv</arg>
+            <arg attribute="length">0</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">13</arg>
+          </subarg>
+        </parameters>
+      </component>
+    </panel>
+    <panel locate="Center" type="BorderLayout" name="Bodega" icon="/icons/ico_checkin.png">
+      <component locate="Center">
+        <driver id="bodega">client.gui.components.TableFindData</driver>
+        <parameters>
+          <arg attribute="keySQL">LCSEL0528</arg>
+          <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+          <arg attribute="rows">100</arg>
+          <!-- <arg attribute="importValue">bprincipal</arg>
+          <arg attribute="Query">LCSEL0160</arg> -->
+          <arg attribute="colorBackground">225,247,235</arg>
+          <arg attribute="colorSelected">66,199,126</arg>
+          <arg attribute="protectSelected">true</arg>
+          <subarg><!--0 a-->
+            <arg attribute="name">CODE</arg>
+            <arg attribute="length">115</arg>
+            <arg attribute="type">DATASEARCH</arg>
+            <arg attribute="sqlCombo">LCSEL0253</arg>
+            <arg attribute="keyDataSearch">searchp</arg>
+            <arg attribute="repeatData">1</arg>
+            <arg attribute="noDataBeep">true</arg>
+            <arg attribute="noDataMessage">No se encontro registros</arg>
+            <arg attribute="selectedIndex">1</arg>
+            <arg attribute="printable">true</arg>
+            <arg attribute="enabled">true</arg>
+            <arg attribute="clean">true</arg>
+          </subarg>
+          <subarg><!-- 1 -->
+            <arg attribute="name">Referencia</arg>
+            <arg attribute="length">105</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="printable">true</arg>
+            <arg attribute="returnCol">1</arg>
+            <arg attribute="queryCol">1</arg>
+          </subarg>
+          <subarg><!-- 2 -->
+            <arg attribute="name">Descripcion</arg>
+            <arg attribute="length">260</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="queryCol">2</arg>
+          </subarg>
+          <subarg><!-- 3 -->
+            <arg attribute="name">SALDO</arg>
+            <arg attribute="length">50</arg>
+            <arg attribute="type">INTEGER</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">3</arg>
+          </subarg>          
+          <subarg><!-- 4 -->
+            <arg attribute="name">Línea</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">4</arg>
+          </subarg>
+          <subarg><!-- 5 -->
+            <arg attribute="name">Grupo</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">5</arg>
+          </subarg>
+          <subarg><!-- 6 -->
+            <arg attribute="name">Subgrupo</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">6</arg>
+          </subarg>
+          <subarg><!-- 7 -->
+            <arg attribute="name">Marca</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">7</arg>
+          </subarg>
+          <subarg><!-- 8 -->
+            <arg attribute="name">Submarca</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">8</arg>
+          </subarg>
+          <subarg><!-- 11 -->
+            <arg attribute="name">Pventa 1</arg>
+            <arg attribute="length">80</arg>
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">11</arg>
+          </subarg>
+          <subarg><!-- 12 -->
+            <arg attribute="name">Pventa 2</arg>
+            <arg attribute="length">80</arg>
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">12</arg>
+          </subarg>
+          <subarg><!-- 13 -->
+            <arg attribute="name">idprodserv</arg>
+            <arg attribute="length">0</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">13</arg>
+          </subarg>
+        </parameters>
+      </component>
+    </panel>
+        <panel locate="Center" type="BorderLayout" name="La Cali Web" icon="/icons/ico_checkin.png">
+      <component locate="Center">
+        <driver id="caliweb">client.gui.components.TableFindData</driver>
+        <parameters>
+          <arg attribute="keySQL">LCSEL0529</arg>
+          <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+          <arg attribute="rows">100</arg>
+          <!-- <arg attribute="importValue">bprincipal</arg>
+          <arg attribute="Query">LCSEL0160</arg> -->
+          <arg attribute="colorBackground">225,247,235</arg>
+          <arg attribute="colorSelected">66,199,126</arg>
+          <arg attribute="protectSelected">true</arg>
+          <subarg><!--0 a-->
+            <arg attribute="name">CODE</arg>
+            <arg attribute="length">115</arg>
+            <arg attribute="type">DATASEARCH</arg>
+            <arg attribute="sqlCombo">LCSEL0253</arg>
+            <arg attribute="keyDataSearch">searchp</arg>
+            <arg attribute="repeatData">1</arg>
+            <arg attribute="noDataBeep">true</arg>
+            <arg attribute="noDataMessage">No se encontro registros</arg>
+            <arg attribute="selectedIndex">1</arg>
+            <arg attribute="printable">true</arg>
+            <arg attribute="enabled">true</arg>
+            <arg attribute="clean">true</arg>
+          </subarg>
+          <subarg><!-- 1 -->
+            <arg attribute="name">Referencia</arg>
+            <arg attribute="length">105</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="printable">true</arg>
+            <arg attribute="returnCol">1</arg>
+            <arg attribute="queryCol">1</arg>
+          </subarg>
+          <subarg><!-- 2 -->
+            <arg attribute="name">Descripcion</arg>
+            <arg attribute="length">260</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="queryCol">2</arg>
+          </subarg>
+          <subarg><!-- 3 -->
+            <arg attribute="name">SALDO</arg>
+            <arg attribute="length">50</arg>
+            <arg attribute="type">INTEGER</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">3</arg>
+          </subarg>          
+          <subarg><!-- 4 -->
+            <arg attribute="name">Línea</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">4</arg>
+          </subarg>
+          <subarg><!-- 5 -->
+            <arg attribute="name">Grupo</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">5</arg>
+          </subarg>
+          <subarg><!-- 6 -->
+            <arg attribute="name">Subgrupo</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">6</arg>
+          </subarg>
+          <subarg><!-- 7 -->
+            <arg attribute="name">Marca</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">7</arg>
+          </subarg>
+          <subarg><!-- 8 -->
+            <arg attribute="name">Submarca</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">8</arg>
+          </subarg>
+          <subarg><!-- 11 -->
+            <arg attribute="name">Pventa 1</arg>
+            <arg attribute="length">80</arg>
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">11</arg>
+          </subarg>
+          <subarg><!-- 12 -->
+            <arg attribute="name">Pventa 2</arg>
+            <arg attribute="length">80</arg>
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">12</arg>
+          </subarg>
+          <subarg><!-- 13 -->
+            <arg attribute="name">idprodserv</arg>
+            <arg attribute="length">0</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">13</arg>
+          </subarg>
+        </parameters>
+      </component>
+    </panel>
+    <panel locate="Center" type="BorderLayout" name="Falabella" icon="/icons/ico_checkin.png">
+      <component locate="Center">
+        <driver id="mercadolibre">client.gui.components.TableFindData</driver>
+        <parameters>
+          <arg attribute="keySQL">LCSEL0530</arg>
+          <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+          <arg attribute="rows">100</arg>
+          <!-- <arg attribute="importValue">bprincipal</arg>
+          <arg attribute="Query">LCSEL0160</arg> -->
+          <arg attribute="colorBackground">225,247,235</arg>
+          <arg attribute="colorSelected">66,199,126</arg>
+          <arg attribute="protectSelected">true</arg>
+          <subarg><!--0 a-->
+            <arg attribute="name">CODE</arg>
+            <arg attribute="length">115</arg>
+            <arg attribute="type">DATASEARCH</arg>
+            <arg attribute="sqlCombo">LCSEL0253</arg>
+            <arg attribute="keyDataSearch">searchp</arg>
+            <arg attribute="repeatData">1</arg>
+            <arg attribute="noDataBeep">true</arg>
+            <arg attribute="noDataMessage">No se encontro registros</arg>
+            <arg attribute="selectedIndex">1</arg>
+            <arg attribute="printable">true</arg>
+            <arg attribute="enabled">true</arg>
+            <arg attribute="clean">true</arg>
+          </subarg>
+          <subarg><!-- 1 -->
+            <arg attribute="name">Referencia</arg>
+            <arg attribute="length">105</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="printable">true</arg>
+            <arg attribute="returnCol">1</arg>
+            <arg attribute="queryCol">1</arg>
+          </subarg>
+          <subarg><!-- 2 -->
+            <arg attribute="name">Descripcion</arg>
+            <arg attribute="length">260</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="queryCol">2</arg>
+          </subarg>
+          <subarg><!-- 3 -->
+            <arg attribute="name">SALDO</arg>
+            <arg attribute="length">50</arg>
+            <arg attribute="type">INTEGER</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">3</arg>
+          </subarg>          
+          <subarg><!-- 4 -->
+            <arg attribute="name">Línea</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">4</arg>
+          </subarg>
+          <subarg><!-- 5 -->
+            <arg attribute="name">Grupo</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">5</arg>
+          </subarg>
+          <subarg><!-- 6 -->
+            <arg attribute="name">Subgrupo</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">6</arg>
+          </subarg>
+          <subarg><!-- 7 -->
+            <arg attribute="name">Marca</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">7</arg>
+          </subarg>
+          <subarg><!-- 8 -->
+            <arg attribute="name">Submarca</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">8</arg>
+          </subarg>
+          <subarg><!-- 11 -->
+            <arg attribute="name">Pventa 1</arg>
+            <arg attribute="length">80</arg>
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">11</arg>
+          </subarg>
+          <subarg><!-- 12 -->
+            <arg attribute="name">Pventa 2</arg>
+            <arg attribute="length">80</arg>
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">12</arg>
+          </subarg>
+          <subarg><!-- 13 -->
+            <arg attribute="name">idprodserv</arg>
+            <arg attribute="length">0</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">13</arg>
+          </subarg>
+        </parameters>
+      </component>
+    </panel>
+    <panel locate="Center" type="BorderLayout" name="Linio" icon="/icons/ico_checkin.png">
+      <component locate="Center">
+        <driver id="linio">client.gui.components.TableFindData</driver>
+        <parameters>
+          <arg attribute="keySQL">LCSEL0531</arg>
+          <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+          <arg attribute="rows">100</arg>
+          <!-- <arg attribute="importValue">bprincipal</arg>
+          <arg attribute="Query">LCSEL0160</arg> -->
+          <arg attribute="colorBackground">225,247,235</arg>
+          <arg attribute="colorSelected">66,199,126</arg>
+          <arg attribute="protectSelected">true</arg>
+          <subarg><!--0 a-->
+            <arg attribute="name">CODE</arg>
+            <arg attribute="length">115</arg>
+            <arg attribute="type">DATASEARCH</arg>
+            <arg attribute="sqlCombo">LCSEL0253</arg>
+            <arg attribute="keyDataSearch">searchp</arg>
+            <arg attribute="repeatData">1</arg>
+            <arg attribute="noDataBeep">true</arg>
+            <arg attribute="noDataMessage">No se encontro registros</arg>
+            <arg attribute="selectedIndex">1</arg>
+            <arg attribute="printable">true</arg>
+            <arg attribute="enabled">true</arg>
+            <arg attribute="clean">true</arg>
+          </subarg>
+          <subarg><!-- 1 -->
+            <arg attribute="name">Referencia</arg>
+            <arg attribute="length">105</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="printable">true</arg>
+            <arg attribute="returnCol">1</arg>
+            <arg attribute="queryCol">1</arg>
+          </subarg>
+          <subarg><!-- 2 -->
+            <arg attribute="name">Descripcion</arg>
+            <arg attribute="length">260</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="queryCol">2</arg>
+          </subarg>
+          <subarg><!-- 3 -->
+            <arg attribute="name">SALDO</arg>
+            <arg attribute="length">50</arg>
+            <arg attribute="type">INTEGER</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">3</arg>
+          </subarg>          
+          <subarg><!-- 4 -->
+            <arg attribute="name">Línea</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">4</arg>
+          </subarg>
+          <subarg><!-- 5 -->
+            <arg attribute="name">Grupo</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">5</arg>
+          </subarg>
+          <subarg><!-- 6 -->
+            <arg attribute="name">Subgrupo</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">6</arg>
+          </subarg>
+          <subarg><!-- 7 -->
+            <arg attribute="name">Marca</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">7</arg>
+          </subarg>
+          <subarg><!-- 8 -->
+            <arg attribute="name">Submarca</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">8</arg>
+          </subarg>
+          <subarg><!-- 11 -->
+            <arg attribute="name">Pventa 1</arg>
+            <arg attribute="length">80</arg>
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">11</arg>
+          </subarg>
+          <subarg><!-- 12 -->
+            <arg attribute="name">Pventa 2</arg>
+            <arg attribute="length">80</arg>
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">12</arg>
+          </subarg>
+          <subarg><!-- 13 -->
+            <arg attribute="name">idprodserv</arg>
+            <arg attribute="length">0</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">13</arg>
+          </subarg>
+        </parameters>
+      </component>
+    </panel>
+
+      <panel locate="Center" type="BorderLayout" name="Las Cuadras" icon="/icons/ico_checkin.png">
+        <component locate="Center">
+          <driver id="lascuadras">client.gui.components.TableFindData</driver>
+          <parameters>
+            <arg attribute="keySQL">MTSEL0560</arg>
+            <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+            <arg attribute="rows">100</arg>
+            <!-- <arg attribute="importValue">blascuadras</arg>
+            <arg attribute="Query">LCSEL0198</arg> -->
+            <arg attribute="colorBackground">225,247,235</arg>
+          <arg attribute="colorSelected">66,199,126</arg>
+            <arg attribute="protectSelected">true</arg>
+          <subarg><!--0 a-->
+            <arg attribute="name">CODE</arg>
+            <arg attribute="length">115</arg>
+            <arg attribute="type">DATASEARCH</arg>
+            <arg attribute="sqlCombo">LCSEL0253</arg>
+            <arg attribute="keyDataSearch">searchp</arg>
+            <arg attribute="repeatData">1</arg>
+            <arg attribute="noDataBeep">true</arg>
+            <arg attribute="noDataMessage">No se encontro registros</arg>
+            <arg attribute="selectedIndex">1</arg>
+            <arg attribute="printable">true</arg>
+            <arg attribute="enabled">true</arg>
+            <arg attribute="clean">true</arg>
+          </subarg>
+          <subarg><!-- 1 -->
+            <arg attribute="name">Referencia</arg>
+            <arg attribute="length">105</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="printable">true</arg>
+            <arg attribute="returnCol">1</arg>
+            <arg attribute="queryCol">1</arg>
+          </subarg>
+          <subarg><!-- 2 -->
+            <arg attribute="name">Descripcion</arg>
+            <arg attribute="length">260</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="queryCol">2</arg>
+          </subarg>
+          <subarg><!-- 3 -->
+            <arg attribute="name">SALDO</arg>
+            <arg attribute="length">50</arg>
+            <arg attribute="type">INTEGER</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">3</arg>
+          </subarg>          
+          <subarg><!-- 4 -->
+            <arg attribute="name">Línea</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">4</arg>
+          </subarg>
+          <subarg><!-- 5 -->
+            <arg attribute="name">Grupo</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">5</arg>
+          </subarg>
+          <subarg><!-- 6 -->
+            <arg attribute="name">Subgrupo</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">6</arg>
+          </subarg>
+          <subarg><!-- 7 -->
+            <arg attribute="name">Marca</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">7</arg>
+          </subarg>
+          <subarg><!-- 8 -->
+            <arg attribute="name">Submarca</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">8</arg>
+          </subarg>
+          <subarg><!-- 11 -->
+            <arg attribute="name">Pventa 1</arg>
+            <arg attribute="length">80</arg>
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">11</arg>
+          </subarg>
+          <subarg><!-- 12 -->
+            <arg attribute="name">Pventa 2</arg>
+            <arg attribute="length">80</arg>
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">12</arg>
+          </subarg>
+          <subarg><!-- 13 -->
+            <arg attribute="name">idprodserv</arg>
+            <arg attribute="length">0</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">13</arg>
+          </subarg>
+          </parameters>
+        </component>
+      </panel>
+
+      <panel locate="Center" type="BorderLayout" name="Gran Plaza" icon="/icons/ico_checkin.png">
+        <component locate="Center">
+          <driver id="ipiales">client.gui.components.TableFindData</driver>
+          <parameters>
+            <arg attribute="keySQL">MTSEL0565</arg>
+            <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+            <arg attribute="rows">100</arg>
+            <!-- <arg attribute="importValue">bipiales</arg>
+            <arg attribute="Query">LCSEL0198</arg> -->
+            <arg attribute="colorBackground">225,247,235</arg>
+            <arg attribute="colorSelected">66,199,126</arg>
+            <arg attribute="protectSelected">true</arg>
+          <subarg><!--0 a-->
+            <arg attribute="name">CODE</arg>
+            <arg attribute="length">115</arg>
+            <arg attribute="type">DATASEARCH</arg>
+            <arg attribute="sqlCombo">LCSEL0253</arg>
+            <arg attribute="keyDataSearch">searchp</arg>
+            <arg attribute="repeatData">1</arg>
+            <arg attribute="noDataBeep">true</arg>
+            <arg attribute="noDataMessage">No se encontro registros</arg>
+            <arg attribute="selectedIndex">1</arg>
+            <arg attribute="printable">true</arg>
+            <arg attribute="enabled">true</arg>
+            <arg attribute="clean">true</arg>
+          </subarg>
+          <subarg><!-- 1 -->
+            <arg attribute="name">Referencia</arg>
+            <arg attribute="length">105</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="printable">true</arg>
+            <arg attribute="returnCol">1</arg>
+            <arg attribute="queryCol">1</arg>
+          </subarg>
+          <subarg><!-- 2 -->
+            <arg attribute="name">Descripcion</arg>
+            <arg attribute="length">260</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="queryCol">2</arg>
+          </subarg>
+          <subarg><!-- 3 -->
+            <arg attribute="name">SALDO</arg>
+            <arg attribute="length">50</arg>
+            <arg attribute="type">INTEGER</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">3</arg>
+          </subarg>          
+          <subarg><!-- 4 -->
+            <arg attribute="name">Línea</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">4</arg>
+          </subarg>
+          <subarg><!-- 5 -->
+            <arg attribute="name">Grupo</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">5</arg>
+          </subarg>
+          <subarg><!-- 6 -->
+            <arg attribute="name">Subgrupo</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">6</arg>
+          </subarg>
+          <subarg><!-- 7 -->
+            <arg attribute="name">Marca</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">7</arg>
+          </subarg>
+          <subarg><!-- 8 -->
+            <arg attribute="name">Submarca</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">8</arg>
+          </subarg>
+          <subarg><!-- 11 -->
+            <arg attribute="name">Pventa 1</arg>
+            <arg attribute="length">80</arg>
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">11</arg>
+          </subarg>
+          <subarg><!-- 12 -->
+            <arg attribute="name">Pventa 2</arg>
+            <arg attribute="length">80</arg>
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">12</arg>
+          </subarg>
+          <subarg><!-- 13 -->
+            <arg attribute="name">idprodserv</arg>
+            <arg attribute="length">0</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">13</arg>
+          </subarg>
+          </parameters>
+        </component>
+      </panel>
+      <panel locate="Center" type="BorderLayout" name="Único" icon="/icons/ico_checkin.png">
+        <component locate="Center">
+          <driver id="unico">client.gui.components.TableFindData</driver>
+          <parameters>
+            <arg attribute="keySQL">MTSEL0586</arg>
+            <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+            <arg attribute="rows">100</arg>
+            <!-- <arg attribute="importValue">bunico</arg>
+            <arg attribute="Query">LCSEL0198</arg> -->
+            <arg attribute="colorBackground">225,247,235</arg>
+            <arg attribute="colorSelected">66,199,126</arg>
+            <arg attribute="protectSelected">true</arg>
+          <subarg><!--0 a-->
+            <arg attribute="name">CODE</arg>
+            <arg attribute="length">115</arg>
+            <arg attribute="type">DATASEARCH</arg>
+            <arg attribute="sqlCombo">LCSEL0253</arg>
+            <arg attribute="keyDataSearch">searchp</arg>
+            <arg attribute="repeatData">1</arg>
+            <arg attribute="noDataBeep">true</arg>
+            <arg attribute="noDataMessage">No se encontro registros</arg>
+            <arg attribute="selectedIndex">1</arg>
+            <arg attribute="printable">true</arg>
+            <arg attribute="enabled">true</arg>
+            <arg attribute="clean">true</arg>
+          </subarg>
+          <subarg><!-- 1 -->
+            <arg attribute="name">Referencia</arg>
+            <arg attribute="length">105</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="printable">true</arg>
+            <arg attribute="returnCol">1</arg>
+            <arg attribute="queryCol">1</arg>
+          </subarg>
+          <subarg><!-- 2 -->
+            <arg attribute="name">Descripcion</arg>
+            <arg attribute="length">260</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="queryCol">2</arg>
+          </subarg>
+          <subarg><!-- 3 -->
+            <arg attribute="name">SALDO</arg>
+            <arg attribute="length">50</arg>
+            <arg attribute="type">INTEGER</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">3</arg>
+          </subarg>          
+          <subarg><!-- 4 -->
+            <arg attribute="name">Línea</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">4</arg>
+          </subarg>
+          <subarg><!-- 5 -->
+            <arg attribute="name">Grupo</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">5</arg>
+          </subarg>
+          <subarg><!-- 6 -->
+            <arg attribute="name">Subgrupo</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">6</arg>
+          </subarg>
+          <subarg><!-- 7 -->
+            <arg attribute="name">Marca</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">7</arg>
+          </subarg>
+          <subarg><!-- 8 -->
+            <arg attribute="name">Submarca</arg>
+            <arg attribute="length">90</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">8</arg>
+          </subarg>
+          <subarg><!-- 11 -->
+            <arg attribute="name">Pventa 1</arg>
+            <arg attribute="length">80</arg>
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">11</arg>
+          </subarg>
+          <subarg><!-- 12 -->
+            <arg attribute="name">Pventa 2</arg>
+            <arg attribute="length">80</arg>
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">12</arg>
+          </subarg>
+          <subarg><!-- 13 -->
+            <arg attribute="name">idprodserv</arg>
+            <arg attribute="length">0</arg>
+            <arg attribute="type">STRING</arg>
+            <arg attribute="clean">false</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="queryCol">13</arg>
+          </subarg>
+          </parameters>
+        </component>
+      </panel>
+      
+    </tab>    
+  <component locate="South">
+    <driver>common.gui.components.ButtonsPanel</driver>
+    <parameters>
+      <subarg>
+        <arg attribute="label">NEW</arg>
+        <arg attribute="icon">/icons/ico_nuevo_32x32.png</arg>
+      </subarg>
+      <subarg>
+        <arg attribute="label">EXIT</arg>
+        <arg attribute="icon">/icons/ico_salir_32x32.png</arg>
+      </subarg>
+    </parameters>
+    <events>
+      <object>
+        <name>NEW</name>
+        <component>
+          <driver id="americas">client.gui.components.TableFindData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="bodega">client.gui.components.TableFindData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="caliweb">client.gui.components.TableFindData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="mercadolibre">client.gui.components.TableFindData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="linio">client.gui.components.TableFindData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="unico">client.gui.components.TableFindData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="ipiales">client.gui.components.TableFindData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="lascuadras">client.gui.components.TableFindData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="principal">client.gui.components.TableFindData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="codigo">client.gui.components.EmakuSearchField</driver>
+          <method>clean</method>
+        </component>
+
+      </object>
+    </events>
+  </component>
+</FORM>
