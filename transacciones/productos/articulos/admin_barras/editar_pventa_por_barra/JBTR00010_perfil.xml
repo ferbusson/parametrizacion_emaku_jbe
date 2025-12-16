@@ -103,43 +103,21 @@
         <component>
           <driver>common.gui.components.XMLLabel</driver>
           <parameters>
-            <arg attribute="text">Pventa Uno</arg>
+            <arg attribute="text">PV Mostrador</arg>
             <arg attribute="alignment">0</arg>
           </parameters>
         </component>
         <component>
           <driver>common.gui.components.XMLLabel</driver>
           <parameters>
-            <arg attribute="text">Abanico Uno</arg>
+            <arg attribute="text">Abanico Mostrador</arg>
             <arg attribute="alignment">0</arg>
           </parameters>
         </component>
         <component>
           <driver>common.gui.components.XMLLabel</driver>
           <parameters>
-            <arg attribute="text">Base Uno</arg>
-            <arg attribute="alignment">0</arg>
-          </parameters>
-        </component>
-        <panel type="FlowLayout" />
-        <component>
-          <driver>common.gui.components.XMLLabel</driver>
-          <parameters>
-            <arg attribute="text">Pventa Dos</arg>
-            <arg attribute="alignment">0</arg>
-          </parameters>
-        </component>
-        <component>
-          <driver>common.gui.components.XMLLabel</driver>
-          <parameters>
-            <arg attribute="text">Abanico Dos</arg>
-            <arg attribute="alignment">0</arg>
-          </parameters>
-        </component>
-        <component>
-          <driver>common.gui.components.XMLLabel</driver>
-          <parameters>
-            <arg attribute="text">Base Dos</arg>
+            <arg attribute="text">Base Mostrador</arg>
             <arg attribute="alignment">0</arg>
           </parameters>
         </component>
@@ -147,21 +125,43 @@
         <component>
           <driver>common.gui.components.XMLLabel</driver>
           <parameters>
-            <arg attribute="text">Pventa Tres</arg>
+            <arg attribute="text">PV Sub Pasto</arg>
+            <arg attribute="alignment">0</arg>
+          </parameters>
+        </component>
+        <component>
+          <driver>common.gui.components.XMLLabel</driver>
+          <parameters>
+            <arg attribute="text">Abanico Sub Pasto</arg>
+            <arg attribute="alignment">0</arg>
+          </parameters>
+        </component>
+        <component>
+          <driver>common.gui.components.XMLLabel</driver>
+          <parameters>
+            <arg attribute="text">Base Sub Pasto</arg>
+            <arg attribute="alignment">0</arg>
+          </parameters>
+        </component>
+        <panel type="FlowLayout" />
+        <component>
+          <driver>common.gui.components.XMLLabel</driver>
+          <parameters>
+            <arg attribute="text">PV Sub Poblaciones</arg>
             <arg attribute="alignment">0</arg>
           </parameters>
         </component>
                 <component>
           <driver>common.gui.components.XMLLabel</driver>
           <parameters>
-            <arg attribute="text">Abanico Tres</arg>
+            <arg attribute="text">Abanico Poblaciones</arg>
             <arg attribute="alignment">0</arg>
           </parameters>
         </component>
         <component>
           <driver>common.gui.components.XMLLabel</driver>
           <parameters>
-            <arg attribute="text">Base Tres</arg>
+            <arg attribute="text">Base Poblaciones</arg>
             <arg attribute="alignment">0</arg>
           </parameters>
         </component>

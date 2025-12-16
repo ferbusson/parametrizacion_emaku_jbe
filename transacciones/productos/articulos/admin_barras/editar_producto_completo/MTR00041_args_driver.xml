@@ -1,0 +1,22 @@
+<container>
+    <arg attribute="edit"/>
+    <subarg>
+        <!-- code -->
+        <arg attribute="addKey"/>
+         <!-- actualiza prod_serv -->
+         <arg>LCUPD0020</arg>
+         <!-- actualiza pventa1 -->
+         <arg>MTUPD0010</arg>
+         <!-- actualiza pventa2 -->
+         <arg>MTUPD0011</arg>
+         <!-- actualiza pventa3 -->
+         <arg>LCUPD0018</arg>
+         <!-- actualiza item -->
+         <arg>LCUPD0019</arg>
+         <!-- inserta auditoria_producto -->
+         <arg>LCSEL0906</arg>
+         <!-- inserta en items_pendientes_traslado para ser enviado por el cron -->
+         <arg>LCINS0112</arg>         
+     </subarg>
+</container>
+
