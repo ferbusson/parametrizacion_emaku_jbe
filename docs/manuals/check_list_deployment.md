@@ -45,31 +45,44 @@
 
 ## 2. Opciones del Programa que Deben Estar Listas
 
-## 0.0 Configuracion
+### 2.0. Configuración
 
-  ### 0.1 Administracion de Sucursales
-    Crear
-    Editar
-    Borrar
-    Asignar usuario a Sucursal
-  ### 0.2 Administracion de Usuarios Emaku
-    Crear
-    Agregar permisos
-    Cambiar Contraseña
-    Eliminar
-  ### 0.3 Restriccion de modificaciones
-  ### 0.4 Transacciones Temporales
-  ### 0.5 Localidad (paises, departramentos, municipios)
-  ### 0.6 Moneda
-  ### 0.7 Administrar Tarjetas
-    (Pendiente verifcar si agregamos reteica)
-  ### 0.8 Tarjetas Credito
-  ### 0.9 Actividades Economicas
-  ### 0.10 Regímenes
-  ### 0.11 Bancos
-  ### 0.12 Bodega
-  ### 0.13 Registro de Software DIAN
-  ### 0.14 Recarga de Transacciones y Sentencias
+#### 2.0.1. Administración de Sucursales
+- [ ] Crear
+- [ ] Editar
+- [ ] Borrar
+- [ ] Asignar usuario a Sucursal
+
+#### 2.0.2. Administración de Usuarios Emaku
+- [ ] Crear
+- [ ] Agregar permisos
+- [ ] Cambiar Contraseña
+- [ ] Eliminar
+
+#### 2.0.3. Restricción de modificaciones
+
+#### 2.0.4. Transacciones Temporales
+
+#### 2.0.5. Localidad (países, departamentos, municipios)
+
+#### 2.0.6. Moneda
+
+#### 2.0.7. Administrar Tarjetas
+*(Pendiente verificar si agregamos reteica)*
+
+#### 2.0.8. Tarjetas Crédito
+
+#### 2.0.9. Actividades Económicas
+
+#### 2.0.10. Regímenes
+
+#### 2.0.11. Bancos
+
+#### 2.0.12. Bodega
+
+#### 2.0.13. Registro de Software DIAN
+
+#### 2.0.14. Recarga de Transacciones y Sentencias
 
 ### 2.1. Terceros
 - [ ] Nuevo Tercero
@@ -92,6 +105,7 @@
 - [ ] Borrar
 - [ ] Corregir código errado
 - [ ] Desactivar productos desde Excel
+- [ ] Editar PVenta de Una referencia (en estudio)
 
 #### 2.2.2. Marcas
 - [ ] Nuevo
@@ -118,28 +132,31 @@
 #### 2.2.4. Reportes
 - [ ] Reporte productos x Clasificación
 - [ ] Listado de Precios de venta
+
 ### 2.3. Ventas
 
 #### 2.3.1. Facturación
-- [ ] Promociones
-- [ ] Factura Electrónica (Ventas Contado y Crédito)
-- [ ] Factura de Contingencia (Ventas Contado y Crédito)
-- [ ] Pedidos
-- [ ] Cotizaciones
+- [ ] **Promociones**
+- [ ] **Factura Electrónica (Ventas Contado y Crédito)**
+- [ ] **Factura de Contingencia (Ventas Contado y Crédito)**
+- [ ] **Pedidos**
+- [ ] **Cotizaciones**
 - [ ] **Devoluciones en Venta**
   - [ ] Con factura
   - [ ] Sin factura
-- [ ] Activación de Pedidos y Cotizaciones
+- [ ] **Activación de Pedidos y Cotizaciones**
 - [ ] Resolución de Facturación
 - [ ] Envío Facturas E Web Service DIAN
 - [ ] Abonos a Cartera (CxC) (facturas crédito)
 
-#### 2.3.2. Reportes
+#### 2.3.2. XML Factura Electrónica
+- [ ] Revisar documentación técnica para notificación de numero de orden externo
+
+#### 2.3.3. Reportes
 - [ ] Reportes de Ventas
-- [ ] Reportes de Carteraón
-            Envio Facturas E Web Service DIAN
-            Abonos a Cartera (CxC) (facturas credito)
-            Reportes:
+- [ ] Reportes de Cartera
+
+
 ### 2.4. Compras
 - [ ] Entradas Almacén (Compras)
 - [ ] Devolución en Compras
@@ -158,14 +175,16 @@
 
 #### 2.4.2. Reporte Pagos a Proveedores (CxP)
 - [ ] Reporte de CxP Pendiente y traslados
-        Reporte Pagos a Proveedores (CxP)
+- [ ] Reporte Pagos a Proveedores (CxP)
+
 ### 2.5. Comprobantes
 - [ ] Anticipos de Facturación
 - [ ] Documento Soporte en Gastos
 
 #### 2.5.1. Reportes
-### 2.6. Nómina
+- [ ] Documentos Soporte en Gastos por Fecha y Terceros
 
+### 2.6. Nómina
 #### 2.6.1. Conceptos Causación
 - [ ] NUEVO
 - [ ] EDITAR
@@ -226,8 +245,18 @@
 - [ ] CONSULTAR
 - [ ] REPORTES
 - [ ] Informe Causación CxC Empleados
-### 2.7. Notas
 
+#### 2.6.11. Reportes Generales
+- [ ] Informe Consolidado de Nómina
+- [ ] Informes Administrativos Nómina
+- [ ] Informe Consolidado de Extras Importadas
+- [ ] Informe de Recargos desfasados por Mes
+- [ ] Informe Terceros Nómina - Envío DIAN
+- [ ] Soporte de Nómina Electrónica x Fecha y Tercero
+- [ ] Desprendibles de Pago de Nómina x Fecha y Tercero
+- [ ] Informe Plancha Borrador Nómina
+
+### 2.7. Notas
 #### 2.7.1. Nota Multiregistro
 - [ ] Nuevo
 - [ ] Editar
@@ -238,6 +267,14 @@
 
 #### 2.8.1. Arqueo Caja
 - [ ] Nuevo
+- [ ] Anular
+- [ ] Consultar
+- [ ] Consultar Informe Diario por Caja
+
+#### 2.8.4. Reportes
+- [ ] Reporte de Movimiento de Caja Mensual
+
+### 2.9. Contabilidad
 - [ ] Editar
 - [ ] Anular
 - [ ] Consultar
