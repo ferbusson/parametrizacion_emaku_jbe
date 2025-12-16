@@ -284,6 +284,10 @@
 - [ ] Consultar Arqueos Caja (Revisión de faltantes sobrantes)
 
 #### 2.8.3. Informe Diario de Facturación
+- [ ] Nuevo
+- [ ] Anular
+- [ ] Consultar
+- [ ] Consultar informe diario por caja
 
 ### 2.9. Contabilidad
 
