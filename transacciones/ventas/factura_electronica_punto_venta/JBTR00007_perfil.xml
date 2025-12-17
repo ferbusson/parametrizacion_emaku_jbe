@@ -958,7 +958,7 @@ o el carpintero asociado -->
                         <!-- queries to load info from the value of nro_orden_pedido 
                           the attribute sqlCode and sqlCodeExportValue execute queries 
                           that are going to be referenced in its corresponding component -->
-                        <arg attribute="sqlCode">JBSEL0046</arg>                        <!-- tipo pedido 1 contado 2 credito -->
+                        <!--<arg attribute="sqlCode">JBSEL0046</arg>-->                        <!-- tipo pedido 1 contado 2 credito -->
                         <arg attribute="sqlCode">JBSEL0017</arg>                        <!-- observaciones -->
                         <arg attribute="sqlCode">JBSEL0018</arg>                        <!-- tercero -->                        
                         <arg attribute="sqlCode">JBSEL0019</arg>                        <!-- dias vigencia -->
@@ -2519,7 +2519,7 @@ o el carpintero asociado -->
     </preferences>
     <!--  Componente Oculto -->
 
-    <component>
+    <!-- <component>
       <driver id="pedidoacredito">common.gui.components.GenericData</driver>
       <parameters>
         <arg attribute="keySQL">JBSEL0046</arg>
@@ -2533,7 +2533,7 @@ o el carpintero asociado -->
           <arg attribute="clean">true</arg>
         </subarg>
       </parameters>
-    </component>
+    </component> -->
 
 
     <!-- Tab comisiones lo escondo aqui - inicio -->
@@ -2831,7 +2831,7 @@ o el carpintero asociado -->
           <arg attribute="alignment">RIGHT</arg>
           <arg attribute="exportValue">saldoxpagar</arg>
           <arg attribute="enabled">false</arg>
-          <arg attribute="calculateExportValue">(totalfact-(trfuente+triva+trica+puntosredimidosenpesos))-(efectivot+tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos)</arg>
+          <arg attribute="calculateExportValue">(totalfact-(trfuente+triva+trica+puntosredimidosenpesos))-(efectivot+tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos+pagooacredito)</arg>
           <arg attribute="printable">true</arg>
           <arg attribute="returnNullValue">true</arg>
         </subarg>
@@ -2944,7 +2944,7 @@ o el carpintero asociado -->
           <arg attribute="enabled">false</arg>
           <!--     <arg attribute="calculateBSExportValue">(totalfact)-(trfuente+triva+trica+puntosredimidosenpesos)&lt;=0||((totalfact-(trfuente+triva+trica+puntosredimidosenpesos))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+pagooacredito))&lt;=0||efectivot&lt;((totalfact-(trfuente+triva+trica+puntosredimidosenpesos))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+pagooacredito))?efectivot:(totalfact-(trfuente+triva+trica+puntosredimidosenpesos))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+pagooacredito)
 </arg> lust -->
-          <arg attribute="calculateBSExportValue">(totalfact)-(trfuente+triva+trica+puntosredimidosenpesos)&lt;=0||((totalfact-(trfuente+triva+trica+puntosredimidosenpesos))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos))&lt;=0||efectivot&lt;((totalfact-(trfuente+triva+trica+puntosredimidosenpesos))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos))?efectivot:(totalfact-(trfuente+triva+trica+puntosredimidosenpesos))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos)
+          <arg attribute="calculateBSExportValue">(totalfact)-(trfuente+triva+trica+puntosredimidosenpesos)&lt;=0||((totalfact-(trfuente+triva+trica+puntosredimidosenpesos))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos+pagooacredito))&lt;=0||efectivot&lt;((totalfact-(trfuente+triva+trica+puntosredimidosenpesos))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos+pagooacredito))?efectivot:(totalfact-(trfuente+triva+trica+puntosredimidosenpesos))-(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos+pagooacredito)
           </arg>
         </subarg>
       </parameters>
@@ -3183,7 +3183,7 @@ o el carpintero asociado -->
                       <arg attribute="name">pagoacredito</arg>
                       <arg attribute="format">NUMERIC</arg>
                       <arg attribute="size">16</arg>
-                      <arg attribute="enableField">pedidoacredito,2</arg>
+                      <!-- <arg attribute="enableField">pedidoacredito,2</arg> -->
                       <arg attribute="maxlength">26</arg>
                       <arg attribute="clean">true</arg>
                       <arg attribute="font">Dialog,1,18</arg>
@@ -3204,7 +3204,7 @@ o el carpintero asociado -->
                       <arg attribute="format">TEXT</arg>
                        <arg attribute="mask">NUMERIC</arg>
                       <arg attribute="size">3</arg>
-                      <arg attribute="enableField">pedidoacredito,2</arg>
+                      <!-- <arg attribute="enableField">pedidoacredito,2</arg> -->
                       <arg attribute="maxlength">3</arg>
                       <arg attribute="defaultText">30</arg>
                       <arg attribute="clean">true</arg>
@@ -3225,7 +3225,7 @@ o el carpintero asociado -->
                     <arg attribute="selectedIndex">0</arg>
                     <!-- <arg attribute="label">Tipo:</arg> -->
                     <arg attribute="preferredLength">250</arg>
-                    <arg attribute="enableField">pedidoacredito,2</arg>
+                    <!-- <arg attribute="enableField">pedidoacredito,2</arg> -->
                     <arg attribute="addAttribute">key</arg>
                     <arg attribute="clean">false</arg>
                     <arg attribute="Panel">false</arg>
@@ -3396,7 +3396,7 @@ o el carpintero asociado -->
                       <arg attribute="name">EFECTIVO</arg>
                       <arg attribute="format">NUMERIC</arg>
                       <arg attribute="size">11</arg>
-                      <arg attribute="enableField">pedidoacredito,1</arg>
+                      <!-- <arg attribute="enableField">pedidoacredito,1</arg> -->
                       <arg attribute="maxlength">5</arg>
                       <arg attribute="font">Dialog,1,18</arg>
                       <arg attribute="alignment">RIGHT</arg>
@@ -3417,7 +3417,7 @@ o el carpintero asociado -->
                       <arg attribute="name">EFECTIVOUS</arg>
                       <arg attribute="format">NUMERIC</arg>
                       <arg attribute="size">8</arg>
-                      <arg attribute="enableField">pedidoacredito,1</arg>
+                      <!-- <arg attribute="enableField">pedidoacredito,1</arg> -->
                       <arg attribute="clean">true</arg>
                       <arg attribute="maxlength">5</arg>
                       <arg attribute="font">Dialog,1,18</arg>
@@ -3523,7 +3523,7 @@ o el carpintero asociado -->
                       <arg attribute="alignment">RIGHT</arg>
                       <arg attribute="enabled">false</arg>
                       <!-- <arg attribute="calculateExportValue">efectivot+tconsignation+tsodexobigpass+tcreditcard+totaltodastarjetas+pagooacredito</arg> lust -->
-                      <arg attribute="calculateExportValue">efectivot+tconsignation+tsodexobigpass+tcreditcard+totaltodastarjetas+totalanticipos+puntosredimidosenpesos</arg>
+                      <arg attribute="calculateExportValue">efectivot+tconsignation+tsodexobigpass+tcreditcard+totaltodastarjetas+totalanticipos+pagooacredito+puntosredimidosenpesos</arg>
                       <arg attribute="printable">true</arg>
                     </subarg>
                   </parameters>
@@ -3547,7 +3547,7 @@ o el carpintero asociado -->
                       <!--           <arg attribute="calculateBSExportValue">(tcreditcard+pagooacredito+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+efectivot+tconsignation)&gt;(totalfact-(trfuente+triva+trica+puntosredimidosenpesos))&amp;&amp;(tcreditcard+pagooacredito+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation)&lt;(totalfact-(trfuente+triva+trica+puntosredimidosenpesos))?(efectivot+tcreditcard+pagooacredito+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation)-(totalfact-(trfuente+triva+trica+puntosredimidosenpesos)):0.0
       </arg> lust-->
 
-                      <arg attribute="calculateBSExportValue">(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+efectivot+tconsignation+totalanticipos+puntosredimidosenpesos)&gt;(totalfact-(trfuente+triva+trica+puntosredimidosenpesos))&amp;&amp;(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos+puntosredimidosenpesos)&lt;(totalfact-(trfuente+triva+trica+puntosredimidosenpesos))?(efectivot+tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos+puntosredimidosenpesos)-(totalfact-(trfuente+triva+trica+puntosredimidosenpesos)):0.0
+                      <arg attribute="calculateBSExportValue">(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+efectivot+tconsignation+totalanticipos+pagooacredito+puntosredimidosenpesos)&gt;(totalfact-(trfuente+triva+trica+puntosredimidosenpesos))&amp;&amp;(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos+pagooacredito+puntosredimidosenpesos)&lt;(totalfact-(trfuente+triva+trica+puntosredimidosenpesos))?(efectivot+tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos+pagooacredito+puntosredimidosenpesos)-(totalfact-(trfuente+triva+trica+puntosredimidosenpesos)):0.0
                       </arg>
                       <arg attribute="printable">true</arg>
                     </subarg>
@@ -4173,7 +4173,7 @@ o el carpintero asociado -->
                 <arg attribute="clean">true</arg>
                 <arg attribute="maxlength">26</arg>
                 <arg attribute="exportValue">tcheck</arg>
-                <arg attribute="maxValue">(totalfact-(trfuente+triva+trica+puntosredimidosenpesos))-(tcreditcard+tchecksodexobigpass+tconsignation+totalanticipos)</arg>
+                <arg attribute="maxValue">(totalfact-(trfuente+triva+trica+puntosredimidosenpesos))-(tcreditcard+tchecksodexobigpass+tconsignation+totalanticipos+pagooacredito)</arg>
                 <arg attribute="enabled">false</arg>
                 <arg attribute="alignment">RIGHT</arg>
                 <arg attribute="totalCol">e</arg>
@@ -5332,6 +5332,8 @@ o el carpintero asociado -->
                 <driver>this</driver>
                 <method>getPackage</method>
                 <parameters>
+                  <arg attribute="nullField">true</arg>
+                  <arg attribute="blankPackage">true</arg>
                   <subarg>
                     <arg attribute="importValue">diascredito</arg>
                     <arg attribute="importValue">netosinbolsa</arg>
@@ -5393,10 +5395,22 @@ o el carpintero asociado -->
                 </component>
 
                 <!-- 19 cartera cuenta pago a credito -->
-                <component>
+                <!-- <component>
                 <driver id="tipofactura">client.gui.components.XMLComboBox</driver>
                 <method>getPackage</method>
+              </component> -->
+              <component>
+                <driver>this</driver>
+                <method>getPackage</method>
+                <parameters>
+                  <arg attribute="nullField">true</arg>
+                  <arg attribute="blankPackage">true</arg>
+                  <subarg>
+                    <arg attribute="importValue">charctatipofactura</arg>
+                  </subarg>
+                </parameters>
               </component>
+
                 <!-- cartera valor pago a credito-->
                 <component>
                 <driver id="totalpagocredito">common.gui.components.GenericData</driver>
@@ -6423,7 +6437,7 @@ o el carpintero asociado -->
                     <driver id="tretenciones">client.gui.components.TableDataFields</driver>
                     <method>clean</method>
                   </component>
-                  <component>
+                  <!-- <component>
                     <driver id="tretfte">client.gui.components.TableDataFields</driver>
                     <method>clean</method>
                   </component>
@@ -6434,7 +6448,7 @@ o el carpintero asociado -->
                   <component>
                     <driver id="tretica">client.gui.components.TableDataFields</driver>
                     <method>clean</method>
-                  </component>
+                  </component> -->
                   <component>
                     <driver id="cven">client.gui.components.TableDataFields</driver>
                     <method>clean</method>
@@ -6646,14 +6660,14 @@ o el carpintero asociado -->
               <action>
                 <type>transaction</type>
                 <!-- BOTON GUARDAR TIRILLA -->
-                <component>
+                <!-- <component>
                   <driver>this</driver>
                   <method>validMultiPackage</method>
                   <parameters>
-                    <driver attribute="driver" id="credit">common.gui.components.GenericData</driver>
+                    <driver attribute="driver" id="diascredito">common.gui.components.GenericData</driver>
                     <arg attribute="errorMessage">Error, Falta los dias de credito</arg>
                   </parameters>
-                </component>
+                </component> -->
                 <component>
                   <driver>this</driver>
                   <method>validMultiPackage</method>
@@ -6678,6 +6692,61 @@ o el carpintero asociado -->
                     <arg attribute="errorMessage">Error, Falta el correo electrónico del tercero</arg>
                   </parameters>
                 </component>
+
+                
+              <!-- vamos a validar los medios de pago:
+              bigpass
+              sodexo
+              totalpagosmanuales (total pagos con tarjeta)
+              tconsignation
+              tcheck
+              totalanticipos
+              efectivo (dinero que entrega el cliente)
+              efectivoneto (efectivo que realmente hace parte del pago) 
+              puntosredimidosenpesos
+              pagooacredito
+              
+              totalfacturamenosretenciones (total a pagar) -->
+
+              <component>
+              <driver id="efectivoneto">common.gui.components.GenericData</driver>
+                <method>validPackage</method>
+                <parameters>
+                  <arg attribute="conditional">totalfacturamenosretenciones - (bigpass + sodexo + totalpagosmanuales + tconsignation + tcheck + totalanticipos + efectivoneto + puntosredimidosenpesos + pagooacredito) == 0.0 </arg>
+                  <!-- <arg attribute="conditional">"130505".equals(charctatipofactura) &amp;&amp; "0".equals(terceroempleado) || "130505".equals(charctatipofactura) &amp;&amp; "1".equals(terceroempleado) &amp;&amp; facturasvencidas==0.0 || !"130505".equals(charctatipofactura)</arg> -->
+                  <arg attribute="errorMessage">Error, la suma de los medios de pago debe ser igual o mayor al valor de la factura</arg>
+                </parameters>
+              </component>
+
+              <component>
+              <driver id="efectivoneto">common.gui.components.GenericData</driver>
+                <method>validPackage</method>
+                <parameters>
+                  <arg attribute="conditional">pagooacredito &gt; 0.0 &amp;&amp; pagooacredito == totalfacturamenosretenciones</arg>
+                  <!-- <arg attribute="conditional">"130505".equals(charctatipofactura) &amp;&amp; "0".equals(terceroempleado) || "130505".equals(charctatipofactura) &amp;&amp; "1".equals(terceroempleado) &amp;&amp; facturasvencidas==0.0 || !"130505".equals(charctatipofactura)</arg> -->
+                  <arg attribute="errorMessage">Error, en facturas a credito el valor de la casilla Pago a Crédito debe ser igual al total de la factura</arg>
+                </parameters>
+              </component>
+
+              <component>
+              <driver id="efectivoneto">common.gui.components.GenericData</driver>
+                <method>validPackage</method>
+                <parameters>
+                  <arg attribute="conditional">pagooacredito &gt; 0.0 &amp;&amp; pagooacredito == totalfacturamenosretenciones &amp;&amp; !"".equals(diascredito)</arg>
+                  <!-- <arg attribute="conditional">"130505".equals(charctatipofactura) &amp;&amp; "0".equals(terceroempleado) || "130505".equals(charctatipofactura) &amp;&amp; "1".equals(terceroempleado) &amp;&amp; facturasvencidas==0.0 || !"130505".equals(charctatipofactura)</arg> -->
+                  <arg attribute="errorMessage">Error, digite los dias de crédito por favor</arg>
+                </parameters>
+              </component>
+
+              <component>
+              <driver id="efectivoneto">common.gui.components.GenericData</driver>
+                <method>validPackage</method>
+                <parameters>
+                  <arg attribute="conditional">pagooacredito &gt; 0.0 &amp;&amp; pagooacredito == totalfacturamenosretenciones &amp;&amp; !"".equals(charctatipofactura)</arg>
+                  <!-- <arg attribute="conditional">"130505".equals(charctatipofactura) &amp;&amp; "0".equals(terceroempleado) || "130505".equals(charctatipofactura) &amp;&amp; "1".equals(terceroempleado) &amp;&amp; facturasvencidas==0.0 || !"130505".equals(charctatipofactura)</arg> -->
+                  <arg attribute="errorMessage">Error, seleccione el tipo de crédito por favor</arg>
+                </parameters>
+              </component>
 
                 <!-- <component>
                 <driver id="efectivoneto">common.gui.components.GenericData</driver>
@@ -6840,6 +6909,8 @@ o el carpintero asociado -->
                 <driver>this</driver>
                 <method>getPackage</method>
                 <parameters>
+                  <arg attribute="nullField">true</arg>
+                  <arg attribute="blankPackage">true</arg>
                   <subarg>
                     <arg attribute="importValue">diascredito</arg>
                     <arg attribute="importValue">netosinbolsa</arg>
@@ -6899,9 +6970,20 @@ o el carpintero asociado -->
                   <method>getPackage</method>
                 </component>
                 <!-- 19 cartera cuenta pago a credito -->
-                <component>
+                <!-- <component>
                 <driver id="tipofactura">client.gui.components.XMLComboBox</driver>
                 <method>getPackage</method>
+              </component> -->
+              <component>
+                <driver>this</driver>
+                <method>getPackage</method>
+                <parameters>
+                  <arg attribute="nullField">true</arg>
+                  <arg attribute="blankPackage">true</arg>
+                  <subarg>
+                    <arg attribute="importValue">charctatipofactura</arg>
+                  </subarg>
+                </parameters>
               </component>
                 <!-- cartera valor pago a credito-->
                 <component>
@@ -8192,7 +8274,7 @@ o el carpintero asociado -->
                     <driver id="tretenciones">client.gui.components.TableDataFields</driver>
                     <method>clean</method>
                   </component>
-                  <component>
+                  <!-- <component>
                     <driver id="tretfte">client.gui.components.TableDataFields</driver>
                     <method>clean</method>
                   </component>
@@ -8203,7 +8285,7 @@ o el carpintero asociado -->
                   <component>
                     <driver id="tretica">client.gui.components.TableDataFields</driver>
                     <method>clean</method>
-                  </component>
+                  </component> -->
                   <component>
                     <driver id="cven">client.gui.components.TableDataFields</driver>
                     <method>clean</method>

@@ -63,7 +63,7 @@ el boton cerrar cierra el formulario
     <notCleanExportValue>OTRO</notCleanExportValue>
 
     <loadMultiBranch>JBSEL0001</loadMultiBranch>
-    <notCleanExportValue>charctatipofactura</notCleanExportValue>
+    <!-- <notCleanExportValue>charctatipofactura</notCleanExportValue> -->
     <notCleanExportValue>trm</notCleanExportValue>
     <notCleanExportValue>prefix</notCleanExportValue>
     <notCleanExportValue>id_bodega</notCleanExportValue>
@@ -670,15 +670,15 @@ el boton cerrar cierra el formulario
     <panel locate="Center" type="BorderLayout">
                 <panel locate="Center" type="BorderLayout">
                 <panel cols="1" locate="West" rows="4" type="GridLayout">
-                <!-- <panel locate="South" type="FlowLayout"/> -->
-                  <component locate="West">
+                <panel locate="South" type="FlowLayout"/>
+                  <!-- <component locate="West">
                     <driver>common.gui.components.XMLLabel</driver>
                     <parameters>
                       <arg attribute="text">Tipo de Factura:</arg>
                       <arg attribute="alignment">0</arg>
                       <arg attribute="font">Dialog,0,14</arg>
                     </parameters>
-                  </component> 
+                  </component>  -->
                   <component locate="West">
                     <driver>common.gui.components.XMLLabel</driver>
                     <parameters>
@@ -699,13 +699,12 @@ el boton cerrar cierra el formulario
                   <panel locate="South" type="FlowLayout"/>
                 </panel>
                 <panel cols="1" locate="Center" rows="4" type="GridLayout">
-                <!-- <panel locate="South" type="FlowLayout"/> -->
-                <component locate="West">
+                <panel locate="South" type="FlowLayout"/>
+                <!-- <component locate="West">
                     <driver id="tipofactura">client.gui.components.XMLComboBox</driver>
                     <parameters>
                       <arg attribute="sqlCombo">JBSEL0041</arg>
                       <arg attribute="selectedIndex">0</arg>
-                      <!-- <arg attribute="label">Tipo:</arg> -->
                       <arg attribute="preferredLength">140</arg>
                       <arg attribute="enableField">habilitarcombo,1</arg>
                       <arg attribute="addAttribute">key</arg>
@@ -716,7 +715,7 @@ el boton cerrar cierra el formulario
                       <arg attribute="nameField">cuenta</arg>                
                       <arg attribute="sqlCode">LCSEL0946</arg>
                     </parameters>
-                </component>
+                </component> -->
 
                   <!-- <component locate="West">
                     <driver id="consecutivopedido">client.gui.components.TableDataFields</driver>
@@ -1002,7 +1001,7 @@ el boton cerrar cierra el formulario
           <arg attribute="importValue">idtercero</arg>
           <arg attribute="importValue">id_centrocosto</arg>
           <arg attribute="importValue">id_bodega</arg>
-          <arg attribute="importValue">charctatipofactura</arg>
+          <!-- <arg attribute="importValue">charctatipofactura</arg> -->
           <arg attribute="rows">600</arg>
           <arg attribute="colorBackground">196,196,252</arg>
           <arg attribute="colorSelected">114,126,255</arg>
@@ -2337,7 +2336,7 @@ el boton cerrar cierra el formulario
                           <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">dcredit</arg>
                           <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">referrercustomerid</arg>
                           <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">numeroordenexterno</arg>
-                          <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">charctatipofactura</arg>                          
+                          <!-- <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">charctatipofactura</arg>                           -->
                         </subarg>
                       </parameters>
                     </component>
@@ -2586,10 +2585,10 @@ el boton cerrar cierra el formulario
                 </object>
                 <object>
                   <name>NEW</name>     
-                  <component>
+                  <!-- <component>
                     <driver id="tipofactura">client.gui.components.XMLComboBox</driver>
                     <method>clean</method>
-                  </component>
+                  </component> -->
                   <component>
                     <driver id="habilitarcombo">common.gui.components.GenericData</driver>
                     <method>clean</method>

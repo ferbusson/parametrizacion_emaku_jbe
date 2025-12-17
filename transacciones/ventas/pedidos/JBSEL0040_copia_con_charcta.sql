@@ -19,7 +19,7 @@ SELECT
     '?'::INT AS tercero,
     '?'::INTEGER AS id_centrocosto,
     '?'::INTEGER AS id_bodega,
-    --'interrogacion'::VARCHAR AS cuenta_plataforma,
+    '?'::VARCHAR AS cuenta_plataforma,
     '1'::INTEGER AS dia_siniva;
 
 DROP TABLE IF EXISTS rev_ter;
@@ -66,11 +66,11 @@ SELECT
     foo.tercero,
     foo.id_bodega,
     foo.dia_siniva,
-    --TRIM(foo.cuenta_plataforma) AS cuenta_plataforma,
+    TRIM(foo.cuenta_plataforma) AS cuenta_plataforma,
     -- Julio 8 2025: se agrega condición por solicitud de Maria E, los clientes con precio mayorista solo
     -- tienen derecho a este beneficio cuando el tipo de factura es CREDITO (130505)
-    --case when pt.id_catalogo = 2 and TRIM(foo.cuenta_plataforma) != '1' then 1::integer else pt.id_catalogo end as id_catalogo,
-    pt.id_catalogo, -- agrego comentado Oct 13 2025
+    case when pt.id_catalogo = 2 and TRIM(foo.cuenta_plataforma) != '1' then 1::integer else pt.id_catalogo end as id_catalogo,
+    --pt.id_catalogo, -- agrego comentado Oct 13 2025
     case when pt.es_pintor then 1 else 0 end as es_pintor,
     case when pt.tiene_precio_base then 1 else 0 end as tiene_precio_base
 FROM
@@ -877,7 +877,7 @@ ON
 DROP TABLE IF EXISTS pventa_ok;
 CREATE TEMP TABLE pventa_ok AS 
 SELECT
-    --au.cuenta_plataforma,
+    au.cuenta_plataforma,
     pt.id_regimen,
     ps.id_asiento_generico,
     pv.id_catalogo,
@@ -932,16 +932,13 @@ SELECT
     a.id_marcap,
     a.id_itemp,
     a.narticulosa,
-    --CASE WHEN pvo.cuenta_plataforma IN ('1') THEN a.pdescuentoa ELSE 0 END AS pdescuentoa, --t12 comentado Oct 13 2025
-    case when pvo.id_catalogo = 1 then a.pdescuentoa else 0 end as pdescuentoa,
+    CASE WHEN pvo.cuenta_plataforma IN ('1') THEN a.pdescuentoa ELSE 0 END AS pdescuentoa, --t12 comentado Oct 13 2025
     --a.pdescuentoa,
     a.narticulosm,
-    --CASE WHEN pvo.cuenta_plataforma IN ('1') THEN a.pdescuentom ELSE 0 END AS pdescuentom, --u14 comentado Oct 13 2025
-    case when pvo.id_catalogo = 1 then a.pdescuentom else 0 end as pdescuentom,
+    CASE WHEN pvo.cuenta_plataforma IN ('1') THEN a.pdescuentom ELSE 0 END AS pdescuentom, --u14 comentado Oct 13 2025
     --a.pdescuentom,
     a.narticulosi,
-    --CASE WHEN pvo.cuenta_plataforma IN ('1') THEN a.pdescuentoi ELSE 0 END AS pdescuentoi, --v16 comentado Oct 13 2025
-    case when pvo.id_catalogo = 1 then a.pdescuentoi else 0 end as pdescuentoi,
+    CASE WHEN pvo.cuenta_plataforma IN ('1') THEN a.pdescuentoi ELSE 0 END AS pdescuentoi, --v16 comentado Oct 13 2025
     --a.pdescuentoi,
     a.id_marca_pc,
     a.id_item_pc,
@@ -956,31 +953,23 @@ SELECT
     a.id_sgrupop,
     a.id_submarcap,
     a.narticulosxyl,
-    --CASE WHEN pvo.cuenta_plataforma IN ('1') THEN a.pdescuentoxyl ELSE 0 END AS pdescuentoxyl, --w30 comentado Oct 13 2025
-    case when pvo.id_catalogo = 1 then a.pdescuentoxyl else 0 end as pdescuentoxyl,
+    CASE WHEN pvo.cuenta_plataforma IN ('1') THEN a.pdescuentoxyl ELSE 0 END AS pdescuentoxyl, --w30 comentado Oct 13 2025
     --a.pdescuentoxyl,
-
     a.narticulosxyg,
-    --CASE WHEN pvo.cuenta_plataforma IN ('1') THEN a.pdescuentoxyg ELSE 0 END AS pdescuentoxyg, --x32 comentado Oct 13 2025
-    case when pvo.id_catalogo = 1 then a.pdescuentoxyg else 0 end as pdescuentoxyg,
+    CASE WHEN pvo.cuenta_plataforma IN ('1') THEN a.pdescuentoxyg ELSE 0 END AS pdescuentoxyg, --x32 comentado Oct 13 2025
     --a.pdescuentoxyg,
-
     a.narticulosxysg,
-    --CASE WHEN pvo.cuenta_plataforma IN ('1') THEN a.pdescuentoxysg ELSE 0 END AS pdescuentoxysg, --y34 comentado Oct 13 2025
-    case when pvo.id_catalogo = 1 then a.pdescuentoxysg else 0 end as pdescuentoxysg,
+    CASE WHEN pvo.cuenta_plataforma IN ('1') THEN a.pdescuentoxysg ELSE 0 END AS pdescuentoxysg, --y34 comentado Oct 13 2025
     --a.pdescuentoxysg,
-
     a.narticulosxysm,
-    --CASE WHEN pvo.cuenta_plataforma IN ('1') THEN a.pdescuentoxysm ELSE 0 END AS pdescuentoxysm, --z36 comentado Oct 13 2025
-    case when pvo.id_catalogo = 1 then a.pdescuentoxysm else 0 end as pdescuentoxysm,
-    -- a.pdescuentoxysm,
-
+    CASE WHEN pvo.cuenta_plataforma IN ('1') THEN a.pdescuentoxysm ELSE 0 END AS pdescuentoxysm, --z36 comentado Oct 13 2025
+    --a.pdescuentoxysm,
     a.codigo,
     a.ref_proveedor,
     a.contador,
     pvo.id_regimen,
-    --pvo.cuenta_plataforma,
-    '' as cuenta_plataforma,
+    pvo.cuenta_plataforma,
+    --'' as cuenta_plataforma,
     a.porcentaje_bp,
     a.inc,
     a.nombre_lista,
