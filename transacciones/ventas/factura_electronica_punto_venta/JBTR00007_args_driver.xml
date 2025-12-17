@@ -32,6 +32,9 @@
     <!-- 7  tercero_def -->
     <arg>INS0048</arg>          
 
+    <!-- cartera clientes -->
+    <arg>LCINS0081</arg>
+
     <!-- contacto_pedidos -->
     <!-- <arg>JBINS0001</arg>-->
 
@@ -224,6 +227,24 @@
             </parameters>
         </LNData>
     </subarg>
+
+    <!-- cartera cuenta credito -->
+  <arg attribute="addKey"/>  
+  <!-- cartera pago a credito -->
+  <LNData>
+    <driver>LNContabilidad</driver>
+    <method>fieldData</method>
+    <parameters>
+      <arg attribute="CodeAPS">9</arg>
+      <arg attribute="Concepto">Venta según factura crédito</arg>
+      <arg attribute="centrocosto">getName</arg>
+      <arg attribute="tercero">getName</arg>      
+      <subarg>
+        <arg attribute="accountField">key,D</arg> 
+      </subarg>
+    </parameters>
+  </LNData>
+  
 
 <!-- 17  remueve llave cuenta -->
     <arg attribute="removeKey">cuenta</arg>

@@ -19,6 +19,24 @@
 - [ ] Migrar precios de venta
 - [ ] Para la lista 6 de precios base usar la fórmula que se tiene de la reunión con Jairo
 
+
+## Dias de cierre sucursales JBE
+- Hasta 27 trabaja carrera 21 y casa del carpintero (unico y centro) hasta la 1 pm
+- Hasta el 29 trabaja las Americas 5 pm
+- Hasta el 30 la Principal 1 pm
+
+Archivo de Carrera 21
+
+--
+
+
+---
+# Capacitacion
+## Viernes 19 Dic - 7 am Local Americas 
+### Cajeros y Vendedores
+---
+
+
 ### 1.2. Migración de Terceros (Clientes, Proveedores, etc)
 - [ ] Migración de usuarios de sistema (Hecho)
 - [ ] Migrar terceros relevantes (cartera, proveedores, fondos de pensiones, CCF, ips, eps, etc)
@@ -26,7 +44,7 @@
 
 ### 1.3. Migración de Saldos Iniciales
 - [ ] Migrar saldos iniciales saldos inventario
-  - [ ] Hacerlo por producto y bodega
+- [ ] Hacerlo por producto y bodega
 - [ ] Migrar cartera pendiente CxC
 - [ ] Migrar cuentas por pagar CxP
 - [ ] Migrar saldos de anticipos hechos por clientes
@@ -39,6 +57,8 @@
 
 ### 1.4 Migracion de Bancos
   - [ ] Migrar Bancos
+
+
 
 
 ---

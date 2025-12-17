@@ -63,7 +63,7 @@ el boton cerrar cierra el formulario
     <notCleanExportValue>OTRO</notCleanExportValue>
 
     <loadMultiBranch>JBSEL0001</loadMultiBranch>
-    <notCleanExportValue>charctatipofactura</notCleanExportValue> lust
+    <notCleanExportValue>charctatipofactura</notCleanExportValue>
     <notCleanExportValue>trm</notCleanExportValue>
     <notCleanExportValue>prefix</notCleanExportValue>
     <notCleanExportValue>id_bodega</notCleanExportValue>
@@ -2337,6 +2337,7 @@ el boton cerrar cierra el formulario
                           <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">dcredit</arg>
                           <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">referrercustomerid</arg>
                           <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">numeroordenexterno</arg>
+                          <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">charctatipofactura</arg>                          
                         </subarg>
                       </parameters>
                     </component>
