@@ -1,0 +1,171 @@
+<FORM>
+    <preferences>
+        <size height="540" width="970"/>
+        <name>Administrar Tarjetas Débito - Crédito</name>
+        <icon>/icons/ico_creditcard_16x16.png</icon>
+        <iconificable/>
+        <resizable/>
+        <closable/>
+    </preferences>
+    <panel align="CENTER" locate="Center" type="BorderLayout">
+        <panel align="LEFT" locate="Center" type="BorderLayout">
+            <component locate="Center">
+                <driver id="tarjetas">client.gui.components.TableFindData</driver>
+                <parameters>
+                    <arg attribute="rows">20</arg>
+                    <arg attribute="colorBackground">204,229,255</arg>
+                    <arg attribute="colorSelected">51,187,255</arg>
+                    <arg attribute="sqlInit">LCSEL0045</arg>
+                    <arg attribute="queryOnInit">true</arg>
+                    <arg attribute="protectSelected">true</arg>
+                    <arg attribute="returnNullValue">true</arg>
+                    <arg attribute="blankPackage">true</arg>
+                    <arg attribute="clean">true</arg>
+                    <arg attribute="reload">true</arg>
+                    <!-- a -->
+                    <subarg>
+                        <arg attribute="name">Nombre</arg>
+                        <arg attribute="length">230</arg>
+                        <arg attribute="type">STRING</arg>
+                        <arg attribute="enabled">true</arg>
+                        <arg attribute="returnCol">0</arg>
+                    </subarg>
+                    <!-- b -->
+                    <subarg>
+                        <arg attribute="name">Tipo</arg>
+                        <arg attribute="length">70</arg>
+                        <arg attribute="type">STRING</arg>
+                        <arg attribute="enabled">true</arg>
+                        <arg attribute="returnCol">1</arg>
+                    </subarg>
+                    <!-- c -->
+                    <subarg>
+                        <arg attribute="name">% Rte.Fte</arg>
+                        <arg attribute="length">70</arg>
+                        <arg attribute="type">DECIMAL</arg>
+                        <arg attribute="enabled">true</arg>
+                        <arg attribute="returnCol">2</arg>
+                        <arg attribute="roundDecimal">2</arg>
+
+                    </subarg>
+                    <!-- d -->
+                    <subarg>
+                        <arg attribute="name">% Rte.IVA</arg>
+                        <arg attribute="length">70</arg>
+                        <arg attribute="type">DECIMAL</arg>
+                        <arg attribute="enabled">true</arg>
+                        <arg attribute="returnCol">3</arg>
+                    </subarg>
+                    <!-- e -->
+                    <subarg>
+                        <arg attribute="name">Comisión</arg>
+                        <arg attribute="length">70</arg>
+                        <arg attribute="type">DECIMAL</arg>
+                        <arg attribute="enabled">true</arg>
+                        <arg attribute="returnCol">4</arg>
+                    </subarg>
+                    <!-- f -->
+                    <subarg>
+                        <arg attribute="name">Visible</arg>
+                        <arg attribute="length">70</arg>
+                        <arg attribute="type">BOOLEAN</arg>
+                        <arg attribute="enabled">true</arg>
+                        <arg attribute="returnCol">5</arg>
+                    </subarg>
+                    <!-- g -->
+                    <subarg>
+                        <arg attribute="name">T. Banco</arg>
+                        <arg attribute="length">110</arg>
+                        <arg attribute="type">DATASEARCH</arg>
+                        <arg attribute="sqlCombo">SEL0324</arg>
+                        <arg attribute="keyDataSearch">searchTercero</arg>
+                        <arg attribute="repeatData">2</arg>
+                        <arg attribute="noDataBeep">true</arg>
+                        <arg attribute="noDataMessage">No se encontro registros</arg>
+                        <arg attribute="selectedIndex">1</arg>
+                        <arg attribute="enabled">true</arg>
+                        <arg attribute="queryCol">12</arg>
+                        <arg attribute="exportValue">chartercero</arg>
+                        <arg attribute="returnCol">6</arg>
+                    </subarg>
+                    <!-- h -->
+                    <subarg>
+                        <arg attribute="name">Banco</arg>
+                        <arg attribute="length">70</arg>
+                        <arg attribute="type">COMBOSQL</arg>
+                        <arg attribute="enabled">true</arg>
+                        <arg attribute="sqlCombo">LCSEL0108</arg>
+                        <arg attribute="printable">true</arg>
+                        <arg attribute="exportValue">idbanvo</arg>
+                        <arg attribute="returnCol">7</arg>
+                    </subarg>
+
+                    <subarg>
+                        <arg attribute="name">cta. rtfuente</arg>
+                        <arg attribute="length">70</arg>
+                        <arg attribute="type">COMBOSQL</arg>
+                        <arg attribute="enabled">true</arg>
+                        <arg attribute="sqlCombo">LCSEL0109</arg>
+                        <arg attribute="printable">true</arg>
+                        <arg attribute="exportValue">idbanvo</arg>
+                        <arg attribute="returnCol">8</arg>
+                    </subarg>
+
+                    <subarg>
+                        <arg attribute="name">cta. rtiva</arg>
+                        <arg attribute="length">70</arg>
+                        <arg attribute="type">COMBOSQL</arg>
+                        <arg attribute="enabled">true</arg>
+                        <arg attribute="sqlCombo">LCSEL0110</arg>
+                        <arg attribute="printable">true</arg>
+                        <arg attribute="exportValue">idbanvo</arg>
+                        <arg attribute="returnCol">9</arg>
+                    </subarg>
+
+                    <subarg>
+                        <arg attribute="name">comision</arg>
+                        <arg attribute="length">70</arg>
+                        <arg attribute="type">COMBOSQL</arg>
+                        <arg attribute="enabled">true</arg>
+                        <arg attribute="sqlCombo">LCSEL0111</arg>
+                        <arg attribute="printable">true</arg>
+                        <arg attribute="exportValue">idbanvo</arg>
+                        <arg attribute="returnCol">10</arg>
+                    </subarg>
+                </parameters>
+            </component>
+        </panel>
+    </panel>
+    <component locate="South">
+        <driver>common.gui.components.ButtonsPanel</driver>
+        <parameters>
+            <arg>SAVEAS</arg>
+            <arg>NEW</arg>
+            <arg>EXIT</arg>
+        </parameters>
+        <events>
+            <object>
+                <name>SAVEAS</name>
+                <component>
+                    <driver id="tarjetas">client.gui.components.TableFindData</driver>
+                    <method>getBlankPackage</method>
+                </component>
+                <component>
+                    <driver id="tarjetas">client.gui.components.TableFindData</driver>
+                    <method>getPackage</method>
+                </component>
+                <component>
+                    <driver id="tarjetas">client.gui.components.TableFindData</driver>
+                    <method>getBlankPackage</method>
+                </component>
+            </object>
+            <object>
+                <name>NEW</name>
+                <component>
+                    <driver id="tarjetas">client.gui.components.TableFindData</driver>
+                    <method>clean</method>
+                </component>
+            </object>
+        </events>
+    </component>
+</FORM>

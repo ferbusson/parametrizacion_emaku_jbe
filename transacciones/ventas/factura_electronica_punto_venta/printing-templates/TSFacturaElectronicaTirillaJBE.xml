@@ -31,6 +31,10 @@
       <field row="423" col="15" type="STRING">Hora:</field>
       <field row="433" col="15" type="STRING">Vendedor:</field>
       <field row="443" col="15" type="STRING">Cajero:</field>
+      <line row="447" col="2" row2="447" col2="218" />
+      <field row="457" col="10" type="STRING">DATOS DEL CLIENTE</field>
+
+
       <!-- <barcodeImage row="240" col="30" width="10" type="NUMERIC" mask="0000000000" /> -->
 
       <!-- <ndocument row="403" col="66" format="Integer"/>
@@ -38,15 +42,15 @@
       <time row="423" col="53" /> -->
 
       <!-- Informacion detallada de productos -->
-      <line row="448" col="2" row2="448" col2="218" />
-      <field row="458" col="177" type="STRING">Item #</field>
-      <field row="458" col="10" type="STRING">Código</field>
-      <field row="468" col="10" type="STRING">Descripcion</field>
-      <field row="478" col="10" type="STRING">Cant</field>
-      <field row="478" col="60" type="STRING">%IVA</field>
-      <field row="478" col="110" type="STRING">V. Unit</field>
-      <field row="478" col="180" type="STRING">Total</field>
-      <line row="488" col="2" row2="488" col2="218" />
+      <line row="498" col="2" row2="498" col2="218" />
+      <field row="508" col="177" type="STRING">Item #</field>
+      <field row="508" col="10" type="STRING">Código</field>
+      <field row="518" col="10" type="STRING">Descripcion</field>
+      <field row="528" col="10" type="STRING">Cant</field>
+      <field row="528" col="60" type="STRING">%IVA</field>
+      <field row="528" col="110" type="STRING">V. Unit</field>
+      <field row="528" col="180" type="STRING">Total</field>
+      <line row="538" col="2" row2="538" col2="218" />
    </metadata>
 
    	<!-- 0 Numero fac -->
@@ -97,9 +101,17 @@
       <field row="443" col="60" fontName="Dialog" fontSize="7" fontStyle="0" type="STRING" />
    </package>
 
+   <package validate="true">
+      <field row="467" rowAcum="12"  col="10" type="STRING"/>
+      <field row="479" rowAcum="12"  col="10" type="STRING"/>
+      <field row="479" rowAcum="0"  col="221" type="STRING"/>
+      <field row="479" rowAcum="0"  col="221" type="STRING"/>
+      <field row="491" rowAcum="12"  col="10" type="STRING"/>
+   </package>
+
    <!-- 6 tabla productos -->
    <package>
-      <subpackage rowInit="498" rowAcum="10" colCounter="200">
+      <subpackage rowInit="548" rowAcum="10" colCounter="200">
          <field col="10" type="STRING" incrementRow="true" /> <!-- codigo -->
          <field col="10" incrementRow="true" type="STRING" /> <!-- descripcion -->
          <field col="15" width="3" type="NUMERIC" mask="###" /> <!-- cantidad -->
@@ -300,23 +312,24 @@
       <line row="last" rowAcum="20" col="2" row2="last" col2="218" />
    </package> 
  
-   <!-- 42 -->
+   <!-- AQUI ESTABA EL CLIENTE -->
+   <!-- 36 titulo verde -->
    <package>
-      <field textLine="DATOS DEL CLIENTE" rowAcum="12" textCol="10" row="last" col="200" type="STRING"/>
+      <field textLine="Información de Despacho:" rowAcum="10" textCol="13" fontSize="8" fontStyle="0" row="last" col="200" type="STRING"/>
    </package>
- 
-   <!-- 43 tercero -->
-   <package validate="true">
-      <field row="last" rowAcum="12"  col="10" type="STRING"/>
-      <field row="last" rowAcum="12"  col="10" type="STRING"/>
-      <field row="last" rowAcum="0"  col="221" type="STRING"/>
-      <field row="last" rowAcum="0"  col="221" type="STRING"/>
-      <field row="last" rowAcum="12"  col="10" type="STRING"/>
-   </package>
+<!-- 39 DIR DESPACHO-->
+   <package>
+      <field  rowAcum="10" fontName="Dialog" fontSize="8" fontStyle="0" row="last" col="10" type="STRING" />
+   </package> 
+
+   <!-- 439 TEL DESPACHO -->
+   <package>
+      <field  rowAcum="12" fontName="Dialog" fontSize="8" fontStyle="0" row="last" col="10" type="STRING" />
+   </package> 
+
 
    <!-- 44 --> 
    <package>
-      <!-- <image rowAcum="0" row="last" col="5" width="50" height="50">/icons/lacaliqr.png</image> -->
       <line row="last" rowAcum="15" col="2" row2="last" col2="218" />
    </package>
 

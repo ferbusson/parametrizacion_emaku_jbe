@@ -2143,6 +2143,14 @@ o el carpintero asociado -->
                       <arg>TRUE</arg>
                     </parameters>
                   </component>
+                  <component>
+                    <driver>this</driver>
+                    <method>transferFocus</method>
+                    <parameters>
+                      <arg attribute="driver" id="fefectivo">common.gui.components.GenericData</arg>
+                      <arg attribute="index">0</arg>
+                    </parameters>
+                  </component>
                 </object>
                 <object>
                   <name>SALIR</name>
@@ -2989,7 +2997,7 @@ o el carpintero asociado -->
               <component locate="North">
                 <driver>common.gui.components.XMLLabel</driver>
                 <parameters>
-                  <arg attribute="text">Total Retenciones -</arg>
+                  <arg attribute="text">Total Retenciones</arg>
                   <arg attribute="alignment">0</arg>
                   <arg attribute="font">Dialog,1,16</arg>
                 </parameters>
@@ -3023,7 +3031,7 @@ o el carpintero asociado -->
                 <parameters>
                   <arg attribute="text">Total Factura Compra</arg>
                   <arg attribute="alignment">0</arg>
-                  <arg attribute="font">Dialog,1,16</arg>
+                  <arg attribute="font">Dialog,1,18</arg>
                 </parameters>
               </component>
               <component locate="North">
@@ -3031,7 +3039,7 @@ o el carpintero asociado -->
                 <parameters>
                   <arg attribute="text">Pago a Crédito</arg>
                   <arg attribute="alignment">0</arg>
-                  <arg attribute="font">Dialog,1,14</arg>
+                  <arg attribute="font">Dialog,1,16</arg>
                 </parameters>
               </component>
               <component locate="North">
@@ -3039,7 +3047,7 @@ o el carpintero asociado -->
                 <parameters>
                   <arg attribute="text">Puntos Acumulados</arg>
                   <arg attribute="alignment">0</arg>
-                  <arg attribute="font">Dialog,1,14</arg>
+                  <arg attribute="font">Dialog,1,16</arg>
                 </parameters>
               </component>
               <component locate="North">
@@ -3047,7 +3055,7 @@ o el carpintero asociado -->
                 <parameters>
                   <arg attribute="text">Redimir Puntos</arg>
                   <arg attribute="alignment">0</arg>
-                  <arg attribute="font">Dialog,1,14</arg>
+                  <arg attribute="font">Dialog,1,16</arg>
                 </parameters>
               </component>
             </panel>
@@ -3066,12 +3074,12 @@ o el carpintero asociado -->
                     <arg attribute="enabled">false</arg>
                     <arg attribute="calculateExportValue">totalfact</arg>
                     <arg attribute="exportValue">totalfprov</arg>
-                    <arg attribute="font">Dialog,0,18</arg>
+                    <arg attribute="font">Dialog,1,18</arg>
                     <arg attribute="alignment">RIGHT</arg>
                   </subarg>
                 </parameters>
               </component>
-              
+              <panel type="FlowLayout"/>
               <component locate="Center">
                 <driver id="tretenciones">client.gui.components.TableDataFields</driver>
                 <parameters>
@@ -3083,13 +3091,13 @@ o el carpintero asociado -->
                     <arg attribute="clean">true</arg>
                     <arg attribute="maxlength">26</arg>
                     <arg attribute="enabled">false</arg>
-                    <arg attribute="font">Dialog,0,18</arg>
+                    <arg attribute="font">Dialog,1,18</arg>
                     <arg attribute="alignment">RIGHT</arg>
                     <arg attribute="calculateExportValue">retfte+retiva+retica</arg>
                   </subarg>
                 </parameters>
               </component>
-              <panel type="FlowLayout"/>
+              
               <!-- <component locate="Center">
                 <driver id="tretfte">client.gui.components.TableDataFields</driver>
                 <parameters>
@@ -3103,7 +3111,7 @@ o el carpintero asociado -->
                     <arg attribute="clean">true</arg>
                     <arg attribute="totalCol">e</arg>
                     <arg attribute="enabled">false</arg>
-                    <arg attribute="font">Dialog,0,18</arg>
+                    <arg attribute="font">Dialog,1,18</arg>
                     <arg attribute="alignment">RIGHT</arg>
                     <arg attribute="exportValue">retfte</arg>
                   </subarg>
@@ -3123,7 +3131,7 @@ o el carpintero asociado -->
                     <arg attribute="maxlength">26</arg>
                     <arg attribute="totalCol">e</arg>
                     <arg attribute="enabled">false</arg>
-                    <arg attribute="font">Dialog,0,18</arg>
+                    <arg attribute="font">Dialog,1,18</arg>
                     <arg attribute="alignment">RIGHT</arg>
                     <arg attribute="exportValue">retiva</arg>
                   </subarg>
@@ -3141,7 +3149,7 @@ o el carpintero asociado -->
                     <arg attribute="size">10</arg>
                     <arg attribute="maxlength">26</arg>
                     <arg attribute="enabled">false</arg>
-                    <arg attribute="font">Dialog,0,18</arg>
+                    <arg attribute="font">Dialog,1,18</arg>
                     <arg attribute="clean">true</arg>
                     <arg attribute="alignment">RIGHT</arg>
                     <arg attribute="exportValue">retica</arg>
@@ -3217,14 +3225,23 @@ o el carpintero asociado -->
                   </parameters>
                 </component>
                 </panel>
+              <panel type="FlowLayout" align="left">
+                <component locate="North">
+                <driver>common.gui.components.XMLLabel</driver>
+                <parameters>
+                  <arg attribute="text">Tipo: </arg>
+                  <arg attribute="alignment">0</arg>
+                  <arg attribute="font">Dialog,1,16</arg>
+                </parameters>
+              </component>
 
                 <component locate="East">
                   <driver id="tipofactura">client.gui.components.XMLComboBox</driver>
                   <parameters>
                     <arg attribute="sqlCombo">LCSEL0469</arg>
                     <arg attribute="selectedIndex">0</arg>
-                    <!-- <arg attribute="label">Tipo:</arg> -->
-                    <arg attribute="preferredLength">250</arg>
+                    <arg attribute="font">Dialog,1,16</arg>
+                    <arg attribute="preferredLength">240</arg>
                     <!-- <arg attribute="enableField">pedidoacredito,2</arg> -->
                     <arg attribute="addAttribute">key</arg>
                     <arg attribute="clean">false</arg>
@@ -3236,6 +3253,7 @@ o el carpintero asociado -->
                     <!-- <arg attribute="sqlCode">LCSEL0946</arg> -->
                   </parameters>
                 </component>
+                </panel>
                 <panel type="FlowLayout"/>
               <component>
                 <driver id="puntos_acumulados">common.gui.components.GenericData</driver>
@@ -3248,7 +3266,7 @@ o el carpintero asociado -->
                     <arg attribute="format">NUMERIC</arg>
                     <arg attribute="size">18</arg>
                     <arg attribute="maxlength">50</arg>
-                    <arg attribute="font">Dialog,0,14</arg>
+                    <arg attribute="font">Dialog,1,18</arg>
                     <arg attribute="clean">true</arg>
                     <arg attribute="alignment">RIGHT</arg>
                     <!-- <arg attribute="sqlInit">DLSEL0038</arg>
@@ -3294,7 +3312,7 @@ o el carpintero asociado -->
                     <arg attribute="format">NUMERIC</arg>
                     <arg attribute="size">10</arg>
                     <arg attribute="maxlength">26</arg>
-                    <arg attribute="font">Dialog,0,18</arg>
+                    <arg attribute="font">Dialog,1,18</arg>
                     <arg attribute="clean">true</arg>
                     <arg attribute="alignment">RIGHT</arg>
                     <arg attribute="enabled">true</arg>
@@ -3314,7 +3332,7 @@ o el carpintero asociado -->
                     <arg attribute="format">NUMERIC</arg>
                     <arg attribute="size">10</arg>
                     <arg attribute="maxlength">26</arg>
-                    <arg attribute="font">Dialog,0,18</arg>
+                    <arg attribute="font">Dialog,1,18</arg>
                     <arg attribute="clean">true</arg>
                     <arg attribute="alignment">RIGHT</arg>
                     <arg attribute="enabled">false</arg>
@@ -3553,13 +3571,13 @@ o el carpintero asociado -->
                     </subarg>
                   </parameters>
                 </component>
-                <component locate="East">
+                <component locate="Center">
                   <driver id="cambious">common.gui.components.GenericData</driver>
                   <parameters>
                     <arg attribute="Panel">false</arg>
                     <subarg>
                       <arg attribute="name">cambious</arg>
-                      <arg attribute="label">Cambio US </arg>
+                      <arg attribute="label"> Cambio US </arg>
                       <arg attribute="format">NUMERIC</arg>
                       <arg attribute="size">11</arg>
                       <arg attribute="maxlength">26</arg>
@@ -3570,6 +3588,25 @@ o el carpintero asociado -->
                       <arg attribute="exportValue">cambious</arg>
                       <arg attribute="calculateBSExportValue">trm!=0?cambio/trm:0</arg>
                       <arg attribute="printable">true</arg>
+                    </subarg>
+                  </parameters>
+                </component>
+                <component locate="East">
+                  <driver id="balance">common.gui.components.GenericData</driver>
+                  <parameters>
+                    <arg attribute="Panel">false</arg>
+                    <subarg>
+                      <arg attribute="name">balance</arg>
+                      <arg attribute="label"> Balance </arg>
+                      <arg attribute="format">NUMERIC</arg>
+                      <arg attribute="size">11</arg>
+                      <arg attribute="maxlength">26</arg>
+                      <arg attribute="clean">true</arg>
+                      <arg attribute="font">Dialog,1,18</arg>
+                      <arg attribute="alignment">RIGHT</arg>
+                      <arg attribute="enabled">false</arg>
+                      <arg attribute="exportValue">balance</arg>
+                      <arg attribute="calculateBSExportValue">(totalfacturamenosretenciones - (bigpass + sodexo + totalpagosmanuales + tconsignation + tcheck + totalanticipos + efectivoneto + puntosredimidosenpesos + pagooacredito))&gt;0?(totalfacturamenosretenciones - (bigpass + sodexo + totalpagosmanuales + tconsignation + tcheck + totalanticipos + efectivoneto + puntosredimidosenpesos + pagooacredito)):0</arg>
                     </subarg>
                   </parameters>
                 </component>
@@ -3899,6 +3936,29 @@ o el carpintero asociado -->
         </panel>
       </panel>
       <panel font="Dialog,1,12" icon="/icons/ico_pago_contado_32x32.png" name="Anticipos" type="BorderLayout">
+      <panel locate="North" type="BorderLayout">
+      <panel locate="North" type="FlowLayout" />
+      <panel locate="South" type="FlowLayout" />
+      <panel locate="East" type="FlowLayout" />
+      <panel locate="West" type="FlowLayout" />
+      <component locate="Center">
+                  <driver id="balanceanticipos">common.gui.components.GenericData</driver>
+                  <parameters>
+                    <arg attribute="Panel">false</arg>
+                    <subarg>
+                      <arg attribute="label">Balance:</arg>
+                      <arg attribute="format">NUMERIC</arg>
+                      <arg attribute="size">11</arg>
+                      <arg attribute="maxlength">26</arg>
+                      <arg attribute="clean">true</arg>
+                      <arg attribute="font">Dialog,1,18</arg>
+                      <arg attribute="alignment">RIGHT</arg>
+                      <arg attribute="enabled">false</arg>
+                      <arg attribute="calculateExportValue">balance</arg>
+                    </subarg>
+                  </parameters>
+                </component>
+      </panel>
         <component locate="Center">
           <driver id="cartera">client.gui.components.TableFindData</driver>
           <parameters>
@@ -4099,6 +4159,29 @@ o el carpintero asociado -->
         </panel>
       </panel>
       <panel name="CHEQUE" icon="CHEQUE" type="BorderLayout">
+      <panel locate="North" type="BorderLayout">
+      <panel locate="North" type="FlowLayout" />
+      <panel locate="South" type="FlowLayout" />
+      <panel locate="East" type="FlowLayout" />
+      <panel locate="West" type="FlowLayout" />
+      <component locate="Center">
+                  <driver id="balanceanticipos">common.gui.components.GenericData</driver>
+                  <parameters>
+                    <arg attribute="Panel">false</arg>
+                    <subarg>
+                      <arg attribute="label">Balance:</arg>
+                      <arg attribute="format">NUMERIC</arg>
+                      <arg attribute="size">11</arg>
+                      <arg attribute="maxlength">26</arg>
+                      <arg attribute="clean">true</arg>
+                      <arg attribute="font">Dialog,1,18</arg>
+                      <arg attribute="alignment">RIGHT</arg>
+                      <arg attribute="enabled">false</arg>
+                      <arg attribute="calculateExportValue">balance</arg>
+                    </subarg>
+                  </parameters>
+                </component>
+      </panel>
         <component locate="Center">
           <driver id="checktable">client.gui.components.TableFindData</driver>
           <parameters>
@@ -4183,6 +4266,29 @@ o el carpintero asociado -->
         </panel>
       </panel>
       <panel name="CONSIGNACION" icon="CONSIGNACION" type="BorderLayout">
+      <panel locate="North" type="BorderLayout">
+      <panel locate="North" type="FlowLayout" />
+      <panel locate="South" type="FlowLayout" />
+      <panel locate="East" type="FlowLayout" />
+      <panel locate="West" type="FlowLayout" />
+      <component locate="Center">
+                  <driver id="balanceanticipos">common.gui.components.GenericData</driver>
+                  <parameters>
+                    <arg attribute="Panel">false</arg>
+                    <subarg>
+                      <arg attribute="label">Balance:</arg>
+                      <arg attribute="format">NUMERIC</arg>
+                      <arg attribute="size">11</arg>
+                      <arg attribute="maxlength">26</arg>
+                      <arg attribute="clean">true</arg>
+                      <arg attribute="font">Dialog,1,18</arg>
+                      <arg attribute="alignment">RIGHT</arg>
+                      <arg attribute="enabled">false</arg>
+                      <arg attribute="calculateExportValue">balance</arg>
+                    </subarg>
+                  </parameters>
+                </component>
+      </panel>
         <component locate="Center">
           <driver id="consignationtable">client.gui.components.TableFindData</driver>
           <parameters>
@@ -4246,6 +4352,29 @@ o el carpintero asociado -->
         </panel>
       </panel>
       <panel font="Dialog,1,12" icon="/icons/ico_card_32x32.png" name="Multitarjeta" type="BorderLayout">
+      <panel locate="North" type="BorderLayout">
+      <panel locate="North" type="FlowLayout" />
+      <panel locate="South" type="FlowLayout" />
+      <panel locate="East" type="FlowLayout" />
+      <panel locate="West" type="FlowLayout" />
+      <component locate="Center">
+                  <driver id="balanceanticipos">common.gui.components.GenericData</driver>
+                  <parameters>
+                    <arg attribute="Panel">false</arg>
+                    <subarg>
+                      <arg attribute="label">Balance:</arg>
+                      <arg attribute="format">NUMERIC</arg>
+                      <arg attribute="size">11</arg>
+                      <arg attribute="maxlength">26</arg>
+                      <arg attribute="clean">true</arg>
+                      <arg attribute="font">Dialog,1,18</arg>
+                      <arg attribute="alignment">RIGHT</arg>
+                      <arg attribute="enabled">false</arg>
+                      <arg attribute="calculateExportValue">balance</arg>
+                    </subarg>
+                  </parameters>
+                </component>
+      </panel>
         <!-- <panel locate="North" type="BorderLayout">
           <panel locate="North" type="BorderLayout">
             <panel locate="North" type="FlowLayout"/>
@@ -4297,7 +4426,7 @@ o el carpintero asociado -->
                   <subarg>
                     <arg attribute="background">230,255,230</arg>
                     <arg attribute="foreground">0,0,0</arg>
-                    <arg attribute="label">Saldo:</arg>
+                    <arg attribute="label">Balance:</arg>
                     <arg attribute="format">NUMERIC</arg>
                     <arg attribute="size">10</arg>
                     <arg attribute="maxlength">20</arg>
@@ -4848,7 +4977,30 @@ o el carpintero asociado -->
         <!-- Termina gridLayout Tarjetas -->
       </panel>
       <panel font="Dialog,1,12" icon="/icons/ico_sodexo_32x32.png" name="Sodexo/BigPass" type="BorderLayout">
-        <panel locate="North" type="FlowLayout"/>
+      <panel locate="North" type="BorderLayout">
+      <panel locate="North" type="FlowLayout" />
+      <panel locate="South" type="FlowLayout" />
+      <panel locate="East" type="FlowLayout" />
+      <panel locate="West" type="FlowLayout" />
+      <component locate="Center">
+                  <driver id="balanceanticipos">common.gui.components.GenericData</driver>
+                  <parameters>
+                    <arg attribute="Panel">false</arg>
+                    <subarg>
+                      <arg attribute="label">Balance:</arg>
+                      <arg attribute="format">NUMERIC</arg>
+                      <arg attribute="size">11</arg>
+                      <arg attribute="maxlength">26</arg>
+                      <arg attribute="clean">true</arg>
+                      <arg attribute="font">Dialog,1,18</arg>
+                      <arg attribute="alignment">RIGHT</arg>
+                      <arg attribute="enabled">false</arg>
+                      <arg attribute="calculateExportValue">balance</arg>
+                    </subarg>
+                  </parameters>
+                </component>
+      </panel>
+        <panel locate="Center" type="FlowLayout"/>
         <panel cols="1" locate="Center" rows="2" type="GridLayout">
           <panel type="BorderLayout">
             <component locate="North">
@@ -5044,10 +5196,55 @@ o el carpintero asociado -->
             <arg attribute="heightImage">200</arg>
           </parameters>
         </component>
-        <panel cols="1" locate="Center" rows="2" type="GridLayout">
+        <panel cols="1" locate="Center" rows="4" type="GridLayout">
+        <component>
+                  <driver id="cupocredito">common.gui.components.GenericData</driver>
+                  <parameters>
+                    <arg attribute="Panel">false</arg>
+                    <subarg>                      
+                      <arg attribute="name">cupo</arg>
+                      <arg attribute="label">Cupo</arg>
+                      <arg attribute="format">NUMERIC</arg>
+                      <arg attribute="size">18</arg>
+                      <arg attribute="maxlength">50</arg>
+                      <arg attribute="font">Dialog,0,14</arg>
+                      <arg attribute="alignment">RIGHT</arg>                      
+                      <arg attribute="sqlInit">DLSEL0038</arg>
+                      <arg attribute="importValue">idtercero</arg>
+                      <arg attribute="importValue">charctatipofactura</arg>
+                      <arg attribute="queryOnInit">true</arg>
+                      <arg attribute="exportValue">cupocredito</arg>
+                      <arg attribute="printable">true</arg>
+                      <arg attribute="enabled">false</arg>
+                    </subarg>
+                  </parameters>
+                </component>
+              <component>
+                  <driver id="facturasvencidas">common.gui.components.GenericData</driver>
+                  <parameters>
+                    <arg attribute="Panel">false</arg>
+                    <subarg>                      
+                      <arg attribute="name">facturasvencidas</arg>
+                      <arg attribute="label">Facturas Vencidas</arg>
+                      <arg attribute="format">NUMERIC</arg>
+                      <arg attribute="size">18</arg>
+                      <arg attribute="maxlength">50</arg>
+                      <arg attribute="font">Dialog,0,14</arg>
+                      <arg attribute="alignment">RIGHT</arg>                      
+                      <arg attribute="sqlInit">LCSEL0985</arg>
+                      <arg attribute="importValue">idtercero</arg>
+                      <arg attribute="importValue">charctatipofactura</arg>
+                      <arg attribute="queryOnInit">true</arg>
+                      <arg attribute="exportValue">facturasvencidas</arg>
+                      <arg attribute="printable">true</arg>
+                      <arg attribute="enabled">false</arg>
+                    </subarg>
+                  </parameters>
+                </component>
           <component locate="Center">
             <driver id="idtarjetacd">common.gui.components.GenericData</driver>
             <parameters>
+            <arg attribute="Panel">false</arg>
               <subarg>
                 <arg attribute="format">STRING</arg>
                 <arg attribute="size">10</arg>
@@ -5988,6 +6185,26 @@ o el carpintero asociado -->
                     </subarg>
                   </parameters>
                 </component>
+                                <!-- cajero -->
+                    <component>
+                  <driver>this</driver>
+                  <method>getPackage</method>
+                  <parameters>
+                    <subarg>
+                      <arg attribute="importValue">userLogin</arg>
+                    </subarg>
+                  </parameters>
+                </component>
+
+                <!-- 0 -->
+                    <component>
+                      <driver id="vendedor">common.gui.components.GenericData</driver>
+                      <method>getPrintPackage</method>
+                    </component>
+                    <component>
+                      <driver id="numeroordenexterno">common.gui.components.GenericData</driver>
+                      <method>getPrintPackage</method>
+                    </component>
                 <component>
                   <driver>this</driver>
                   <method>getPrintPackage</method>
@@ -6189,6 +6406,16 @@ o el carpintero asociado -->
                 <!-- Observaciones -->
                 <component>
                   <driver>common.gui.components.XMLTextArea</driver>
+                  <method>getPrintPackage</method>
+                </component>
+                <!-- direccion de contacto -->
+                <component>
+                  <driver id="direccioncontacto">common.gui.components.GenericData</driver>
+                  <method>getPrintPackage</method>
+                </component>
+                <!-- telefono de contacto -->
+                <component>
+                  <driver id="telefonocontacto">common.gui.components.GenericData</driver>
                   <method>getPrintPackage</method>
                 </component>
                 <!-- medios de pago -->
@@ -6712,8 +6939,16 @@ o el carpintero asociado -->
               <driver id="efectivoneto">common.gui.components.GenericData</driver>
                 <method>validPackage</method>
                 <parameters>
+                  <arg attribute="conditional">totalfacturamenosretenciones - (bigpass + sodexo + totalpagosmanuales + tconsignation + tcheck + totalanticipos + puntosredimidosenpesos + pagooacredito) &gt;= 0.0 </arg>
+                  <arg attribute="errorMessage">Error, el valor registrado para medios diferentes a Efectivo no puede ser mayor al total de la factura</arg>
+                </parameters>
+              </component>
+
+              <component>
+              <driver id="efectivoneto">common.gui.components.GenericData</driver>
+                <method>validPackage</method>
+                <parameters>
                   <arg attribute="conditional">totalfacturamenosretenciones - (bigpass + sodexo + totalpagosmanuales + tconsignation + tcheck + totalanticipos + efectivoneto + puntosredimidosenpesos + pagooacredito) == 0.0 </arg>
-                  <!-- <arg attribute="conditional">"130505".equals(charctatipofactura) &amp;&amp; "0".equals(terceroempleado) || "130505".equals(charctatipofactura) &amp;&amp; "1".equals(terceroempleado) &amp;&amp; facturasvencidas==0.0 || !"130505".equals(charctatipofactura)</arg> -->
                   <arg attribute="errorMessage">Error, la suma de los medios de pago debe ser igual o mayor al valor de la factura</arg>
                 </parameters>
               </component>
@@ -6722,8 +6957,7 @@ o el carpintero asociado -->
               <driver id="efectivoneto">common.gui.components.GenericData</driver>
                 <method>validPackage</method>
                 <parameters>
-                  <arg attribute="conditional">pagooacredito &gt; 0.0 &amp;&amp; pagooacredito == totalfacturamenosretenciones</arg>
-                  <!-- <arg attribute="conditional">"130505".equals(charctatipofactura) &amp;&amp; "0".equals(terceroempleado) || "130505".equals(charctatipofactura) &amp;&amp; "1".equals(terceroempleado) &amp;&amp; facturasvencidas==0.0 || !"130505".equals(charctatipofactura)</arg> -->
+                  <arg attribute="conditional">pagooacredito &gt; 0.0 &amp;&amp; pagooacredito == totalfacturamenosretenciones||pagooacredito == 0.0</arg>
                   <arg attribute="errorMessage">Error, en facturas a credito el valor de la casilla Pago a Crédito debe ser igual al total de la factura</arg>
                 </parameters>
               </component>
@@ -6732,8 +6966,7 @@ o el carpintero asociado -->
               <driver id="efectivoneto">common.gui.components.GenericData</driver>
                 <method>validPackage</method>
                 <parameters>
-                  <arg attribute="conditional">pagooacredito &gt; 0.0 &amp;&amp; pagooacredito == totalfacturamenosretenciones &amp;&amp; !"".equals(diascredito)</arg>
-                  <!-- <arg attribute="conditional">"130505".equals(charctatipofactura) &amp;&amp; "0".equals(terceroempleado) || "130505".equals(charctatipofactura) &amp;&amp; "1".equals(terceroempleado) &amp;&amp; facturasvencidas==0.0 || !"130505".equals(charctatipofactura)</arg> -->
+                  <arg attribute="conditional">pagooacredito &gt; 0.0 &amp;&amp; pagooacredito == totalfacturamenosretenciones &amp;&amp; !"".equals(diascredito)||pagooacredito == 0.0</arg>
                   <arg attribute="errorMessage">Error, digite los dias de crédito por favor</arg>
                 </parameters>
               </component>
@@ -6742,8 +6975,7 @@ o el carpintero asociado -->
               <driver id="efectivoneto">common.gui.components.GenericData</driver>
                 <method>validPackage</method>
                 <parameters>
-                  <arg attribute="conditional">pagooacredito &gt; 0.0 &amp;&amp; pagooacredito == totalfacturamenosretenciones &amp;&amp; !"".equals(charctatipofactura)</arg>
-                  <!-- <arg attribute="conditional">"130505".equals(charctatipofactura) &amp;&amp; "0".equals(terceroempleado) || "130505".equals(charctatipofactura) &amp;&amp; "1".equals(terceroempleado) &amp;&amp; facturasvencidas==0.0 || !"130505".equals(charctatipofactura)</arg> -->
+                  <arg attribute="conditional">pagooacredito &gt; 0.0 &amp;&amp; pagooacredito == totalfacturamenosretenciones &amp;&amp; !"".equals(charctatipofactura)||pagooacredito == 0.0</arg>
                   <arg attribute="errorMessage">Error, seleccione el tipo de crédito por favor</arg>
                 </parameters>
               </component>
@@ -6981,7 +7213,7 @@ o el carpintero asociado -->
                   <arg attribute="nullField">true</arg>
                   <arg attribute="blankPackage">true</arg>
                   <subarg>
-                    <arg attribute="importValue">charctatipofactura</arg>
+                    <arg addkey="true" attribute="importValue" setAttributeName="name" setAttributeValue="cuenta">charctatipofactura</arg>
                   </subarg>
                 </parameters>
               </component>

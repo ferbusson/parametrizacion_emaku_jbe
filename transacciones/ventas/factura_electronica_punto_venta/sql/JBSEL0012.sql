@@ -53,7 +53,7 @@ WITH aux_info_pedido AS (
     JOIN documentos d ON c.ncomprobante = d.ndocumento
     JOIN info_documento id ON d.ndocumento = id.ndocumento
     JOIN cuentas cu ON c.id_cta = cu.id_cta
-    join aux_info_pedido a on c.idtercero =  a.tercero_pedido
+    join (select tercero_pedido from aux_info_pedido limit 1) a on c.idtercero =  a.tercero_pedido
     WHERE d.estado = true
     and c.nfactura is NULL
     --GROUP BY c.ncomprobante
