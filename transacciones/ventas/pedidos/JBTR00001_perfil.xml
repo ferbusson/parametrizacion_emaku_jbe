@@ -1029,9 +1029,21 @@ el boton cerrar cierra el formulario
           <arg attribute="exportTotalCol">aa,tivaexcluido</arg>
           <arg attribute="exportTotalCol">r,verde</arg>
           <arg attribute="exportTotalCol">ac,totallineas</arg>
-          <!-- lista de precios -->
+
+          <!-- lista de precios
+          1 Mostrador
+          2 Sub Pasto
+          3 Sub Poblaciones -->          
+
+          <!-- 
+          as: es pintor no se esta usando para el manejo de listas, se usa para puntos javipuntos pero en la tabla sobraria
+          at: tiene precio base -->
           <arg attribute="beanshell">e=at!=0?(e&gt;3||e&lt;1?1:e):(e&gt;2||e&lt;1?1:e)</arg>
-          <!-- vunitario -->
+
+          <!-- vunitario
+          ap mostrador
+          aq abanico
+          ar bases -->
           <arg attribute="beanshell">f="2".equals(e)&amp;&amp;aq&gt;0?aq:"3".equals(e)&amp;&amp;ar&gt;0?ar:ap</arg>
 
           <!-- dctoxy -->

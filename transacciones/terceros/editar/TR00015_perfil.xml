@@ -449,6 +449,9 @@
                   </subarg>
                 </parameters>
               </component>
+              <!-- los marcados con esta bandera estan en programa de puntos, no confundir 
+              con la clasificacion que se guarda en propiedad_tercero que es solo para diferenciar
+              si son pintores, carpinteros etc-->
               <component locate="Center">
               <driver id="espintor">client.gui.components.XMLCheckBox</driver>
               <parameters>

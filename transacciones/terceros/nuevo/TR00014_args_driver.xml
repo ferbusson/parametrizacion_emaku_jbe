@@ -1,0 +1,30 @@
+<container>
+     <!-- 0 Inserta en general -->
+     <arg>FFINS0002</arg>
+     <!-- 1 Inserta en perfil_tercero -->
+     <arg>LCSEL0220</arg>
+     <!-- 2 Inserta en propiedad_tercero -->
+     <arg>INS0019</arg>
+     <!-- 4 Inserta en contactos_clientes -->
+     <arg>INS0092</arg>
+     <!-- 5 Inserta en cuentas_bancarias -->
+     <arg>INS0016</arg>
+     <!-- 6 Inserta en direcciones -->
+     <arg>JBINS0004</arg>
+     <!-- 7 Inserta en telefonos -->
+     <arg>LCSEL0364</arg>
+     <!-- 8 Inserta en emails -->
+     <arg>JBINS0005</arg>
+     <!-- 9 Inserta en proveedor_marca -->
+     <arg>MTINS0014</arg>
+     <!-- 10 Inserta en linea_tercero -->
+     <arg>LCINS0048</arg>
+     <!-- 11 Inserta en info_credito -->
+     <arg>MTINS0019</arg>
+     <!-- 12 Inserta en tpuntos -->
+     <arg>MTINS0026</arg>
+     <!-- 3 Inserta en perfiles -->
+     <arg>INS0013</arg>
+     <!-- 3 Inserta en args_traslado_tercero -->
+     <!--<arg>LCINS0073</arg>-->
+</container>
