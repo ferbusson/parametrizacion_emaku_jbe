@@ -7844,6 +7844,12 @@ o el carpintero asociado -->
                   <method>getPrintPackage</method>
                 </component>
 
+                <!-- 43 Tercero -->
+                <component>
+                  <driver>client.gui.components.FindThird</driver>
+                  <method>getPrintPackage</method>
+                </component>
+
                 <!-- 6 Tabla Principal de productos -->
                 <component>
                   <driver id="principal">client.gui.components.TableFindData</driver>
@@ -8175,15 +8181,21 @@ o el carpintero asociado -->
                   <method>getBlankPackage</method>
                 </component>
 
-                <!-- 42 Paquete Blanco letrero datos cliente -->
+                <!-- aqui estaba el tercero -->
+
+                <!-- 42 titulo informacion despacho -->
                 <component>
                   <driver id="vpago">common.gui.components.GenericData</driver>
                   <method>getBlankPackage</method>
                 </component>
-
-                <!-- 43 Tercero -->
+                <!-- direccion de contacto -->
                 <component>
-                  <driver>client.gui.components.FindThird</driver>
+                  <driver id="direccioncontacto">common.gui.components.GenericData</driver>
+                  <method>getPrintPackage</method>
+                </component>
+                <!-- telefono de contacto -->
+                <component>
+                  <driver id="telefonocontacto">common.gui.components.GenericData</driver>
                   <method>getPrintPackage</method>
                 </component>
 

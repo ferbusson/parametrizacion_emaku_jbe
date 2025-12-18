@@ -160,18 +160,18 @@
    </package>  
    <!-- 14 Titulo -->
    <package>
-      <field textLine="FORMA DE PAGO:" rowAcum="0" textCol="30" row="last" col="200" type="STRING"/>
+      <field textLine="FORMA DE PAGO:" rowAcum="0" textCol="10" row="last" col="200" type="STRING"/>
    </package>
 
   <!-- 10 forma de pago credito -->
    <package>
-      <field row="last" col="105" rowAcum="13" fontName="Dialog" fontSize="8" fontStyle="0" type="STRING" />
+      <field row="last" col="10" rowAcum="13" fontName="Dialog" fontSize="8" fontStyle="0" type="STRING" />
    </package>
 
 
    <!-- 10 forma de pago contado -->
    <package>
-      <field row="last" col="105" rowAcum="13" fontName="Dialog" fontSize="8" fontStyle="0" type="STRING" />
+      <field row="last" col="10" rowAcum="13" fontName="Dialog" fontSize="8" fontStyle="0" type="STRING" />
    </package>
 
 
