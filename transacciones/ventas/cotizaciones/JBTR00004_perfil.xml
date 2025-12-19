@@ -684,6 +684,7 @@
                         <arg attribute="alignment">RIGHT</arg>
                         <arg attribute="foreground">0,0,0</arg>
                         <arg attribute="background">227,243,255</arg>
+                        <arg attribute="printable">true</arg>
                       </subarg>
                     </parameters>
                   </component>  

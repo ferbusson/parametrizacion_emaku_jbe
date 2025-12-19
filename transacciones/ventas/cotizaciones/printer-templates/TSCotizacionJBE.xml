@@ -140,7 +140,7 @@
 
 		<!-- 7 hora -->
 		<package>
-			<field multipage="true" rownewpage="130" colnewpage="225" row="130" col="225" textLine="-" textCol="230" fontName="Dialog" fontSize="8" fontStyle="0" type="STRING"/>
+			<field multipage="true" rownewpage="130" colnewpage="225" row="130" col="225" fontName="Dialog" fontSize="8" fontStyle="0" type="STRING"/>
 		</package>
 
 		<!-- norden cliente -->

@@ -765,6 +765,7 @@ el boton cerrar cierra el formulario
                         <arg attribute="alignment">RIGHT</arg>
                         <arg attribute="foreground">0,0,0</arg>
                         <arg attribute="background">196,196,252</arg>
+                        <arg attribute="printable">true</arg>
                       </subarg>
                     </parameters>
                   </component>  

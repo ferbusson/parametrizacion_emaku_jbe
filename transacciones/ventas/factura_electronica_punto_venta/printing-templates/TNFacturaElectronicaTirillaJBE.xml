@@ -376,7 +376,7 @@
         <line row="last" rowAcum="12" col="2" row2="last" col2="218" />
         <text fontName="Dialog" fontSize="6" fontStyle="0" rowAcum="10" row="last" col="18" type="STRING">Factura elaborada, impresa y enviada electrónicamente por:</text>
         <text fontName="Dialog" fontSize="6" fontStyle="0" rowAcum="10" row="last" col="25" type="STRING">JAVIER BENAVIDES ERAZO SAS S.A.S Nit. 891.224.230-2</text>
-        <text fontName="Dialog" fontSize="6" fontStyle="0" rowAcum="10" row="last" col="77" type="STRING">Software E-MAKU</text>
+        <text fontName="Dialog" fontSize="6" fontStyle="0" rowAcum="10" row="last" col="20" type="STRING">Software E-MAKU - Fabricante del Software: Gramagroup SAS</text>
    </package>
 
 </emaku_template>
