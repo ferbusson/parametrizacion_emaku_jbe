@@ -529,15 +529,12 @@ el boton cerrar cierra el formulario
         <component locate="Center">
           <driver>client.gui.components.FindThird</driver>
           <parameters>
-            <arg attribute="keySQL">SEL0157</arg>
-            <arg attribute="driverEvent" id="nrogenerador">client.gui.components.TableDataFields</arg>
+            <arg attribute="keySQL">JBSEL0034</arg>
+          <arg attribute="driverEvent" id="nrogenerador">client.gui.components.TableDataFields</arg>
             <arg attribute="sqlSizeRecords">SEL0132</arg>            <!-- cuenta los records -->
             <arg attribute="sqlRecords">LCSEL0936</arg>            <!-- consulta informacion del tercero seleccionado -->
             <arg attribute="sqlAddress">LCSEL0933</arg>            <!-- retorna direcciones de tercero desde tercero def en consultar si no los numeros que tenga -->
             <arg attribute="sqlPhones">LCSEL0934</arg>            <!-- retorna numeros de telefono de tercero desde tercero def en consultar si no los numeros que tenga -->
-            <arg attribute="sqlCodeWT">LCSEL0200</arg>            <!-- retorna registro para tabla rete fuente -->
-            <arg attribute="sqlCodeWT">LCSEL0202</arg>            <!-- retorna registro para tabla rete iva -->
-            <arg attribute="sqlCodeWT">LCSEL0203</arg>            <!-- retorna registro para tabla rete ica -->
             <arg attribute="sqlCodeWT">LCSEL0382</arg>            <!-- retorna el email del tercero direccion por defecto si no tiene -->
             <arg attribute="sqlCodeWT">LCSEL0478</arg>            <!-- retorna ultimo id_direccion del tercero -->
             <arg attribute="sqlCodeWT">LCSEL0479</arg>            <!-- retorna ultimo id_telefono del tercero -->
@@ -555,13 +552,14 @@ el boton cerrar cierra el formulario
         </component>
       </panel>
       <panel icon="NTERCERO" name="GENERAR" type="BorderLayout">
+
         <panel locate="North" type="BorderLayout">
           <panel locate="East" type="FlowLayout"/>
           <panel locate="North" type="FlowLayout"/>
           <component locate="West">
             <driver>common.gui.components.XMLLabel</driver>
             <parameters>
-              <arg attribute="text">Generar de</arg>
+              <arg attribute="text">Doc Ant:</arg>
               <arg attribute="font">Dialog,0,13</arg>
             </parameters>
           </component>
@@ -570,13 +568,46 @@ el boton cerrar cierra el formulario
             <parameters>
               <arg attribute="importValue">codigo_tipo</arg>
               <arg attribute="sqlCombo">JBSEL0032</arg>
+              <arg attribute="preferredLength">200</arg>
               <arg attribute="selectedIndex">0</arg>
               <arg attribute="clean">false</arg>
               <arg attribute="exportValue">tipo_doc</arg>
             </parameters>
           </component>
+          <component locate="East">
+              <driver id="nrogenerador">client.gui.components.TableDataFields</driver>
+              <parameters>
+                <subarg>
+                  <arg attribute="format">TEXT</arg>
+                  <arg attribute="size">8</arg>
+                  <arg attribute="maxlength">10</arg>
+                  <arg attribute="font">Dialog,0,13</arg>
+                  <arg attribute="foreground">0,0,0</arg>
+                  <arg attribute="background">196,196,252</arg>
+                  <arg attribute="alignment">RIGHT</arg>
+                  <arg attribute="importValue">tipo_doc</arg>
+                  <arg attribute="sqlCode">JBSEL0033</arg> <!--tabla principal-->
+                  <arg attribute="sqlCode">JBSEL0034</arg> <!--busqueda tercero-->
+                  <arg attribute="sqlCode">JBSEL0048</arg> <!--estado de documento-->
+                </subarg>
+              </parameters>
+            </component>
         </panel>
         <panel locate="Center" type="BorderLayout">
+          <component>
+            <driver id="estadocotizacion">common.gui.components.XMLLabel</driver>
+            <parameters>
+              <arg attribute="keySQL">JBSEL0048</arg>
+              <arg attribute="driverEvent" id="nrogenerador">client.gui.components.TableDataFields</arg>
+              <arg attribute="text">:</arg>
+              <arg attribute="alignment">0</arg>
+              <arg attribute="font">Dialog,1,14</arg>
+              <!-- <arg attribute="background">230,255,230</arg> -->
+              <arg attribute="foreground">46,83,57</arg>
+            </parameters>
+          </component>
+        </panel>
+        <!-- <panel locate="Center" type="BorderLayout">
           <panel locate="East" type="FlowLayout"/>
           <panel locate="West" type="FlowLayout"/>
           <component locate="North">
@@ -600,13 +631,13 @@ el boton cerrar cierra el formulario
                   <arg attribute="background">196,196,252</arg>
                   <arg attribute="alignment">RIGHT</arg>
                   <arg attribute="importValue">tipo_doc</arg>
-                  <arg attribute="sqlCode">JBSEL0033</arg> <!--tabla principal-->
-                  <arg attribute="sqlCode">JBSEL0034</arg> <!--busqueda tercero-->
+                  <arg attribute="sqlCode">JBSEL0033</arg> tabla principal
+                  <arg attribute="sqlCode">JBSEL0034</arg> busqueda tercero
                 </subarg>
               </parameters>
             </component>
           </panel>
-        </panel>
+        </panel> -->
       </panel>
       <panel icon="NTERCERO" name="Javipuntos" type="BorderLayout">
         <panel locate="North" type="BorderLayout">
@@ -1045,7 +1076,7 @@ el boton cerrar cierra el formulario
           ap mostrador
           aq abanico
           ar bases -->
-          <arg attribute="beanshell">f="2".equals(e)&amp;&amp;aq&gt;0?aq:"3".equals(e)&amp;&amp;ar&gt;0?ar:ap</arg>
+          <arg attribute="beanshell">f=as==1?f:"2".equals(e)&amp;&amp;aq&gt;0?aq:"3".equals(e)&amp;&amp;ar&gt;0?ar:ap</arg>
 
           <!-- dctoxy -->
           <arg attribute="beanshell">ak=af&gt;0?af:ae&gt;0?ae:ai&gt;0?ai:aj&gt;0?aj:ah&gt;0?ah:ag&gt;0?ag:ad</arg>
@@ -1498,12 +1529,12 @@ el boton cerrar cierra el formulario
             <arg attribute="queryCol">46</arg>
             </subarg>
             <!-- 45 (as) -->
-            <subarg>
-            <arg attribute="name">espintor</arg>
+            <subarg> 
+            <arg attribute="name">banderadocanterior</arg> <!--0 cuando se ingresa manualmente 1 cuando viene de un documento anterior ver formula del valor unitario-->
             <arg attribute="length">100</arg>
             <arg attribute="type">INTEGER</arg>
             <arg attribute="enabled">false</arg>
-            <arg attribute="queryCol">47</arg>
+            <!-- <arg attribute="queryCol">47</arg> -->
             </subarg>
             <!-- 46 (at) -->
             <subarg>
@@ -2618,6 +2649,11 @@ el boton cerrar cierra el formulario
                     <driver id="subtotalglobalsinverde">client.gui.components.TableDataFields</driver>
                     <method>clean</method>
                   </component>
+                  <component>
+                    <driver id="estadocotizacion">common.gui.components.XMLLabel</driver>
+                    <method>clean</method>
+                  </component>
+                  
                   <component>
                     <driver id="totalmenosreteglobal">client.gui.components.TableDataFields</driver>
                     <method>clean</method>
