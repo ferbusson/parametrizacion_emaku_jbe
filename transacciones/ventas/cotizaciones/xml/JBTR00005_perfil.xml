@@ -2188,6 +2188,11 @@
                   <arg attribute="importValue">codigo_tipo</arg>
                 </subarg>
               </parameters>
+            </component>       
+
+            <component>
+              <driver id="retica">client.gui.components.TableFindData</driver>     
+              <method>getBlankPackage</method>
             </component>            
 
           </action>

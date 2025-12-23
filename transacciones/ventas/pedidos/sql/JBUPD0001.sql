@@ -4,6 +4,7 @@ SET
     id_vendedor='?',
     vencimiento=COALESCE('?',0),
     id_tercero_referente = (select id from general where id_char = trim('?')),
-    ex_documento = trim('?')
+    ex_documento = trim('?'),
+    rf_documento = trim('?')::BIGINT
 WHERE 
 	ndocumento='?';

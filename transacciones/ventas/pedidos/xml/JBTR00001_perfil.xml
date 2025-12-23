@@ -120,6 +120,23 @@ el boton cerrar cierra el formulario
     </parameters>
   </component>
   <component>
+    <driver id="ndocumentodocasociado">common.gui.components.GenericData</driver>
+    <parameters>
+      <arg attribute="keySQL">JBSEL0049</arg>
+      <arg attribute="driverEvent" id="nrogenerador">client.gui.components.TableDataFields</arg>
+      <arg attribute="panel">false</arg>
+      <subarg>
+        <arg attribute="format">TEXT</arg>
+        <arg attribute="size">36</arg>
+        <arg attribute="alignment">CENTER</arg>
+        <arg attribute="maxlength">200</arg>
+        <arg attribute="exportValue">ndocumentodocasociado</arg>
+        <arg attribute="enabled">false</arg>
+        <arg attribute="clean">true</arg>
+      </subarg>
+    </parameters>
+  </component>
+    <component>
     <driver id="iddirecciontercero">common.gui.components.GenericData</driver>
     <parameters>
       <arg attribute="keySQL">LCSEL0478</arg>
@@ -156,7 +173,7 @@ el boton cerrar cierra el formulario
     </parameters>
   </component>
 
-  <component>
+  <!-- <component>
           <driver id="habilitarcombo">common.gui.components.GenericData</driver>
           <parameters>
             <arg attribute="panel">true</arg>
@@ -172,7 +189,7 @@ el boton cerrar cierra el formulario
               <arg attribute="exportValue">habilitarcombo</arg>
             </subarg>
           </parameters>
-        </component>
+        </component> -->
 
   <component>
     <driver id="terceroempleado">common.gui.components.GenericData</driver>
@@ -559,7 +576,7 @@ el boton cerrar cierra el formulario
           <component locate="West">
             <driver>common.gui.components.XMLLabel</driver>
             <parameters>
-              <arg attribute="text">Doc Ant:</arg>
+              <arg attribute="text">Documento:</arg>
               <arg attribute="font">Dialog,0,13</arg>
             </parameters>
           </component>
@@ -588,6 +605,7 @@ el boton cerrar cierra el formulario
                   <arg attribute="importValue">tipo_doc</arg>
                   <arg attribute="sqlCode">JBSEL0033</arg> <!--tabla principal-->
                   <arg attribute="sqlCode">JBSEL0034</arg> <!--busqueda tercero-->
+                  <arg attribute="sqlCode">JBSEL0049</arg> <!--consulta ndocumento de documento consultado Solo cotizaciones-->
                   <arg attribute="sqlCode">JBSEL0048</arg> <!--estado de documento-->
                 </subarg>
               </parameters>
@@ -2380,7 +2398,7 @@ el boton cerrar cierra el formulario
                           <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">dcredit</arg>
                           <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">referrercustomerid</arg>
                           <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">numeroordenexterno</arg>
-                          <!-- <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">charctatipofactura</arg>                           -->
+                          <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">ndocumentodocasociado</arg>
                         </subarg>
                       </parameters>
                     </component>
@@ -2633,10 +2651,10 @@ el boton cerrar cierra el formulario
                     <driver id="tipofactura">client.gui.components.XMLComboBox</driver>
                     <method>clean</method>
                   </component> -->
-                  <component>
+                  <!-- <component>
                     <driver id="habilitarcombo">common.gui.components.GenericData</driver>
                     <method>clean</method>
-                  </component>
+                  </component> -->
                   <component>
                     <driver id="consecutivopedido">client.gui.components.TableDataFields</driver>
                     <method>clean</method>

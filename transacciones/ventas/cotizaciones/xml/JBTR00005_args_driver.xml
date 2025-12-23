@@ -6,5 +6,6 @@
 
   </subarg>
 
- 
+ <!-- valida que la cotizacion no haya sido procesada en un pedido  -->
+  <arg>JBUPD0009</arg>      
 </container>
