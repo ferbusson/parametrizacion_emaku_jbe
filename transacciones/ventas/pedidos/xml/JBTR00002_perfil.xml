@@ -1518,6 +1518,12 @@ do the previous step as many times as necessary to all the components that need 
               <method>getBlankPackage</method>
             </component>
 
+            <!-- Dispara validacion y liberacion de docs asociados -->
+            <component>
+              <driver id="principal">client.gui.components.TableFindData</driver>
+              <method>getBlankPackage</method>
+            </component>
+
           </action>
         </object>
 

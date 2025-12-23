@@ -14,5 +14,6 @@
       </parameters>
     </LNData>
 
- 
+    <!-- valida que el pedido no haya sido facturado  -->
+  <arg>JBSEL0050</arg>      
 </container>

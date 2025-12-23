@@ -3,7 +3,7 @@
 ## Parametrizacion
 
 - [ ] Factura Electronica debe guardar su propia informacion de contacto (direccion y telefono de contacto)
-- [ ] Cambiar letrero que dice: *Carta: 1 (Default)* por *Mostrador: 1 (Default)*
+- [x] Cambiar letrero que dice: *Carta: 1 (Default)* por *Mostrador: 1 (Default)*
 - [x] Al llamar la cotización desde el Pedido conservar los precios de la cotización
 - [x] Al llamar a la cotizacion desde el Pedido debe llamar al tercero (solo para este caso) si son pedidos anteriores con la lista esta ok Preguntar
 - [ ] En pedidos: validar que no se pueda llamar a una cotización ya usada

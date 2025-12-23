@@ -35,7 +35,7 @@ on
 left join
 	contacto_pedidos cp
 on
-	i.rf_documento = cp.ndocumento
+	i.ndocumento = cp.ndocumento
 left JOIN
     documentos d2
 on

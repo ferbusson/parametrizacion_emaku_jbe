@@ -1035,7 +1035,7 @@ o el carpintero asociado -->
       <component locate="North">
         <driver>common.gui.components.XMLLabel</driver>
         <parameters>
-          <arg attribute="text">Listas Disponibles: Carta: 1 (Default) | Abanico: 2 | Bases: 3</arg>
+          <arg attribute="text">Listas Disponibles: Mostrador: 1 (Default) | Abanico: 2 | Bases: 3</arg>
           <arg attribute="alignment">0</arg>
           <arg attribute="font">Dialog,1,10</arg>
         </parameters>
@@ -2378,7 +2378,7 @@ o el carpintero asociado -->
                     <driver id="tretenciones">client.gui.components.TableDataFields</driver>
                     <method>clean</method>
                   </component>
-                  <component>
+                  <!-- <component>
                     <driver id="tretfte">client.gui.components.TableDataFields</driver>
                     <method>clean</method>
                   </component>
@@ -2389,7 +2389,7 @@ o el carpintero asociado -->
                   <component>
                     <driver id="tretica">client.gui.components.TableDataFields</driver>
                     <method>clean</method>
-                  </component>
+                  </component> -->
                   <component>
                     <driver id="cven">client.gui.components.TableDataFields</driver>
                     <method>clean</method>
@@ -5450,6 +5450,18 @@ o el carpintero asociado -->
                   <driver>common.gui.components.XMLTextArea</driver>
                   <method>getPackage</method>
                 </component>
+                <!-- 3 table: contactos_clientes -->
+                    <component>
+                      <driver>this</driver>
+                      <method>getPackage</method>
+                      <parameters>
+                        <arg attribute="nullField">true</arg>
+                        <subarg>
+                          <arg attribute="importValue">telefonocontacto</arg>
+                          <arg attribute="importValue">direccioncontacto</arg>
+                        </subarg>
+                      </parameters>
+                    </component>                    
                 <!-- 3 listado de remisiones que se cruzan en la factura -->
                 <!-- <component>
                 <driver id="remisiones">client.gui.components.TableFindData</driver>
@@ -5521,8 +5533,7 @@ o el carpintero asociado -->
                 <component>
                   <driver>client.gui.components.FindThird</driver>
                   <method>getPackage</method>
-                </component>                
-
+                </component>                                
                 
                 <!-- 11 cartera-->
                 <component>
@@ -7052,6 +7063,18 @@ o el carpintero asociado -->
                   <driver>common.gui.components.XMLTextArea</driver>
                   <method>getPackage</method>
                 </component>
+                <!-- 3 table: contactos_clientes -->
+                    <component>
+                      <driver>this</driver>
+                      <method>getPackage</method>
+                      <parameters>
+                        <arg attribute="nullField">true</arg>
+                        <subarg>
+                          <arg attribute="importValue">telefonocontacto</arg>
+                          <arg attribute="importValue">direccioncontacto</arg>
+                        </subarg>
+                      </parameters>
+                    </component>                    
                 <!-- 3 listado de remisiones que se cruzan en la factura -->
                 <!-- <component>
                 <driver id="remisiones">client.gui.components.TableFindData</driver>
@@ -7124,7 +7147,6 @@ o el carpintero asociado -->
                   <driver>client.gui.components.FindThird</driver>
                   <method>getPackage</method>
                 </component>
-
                 <!-- redencion de puntos administrativo -->
                 <!-- <component>
                   <driver id="puntosredimidos">common.gui.components.GenericData</driver>
