@@ -28,7 +28,7 @@ FROM
 		on
 			i.ndocumento = d.ndocumento 
 			and d.estado
-			and d.codigo_tipo = '00'
+			and d.codigo_tipo in (select ds.codigo_tipo from documentos_sucursales ds, documentos_standar dst where ds.id_documento = dst.id_documento and dst.nombre = 'PEDIDOS')
 		where
 			i.rf_documento = (select ndocumento from aux_parametros)
 			) as foo) as foo;
