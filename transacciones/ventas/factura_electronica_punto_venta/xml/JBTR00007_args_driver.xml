@@ -12,8 +12,6 @@
     <arg>JBUPD0003</arg>
     <!-- 2  obs_documento -->
     <arg>INS0037</arg>
-    <!-- contacto_pedidos - informacin de despacho -->
-    <arg>JBINS0001</arg>      
     <!-- 3  datos documento -->
     <arg>LCSEL0938</arg>
     <!-- 4  sodexo -->
@@ -33,7 +31,8 @@
     </LNData>
     <!-- 7  tercero_def -->
     <arg>INS0048</arg>          
-
+    <!-- contacto_pedidos - informacin de despacho -->
+    <arg>JBINS0001</arg>      
     <!-- cartera clientes -->
     <arg>LCINS0081</arg>
 

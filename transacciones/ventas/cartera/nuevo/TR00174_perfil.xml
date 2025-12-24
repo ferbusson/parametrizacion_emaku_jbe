@@ -868,7 +868,7 @@
           <arg attribute="enabled">false</arg>
           <arg attribute="calculateBSExportValue">vrpag&lt;=0||(vrpag-(anticipos+tcreditcard+tchecksodexobigpass+tconsignation+totalcredibancoparcial+totalpagosmanuales))&lt;=0||efectivo&lt;(vrpag-(anticipos+tcreditcard+tchecksodexobigpass+tconsignation+totalcredibancoparcial+totalpagosmanuales))?efectivo:vrpag-(anticipos+efectivot+tcreditcard+tchecksodexobigpass+tconsignation+totalcredibancoparcial+totalpagosmanuales)</arg>
           <arg attribute="exportValue">efectivoneto</arg>
-          <arg attribute="sendRecord">"11053001","",value,"0","EF"</arg>
+          <arg attribute="sendRecord">"11053501","",value,"0","EF"</arg>
         </subarg>
       </parameters>
     </component>
@@ -1045,7 +1045,7 @@
                   <arg attribute="alignment">RIGHT</arg>
                   <arg attribute="enabled">false</arg>
                   <arg attribute="calculateExportValue">totalcomp-(trfuente+triva+trica)</arg>
-                  <arg attribute="sendRecord">"130505","","0",value,"TC"</arg>
+                  <arg attribute="sendRecord">"13050501","","0",value,"TC"</arg>
                 </subarg>
               </parameters>
             </component>            
@@ -1063,7 +1063,7 @@
                   <arg attribute="font">Dialog,1,20</arg>
                   <arg attribute="alignment">RIGHT</arg>
                   <arg attribute="totalCol">h</arg>
-                  <arg attribute="sendRecord">"530535","",value,"0","DC"</arg>
+                  <arg attribute="sendRecord">"53053501","",value,"0","DC"</arg>
                 </subarg>
               </parameters>
             </component>
@@ -1581,7 +1581,7 @@
             <arg attribute="protectSelected">true</arg>
             <arg attribute="totales">e</arg>
             <arg attribute="returnNullValue">true</arg>
-            <arg attribute="sendRecord">"11053001","",4,"0","CH",2</arg>
+            <arg attribute="sendRecord">"11053501","",4,"0","CH",2</arg>
             <arg attribute="colorBackground">123,227,201</arg>
             <arg attribute="colorSelected">54,224,182</arg>
             <!-- a0 -->

@@ -5450,18 +5450,7 @@ o el carpintero asociado -->
                   <driver>common.gui.components.XMLTextArea</driver>
                   <method>getPackage</method>
                 </component>
-                <!-- 3 table: contactos_clientes -->
-                    <component>
-                      <driver>this</driver>
-                      <method>getPackage</method>
-                      <parameters>
-                        <arg attribute="nullField">true</arg>
-                        <subarg>
-                          <arg attribute="importValue">telefonocontacto</arg>
-                          <arg attribute="importValue">direccioncontacto</arg>
-                        </subarg>
-                      </parameters>
-                    </component>                    
+                
                 <!-- 3 listado de remisiones que se cruzan en la factura -->
                 <!-- <component>
                 <driver id="remisiones">client.gui.components.TableFindData</driver>
@@ -5534,7 +5523,18 @@ o el carpintero asociado -->
                   <driver>client.gui.components.FindThird</driver>
                   <method>getPackage</method>
                 </component>                                
-                
+                <!-- 3 table: contactos_clientes -->
+                    <component>
+                      <driver>this</driver>
+                      <method>getPackage</method>
+                      <parameters>
+                        <arg attribute="nullField">true</arg>
+                        <subarg>
+                          <arg attribute="importValue">telefonocontacto</arg>
+                          <arg attribute="importValue">direccioncontacto</arg>
+                        </subarg>
+                      </parameters>
+                    </component>                    
                 <!-- 11 cartera-->
                 <component>
                 <driver>this</driver>
@@ -7063,18 +7063,7 @@ o el carpintero asociado -->
                   <driver>common.gui.components.XMLTextArea</driver>
                   <method>getPackage</method>
                 </component>
-                <!-- 3 table: contactos_clientes -->
-                    <component>
-                      <driver>this</driver>
-                      <method>getPackage</method>
-                      <parameters>
-                        <arg attribute="nullField">true</arg>
-                        <subarg>
-                          <arg attribute="importValue">telefonocontacto</arg>
-                          <arg attribute="importValue">direccioncontacto</arg>
-                        </subarg>
-                      </parameters>
-                    </component>                    
+                
                 <!-- 3 listado de remisiones que se cruzan en la factura -->
                 <!-- <component>
                 <driver id="remisiones">client.gui.components.TableFindData</driver>
@@ -7147,6 +7136,18 @@ o el carpintero asociado -->
                   <driver>client.gui.components.FindThird</driver>
                   <method>getPackage</method>
                 </component>
+                <!-- 3 table: contactos_clientes -->
+                    <component>
+                      <driver>this</driver>
+                      <method>getPackage</method>
+                      <parameters>
+                        <arg attribute="nullField">true</arg>
+                        <subarg>
+                          <arg attribute="importValue">telefonocontacto</arg>
+                          <arg attribute="importValue">direccioncontacto</arg>
+                        </subarg>
+                      </parameters>
+                    </component>                    
                 <!-- redencion de puntos administrativo -->
                 <!-- <component>
                   <driver id="puntosredimidos">common.gui.components.GenericData</driver>
