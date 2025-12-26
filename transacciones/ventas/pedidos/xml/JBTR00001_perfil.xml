@@ -1134,6 +1134,9 @@ el boton cerrar cierra el formulario
           <!-- IVA excluido -->
           <arg attribute="beanshell">ab=&quot;28312&quot;.equals(n)?0:k</arg>          <!-- netosinbolsa sin bolsa -->
           <arg attribute="beanshell">ao="28312".equals(n)?0:i</arg>          <!-- subtotal sin bolsa -->
+
+          <arg attribute="conditionalColor">251,141,141:as==1 &amp;&amp; au&gt;c</arg>
+
             <!-- 1 (a) -->
             <subarg>
             <arg attribute="name">CODE</arg>
@@ -1562,6 +1565,14 @@ el boton cerrar cierra el formulario
             <arg attribute="enabled">false</arg>
             <arg attribute="queryCol">48</arg>
             </subarg>
+            <!-- 47 au -->
+            <subarg>
+            <arg attribute="name">cantdocanterior</arg>
+            <arg attribute="length">100</arg>
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="roundDecimal">2</arg>
+            <arg attribute="enabled">false</arg>
+            </subarg>
         </parameters>
       </component>
     </panel>
@@ -1957,7 +1968,7 @@ el boton cerrar cierra el formulario
         <arg attribute="roundDecimal">2</arg>
         <arg attribute="enabled">false</arg>
       </subarg>
-      <!-- 39 inc (am) -->
+      <!-- 40 inc (an) -->
       <subarg>
         <arg attribute="name">inc</arg>
         <arg attribute="length">10</arg>
@@ -1965,7 +1976,7 @@ el boton cerrar cierra el formulario
         <arg attribute="roundDecimal">2</arg>
         <arg attribute="enabled">false</arg>
       </subarg>
-      <!-- 40 subtotalsinbolsa (an) -->
+      <!-- 41 subtotalsinbolsa (ao) -->
       <subarg>
         <arg attribute="name">subtotalsinbolsa</arg>
         <arg attribute="length">50</arg>
@@ -1973,7 +1984,7 @@ el boton cerrar cierra el formulario
         <arg attribute="roundDecimal">2</arg>
         <arg attribute="enabled">false</arg>
       </subarg>
-      <!-- 41 pventa1 (ao) -->
+      <!-- 42 pventa1 (ap) -->
       <subarg>
         <arg attribute="name">pventa1</arg>
         <arg attribute="length">80</arg>
@@ -1982,7 +1993,7 @@ el boton cerrar cierra el formulario
         <arg attribute="enabled">false</arg>
         <arg attribute="queryCol">2</arg>
       </subarg>
-      <!-- 42 pventa2 (ap) -->
+      <!-- 43 pventa2 (aq) -->
       <subarg>
         <arg attribute="name">pventa2</arg>
         <arg attribute="length">80</arg>
@@ -1991,7 +2002,7 @@ el boton cerrar cierra el formulario
         <arg attribute="enabled">false</arg>
         <arg attribute="queryCol">45</arg>
       </subarg>
-      <!-- 43 pventa3 (aq) -->
+      <!-- 44 pventa3 (ar) -->
       <subarg>
         <arg attribute="name">pventa3</arg>
         <arg attribute="length">80</arg>
@@ -2000,21 +2011,29 @@ el boton cerrar cierra el formulario
         <arg attribute="enabled">false</arg>
         <arg attribute="queryCol">46</arg>
       </subarg>
-      <!-- 44 espintor (ar) -->
+      <!-- 45 espintor (as) -->
       <subarg>
-        <arg attribute="name">espintor</arg>
+        <arg attribute="name">banderadocanterior</arg> <!--0 cuando se ingresa manualmente 1 cuando viene de un documento anterior ver formula del valor unitario-->
         <arg attribute="length">60</arg>
         <arg attribute="type">INTEGER</arg>
         <arg attribute="enabled">false</arg>
         <arg attribute="queryCol">47</arg>
       </subarg>
-      <!-- 45 tienepreciobase (as) -->
+      <!-- 46 tienepreciobase (at) -->
       <subarg>
         <arg attribute="name">tienepreciobase</arg>
         <arg attribute="length">60</arg>
         <arg attribute="type">INTEGER</arg>
         <arg attribute="enabled">false</arg>
         <arg attribute="queryCol">48</arg>
+      </subarg>
+        <!-- 47 au -->
+      <subarg>
+            <arg attribute="name">cantdocanterior</arg>
+            <arg attribute="length">100</arg>
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="roundDecimal">2</arg>
+            <arg attribute="enabled">false</arg>
       </subarg>
     </parameters>
   </component>

@@ -84,7 +84,7 @@ WHERE
     a.id_centrocosto = foo.id_centrocosto AND
     a.id_administracion_sucursales = ds.id_administracion_sucursales AND
     ds.id_documento = dst.id_documento AND
-    dst.nombre = 'FACTURACION';
+    dst.nombre = 'FELECTRONICAPOS';
     
 
 

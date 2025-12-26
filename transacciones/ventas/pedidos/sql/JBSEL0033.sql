@@ -30,7 +30,7 @@ SELECT
     ps.codigo,
     substring(it.nombre,1,66) as descripcion,
     coalesce(s.saldo,0) as saldo,
-    cant,
+    dp.cant,
     dp.id_lista,
     dp.pventa,
     dp.iva,
@@ -73,7 +73,8 @@ SELECT
 	pv3.pventa as pventa3,
 	--pt.es_pintor::integer as espintor,
     1::integer as generado_anterior, -- 1 para que la tabla del pedido no recalcule el vunitario, ver las formulas en JBTR00001_perfil.xml
-	pt.tiene_precio_base::integer as tienepreciobase
+	pt.tiene_precio_base::integer as tienepreciobase,
+	dp.cant -- se usa para validar si es mayor al disponible pintar la fila con color
 FROM 
     info_documento id,
     prod_serv ps,

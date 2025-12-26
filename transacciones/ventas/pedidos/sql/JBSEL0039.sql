@@ -109,7 +109,7 @@ WHERE
 	a.id_centrocosto = foo.id_centrocosto AND
 	a.id_administracion_sucursales = ds.id_administracion_sucursales AND
 	ds.id_documento = dst.id_documento AND
-	dst.nombre = 'FACTURACION';
+	dst.nombre = 'FELECTRONICAPOS';
 	
 DROP TABLE IF EXISTS rev_ter;
 CREATE TEMP TABLE rev_ter AS
@@ -973,6 +973,7 @@ select
 	a.codigo, -- a
 	a.descripcion, -- b
 	a.disponible,
+	--case when a.cant > a.disponible then a.disponible else a.cant end as cant, -- c esta seria la validacion cuando ya hay saldos
 	a.cant, -- c
 	a.id_lista,
 	a.pventa, -- d
@@ -1024,9 +1025,10 @@ select
 	a.pventa,
 	a.pventa2,
 	a.pventa3,
-	case when a.es_pintor then 1 else 0 end as es_pintor,
-	case when a.tiene_precio_base then 1 else 0 end as tiene_precio_base
-	--row_number() over(order by orden) as tagdata
+	--case when a.es_pintor then 1 else 0 end as es_pintor,
+	0::integer as generado_anterior, -- 1 para que la tabla del pedido no recalcule el vunitario, ver las formulas en JBTR00001_perfil.xml
+	case when a.tiene_precio_base then 1 else 0 end as tiene_precio_base,
+	a.cant
 from
 	aux_semiresultado_final a
 order by 

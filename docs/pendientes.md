@@ -3,9 +3,10 @@
 ## Parametrizacion
 
 - [x] Factura Electronica debe guardar su propia informacion de contacto (direccion y telefono de contacto)
+- [ ] Hacer script de subida de saldos iniciales
 - [ ] Agregar Nequi, Daviplata etc en forma de pago (Como tarjetas)
-- [ ] Poner prefijo de Pedidos por cada sucursal
-- [ ] Nuevo Pedido Marcar con color cuando la cantidad de la cotizacion es menor a la cantidad disponible
+- [x] Poner prefijo de Pedidos por cada sucursal
+- [x] Nuevo Pedido Marcar con color cuando la cantidad de la cotizacion es menor a la cantidad disponible
 - [ ] Revisar pago con todas las tarjetas Nueva Factura
 - [ ] Crear usuarios sistema con sus permisos y sucursal
 - [ ] Verificar que en Javipuntos solo se puedan digitar personas habilitadas para javipuntos
@@ -14,7 +15,7 @@
 - [x] Al llamar a la cotizacion desde el Pedido debe llamar al tercero (solo para este caso) si son pedidos anteriores con la lista esta ok Preguntar
 - [x] En pedidos: validar que no se pueda llamar a una cotización ya usada
 - [x] En pedidos: validar que no se pueda llamar a una cotización vencida
-- [ ] En pedidos: hacer cambios a la select de la query que carga temporales para que no suba es_pintor sino 0 para que el vunitario quede libre para editar
+- [x] En pedidos: hacer cambios a la select de la query que carga temporales para que no suba es_pintor sino 0 para que el vunitario quede libre para editar
 - [ ] En la impresión de Cotizaciones y Pedidos agregar mas info del tercero, revisar la plantilla de impresión
 - [ ] Quitar de las opciones de JBE el reporte Contabilidad reportes administrativos detallado de ventas gerencia
 - [ ] Revisar reportes de venta (excel)
