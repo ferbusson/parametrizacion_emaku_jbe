@@ -3,11 +3,11 @@
 ## Parametrizacion
 
 - [x] Factura Electronica debe guardar su propia informacion de contacto (direccion y telefono de contacto)
-- [ ] Hacer script de subida de saldos iniciales
+- [x] Hacer script de subida de saldos iniciales
 - [ ] Agregar Nequi, Daviplata etc en forma de pago (Como tarjetas)
 - [x] Poner prefijo de Pedidos por cada sucursal
 - [x] Nuevo Pedido Marcar con color cuando la cantidad de la cotizacion es menor a la cantidad disponible
-- [ ] Revisar pago con todas las tarjetas Nueva Factura
+- [x] Revisar pago con todas las tarjetas Nueva Factura
 - [ ] Crear usuarios sistema con sus permisos y sucursal
 - [ ] Verificar que en Javipuntos solo se puedan digitar personas habilitadas para javipuntos
 - [x] Cambiar letrero que dice: *Carta: 1 (Default)* por *Mostrador: 1 (Default)*
@@ -44,3 +44,11 @@
 
 - Anular pedido debe verificar que su ndocumento **No** sea el rf_documento de una factura con estado = true
 - Anular pedido debe actualizar su info_documento con rf_documento = null para liberar la cotizacion asociada si la hay
+
+
+- [ ] Preguntar perfiles de Oscar y Daniela
+- [ ] Recordar acerca de resoluciones de facturacion
+- [ ] Poner facturacion Credito
+- [ ] Poner facturacion Contingencia
+- [ ] Poner traslados bodegas a perfiles vendedores
+- [ ] Poner como administrador el perfil de Jairo Moncayo

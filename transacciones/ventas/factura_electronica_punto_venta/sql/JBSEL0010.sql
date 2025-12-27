@@ -11,8 +11,7 @@ inner join
 on
 	ds.id_administracion_sucursales = ds2.id_administracion_sucursales 
 where
-	ds.id_documento = 28 -- factura electronica pos
+	ds.id_documento in (28,17,33,23) -- factura electronica pos | factura crédito | contingencia factura contado pos | contingencia factura credito  
 	and ds2.id_documento = 34 -- documento mostrador
 	and ds.codigo_tipo = '?' -- prefijo de la forma
 LIMIT 1;
-	
