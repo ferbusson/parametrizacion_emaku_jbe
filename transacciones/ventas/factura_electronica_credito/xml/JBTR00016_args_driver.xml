@@ -1,0 +1,34 @@
+<container>
+  <subarg>
+    
+    <arg attribute="actionDocument">annulDocument</arg>
+    <arg attribute="date" />
+
+  </subarg>
+
+  <subarg>
+  <LNData>
+		<driver>LNContabilidad</driver>
+		<method>anular</method>
+		<parameters>
+			<arg attribute="Concepto">Anticipo Anulado</arg>
+		</parameters>
+	</LNData>
+
+  <LNData>
+      <driver>LNInventarios</driver>
+      <method>movimientos</method>
+      <parameters>
+        <arg attribute="tipoMovimiento">anular</arg>
+      </parameters>
+    </LNData>
+  </subarg>
+  
+  <!-- libera pedido asociado a la factura -->
+  <arg>JBUPD0004</arg>      
+  <!-- elimina registros del documento en puntos_tercero -->
+  <arg>JBDEL0001</arg>
+  <!-- maneja registros de la factura en cartera cuando hay anticipos -->
+  <arg>JBDEL0002</arg>
+
+</container>
