@@ -1057,7 +1057,8 @@ o el carpintero asociado -->
           <subarg>
             <arg attribute="name">Cant</arg>
             <arg attribute="length">70</arg>
-            <arg attribute="type">INTEGER</arg>
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="roundDecimal">2</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="returnCol">1</arg>
             <arg attribute="recalculate">false</arg>

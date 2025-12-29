@@ -9,4 +9,7 @@ begin; update documentos_standar set nombre = 'PEDIDOS' where nombre ilike '%mos
 begin; update sentencia_sql set sentencia= replace(sentencia,'''MOSTRADOR''','''PEDIDOS''')where sentencia ilike '%''mostrador''%';
 
 
-
+insert into enlace_centrocosto values(1,138);
+insert into enlace_centrocosto values(2,241);
+insert into enlace_centrocosto values(3,243);
+insert into enlace_centrocosto values(4,245);

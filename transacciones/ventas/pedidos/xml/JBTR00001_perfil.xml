@@ -1164,7 +1164,9 @@ el boton cerrar cierra el formulario
             <subarg>
             <arg attribute="name">Disp</arg>
             <arg attribute="length">70</arg>
-            <arg attribute="type">INTEGER</arg>
+            <!-- <arg attribute="type">INTEGER</arg> -->
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="roundDecimal">2</arg>
             <arg attribute="enabled">true</arg>
             <arg attribute="queryCol">5</arg>
             <!-- <arg attribute="minValue">0</arg> -->
@@ -1173,7 +1175,9 @@ el boton cerrar cierra el formulario
             <subarg>
             <arg attribute="name">Cant</arg>
             <arg attribute="length">70</arg>
-            <arg attribute="type">INTEGER</arg>
+            <!-- <arg attribute="type">INTEGER</arg> -->
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="roundDecimal">2</arg>
             <arg attribute="enabled">true</arg>
             <arg attribute="returnCol">1</arg>
             <arg attribute="recalculate">false</arg>

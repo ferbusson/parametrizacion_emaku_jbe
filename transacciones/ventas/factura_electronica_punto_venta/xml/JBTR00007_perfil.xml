@@ -1164,7 +1164,9 @@ o el carpintero asociado -->
           <subarg>
             <arg attribute="name">Cant</arg>
             <arg attribute="length">70</arg>
-            <arg attribute="type">INTEGER</arg>
+            <!-- <arg attribute="type">INTEGER</arg> -->
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="roundDecimal">2</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="returnCol">1</arg>
             <arg attribute="recalculate">false</arg>
@@ -2515,7 +2517,7 @@ o el carpintero asociado -->
   <!-- Inicia forma de Pago *** -->
   <FORM>
     <preferences>
-      <size height="650" width="980"/>
+      <size height="650" width="1100"/>
       <name>PAYMENTFORM</name>
       <icon>PAGO</icon>
       <iconificable/>
@@ -3209,6 +3211,7 @@ o el carpintero asociado -->
                     <arg attribute="Panel">false</arg>
                     <subarg>
                       <arg attribute="name">diascredito</arg>
+                      <arg attribute="label">Días</arg>
                       <arg attribute="format">TEXT</arg>
                        <arg attribute="mask">NUMERIC</arg>
                       <arg attribute="size">3</arg>
