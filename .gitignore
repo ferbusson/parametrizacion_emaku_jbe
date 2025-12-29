@@ -75,3 +75,5 @@ Thumbs.db
 
 # Project specific directories
 backups/
+resources/jars/lado_servidor/jbe/
+resources/jars/lado_servidor/META-INF/
