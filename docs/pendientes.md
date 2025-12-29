@@ -8,7 +8,7 @@
 - [x] Poner prefijo de Pedidos por cada sucursal
 - [x] Nuevo Pedido Marcar con color cuando la cantidad de la cotizacion es menor a la cantidad disponible
 - [x] Revisar pago con todas las tarjetas Nueva Factura
-- [ ] Crear usuarios sistema con sus permisos y sucursal
+- [x] Crear usuarios sistema con sus permisos y sucursal
 - [ ] Verificar que en Javipuntos solo se puedan digitar personas habilitadas para javipuntos
 - [x] Cambiar letrero que dice: *Carta: 1 (Default)* por *Mostrador: 1 (Default)*
 - [x] Al llamar la cotización desde el Pedido conservar los precios de la cotización
@@ -18,7 +18,7 @@
 - [x] En pedidos: hacer cambios a la select de la query que carga temporales para que no suba es_pintor sino 0 para que el vunitario quede libre para editar
 - [ ] En la impresión de Cotizaciones y Pedidos agregar mas info del tercero, revisar la plantilla de impresión
 - [ ] Quitar de las opciones de JBE el reporte Contabilidad reportes administrativos detallado de ventas gerencia
-- [ ] Revisar reportes de venta (excel)
+- [x] Revisar reportes de venta (excel)
 - [x] Corregir error que sale en Abono a CxC al digitar el abono
 - [ ] Quitar codigo barras impresion tirilla Abono a CxC
 - [x] Agregar soporte para OrderReference en la generación de factura electrónica
@@ -48,7 +48,7 @@
 
 - [ ] Preguntar perfiles de Oscar y Daniela
 - [ ] Recordar acerca de resoluciones de facturacion
-- [ ] Poner facturacion Credito
+- [x] Poner facturacion Credito
 - [ ] Poner facturacion Contingencia
 - [ ] Poner traslados bodegas a perfiles vendedores
 - [ ] Poner como administrador el perfil de Jairo Moncayo 
