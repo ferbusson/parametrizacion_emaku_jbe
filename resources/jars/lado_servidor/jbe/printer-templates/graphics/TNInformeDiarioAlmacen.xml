@@ -1,0 +1,170 @@
+<emaku_template type="POSTSCRIPT" requestNumeration="false" silence="false" printer="PDF">
+	<settings width="612" height="792"/>
+	<metadata>
+		<image row="30" col="30" width="25" height="12">/icons/logo_fac.png</image>
+			<font row="0" col="0" name="Sans" size="10"/>
+
+			<field row="37" center="612" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1" importValue="true">terceroal</field>
+			<field row="52" center="612" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0" importValue="true">nitalterno</field>
+			<field row="67" center="612" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0">Responsable del Impuesto sobre las ventas - IVA</field>
+			<field row="82" center="612" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0" importValue="true">direccion</field>
+			<field row="97" center="612" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0" importValue="true">ciudad</field>
+			<field row="140" center="612" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">COMPROBANTE INFORME DIARIO POR ALMACEN</field>
+
+			<field row="170" col="50" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">Número:</field>
+			<field row="182" col="50" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1" >Fecha:</field>
+
+			<field row="210" col="50" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1" >POS</field>
+			<field row="222" col="50" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0">Factura Inicial</field>
+			<field row="222" col="200" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0">Factura Final</field>
+ 	                <field row="222" col="350" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0">Cant. Facturas</field>
+
+			<field row="237" col="50" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">POS-CAMBIO</field>
+			<field row="249" col="50" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0">Factura Inicial</field>
+			<field row="249" col="200" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0">Factura Final</field>
+			<field row="249" col="350" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0">Cant. Facturas</field>
+			
+			<field row="264" col="50" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">COMPUTADOR</field>
+			<field row="277" col="50" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0">Factura Inicial</field>
+			<field row="277" col="200" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0">Factura Final</field>
+			<field row="277" col="350" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0">Cant. Facturas</field>
+
+			<field row="321" center="612" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1" >DISCRIMINACION DE VENTAS</field>
+
+			<field row="475" col="50" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">TOTAL FACTURADO</field>
+
+			<field row="505" center="612" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1">MOVIMIENTOS DEL DIA</field>
+
+			<field row="520" col="50" type="STRING" >MEDIOS DE PAGO</field>
+			<field row="520" col="300" type="STRING" >CANTIDAD</field>
+			<field row="520" col="530" type="STRING" >VALOR</field>
+
+			<field row="670" center="612" type="STRING" fontName="Dialog" fontSize="10" fontStyle="1" >DISCRIMINACION POR EQUIPOS EMISORES DE FACTURAS</field>
+
+				<field row="695" col="50" type="STRING" >CAJA</field>
+				<field row="695" col="120" type="STRING" >USUARIO</field>
+				<field row="695" col="210" type="STRING" >UBICACION</field>
+				<field row="695" col="330" type="STRING" >SERIE</field>
+				<field row="695" col="400" type="STRING" >CANT. FACTURAS</field>
+				<field row="695" col="530" type="STRING" >VALOR</field>
+
+		</metadata>
+
+     <!-- Prefijo -->
+	<package>
+               <field row="170" col="105" type="STRING" textLine="-" textCol="120" fontName="Dialog" fontSize="10" fontStyle="0"/>
+        </package>
+
+ <!-- Numero fac -->
+     <package>
+        <field row="170" col="125" width="10" type="STRING" mask="0" fontName="Dialog" fontSize="10" fontStyle="0"/>
+     </package>
+
+   <!-- fecha fac -->
+   <package>
+      <field row="182" col="105" type="DATE" mask="EEEEEE dd MMMM yyyy" fontName="Dialog" fontSize="10" fontStyle="0"/>
+   </package>
+
+	<!-- 1 POS DESDE -->
+        <package>
+                <field fontName="Dialog" fontSize="10" fontStyle="0" row="222" col="150" width="13" type="STRING"/>
+        </package>
+
+	<!-- 2 POS HASTA -->
+        <package>
+                <field fontName="Dialog" fontSize="10" fontStyle="0" row="222" col="300" width="13" type="STRING"/>
+        </package>
+
+	<!-- 3 POS CANTIDAD -->
+        <package>
+                <field fontName="Dialog" fontSize="10" fontStyle="0" row="222" col="560" width="13" type="STRING"/>
+        </package>
+
+
+	<!-- 4 CAMBIO DESDE -->
+        <package>
+                <field fontName="Dialog" fontSize="10" fontStyle="0" row="249" col="150" width="13" type="STRING"/>
+        </package>
+
+	<!-- 5 CAMBIO HASTA -->
+        <package>
+                <field fontName="Dialog" fontSize="10" fontStyle="0" row="249" col="300" width="13" type="STRING"/>
+        </package>
+
+	<!-- 6 CAMBIO CANTIDAD -->
+        <package>
+                <field fontName="Dialog" fontSize="10" fontStyle="0" row="249" col="560" width="13" type="STRING"/>
+        </package>
+
+
+	<!-- 7 CREDITO DESDE -->
+        <package>
+                <field fontName="Dialog" fontSize="10" fontStyle="0" row="277" col="150" width="13" type="STRING"/>
+        </package>
+
+	<!-- 8 CREDITO HASTA -->
+        <package>
+                <field fontName="Dialog" fontSize="10" fontStyle="0" row="277" col="300" width="13" type="STRING"/>
+        </package>
+
+	<!-- 9 CREDITO CANTIDAD -->
+        <package>
+                <field fontName="Dialog" fontSize="10" fontStyle="0" row="277" col="560" width="13" type="STRING"/>
+        </package>
+
+
+	<!-- 10 DISCRIMINACION DE VENTAS -->
+
+	   <package>
+	      <subpackage rowInit="340" rowAcum="15">
+		 <field col="50" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0" incrementRow="false" /> 
+		 <field col="570" type="NUMERIC" width="13" fontName="Dialog" fontSize="10" fontStyle="0" mask="###,###,###" />
+	      </subpackage>
+	   </package>
+
+
+	<!-- 11 TOTAL FACTURADO -->
+        <package>
+                <field fontName="Dialog" fontSize="10" fontStyle="1" row="475" col="570" width="13" type="NUMERIC" mask="###,###,###"/>
+        </package>
+
+
+	<!-- MOVIMIENTOS DEL DIA -->
+
+	   <package>
+	      <subpackage rowInit="535" rowAcum="15">
+		 <field col="50" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0" incrementRow="false" /> 
+		 <field col="330" type="NUMERIC" width="13" fontName="Dialog" fontSize="10" fontStyle="0" mask="###,###,###" />
+		 <field col="570" type="NUMERIC" width="13" fontName="Dialog" fontSize="10" fontStyle="0" mask="###,###,###" />
+	      </subpackage>
+	   </package>
+
+
+	<!-- 13 TOTAL FACTURADO -->
+        <package>
+                <field fontName="Dialog" fontSize="10" fontStyle="1" row="640" col="570" width="13" type="NUMERIC" mask="###,###,###"/>
+        </package>
+
+
+	<!-- 14 DISCRIMINACION EQUIPO -->
+
+	   <package>
+	      <subpackage rowInit="710" rowAcum="15">
+		 <field col="50" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0" incrementRow="false" /> 
+		 <field col="120" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0" incrementRow="false" /> 
+		 <field col="210" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0" incrementRow="false" /> 
+		 <field col="330" type="STRING" fontName="Dialog" fontSize="10" fontStyle="0" incrementRow="false" /> 
+		 <field col="450" type="NUMERIC" width="9" fontName="Dialog" fontSize="10" fontStyle="0" mask="#,###" />
+		 <field col="570" type="NUMERIC" width="13" fontName="Dialog" fontSize="10" fontStyle="0" mask="###,###,###" />
+	      </subpackage>
+	   </package>
+
+
+	<!-- 15 TOTAL DISCRIMINACION -->
+        <package>
+                <field textLine="TOTAL" textCol="50" fontName="Dialog" fontSize="10" fontStyle="1" row="last" rowAcum="15" col="570" width="13" type="NUMERIC" mask="###,###,###"/>
+        </package>
+
+
+
+</emaku_template>
