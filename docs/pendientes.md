@@ -51,4 +51,4 @@
 - [ ] Poner facturacion Credito
 - [ ] Poner facturacion Contingencia
 - [ ] Poner traslados bodegas a perfiles vendedores
-- [ ] Poner como administrador el perfil de Jairo Moncayo
+- [ ] Poner como administrador el perfil de Jairo Moncayo 
