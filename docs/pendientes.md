@@ -4,23 +4,23 @@
 
 - [x] Factura Electronica debe guardar su propia informacion de contacto (direccion y telefono de contacto)
 - [x] Hacer script de subida de saldos iniciales
-- [ ] Agregar Nequi, Daviplata etc en forma de pago (Como tarjetas)
+- [x] Agregar Nequi, Daviplata etc en forma de pago (Como tarjetas)
 - [x] Poner prefijo de Pedidos por cada sucursal
 - [x] Nuevo Pedido Marcar con color cuando la cantidad de la cotizacion es menor a la cantidad disponible
 - [x] Revisar pago con todas las tarjetas Nueva Factura
 - [x] Crear usuarios sistema con sus permisos y sucursal
-- [ ] Verificar que en Javipuntos solo se puedan digitar personas habilitadas para javipuntos
+- [x] Verificar que en Javipuntos solo se puedan digitar personas habilitadas para javipuntos
 - [x] Cambiar letrero que dice: *Carta: 1 (Default)* por *Mostrador: 1 (Default)*
 - [x] Al llamar la cotización desde el Pedido conservar los precios de la cotización
 - [x] Al llamar a la cotizacion desde el Pedido debe llamar al tercero (solo para este caso) si son pedidos anteriores con la lista esta ok Preguntar
 - [x] En pedidos: validar que no se pueda llamar a una cotización ya usada
 - [x] En pedidos: validar que no se pueda llamar a una cotización vencida
 - [x] En pedidos: hacer cambios a la select de la query que carga temporales para que no suba es_pintor sino 0 para que el vunitario quede libre para editar
-- [ ] En la impresión de Cotizaciones y Pedidos agregar mas info del tercero, revisar la plantilla de impresión
-- [ ] Quitar de las opciones de JBE el reporte Contabilidad reportes administrativos detallado de ventas gerencia
+- [x] En la impresión de Cotizaciones y Pedidos agregar mas info del tercero, revisar la plantilla de impresión
+- [x] Quitar de las opciones de JBE el reporte Contabilidad reportes administrativos detallado de ventas gerencia
 - [x] Revisar reportes de venta (excel)
 - [x] Corregir error que sale en Abono a CxC al digitar el abono
-- [ ] Quitar codigo barras impresion tirilla Abono a CxC
+- [x] Quitar codigo barras impresion tirilla Abono a CxC
 - [x] Agregar soporte para OrderReference en la generación de factura electrónica
 ```xml
 <cac:OrderReference>
@@ -51,7 +51,7 @@
 - [x] Poner facturacion Credito
 - [ ] Poner facturacion Contingencia
 - [ ] Poner traslados bodegas a perfiles vendedores
-- [ ] Poner como administrador el perfil de Jairo Moncayo 
+- [x] Poner como administrador el perfil de Jairo Moncayo 
 
 - [x] Reporte de Cotizaciones por Tercero
 - [x] Reporte de Facturas por Tercero
@@ -60,4 +60,11 @@
 - [ ] Ver la posibilidad de mejorar el contraste de la letra en el F2
 - [x] Habilitar la consulta bodegas para vendedores
 - [x] Habilitar el maestro de productos
+- [ ] Habilitar el re envio de facturas por correo electrónico
+- [ ] Habilitar facturas de contingencia a usuarios
 
+
+# Preguntas para Dia Inicio:
+
+-  Cómo y quien inscribe la gente a Javipuntos (Perfil Editar Terceros)
+-

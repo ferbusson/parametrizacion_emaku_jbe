@@ -144,9 +144,9 @@
 	<package>
 		<field multipage="true" rownewpage="187" colnewpage="40" row="187" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
 		<field multipage="true" rownewpage="199" colnewpage="40" row="199" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
-		<field multipage="true" rownewpage="211" colnewpage="613" row="211" col="613" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
-		<field multipage="true" rownewpage="223" colnewpage="613" row="223" col="613" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
 		<field multipage="true" rownewpage="211" colnewpage="40" row="211" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
+		<field multipage="true" rownewpage="223" colnewpage="40" row="223" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
+		<field multipage="true" rownewpage="211" colnewpage="40" row="235" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
 	</package>
 
 	<!-- 2 fecha -->
