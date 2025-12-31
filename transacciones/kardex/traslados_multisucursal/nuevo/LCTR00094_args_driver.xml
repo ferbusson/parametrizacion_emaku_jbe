@@ -1,0 +1,46 @@
+<container>
+    <subarg>
+        <arg attribute="consecutive" />
+        <arg attribute="date" />
+        <arg attribute="actionDocument">createDocument</arg>
+        <arg attribute="cash" />
+    </subarg>
+
+    <!-- 0 -->
+    <arg>INS0037</arg>
+    <!-- 1 -->
+    <arg attribute="addKey" />
+    <!-- 2 -->
+    <arg attribute="addKey" />
+    <!-- 3 -->
+    <subarg>
+        <LNData>
+            <driver>LNSelectedField</driver>
+            <method>getSubpackage</method>
+            <parameters>
+              <arg attribute="sql">LCINS0097</arg>
+              <arg attribute="fields">0,1,2</arg>
+              <arg attribute="discartKey">idTercero</arg>
+              <arg attribute="discartKey">centrocosto</arg>
+              <arg attribute="discartKey">bodegaEntrante</arg>
+              <arg attribute="conditional">B&gt;0</arg>
+            </parameters>
+       </LNData>
+        <LNData>
+            <driver>LNInventarios</driver>
+            <method>traslados</method>
+        </LNData>
+    </subarg>
+    <!-- 4 -->
+    <arg attribute="removeKey">bodegaEntrante</arg>    
+    <!-- 5 Entrada-->
+    <LNData>
+      <driver>LNSelectedField</driver>
+      <method>getFields</method>
+      <parameters>
+        <arg attribute="sql">DBLINK021</arg>
+        <arg attribute="fields">0</arg>
+      </parameters>
+    </LNData>
+
+</container>

@@ -1201,7 +1201,7 @@ el boton cerrar cierra el formulario
             <arg attribute="length">80</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="roundDecimal">0</arg>
-            <arg attribute="enabled">false</arg>
+            <arg attribute="enabled">true</arg>
             <arg attribute="queryCol">2</arg>
             <arg attribute="returnCol">2</arg>
             <arg attribute="printable">true</arg>
@@ -1554,12 +1554,15 @@ el boton cerrar cierra el formulario
             <arg attribute="queryCol">46</arg>
             </subarg>
             <!-- 45 (as) -->
+            <!--0 cuando se ingresa manualmente o 1 cuando viene de un documento anterior ver formula del valor unitario, 
+              si el valor llega por query directamente desde la tabla y es 1 significa que es combinacion y debe permitir 
+              poner el valor unitario manualmente, caso contrario es 0 lo que hace que no se pueda editar-->
             <subarg> 
-            <arg attribute="name">banderadocanterior</arg> <!--0 cuando se ingresa manualmente 1 cuando viene de un documento anterior ver formula del valor unitario-->
+            <arg attribute="name">banderadocanterior</arg> 
             <arg attribute="length">100</arg>
             <arg attribute="type">INTEGER</arg>
             <arg attribute="enabled">false</arg>
-            <!-- <arg attribute="queryCol">47</arg> -->
+            <arg attribute="queryCol">47</arg>
             </subarg>
             <!-- 46 (at) -->
             <subarg>

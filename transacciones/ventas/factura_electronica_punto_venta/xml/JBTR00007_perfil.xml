@@ -4754,6 +4754,10 @@ o el carpintero asociado -->
                   <arg attribute="formula">g=b*(q/100)</arg>
                   <arg attribute="formula">h=(b/1.19)*s/100</arg>
                   <arg attribute="formula">i=(b-(b/1.19))*t/100</arg>
+                  <arg attribute="beanshell">c=!"".equals(a)?"-":""</arg>
+                  <arg attribute="beanshell">d=!"".equals(a)?"-":""</arg>
+                  <arg attribute="beanshell">e=!"".equals(a)?"-":""</arg>
+                  <arg attribute="beanshell">f=!"".equals(a)?"-":""</arg>                                    
                   <arg attribute="returnNullValue">true</arg>
                   <!-- a -->
                   <subarg>
@@ -6802,6 +6806,14 @@ o el carpintero asociado -->
                       <arg attribute="state">true</arg>
                     </parameters>
                   </component>
+                  <!-- cierra forma de pago -->
+                    <component>
+                      <driver>gfforma</driver>
+                      <method>setVisible</method>
+                      <parameters>
+                        <arg>false</arg>
+                      </parameters>
+                    </component>
               </action>
             </object>
           </events>
@@ -8668,6 +8680,14 @@ o el carpintero asociado -->
                       <arg attribute="state">true</arg>
                     </parameters>
                   </component>
+                  <!-- cierra forma de pago -->
+                    <component>
+                      <driver>gfforma</driver>
+                      <method>setVisible</method>
+                      <parameters>
+                        <arg>false</arg>
+                      </parameters>
+                    </component>
               </action>
             </object>
 

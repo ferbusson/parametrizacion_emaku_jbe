@@ -349,7 +349,7 @@ SELECT
     foo.nombre_lista,
     foo.pventa2,
     foo.pventa3,
-    foo.es_pintor,
+    foo.se_puede_editar,
     foo.tiene_precio_base
 FROM
     (SELECT
@@ -397,7 +397,10 @@ FROM
         i.porcentaje_bp,
         i.inc,
         i.nombre_lista,
-        i.es_pintor,
+        case when i.id_sgrupo = 686 then 1 else 0 end as se_puede_editar, --usado en las combinaciones para habilitar la edicion del vunitario, 
+        																  --antes subia si era pintor o no pero al final eso no se usa aqui, este mismo campo 
+        																  --permite que los documentos cargados por temporal o desde generar de un documento 
+        																  --anterior conserven el vunitario y que no se recalculen al ser cargados
     	i.tiene_precio_base
     FROM 
         marcas ma,
@@ -986,7 +989,7 @@ SELECT
     a.nombre_lista,
     CASE WHEN pvo.id_regimen='E' THEN ROUND((a.pventa2/(1+(piva/100)))::numeric,0) ELSE a.pventa2::NUMERIC END AS pventa2,
     CASE WHEN pvo.id_regimen='E' THEN ROUND((a.pventa3/(1+(piva/100)))::numeric,0) ELSE a.pventa3::NUMERIC END AS pventa3,
-    a.es_pintor,
+    a.se_puede_editar,
     a.tiene_precio_base
 FROM
     aux_consulta_con_promociones a,

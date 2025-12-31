@@ -52,3 +52,12 @@
 - [ ] Poner facturacion Contingencia
 - [ ] Poner traslados bodegas a perfiles vendedores
 - [ ] Poner como administrador el perfil de Jairo Moncayo 
+
+- [x] Reporte de Cotizaciones por Tercero
+- [x] Reporte de Facturas por Tercero
+- [ ] Listado de siglas de vendedores por sucursal
+- [x] Hacer que se habilite la edicion de vunitario para los productos de combinaciones
+- [ ] Ver la posibilidad de mejorar el contraste de la letra en el F2
+- [x] Habilitar la consulta bodegas para vendedores
+- [x] Habilitar el maestro de productos
+
