@@ -4,8 +4,8 @@
 
       <image row="1" col="15" width="25" height="12">/icons/logo_fac.png</image>
       
-      <!-- <qr row="70" col="50" width="115" height="115" /> -->
-      <rectangle row="110" col="50" width="115" height="115" /> <!--emula el QR -->
+      <qr row="70" col="50" width="115" height="115" />
+      <!-- <rectangle row="110" col="50" width="115" height="115" /> emula el QR -->
 
       <font row="40" col="0" name="Sans" size="8" />
       <field row="240" center="218" type="STRING" importValue="true">terceroal</field>
@@ -355,14 +355,14 @@
    </package> -->
 
     <!-- 51 cufe -->
-     <!-- <package>
+     <package>
         <field fontName="Dialog" fontSize="6" fontStyle="0" row="last" col="10"  width="57"  height="5" rowAcum="10" type="TEXT"/>
-     </package> -->
+     </package>
 
      <!-- 52 Fecha procesamiento -->
-   <!-- <package>
+   <package>
       <field fontName="Dialog" fontSize="6" fontStyle="0" textLine="Fecha de procesamiento:" rowAcum="15" textCol="10" row="last" col="90" type="STRING"/>
-   </package> -->
+   </package>
 
    <!-- 53 --> 
    <package>

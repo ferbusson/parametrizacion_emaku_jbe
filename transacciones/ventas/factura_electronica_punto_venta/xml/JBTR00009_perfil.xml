@@ -75,6 +75,24 @@
   </preferences>
   
   <component>
+          <driver id="ndocumento">common.gui.components.GenericData</driver>
+          <parameters>
+            <arg attribute="keySQL">LCSEL0459</arg>
+            <arg attribute="driverEvent" id="nro_fact">client.gui.components.TableDataFields</arg>
+            <arg attribute="panel">false</arg>
+            <subarg>
+              <arg attribute="format">TEXT</arg>
+              <arg attribute="size">10</arg>
+              <arg attribute="alignment">CENTER</arg>
+              <arg attribute="maxlength">100</arg>
+              <arg attribute="enabled">false</arg>
+              <arg attribute="clean">true</arg>
+              <arg attribute="exportValue">internaldocument</arg>
+              <arg attribute="printable">true</arg>
+            </subarg>
+          </parameters>
+        </component>                               
+  <component>
     <driver id="iddirecciontercero">common.gui.components.GenericData</driver>
     <parameters>
       <arg attribute="keySQL">LCSEL0478</arg>
@@ -796,6 +814,8 @@
                         <arg attribute="sqlCode">RFSEL015</arg> <!--hasta resolucion -->
                         <arg attribute="sqlCode">LCSEL0091</arg> <!-- vigencia meses resolucion-->
                         <arg attribute="sqlCode">RFSEL016</arg> <!-- prefijo resolucion -->
+                        <arg attribute="sqlCode">LCSEL0459</arg> <!-- ndocumento reenvio email -->
+                        <arg attribute="sqlCodeExportValue">DESEL0016,cufe,qr,prefix</arg>
                         <arg attribute="sqlCodeExportValue">JBSEL0024,_sigla,_usuario,_norden,_id_char_tercero_referente,_nombre_tercero_referente,_direccion_contacto,_telefono_contacto,_id_vendedor,_vencimiento,_ndocumento_factura,_numero_pedido,_prefix,_cufe</arg>
                         <arg attribute="sqlCodeExportValue">JBSEL0025,_javipuntosgenerados,_javipuntosredimidos</arg>
                         <arg attribute="sqlCodeExportValue">JBSEL0047,_total_pago_credito,_dias_credito,_nombre_credito,_vencimiento_factura</arg>
@@ -4243,7 +4263,8 @@
                   <method>getPackage</method>
                   <parameters>
                     <subarg>
-                      <arg attribute="importValue">ejemplocufe</arg>
+                      <!-- <arg attribute="importValue">ejemplocufe</arg> -->
+                      <arg attribute="importValue">cufe</arg>
                     </subarg>
                   </parameters>
                 </component>
@@ -4332,7 +4353,7 @@
                   </component>
                                     
                 <!-- fecha procesamiento habilitar cuando se entre en produccion-->
-                <!-- <component>
+                <component>
                   <driver>this</driver>
                   <method>getPackage</method>
                   <parameters>
@@ -4340,7 +4361,7 @@
                       <arg attribute="importValue">processdate</arg>
                     </subarg>
                   </parameters>
-                </component> -->
+                </component>
                 <!-- 5 -->
                 <component>
                   <driver>client.gui.components.FindThird</driver>
@@ -4556,6 +4577,39 @@
             </component>
           </panel>
 
+<panel locate="Center" type="FlowLayout" align="LEFT">
+        <component locate="West">
+                <driver>common.gui.components.XMLLabel</driver>
+                <parameters>
+                    <arg attribute="text">Re-Enviar Email</arg>
+                    <arg attribute="alignment">0</arg>
+                </parameters>
+        </component>
+        <component locate="Center">
+            <driver id="reenviaremail">common.gui.components.ButtonsPanel</driver>
+            <parameters>
+                <subarg>
+                  <arg attribute="label">PRINT</arg>
+                  <arg attribute="icon">/icons/ico_correo.png</arg>
+                  <arg attribute="keyStroke">F11</arg>
+                  <arg attribute="typePackage">MAILPRINTER</arg>
+                </subarg>
+            </parameters>
+            <events>
+                <object>
+                    <name>PRINT</name>
+                    <!-- Inicia envio email -->
+                    <action>
+                        <type>emailprinter</type>
+                        <to>mailto</to>
+                        <subjectSQL>LCSEL0383,internaldocument</subjectSQL>
+                        <bodySQL>LCSEL0384,internaldocument</bodySQL>                                        
+                        <attachmentSQL>LCSEL0389,internaldocument</attachmentSQL>        
+                    </action>   
+                </object>
+            </events>
+        </component>
+        </panel> 
 
     <panel locate="East" type="BorderLayout">
     <component locate="Center">
@@ -5114,7 +5168,7 @@
                 </component> -->
 
                 <!-- 51 cufe -->
-                <!-- <component>
+                <component>
                   <driver>this</driver>
                   <method>getPackage</method>
                   <parameters>
@@ -5122,10 +5176,10 @@
                       <arg attribute="importValue">cufe</arg>
                     </subarg>
                   </parameters>
-                </component> -->
+                </component>
 
                 <!-- 52 fecha procesamiento -->
-                <!-- <component>
+                <component>
                   <driver>this</driver>
                   <method>getPackage</method>
                   <parameters>
@@ -5133,7 +5187,7 @@
                       <arg attribute="importValue">processdate</arg>
                     </subarg>
                   </parameters>
-                </component> -->
+                </component>
 
                 <!-- 53 Paquete Blanco linea -->
                 <component>

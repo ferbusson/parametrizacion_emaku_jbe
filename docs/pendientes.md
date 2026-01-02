@@ -62,9 +62,27 @@
 - [x] Habilitar el maestro de productos
 - [ ] Habilitar el re envio de facturas por correo electrónico
 - [ ] Habilitar facturas de contingencia a usuarios
-
-
+- [x] Poner plantilla impresion en server propia para facs credito donde se imprima el nombre de la plataforma: Ej: sistecredito
+ 
 # Preguntas para Dia Inicio:
 
 -  Cómo y quien inscribe la gente a Javipuntos (Perfil Editar Terceros)
 -
+
+No borrar:
+
+FC
+1C
+SI
+
+Z1 PRINCIPAL
+Z2 CARRERA 21
+Z3 CASA DEL CARPINTERO
+Z4 AMERICAS 15-15
+Z5 ICO
+Z6 SIKA
+Z7 CARPINTERO CENTRO
+
+
+
+mdjw nxaw pblv ikba 
