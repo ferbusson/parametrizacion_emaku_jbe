@@ -62,7 +62,7 @@ Preguntas: si el pedido es a credito, se pueden redimir puntos javipuntos?
 <FORM>
   <preferences>
     <size height="600" width="1150"/>
-    <name>Nueva FacturaElectronica</name>
+    <name>Nueva Factura Electronica - Contado</name>
     <icon>NFCREDITO</icon>
     <iconificable/>
     <maximizable/>
@@ -2987,7 +2987,7 @@ o el carpintero asociado -->
         <!-- <panel locate="Center" type="FlowLayout" align="center">-->
         <panel locate="Center" type="BorderLayout">
           <panel locate="Center" type="BorderLayout">
-            <panel cols="1" locate="West" rows="6" type="GridLayout">
+            <panel cols="1" locate="West" rows="5" type="GridLayout">
               <component locate="North">
                 <driver>common.gui.components.XMLLabel</driver>
                 <parameters>
@@ -3036,14 +3036,14 @@ o el carpintero asociado -->
                   <arg attribute="font">Dialog,1,18</arg>
                 </parameters>
               </component>
-              <component locate="North">
+              <!-- <component locate="North">
                 <driver>common.gui.components.XMLLabel</driver>
                 <parameters>
                   <arg attribute="text">Pago a Crédito</arg>
                   <arg attribute="alignment">0</arg>
                   <arg attribute="font">Dialog,1,16</arg>
                 </parameters>
-              </component>
+              </component> -->
               <component locate="North">
                 <driver>common.gui.components.XMLLabel</driver>
                 <parameters>
@@ -3061,7 +3061,7 @@ o el carpintero asociado -->
                 </parameters>
               </component>
             </panel>
-            <panel cols="2" locate="Center" rows="6" type="GridLayout">
+            <panel cols="2" locate="Center" rows="5" type="GridLayout">
               <panel type="FlowLayout"/>
               <component locate="Center">
                 <driver id="tfacprov">client.gui.components.TableDataFields</driver>
@@ -3184,79 +3184,7 @@ o el carpintero asociado -->
                 </parameters>
               </component>
 
-              <panel type="FlowLayout">
-                <component locate="Center">
-                <driver id="totalpagocredito">common.gui.components.GenericData</driver>
-                  <parameters>
-                    <arg attribute="Panel">false</arg>
-                    <subarg>
-                      <arg attribute="name">pagoacredito</arg>
-                      <arg attribute="format">NUMERIC</arg>
-                      <arg attribute="size">16</arg>
-                      <!-- <arg attribute="enableField">pedidoacredito,2</arg> -->
-                      <arg attribute="maxlength">26</arg>
-                      <arg attribute="clean">true</arg>
-                      <arg attribute="font">Dialog,1,18</arg>
-                      <arg attribute="alignment">RIGHT</arg>
-                      <arg attribute="enabled">true</arg>
-                      <arg attribute="exportValue">pagooacredito</arg>
-                      <arg attribute="printable">true</arg>
-                    </subarg>
-                  </parameters>
-                </component>
-
-                <component locate="Center">
-                <driver id="diascredito">common.gui.components.GenericData</driver>
-                  <parameters>
-                    <arg attribute="Panel">false</arg>
-                    <subarg>
-                      <arg attribute="name">diascredito</arg>
-                      <arg attribute="label">Días</arg>
-                      <arg attribute="format">TEXT</arg>
-                       <arg attribute="mask">NUMERIC</arg>
-                      <arg attribute="size">3</arg>
-                      <!-- <arg attribute="enableField">pedidoacredito,2</arg> -->
-                      <arg attribute="maxlength">3</arg>
-                      <arg attribute="defaultText">30</arg>
-                      <arg attribute="clean">true</arg>
-                      <arg attribute="font">Dialog,1,18</arg>
-                      <arg attribute="alignment">RIGHT</arg>
-                      <arg attribute="enabled">true</arg>
-                      <arg attribute="exportValue">diascredito</arg>
-                      <arg attribute="printable">true</arg>
-                    </subarg>
-                  </parameters>
-                </component>
-                </panel>
-              <panel type="FlowLayout" align="left">
-                <component locate="North">
-                <driver>common.gui.components.XMLLabel</driver>
-                <parameters>
-                  <arg attribute="text">Tipo: </arg>
-                  <arg attribute="alignment">0</arg>
-                  <arg attribute="font">Dialog,1,16</arg>
-                </parameters>
-              </component>
-
-                <component locate="East">
-                  <driver id="tipofactura">client.gui.components.XMLComboBox</driver>
-                  <parameters>
-                    <arg attribute="sqlCombo">LCSEL0469</arg>
-                    <arg attribute="selectedIndex">0</arg>
-                    <arg attribute="font">Dialog,1,16</arg>
-                    <arg attribute="preferredLength">240</arg>
-                    <!-- <arg attribute="enableField">pedidoacredito,2</arg> -->
-                    <arg attribute="addAttribute">key</arg>
-                    <arg attribute="clean">false</arg>
-                    <arg attribute="Panel">false</arg>
-                    <arg attribute="exportValue">charctatipofactura</arg>
-                    <arg attribute="printable">true</arg>
-                    <arg attribute="addAttribute">key</arg>
-                    <arg attribute="nameField">cuenta</arg>                
-                    <!-- <arg attribute="sqlCode">LCSEL0946</arg> -->
-                  </parameters>
-                </component>
-                </panel>
+              
                 <panel type="FlowLayout"/>
               <component>
                 <driver id="puntos_acumulados">common.gui.components.GenericData</driver>
@@ -5290,6 +5218,79 @@ o el carpintero asociado -->
             </parameters>
           </component>
         </panel>
+        <panel type="FlowLayout">
+                <component locate="Center">
+                <driver id="totalpagocredito">common.gui.components.GenericData</driver>
+                  <parameters>
+                    <arg attribute="Panel">false</arg>
+                    <subarg>
+                      <arg attribute="name">pagoacredito</arg>
+                      <arg attribute="format">NUMERIC</arg>
+                      <arg attribute="size">16</arg>
+                      <!-- <arg attribute="enableField">pedidoacredito,2</arg> -->
+                      <arg attribute="maxlength">26</arg>
+                      <arg attribute="clean">true</arg>
+                      <arg attribute="font">Dialog,1,18</arg>
+                      <arg attribute="alignment">RIGHT</arg>
+                      <arg attribute="enabled">true</arg>
+                      <arg attribute="exportValue">pagooacredito</arg>
+                      <arg attribute="printable">true</arg>
+                    </subarg>
+                  </parameters>
+                </component>
+
+                <component locate="Center">
+                <driver id="diascredito">common.gui.components.GenericData</driver>
+                  <parameters>
+                    <arg attribute="Panel">false</arg>
+                    <subarg>
+                      <arg attribute="name">diascredito</arg>
+                      <arg attribute="label">Días</arg>
+                      <arg attribute="format">TEXT</arg>
+                       <arg attribute="mask">NUMERIC</arg>
+                      <arg attribute="size">3</arg>
+                      <!-- <arg attribute="enableField">pedidoacredito,2</arg> -->
+                      <arg attribute="maxlength">3</arg>
+                      <arg attribute="defaultText">30</arg>
+                      <arg attribute="clean">true</arg>
+                      <arg attribute="font">Dialog,1,18</arg>
+                      <arg attribute="alignment">RIGHT</arg>
+                      <arg attribute="enabled">true</arg>
+                      <arg attribute="exportValue">diascredito</arg>
+                      <arg attribute="printable">true</arg>
+                    </subarg>
+                  </parameters>
+                </component>
+                </panel>
+              <panel type="FlowLayout" align="left">
+                <component locate="North">
+                <driver>common.gui.components.XMLLabel</driver>
+                <parameters>
+                  <arg attribute="text">Tipo: </arg>
+                  <arg attribute="alignment">0</arg>
+                  <arg attribute="font">Dialog,1,16</arg>
+                </parameters>
+              </component>
+
+                <component locate="East">
+                  <driver id="tipofactura">client.gui.components.XMLComboBox</driver>
+                  <parameters>
+                    <arg attribute="sqlCombo">LCSEL0469</arg>
+                    <arg attribute="selectedIndex">0</arg>
+                    <arg attribute="font">Dialog,1,16</arg>
+                    <arg attribute="preferredLength">240</arg>
+                    <!-- <arg attribute="enableField">pedidoacredito,2</arg> -->
+                    <arg attribute="addAttribute">key</arg>
+                    <arg attribute="clean">false</arg>
+                    <arg attribute="Panel">false</arg>
+                    <arg attribute="exportValue">charctatipofactura</arg>
+                    <arg attribute="printable">true</arg>
+                    <arg attribute="addAttribute">key</arg>
+                    <arg attribute="nameField">cuenta</arg>                
+                    <!-- <arg attribute="sqlCode">LCSEL0946</arg> -->
+                  </parameters>
+                </component>
+                </panel>
       </panel>
     </tab>
     <panel locate="South" type="BorderLayout">
@@ -7612,7 +7613,8 @@ o el carpintero asociado -->
                 <arg>false</arg>
               </parameters>
               </component>
-              <!-- <component>
+
+              <component>
               <driver>this</driver>
               <method>getPackage</method>
               <parameters>
@@ -7620,7 +7622,7 @@ o el carpintero asociado -->
                 <arg attribute="importValue">cufe</arg>
                 </subarg>
               </parameters>
-              </component> -->
+              </component>
 
               <!-- 0 codigo tipo -->
                 <component>
@@ -7751,7 +7753,7 @@ o el carpintero asociado -->
                   <method>getPrintPackage</method>
                 </component>
                 <!-- fecha procesamiento habilitar cuando se entre en produccion-->
-                <!-- <component>
+                <component>
                   <driver>this</driver>
                   <method>getPackage</method>
                   <parameters>
@@ -7759,7 +7761,7 @@ o el carpintero asociado -->
                       <arg attribute="importValue">processdate</arg>
                     </subarg>
                   </parameters>
-                </component> -->
+                </component>
                 <!-- 5 -->
                 <component>
                   <driver>client.gui.components.FindThird</driver>

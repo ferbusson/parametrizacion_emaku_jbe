@@ -560,7 +560,7 @@ JBE ACCOUNTS TABLE:
                     <!-- mercancia Excluidas -->
                     <arg attribute="accountCol">41350102,6</arg>
                     <!-- Exentas -->
-                    <!-- <arg attribute="accountCol">41355615,6</arg> -->
+                    <arg attribute="accountCol">41355615,6</arg>
                     <!-- Impuesto Bolsas -->
                     <!-- <arg attribute="accountCol">240905,9</arg> -->
                     <!-- iva 5% -->

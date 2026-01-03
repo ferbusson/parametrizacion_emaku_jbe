@@ -4,7 +4,7 @@
 
       <image row="1" col="15" width="25" height="12">/icons/logo_fac.png</image>
       
-      <qr row="70" col="50" width="115" height="115" />
+      <qr row="110" col="50" width="115" height="115" />
       <!-- <rectangle row="110" col="50" width="115" height="115" /> emula el QR -->
 
       <font row="40" col="0" name="Sans" size="8" />

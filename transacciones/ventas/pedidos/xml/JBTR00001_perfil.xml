@@ -1080,6 +1080,8 @@ el boton cerrar cierra el formulario
           <arg attribute="exportTotalCol">r,verde</arg>
           <arg attribute="exportTotalCol">ac,totallineas</arg>
 
+          <arg attribute="beanshell">d=d&gt;c?0:d</arg> <!--Valida que no se venda en rojo -->
+
           <!-- lista de precios
           1 Mostrador
           2 Sub Pasto

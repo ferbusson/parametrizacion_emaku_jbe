@@ -1,0 +1,89 @@
+<FORM>
+    <preferences>
+        <size width="590" height="200" />
+        <name>Control de Facturación de Contingencia</name>
+        <icon>COTIZACION</icon>
+        <iconificable />
+        <resizable />
+        <closable />
+        <!-- <date /> -->
+        <!-- <consecutive>CT</consecutive> -->
+        <!-- <localConfigEquals sourceValue="SQL" keyLocal="cash" arg="USER">SEL0086</localConfigEquals> -->
+    </preferences>
+    <panel locate="West" type="FlowLayout" />
+                <panel locate="East" type="FlowLayout" />
+                <panel locate="North" type="FlowLayout" />
+                <panel locate="South" type="FlowLayout" />
+            <panel type="BorderLayout">                
+                <component locate="Center">
+          <driver id="controlcontingencia">client.gui.components.TableFindData</driver>
+          <parameters>
+            <arg attribute="rows">5</arg>
+            <arg attribute="colorBackground">255,255,255</arg>
+            <arg attribute="colorSelected">216,234,235</arg>
+            <arg attribute="protectSelected">true</arg>
+            <arg attribute="repaint">true</arg>
+            <arg attribute="sqlInit">LCSEL0998</arg>
+            <arg attribute="queryOnInit">true</arg>
+            <arg attribute="conditionalColor">52,247,98:c</arg>
+            <arg attribute="clean">true</arg>
+            <arg attribute="reload">true</arg>
+            <subarg><!-- b 1 -->
+              <arg attribute="name">SUCURSAL</arg>
+              <arg attribute="length">180</arg>
+              <arg attribute="type">STRING</arg>
+              <arg attribute="enabled">false</arg>
+            </subarg>
+            <subarg><!-- b 1 -->
+              <arg attribute="name">MOTIVO CONTINGENCIA</arg>
+              <arg attribute="length">300</arg>
+              <arg attribute="type">COMBOSQL</arg>
+              <arg attribute="sqlCombo">GRSEL0033</arg>
+              <arg attribute="enabled">true</arg>
+              <arg attribute="returnCol">0</arg>
+              <arg attribute="exportValue">idmotivocontingencia</arg>
+            </subarg>
+            <subarg><!-- c 2 -->
+              <arg attribute="name">ACTIVAR</arg>
+              <arg attribute="length">70</arg>
+              <arg attribute="type">BOOLEAN</arg>
+              <arg attribute="enabled">true</arg>
+              <arg attribute="returnCol">1</arg>
+              <arg attribute="enabled">true</arg>
+            </subarg>
+            <subarg><!-- d 3 -->
+              <arg attribute="name">id_bodega_sucursal</arg>
+              <arg attribute="length">0</arg>
+              <arg attribute="type">STRING</arg>
+              <arg attribute="enabled">FALSE</arg>
+              <arg attribute="returnCol">2</arg>
+            </subarg>
+          </parameters>
+        </component>
+        
+        
+            <component locate="South">
+                <driver>common.gui.components.ButtonsPanel</driver>
+                <parameters>
+                    <arg>NEW</arg>
+                    <arg>SAVE</arg>
+                    <arg>EXIT</arg>
+                </parameters>
+                <events>
+                    <object>
+                        <name>SAVE</name>
+                        <!-- actualiza control_activacion_contingencia localmente -->
+                        <component>
+                            <driver id="controlcontingencia">client.gui.components.TableFindData</driver>
+                            <method>getPackage</method>
+                        </component>
+                        <!-- actualiza control_activacion_contingencia remotamente -->
+                        <component>
+                            <driver id="controlcontingencia">client.gui.components.TableFindData</driver>
+                            <method>getBlankPackage</method>
+                        </component>
+                    </object>
+                </events>
+            </component>
+    </panel>
+</FORM>
