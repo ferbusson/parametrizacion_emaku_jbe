@@ -55,13 +55,13 @@
 
 - [x] Reporte de Cotizaciones por Tercero
 - [x] Reporte de Facturas por Tercero
-- [ ] Listado de siglas de vendedores por sucursal
+- [x] Listado de siglas de vendedores por sucursal
 - [x] Hacer que se habilite la edicion de vunitario para los productos de combinaciones
 - [ ] Ver la posibilidad de mejorar el contraste de la letra en el F2
 - [x] Habilitar la consulta bodegas para vendedores
 - [x] Habilitar el maestro de productos
-- [ ] Habilitar el re envio de facturas por correo electrónico
-- [ ] Habilitar facturas de contingencia a usuarios
+- [x] Habilitar el re envio de facturas por correo electrónico
+- [x] Habilitar facturas de contingencia a usuarios
 - [x] Poner plantilla impresion en server propia para facs credito donde se imprima el nombre de la plataforma: Ej: sistecredito
  
 # Preguntas para Dia Inicio:
@@ -84,5 +84,28 @@ Z6 SIKA
 Z7 CARPINTERO CENTRO
 
 
+11100503 BCO DAVIVIENDA CTA CTE -> BANCOLOMBIA 4902
+11100505 BCO BANCOLOMBIA CTA CTE -> BANCO DAVIVIENDA 4585
+11100506 BANCO DAVIVIENDA 9255 OK
+
+
+
+
 
 mdjw nxaw pblv ikba 
+
+
+- [ ] habilitar reportes de cartera por edades
+- [ ] habilitar reportes de cxp
+- [ ] hacer que se imprima el nombre del usuario no solo el login
+- [ ] revisar el reporte de libros auxiliares no saca info
+- [x] exportar el listado de productos para que lo puedan modificar y reimportar
+- [ ] hacer que el tercero rápido guarde la direccion de jbe por defecto
+- [ ] hacer que el tercero rápido solo muestre cedula
+- [ ] hacer que el tercero rápido guarde el teléfono de jbe por defecto
+- [ ] hacer que se pueda recibir abonos a sistecredito por medio de abono a cartera
+- [x] revisar que el perfil de factura credito este ok en las sucursales
+- [ ] revisar el reporte de informe diario
+- [ ] revisar cuentas para transferencias
+- [ ] ver el tema de devoluciones con Jairo, para que las haga el cajero
+- [ ] confirmar solicitud de validacion para no se pueda vender productos por debajo del costo

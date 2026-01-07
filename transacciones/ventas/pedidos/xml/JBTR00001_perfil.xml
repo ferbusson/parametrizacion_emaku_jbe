@@ -1169,7 +1169,7 @@ el boton cerrar cierra el formulario
             <!-- <arg attribute="type">INTEGER</arg> -->
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="roundDecimal">2</arg>
-            <arg attribute="enabled">true</arg>
+            <arg attribute="enabled">FALSE</arg>
             <arg attribute="queryCol">5</arg>
             <!-- <arg attribute="minValue">0</arg> -->
             </subarg>
