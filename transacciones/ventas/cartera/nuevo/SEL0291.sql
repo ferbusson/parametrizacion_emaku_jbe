@@ -34,7 +34,7 @@ FROM
 FROM
         (SELECT
 			d.fecha,
-			COALESCE(rf.prefijo,d.codigo_tipo)||'-'||d.numero::BIGINT||'-'||id.ex_documento AS numero,
+			COALESCE(rf.prefijo,d.codigo_tipo)||'-'||d.numero::BIGINT||'-'||coalesce(id.ex_documento,'-') AS numero,
 			c.idtercero,
 	        c.nfactura,
 	        c.dcredito,
@@ -128,7 +128,7 @@ FROM
 FROM
         (SELECT
 			d.fecha,
-			COALESCE(rf.prefijo,d.codigo_tipo)||'-'||d.numero::BIGINT||'-'||id.ex_documento AS numero,
+			COALESCE(rf.prefijo,d.codigo_tipo)||'-'||d.numero::BIGINT||'-'||coalesce(id.ex_documento,'-') AS numero,
 			c.idtercero,
 	        c.nfactura,
 	        c.dcredito,
@@ -151,14 +151,14 @@ FROM
 		ON
 			rd.id_resolucion_facturacion = rf.id_resolucion_facturacion 
 	    where
-			d.codigo_tipo = 'FC' and -- PONGO ESTO PARA QUE SE LISTEN LAS FACTURAS DE MIGRACION DE CARTERA CXC
+			d.codigo_tipo IN ('FC','1B') and -- PONGO ESTO PARA QUE SE LISTEN LAS FACTURAS DE MIGRACION DE CARTERA CXC y 1B los saldos iniciales de sistecredito
 			ac.id_cta=c.id_cta and
 			ac.char_cta not in ('28050502') and -- se excluyen los separados Oct 7 2024
 			d.ndocumento=c.nfactura AND
 			d.ndocumento=id.ndocumento AND
 			c.idtercero= (select id::bigint from aux_parametros_query) AND
 			d.estado='true' AND
-			c.movimiento=true AND
+			--c.movimiento=true AND
 			c.total_factura>0
 	    GROUP BY
 			d.fecha,
