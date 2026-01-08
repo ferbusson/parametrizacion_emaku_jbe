@@ -2989,6 +2989,12 @@
                       <arg attribute="validMinValue">5</arg>
                       <arg attribute="validValue">0</arg>
                   </parameters>
+                </component>
+
+                12
+                <component>
+                  <driver id="retica">client.gui.components.TableFindData</driver>
+                  <method>getBlankPackage</method>
                 </component>            
                                 
                 <component>

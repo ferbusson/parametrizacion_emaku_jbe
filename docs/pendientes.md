@@ -109,3 +109,5 @@ mdjw nxaw pblv ikba
 - [ ] revisar cuentas para transferencias
 - [ ] ver el tema de devoluciones con Jairo, para que las haga el cajero
 - [ ] confirmar solicitud de validacion para no se pueda vender productos por debajo del costo
+
+
