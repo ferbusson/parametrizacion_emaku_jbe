@@ -260,7 +260,7 @@ o el carpintero asociado -->
         <arg attribute="maxlength">4</arg>
         <arg attribute="enabled">false</arg>
         <arg attribute="clean">false</arg>
-        <arg attribute="sqlInit">LCSEL0445</arg>
+        <arg attribute="sqlInit">JBSEL0054</arg>
         <!-- <arg attribute="importValue">totalseleccion</arg> lust -->
         <arg attribute="importValue">codigo_tipo</arg>
         <arg attribute="queryOnInit">true</arg>

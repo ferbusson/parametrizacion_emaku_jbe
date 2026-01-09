@@ -173,7 +173,7 @@
                     <driver id="tidentificacion">client.gui.components.XMLComboBox</driver>
                     <parameters>
                        <arg attribute="selectedIndex">0</arg>
-                       <arg attribute="sqlCombo">TESEL0344</arg>
+                       <arg attribute="sqlCombo">JBSEL0052</arg>
                        <arg attribute="exportValue">tidentificacion</arg>
                        <arg attribute="clean">false</arg>
                        <arg attribute="addAttribute">key</arg>
@@ -217,11 +217,11 @@
                   <arg attribute="sqlCode">LCSEL0243</arg>
                   <arg attribute="sqlCode">LCSEL0430</arg>
                   <arg attribute="sqlCode">LCSEL0237</arg>
-                  <arg attribute="sqlCode">LCSEL0233</arg>
+                  <!-- <arg attribute="sqlCode">LCSEL0233</arg> nombres y apellidos
                   <arg attribute="sqlCode">LCSEL0234</arg>
                   <arg attribute="sqlCode">LCSEL0235</arg>
-                  <arg attribute="sqlCode">LCSEL0236</arg>
-                  <arg attribute="sqlCode">LCSEL0991</arg>
+                  <arg attribute="sqlCode">LCSEL0236</arg> -->
+                  <!-- <arg attribute="sqlCode">LCSEL0991</arg> email-->
 
                   
                 </parameters>

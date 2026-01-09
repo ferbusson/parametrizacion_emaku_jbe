@@ -47,9 +47,9 @@
 
 
 - [ ] Preguntar perfiles de Oscar y Daniela
-- [ ] Recordar acerca de resoluciones de facturacion
+- [x] Recordar acerca de resoluciones de facturacion
 - [x] Poner facturacion Credito
-- [ ] Poner facturacion Contingencia
+- [x] Poner facturacion Contingencia
 - [ ] Poner traslados bodegas a perfiles vendedores
 - [x] Poner como administrador el perfil de Jairo Moncayo 
 
@@ -101,13 +101,26 @@ mdjw nxaw pblv ikba
 - [ ] revisar el reporte de libros auxiliares no saca info
 - [x] exportar el listado de productos para que lo puedan modificar y reimportar
 - [ ] hacer que el tercero rápido guarde la direccion de jbe por defecto
-- [ ] hacer que el tercero rápido solo muestre cedula
+- [x] hacer que el tercero rápido solo muestre cedula
 - [ ] hacer que el tercero rápido guarde el teléfono de jbe por defecto
-- [ ] hacer que se pueda recibir abonos a sistecredito por medio de abono a cartera
+- [x] hacer que se pueda recibir abonos a sistecredito por medio de abono a cartera
 - [x] revisar que el perfil de factura credito este ok en las sucursales
 - [ ] revisar el reporte de informe diario
-- [ ] revisar cuentas para transferencias
+- [x] revisar cuentas para transferencias
 - [ ] ver el tema de devoluciones con Jairo, para que las haga el cajero
 - [ ] confirmar solicitud de validacion para no se pueda vender productos por debajo del costo
 
+- [ ] agregar impresion carta a abonos a cartera
+- [ ] validar que la factura a credito valide los cupos y dias de crédito
+- [ ] subir precios de lista constructora
+- [x] f2 limitarlo y mostrar saldo y precios
+
+
+
+
+### Comentarios
+
+La factura credito genera confusion porque esta en otro formulario
+La creación de terceros rapido solo permite crear terceros naturales
+Hace falta dejar claro como crear un Nit o una persona con cédula
 
