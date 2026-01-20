@@ -2567,7 +2567,7 @@
           <action>
             <type>transaction</type>
             <component>
-              <driver id="pago">common.gui.components.ButtonsPanel</driver>
+              <driver id="pagocarta">common.gui.components.ButtonsPanel</driver>
               <method>setEnabled</method>
               <parameters>
                 <arg attribute="button">DELETE</arg>

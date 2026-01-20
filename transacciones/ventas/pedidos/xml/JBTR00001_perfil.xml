@@ -791,7 +791,7 @@ el boton cerrar cierra el formulario
                     <!-- <arg attribute="Panel">false</arg> -->
                       <arg attribute="importValue">id_bodega</arg>
                       <arg attribute="sqlCombo">MTSEL0735</arg>
-                      <arg attribute="selectedIndex">1</arg>
+                      <arg attribute="selectedIndex">0</arg>
                       <arg attribute="preferredLength">140</arg>
                       <arg attribute="addAttribute">finalKey</arg>
                       <arg attribute="exportValue">vendedor</arg>
@@ -2399,6 +2399,16 @@ el boton cerrar cierra el formulario
                         <arg attribute="errorMessage">Error, Falta el correo electrónico del tercero</arg>
                       </parameters>
                     </component>
+
+                    <component>
+                      <driver>this</driver>
+                      <method>validMultiPackage</method>
+                      <parameters>
+                        <driver attribute="driver" id="Vendedor">client.gui.components.XMLComboBox</driver>
+                        <arg attribute="errorMessage">Error, Seleccione el Vendedor Por Favor</arg>
+                      </parameters>
+                    </component>                    
+
                     <!-- NA -->
                     <!-- used by the actionDocument: createDocument, this prefix lets the app know the type of document-->
                     <!-- the table: 

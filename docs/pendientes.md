@@ -50,7 +50,7 @@
 - [x] Recordar acerca de resoluciones de facturacion
 - [x] Poner facturacion Credito
 - [x] Poner facturacion Contingencia
-- [ ] Poner traslados bodegas a perfiles vendedores
+- [x] Poner traslados bodegas a perfiles vendedores
 - [x] Poner como administrador el perfil de Jairo Moncayo 
 
 - [x] Reporte de Cotizaciones por Tercero
@@ -111,9 +111,33 @@ mdjw nxaw pblv ikba
 - [ ] confirmar solicitud de validacion para no se pueda vender productos por debajo del costo
 
 - [ ] agregar impresion carta a abonos a cartera
-- [ ] validar que la factura a credito valide los cupos y dias de crédito
+- [x] validar que la factura a credito valide los cupos y dias de crédito
 - [ ] subir precios de lista constructora
 - [x] f2 limitarlo y mostrar saldo y precios
+
+- [x] revisar retenciones de los regimenes
+- [x] revisar tarjetas y consignaciones en recaudo de revision de arqueos
+- [x] revisar por qué no carga las bodegas en nuevo traslado multisucursal
+- [x] cerrar los dias de credito que dependa del tercero y que no se pueda poner en el formulario
+	consultar cupo
+	poner la consulta de dias de credito en el componente
+	validar que no se pueda guardar si los dias de credito son cero
+	consultar el cupo y validar que la factura sea menor o igual a ese cupo
+	
+x revisar impresion nueva factura credito los dias de credito deben ser los dias de credito
+
+Revisar reporte diario por almacen
+Revisar los ajustes de inventarios
+Revisar porque existe saldo negativo en la referencia 3040105
+
+
+- [x] dejar el combo de vendedores en blanco y validar que sea obligatorio (facturas)
+- [x] actualizar precios de venta de varios (3 listas ) en 2% mas en Varios grupos 151 a 199 exceptuando servicios y cortes
+- [ ] los anticipos solo se pueden usar en la sucursal donde se registra el anticipo, comentar esto con:
+	- [ ] Jairo
+	- [ ] Dario
+
+- [ ] Revisar los puntos generados de los clientes con javipuntos
 
 
 
@@ -124,3 +148,42 @@ La factura credito genera confusion porque esta en otro formulario
 La creación de terceros rapido solo permite crear terceros naturales
 Hace falta dejar claro como crear un Nit o una persona con cédula
 
+Arqueos:
+
+1COMPARAR LAS DOS TOTALES MEDIOS DE PAGO RECAUDO
+2 VENTAS CON TARJETA DETALLADO (medios de pago)
+
+3 TOTAL VENTAS DE CONTADO 
+TOTAL VENTAS DE CREDITO deben coincidir con el reporte 1
+
+ok En el MTR00202 poner el usuario
+
+Dario borrar contabilizacion de cajas del punto a tesoreria
+
+Transferencia de dinero de caja mayor a banco
+
+
+## Pagos - Egresos
+Producto con averia: hacen un descuento a la factura
+Rebate: regalos: impadoc Los regalos son bonificaciones los regalos no cobran iva
+Rebate: otros no afecta iva, no es rebaja en el precio (plata) se va a otros ingresos rebate trimestral, por producto, 
+Pintuco nota de compensacion cuando devuelve el 10 % de los mier de color (15) se manejaria como otro ingreso
+Garantia pueden reenviar el producto o ellos crean una nota credito (devo dinero)
+Apoyo mercadeo y publicidad
+
+Bodega Prods Danados (garantias)
+
+
+Los anteriores descuentos requieren cuenta, valor, numero de nota
+
+Reporte Pintuco:
+
+Programacion de pagos: se hacen por pse no problema, los que son por banco deberian notificarse
+
+
+
+dejar un solo descuento
+calcular el descuento de la base de la factura
+poner check box para seleccionar factura total
+Permitir seleccionar la fecha
+Combo con medios de pago: listado de cuentas de bancos y efectivo

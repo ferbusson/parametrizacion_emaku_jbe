@@ -114,6 +114,7 @@
             <arg attribute="sqlRecords">LCSEL0935</arg>
             <arg attribute="sqlAddress">LCSEL0933</arg>
             <arg attribute="sqlPhones">LCSEL0934</arg>
+            <arg attribute="exportValue">idtercerofindthird</arg>
             <arg attribute="maxRecords">100</arg>
           </parameters>
         </component>
@@ -1109,6 +1110,10 @@
                   <arg attribute="formula">g=b*(q/100)</arg>
                   <arg attribute="formula">h=(b/1.19)*s/100</arg>
                   <arg attribute="formula">i=(b-(b/1.19))*t/100</arg>
+                  <arg attribute="beanshell">c=!"".equals(a)?"-":""</arg>
+                  <arg attribute="beanshell">d=!"".equals(a)?"-":""</arg>
+                  <arg attribute="beanshell">e=!"".equals(a)?"-":""</arg>
+                  <arg attribute="beanshell">f=!"".equals(a)?"-":""</arg>
                   <arg attribute="returnNullValue">true</arg>
                   <arg attribute="sendRecord">10,&quot;TARJETAS&quot;,1,&quot;0&quot;,&quot;TJ&quot;</arg>
                   <!-- a -->
@@ -1548,7 +1553,65 @@
             <arg attribute="heightImage">200</arg>
           </parameters>
         </component>
-        <panel cols="1" locate="Center" rows="2" type="GridLayout">
+        <panel cols="1" locate="Center" rows="5" type="GridLayout">
+        <component locate="Center">
+            <driver id="terceroformulario">common.gui.components.GenericData</driver>
+            <parameters>
+              <arg attribute="Panel">false</arg>
+              <subarg>
+                <arg attribute="name">TOTAL</arg>
+                <arg attribute="format">STRING</arg>
+                <arg attribute="calculateExportValue">idtercerofindthird</arg>
+                <arg attribute="exportValue">idtercerofindthirddos</arg>
+                
+                <arg attribute="size">9</arg>
+                <arg attribute="maxlength">26</arg>
+                <arg attribute="font">Dialog,0,18</arg>
+                <arg attribute="foreground">87,244,249</arg>
+                <arg attribute="background">0,0,0</arg>
+                <arg attribute="alignment">RIGHT</arg>
+                <arg attribute="printable">true</arg>
+              </subarg>
+            </parameters>
+          </component>
+        <component locate="Center">
+            <driver id="totalsinsistecredito">common.gui.components.GenericData</driver>
+            <parameters>
+              <arg attribute="Panel">false</arg>
+              <subarg>
+                <arg attribute="name">TOTAL</arg>
+                <arg attribute="format">NUMERIC</arg>
+                <arg attribute="calculateBSExportValue">"830.00".equals(idtercerofindthirddos)?0.0:totalcomprobante</arg>
+                
+                <arg attribute="size">9</arg>
+                <arg attribute="maxlength">26</arg>
+                <arg attribute="font">Dialog,0,18</arg>
+                <arg attribute="foreground">87,244,249</arg>
+                <arg attribute="background">0,0,0</arg>
+                <arg attribute="alignment">RIGHT</arg>
+                <arg attribute="printable">true</arg>
+              </subarg>
+            </parameters>
+          </component>
+          <component locate="Center">
+            <driver id="totalconsistecredito">common.gui.components.GenericData</driver>
+            <parameters>
+              <arg attribute="Panel">false</arg>
+              <subarg>
+                <arg attribute="name">TOTAL</arg>
+                <arg attribute="format">NUMERIC</arg>
+                <arg attribute="exportValue">totalcomprobanteconsistecredito</arg>
+                <arg attribute="calculateBSExportValue">"830.00".equals(idtercerofindthirddos)?totalcomprobante:0.0</arg>
+                <arg attribute="size">9</arg>
+                <arg attribute="maxlength">26</arg>
+                <arg attribute="font">Dialog,0,18</arg>
+                <arg attribute="foreground">87,244,249</arg>
+                <arg attribute="background">0,0,0</arg>
+                <arg attribute="alignment">RIGHT</arg>
+                <arg attribute="printable">true</arg>
+              </subarg>
+            </parameters>
+          </component>
           <component locate="Center">
             <driver id="idtarjetacd">common.gui.components.GenericData</driver>
             <parameters>
@@ -1826,7 +1889,12 @@
               
               <!-- 17 total anticipo -->
                <component>
-                  <driver id="totalanticipo">client.gui.components.TableDataFields</driver>
+                  <driver id="totalsinsistecredito">common.gui.components.GenericData</driver>
+                  <method>getPackage</method>
+                </component>             
+                <!-- 17b total anticipo por Sistecredito -->
+               <component>
+                  <driver id="totalconsistecredito">common.gui.components.GenericData</driver>
                   <method>getPackage</method>
                 </component>             
             </action>

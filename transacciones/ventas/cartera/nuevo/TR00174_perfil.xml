@@ -2103,7 +2103,11 @@
                   <arg attribute="totales">b</arg>                  
                   <arg attribute="formula">g=b*(q/100)</arg>
                   <arg attribute="formula">h=b*s/100</arg>
-                  <!-- <arg attribute="formula">i=(b-(b/1.19))*t/100</arg> -->
+                  <arg attribute="formula">i=(b-(b/1.19))*t/100</arg>
+                  <arg attribute="beanshell">c=!"".equals(a)?"-":""</arg>
+                  <arg attribute="beanshell">d=!"".equals(a)?"-":""</arg>
+                  <arg attribute="beanshell">e=!"".equals(a)?"-":""</arg>
+                  <arg attribute="beanshell">f=!"".equals(a)?"-":""</arg>
                   <arg attribute="returnNullValue">true</arg>
                   a
                   <subarg>

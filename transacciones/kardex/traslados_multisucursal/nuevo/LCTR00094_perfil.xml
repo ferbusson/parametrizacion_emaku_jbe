@@ -181,8 +181,9 @@
                 <arg attribute="selectedIndex">0</arg>
                 <arg attribute="exportValue">bodegaent</arg>
                 <arg attribute="clean">false</arg>
-                <arg attribute="name">BODEGA</arg>
-                <arg attribute="importValue">bodegasal</arg>
+                <arg attribute="name">BODEGA</arg>                
+                <!-- <arg attribute="importValue">bodegasal</arg> -->
+                <arg attribute="importValue">id_bodega</arg>
                 <arg attribute="addAttribute">key</arg>
                 <arg attribute="nameField">bodegaEntrante</arg>
                 <arg attribute="printable">true</arg>                

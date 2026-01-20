@@ -14,7 +14,7 @@ SELECT
 	0,
 	valor,
 	TRUE,
-	(select id_cta from cuentas where char_cta = '28050502' limit 1)
+	(select id_cta from cuentas where char_cta = '28050501' limit 1)
 FROM
 	(SELECT 
 		'?'::INT8 AS id,

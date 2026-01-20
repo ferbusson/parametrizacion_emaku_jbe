@@ -607,9 +607,9 @@ o el carpintero asociado -->
             <arg attribute="sqlRecords">LCSEL0936</arg>            <!-- consulta informacion del tercero seleccionado -->
             <arg attribute="sqlAddress">LCSEL0933</arg>            <!-- retorna direcciones de tercero desde tercero def en consultar si no los numeros que tenga -->
             <arg attribute="sqlPhones">LCSEL0934</arg>            <!-- retorna numeros de telefono de tercero desde tercero def en consultar si no los numeros que tenga -->
-            <!-- <arg attribute="sqlCodeWT">LCSEL0200</arg>            retorna registro para tabla rete fuente -->
-            <!-- <arg attribute="sqlCodeWT">LCSEL0202</arg>            retorna registro para tabla rete iva -->
-            <!-- <arg attribute="sqlCodeWT">LCSEL0203</arg>            retorna registro para tabla rete ica -->
+            <arg attribute="sqlCodeWT">LCSEL0200</arg>            <!--retorna registro para tabla rete fuente-->
+            <arg attribute="sqlCodeWT">LCSEL0202</arg>            <!--retorna registro para tabla rete iva-->
+            <arg attribute="sqlCodeWT">LCSEL0203</arg>            <!--retorna registro para tabla rete ica-->
             <arg attribute="sqlCodeWT">LCSEL0382</arg>            <!-- retorna el email del tercero direccion por defecto si no tiene -->
             <arg attribute="sqlCodeWT">LCSEL0478</arg>            <!-- retorna ultimo id_direccion del tercero -->
             <arg attribute="sqlCodeWT">LCSEL0479</arg>            <!-- retorna ultimo id_telefono del tercero -->
@@ -854,6 +854,7 @@ o el carpintero asociado -->
                         <!--<arg attribute="sqlCode">JBSEL0046</arg>-->                        <!-- tipo pedido 1 contado 2 credito -->
                         <arg attribute="sqlCode">JBSEL0017</arg>                        <!-- observaciones -->
                         <arg attribute="sqlCode">JBSEL0018</arg>                        <!-- tercero -->                        
+                        <arg attribute="sqlCode">JBSEL0059</arg>                        <!-- dias credito -->                        
                         <arg attribute="sqlCode">JBSEL0019</arg>                        <!-- dias vigencia -->
                         <arg attribute="sqlCode">JBSEL0020</arg>                        <!-- puntos tercero -->
                         <arg attribute="sqlCode">JBSEL0021</arg>                        <!-- estado del pedido -->
@@ -1019,7 +1020,7 @@ o el carpintero asociado -->
           <!-- base excluido -->
           <arg attribute="beanshell">aa=s==&quot;12&quot;?l:0</arg>
           <!-- IVA excluido -->
-          <arg attribute="beanshell">ab=&quot;28312&quot;.equals(n)?0:l</arg>          <!-- netosinbolsa sin bolsa -->
+          <arg attribute="beanshell">ab=&quot;28312&quot;.equals(n)?0:k</arg>          <!-- netosinbolsa sin bolsa -->
           <arg attribute="beanshell">ag="28312".equals(n)?0:i</arg>          <!-- subtotal sin bolsa -->
           <arg attribute="beanshell">ai=(ah&amp;&amp;(m/1000)&gt;1)?(m/1000):0</arg>          <!-- javipuntos -->
           <!-- 0 (a) -->
@@ -2312,6 +2313,9 @@ o el carpintero asociado -->
       <id>gfforma</id>
       <visible>false</visible>
     </preferences>
+
+      
+
     <!--  Componente Oculto -->
 
     <!-- <component>
@@ -2979,6 +2983,8 @@ o el carpintero asociado -->
                 <driver id="diascredito">common.gui.components.GenericData</driver>
                   <parameters>
                     <arg attribute="Panel">false</arg>
+                      <arg attribute="keySQL">JBSEL0059</arg>
+                      <arg attribute="driverEvent" id="nro_orden_pedido">client.gui.components.TableDataFields</arg>
                     <subarg>
                       <arg attribute="label"> Días: </arg>
                       <arg attribute="name">diascredito</arg>
@@ -2987,11 +2993,11 @@ o el carpintero asociado -->
                       <arg attribute="size">3</arg>
                       <!-- <arg attribute="enableField">pedidoacredito,2</arg> -->
                       <arg attribute="maxlength">3</arg>
-                      <arg attribute="defaultText">30</arg>
+                      <!-- <arg attribute="defaultText">30</arg> -->
                       <arg attribute="clean">true</arg>
                       <arg attribute="font">Dialog,1,18</arg>
                       <arg attribute="alignment">RIGHT</arg>
-                      <arg attribute="enabled">true</arg>
+                      <arg attribute="enabled">false</arg>
                       <arg attribute="exportValue">diascredito</arg>
                       <arg attribute="printable">true</arg>
                     </subarg>
@@ -3367,7 +3373,7 @@ o el carpintero asociado -->
             <arg attribute="heightImage">200</arg>
           </parameters>
         </component>
-        <panel cols="1" locate="Center" rows="4" type="GridLayout">
+        <panel cols="1" locate="Center" rows="5" type="GridLayout">
         <component>
                   <driver id="cupocredito">common.gui.components.GenericData</driver>
                   <parameters>
@@ -3390,6 +3396,27 @@ o el carpintero asociado -->
                     </subarg>
                   </parameters>
                 </component>
+                <component locate="West">
+        <driver id="vencimientofactura">common.gui.components.GenericData</driver>
+        <parameters>
+          <arg attribute="panel">true</arg>
+          <subarg>
+            <arg attribute="label">Vence:</arg>
+            <arg attribute="format">TEXT</arg>
+            <arg attribute="size">10</arg>
+            <arg attribute="maxlength">50</arg>
+            <arg attribute="enabled">false</arg>
+            <arg attribute="return">false</arg>
+            <arg attribute="clean">true</arg>
+            <!-- <arg attribute="getValue">_vencdiasimiento</arg>                       -->
+            <arg attribute="calculateDate">fechai+diascredito</arg> -->
+            <arg attribute="dateFormat">yyyy-MM-dd</arg>
+            <arg attribute="printable">true</arg>
+          </subarg>
+        </parameters>
+      </component>
+
+
               <component>
                   <driver id="facturasvencidas">common.gui.components.GenericData</driver>
                   <parameters>
@@ -3531,12 +3558,28 @@ o el carpintero asociado -->
               <action>
                 <type>transaction</type>
                 <!-- BOTON GUARDAR CARTA -->
+                <!-- <component>
+                  <driver>this</driver>
+                  <method>validMultiPackage</method>
+                  <parameters>
+                    <driver attribute="driver" id="diascredito">common.gui.components.GenericData</driver>
+                    <arg attribute="errorMessage">Error, El cliente no tiene asignado días de crédito</arg>
+                  </parameters>
+                </component> -->
+                <component>
+                  <driver id="efectivoneto">common.gui.components.GenericData</driver>
+                  <method>validPackage</method>
+                  <parameters>
+                    <arg attribute="conditional">!"0".equals(diascredito) &amp;&amp; !"".equals(diascredito)</arg>
+                    <arg attribute="errorMessage">Error, El cliente no tiene asignado días de crédito</arg>
+                  </parameters>
+                </component>                
                 <component>
                   <driver>this</driver>
                   <method>validMultiPackage</method>
                   <parameters>
-                    <driver attribute="driver" id="credit">common.gui.components.GenericData</driver>
-                    <arg attribute="errorMessage">Error, Falta los dias de credito</arg>
+                    <driver attribute="driver" id="tipofactura">client.gui.components.XMLComboBox</driver>
+                    <arg attribute="errorMessage">Error, Seleccione el tipo de Crédito Por favor</arg>
                   </parameters>
                 </component>
                 <component>
@@ -3931,12 +3974,12 @@ o el carpintero asociado -->
                 </component>
                 <!-- 7 -->
                 <component>
-                  <driver id="credit">common.gui.components.GenericData</driver>
+                  <driver id="diascredito">common.gui.components.GenericData</driver>
                   <method>getPrintPackage</method>
                 </component>
                 <!-- 8 -->
                 <component>
-                  <driver id="vencimiento">common.gui.components.GenericData</driver>
+                  <driver id="vencimientofactura">common.gui.components.GenericData</driver>
                   <method>getPrintPackage</method>
                 </component>
                 <!-- 9 tabla productos -->
@@ -4194,14 +4237,14 @@ o el carpintero asociado -->
                   <driver id="date">common.gui.components.GenericData</driver>
                   <method>getPrintPackage</method>
                 </component>
-                <!-- 7 -->
+
                 <component>
-                  <driver id="credit">common.gui.components.GenericData</driver>
+                  <driver id="diascredito">common.gui.components.GenericData</driver>
                   <method>getPrintPackage</method>
                 </component>
                 <!-- 8 -->
                 <component>
-                  <driver id="vencimiento">common.gui.components.GenericData</driver>
+                  <driver id="vencimientofactura">common.gui.components.GenericData</driver>
                   <method>getPrintPackage</method>
                 </component>
                 <!-- 9 tabla productos -->

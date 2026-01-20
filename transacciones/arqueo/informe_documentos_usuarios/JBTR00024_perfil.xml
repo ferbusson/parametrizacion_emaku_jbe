@@ -1,0 +1,165 @@
+<FORM>
+    <preferences>
+        <size width="340" height="205" />
+        <name>Reporte Documentos Usuarios</name>
+        <icon>REPORT</icon>
+        <iconificable />
+        <resizable />
+        <closable />
+    </preferences>
+    <panel locate="North" type="FlowLayout" />
+    <panel locate="West" type="FlowLayout" />
+    <panel locate="East" type="FlowLayout" />
+    <!-- <component locate="North">
+                <driver>common.gui.components.XMLLabel</driver>
+                <parameters>
+                    <arg attribute="text">EN MANTENIMIENTO ! VOLVEREMOS PRONTO</arg>
+                </parameters>
+            </component> -->
+    <panel locate="Center" type="BorderLayout">
+        <panel locate="West" type="GridLayout" rows="4" cols="1">
+            <component>
+                <driver>common.gui.components.XMLLabel</driver>
+                <parameters>
+                    <arg attribute="text">FECHAI</arg>
+                </parameters>
+            </component>
+            <component>
+                <driver>common.gui.components.XMLLabel</driver>
+                <parameters>
+                    <arg attribute="text">FECHAF</arg>
+                </parameters>
+            </component>
+            <component>
+                <driver>common.gui.components.XMLLabel</driver>
+                <parameters>
+                    <arg attribute="text">Sucursal</arg>
+                </parameters>
+            </component>
+            <component>
+                <driver>common.gui.components.XMLLabel</driver>
+                <parameters>
+                    <arg attribute="text">Usuario:</arg>
+                </parameters>
+            </component>
+        </panel>
+        <panel locate="Center" type="GridLayout" rows="4" cols="1">
+            <component>
+                <driver id="fechai">common.gui.components.XMLDateField</driver>
+                <parameters>
+                    <arg attribute="exportValue">fechai</arg>
+                    <arg attribute="enabled">true</arg>
+                </parameters>
+            </component>
+            <component>
+                <driver id="fechaf">common.gui.components.XMLDateField</driver>
+                <parameters>
+                    <arg attribute="exportValue">fechaf</arg>
+                    <arg attribute="enabled">true</arg>
+                </parameters>
+            </component>
+            <component>
+                <driver id="sucursal">client.gui.components.XMLComboBox</driver>
+                <parameters>
+                    <arg attribute="preferredLength">210</arg>                                  
+                    <arg attribute="sqlCombo">JBSEL0058</arg>
+                    <arg attribute="selectedIndex">1</arg>
+                    <arg attribute="name">sucursal</arg>
+                    <arg attribute="enabled">true</arg>
+                    <arg attribute="addAttribute">key</arg>
+                    <arg attribute="nameField">sucursal</arg>
+                    <arg attribute="exportValue">sucursal</arg>
+                </parameters>
+            </component>
+            <component>
+            <driver id="nitcc">client.gui.components.EmakuSearchField</driver>
+            <parameters>
+                <arg attribute="size">15</arg>
+                <arg attribute="maxlength">26</arg>
+                <arg attribute="nullValue">true</arg>
+                <arg attribute="exportValue">nitcc</arg>
+                <arg attribute="format">TEXT</arg>
+                <arg attribute="sqlCombo">SEL0324</arg>
+                <arg attribute="blankArgs">false</arg>
+                <arg attribute="keyDataSearch">searchProd</arg>
+                <arg attribute="repeatData">2</arg>
+                <arg attribute="noDataBeep">true</arg>
+                <arg attribute="noDataMessage">No se encontro registros</arg>
+                <arg attribute="selectedIndex">1</arg>
+                <arg attribute="enabled">true</arg>
+                <arg attribute="clean">true</arg>                                
+            </parameters>
+        </component>
+        </panel>
+    </panel>
+    
+    <component locate="South">
+        <driver>common.gui.components.ButtonsPanel</driver>
+        <parameters>
+            <subarg>
+              <arg attribute="label">EXCEL</arg>
+              <arg attribute="icon">/icons/ico_excel.png</arg>
+              <arg attribute="keyStroke">F9</arg>
+              <arg attribute="typePackage">XLSREPORTREQUEST</arg>
+              <arg attribute="idReport">XLS0092</arg>
+            </subarg>
+            <arg>NEW</arg>
+            <arg>EXIT</arg>
+        </parameters>
+        <events>
+            <object>
+                <name>NEW</name>
+                 <component>
+                  <driver>common.gui.components.ButtonsPanel</driver>
+                  <method>setEnabled</method>
+                  <parameters>
+                    <arg attribute="button">REPORT</arg>
+                    <arg attribute="state">true</arg>
+                  </parameters>
+                </component>                                                    
+
+                <component>
+                    <driver>this</driver>
+                    <method>cleanExternalValues</method>
+                </component>
+                <component>
+                    <driver id="fechai">common.gui.components.XMLDateField</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="fechaf">common.gui.components.XMLDateField</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="producto">client.gui.components.EmakuSearchField</driver>
+                    <method>clean</method>
+                </component>
+
+            </object>
+            <object>
+                <name>EXCEL</name>
+                <component>
+                  <driver>this</driver>
+                  <method>getPackage</method>
+                  <parameters>
+                    <arg attribute="blankPackage">true</arg>
+                    <subarg>
+                      <arg attribute="importValue">fechai</arg>
+                      <arg attribute="importValue">fechaf</arg>
+                      <arg attribute="importValue">sucursal</arg>
+                      <arg attribute="importValue">nitcc</arg>
+                    </subarg>
+                  </parameters>
+                </component>
+                <component>
+                  <driver>common.gui.components.ButtonsPanel</driver>
+                  <method>setEnabled</method>
+                  <parameters>
+                    <arg attribute="button">EXCEL</arg>
+                    <arg attribute="state">true</arg>
+                  </parameters>
+                </component>                           
+            </object>
+        </events>
+    </component> 
+</FORM>

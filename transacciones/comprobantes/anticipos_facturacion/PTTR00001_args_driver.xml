@@ -162,7 +162,7 @@
             </subarg>
         </parameters>
     </LNData>
-  <!-- 17 total anticipo -->
+  <!-- 17 total anticipo sin sistecredito-->
   <subarg>
     <arg>JBINS0010</arg>
     <LNData>
@@ -175,6 +175,23 @@
           <arg attribute="tercero">getName</arg>
           <subarg>
             <arg attribute="accountField">28050501,C</arg>
+          </subarg>
+        </parameters>
+      </LNData>
+    </subarg>
+
+    <!-- 17 total anticipo con sistecredito-->
+  <subarg>    
+    <LNData>
+        <driver>LNContabilidad</driver>
+        <method>fieldData</method>
+        <parameters>
+          <arg attribute="debuging">true</arg>
+          <arg attribute="Concepto">Anticipo facturacion</arg>
+          <arg attribute="centrocosto">getName</arg>
+          <arg attribute="tercero">getName</arg>
+          <subarg>
+            <arg attribute="accountField">28150501,C</arg>
           </subarg>
         </parameters>
       </LNData>

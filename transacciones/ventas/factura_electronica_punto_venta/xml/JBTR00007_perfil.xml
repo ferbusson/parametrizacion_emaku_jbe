@@ -607,9 +607,9 @@ o el carpintero asociado -->
             <arg attribute="sqlRecords">LCSEL0936</arg>            <!-- consulta informacion del tercero seleccionado -->
             <arg attribute="sqlAddress">LCSEL0933</arg>            <!-- retorna direcciones de tercero desde tercero def en consultar si no los numeros que tenga -->
             <arg attribute="sqlPhones">LCSEL0934</arg>            <!-- retorna numeros de telefono de tercero desde tercero def en consultar si no los numeros que tenga -->
-            <!-- <arg attribute="sqlCodeWT">LCSEL0200</arg>            retorna registro para tabla rete fuente -->
-            <!-- <arg attribute="sqlCodeWT">LCSEL0202</arg>            retorna registro para tabla rete iva -->
-            <!-- <arg attribute="sqlCodeWT">LCSEL0203</arg>            retorna registro para tabla rete ica -->
+            <arg attribute="sqlCodeWT">LCSEL0200</arg>            <!--retorna registro para tabla rete fuente -->
+            <arg attribute="sqlCodeWT">LCSEL0202</arg>            <!--retorna registro para tabla rete iva -->
+            <arg attribute="sqlCodeWT">LCSEL0203</arg>            <!--retorna registro para tabla rete ica -->
             <arg attribute="sqlCodeWT">LCSEL0382</arg>            <!-- retorna el email del tercero direccion por defecto si no tiene -->
             <arg attribute="sqlCodeWT">LCSEL0478</arg>            <!-- retorna ultimo id_direccion del tercero -->
             <arg attribute="sqlCodeWT">LCSEL0479</arg>            <!-- retorna ultimo id_telefono del tercero -->
@@ -1126,7 +1126,7 @@ o el carpintero asociado -->
           <!-- base excluido -->
           <arg attribute="beanshell">aa=s==&quot;12&quot;?l:0</arg>
           <!-- IVA excluido -->
-          <arg attribute="beanshell">ab=&quot;28312&quot;.equals(n)?0:l</arg>          <!-- netosinbolsa sin bolsa -->
+          <arg attribute="beanshell">ab=&quot;28312&quot;.equals(n)?0:k</arg>          <!-- netosinbolsa sin bolsa -->
           <arg attribute="beanshell">ag="28312".equals(n)?0:i</arg>          <!-- subtotal sin bolsa -->
           <arg attribute="beanshell">ai=(ah&amp;&amp;(m/1000)&gt;1)?(m/1000):0</arg>          <!-- javipuntos -->
           <!-- 0 (a) -->
@@ -3573,7 +3573,7 @@ o el carpintero asociado -->
                 <arg attribute="importTotalCol">w,netosinbolsa</arg>
                 <arg attribute="beanshell">e=w&gt;c?(w*d)/100:0</arg>
                 <arg attribute="formula">g=w</arg>
-                <arg attribute="enabled">false</arg>
+                <arg attribute="enabled">true</arg>
                 <subarg>
                   <arg attribute="name">CUENTA</arg>
                   <arg attribute="length">100</arg>
@@ -3678,7 +3678,7 @@ o el carpintero asociado -->
                 <arg attribute="importTotalCol">q,netosinbolsa</arg>
                 <arg attribute="beanshell">e=q&gt;c?(w*d)/100:0</arg>
                 <arg attribute="formula">g=w</arg>
-                <arg attribute="enabled">false</arg>
+                <arg attribute="enabled">true</arg>
                 <subarg>
                   <arg attribute="name">CUENTA</arg>
                   <arg attribute="length">100</arg>
@@ -3782,7 +3782,7 @@ o el carpintero asociado -->
                 <arg attribute="importTotalCol">w,netosinbolsa</arg>
                 <arg attribute="beanshell">e=w&gt;c?(w*d)/100:0</arg>
                 <arg attribute="formula">g=w</arg>
-                <arg attribute="enabled">false</arg>
+                <arg attribute="enabled">true</arg>
                 <subarg>
                   <arg attribute="name">CUENTA</arg>
                   <arg attribute="length">100</arg>
@@ -4685,7 +4685,7 @@ o el carpintero asociado -->
                   <arg attribute="beanshell">c=!"".equals(a)?"-":""</arg>
                   <arg attribute="beanshell">d=!"".equals(a)?"-":""</arg>
                   <arg attribute="beanshell">e=!"".equals(a)?"-":""</arg>
-                  <arg attribute="beanshell">f=!"".equals(a)?"-":""</arg>                                    
+                  <arg attribute="beanshell">f=!"".equals(a)?"-":""</arg>
                   <arg attribute="returnNullValue">true</arg>
                   <!-- a -->
                   <subarg>
@@ -5403,6 +5403,51 @@ o el carpintero asociado -->
                   <arg attribute="errorMessage">Error, debe cancelar facturas crédito vencidas antes de poder acceder a un nuevo crédito</arg>
                 </parameters>
               </component> lust -->
+
+              <component>
+              <driver id="efectivoneto">common.gui.components.GenericData</driver>
+                <method>validPackage</method>
+                <parameters>
+                  <arg attribute="conditional">totalfacturamenosretenciones - (bigpass + sodexo + totalpagosmanuales + tconsignation + tcheck + totalanticipos + puntosredimidosenpesos + pagooacredito) &gt;= 0.0 </arg>
+                  <arg attribute="errorMessage">Error, el valor registrado para medios diferentes a Efectivo no puede ser mayor al total de la factura</arg>
+                </parameters>
+              </component>
+
+              <component>
+              <driver id="efectivoneto">common.gui.components.GenericData</driver>
+                <method>validPackage</method>
+                <parameters>
+                  <arg attribute="conditional">totalfacturamenosretenciones - (bigpass + sodexo + totalpagosmanuales + tconsignation + tcheck + totalanticipos + efectivoneto + puntosredimidosenpesos + pagooacredito) == 0.0 </arg>
+                  <arg attribute="errorMessage">Error, la suma de los medios de pago debe ser igual o mayor al valor de la factura</arg>
+                </parameters>
+              </component>
+
+              <component>
+              <driver id="efectivoneto">common.gui.components.GenericData</driver>
+                <method>validPackage</method>
+                <parameters>
+                  <arg attribute="conditional">pagooacredito &gt; 0.0 &amp;&amp; pagooacredito == totalfacturamenosretenciones||pagooacredito == 0.0</arg>
+                  <arg attribute="errorMessage">Error, en facturas a credito el valor de la casilla Pago a Crédito debe ser igual al total de la factura</arg>
+                </parameters>
+              </component>
+
+              <component>
+              <driver id="efectivoneto">common.gui.components.GenericData</driver>
+                <method>validPackage</method>
+                <parameters>
+                  <arg attribute="conditional">pagooacredito &gt; 0.0 &amp;&amp; pagooacredito == totalfacturamenosretenciones &amp;&amp; !"".equals(diascredito)||pagooacredito == 0.0</arg>
+                  <arg attribute="errorMessage">Error, digite los dias de crédito por favor</arg>
+                </parameters>
+              </component>
+
+              <component>
+              <driver id="efectivoneto">common.gui.components.GenericData</driver>
+                <method>validPackage</method>
+                <parameters>
+                  <arg attribute="conditional">pagooacredito &gt; 0.0 &amp;&amp; pagooacredito == totalfacturamenosretenciones &amp;&amp; !"".equals(charctatipofactura)||pagooacredito == 0.0</arg>
+                  <arg attribute="errorMessage">Error, seleccione el tipo de crédito por favor</arg>
+                </parameters>
+              </component>
 
                 <component>
                   <driver id="pagocarta">common.gui.components.ButtonsPanel</driver>

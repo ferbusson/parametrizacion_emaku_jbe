@@ -1,0 +1,413 @@
+<FORM>
+    <preferences>
+        <size width="550" height="370" />
+        <name>Asignar Cargo Empleado</name>
+        <icon>NEMPLEADO</icon>
+        <iconificable />
+        <resizable />
+        <closable />
+    </preferences>
+
+    <component> 
+    <driver id="validaciondepmunicipio">common.gui.components.GenericData</driver>
+    <parameters>
+      <subarg>
+        <arg attribute="format">TEXT</arg>
+        <arg attribute="size">0</arg>
+        <arg attribute="maxlength">0</arg>
+      </subarg>
+    </parameters>
+  </component>
+
+    <panel locate="North" type="FlowLayout" />
+    <panel locate="West" type="FlowLayout" />
+    <panel locate="East" type="FlowLayout" />
+    <tab locate="Center">
+        <panel name="GENERAL" icon="GENERAL" type="BorderLayout">
+            <panel locate="North" type="FlowLayout" />
+            <panel locate="East" type="FlowLayout" />
+            <panel locate="West" type="FlowLayout" />
+            <panel locate="South" type="FlowLayout" />
+            <panel locate="Center" type="BorderLayout">
+                <panel locate="North" type="GridLayout" rows="3" cols="1">
+                    <panel type="FlowLayout" align="left">
+                        <component>
+                            <driver id="nitcc">client.gui.components.EmakuSearchField</driver>
+                            <parameters>
+                                <arg attribute="label">Nit/CC</arg>
+                                <arg attribute="size">15</arg>
+                                <arg attribute="maxlength">26</arg>
+                                <arg attribute="nullValue">true</arg>
+                                <arg attribute="exportValue">nitcc</arg>
+                                <arg attribute="format">TEXT</arg>
+                                <arg attribute="sqlCombo">SEL0324</arg>
+                                <arg attribute="blankArgs">false</arg>
+                                <arg attribute="keyDataSearch">searchProd</arg>
+                                <arg attribute="repeatData">2</arg>
+                                <arg attribute="noDataBeep">true</arg>
+                                <arg attribute="noDataMessage">No se encontro registros</arg>
+                                <arg attribute="selectedIndex">1</arg>
+                                <arg attribute="enabled">true</arg>
+                                <arg attribute="clean">true</arg>
+                                
+                                <arg attribute="sqlCode">DGSEL0033</arg>
+                                <arg attribute="sqlCode">DGSEL0034</arg>
+                                <arg attribute="sqlCode">DGSEL0035</arg>
+                                <arg attribute="sqlCode">DGSEL0036</arg>
+                                <arg attribute="sqlCode">NMSEL0011</arg>
+                                <arg attribute="sqlCode">SCS0032</arg>
+                                <arg attribute="sqlCode">MTSEL0194</arg>
+                            </parameters>
+                        </component>
+                        <component>
+                            <driver id="dv">common.gui.components.GenericData</driver>
+                            <parameters>
+                                <arg attribute="keySQL">MTSEL0194</arg>
+                                <arg attribute="driverEvent" id="nitcc">client.gui.components.EmakuSearchField</arg>
+                                <arg attribute="returnValue">002</arg>
+                                <subarg>
+                                    <arg attribute="label">dv</arg>
+                                    <arg attribute="format">TEXT</arg>
+                                    <arg attribute="size">2</arg>
+                                    <arg attribute="maxlength">2</arg>
+                                    <arg attribute="enabled">FALSE</arg>
+                                    <arg attribute="exportValue">dv</arg>
+                                    <arg attribute="exportField">2</arg>
+                                </subarg>
+                            </parameters>
+                        </component>
+                    </panel>
+                    <panel type="FlowLayout" align="left">
+                        <component>
+                            <driver id="nombre1">common.gui.components.GenericData</driver>
+                            <parameters>
+                                <arg attribute="keySQL">DGSEL0033</arg>
+                                <arg attribute="driverEvent" id="nitcc">client.gui.components.EmakuSearchField</arg>
+                                <subarg>
+                                    <arg attribute="label">Primer Nombre:</arg>
+                                    <arg attribute="format">TEXT</arg>
+                                    <arg attribute="size">10</arg>
+                                    <arg attribute="maxlength">60</arg>
+                                    <arg attribute="enabled">FALSE</arg>
+                                    <arg attribute="exportValue">nombre1</arg>
+                                    <arg attribute="exportField">3</arg>
+                                </subarg>
+                            </parameters>
+                        </component>
+                        <component>
+                            <driver id="nombre2">common.gui.components.GenericData</driver>
+                            <parameters>
+                                <arg attribute="keySQL">DGSEL0034</arg>
+                                <arg attribute="driverEvent" id="nitcc">client.gui.components.EmakuSearchField</arg>
+                                <arg attribute="returnNullValue">true</arg>
+                                <subarg>
+                                    <arg attribute="label">Segundo Nombre:</arg>
+                                    <arg attribute="format">TEXT</arg>
+                                    <arg attribute="size">10</arg>
+                                    <arg attribute="maxlength">30</arg>
+                                    <arg attribute="exportValue">nombre2</arg>
+                                    <arg attribute="exportField">4</arg>
+                                    <arg attribute="enabled">FALSE</arg>
+                                    <arg attribute="nullValue">true</arg>
+                                    <arg attribute="return">true</arg>
+                                </subarg>
+                            </parameters>
+                        </component>
+                    </panel>
+                    <panel type="FlowLayout" align="left">
+                        <component>
+                            <driver id="apellido1">common.gui.components.GenericData</driver>
+                            <parameters>
+                                <arg attribute="keySQL">DGSEL0035</arg>
+                                <arg attribute="driverEvent" id="nitcc">client.gui.components.EmakuSearchField</arg>
+                                <subarg>
+                                    <arg attribute="label">Primer Apellido:</arg>
+                                    <arg attribute="format">TEXT</arg>
+                                    <arg attribute="size">10</arg>
+                                    <arg attribute="maxlength">30</arg>
+                                    <arg attribute="enabled">FALSE</arg>
+                                    <arg attribute="exportValue">apellido1</arg>
+                                    <arg attribute="exportField">5</arg>
+                                </subarg>
+                            </parameters>
+                        </component>
+                        <component>
+                            <driver id="apellido2">common.gui.components.GenericData</driver>
+                            <parameters>
+                                <arg attribute="keySQL">DGSEL0036</arg>
+                                <arg attribute="driverEvent" id="nitcc">client.gui.components.EmakuSearchField</arg>
+                                <arg attribute="returnNullValue">true</arg>
+                                <subarg>
+                                    <arg attribute="label">Segundo Apellido:</arg>
+                                    <arg attribute="format">TEXT</arg>
+                                    <arg attribute="size">10</arg>
+                                    <arg attribute="enabled">FALSE</arg>
+                                    <arg attribute="maxlength">30</arg>
+                                    <arg attribute="exportValue">apellido2</arg>
+                                    <arg attribute="exportField">6</arg>
+                                    <arg attribute="nullValue">true</arg>
+                                    <arg attribute="return">true</arg>
+                                </subarg>
+                            </parameters>
+                        </component>
+                    </panel>
+                </panel>
+                <panel locate="Center" type="BorderLayout">
+                    <panel locate="Center" type="FlowLayout" />
+                    <panel locate="North" type="BorderLayout">
+                        <panel locate="West" type="GridLayout" rows="2" cols="1">
+                            <component>
+                                <driver>common.gui.components.XMLLabel</driver>
+                                <parameters>
+                                    <arg attribute="text">Sigla:</arg>
+                                    <arg attribute="alignment">0</arg>
+                                </parameters>
+                            </component>
+                            <component>
+                                <driver>common.gui.components.XMLLabel</driver>
+                                <parameters>
+                                    <arg attribute="text">Cargo:</arg>
+                                    <arg attribute="alignment">0</arg>
+                                </parameters>
+                            </component>                            
+                        </panel>
+                        <panel locate="Center" type="GridLayout" rows="2" cols="1">
+                            <component>
+                                <driver id="sigla">common.gui.components.GenericData</driver>
+                                <parameters>
+                                    <arg attribute="keySQL">NMSEL0011</arg>
+                                    <arg attribute="driverEvent" id="nitcc">client.gui.components.EmakuSearchField</arg>
+                                    <subarg>
+                                        <arg attribute="format">TEXT</arg>
+                                        <arg attribute="size">20</arg>
+                                        <arg attribute="maxlength">50</arg>
+                                        <arg attribute="exportValue">sigla</arg>
+                                        <arg attribute="exportField">7</arg>
+                                        <arg attribute="name">Sigla</arg>
+                                    </subarg>
+                                </parameters>
+                            </component>
+                            <component>
+                                <driver id="cargo">client.gui.components.XMLComboBox</driver>
+                                <parameters>
+                                    <!-- Actividad -->
+                                    <arg attribute="sqlCombo">SCS0028</arg>
+                                    <arg attribute="selectedIndex">0</arg>
+                                    <arg attribute="exportValue">cargo</arg>
+                                    <arg attribute="clean">false</arg>
+                                    <arg attribute="addAttribute">key</arg>
+                                    <arg attribute="preferredLength">250</arg>
+                                    <arg attribute="keySQL">SCS0032</arg>
+                                    <arg attribute="driverEvent" id="nitcc">client.gui.components.EmakuSearchField</arg>
+                                </parameters>
+                            </component>
+                        </panel>
+                    </panel>
+                    <component locate="Center">
+                        <driver>common.gui.components.XMLLabel</driver>
+                        <parameters>
+                            <arg attribute="text">*Permite asignar o editar Sigla y Cargo.</arg>
+                            <arg attribute="alignment">0</arg>
+                        </parameters>
+                    </component>
+                    <component locate="South">
+                        <driver>common.gui.components.XMLLabel</driver>
+                        <parameters>
+                            <arg attribute="text">*El empleado debe estar creado como tercero.</arg>
+                            <arg attribute="alignment">0</arg>
+                        </parameters>
+                    </component>                            
+                </panel>
+            </panel>
+        </panel>       
+        
+    </tab>
+    <component locate="South">
+        <driver>common.gui.components.ButtonsPanel</driver>
+        <parameters>
+            <arg>SAVE</arg>
+            <arg>NEW</arg>
+            <subarg>
+                <arg attribute="label">REPORT</arg>
+                <arg attribute="icon">REPORT</arg>
+                <arg attribute="keyStroke">F7</arg>
+            </subarg>
+            <arg>EXIT</arg>
+        </parameters>
+        <events>
+            <object>
+                <name>NEW</name>
+                <component>
+                    <driver id="nitcc">client.gui.components.EmakuSearchField</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="dv">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="nombre1">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="nombre2">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="apellido1">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="apellido2">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="sigla">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="cargo">client.gui.components.XMLComboBox</driver>
+                    <method>clean</method>
+                </component>
+                <!--  limpiando llaves externas -->
+                <component>
+                    <driver>this</driver>
+                    <method>cleanExternalValues</method>
+                </component>
+            </object>
+            <object>
+                <name>SAVE</name>
+                
+                <component>
+                    <driver>this</driver>
+                    <method>validMultiPackage</method>
+                    <parameters>
+                        <driver attribute="driver" id="sigla">common.gui.components.GenericData</driver>
+                        <arg attribute="errorMessage">Error, Falta la Sigla del Empleado</arg>
+                    </parameters>
+                </component>
+
+                <component>
+                    <driver id="validaciondepmunicipio">common.gui.components.GenericData</driver>
+                    <method>validPackage</method>
+                    <parameters>
+                        <arg attribute="conditional">!"".equals(cargo)</arg>
+                        <arg attribute="errorMessage">Error, Falta seleccionar el Cargo Empleado</arg>
+                    </parameters>
+                </component>
+                
+                <!-- 1 info_empleado -->
+                <component>
+                    <driver>this</driver>
+                    <method>getPackage</method>
+                    <parameters>
+                        <arg attribute="blankPackage">true</arg>
+                        <subarg>
+                            <arg attribute="importValue">sigla</arg>
+                            <arg attribute="importValue">cargo</arg>
+                            <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="key">nitcc</arg>
+                        </subarg>
+                    </parameters>
+                </component>               
+            </object>
+            <object>
+                <name>REPORT</name>
+                <component>
+                    <driver>gfforma</driver>
+                    <method>setVisible</method>
+                    <parameters>
+                        <arg>TRUE</arg>
+                    </parameters>
+                </component>
+            </object>
+        </events>
+    </component>
+    <FORM>
+        <preferences>
+            <size width="350" height="110" />
+            <name>REPORT</name>
+            <icon>REPORT</icon>
+            <iconificable />
+            <resizable />
+            <closable />
+            <id>gfforma</id>
+            <visible>false</visible>
+        </preferences>
+        <panel locate="North" type="FlowLayout" />
+        <panel locate="West" type="FlowLayout" />
+        <panel locate="East" type="FlowLayout" />
+        <component locate="Center">
+            <driver id="report">common.gui.components.GenericData</driver>
+            <parameters>
+                <subarg>
+                    <arg attribute="label">Cadena de búsqueda (% lista todos)</arg>
+                    <arg attribute="format">TEXT</arg>
+                    <arg attribute="size">20</arg>
+                    <arg attribute="maxlength">50</arg>
+                    <arg attribute="nullValue">true</arg>
+                    <arg attribute="exportValue">keyword</arg>
+                </subarg>
+            </parameters>
+        </component>
+        <component locate="South">
+            <driver>common.gui.components.ButtonsPanel</driver>
+            <parameters>
+                <subarg>
+                    <arg attribute="label">REPORT</arg>
+                    <arg attribute="icon">REPORT</arg>
+                    <arg attribute="keyStroke">F9</arg>
+                    <arg attribute="typePackage">REPORTREQUEST</arg>
+                    <arg attribute="idReport">REP0009</arg>
+                </subarg>
+                <arg>NEW</arg>
+                <subarg>
+                    <arg attribute="label">SALIR</arg>
+                    <arg attribute="icon">/icons/ico_cancelar.png</arg>
+                    <arg attribute="keyStroke">F4</arg>
+                </subarg>
+            </parameters>
+            <events>
+                <object>
+                    <name>NEW</name>
+                    <component>
+                        <driver id="report">common.gui.components.GenericData</driver>
+                        <method>clean</method>
+                    </component>
+                    <!--  limpiando llaves externas -->
+                    <component>
+                        <driver>this</driver>
+                        <method>cleanExternalValues</method>
+                    </component>
+                </object>
+                <object>
+                    <name>REPORT</name>
+                    <component>
+                        <driver>this</driver>
+                        <method>getPackage</method>
+                        <parameters>
+                            <arg attribute="blankPackage">true</arg>
+                            <subarg>
+                                <arg attribute="importValue">keyword</arg>
+                                <arg attribute="importValue">keyword</arg>
+                                <arg attribute="importValue">keyword</arg>
+                                <arg attribute="importValue">keyword</arg>
+                                <arg attribute="importValue">keyword</arg>
+                                <arg attribute="importValue">keyword</arg>
+                            </subarg>
+                        </parameters>
+                    </component>
+                </object>
+                <object>
+                    <name>SALIR</name>
+                    <component>
+                        <driver>gfforma</driver>
+                        <method>setVisible</method>
+                        <parameters>
+                            <arg>false</arg>
+                        </parameters>
+                    </component>
+                </object>
+            </events>
+        </component>
+    </FORM>
+</FORM>

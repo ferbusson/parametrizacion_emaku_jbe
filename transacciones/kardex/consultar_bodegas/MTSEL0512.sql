@@ -30,8 +30,8 @@ FROM
 		grupo g,
 		sgrupo sg,
 		prod_serv p,
-		(SELECT id_prod_serv,pventa AS pventa1 FROM pventa WHERE id_catalogo=1) AS pv1,
-		(SELECT id_prod_serv,pventa AS pventa2 FROM pventa WHERE id_catalogo=2) AS pv2,
+		(SELECT id_prod_serv,pventa AS pventa1 FROM pventa WHERE id_catalogo=1 and id_lista = 1) AS pv1,
+		(SELECT id_prod_serv,pventa AS pventa2 FROM pventa WHERE id_catalogo=2 and id_lista = 1) AS pv2,
 		item i
 	LEFT OUTER JOIN
 		submarcas sm
