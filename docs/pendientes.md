@@ -187,3 +187,10 @@ calcular el descuento de la base de la factura
 poner check box para seleccionar factura total
 Permitir seleccionar la fecha
 Combo con medios de pago: listado de cuentas de bancos y efectivo
+
+
+### Tareas:
+- [ ] Agregar calendario para seleccionar fecha
+- [x] Poner check box en la primera columna
+- [x] Quitar descuentos 2 y 3
+- [x] Calcular descuentos a partir de la base

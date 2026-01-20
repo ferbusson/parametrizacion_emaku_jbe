@@ -1,6 +1,6 @@
 <FORM>
     <preferences>
-        <size width="350" height="230" />
+        <size width="350" height="210" />
         <name>Reporte de Cartera por Edades</name>
         <icon>REPORT</icon>
         <iconificable />
@@ -96,15 +96,26 @@
                 <arg attribute="typePackage">REPORTREQUEST</arg>
                 <arg attribute="idReport">CRE0158</arg>
             </subarg>
-        
+            <subarg>
+              <arg attribute="label">EXCEL</arg>
+              <arg attribute="icon">/icons/ico_excel.png</arg>
+              <arg attribute="keyStroke">F9</arg>
+              <arg attribute="typePackage">XLSREPORTREQUEST</arg>
+              <arg attribute="idReport">XLS0093</arg>
+            </subarg>
             <arg>NEW</arg>
             <arg>EXIT</arg>
         </parameters>
         <events>
             <object>
                 <name>NEW</name>
+                
                 <component>
-            <driver id="idt">client.gui.components.EmakuSearchField</driver>
+                    <driver id="fechaf">common.gui.components.XMLDateField</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="idt">client.gui.components.EmakuSearchField</driver>
                     <method>clean</method>
                 </component>
                 <!--  limpiando llaves externas -->
@@ -123,11 +134,26 @@
                         <subarg>
                             <arg attribute="importValue">clase</arg>                            
                             <arg attribute="importValue">fechaf</arg>
-                            <!-- <arg attribute="importValue">zona</arg> -->
                             <arg attribute="importValue">keyword</arg>
                             <arg attribute="importValue">keyword</arg>
                         </subarg>
                     </parameters>
+                </component>
+            </object>
+            <object>
+                <name>EXCEL</name>
+                <component>
+                  <driver>this</driver>
+                  <method>getPackage</method>
+                  <parameters>
+                    <arg attribute="blankPackage">true</arg>
+                    <subarg>
+                            <arg attribute="importValue">clase</arg>                            
+                            <arg attribute="importValue">fechaf</arg>
+                            <arg attribute="importValue">keyword</arg>
+                            <arg attribute="importValue">keyword</arg>
+                        </subarg>
+                  </parameters>
                 </component>
             </object>
         </events>

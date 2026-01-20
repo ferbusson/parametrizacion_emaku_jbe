@@ -1,0 +1,370 @@
+<container>
+  <subarg>
+    <arg attribute="idDocument">CE</arg>
+    <arg attribute="linkDocument">CP</arg>
+    <arg attribute="consecutive" />
+    <arg attribute="date" />
+    <arg attribute="actionDocument">createDocument</arg>
+    <arg attribute="cash" />
+  </subarg>
+
+  <!-- 0 observaciones: concepto listado de facturas abonadas-->
+  <arg>INS0037</arg>
+  <!-- 1 datos_documento -->
+  <arg>LCINS0107</arg>
+
+<!-- 10 Tercero -->
+  <arg>INS0048</arg>
+
+
+  id_centrocosto    
+  <arg attribute="addKey"/> 
+
+
+  <!-- 2 DESCUENTO -->
+  <LNData>
+    <driver>LNContabilidad</driver>
+    <method>fieldData</method>
+    <parameters>
+      <arg attribute="debuging">true</arg>
+      <arg attribute="CodeAPS">9</arg>
+      <arg attribute="Concepto">Abono a CxP comprobante de egreso - Descuentos</arg>
+      <arg attribute="tercero">getName</arg>
+      <arg attribute="centrocosto">getName</arg>
+      <subarg>
+        <arg attribute="accountField">421040,C</arg>
+      </subarg>
+    </parameters>
+  </LNData>
+
+  <!-- 3 Asiento para pago con tarjetas -->
+  <subarg>
+    <LNData>
+      <driver>LNSelectedField</driver>
+      <method>getSubpackage</method>
+      <parameters>
+        <arg attribute="sql">INS0045</arg>
+        <arg attribute="fields">0,1,2,3,4</arg>
+      </parameters>
+    </LNData>
+    <LNData>
+      <driver>LNContabilidad</driver>
+      <method>columnDataAccount</method>
+      <parameters>
+        <arg attribute="Concepto">Abono a CxP segun comprobante de egreso - Tarjeta</arg>
+        <arg attribute="naturaleza">C</arg>
+        <arg attribute="debuging">true</arg>
+        <arg attribute="centrocosto">getName</arg>
+        <subarg>
+          <arg attribute="accountKey">1</arg>
+          <arg attribute="accountTh">2</arg>
+          <arg attribute="accountData">3</arg>
+        </subarg>
+      </parameters>
+    </LNData>
+    <LNData>
+      <driver>LNContabilidad</driver>
+      <method>columnDataAccount</method>
+      <parameters>
+        <arg attribute="Concepto">Abono a CxP segun comprobante de egreso - Gravamen Tarjeta (C)</arg>
+        <arg attribute="naturaleza">C</arg>
+        <arg attribute="debuging">true</arg>
+        <arg attribute="centrocosto">getName</arg>
+        <subarg>
+          <arg attribute="accountKey">1</arg>
+          <arg attribute="accountTh">2</arg>
+          <arg attribute="accountData">4</arg>
+        </subarg>
+      </parameters>
+    </LNData>
+    <LNData>
+      <driver>LNContabilidad</driver>
+      <method>columnDataAccount</method>
+      <parameters>
+        <arg attribute="Concepto">Abono a CxP segun comprobante de egreso - Gravamen Tarjeta (D)</arg>
+        <arg attribute="naturaleza">D</arg>
+        <arg attribute="debuging">true</arg>
+        <arg attribute="centrocosto">getName</arg>
+        <arg attribute="tercero">getName</arg>
+        <subarg>
+          <arg attribute="accountKey">5</arg>
+          <arg attribute="accountTh">2</arg>
+          <arg attribute="accountData">4</arg>
+        </subarg>
+      </parameters>
+    </LNData>
+  </subarg>  
+  <!-- 4 Asiento para pago con consignacion -->
+  <subarg>
+    <LNData>
+        <driver>LNSelectedField</driver>
+        <method>getSubpackage</method>
+        <parameters>
+          <arg attribute="sql">LCINS0110</arg>
+          <arg attribute="fields">0,1,2,3</arg>
+          <arg attribute="conditional">c&gt;0</arg>
+        </parameters>
+      </LNData>
+    <LNData>
+      <driver>LNContabilidad</driver>
+      <method>columnDataAccount</method>
+      <parameters>
+        <arg attribute="Concepto">Abono a CxP segun comprobante de egreso - Consignacion</arg>
+        <arg attribute="naturaleza">C</arg>
+        <arg attribute="debuging">true</arg>
+        <arg attribute="centrocosto">getName</arg>
+        <subarg>
+          <arg attribute="accountKey">1</arg>
+          <arg attribute="accountTh">4</arg>
+          <arg attribute="accountData">2</arg>
+        </subarg>
+      </parameters>
+    </LNData>    
+  </subarg>
+
+  <!-- 5 inserta en cheques -->
+  <subarg>
+      <LNData>
+        <driver>LNSelectedField</driver>
+        <method>getSubpackage</method>
+        <parameters>
+          <arg attribute="sql">LCINS0108</arg>
+          <arg attribute="fields">0,1,2,3</arg>
+          <arg attribute="conditional">b&gt;0</arg>
+        </parameters>
+      </LNData>
+      <LNData>
+          <driver>LNContabilidad</driver>
+          <method>columnDataAccount</method>
+          <parameters>
+            <arg attribute="Concepto">Abono a CxP segun comprobante de egreso - Cheque</arg>
+            <arg attribute="naturaleza">C</arg>
+            <arg attribute="debuging">true</arg>
+            <arg attribute="centrocosto">getName</arg>
+            <subarg>
+              <arg attribute="accountKey">0</arg>
+              <arg attribute="accountTh">5</arg>
+              <arg attribute="accountData">1</arg>
+            </subarg>
+          </parameters>
+        </LNData>
+
+        <LNData>
+          <driver>LNContabilidad</driver>
+          <method>columnDataAccount</method>
+          <parameters>
+            <arg attribute="Concepto">Abono a CxP segun comprobante de egreso - Gravamen Cheque (C)</arg>
+            <arg attribute="naturaleza">C</arg>
+            <arg attribute="debuging">true</arg>
+            <arg attribute="centrocosto">getName</arg>
+            <subarg>
+              <arg attribute="accountKey">0</arg>
+              <arg attribute="accountTh">5</arg>
+              <arg attribute="accountData">4</arg>
+            </subarg>
+          </parameters>
+        </LNData>
+
+        <LNData>
+          <driver>LNContabilidad</driver>
+          <method>columnDataAccount</method>
+          <parameters>
+            <arg attribute="Concepto">Abono a CxP segun comprobante de egreso - Gravamen Cheque (D)</arg>
+            <arg attribute="naturaleza">D</arg>
+            <arg attribute="debuging">true</arg>
+            <arg attribute="centrocosto">getName</arg>
+            <arg attribute="tercero">getName</arg>
+            <subarg>
+              <arg attribute="accountKey">6</arg>
+              <arg attribute="accountTh">5</arg>
+              <arg attribute="accountData">4</arg>
+            </subarg>
+          </parameters>
+        </LNData>
+    </subarg>
+
+  <!-- 6 Asiento para transferencias -->
+  <subarg>
+    <LNData>
+        <driver>LNSelectedField</driver>
+        <method>getSubpackage</method>
+        <parameters>
+          <arg attribute="sql">LCINS0109</arg>
+          <arg attribute="fields">0,1,2</arg>
+          <arg attribute="conditional">c&gt;0</arg>
+        </parameters>
+      </LNData>
+    <LNData>
+      <driver>LNContabilidad</driver>
+      <method>columnDataAccount</method>
+      <parameters>
+        <arg attribute="Concepto">Abono a CxP segun comprobante de egreso - Transferencia</arg>
+        <arg attribute="debuging">true</arg>
+        <arg attribute="naturaleza">C</arg>
+        <arg attribute="centrocosto">getName</arg>
+        <subarg>
+          <arg attribute="accountKey">1</arg>
+          <arg attribute="accountTh">4</arg>
+          <arg attribute="accountData">2</arg>
+        </subarg>
+      </parameters>
+    </LNData>
+    <LNData>
+      <driver>LNContabilidad</driver>
+      <method>columnDataAccount</method>
+      <parameters>
+        <arg attribute="Concepto">Abono a CxP segun comprobante de egreso - Gravamen Transferencia (C)</arg>
+        <arg attribute="debuging">true</arg>
+        <arg attribute="naturaleza">C</arg>
+        <arg attribute="centrocosto">getName</arg>
+        <subarg>
+          <arg attribute="accountKey">1</arg>
+          <arg attribute="accountTh">4</arg>
+          <arg attribute="accountData">3</arg>
+        </subarg>
+      </parameters>
+    </LNData>
+    <LNData>
+      <driver>LNContabilidad</driver>
+      <method>columnDataAccount</method>
+      <parameters>
+        <arg attribute="Concepto">Abono a CxP segun comprobante de egreso - Gravamen Transferencia (D)</arg>
+        <arg attribute="debuging">true</arg>
+        <arg attribute="naturaleza">D</arg>
+        <arg attribute="centrocosto">getName</arg>
+        <subarg>
+          <arg attribute="accountKey">5</arg>
+          <arg attribute="accountTh">4</arg>
+          <arg attribute="accountData">3</arg>
+        </subarg>
+      </parameters>
+    </LNData>
+
+  </subarg>
+  
+  <!-- 7 Ret. Fuente -->
+  <subarg>
+    <LNData>
+      <driver>LNSelectedField</driver>
+      <method>getSubpackage</method>
+      <parameters>
+        <arg attribute="sql">INS0072</arg>
+        <arg attribute="fields">2,3,4</arg>
+        <arg attribute="conditional">B&gt;0</arg>
+      </parameters>
+    </LNData>
+    <LNData>
+      <driver>LNContabilidad</driver>
+      <method>columnDataAccount</method>
+      <parameters>
+        <arg attribute="Concepto">Abono a CxP segun comprobante de egreso - Rete Fuente</arg>
+        <arg attribute="naturaleza">C</arg>
+        <arg attribute="debuging">true</arg>
+        <arg attribute="centrocosto">getName</arg>
+        <subarg>
+          <arg attribute="accountKey">0</arg>
+          <arg attribute="accountData">1</arg>
+        </subarg>
+      </parameters>
+    </LNData>
+  </subarg>
+
+  <!-- 8 Ret. I.V.A. -->
+  <subarg>
+    <LNData>
+      <driver>LNSelectedField</driver>
+      <method>getSubpackage</method>
+      <parameters>
+        <arg attribute="sql">INS0072</arg>
+        <arg attribute="fields">2,3,4</arg>
+        <arg attribute="conditional">B&gt;0</arg>
+      </parameters>
+    </LNData>
+    <LNData>
+      <driver>LNContabilidad</driver>
+      <method>columnDataAccount</method>
+      <parameters>
+        <arg attribute="Concepto">Abono a CxP segun comprobante de egreso - Rete IVA</arg>
+        <arg attribute="naturaleza">C</arg>
+        <arg attribute="debuging">true</arg>
+        <arg attribute="centrocosto">getName</arg>
+        <subarg>
+          <arg attribute="accountKey">0</arg>
+          <arg attribute="accountData">1</arg>
+        </subarg>
+      </parameters>
+    </LNData>
+  </subarg>
+
+  <!-- 9 Ret. I.C.A. -->
+  <subarg>
+    <LNData>
+      <driver>LNSelectedField</driver>
+      <method>getFields</method>
+      <parameters>
+        <arg attribute="sql">INS0072</arg>
+        <arg attribute="fields">2,3,4</arg>
+        <arg attribute="conditional">B&gt;0</arg>
+      </parameters>
+    </LNData>
+    <LNData>
+      <driver>LNContabilidad</driver>
+      <method>columnDataAccount</method>
+      <parameters>
+        <arg attribute="debuging">true</arg>
+        <arg attribute="Concepto">Abono a CxP segun comprobante de egreso - Rete ICA</arg>
+        <arg attribute="naturaleza">C</arg>
+        <arg attribute="centrocosto">getName</arg>
+        <subarg>
+          <arg attribute="accountKey">0</arg>
+          <arg attribute="accountData">1</arg>
+        </subarg>
+      </parameters>
+    </LNData>
+  </subarg>
+
+  <!-- 11 PAGO EN EFECTIVO -->
+  <LNData>
+    <driver>LNContabilidad</driver>
+    <method>fieldData</method>
+    <parameters>
+      <arg attribute="debuging">true</arg>
+      <arg attribute="CodeAPS">9</arg>
+      <arg attribute="Concepto">Abono a CxP segun comprobante de Egreso - Efectivo</arg>
+      <arg attribute="tercero">getName</arg>
+      <arg attribute="centrocosto">getName</arg>
+      <subarg>
+        <arg attribute="accountField">11053001,C</arg>
+      </subarg>
+    </parameters>
+  </LNData>
+
+  <!-- 12 -->
+  <subarg>
+    <LNData>
+      <driver>LNSelectedField</driver>
+      <method>getSubpackage</method>
+      <parameters>
+        <arg attribute="sql">DGINS0026</arg>
+        <arg attribute="fields">0,2,3,4,5,6,8</arg>
+        <arg attribute="discartKey">centrocosto</arg>
+      </parameters>
+    </LNData>
+    <LNData>
+      <driver>LNContabilidad</driver>
+      <method>columnDataAccount</method>
+      <parameters>
+        <arg attribute="Concepto">Abono a cxp segun comprobante de egreso - Cuentas 22</arg>
+        <arg attribute="naturaleza">D</arg>
+        <arg attribute="debuging">true</arg>
+        <arg attribute="tercero">getName</arg>
+        <arg attribute="centrocosto">getName</arg>
+        <subarg>
+          <arg attribute="accountKey">7</arg>
+          <arg attribute="accountData">1</arg>
+        </subarg>
+      </parameters>
+    </LNData>
+  </subarg>
+  
+</container>
