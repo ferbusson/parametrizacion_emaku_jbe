@@ -50,13 +50,15 @@ select
 	0 as pdescuento,
 	0 as valor_descuento,
 	0 as total_pagar,
+	0 as saldo_factura,
 	ex_documento as fac_proveedor,
 	ndocumento,
 	vfactura,
 	0 as valor_pago,
 	char_cta,
 	id_cta,
-	round((saldo/1.19)::numeric,2) as valor_base
+	round((saldo/1.19)::numeric,2) as valor_base,
+	0 as contador_factura
 FROM
 	(SELECT
 		CAST(fecha AS date) AS fecha,

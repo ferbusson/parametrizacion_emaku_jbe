@@ -1,7 +1,7 @@
 <container>
   <subarg>
     <arg attribute="idDocument">CE</arg>
-    <arg attribute="linkDocument">CP</arg>
+    <!-- <arg attribute="linkDocument">CP</arg> -->
     <arg attribute="consecutive" />
     <arg attribute="date" />
     <arg attribute="actionDocument">createDocument</arg>
@@ -22,7 +22,7 @@
 
 
   <!-- 2 DESCUENTO -->
-  <LNData>
+  <!-- <LNData>
     <driver>LNContabilidad</driver>
     <method>fieldData</method>
     <parameters>
@@ -35,10 +35,10 @@
         <arg attribute="accountField">421040,C</arg>
       </subarg>
     </parameters>
-  </LNData>
+  </LNData> -->
 
   <!-- 3 Asiento para pago con tarjetas -->
-  <subarg>
+  <!-- <subarg>
     <LNData>
       <driver>LNSelectedField</driver>
       <method>getSubpackage</method>
@@ -93,9 +93,9 @@
         </subarg>
       </parameters>
     </LNData>
-  </subarg>  
+  </subarg>   -->
   <!-- 4 Asiento para pago con consignacion -->
-  <subarg>
+  <!-- <subarg>
     <LNData>
         <driver>LNSelectedField</driver>
         <method>getSubpackage</method>
@@ -120,10 +120,10 @@
         </subarg>
       </parameters>
     </LNData>    
-  </subarg>
+  </subarg> -->
 
   <!-- 5 inserta en cheques -->
-  <subarg>
+  <!-- <subarg>
       <LNData>
         <driver>LNSelectedField</driver>
         <method>getSubpackage</method>
@@ -181,10 +181,10 @@
             </subarg>
           </parameters>
         </LNData>
-    </subarg>
+    </subarg> -->
 
   <!-- 6 Asiento para transferencias -->
-  <subarg>
+  <!-- <subarg>
     <LNData>
         <driver>LNSelectedField</driver>
         <method>getSubpackage</method>
@@ -240,7 +240,7 @@
       </parameters>
     </LNData>
 
-  </subarg>
+  </subarg> -->
   
   <!-- 7 Ret. Fuente -->
   <subarg>
@@ -324,7 +324,7 @@
   </subarg>
 
   <!-- 11 PAGO EN EFECTIVO -->
-  <LNData>
+  <!-- <LNData>
     <driver>LNContabilidad</driver>
     <method>fieldData</method>
     <parameters>
@@ -337,7 +337,7 @@
         <arg attribute="accountField">11053001,C</arg>
       </subarg>
     </parameters>
-  </LNData>
+  </LNData> -->
 
   <!-- 12 -->
   <subarg>
