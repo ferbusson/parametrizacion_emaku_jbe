@@ -523,7 +523,7 @@
                 <arg attribute="sqlCode">SEL0378</arg>
                 <arg attribute="sqlCode">SEL0379</arg>
                 <arg attribute="exportValue">regimen</arg>
-                <arg attribute="constantValue">CE</arg>
+                <arg attribute="constantValue">CP</arg>
               </parameters>
             </component>
             <component>
@@ -1039,30 +1039,30 @@
               </component>      
  
             <!-- 2 contabilidad: descuento -->            
-            <!-- <component>
+            <component>
               <driver id="tdescuento">client.gui.components.TableDataFields</driver>
               <method>getPackage</method>
-            </component> -->
+            </component>
             <!-- 3 contabilidad: pago con tarjeta-->
-            <!-- <component>
+            <component>
               <driver id="credittable">client.gui.components.TableFindData</driver>
               <method>getPackage</method>
-            </component> -->
+            </component>
             <!-- 4 contabilidad: pago con consignacion-->
-            <!-- <component>
+            <component>
               <driver id="consignationtable">client.gui.components.TableFindData</driver>
               <method>getPackage</method>
-            </component>             -->
+            </component>            
             <!-- 5 contabilidad: pago con cheque, gravamen e inserta en tabla: cheques -->
-            <!-- <component>
+            <component>
               <driver id="checktable">client.gui.components.TableFindData</driver>
               <method>getPackage</method>
-            </component> -->
+            </component>
             <!-- 6 contabilidad: transferencias e inserta en tabla: transferencias -->
-            <!-- <component>
+            <component>
               <driver id="transfertable">client.gui.components.TableFindData</driver>
               <method>getPackage</method>
-            </component> -->
+            </component>
             <!-- 7 contabilidad: rete fuente y tabla: retenciones_documento -->
             <component>
               <driver id="base">client.gui.components.TableFindData</driver>
@@ -1080,16 +1080,16 @@
             </component>
           
             <!-- 11 contabilidad: pago en efectivo -->
-            <!-- <component>
+            <component>
               <driver id="efectivoneto">common.gui.components.GenericData</driver>
               <method>getPackage</method>
-            </component> -->
+            </component>
             <!-- 12 contabilidad: cartera facturas proveedor e inserta en tabla: cartera -->
             <component>
               <driver id="cartera">client.gui.components.TableFindData</driver>
               <method>getPackage</method>
               <parameters>
-                <arg attribute="validMinValue">2</arg>
+                <arg attribute="validMinValue">6</arg>
                 <arg attribute="validValue">0</arg>
               </parameters>
             </component>
@@ -1239,7 +1239,7 @@
     <maximizable />
     <!-- <date /> -->
     <exportValue>idbanco,1266</exportValue>
-    <consecutive>CE</consecutive>
+    <consecutive>CP</consecutive>
   </preferences>
   <panel locate="North" type="BorderLayout">
     <panel locate="North" type="FlowLayout" />
@@ -1352,7 +1352,7 @@
                 <arg attribute="background">0,0,0</arg>
                 <arg attribute="font">Dialog,0,18</arg>
                 <arg attribute="alignment">RIGHT</arg>
-                <arg attribute="idDocument">CE</arg>
+                <arg attribute="idDocument">CP</arg>
               </subarg>
             </parameters>
           </component>
@@ -1554,14 +1554,14 @@
           <arg attribute="length">20</arg>
           <arg attribute="type">STRING</arg>
           <arg attribute="enabled">false</arg>
-          <arg attribute="returnCol">5</arg>
+          <arg attribute="returnCol">7</arg>
         </subarg>
         <subarg><!--16q -->
           <arg attribute="name">idcta</arg>
           <arg attribute="length">20</arg>
           <arg attribute="type">STRING</arg>
           <arg attribute="enabled">false</arg>
-          <arg attribute="returnCol">6</arg>
+          <arg attribute="returnCol">8</arg>
         </subarg>
         <subarg><!--17r -->
           <arg attribute="name">valor_base_factura</arg>
