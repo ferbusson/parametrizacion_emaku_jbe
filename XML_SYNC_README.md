@@ -67,18 +67,64 @@ python3 xml_db_sync.py sync --file transacciones/ventas/cotizaciones/JBTR00004_p
    - "Test Database Connection"
 
 ### Method 3: Command Line
-```bash
-# Sync any XML file
-python3 xml_db_sync.py sync --file path/to/file.xml
 
-# Sync with specific codigo
-python3 xml_db_sync.py sync --file JBTR00004_perfil.xml --codigo JBTR00004
+#### New Convention (Recommended - Simpler)
+The second parameter (file path or directory) no longer needs `-o` or `-f` flags:
+
+```bash
+# Sync XML file (second parameter is the file path)
+python3 xml_db_sync.py sync path/to/file.xml
+
+# Update SQL from file (second parameter is the file path)
+python3 xml_db_sync.py update-sql LCSEL0857.sql
+
+# Get SQL query and save to directory
+# Note: For optional parameters mixed with flags, use --output or put directory at end
+python3 xml_db_sync.py get-sql --codigo LCSEL0857 --output ./output_directory
+# Or alternatively:
+python3 xml_db_sync.py get-sql --codigo LCSEL0857 -o ./output_directory
+
+# Get XML files and save to directory  
+python3 xml_db_sync.py get-xml --codigo JBTR00007 --output ./exports
+# Or alternatively:
+python3 xml_db_sync.py get-xml --codigo JBTR00007 -o ./exports
 
 # Test connection
 python3 xml_db_sync.py test
 
 # List all records
 python3 xml_db_sync.py list
+```
+
+#### For Sync and Update-SQL (Positional Parameter)
+These commands accept the second parameter as a positional argument without any flag:
+
+```bash
+# Old way (still works):
+python3 xml_db_sync.py sync --file path/to/file.xml
+
+# New way (simpler):
+python3 xml_db_sync.py sync path/to/file.xml
+
+# Old way:
+python3 xml_db_sync.py update-sql --file LCSEL0857.sql
+
+# New way:
+python3 xml_db_sync.py update-sql LCSEL0857.sql
+```
+
+#### Legacy Support (For Get-SQL and Get-XML)
+The old `-o` / `--output` flags still work perfectly:
+
+```bash
+# These all work:
+python3 xml_db_sync.py get-sql --codigo LCSEL0857 --output ./output_directory
+python3 xml_db_sync.py get-sql --codigo LCSEL0857 -o ./output_directory
+python3 xml_db_sync.py get-xml --codigo JBTR00007 --output ./exports
+python3 xml_db_sync.py get-xml --codigo JBTR00007 -o ./exports
+
+# Default to current directory if not specified:
+python3 xml_db_sync.py get-sql --codigo LCSEL0857
 ```
 
 ## 🛡️ Safety Features
@@ -172,7 +218,7 @@ $ python3 xml_db_sync.py test
 ✅ Connected to PostgreSQL: PostgreSQL 13.7
 ✅ Table 'transacciones' accessible: 25 records
 
-$ python3 xml_db_sync.py sync --file transacciones/ventas/cotizaciones/JBTR00004_perfil.xml
+$ python3 xml_db_sync.py sync transacciones/ventas/cotizaciones/JBTR00004_perfil.xml
 🔍 Auto-detected codigo: JBTR00004
 ✅ XML validation passed
 💾 Backup created: ./backups/JBTR00004_backup_20241029_143022.xml
@@ -180,6 +226,17 @@ $ python3 xml_db_sync.py sync --file transacciones/ventas/cotizaciones/JBTR00004
 ✅ Successfully synced JBTR00004_perfil.xml to database
 📊 Record: JBTR00004 in table transacciones
 💾 Backup available: ./backups/JBTR00004_backup_20241029_143022.xml
+
+$ python3 xml_db_sync.py get-sql --codigo LCSEL0857 ./sentencias_sql
+🔍 Retrieving SQL query for codigo: LCSEL0857
+📄 SQL file created: ./sentencias_sql/LCSEL0857.sql
+✅ Successfully retrieved SQL query
+
+$ python3 xml_db_sync.py get-xml --codigo JBTR00004 ./exports
+🔍 Extracting XML files for codigo: JBTR00004
+📄 perfil XML file created: ./exports/JBTR00004_perfil.xml
+📄 args_driver XML file created: ./exports/JBTR00004_args_driver.xml
+✅ Successfully extracted XML files
 ```
 
 ## 🔄 Integration with Existing Workflow

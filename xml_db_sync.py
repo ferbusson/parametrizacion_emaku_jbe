@@ -1011,20 +1011,48 @@ class XMLDatabaseSync:
 def main():
     """Main function for command line usage."""
     
-    parser = argparse.ArgumentParser(description="Sync XML files to PostgreSQL database")
+    parser = argparse.ArgumentParser(
+        description="Sync XML files to PostgreSQL database",
+        epilog="""
+Examples:
+  New convention (simpler - recommended):
+    python xml_db_sync.py sync path/to/file.xml
+    python xml_db_sync.py update-sql file.sql
+    python xml_db_sync.py get-sql --codigo LCSEL0857 ./output_directory
+    python xml_db_sync.py get-xml --codigo JBTR00007 ./exports
+  
+  Legacy convention (still works):
+    python xml_db_sync.py sync --file path/to/file.xml
+    python xml_db_sync.py get-sql --codigo LCSEL0857 --output ./output_directory
+        """,
+        formatter_class=argparse.RawDescriptionHelpFormatter
+    )
     parser.add_argument('action', choices=['sync', 'test', 'list', 'config', 'create', 'get-sql', 'update-sql', 'get-xml', 'insert-sql'], 
                        help='Action to perform')
-    parser.add_argument('--file', '-f', help='File path (XML for sync, SQL for update-sql)')
+    parser.add_argument('second_param', nargs='?', default=None,
+                       help='Second parameter: file path (for sync/update-sql) or directory (for get-sql/get-xml)')
     parser.add_argument('--codigo', '-c', help='Database codigo value (auto-detected if not provided)')
     parser.add_argument('--prefix', '-p', help='Codigo prefix for creating new transactions/queries (e.g., JBTR0, JBSEL)')
-    parser.add_argument('--output', '-o', help='Output directory for get-sql/get-xml actions (default: current directory)')
     parser.add_argument('--config', help='Config file path (default: db_config.json)')
+    # Keep legacy flags for backward compatibility
+    parser.add_argument('--file', '-f', help='(Legacy) File path (XML for sync, SQL for update-sql)')
+    parser.add_argument('--output', '-o', help='(Legacy) Output directory for get-sql/get-xml actions')
     
     args = parser.parse_args()
     
     # Initialize sync tool
     config_file = args.config or "db_config.json"
     sync_tool = XMLDatabaseSync(config_file)
+    
+    # Helper function to get file or directory parameter
+    def get_second_param_as_file(legacy_flag):
+        """Get second parameter as a file path."""
+        return args.second_param or legacy_flag or None
+    
+    def get_second_param_as_dir(legacy_flag):
+        """Get second parameter as a directory path."""
+        param = args.second_param or legacy_flag or "."
+        return param
     
     if args.action == 'config':
         print(f"📄 Config file: {config_file}")
@@ -1041,11 +1069,14 @@ def main():
         return
     
     elif args.action == 'sync':
-        if not args.file:
-            print("❌ --file parameter is required for sync action")
+        file_path = get_second_param_as_file(args.file)
+        if not file_path:
+            print("❌ File path parameter is required for sync action")
+            print("💡 Usage: python xml_db_sync.py sync <file_path>")
+            print("         or: python xml_db_sync.py sync --file <file_path>")
             sys.exit(1)
         
-        success = sync_tool.sync_file_to_database(args.file, args.codigo)
+        success = sync_tool.sync_file_to_database(file_path, args.codigo)
         sys.exit(0 if success else 1)
     
     elif args.action == 'create':
@@ -1055,29 +1086,31 @@ def main():
     elif args.action == 'get-sql':
         if not args.codigo:
             print("❌ --codigo parameter is required for get-sql action")
-            print("💡 Usage: python xml_db_sync.py get-sql --codigo LCSEL0857")
+            print("💡 Usage: python xml_db_sync.py get-sql --codigo LCSEL0857 [output_directory]")
             sys.exit(1)
         
-        output_dir = args.output or "."
+        output_dir = get_second_param_as_dir(args.output)
         success = sync_tool.retrieve_sql_query(args.codigo, output_dir)
         sys.exit(0 if success else 1)
     
     elif args.action == 'update-sql':
-        if not args.file:
-            print("❌ --file parameter is required for update-sql action")
-            print("💡 Usage: python xml_db_sync.py update-sql --file LCSEL0857.sql")
+        file_path = get_second_param_as_file(args.file)
+        if not file_path:
+            print("❌ File path parameter is required for update-sql action")
+            print("💡 Usage: python xml_db_sync.py update-sql <file_path>")
+            print("         or: python xml_db_sync.py update-sql --file <file_path>")
             sys.exit(1)
         
-        success = sync_tool.update_sql_query(args.file, args.codigo)
+        success = sync_tool.update_sql_query(file_path, args.codigo)
         sys.exit(0 if success else 1)
     
     elif args.action == 'get-xml':
         if not args.codigo:
             print("❌ --codigo parameter is required for get-xml action")
-            print("💡 Usage: python xml_db_sync.py get-xml --codigo JBTR00007")
+            print("💡 Usage: python xml_db_sync.py get-xml --codigo JBTR00007 [output_directory]")
             sys.exit(1)
         
-        output_dir = args.output or "."
+        output_dir = get_second_param_as_dir(args.output)
         success = sync_tool.extract_xml_files(args.codigo, output_dir)
         sys.exit(0 if success else 1)
     
