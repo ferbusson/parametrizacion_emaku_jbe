@@ -1178,6 +1178,7 @@
             </component>
             <component>
             <driver id="neto">common.gui.components.GenericData</driver>              
+            <driver id="neto">common.gui.components.GenericData</driver>              
               <method>validPackage</method>
               <parameters>
                 <arg attribute="maxValue">efectivo+tcreditcard+tcheck+tconsignacion+ttransferencia:vpago</arg>
@@ -1185,6 +1186,7 @@
               </parameters>
             </component>
             <component>
+              <driver id="neto">common.gui.components.GenericData</driver>
               <driver id="neto">common.gui.components.GenericData</driver>
               <method>validPackage</method>
               <parameters>
@@ -1276,18 +1278,24 @@
             </component> -->
             <!-- 4 contabilidad: pago con consignacion-->
             <!-- <component>
+            <!-- <component>
               <driver id="consignationtable">client.gui.components.TableFindData</driver>
               <method>getPackage</method>
             </component>             -->
+            </component>             -->
             <!-- 5 contabilidad: pago con cheque, gravamen e inserta en tabla: cheques -->
+            <!-- <component>
             <!-- <component>
               <driver id="checktable">client.gui.components.TableFindData</driver>
               <method>getPackage</method>
             </component> -->
+            </component> -->
             <!-- 6 contabilidad: transferencias e inserta en tabla: transferencias -->
+            <!-- <component>
             <!-- <component>
               <driver id="transfertable">client.gui.components.TableFindData</driver>
               <method>getPackage</method>
+            </component> -->
             </component> -->
             <!-- 7 contabilidad: rete fuente y tabla: retenciones_documento -->
             <component>
@@ -1307,8 +1315,10 @@
           
             <!-- 11 contabilidad: pago en efectivo -->
             <!-- <component>
+            <!-- <component>
               <driver id="efectivoneto">common.gui.components.GenericData</driver>
               <method>getPackage</method>
+            </component> -->
             </component> -->
             <!-- 12 contabilidad: cartera facturas proveedor e inserta en tabla: cartera -->
             <component>
@@ -1846,6 +1856,7 @@
           <method>clean</method>
         </component>
         <component>
+          <driver id="neto">common.gui.components.GenericData</driver>
           <driver id="neto">common.gui.components.GenericData</driver>
           <method>clean</method>
         </component>
