@@ -1,17 +1,17 @@
 <container>
   <subarg>
     <arg attribute="idDocument">CE</arg>
-    <arg attribute="linkDocument">CP</arg>
+    <!-- <arg attribute="linkDocument">CP</arg> -->
     <arg attribute="consecutive" />
-    <arg attribute="date" />
+    <!-- <arg attribute="date" /> -->
     <arg attribute="actionDocument">createDocument</arg>
     <arg attribute="cash" />
   </subarg>
 
   <!-- 0 observaciones: concepto listado de facturas abonadas-->
-  <arg>INS0037</arg>
+  <!-- <arg>INS0037</arg> -->
   <!-- 1 datos_documento -->
-  <arg>LCINS0107</arg>
+  <!-- <arg>LCINS0107</arg> -->
 
 <!-- 10 Tercero -->
   <arg>INS0048</arg>
@@ -37,8 +37,69 @@
     </parameters>
   </LNData>
 
-  <!-- 3 Asiento para pago con tarjetas -->
+<!-- 5 inserta medios de pago -->
   <subarg>
+      <!-- <LNData>
+        <driver>LNSelectedField</driver>
+        <method>getSubpackage</method>
+        <parameters>
+          <arg attribute="sql">LCINS0108</arg>
+          <arg attribute="fields">0,1,2,3</arg>
+          <arg attribute="conditional">b&gt;0</arg>
+        </parameters>
+      </LNData> -->
+      <LNData>
+          <driver>LNContabilidad</driver>
+          <method>columnDataAccount</method>
+          <parameters>
+            <arg attribute="Concepto">Abono a CxP segun comprobante de egreso</arg>
+            <arg attribute="naturaleza">C</arg>
+            <arg attribute="debuging">true</arg>
+            <arg attribute="centrocosto">getName</arg>
+            <subarg>
+              <arg attribute="accountKey">0</arg>
+              <arg attribute="accountTh">3</arg>
+              <arg attribute="accountData">1</arg>
+            </subarg>
+          </parameters>
+        </LNData>
+
+        <LNData>
+          <driver>LNContabilidad</driver>
+          <method>columnDataAccount</method>
+          <parameters>
+            <arg attribute="Concepto">Abono a CxP segun comprobante de egreso - Gravamen 4 x 1000 (C)</arg>
+            <arg attribute="naturaleza">C</arg>
+            <arg attribute="debuging">true</arg>
+            <arg attribute="centrocosto">getName</arg>
+            <subarg>
+              <arg attribute="accountKey">0</arg>
+              <arg attribute="accountTh">5</arg>
+              <arg attribute="accountData">2</arg>
+            </subarg>
+          </parameters>
+        </LNData>
+
+        <LNData>
+          <driver>LNContabilidad</driver>
+          <method>columnDataAccount</method>
+          <parameters>
+            <arg attribute="Concepto">Abono a CxP segun comprobante de egreso - Gravamen 4 x 1000 (D)</arg>
+            <arg attribute="naturaleza">D</arg>
+            <arg attribute="debuging">true</arg>
+            <arg attribute="centrocosto">getName</arg>
+            <arg attribute="tercero">getName</arg>
+            <subarg>
+              <arg attribute="accountKey">4</arg>
+              <arg attribute="accountTh">5</arg>
+              <arg attribute="accountData">2</arg>
+            </subarg>
+          </parameters>
+        </LNData>
+    </subarg>
+
+  <!-- 3 Asiento para pago con tarjetas -->
+  <!-- <subarg>
     <LNData>
       <driver>LNSelectedField</driver>
       <method>getSubpackage</method>
@@ -93,9 +154,9 @@
         </subarg>
       </parameters>
     </LNData>
-  </subarg>  
+  </subarg>   -->
   <!-- 4 Asiento para pago con consignacion -->
-  <subarg>
+  <!-- <subarg>
     <LNData>
         <driver>LNSelectedField</driver>
         <method>getSubpackage</method>
@@ -120,10 +181,10 @@
         </subarg>
       </parameters>
     </LNData>    
-  </subarg>
+  </subarg> -->
 
   <!-- 5 inserta en cheques -->
-  <subarg>
+  <!-- <subarg>
       <LNData>
         <driver>LNSelectedField</driver>
         <method>getSubpackage</method>
@@ -181,10 +242,10 @@
             </subarg>
           </parameters>
         </LNData>
-    </subarg>
+    </subarg> -->
 
   <!-- 6 Asiento para transferencias -->
-  <subarg>
+  <!-- <subarg>
     <LNData>
         <driver>LNSelectedField</driver>
         <method>getSubpackage</method>
@@ -240,7 +301,7 @@
       </parameters>
     </LNData>
 
-  </subarg>
+  </subarg> -->
   
   <!-- 7 Ret. Fuente -->
   <subarg>
@@ -324,7 +385,7 @@
   </subarg>
 
   <!-- 11 PAGO EN EFECTIVO -->
-  <LNData>
+  <!-- <LNData>
     <driver>LNContabilidad</driver>
     <method>fieldData</method>
     <parameters>
@@ -337,7 +398,7 @@
         <arg attribute="accountField">11053001,C</arg>
       </subarg>
     </parameters>
-  </LNData>
+  </LNData> -->
 
   <!-- 12 -->
   <subarg>
@@ -345,8 +406,8 @@
       <driver>LNSelectedField</driver>
       <method>getSubpackage</method>
       <parameters>
-        <arg attribute="sql">DGINS0026</arg>
-        <arg attribute="fields">0,2,3,4,5,6,8</arg>
+        <arg attribute="sql">JBINS0017</arg>
+        <arg attribute="fields">0,2,3,4,6</arg>
         <arg attribute="discartKey">centrocosto</arg>
       </parameters>
     </LNData>
@@ -360,11 +421,92 @@
         <arg attribute="tercero">getName</arg>
         <arg attribute="centrocosto">getName</arg>
         <subarg>
-          <arg attribute="accountKey">7</arg>
-          <arg attribute="accountData">1</arg>
+          <arg attribute="accountKey">5</arg> <!-- el indice que le corresponde en los returnCol  -->
+          <arg attribute="accountData">2</arg>
         </subarg>
       </parameters>
     </LNData>
   </subarg>
+
+   <subarg>
+      <!--  Afecto cartera -->  
+    <LNData>
+          <driver>LNSelectedField</driver>
+          <method>getSubpackage</method>
+          <parameters>
+              <arg attribute="sql">FIINS0002</arg>
+              <arg attribute="fields">5,5,7</arg>
+              <arg attribute="conditional">"c".startsWith("13") </arg>
+              <arg attribute="discartKey">centrocosto</arg>
+              <arg attribute="discartKey">scentrocosto</arg>              
+          </parameters>
+      </LNData>
+
+
+    <!--  Afecto cxp -->  
+    <LNData>
+      <driver>LNSelectedField</driver>
+      <method>getSubpackage</method>
+      <parameters>
+        <arg attribute="sql">GRINS0003</arg>
+        <arg attribute="fields">7,5,6,8</arg>
+        <arg attribute="discartKey">idTercero</arg>       
+              <arg attribute="discartKey">centrocosto</arg>
+              <arg attribute="discartKey">scentrocosto</arg>              
+      </parameters>
+    </LNData>   
+
+
+
+    <LNData>
+          <driver>LNSelectedField</driver>
+          <method>getSubpackage</method>
+          <parameters>
+              <arg attribute="sql">DGINS0023</arg>
+              <arg attribute="fields">6,6,7</arg>
+              <arg attribute="conditional">"c".startsWith("2") &amp;&amp; !"c".startsWith("24") &amp;&amp; !"c".startsWith("2365") &amp;&amp; !"c".startsWith("2370")</arg>
+              <arg attribute="discartKey">centrocosto</arg>
+              <arg attribute="discartKey">scentrocosto</arg>              
+          </parameters>
+      </LNData>
+
+    <!-- Cartera Negativa -->
+    <LNData>
+          <driver>LNSelectedField</driver>
+          <method>getSubpackage</method>
+          <parameters>
+              <arg attribute="sql">FIINS0003</arg>
+              <arg attribute="fields">6,6,7</arg>
+              <arg attribute="conditional">"c".startsWith("1") &amp;&amp; "i".equals("TRUE") &amp;&amp; f&gt;0</arg>
+              <arg attribute="discartKey">centrocosto</arg>
+              <arg attribute="discartKey">scentrocosto</arg>              
+          </parameters>
+      </LNData>
+
+
+    <!-- Cartera Negativa -->
+    <LNData>
+          <driver>LNSelectedField</driver>
+          <method>getSubpackage</method>
+          <parameters>
+              <arg attribute="sql">FIINS0003</arg>
+              <arg attribute="fields">5,5,7</arg>
+              <arg attribute="conditional">"c".startsWith("2") &amp;&amp; "i".equals("TRUE") &amp;&amp; e&gt;0</arg>
+              <arg attribute="discartKey">centrocosto</arg>
+              <arg attribute="discartKey">scentrocosto</arg>              
+          </parameters>
+      </LNData>
+
+      <LNData>
+          <driver>LNContabilidad</driver>
+          <method>rowDataAccountSC</method>
+          <parameters>
+            <arg attribute="centrocosto">getName</arg>
+            <arg attribute="scentrocosto">getName</arg>
+            <arg attribute="tercero">getname</arg>
+            <arg attribute="inventario">notData</arg>
+          </parameters>
+      </LNData>
+    </subarg>
   
 </container>
