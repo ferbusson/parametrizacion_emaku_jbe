@@ -37,7 +37,6 @@
     </parameters>
   </LNData>
 
-<<<<<<< HEAD
 <!-- 5 inserta medios de pago -->
   <subarg>
       <!-- <LNData>
@@ -99,8 +98,6 @@
         </LNData>
     </subarg>
 
-=======
->>>>>>> 366fc677b5ecd771d4aa301b151ec698387da805
   <!-- 3 Asiento para pago con tarjetas -->
   <!-- <subarg>
     <LNData>

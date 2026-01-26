@@ -6,7 +6,7 @@ SELECT
 FROM
 	general g
 WHERE
-	g.id_char = '?';
+	g.id = '?';
 
 
 select
@@ -65,7 +65,7 @@ FROM
 			 	aux_params_cartera a
 			WHERE
 				c.idtercero = a.id AND
-				ac.char_cta like '13%' and
+				ac.char_cta like '1345%' and
 				d.ndocumento=c.nfactura AND
 				ac.id_cta=c.id_cta AND
 				d.estado AND
