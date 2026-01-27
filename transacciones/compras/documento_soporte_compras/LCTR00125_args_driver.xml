@@ -28,7 +28,8 @@
                  <arg attribute="debuging">true</arg>
                  <arg attribute="centrocosto">getName</arg>
                  <subarg>
-                         <arg attribute="accountField">513550,D</arg>
+                         <!-- <arg attribute="accountField">513550,D</arg> -->
+                         <arg attribute="accountField">52355001,D</arg>
                  </subarg>
          </parameters>
  </LNData>
@@ -40,9 +41,11 @@
                  <arg attribute="CodeAPS">6</arg>
                  <arg attribute="Concepto">Compra a credito - IVA Flete</arg>
                  <arg attribute="debuging">true</arg>
+                 <arg attribute="tercero">getName</arg>
                  <arg attribute="centrocosto">getName</arg>
                  <subarg>
-                         <arg attribute="accountField">511570,D</arg>
+                         <!-- <arg attribute="accountField">511570,D</arg> -->
+                         <arg attribute="accountField">24082001,D</arg>
                  </subarg>
          </parameters>
  </LNData>
@@ -251,11 +254,11 @@
         <subarg>
           <arg attribute="accountCol">IdProdServ,0</arg>
           <!-- mercancia 5% -->
-          <arg attribute="accountCol">1435560501,5</arg>             
+          <arg attribute="accountCol">14350102,5</arg>             
           <!-- mercancia 19% -->
-          <arg attribute="accountCol">1435560502,5</arg>          
+          <arg attribute="accountCol">14350101,5</arg>          
           <!-- mercancia excluida -->
-          <arg attribute="accountCol">14355610,5</arg>        
+          <arg attribute="accountCol">14350103,5</arg>        
 
           <!-- mercancia exenta -->
           <arg attribute="accountCol">14355615,5</arg>
@@ -264,9 +267,9 @@
           <arg attribute="accountCol">14352001,5</arg>          
 
           <!-- iva 5% -->
-          <arg attribute="accountCol">24081001,6</arg>
+          <arg attribute="accountCol">24080104,6</arg>
           <!-- iva 19% -->
-          <arg attribute="accountCol">24081002,6</arg>
+          <arg attribute="accountCol">24080103,6</arg>
         </subarg>
       </parameters>
     </LNData>

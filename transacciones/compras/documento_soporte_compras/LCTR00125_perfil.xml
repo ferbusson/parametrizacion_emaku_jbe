@@ -2809,6 +2809,8 @@
                                 <driver>this</driver>
                                 <method>getPackage</method>
                                 <parameters>
+                                <arg attribute="blankPackage">true</arg>
+                                    <arg attribute="nullField">true</arg>
                                     <subarg>
                                         <arg attribute="importValue">transportadora</arg>
                                         <arg attribute="importValue">guia</arg>
