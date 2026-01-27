@@ -349,7 +349,7 @@ SELECT
     foo.nombre_lista,
     foo.pventa2,
     foo.pventa3,
-    foo.es_pintor,
+    foo.se_puede_editar,
     foo.tiene_precio_base
 FROM
     (SELECT
@@ -397,7 +397,10 @@ FROM
         i.porcentaje_bp,
         i.inc,
         i.nombre_lista,
-        i.es_pintor,
+        case when i.id_sgrupo = 686 then 1 else 0 end as se_puede_editar, --usado en las combinaciones para habilitar la edicion del vunitario, 
+        																  --antes subia si era pintor o no pero al final eso no se usa aqui, este mismo campo 
+        																  --permite que los documentos cargados por temporal o desde generar de un documento 
+        																  --anterior conserven el vunitario y que no se recalculen al ser cargados
     	i.tiene_precio_base
     FROM 
         marcas ma,
@@ -923,7 +926,20 @@ SELECT
     --pvo.pventa,
     --pvo.piva,
     a.tag,
-    a.disponible,
+    case when a.id_prod_serv in (7720,
+7721,
+7722,
+7723,
+7777,
+8005,
+8008,
+8009,
+8010,
+8875,
+9447,
+9449,
+12526,
+12718) then 1000 else a.disponible end as disponible,
     --pvo.pventa,
     --pvo.pventa,
     CASE WHEN pvo.id_regimen='E' THEN ROUND((pvo.pventa/(1+(piva/100)))::numeric,0) ELSE pvo.pventa::NUMERIC END AS pventa,
@@ -933,13 +949,16 @@ SELECT
     a.id_itemp,
     a.narticulosa,
     --CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentoa ELSE 0 END AS pdescuentoa, --t12 comentado Oct 13 2025
-    a.pdescuentoa,
+    case when pvo.id_catalogo = 1 then a.pdescuentoa else 0 end as pdescuentoa,
+    --a.pdescuentoa,
     a.narticulosm,
     --CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentom ELSE 0 END AS pdescuentom, --u14 comentado Oct 13 2025
-    a.pdescuentom,
+    case when pvo.id_catalogo = 1 then a.pdescuentom else 0 end as pdescuentom,
+    --a.pdescuentom,
     a.narticulosi,
     --CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentoi ELSE 0 END AS pdescuentoi, --v16 comentado Oct 13 2025
-    a.pdescuentoi,
+    case when pvo.id_catalogo = 1 then a.pdescuentoi else 0 end as pdescuentoi,
+    --a.pdescuentoi,
     a.id_marca_pc,
     a.id_item_pc,
     a.id_marca_po,
@@ -954,16 +973,20 @@ SELECT
     a.id_submarcap,
     a.narticulosxyl,
     --CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentoxyl ELSE 0 END AS pdescuentoxyl, --w30 comentado Oct 13 2025
-    a.pdescuentoxyl,
+    case when pvo.id_catalogo = 1 then a.pdescuentoxyl else 0 end as pdescuentoxyl,
+    --a.pdescuentoxyl,
     a.narticulosxyg,
     --CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentoxyg ELSE 0 END AS pdescuentoxyg, --x32 comentado Oct 13 2025
-    a.pdescuentoxyg,
+    case when pvo.id_catalogo = 1 then a.pdescuentoxyg else 0 end as pdescuentoxyg,
+    --a.pdescuentoxyg,
     a.narticulosxysg,
     --CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentoxysg ELSE 0 END AS pdescuentoxysg, --y34 comentado Oct 13 2025
-    a.pdescuentoxysg,
+    case when pvo.id_catalogo = 1 then a.pdescuentoxysg else 0 end as pdescuentoxysg,
+    --a.pdescuentoxysg,
     a.narticulosxysm,
     --CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentoxysm ELSE 0 END AS pdescuentoxysm, --z36 comentado Oct 13 2025
-    a.pdescuentoxysm,
+    case when pvo.id_catalogo = 1 then a.pdescuentoxysm else 0 end as pdescuentoxysm,
+    --a.pdescuentoxysm,
     a.codigo,
     a.ref_proveedor,
     a.contador,
@@ -975,7 +998,7 @@ SELECT
     a.nombre_lista,
     CASE WHEN pvo.id_regimen='E' THEN ROUND((a.pventa2/(1+(piva/100)))::numeric,0) ELSE a.pventa2::NUMERIC END AS pventa2,
     CASE WHEN pvo.id_regimen='E' THEN ROUND((a.pventa3/(1+(piva/100)))::numeric,0) ELSE a.pventa3::NUMERIC END AS pventa3,
-    a.es_pintor,
+    a.se_puede_editar,
     a.tiene_precio_base
 FROM
     aux_consulta_con_promociones a,

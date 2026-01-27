@@ -461,7 +461,7 @@
                                     <arg attribute="enabled">false</arg>
                                     <arg attribute="return">false</arg>
                                     <arg attribute="clean">true</arg>
-                                    <arg attribute="calculateDate">fechar+dcredit</arg> <!-- tiene en cuenta la fecha recepcion -->
+                                    <arg attribute="calculateDate">fechai+dcredit</arg> <!-- tiene en cuenta la fecha recepcion -->
                                     <arg attribute="dateFormat">yyyy/MM/dd</arg>
                                     <arg attribute="printable">true</arg>
                                 </subarg>
@@ -3032,6 +3032,8 @@
                                 <driver>this</driver>
                                 <method>getPackage</method>
                                 <parameters>
+                                    <arg attribute="nullField">true</arg>
+                                    <arg attribute="blankPackage">true</arg>
                                     <subarg>
                                         <arg attribute="importValue">transportadoranombre</arg>
                                         <arg attribute="importValue">guia</arg>
