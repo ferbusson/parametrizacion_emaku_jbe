@@ -762,6 +762,8 @@
                         <arg attribute="sqlCode">LCSEL0091</arg> <!-- vigencia meses resolucion-->
                         <arg attribute="sqlCode">RFSEL016</arg> <!-- prefijo resolucion -->
                         <arg attribute="sqlCode">LCSEL0459</arg> <!-- ndocumento reenvio email -->
+                        <arg attribute="sqlCode">LCSEL0460</arg> <!-- fecha procesamiento -->
+                        
                         <arg attribute="sqlCodeExportValue">DESEL0016,cufe,qr,prefix</arg>
                         <arg attribute="sqlCodeExportValue">JBSEL0024,_sigla,_usuario,_norden,_id_char_tercero_referente,_nombre_tercero_referente,_direccion_contacto,_telefono_contacto,_id_vendedor,_vencimiento,_ndocumento_factura,_numero_pedido,_prefix,_cufe</arg>
                         <arg attribute="sqlCodeExportValue">JBSEL0025,_javipuntosgenerados,_javipuntosredimidos</arg>
@@ -1567,6 +1569,11 @@
                     <driver id="idtelefonotercero">common.gui.components.GenericData</driver>
                     <method>clean</method>
                   </component>
+                    <!-- fechaprocesamiento -->
+                  <component>
+                    <driver id="fechaprocesamiento">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                  </component>
                   <component>
                     <driver id="numeroordenexterno">common.gui.components.GenericData</driver>
                     <method>clean</method>
@@ -1642,6 +1649,28 @@
             <visible>false</visible>
         </preferences>
         <!--  Componente Oculto -->
+
+        <component locate="Center">
+              <driver id="fechaprocesamiento">common.gui.components.GenericData</driver>
+              <parameters>
+                  <!-- <arg attribute="Panel">false</arg> -->
+                  <arg attribute="keySQL">LCSEL0460</arg>
+                  <arg attribute="driverEvent" id="nro_fact">client.gui.components.TableDataFields</arg>
+                  <subarg>
+                      <arg attribute="format">TEXT</arg>
+                      <arg attribute="size">15</arg>
+                      <!-- <arg attribute="alignment">RIGHT</arg> -->
+                      <arg attribute="maxlength">50</arg>
+                      <arg attribute="enabled">false</arg>
+                      <arg attribute="return">false</arg>
+                      <arg attribute="clean">true</arg>
+                      <arg attribute="font">Dialog,1,13</arg>
+                        <!-- <arg attribute="foreground">0,0,0</arg>
+                        <arg attribute="background">51,255,215</arg> -->
+                      <arg attribute="printable">true</arg>
+                  </subarg>
+              </parameters>
+          </component>    
 
     <!-- total suma pagos en tarjeta - manual, datafono o parciales este dato se va para datos_documento -->
     <component>
@@ -2713,16 +2742,12 @@
                     <method>getPrintPackage</method>
                   </component>
                                     
-                <!-- fecha procesamiento habilitar cuando se entre en produccion-->
-                <component>
-                  <driver>this</driver>
-                  <method>getPackage</method>
-                  <parameters>
-                    <subarg>
-                      <arg attribute="importValue">processdate</arg>
-                    </subarg>
-                  </parameters>
-                </component>
+                <!-- fechaprocesamiento -->
+            <component>
+              <driver id="fechaprocesamiento">common.gui.components.GenericData</driver>
+              <method>getPrintPackage</method>
+            </component>
+
                 <!-- 5 -->
                 <component>
                   <driver>client.gui.components.FindThird</driver>
