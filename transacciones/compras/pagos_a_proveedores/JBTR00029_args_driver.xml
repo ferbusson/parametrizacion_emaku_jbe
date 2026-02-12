@@ -1,0 +1,18 @@
+<container>
+  <subarg>
+    <arg attribute="actionDocument">annulDocument</arg>
+    <arg attribute="idDocument">CE</arg>
+    <arg attribute="date" />
+  </subarg>
+
+  <subarg>
+    <LNData>
+      <driver>LNContabilidad</driver>
+      <method>anular</method>
+      <parameters>
+        <arg attribute="Concepto">Abono a Cuentas por Pagar Anulado</arg>
+      </parameters>
+    </LNData>
+  </subarg>
+  
+</container>

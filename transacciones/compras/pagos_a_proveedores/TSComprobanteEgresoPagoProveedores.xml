@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emaku_template type="POSTSCRIPT" requestNumeration="false" copies="1"
+  silent="false" printer="EPSON_TM-T20">
+	<settings width="612" height="792" />
+	<metadata>
+
+
+		<!-- Encabezado -->
+		<font row="0" col="0" name="Dialog" size="10" />
+		<!-- <image row="1" col="10" width="100" height="75">/icons/logo_fac.png</image>		 -->
+		<!-- cuadros de la forma -->
+		<roundedRectangle row="80" col="20" width="565" height="680" />
+
+		 <font row="0" col="0" name="Dialog" size="12" />
+                <field row="35" center="612" type="STRING">JAVIER BENAVIDES ERAZO SAS</field>
+                <field row="50" center="612" type="STRING">NIT: 891.224.230-2</field>
+
+
+                <font row="0" col="0" name="Dialog" size="10" />
+
+		<!-- Informacion del Solicitante -->
+		<!-- Numero de documento -->
+		<field row="35" col="420" type="STRING">COMPROBANTE DE EGRESO</field>
+		<field row="49" col="420" type="Numero">NUMERO:  CE-</field>
+			<!--<barcodeImage row="30" col="410" />-->
+		<!-- <ndocument row="49" col="512" /> -->
+		<!-- <field row="115" col="420" type="Numero">Descuento 2%</field>
+		<field row="130" col="420" type="Numero">Descuento 2%</field>
+		<field row="145" col="420" type="Numero">Descuento 19%</field> -->
+
+		<!-- <field row="612" col="70" type="Numero">TOTALES:</field> -->
+
+		<field row="190" col="30" type="Numero">VALOR: $</field>
+		<field row="165" col="30" type="Numero">LA SUMA DE:</field>
+		<field row="208" col="78" type="Numero">Concepto</field>
+		<!-- <field row="612" col="30" type="Numero">
+		Forma de Pago:      Efectivo [  ]      Consignación [  ]      T. Credito [  ]       Cheque [  ]       Transferencia [  ]
+		</field>		 -->
+		<!-- <field row="630" col="50" type="Numero">Código</field>
+		<field row="630" col="160" type="Numero">Débitos</field>
+		<field row="630" col="265" type="Numero">Créditos</field> -->
+		<field row="740" col="25" type="Numero">Elaboro</field>
+		<field row="740" col="125" type="Numero">Aprobo</field>
+		<field row="740" col="245" type="Numero">Contabilizo</field>
+		<!-- <field row="755" col="360" type="Numero">Firma y Sello</field> -->
+		<!-- lineas horizontales -->
+			<!--<line row="110" col="20" row2="110" col2="585" />-->
+		<line row="150" col="20" row2="150" col2="585" />
+		<!-- <line row="180" col="20" row2="180" col2="585" /> -->
+		<line row="205" col="20" row2="205" col2="73" />
+		<line row="205" col="135" row2="205" col2="585" />
+		<!-- <line row="600" col="20" row2="600" col2="585" /> linea superior formas de pago -->
+		<line row="620" col="20" row2="620" col2="585" />
+		<!-- <line row="635" col="20" row2="635" col2="340" /> cierra titulos -->
+		<line row="730" col="20" row2="730" col2="340" />
+		<!-- <line row="745" col="355" row2="745" col2="575" /> linea derecha-->
+		<!-- lineas verticales -->
+		<line row="620" col="120" row2="760" col2="120" />
+		<line row="620" col="240" row2="760" col2="240" />
+		<line row="620" col="340" row2="760" col2="340" />
+
+
+
+		<field row="220" col="30" type="STRING">Factura</field>
+		<field row="220" col="145" type="STRING">Valor Ant. IVA</field>
+		<field row="220" col="265" type="STRING">IVA</field>
+		<field row="220" col="325" type="STRING">Total</field>
+		<field row="220" col="400" type="STRING">Valor Dto</field>
+		<field row="220" col="470" type="STRING">% Dto</field>
+		<field row="220" col="510" type="STRING">Valor a Pagar</field>
+
+		<field row="640" col="370" type="STRING">Subtotal</field>
+		<field row="655" col="370" type="STRING">IVA</field>
+		<field row="670" col="370" type="STRING">DTO Financiero</field>
+		<field row="685" col="370" type="STRING">Total</field>
+
+		<line row="700" col="340" row2="700" col2="585" />
+		<!-- <field row="705" col="370" type="STRING">PAGOS REALIZADOS</field> -->
+		<field row="720" col="370" type="STRING">Medio de Pago:</field>
+		<field row="735" col="370" type="STRING">Valor</field>
+		<field row="750" col="370" type="STRING">Valor Notas</field>
+		
+
+
+	</metadata>
+    <package>
+		<field row="49" col="512" type="STRING" />
+	</package>
+	<!-- 0 fecha -->
+	<package>
+		<field row="95" col="420" type="DATE" mask="EEEEEE, dd MMMM yyyy" />
+	</package>
+	<!-- 1 tercero -->
+	<package>
+		<field row="95" col="30" type="STRING" />
+		<field row="110" col="30" type="STRING" />
+		<!-- <field row="125" col="400" type="STRING" />
+        <field row="140" col="400" type="STRING" /> -->
+		<field row="125" col="30" type="STRING" />
+        <field row="140" col="30" type="STRING" />
+	</package>
+	<!-- 2 valor en numeros-->
+	<package>
+		<field row="190" col="575" type="NUMERIC" mask="##,###,###,###" />
+	</package>
+	<!-- 3 valor en letras-->
+	<package>
+		<field row="165" col="100" type="NUMTOLETTERS" width="75" height="2" rowAcum="12" />
+	</package>
+    <!-- 12 tabla principal -->
+	<package generateMultiPage="true">
+		<subpackage rowInit="240" rowAcum="12" maxRowsAcum="40" rowInitNewPage="160" maxRowsAcumNewPage="49" maxRowsFootPage="34" maxRowsFootNewPage="43">
+			<field col="30" type="STRING" fontSize="7" fontName="Sans" fontStyle="0" /> <!-- factura -->
+			<field col="360" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###" /> <!-- valor_factura -->
+			<field col="575" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###" /> <!-- abono -->
+			<field col="490" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###" /> <!-- % desc -->
+			<field col="440" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###" /> <!-- valor Desc -->
+			<field col="210" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="#,###,###,##0.00" /> <!-- valor base factura -->
+			<field col="290" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="#,###,###,##0.00" /> <!-- valor iva factura -->
+		</subpackage>
+	</package>
+	<!-- total base antes de iva -->
+	<package>
+		<field row="640" col="570" type="NUMERIC" mask="##,###,###,###" />
+	</package>
+	<!-- total iva-->
+	<package>
+		<field row="655" col="570" type="NUMERIC" mask="##,###,###,###" />
+	</package>
+	<!-- total desc financiero -->
+	<package>
+		<field row="670" col="570" type="NUMERIC" mask="##,###,###,###" />
+	</package>
+	<!-- total-->
+	<package>
+		<field row="685" col="570" type="NUMERIC" mask="##,###,###,###" />
+	</package>
+
+		<!-- medio de pago-->
+	<package>
+		<field row="720" col="460" type="STRING" />
+	</package>
+		<!-- total consignado-->
+	<package>
+		<field row="735" col="570" type="NUMERIC" mask="##,###,###,###" />
+	</package>
+
+			<!-- total notas-->
+	<package>
+		<field row="750" col="570" type="NUMERIC" mask="##,###,###,###" />
+	</package>
+	
+	<!-- total base antes de iva -->
+	<!-- <package>
+		<field row="612" col="210" type="NUMERIC" mask="##,###,###,###" />
+	</package> -->
+	<!-- total iva-->
+	<!-- <package>
+		<field row="612" col="290" type="NUMERIC" mask="##,###,###,###" />
+	</package> -->
+	<!-- total desc financiero -->
+	<!-- <package>
+		<field row="612" col="440" type="NUMERIC" mask="##,###,###,###" />
+	</package> -->
+	<!-- total-->
+	<!-- <package>
+		<field row="612" col="575" type="NUMERIC" mask="##,###,###,###" />
+	</package> -->
+	
+</emaku_template>

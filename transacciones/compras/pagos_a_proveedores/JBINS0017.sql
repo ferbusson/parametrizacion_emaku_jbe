@@ -6,8 +6,10 @@ INSERT INTO cartera(
     abono_comprobante,
     pdcto_comprobante,
     dcto_comprobante,
-    id_cta
+    id_cta,
+    saldo_anterior
 ) VALUES(
+    '?',
     '?',
     '?',
     '?',

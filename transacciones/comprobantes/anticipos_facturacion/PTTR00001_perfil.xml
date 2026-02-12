@@ -1755,15 +1755,7 @@
             <object>
               <name>PRINT</name>
               <action>
-                <type>transaction</type>
-                <component>
-                  <driver id="pago">common.gui.components.ButtonsPanel</driver>
-                  <method>setEnabled</method>
-                  <parameters>
-                    <arg attribute="button">PRINT</arg>
-                    <arg attribute="state">true</arg>
-                  </parameters>
-                </component>
+                <type>transaction</type>                
 
                 <component>
                   <driver>this</driver>
@@ -1773,7 +1765,7 @@
                     <arg attribute="errorMessage">Error, Falta relacionar el tercero</arg>
                   </parameters>
                 </component>
-
+                
                 <!-- cod_tipo -->
                 <component>
                   <driver>this</driver>
@@ -1896,7 +1888,17 @@
                <component>
                   <driver id="totalconsistecredito">common.gui.components.GenericData</driver>
                   <method>getPackage</method>
-                </component>             
+                </component>     
+
+                <component>
+                <driver id="pago">common.gui.components.ButtonsPanel</driver>
+                <method>setEnabled</method>
+                <parameters>
+                  <arg attribute="button">PRINT</arg>
+                  <arg attribute="state">false</arg>
+                </parameters>
+              </component>
+
             </action>
 
               <action>

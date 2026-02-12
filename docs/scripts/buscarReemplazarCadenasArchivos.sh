@@ -11,6 +11,13 @@ find . -type f -exec sed -i.bak 's/La Cali Web/JAVIER BENAVIDES ERAZO WEB/g' {} 
 
 find . -type f -exec sed -i.bak 's/La Cali/JAVIER BENAVIDES ERAZO WEB/g' {} +
 
+find . -type f -exec sed -i.bak 's|ALMACEN PRINCIPAL / Carrera 21 No. 15-68 Centro|ALMACEN PRINCIPAL / CARRERA 19 NRO 18-27-41-53-45 CENTRO|g' {} +
+
+find . -type f -exec sed -i.bak 's|Tel: 7219070 - 3218028591|Tel: 7213282 - 3122589821|g' {} +
+
+find . -type f -exec sed -i.bak 's|www.lacalionline.com|secretaria@javierbenavideserazosas.com|g' {} +
+
+
 
 #Al fintalizar eliminar los archivos de respaldo
 find . -name "*.bak" -delete

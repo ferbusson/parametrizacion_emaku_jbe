@@ -1,7 +1,7 @@
 --JBSEL0062
 drop table if exists aux_facturas_pendientes;
 create temp table aux_facturas_pendientes as
-SELECT
+SELECT	
 	D.fecha,
 	c.dcredito,
  	c.idtercero,
@@ -40,6 +40,7 @@ GROUP BY
 	d.ndocumento;
 
 select
+	--'nada'::text as nada,
 	false as seleccion,
 	fecha,
 	dcredito,
@@ -58,7 +59,8 @@ select
 	char_cta,
 	id_cta,
 	round((saldo/1.19)::numeric,2) as valor_base,
-	0 as contador_factura
+	0 as contador_factura,
+	saldo-round((saldo/1.19)::numeric,2) as valor_iva
 FROM
 	(SELECT
 		CAST(fecha AS date) AS fecha,

@@ -41,7 +41,7 @@
           <arg attribute="font">Dialog,0,18</arg>
           <arg attribute="alignment">RIGHT</arg>
           <arg attribute="foreground">249,87,87</arg>
-          <arg attribute="calculateExportValue">totaldescuentostablaprin</arg>
+          <arg attribute="calculateExportValue">totalnotascredito+totaldescuentostablaprin</arg>
           <!-- <arg attribute="totalCol">i</arg> -->
           <arg attribute="exportValue">tdescuentofinancieroynotas</arg>
           <arg attribute="background">0,0,0</arg>
@@ -157,27 +157,22 @@
                 <arg attribute="colorSelected">200,225,245</arg>
                 <arg attribute="protectSelected">true</arg>
                 <arg attribute="Query">SEL0268</arg>
-                <arg attribute="totales">c,d,l,m</arg>
-                <arg attribute="beanshell">c=!&quot;&quot;.equals(a) &amp;&amp; d==0.0?c:0.00</arg>
+                <arg attribute="totales">c,d</arg>
+                <arg attribute="keySQL">JBSEL0071</arg>
+                <arg attribute="driverEvent" id="nro_comprobante">common.gui.components.GenericData</arg>
+                <!-- <arg attribute="beanshell">c=!&quot;&quot;.equals(a) &amp;&amp; d==0.0?c:0.00</arg>
                 <arg attribute="beanshell">d=!&quot;&quot;.equals(a) &amp;&amp; c==0.0?d:0.00</arg>
-                <arg attribute="tagData">4</arg>
-                <arg attribute="exportTotalCol">l,sumacc</arg>
+                <arg attribute="tagData">4</arg> -->
+                <!-- <arg attribute="exportTotalCol">l,sumacc</arg>
                 <arg attribute="exportTotalCol">m,sumasc</arg>
                 <arg attribute="conditionatedRecord">c&gt;0 || d&gt;0</arg>
                 <arg attribute="conditionalColor">223,241,159:h==1</arg>
-                <arg attribute="conditionalDelete">h==0</arg>
+                <arg attribute="conditionalDelete">h==0</arg> -->
                 <arg attribute="returnNullValue">true</arg>
-                <!-- <arg attribute="driverEventRecord" id="efectivoneto">common.gui.components.GenericData</arg>
-                <arg attribute="driverEventRecord" id="credittable">client.gui.components.TableFindData</arg>
-                <arg attribute="driverEventRecord" id="checktable">client.gui.components.TableFindData</arg>
-                <arg attribute="driverEventRecord" id="cartera">client.gui.components.TableFindData</arg>
-                <arg attribute="driverEventRecord" id="cxp">client.gui.components.TableFindData</arg>
-                <arg attribute="driverEventRecord" id="transfertable">client.gui.components.TableFindData</arg>
-                <arg attribute="driverEventRecord" id="sendbuttonb">client.gui.components.EmakuSendRecordButton</arg> -->
                 <subarg>
                   <!--  a 0 -->
                   <arg attribute="name">CUENTA</arg>
-                  <arg attribute="valideEnabledCol">h=h==0</arg>
+                  <!-- <arg attribute="valideEnabledCol">h=h==0</arg> -->
                   <arg attribute="length">100</arg>
                   <arg attribute="type">DATASEARCH</arg>
                   <arg attribute="sqlCombo">SEL0323</arg>
@@ -186,8 +181,8 @@
                   <arg attribute="noDataBeep">true</arg>
                   <arg attribute="noDataMessage">No se encontro registros</arg>
                   <arg attribute="selectedIndex">1</arg>
-                  <arg attribute="enabled">true</arg>
-                  <arg attribute="returnCol">2</arg>
+                  <arg attribute="enabled">false</arg>
+                  <!-- <arg attribute="returnCol">2</arg> -->
                   <arg attribute="importValue">cuenta</arg>
                   <arg attribute="printable">true</arg>
                 </subarg>
@@ -196,7 +191,7 @@
                   <arg attribute="name">Concepto</arg>
                   <arg attribute="length">215</arg>
                   <arg attribute="type">STRING</arg>
-                  <arg attribute="enabled">true</arg>
+                  <arg attribute="enabled">false</arg>
                   <arg attribute="returnCol">0</arg>
                   <arg attribute="queryCol">0</arg>
                 </subarg>
@@ -206,7 +201,7 @@
                   <arg attribute="valideEnabledCol">h=h==0</arg>
                   <arg attribute="length">165</arg>
                   <arg attribute="type">DECIMAL</arg>
-                  <arg attribute="enabled">true</arg>
+                  <arg attribute="enabled">false</arg>
                   <arg attribute="returnCol">5</arg>
                   <arg attribute="printable">true</arg>
                 </subarg>
@@ -216,91 +211,9 @@
                   <arg attribute="valideEnabledCol">h=h==0</arg>
                   <arg attribute="length">165</arg>
                   <arg attribute="type">DECIMAL</arg>
-                  <arg attribute="enabled">true</arg>
+                  <arg attribute="enabled">false</arg>
                   <arg attribute="returnCol">6</arg>
                   <arg attribute="printable">true</arg>
-                </subarg>
-                <subarg>
-                  <!--  e 4 -->
-                  <arg attribute="name">TAG</arg>
-                  <arg attribute="length">0</arg>
-                  <arg attribute="type">STRING</arg>
-                  <arg attribute="enabled">true</arg>
-                  <arg attribute="queryCol">2</arg>
-                </subarg>
-                <subarg>
-                  <!--  f 5 -->
-                  <arg attribute="name">TERCERO</arg>
-                  <arg attribute="length">0</arg>
-                  <arg attribute="type">STRING</arg>
-                  <arg attribute="enabled">true</arg>
-                  <arg attribute="returnCol">3</arg>
-                  <arg attribute="returnNullCol">true</arg>
-                  <arg attribute="queryCol">3</arg>
-                </subarg>
-                <subarg>
-                  <!--  g 6 -->
-                  <arg attribute="name">IDCTA</arg>
-                  <arg attribute="length">0</arg>
-                  <arg attribute="type">STRING</arg>
-                  <arg attribute="enabled">false</arg>
-                  <arg attribute="returnCol">7</arg>
-                  <arg attribute="queryCol">1</arg>
-                </subarg>
-                <subarg>
-                  <!--  h 7 -->
-                  <arg attribute="name">condicion</arg>
-                  <arg attribute="length">0</arg>
-                  <arg attribute="defaultValue">0</arg>
-                  <arg attribute="type">INTEGER</arg>
-                  <arg attribute="enabled">false</arg>
-                  <arg attribute="returnCol">8</arg>
-                </subarg>
-                <subarg>
-                  <!--  i 8 -->
-                  <arg attribute="name">NAME</arg>
-                  <arg attribute="length">0</arg>
-                  <arg attribute="type">STRING</arg>
-                  <arg attribute="enabled">false</arg>
-                  <arg attribute="queryCol">0</arg>
-                </subarg>
-                <subarg>
-                  <arg attribute="name">VK</arg>
-                  <arg attribute="length">0</arg>
-                  <arg attribute="type">STRING</arg>
-                  <arg attribute="enabled">false</arg>
-                  <arg attribute="returnCol">1</arg>
-                  <arg attribute="queryCol">3</arg>
-                </subarg>
-                <subarg>
-                  <arg attribute="name">edocumento</arg>
-                  <arg attribute="length">50</arg>
-                  <arg attribute="type">STRING</arg>
-                  <arg attribute="enabled">false</arg>
-                  <arg attribute="returnCol">9</arg>
-                  <arg attribute="queryCol">5</arg>
-                </subarg>
-                <subarg>
-                  <arg attribute="name">sumcc</arg>
-                  <arg attribute="length">50</arg>
-                  <arg attribute="type">INTEGER</arg>
-                  <arg attribute="enabled">false</arg>
-                  <arg attribute="queryCol">6</arg>
-                </subarg>
-                <subarg>
-                  <arg attribute="name">sumsc</arg>
-                  <arg attribute="length">50</arg>
-                  <arg attribute="type">INTEGER</arg>
-                  <arg attribute="enabled">false</arg>
-                  <arg attribute="queryCol">7</arg>
-                </subarg>
-                <subarg>
-                  <arg attribute="name">ndocumento</arg>
-                  <arg attribute="length">50</arg>
-                  <arg attribute="type">STRING</arg>
-                  <arg attribute="enabled">false</arg>
-                  <arg attribute="queryCol">3</arg>
-                  <arg attribute="returnCol">4</arg>
                 </subarg>
               </parameters>
             </component>
@@ -358,20 +271,10 @@
                 <arg attribute="rows">40</arg>
                 <arg attribute="colorBackground">240,248,255</arg>
                 <arg attribute="colorSelected">200,225,245</arg>
-                <arg attribute="keySQL">JBSEL0065</arg>
-                <arg attribute="driverEvent">client.gui.components.FindThird</arg>
-                <!-- <arg attribute="beanshell">f=e&lt;f?0:f</arg>
-                <arg attribute="beanshell">g=g&gt;100?100:g</arg>
-                <arg attribute="beanshell">h=h&gt;100?100:h</arg>
-                <arg attribute="beanshell">i=i&gt;100?100:i</arg>
-                <arg attribute="formula">m=q*(g/100)</arg>
-                <arg attribute="formula">n=(q-m)*(h/100)</arg>
-                <arg attribute="formula">o=(q-m-n)*(i/100)</arg>
-                <arg attribute="formula">j=m+n+o</arg>
-                <arg attribute="beanshell">k=e&lt;(f+j)?0:e-(f+j)</arg>
-                <arg attribute="formula">r=(f+j)</arg>-->
-                <arg attribute="beanshell">j=a?d:0</arg>
-                <arg attribute="totales">j</arg>
+                <arg attribute="keySQL">JBSEL0070</arg>
+                <arg attribute="driverEvent" id="nro_comprobante">common.gui.components.GenericData</arg>                
+                <!-- <arg attribute="beanshell">j=a?d:0</arg>-->
+                <arg attribute="totales">d</arg> 
                 <arg attribute="returnNullValue">true</arg>
                 <arg attribute="recalculable">false</arg>
                 <!-- <arg attribute="sendRecord">18,"CRUCE CXP X COMPROBANTE",5,"0",21,20,19,"1","NACIONALES","NULL",22,23,24,3</arg> -->
@@ -380,7 +283,7 @@
                   <arg attribute="name">Selección</arg>
                   <arg attribute="length">100</arg>
                   <arg attribute="type">BOOLEAN</arg>
-                  <arg attribute="enabled">true</arg>
+                  <arg attribute="enabled">false</arg>
                 </subarg>
                 <subarg>
                   <!--  b 1 -->
@@ -403,53 +306,7 @@
                   <arg attribute="type">DECIMAL</arg>
                   <arg attribute="enabled">false</arg>
                 </subarg>
-                <subarg>
-                  <!--  e 4 -->
-                  <arg attribute="name">ndocumentonota</arg>
-                  <arg attribute="length">0</arg>
-                  <arg attribute="type">STRING</arg>
-                  <arg attribute="enabled">false</arg>
-                  <arg attribute="returnCol">0</arg>
-                </subarg>
-                <subarg>
-                  <!--  f 5 -->
-                  <arg attribute="name">chcta</arg>
-                  <arg attribute="length">0</arg>
-                  <arg attribute="type">STRING</arg>
-                  <arg attribute="enabled">false</arg>
-                  <arg attribute="returnCol">2</arg>
-                </subarg>
-                <subarg>
-                  <!--  g 6 -->
-                  <arg attribute="name">idcta</arg>
-                  <arg attribute="length">0</arg>
-                  <arg attribute="type">STRING</arg>
-                  <arg attribute="enabled">false</arg>
-                  <arg attribute="returnCol">3</arg>
-                </subarg>
-                <subarg>
-                  <!-- h 7 -->
-                  <arg attribute="name">idtercero</arg>
-                  <arg attribute="length">0</arg>
-                  <arg attribute="type">STRING</arg>
-                  <arg attribute="enabled">false</arg>
-                  <arg attribute="returnCol">4</arg>
-                </subarg>
-                <subarg>
-                  <!-- i 8 -->
-                  <arg attribute="name">tagdata</arg>
-                  <arg attribute="length">50</arg>
-                  <arg attribute="type">STRING</arg>
-                  <arg attribute="enabled">false</arg>
-                </subarg>
-                <subarg>
-                  <!-- j 9 -->
-                  <arg attribute="name">valor_seleccionado</arg>
-                  <arg attribute="length">152</arg>
-                  <arg attribute="type">DECIMAL</arg>
-                  <arg attribute="enabled">false</arg>
-                  <arg attribute="returnCol">1</arg>
-                </subarg>
+                
               </parameters>
             </component>
             <panel locate="South" type="BorderLayout">
@@ -465,7 +322,7 @@
                     <arg attribute="maxlength">26</arg>
                     <arg attribute="enabled">false</arg>
                     <arg attribute="alignment">RIGHT</arg>
-                    <arg attribute="totalCol">j</arg>
+                    <arg attribute="totalCol">d</arg>
                     <arg attribute="exportValue">totalnotascredito</arg>
                     <arg attribute="returnNullValue">true</arg>
                     <arg attribute="printable">true</arg>
@@ -631,7 +488,7 @@
                   <arg attribute="exportTextValue">mediosdepago</arg>
                   <arg attribute="sqlCombo">JBSEL0064</arg>
                   <arg attribute="font">Dialog,0,14</arg>
-                  <arg attribute="selectedIndex">0</arg>
+                  <arg attribute="selectedIndex">1</arg>
                   <arg attribute="importValueCode">tercerofactura</arg>
                   <arg attribute="importValueCode">vpago</arg>
                   <arg attribute="exportValue">efectivo</arg>
@@ -715,7 +572,7 @@
                   <arg attribute="name">CUENTA</arg>
                   <arg attribute="length">90</arg>
                   <arg attribute="type">STRING</arg>
-                  <arg attribute="enabled">true</arg>
+                  <arg attribute="enabled">false</arg>
                   <arg attribute="returnCol">0</arg>
                 </subarg>
                 <subarg>
@@ -742,7 +599,7 @@
                   <arg attribute="name">VALUE</arg>
                   <arg attribute="length">135</arg>
                   <arg attribute="type">INTEGER</arg>
-                  <arg attribute="enabled">true</arg>
+                  <arg attribute="enabled">false</arg>
                   <arg attribute="returnCol">1</arg>
                 </subarg>
                 <subarg>
@@ -802,7 +659,7 @@
                   <arg attribute="name">CUENTA</arg>
                   <arg attribute="length">90</arg>
                   <arg attribute="type">STRING</arg>
-                  <arg attribute="enabled">true</arg>
+                  <arg attribute="enabled">false</arg>
                   <arg attribute="returnCol">0</arg>
                 </subarg>
                 <subarg>
@@ -829,7 +686,7 @@
                   <arg attribute="name">VALUE</arg>
                   <arg attribute="length">135</arg>
                   <arg attribute="type">INTEGER</arg>
-                  <arg attribute="enabled">true</arg>
+                  <arg attribute="enabled">false</arg>
                   <arg attribute="returnCol">1</arg>
                 </subarg>
                 <subarg>
@@ -889,7 +746,7 @@
                   <arg attribute="name">CUENTA</arg>
                   <arg attribute="length">90</arg>
                   <arg attribute="type">STRING</arg>
-                  <arg attribute="enabled">true</arg>
+                  <arg attribute="enabled">false</arg>
                   <arg attribute="returnCol">0</arg>
                 </subarg>
                 <subarg>
@@ -980,7 +837,7 @@
               <arg attribute="name">CUENTA</arg>
               <arg attribute="length">90</arg>
               <arg attribute="type">STRING</arg>
-              <arg attribute="enabled">true</arg>
+              <arg attribute="enabled">false</arg>
               <arg attribute="returnCol">0</arg>
               <arg attribute="importValue">cuenta</arg>
               <arg attribute="printable">true</arg>
@@ -996,7 +853,7 @@
               <arg attribute="name">DEBITO</arg>
               <arg attribute="length">105</arg>
               <arg attribute="type">DECIMAL</arg>
-              <arg attribute="enabled">true</arg>
+              <arg attribute="enabled">false</arg>
               <arg attribute="returnCol">1</arg>
               <arg attribute="printable">true</arg>
             </subarg>
@@ -1004,7 +861,7 @@
               <arg attribute="name">CREDITO</arg>
               <arg attribute="length">105</arg>
               <arg attribute="type">DECIMAL</arg>
-              <arg attribute="enabled">true</arg>
+              <arg attribute="enabled">false</arg>
               <arg attribute="returnCol">2</arg>
               <arg attribute="printable">true</arg>
             </subarg>
@@ -1012,7 +869,7 @@
               <arg attribute="name">TAG</arg>
               <arg attribute="length">0</arg>
               <arg attribute="type">STRING</arg>
-              <arg attribute="enabled">true</arg>
+              <arg attribute="enabled">false</arg>
             </subarg>
           </parameters>
         </component>
@@ -1122,263 +979,19 @@
         </subarg>
       </parameters>
       <events>
-        <!-- <object>
-          <name>CHEQUE</name>
-          <action>
-            <type>printer</type>
-            <printerTemplate>/graphics/NuevoCheque.xml</printerTemplate>
-            <component>
-              <driver id="fecheque">common.gui.components.XMLDateField</driver>
-              <method>getPrintPackage</method>
-            </component>
-            <component>
-              <driver id="vpago">client.gui.components.TableDataFields</driver>
-              <method>getPrintPackage</method>
-            </component>
-            <component>
-              <driver>client.gui.components.FindThird</driver>
-              <method>getPrintPackage</method>
-            </component>
-            <component>
-              <driver id="vpago">client.gui.components.TableDataFields</driver>
-              <method>getPrintPackage</method>
-            </component>
-            <component>
-              <driver id="fecheque">common.gui.components.XMLDateField</driver>
-              <method>getPrintPackage</method>
-            </component>
-            <component>
-              <driver>client.gui.components.FindThird</driver>
-              <method>getPrintPackage</method>
-            </component>
-            <component>
-              <driver id="cartera">client.gui.components.TableFindData</driver>
-              <method>generateConcept</method>
-              <parameters>
-                <arg attribute="conceptStart">Abono Facturas:
-                </arg>
-                <arg attribute="conceptEnd">.</arg>
-                <arg attribute="avoidConnectorAtFinal">true</arg>
-                <arg attribute="validColumn">5</arg>
-                <subargs>
-                  <arg attribute="connector">    Numero </arg>
-                  <arg attribute="column">11</arg>
-                  <arg attribute="connector"> por $ </arg>
-                  <arg attribute="column">4</arg>
-                  <arg attribute="connector"> abono $ </arg>
-                  <arg attribute="column">5</arg>
-                  <arg attribute="connector"> - descuento $</arg>
-                  <arg attribute="column">9</arg>
-                  <arg attribute="connector"> saldo $ </arg>
-                  <arg attribute="column">10</arg>
-                  <arg attribute="connector">
-                  </arg>
-                </subargs>
-              </parameters>
-            </component>
-          </action>
-        </object> -->
         <object>
           <name>PRINT</name>
           <action>
-            <!--  Validacion de consistencia en los paquetes -->
-            <type>transaction</type>
-            <component>
-              <driver>this</driver>
-              <method>validMultiPackage</method>
-              <parameters>
-                  <driver attribute="driver" id="date">common.gui.components.XMLDateField</driver>
-                  <arg attribute="errorMessage">Oops! Seleccione la fecha del documento por favor</arg>
-              </parameters>
-          </component>
-          <component>
-              <driver>this</driver>
-              <method>validMultiPackage</method>
-              <parameters>
-                  <driver attribute="driver" >client.gui.components.FindThird</driver>
-                  <arg attribute="errorMessage">Oops! Seleccione el tercero por favor</arg>
-              </parameters>
-          </component>
-
-            
-
-            <!-- <component>
-              <driver id="total_comprobante">client.gui.components.TableDataFields</driver>
-              <method>validPackage</method>
-              <parameters>
-                <arg attribute="equalsValue">0:sumdebe-sumhaber</arg>
-                <arg attribute="errorMessage">Error, no existe partida doble, verifique los asientos contables</arg>
-              </parameters>
-            </component>
-            <component>
-            <driver id="neto">common.gui.components.GenericData</driver>              
-              <method>validPackage</method>
-              <parameters>
-                <arg attribute="maxValue">efectivo+tcreditcard+tcheck+tconsignacion+ttransferencia:vpago</arg>
-                <arg attribute="errorMessage">Error, el total a pagar debe ser mayor o igual al valor del comprobante</arg>
-              </parameters>
-            </component>
-            <component>
-              <driver id="neto">common.gui.components.GenericData</driver>
-              <method>validPackage</method>
-              <parameters>
-                <arg attribute="maxValue">vpago+1:tcreditcard+tcheck+tconsignacion+ttransferencia</arg>
-                <arg attribute="errorMessage">Error, la suma de pagos en tarjetas, cheques o consignaciones no debe exceder el total del comprobante</arg>
-              </parameters>
-            </component> -->
-            <!-- NA -->
-            <component>
-              <driver>this</driver>
-              <method>getPackage</method>
-              <parameters>
-                <subarg>
-                  <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="date">fechai</arg>
-                </subarg>
-              </parameters>
-            </component>
-            <!-- 0 se guarda en observaciones -->
-            <!-- <component>
-              <driver id="cartera">client.gui.components.TableFindData</driver>
-              <method>generateConcept</method>
-              <parameters>
-                <arg attribute="conceptStart">Abono Facturas:
-                </arg>
-                <arg attribute="conceptEnd">.</arg>
-                <arg attribute="avoidConnectorAtFinal">true</arg>
-                <arg attribute="validColumn">5</arg>
-                <subargs>
-                  <arg attribute="connector">    Numero </arg>
-                  <arg attribute="column">11</arg>
-                  <arg attribute="connector"> por $ </arg>
-                  <arg attribute="column">4</arg>
-                  <arg attribute="connector"> abono $ </arg>
-                  <arg attribute="column">5</arg>
-                  <arg attribute="connector"> - descuento $</arg>
-                  <arg attribute="column">9</arg>
-                  <arg attribute="connector"> saldo $ </arg>
-                  <arg attribute="column">10</arg>
-                  <arg attribute="connector">
-                  </arg>
-                </subargs>
-              </parameters>
-            </component> -->
-            <!-- 1 datos_documento -->
-            <!-- <component>
-              <driver>this</driver>
-              <method>getPackage</method>
-              <parameters>
-                <subarg>
-                  <arg attribute="importValue">efectivo</arg>
-                  <arg attribute="importValue">tcreditcard</arg>
-                  <arg attribute="importValue">tcheck</arg>
-                  <arg attribute="importValue">tconsignacion</arg>
-                  <arg attribute="importValue">ttransferencia</arg>
-                  <arg attribute="importValue">cambio</arg>
-                  <arg attribute="importValue">vpago</arg>
-                </subarg>
-              </parameters>
-            </component>    -->
-            <!-- 10 tercero_def -->
-            <component>
-              <driver>client.gui.components.FindThird</driver>
-              <method>getPackage</method>
-            </component>
-            <component>
-              <driver id="idcentrocosto">common.gui.components.GenericData</driver>
-              <method>getPackage</method>
-            </component>
-            <!-- 2 contabilidad: descuento -->
-            <component>
-              <!-- <driver id="tdescuento">client.gui.components.TableDataFields</driver> -->
-              <driver id="tdescuentofinancieroynotas">client.gui.components.TableDataFields</driver>
-              <method>getPackage</method>
-            </component>
-            <component>
-              <driver id="contabilidadmediopago">client.gui.components.TableFindData</driver>
-              <method>getPackage</method>
-            </component>
-            <component>
-              <driver id="notascredito">client.gui.components.TableFindData</driver>
-              <method>getPackage</method>
-            </component>
-            <!-- 3 contabilidad: pago con tarjeta-->
-            <!-- <component>
-              <driver id="credittable">client.gui.components.TableFindData</driver>
-              <method>getPackage</method>
-            </component> -->
-            <!-- 4 contabilidad: pago con consignacion-->
-            <!-- <component>
-              <driver id="consignationtable">client.gui.components.TableFindData</driver>
-              <method>getPackage</method>
-            </component>             -->
-            <!-- 5 contabilidad: pago con cheque, gravamen e inserta en tabla: cheques -->
-            <!-- <component>
-              <driver id="checktable">client.gui.components.TableFindData</driver>
-              <method>getPackage</method>
-            </component> -->
-            <!-- 6 contabilidad: transferencias e inserta en tabla: transferencias -->
-            <!-- <component>
-              <driver id="transfertable">client.gui.components.TableFindData</driver>
-              <method>getPackage</method>
-            </component> -->
-            <!-- 7 contabilidad: rete fuente y tabla: retenciones_documento -->
-            <component>
-              <driver id="base">client.gui.components.TableFindData</driver>
-              <method>getPackage</method>
-            </component>
-            <!-- 8 contabilidad: rete iva y tabla: retenciones_documento -->
-            <component>
-              <driver id="retiva">client.gui.components.TableFindData</driver>
-              <method>getPackage</method>
-            </component>
-            <!-- 9 contabilidad: rete ica y tabla: retenciones_documento -->
-            <component>
-              <driver id="retica">client.gui.components.TableFindData</driver>
-              <method>getPackage</method>
-            </component>
-            <!-- 11 contabilidad: pago en efectivo -->
-            <!-- <component>
-              <driver id="efectivoneto">common.gui.components.GenericData</driver>
-              <method>getPackage</method>
-            </component> -->
-            <!-- 12 contabilidad: cartera facturas proveedor e inserta en tabla: cartera -->
-            <component>
-              <driver id="cartera">client.gui.components.TableFindData</driver>
-              <method>getPackage</method>
-              <parameters>
-                <arg attribute="validMinValue">6</arg>
-                <!--esta es la columna que le corresponde al abono en la tabla cartera, no tiene que ver con los returnCol-->
-                <arg attribute="validValue">0</arg>
-              </parameters>
-            </component>
-            <component>
-              <driver id="contab">client.gui.components.TableFindData</driver>
-              <method>getPackage</method>
-            </component>
-            <!-- NA desactiva boton imprimir y activa botón cheque -->
-            <component>
-              <driver id="pago">common.gui.components.ButtonsPanel</driver>
-              <method>setEnabled</method>
-              <parameters>
-                <arg attribute="button">PRINT</arg>
-                <arg attribute="state">false</arg>
-              </parameters>
-            </component>
-            <!-- <component>
-              <driver id="pago">common.gui.components.ButtonsPanel</driver>
-              <method>setEnabled</method>
-              <parameters>
-                <arg attribute="button">CHEQUE</arg>
-                <arg attribute="state">true</arg>
-              </parameters>
-            </component> -->
-          </action>
-          <action>
             <type>printer</type>
-            <printerTemplate>/graphics/TNComprobanteEgresoPagoProveedores.xml</printerTemplate>
+            <printerTemplate>/graphics/TSComprobanteEgresoPagoProveedores.xml</printerTemplate>
             <!-- 1 -->
             <component>
-                <driver id="date">common.gui.components.XMLDateField</driver>
+                <driver id="nro_comprobante">common.gui.components.GenericData</driver>
+                <method>getPrintPackage</method>
+            </component>
+            <!-- 1 -->
+            <component>
+                <driver id="date">common.gui.components.GenericData</driver>
                 <method>getPrintPackage</method>
             </component>
             <!-- 2 -->
@@ -1436,23 +1049,6 @@
                 <driver id="totalnotascredito">client.gui.components.TableDataFields</driver>
                 <method>getPrintPackage</method>
             </component>
-            
-            <!-- <component>
-                <driver id="totalbase">client.gui.components.TableDataFields</driver>
-                <method>getPrintPackage</method>
-            </component>
-            <component>
-                <driver id="totaliva">client.gui.components.TableDataFields</driver>
-                <method>getPrintPackage</method>
-            </component>
-            <component>
-                <driver id="totaldescuento">client.gui.components.TableDataFields</driver>
-                <method>getPrintPackage</method>
-            </component>
-            <component>
-                <driver id="total_comprobante">client.gui.components.TableDataFields</driver>
-                <method>getPrintPackage</method>
-            </component> -->
 
           </action>
         </object>
@@ -1471,14 +1067,13 @@
   </FORM>
   <preferences>
     <size width="1000" height="640"/>
-    <name>NEW-PAYMEN</name>
+    <name>SEARCH-PAYMEN</name>
     <icon>COMPROBANTE-PAGOS</icon>
     <iconificable/>
     <resizable/>
     <closable/>
     <maximizable/>
     <!-- <date /> -->
-    <exportValue>idbanco,1266</exportValue>
     <consecutive>CE</consecutive>
   </preferences>
           <component locate="Center"><!--total antes de iva-->
@@ -1575,16 +1170,19 @@
         <component locate="Center">
           <driver>client.gui.components.FindThird</driver>
           <parameters>
+          <arg attribute="keySQL">SEL0169</arg>
+            <arg attribute="driverEvent" id="nro_comprobante">common.gui.components.GenericData</arg>
             <arg attribute="sqlSizeRecords">SEL0132</arg>
             <arg attribute="sqlRecords">LCSEL0935</arg>
             <arg attribute="sqlAddress">LCSEL0933</arg>
             <arg attribute="sqlPhones">LCSEL0934</arg>
-            <arg attribute="sqlCode">JBSEL0062</arg>
-            <arg attribute="sqlCode">MTSEL0207</arg>
-            <arg attribute="sqlCode">LCSEL0429</arg>
-            <arg attribute="sqlCode">JBSEL0065</arg>
+            <!-- <arg attribute="sqlCode">JBSEL0062</arg> tabla en Nuevo-->
+            <!-- <arg attribute="sqlCode">MTSEL0207</arg> cta bancaria no se usa -->
+            <!-- <arg attribute="sqlCode">LCSEL0429</arg> id_centrocosto -->
+            <!-- <arg attribute="sqlCode">JBSEL0065</arg> notas credit -->
             <arg attribute="maxRecords">100</arg>
             <arg attribute="exportValue">tercerofactura</arg>
+            <arg attribute="enabled">false</arg>
           </parameters>
         </component>
       </panel>
@@ -1635,35 +1233,23 @@
           </component>
         </panel>
         <panel locate="Center" type="GridLayout" rows="5" cols="1">
-          <!-- <component locate="Center">
-            <driver id="fecha">common.gui.components.GenericData</driver>
-            <parameters>
-              <arg attribute="Panel">false</arg>
-              <subarg>
-                <arg attribute="name">DATE</arg>
-                <arg attribute="format">TEXT</arg>
-                <arg attribute="size">10</arg>
-                <arg attribute="maxlength">50</arg>
-                <arg attribute="enabled">false</arg>
-                <arg attribute="return">false</arg>
-                <arg attribute="clean">false</arg>
-                <arg attribute="font">Dialog,0,18</arg>
-                <arg attribute="exportValue">fechai</arg>
-                <arg attribute="systemDate">yyyy-MM-dd</arg>
-                <arg attribute="printable">true</arg>
-              </subarg>
-            </parameters>
-          </component> -->
-          <component locate="Center">
-            <driver id="date">common.gui.components.XMLDateField</driver>
-            <parameters>
-              <arg attribute="exportValue">fechai</arg>
-              <arg attribute="clean">true</arg>
-              <arg attribute="label">DATE</arg>
-              <arg attribute="printable">true</arg>
-              <arg attribute="sqlCode">LCSEL0945</arg>
-            </parameters>
-          </component>
+          <component locate="West">
+                  <driver id="date">common.gui.components.GenericData</driver>
+                  <parameters>
+                    <arg attribute="keySQL">LCSEL0447</arg>
+                    <arg attribute="driverEvent" id="nro_comprobante">common.gui.components.GenericData</arg>
+                    <subarg>                      
+                      <arg attribute="format">TEXT</arg>
+                      <arg attribute="size">10</arg>
+                      <arg attribute="maxlength">50</arg>
+                      <arg attribute="enabled">false</arg>
+                      <arg attribute="return">false</arg>
+                      <arg attribute="clean">true</arg>
+                      <arg attr1ibute="exportValue">fechai</arg>
+                      <arg attribute="printable">true</arg>
+                    </subarg>
+                  </parameters>
+                </component>
           <component locate="Center">
             <driver id="nro_comprobante">common.gui.components.GenericData</driver>
             <parameters>
@@ -1672,14 +1258,21 @@
                 <arg attribute="name">Numero Documento</arg>
                 <arg attribute="format">TEXT</arg>
                 <arg attribute="size">10</arg>
+                <arg attribute="printable">true</arg>
                 <arg attribute="maxlength">26</arg>
-                <arg attribute="enabled">false</arg>
+                <arg attribute="enabled">TRUE</arg>
                 <arg attribute="clean">false</arg>
                 <arg attribute="foreground">249,87,87</arg>
                 <arg attribute="background">0,0,0</arg>
                 <arg attribute="font">Dialog,0,18</arg>
                 <arg attribute="alignment">RIGHT</arg>
                 <arg attribute="idDocument">CE</arg>
+                <arg attribute="constantValue">CE</arg>
+                <arg attribute="sqlCode">JBSEL0069</arg> <!--tabla cartera -->
+                <arg attribute="sqlCode">SEL0169</arg> <!--tercero -->
+                <arg attribute="sqlCode">LCSEL0447</arg> <!-- fecha -->
+                <arg attribute="sqlCode">JBSEL0070</arg> <!-- tabla notas credito -->                
+                <arg attribute="sqlCode">JBSEL0071</arg> <!-- tabla notas credito -->                
               </subarg>
             </parameters>
           </component>
@@ -1761,39 +1354,31 @@
         <arg attribute="rows">40</arg>
         <arg attribute="colorBackground">235,245,255</arg>
         <arg attribute="colorSelected">200,225,245</arg>
-        <arg attribute="keySQL">JBSEL0062</arg>
-        <arg attribute="driverEvent">client.gui.components.FindThird</arg>
+        <arg attribute="driverEvent" id="nro_comprobante">common.gui.components.GenericData</arg>
+        <arg attribute="keySQL">JBSEL0069</arg>
         <arg attribute="exportTotalCol">i,totaldescuentostablaprin</arg>
-        <!-- <arg attribute="beanshell">f=e&lt;f?0:f</arg> -->
         <arg attribute="beanshell">g=a&amp;&amp;g==0?j:a&amp;&amp;g!=0?g:0</arg>
         <!--valor del abono-->
-        <arg attribute="beanshell">h=h&gt;100?100:h&lt;0?0:h</arg>
+        <!-- <arg attribute="beanshell">h=h&gt;100?100:h&lt;0?0:h</arg> -->
         <!--% descuento-->
-        <arg attribute="formula">i=r*(h/100)</arg>
-        <!--valor del descuento: r contiene el valor base de la factura-->
-        <!-- <arg attribute="beanshell">h=h&gt;100?100:h</arg>
-        <arg attribute="beanshell">i=i&gt;100?100:i</arg> -->
-        <!--  <arg attribute="formula">m=q*(g/100)</arg>
-        <arg attribute="formula">n=(q-m)*(h/100)</arg>
-        <arg attribute="formula">o=(q-m-n)*(i/100)</arg>
-        <arg attribute="formula">j=m+n+o</arg>-->
+        <!-- <arg attribute="formula">i=r*(h/100)</arg>-->
         <arg attribute="formula">j=f-i</arg>
         <!--Total a pagar: valor fac - descuento -->
         <arg attribute="formula">o=(g+i)</arg>
         <!--valor pago: abono + valor descuento-->
         <arg attribute="formula">k=f-o</arg>
         <!--saldo: valor factura - descuento - pago-->
-        <arg attribute="beanshell">s=a?1:0</arg>
+        <!-- <arg attribute="beanshell">s=a?1:0</arg> -->
         <!--contador linea-->
         <arg attribute="totales">f,g,i,k,o,r,s,t</arg>
         <arg attribute="returnNullValue">true</arg>
-        <arg attribute="sqlMultiCode">LCSEL0636,15,6,8</arg>
+        <!-- <arg attribute="sqlMultiCode">LCSEL0636,15,6,8</arg> -->
         <subarg>
           <!-- 0a  -->
           <arg attribute="name">Selección</arg>
           <arg attribute="length">90</arg>
           <arg attribute="type">BOOLEAN</arg>
-          <arg attribute="enabled">true</arg>
+          <arg attribute="enabled">false</arg>
         </subarg>
         <subarg>
           <!--1b  -->
@@ -1831,14 +1416,13 @@
           <arg attribute="type">DECIMAL</arg>
           <arg attribute="enabled">false</arg>
           <arg attribute="printable">true</arg>
-          <arg attribute="returnCol">7</arg>
         </subarg>
         <subarg>
           <!--6g  -->
           <arg attribute="name">ABONO</arg>
           <arg attribute="length">105</arg>
           <arg attribute="type">DECIMAL</arg>
-          <arg attribute="enabled">true</arg>
+          <arg attribute="enabled">false</arg>
           <arg attribute="returnCol">2</arg>
           <arg attribute="printable">true</arg>
         </subarg>
@@ -1847,7 +1431,7 @@
           <arg attribute="name">% Desc</arg>
           <arg attribute="length">55</arg>
           <arg attribute="type">DECIMAL</arg>
-          <arg attribute="enabled">true</arg>
+          <arg attribute="enabled">false</arg>
           <arg attribute="returnCol">3</arg>
           <arg attribute="printable">true</arg>
         </subarg>
@@ -1857,7 +1441,7 @@
           <arg attribute="length">105</arg>
           <arg attribute="type">DECIMAL</arg>
           <arg attribute="roundDecimal">0</arg>
-          <arg attribute="enabled">true</arg>
+          <arg attribute="enabled">false</arg>
           <arg attribute="returnCol">4</arg>
           <arg attribute="printable">true</arg>
         </subarg>

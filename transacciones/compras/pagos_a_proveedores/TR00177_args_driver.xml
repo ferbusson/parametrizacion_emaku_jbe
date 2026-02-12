@@ -52,7 +52,7 @@
           <driver>LNContabilidad</driver>
           <method>columnDataAccount</method>
           <parameters>
-            <arg attribute="Concepto">Abono a CxP segun comprobante de egreso</arg>
+            <arg attribute="Concepto">Abono a CxP segun comprobante de egreso - Medio de Pago</arg>
             <arg attribute="naturaleza">C</arg>
             <arg attribute="debuging">true</arg>
             <arg attribute="centrocosto">getName</arg>
@@ -96,6 +96,45 @@
             </subarg>
           </parameters>
         </LNData>
+    </subarg>
+
+    <!-- Inserta notas credito -->
+    <subarg>
+      <!-- <LNData>
+        <driver>LNSelectedField</driver>
+        <method>getSubpackage</method>
+        <parameters>
+          <arg attribute="sql">LCINS0108</arg>
+          <arg attribute="fields">0,1,2,3</arg>
+          <arg attribute="conditional">b&gt;0</arg>
+        </parameters>
+      </LNData> -->
+
+      <LNData>
+      <driver>LNSelectedField</driver>
+      <method>getSubpackage</method>
+      <parameters>
+        <arg attribute="sql">JBINS0018</arg>  <!-- Insercion en cartera -->
+        <arg attribute="fields">0,1,3</arg>
+        <arg attribute="discartKey">centrocosto</arg>
+      </parameters>
+    </LNData>
+      <LNData>
+          <driver>LNContabilidad</driver>
+          <method>columnDataAccount</method>
+          <parameters>
+            <arg attribute="Concepto">Abono a CxP Cruce con Nota Credito</arg>
+            <arg attribute="naturaleza">C</arg>
+            <arg attribute="debuging">true</arg>
+            <arg attribute="centrocosto">getName</arg>
+            <subarg>
+              <arg attribute="accountKey">2</arg>
+              <arg attribute="accountTh">4</arg>
+              <arg attribute="accountData">1</arg>
+            </subarg>
+          </parameters>
+        </LNData>
+        
     </subarg>
 
   <!-- 3 Asiento para pago con tarjetas -->
@@ -407,7 +446,7 @@
       <method>getSubpackage</method>
       <parameters>
         <arg attribute="sql">JBINS0017</arg>
-        <arg attribute="fields">0,2,3,4,6</arg>
+        <arg attribute="fields">0,2,3,4,6,7</arg>
         <arg attribute="discartKey">centrocosto</arg>
       </parameters>
     </LNData>
@@ -422,13 +461,26 @@
         <arg attribute="centrocosto">getName</arg>
         <subarg>
           <arg attribute="accountKey">5</arg> <!-- el indice que le corresponde en los returnCol  -->
-          <arg attribute="accountData">2</arg>
+          <arg attribute="accountData">1</arg> <!--total de la factura-->
         </subarg>
       </parameters>
     </LNData>
   </subarg>
 
    <subarg>
+    <!--  inserta en contabilizacion manual documentos -->  
+    <LNData>
+          <driver>LNSelectedField</driver>
+          <method>getSubpackage</method>
+          <parameters>
+              <arg attribute="sql">JBINS0019</arg>
+              <arg attribute="fields">2,0,5,6</arg>
+              <arg attribute="discartKey">centrocosto</arg>
+              <arg attribute="discartKey">idTercero</arg>
+          </parameters>
+      </LNData>
+
+
       <!--  Afecto cartera -->  
     <LNData>
           <driver>LNSelectedField</driver>
@@ -438,7 +490,7 @@
               <arg attribute="fields">5,5,7</arg>
               <arg attribute="conditional">"c".startsWith("13") </arg>
               <arg attribute="discartKey">centrocosto</arg>
-              <arg attribute="discartKey">scentrocosto</arg>              
+              <arg attribute="discartKey">scentrocosto</arg>
           </parameters>
       </LNData>
 

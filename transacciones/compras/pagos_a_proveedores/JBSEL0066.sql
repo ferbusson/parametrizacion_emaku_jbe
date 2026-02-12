@@ -15,10 +15,10 @@ select
 select
 	a.char_cta,
 	a.valor,
-	case when a.char_cta like '1110%' then 0.004 else 0 end as tarifa_gastos_bancarios, -- gastos bancarios
-	case when a.char_cta like '1110%' then 0.004 * a.valor else 0 end as total_gravamen,
+	case when a.char_cta like '1110%' or a.char_cta like '210510%' then 0.004 else 0 end as tarifa_gastos_bancarios, -- gastos bancarios
+	case when a.char_cta like '1110%' or a.char_cta like '210510%' then 0.004 * a.valor else 0 end as total_gravamen,
 	a.id_tercerofactura,	
-	case when a.char_cta like '1110%' then '53050501' else '-1' end as id_cta_gravamen, -- gastos bancarios
+	case when a.char_cta like '1110%' or a.char_cta like '210510%' then '53050501' else '-1' end as id_cta_gravamen, -- gastos bancarios
 	coalesce(e.id_tercero_banco,-1) as id_tercero_banco
 from
 	aux_parametros_consulta a
