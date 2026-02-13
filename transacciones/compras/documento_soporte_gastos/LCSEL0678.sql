@@ -27,24 +27,9 @@ FROM
 WHERE 
 	c.tipo=t.tipo AND
 	b.banco=c.banco AND
-	cu.char_cta = '11053002' AND
+	cu.char_cta = '11050502' AND
 	cu.id_cta = pc.id_cta AND
 	c.id=g.id AND
 	g.id_char = '?'
 ORDER BY
 	c.id_cuenta_bancaria;
-
-
---
-insert into 
-	perfil_cta(*)
-	SELECT
-		cu.id_cta,
-		CURRENT_DATE AS fecha_creacion,
-		TRUE AS edocumento,
-		TRUE AS centro,
-		TRUE AS scentro
-	FROM
-		cuentas cu
-	WHERE
-		cu.char_cta = '11053002'
