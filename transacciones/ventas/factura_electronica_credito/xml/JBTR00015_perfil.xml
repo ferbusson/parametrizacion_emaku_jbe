@@ -3396,7 +3396,7 @@ o el carpintero asociado -->
                       <arg attribute="maxlength">50</arg>
                       <arg attribute="font">Dialog,0,14</arg>
                       <arg attribute="alignment">RIGHT</arg>                      
-                      <arg attribute="sqlInit">DLSEL0038</arg>
+                      <arg attribute="sqlInit">JBSEL0080</arg>
                       <arg attribute="importValue">idtercero</arg>
                       <arg attribute="importValue">charctatipofactura</arg>
                       <arg attribute="queryOnInit">true</arg>
@@ -3419,7 +3419,7 @@ o el carpintero asociado -->
             <arg attribute="return">false</arg>
             <arg attribute="clean">true</arg>
             <!-- <arg attribute="getValue">_vencdiasimiento</arg>                       -->
-            <arg attribute="calculateDate">fechai+diascredito</arg> -->
+            <arg attribute="calculateDate">fechai+diascredito</arg>
             <arg attribute="dateFormat">yyyy-MM-dd</arg>
             <arg attribute="printable">true</arg>
           </subarg>
@@ -3439,7 +3439,7 @@ o el carpintero asociado -->
                       <arg attribute="maxlength">50</arg>
                       <arg attribute="font">Dialog,0,14</arg>
                       <arg attribute="alignment">RIGHT</arg>                      
-                      <arg attribute="sqlInit">LCSEL0985</arg>
+                      <arg attribute="sqlInit">JBSEL0081</arg>
                       <arg attribute="importValue">idtercero</arg>
                       <arg attribute="importValue">charctatipofactura</arg>
                       <arg attribute="queryOnInit">true</arg>

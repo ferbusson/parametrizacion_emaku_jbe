@@ -241,7 +241,7 @@ select distinct
     r.id_submarca,
     i.id_item,
     xy.pdescuento,
-    xy.narticulos    
+    xy.narticulos
 from
     documentos d,
     xy_promocion xy,
@@ -955,16 +955,36 @@ SELECT
     a.id_itemp,
     a.narticulosa,
     --CASE WHEN pvo.cuenta_plataforma IN ('1') THEN a.pdescuentoa ELSE 0 END AS pdescuentoa, --t12 comentado Oct 13 2025
-    case when pvo.id_catalogo = 1 then a.pdescuentoa else 0 end as pdescuentoa,
+    --case when pvo.id_catalogo = 1 then a.pdescuentoa else 0 end as pdescuentoa,
     --a.pdescuentoa,
+    case 
+        when pvo.id_catalogo = 1 
+            and (pvo.es_miercoles is not true or pvo.id_clase_tercero = 13)
+        then a.pdescuentoa 
+        else 0 
+    end as pdescuentoa,
+
     a.narticulosm,
     --CASE WHEN pvo.cuenta_plataforma IN ('1') THEN a.pdescuentom ELSE 0 END AS pdescuentom, --u14 comentado Oct 13 2025
-    case when pvo.id_catalogo = 1 then a.pdescuentom else 0 end as pdescuentom,
+    --case when pvo.id_catalogo = 1 then a.pdescuentom else 0 end as pdescuentom,
     --a.pdescuentom,
+    case 
+        when pvo.id_catalogo = 1 
+            and (pvo.es_miercoles is not true or pvo.id_clase_tercero = 13)
+        then a.pdescuentom 
+        else 0 
+    end as pdescuentom,
+
     a.narticulosi,
     --CASE WHEN pvo.cuenta_plataforma IN ('1') THEN a.pdescuentoi ELSE 0 END AS pdescuentoi, --v16 comentado Oct 13 2025
-    case when pvo.id_catalogo = 1 then a.pdescuentoi else 0 end as pdescuentoi,
+    --case when pvo.id_catalogo = 1 then a.pdescuentoi else 0 end as pdescuentoi,
     --a.pdescuentoi,
+    case 
+        when pvo.id_catalogo = 1 
+            and (pvo.es_miercoles is not true or pvo.id_clase_tercero = 13)
+        then a.pdescuentoi 
+        else 0 
+    end as pdescuentoi,
     a.id_marca_pc,
     a.id_item_pc,
     a.id_marca_po,
@@ -984,16 +1004,15 @@ SELECT
     case 
         when pvo.id_catalogo = 1 
             and (pvo.es_miercoles is not true or pvo.id_clase_tercero = 13)
-        then a.pdescuentoa 
+        then a.pdescuentoxyl 
         else 0 
-    end as pdescuentoa,
-
+    end as pdescuentoxyl,
 
     a.narticulosxyg,
     --CASE WHEN pvo.cuenta_plataforma IN ('1') THEN a.pdescuentoxyg ELSE 0 END AS pdescuentoxyg, --x32 comentado Oct 13 2025
     --case when pvo.id_catalogo = 1 then a.pdescuentoxyg else 0 end as pdescuentoxyg,
     --a.pdescuentoxyg,
-        case 
+    case 
         when pvo.id_catalogo = 1 
             and (pvo.es_miercoles is not true or pvo.id_clase_tercero = 13)
         then a.pdescuentoxyg 

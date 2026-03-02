@@ -72,14 +72,18 @@ SELECT
     --case when pt.id_catalogo = 2 and TRIM(foo.cuenta_plataforma) != '130505' then 1::integer else pt.id_catalogo end as id_catalogo, quito comentado Oct 13 2025
     pt.id_catalogo, -- agrego comentado Oct 13 2025
     case when pt.es_pintor then 1 else 0 end as es_pintor,
-    case when pt.tiene_precio_base then 1 else 0 end as tiene_precio_base
+    case when pt.tiene_precio_base then 1 else 0 end as tiene_precio_base,
+    g.id_clase_tercero,
+    case when extract('DOW' from current_date) = 3 then true else false end AS es_miercoles
 FROM
     administracion_sucursales a,
     documentos_sucursales ds,
     perfil_tercero pt,
+    general g,
     documentos_standar dst,
     aux_params_antes_de_validaciones foo -- 1 facturacion normal, 2 dia sin iva
 WHERE
+    foo.tercero = g.id AND
     foo.tercero = pt.id AND
     a.id_centrocosto = foo.id_centrocosto AND
     a.id_administracion_sucursales = ds.id_administracion_sucursales AND
@@ -885,6 +889,8 @@ SELECT
     ps.id_asiento_generico,
     pv.id_catalogo,
     pv.id_prod_serv,
+    au.id_clase_tercero,
+    au.es_miercoles,
     CASE WHEN dia_siniva=1 OR sdsi.id_sgrupo IS NULL THEN pventa ELSE CASE WHEN sdsi.id_sgrupo IS NOT NULL AND ROUND(((pv.pventa-(pv.pventa*
     CASE WHEN a.pdescuentoi > 0 THEN a.pdescuentoi WHEN a.pdescuentom > 0 THEN a.pdescuentom 
     WHEN a.pdescuentoxysg > 0 THEN a.pdescuentoxysg WHEN a.pdescuentoxysm > 0 THEN a.pdescuentoxysm 
@@ -949,16 +955,34 @@ SELECT
     a.id_itemp,
     a.narticulosa,
     --CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentoa ELSE 0 END AS pdescuentoa, --t12 comentado Oct 13 2025
-    case when pvo.id_catalogo = 1 then a.pdescuentoa else 0 end as pdescuentoa,
+    --case when pvo.id_catalogo = 1 then a.pdescuentoa else 0 end as pdescuentoa,
     --a.pdescuentoa,
+    case 
+        when pvo.id_catalogo = 1 
+            and (pvo.es_miercoles is not true or pvo.id_clase_tercero = 13)
+        then a.pdescuentoa 
+        else 0 
+    end as pdescuentoa,
     a.narticulosm,
     --CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentom ELSE 0 END AS pdescuentom, --u14 comentado Oct 13 2025
-    case when pvo.id_catalogo = 1 then a.pdescuentom else 0 end as pdescuentom,
+    --case when pvo.id_catalogo = 1 then a.pdescuentom else 0 end as pdescuentom,
     --a.pdescuentom,
+    case 
+        when pvo.id_catalogo = 1 
+            and (pvo.es_miercoles is not true or pvo.id_clase_tercero = 13)
+        then a.pdescuentom 
+        else 0 
+    end as pdescuentom,
     a.narticulosi,
     --CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentoi ELSE 0 END AS pdescuentoi, --v16 comentado Oct 13 2025
-    case when pvo.id_catalogo = 1 then a.pdescuentoi else 0 end as pdescuentoi,
+    --case when pvo.id_catalogo = 1 then a.pdescuentoi else 0 end as pdescuentoi,
     --a.pdescuentoi,
+    case 
+        when pvo.id_catalogo = 1 
+            and (pvo.es_miercoles is not true or pvo.id_clase_tercero = 13)
+        then a.pdescuentoi 
+        else 0 
+    end as pdescuentoi,
     a.id_marca_pc,
     a.id_item_pc,
     a.id_marca_po,
@@ -973,20 +997,44 @@ SELECT
     a.id_submarcap,
     a.narticulosxyl,
     --CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentoxyl ELSE 0 END AS pdescuentoxyl, --w30 comentado Oct 13 2025
-    case when pvo.id_catalogo = 1 then a.pdescuentoxyl else 0 end as pdescuentoxyl,
+    --case when pvo.id_catalogo = 1 then a.pdescuentoxyl else 0 end as pdescuentoxyl,
     --a.pdescuentoxyl,
+    case 
+        when pvo.id_catalogo = 1 
+            and (pvo.es_miercoles is not true or pvo.id_clase_tercero = 13)
+        then a.pdescuentoxyl 
+        else 0 
+    end as pdescuentoxyl,
     a.narticulosxyg,
     --CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentoxyg ELSE 0 END AS pdescuentoxyg, --x32 comentado Oct 13 2025
-    case when pvo.id_catalogo = 1 then a.pdescuentoxyg else 0 end as pdescuentoxyg,
+    --case when pvo.id_catalogo = 1 then a.pdescuentoxyg else 0 end as pdescuentoxyg,
     --a.pdescuentoxyg,
+    case 
+        when pvo.id_catalogo = 1 
+            and (pvo.es_miercoles is not true or pvo.id_clase_tercero = 13)
+        then a.pdescuentoxyg 
+        else 0 
+    end as pdescuentoxyg,
     a.narticulosxysg,
     --CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentoxysg ELSE 0 END AS pdescuentoxysg, --y34 comentado Oct 13 2025
-    case when pvo.id_catalogo = 1 then a.pdescuentoxysg else 0 end as pdescuentoxysg,
+    --case when pvo.id_catalogo = 1 then a.pdescuentoxysg else 0 end as pdescuentoxysg,
     --a.pdescuentoxysg,
+    case 
+        when pvo.id_catalogo = 1 
+            and (pvo.es_miercoles is not true or pvo.id_clase_tercero = 13)
+        then a.pdescuentoxysg 
+        else 0 
+    end as pdescuentoxysg,
     a.narticulosxysm,
     --CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentoxysm ELSE 0 END AS pdescuentoxysm, --z36 comentado Oct 13 2025
-    case when pvo.id_catalogo = 1 then a.pdescuentoxysm else 0 end as pdescuentoxysm,
+    --case when pvo.id_catalogo = 1 then a.pdescuentoxysm else 0 end as pdescuentoxysm,
     --a.pdescuentoxysm,
+    case 
+        when pvo.id_catalogo = 1 
+            and (pvo.es_miercoles is not true or pvo.id_clase_tercero = 13)
+        then a.pdescuentoxysm 
+        else 0 
+    end as pdescuentoxysm,
     a.codigo,
     a.ref_proveedor,
     a.contador,
