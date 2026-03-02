@@ -76,7 +76,7 @@
         <arg attribute="centrocosto">getName</arg>
         <arg attribute="tercero">getName</arg>
         <subarg>
-          <arg attribute="accountCol">11053501,4</arg>
+          <arg attribute="accountCol">11050501,4</arg>
         </subarg>
       </parameters>
     </LNData>
@@ -157,7 +157,7 @@
       <arg attribute="centrocosto">getName</arg>
       <arg attribute="tercero">getName</arg>
       <subarg>
-        <arg attribute="accountField">11053501,D</arg>
+        <arg attribute="accountField">11050501,D</arg>
       </subarg>
     </parameters>
   </LNData>

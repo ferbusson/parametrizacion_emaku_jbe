@@ -412,6 +412,11 @@
           <driver id="banco">common.gui.components.GenericData</driver>
           <method>clean</method>
         </component>
+        <component>
+          <driver id="contab">client.gui.components.TableFindData</driver>
+          <method>clean</method>
+        </component>
+
 
         <component>
           <driver>this</driver>
@@ -457,8 +462,7 @@
           <arg attribute="returnNullValue">true</arg>
           <arg attribute="maxlength">26</arg>
           <arg attribute="alignment">RIGHT</arg>
-          <arg attribute="enabled">false</arg>
-          <arg attribute="sendRecord">"28050501","ANTICIPOS","0.0",value,"AN"</arg>
+          <arg attribute="enabled">false</arg>          
           <arg attribute="calculateBSExportValue">totalcomprobante&gt;0?totalcomprobante:0</arg>
         </subarg>
       </parameters>
@@ -479,7 +483,7 @@
           <arg attribute="maxlength">26</arg>
           <arg attribute="alignment">RIGHT</arg>
           <arg attribute="enabled">false</arg>
-          <arg attribute="sendRecord">"11053501","EFECTIVO",value,"0.0","EF"</arg>
+          <arg attribute="sendRecord">"11050501","EFECTIVO",value,"0.0","EF"</arg>
           <arg attribute="calculateBSExportValue">(totalcomprobante)&lt;=0||((totalcomprobante)-(tsodexobigpass+totalpagosmanuales+tconsignation))&lt;=0||efectivot&lt;((totalcomprobante)-(tsodexobigpass+totalpagosmanuales+tconsignation))?efectivot:(totalcomprobante)-(tsodexobigpass+totalpagosmanuales+tconsignation)
           </arg>
         </subarg>
@@ -1581,8 +1585,7 @@
               <subarg>
                 <arg attribute="name">TOTAL</arg>
                 <arg attribute="format">NUMERIC</arg>
-                <arg attribute="calculateBSExportValue">"830.00".equals(idtercerofindthirddos)?0.0:totalcomprobante</arg>
-                
+                <arg attribute="calculateBSExportValue">"830".equals(idtercerofindthird)?0.0:totalcomprobante</arg>
                 <arg attribute="size">9</arg>
                 <arg attribute="maxlength">26</arg>
                 <arg attribute="font">Dialog,0,18</arg>
@@ -1590,6 +1593,7 @@
                 <arg attribute="background">0,0,0</arg>
                 <arg attribute="alignment">RIGHT</arg>
                 <arg attribute="printable">true</arg>
+                <arg attribute="sendRecord">"28050501","ANTICIPOS","0.0",value,"AN"</arg>
               </subarg>
             </parameters>
           </component>
@@ -1601,7 +1605,7 @@
                 <arg attribute="name">TOTAL</arg>
                 <arg attribute="format">NUMERIC</arg>
                 <arg attribute="exportValue">totalcomprobanteconsistecredito</arg>
-                <arg attribute="calculateBSExportValue">"830.00".equals(idtercerofindthirddos)?totalcomprobante:0.0</arg>
+                <arg attribute="calculateBSExportValue">"830".equals(idtercerofindthird)?totalcomprobante:0.0</arg>
                 <arg attribute="size">9</arg>
                 <arg attribute="maxlength">26</arg>
                 <arg attribute="font">Dialog,0,18</arg>
@@ -1609,6 +1613,7 @@
                 <arg attribute="background">0,0,0</arg>
                 <arg attribute="alignment">RIGHT</arg>
                 <arg attribute="printable">true</arg>
+                <arg attribute="sendRecord">"28150501","ANTICIPOS","0.0",value,"AN"</arg>
               </subarg>
             </parameters>
           </component>
@@ -1667,13 +1672,17 @@
                 <arg attribute="tagData">4</arg>
                 <arg attribute="repaint">true</arg>
                 <arg attribute="conditionatedRecord">c>0||d>0</arg>
-                <arg attribute="driverEventRecord" id="efectivoneto">common.gui.components.GenericData</arg>
+
+
+                <arg attribute="driverEventRecord" id="totalconsistecredito">common.gui.components.GenericData</arg>
+                <arg attribute="driverEventRecord" id="totalsinsistecredito">common.gui.components.GenericData</arg>
+                <arg attribute="driverEventRecord" id="efectivoneto">common.gui.components.GenericData</arg>                
                 <arg attribute="driverEventRecord" id="tpagosmanuales">client.gui.components.TableFindData</arg>
                 <arg attribute="driverEventRecord" id="consignationtable">client.gui.components.TableFindData</arg>
                 <arg attribute="driverEventRecord" id="checktable">client.gui.components.TableFindData</arg>
                 <arg attribute="driverEventRecord" id="sodexo">client.gui.components.TableFindData</arg>
                 <arg attribute="driverEventRecord" id="bigpass">client.gui.components.TableFindData</arg>
-                <arg attribute="driverEventRecord" id="totalcomprobanteimpresion">common.gui.components.GenericData</arg>                
+                <!-- <arg attribute="driverEventRecord" id="totalcomprobanteimpresion">common.gui.components.GenericData</arg> -->                
                 <subarg><!--  a 0 -->
                   <arg attribute="name">CUENTA</arg>
                   <arg attribute="valideEnabledCol">h=h==0</arg>
@@ -1765,6 +1774,27 @@
                     <arg attribute="errorMessage">Error, Falta relacionar el tercero</arg>
                   </parameters>
                 </component>
+
+                <component>
+                <!-- <driver id="efectivoneto">common.gui.components.GenericData</driver> -->
+                <driver id="total_comprobante">common.gui.components.GenericData</driver>
+                <method>validPackage</method>
+                <parameters>
+                    <arg attribute="conditional">totalcomprobante&gt;0.0</arg>
+                    <arg attribute="errorMessage">Error, En el formulario con fondo verde, digite el valor del Anticipo por favor</arg>
+                </parameters>
+            </component>
+
+              <component>
+              <!-- <driver id="efectivoneto">common.gui.components.GenericData</driver> -->
+              <driver id="total_comprobante">common.gui.components.GenericData</driver>
+                <method>validPackage</method>
+                <parameters>
+                  <arg attribute="conditional">totalcomprobante - (bigpass + sodexo + totalpagosmanuales + tconsignation + tcheck + efectivoneto) &lt;= 0.0 </arg>
+                  <arg attribute="errorMessage">Error, la suma de los medios de pago debe ser igual o mayor al valor del Anticipo</arg>
+                </parameters>
+              </component>
+
                 
                 <!-- cod_tipo -->
                 <component>

@@ -72,14 +72,18 @@ SELECT
     --case when pt.id_catalogo = 2 and TRIM(foo.cuenta_plataforma) != '1' then 1::integer else pt.id_catalogo end as id_catalogo,
     pt.id_catalogo, -- agrego comentado Oct 13 2025
     case when pt.es_pintor then 1 else 0 end as es_pintor,
-    case when pt.tiene_precio_base then 1 else 0 end as tiene_precio_base
+    case when pt.tiene_precio_base then 1 else 0 end as tiene_precio_base,
+    g.id_clase_tercero,
+    case when extract('DOW' from current_date) = 3 then true else false end AS es_miercoles
 FROM
     administracion_sucursales a,
     documentos_sucursales ds,
     perfil_tercero pt,
+    general g,
     documentos_standar dst,
     aux_params_antes_de_validaciones foo -- 1 facturacion normal, 2 dia sin iva
 WHERE
+    foo.tercero = g.id AND
     foo.tercero = pt.id AND
     a.id_centrocosto = foo.id_centrocosto AND
     a.id_administracion_sucursales = ds.id_administracion_sucursales AND
@@ -237,7 +241,7 @@ select distinct
     r.id_submarca,
     i.id_item,
     xy.pdescuento,
-    xy.narticulos
+    xy.narticulos    
 from
     documentos d,
     xy_promocion xy,
@@ -885,6 +889,8 @@ SELECT
     ps.id_asiento_generico,
     pv.id_catalogo,
     pv.id_prod_serv,
+    au.id_clase_tercero,
+    au.es_miercoles,
     CASE WHEN dia_siniva=1 OR sdsi.id_sgrupo IS NULL THEN pventa ELSE CASE WHEN sdsi.id_sgrupo IS NOT NULL AND ROUND(((pv.pventa-(pv.pventa*
     CASE WHEN a.pdescuentoi > 0 THEN a.pdescuentoi WHEN a.pdescuentom > 0 THEN a.pdescuentom 
     WHEN a.pdescuentoxysg > 0 THEN a.pdescuentoxysg WHEN a.pdescuentoxysm > 0 THEN a.pdescuentoxysm 
@@ -973,23 +979,48 @@ SELECT
     a.id_submarcap,
     a.narticulosxyl,
     --CASE WHEN pvo.cuenta_plataforma IN ('1') THEN a.pdescuentoxyl ELSE 0 END AS pdescuentoxyl, --w30 comentado Oct 13 2025
-    case when pvo.id_catalogo = 1 then a.pdescuentoxyl else 0 end as pdescuentoxyl,
+    --case when pvo.id_catalogo = 1 then a.pdescuentoxyl else 0 end as pdescuentoxyl,
     --a.pdescuentoxyl,
+    case 
+        when pvo.id_catalogo = 1 
+            and (pvo.es_miercoles is not true or pvo.id_clase_tercero = 13)
+        then a.pdescuentoa 
+        else 0 
+    end as pdescuentoa,
+
 
     a.narticulosxyg,
     --CASE WHEN pvo.cuenta_plataforma IN ('1') THEN a.pdescuentoxyg ELSE 0 END AS pdescuentoxyg, --x32 comentado Oct 13 2025
-    case when pvo.id_catalogo = 1 then a.pdescuentoxyg else 0 end as pdescuentoxyg,
+    --case when pvo.id_catalogo = 1 then a.pdescuentoxyg else 0 end as pdescuentoxyg,
     --a.pdescuentoxyg,
+        case 
+        when pvo.id_catalogo = 1 
+            and (pvo.es_miercoles is not true or pvo.id_clase_tercero = 13)
+        then a.pdescuentoxyg 
+        else 0 
+    end as pdescuentoxyg,
 
     a.narticulosxysg,
     --CASE WHEN pvo.cuenta_plataforma IN ('1') THEN a.pdescuentoxysg ELSE 0 END AS pdescuentoxysg, --y34 comentado Oct 13 2025
-    case when pvo.id_catalogo = 1 then a.pdescuentoxysg else 0 end as pdescuentoxysg,
+    --case when pvo.id_catalogo = 1 then a.pdescuentoxysg else 0 end as pdescuentoxysg,
     --a.pdescuentoxysg,
+    case 
+        when pvo.id_catalogo = 1 
+            and (pvo.es_miercoles is not true or pvo.id_clase_tercero = 13)
+        then a.pdescuentoxysg 
+        else 0 
+    end as pdescuentoxysg,
 
     a.narticulosxysm,
     --CASE WHEN pvo.cuenta_plataforma IN ('1') THEN a.pdescuentoxysm ELSE 0 END AS pdescuentoxysm, --z36 comentado Oct 13 2025
-    case when pvo.id_catalogo = 1 then a.pdescuentoxysm else 0 end as pdescuentoxysm,
+    --case when pvo.id_catalogo = 1 then a.pdescuentoxysm else 0 end as pdescuentoxysm,
     -- a.pdescuentoxysm,
+    case 
+        when pvo.id_catalogo = 1 
+            and (pvo.es_miercoles is not true or pvo.id_clase_tercero = 13)
+        then a.pdescuentoxysm 
+        else 0 
+    end as pdescuentoxysm,
 
     a.codigo,
     a.ref_proveedor,

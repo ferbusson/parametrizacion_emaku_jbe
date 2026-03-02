@@ -1064,7 +1064,7 @@ o el carpintero asociado -->
 
           <!-- <arg attribute="externalValue">totalValuesDescuento,client.gui.components.TableDataFields,az</arg> -->
 
-          <arg attribute="totales">d,i,j,k,l,m,r,t,u,v,w,x,y,z,aa,ab,ac,ag,ai</arg>
+          <arg attribute="totales">d,i,j,k,l,m,r,t,u,v,w,x,y,z,aa,ab,ac,ag,ai,aj</arg>
 
           <arg attribute="exportTotalCol">d,totalcantidades</arg>
           <arg attribute="exportTotalCol">i,stotal</arg>
@@ -1084,6 +1084,7 @@ o el carpintero asociado -->
           <arg attribute="exportTotalCol">r,verde</arg>
           <arg attribute="exportTotalCol">ac,totallineas</arg>
           <arg attribute="exportTotalCol">ai,totaljavipuntosgenerados</arg>
+          <arg attribute="exportTotalCol">aj,totalautoretencion</arg>
           <!-- lista de precios -->
           <!-- <arg attribute="beanshell">e=al!=0?(e&gt;3||e&lt;1?1:e):(e&gt;2||e&lt;1?1:e)</arg> habilita la lista segun parametros del tercero -->
           <!-- vunitario -->
@@ -1129,6 +1130,7 @@ o el carpintero asociado -->
           <arg attribute="beanshell">ab=&quot;28312&quot;.equals(n)?0:k</arg>          <!-- netosinbolsa sin bolsa -->
           <arg attribute="beanshell">ag="28312".equals(n)?0:i</arg>          <!-- subtotal sin bolsa -->
           <arg attribute="beanshell">ai=(ah&amp;&amp;(m/1000)&gt;1)?(m/1000):0</arg>          <!-- javipuntos -->
+          <arg attribute="formula">aj=k*(1.2/100.0)</arg>          <!-- autoretencion -->
           <!-- 0 (a) -->
           <subarg>
             <arg attribute="name">CODE</arg>
@@ -1451,6 +1453,14 @@ o el carpintero asociado -->
             <arg attribute="type">INTEGER</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="returnCol">13</arg>
+          </subarg>
+          <!-- 38 (aj) -->
+          <subarg>
+            <arg attribute="name">autoretencion</arg>
+            <arg attribute="length">100</arg>
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="roundDecimal">2</arg>
+            <arg attribute="enabled">false</arg>
           </subarg>
         </parameters>
       </component>
@@ -4679,7 +4689,7 @@ o el carpintero asociado -->
                   <arg attribute="colorBackground">191,255,179</arg>
                   <arg attribute="colorSelected">179,255,122</arg>
                   <arg attribute="totales">b</arg>
-                  <arg attribute="formula">g=b*(q/100)</arg>
+                  <arg attribute="formula">g=(b/1.19)*(q/100)</arg>
                   <arg attribute="formula">h=(b/1.19)*s/100</arg>
                   <arg attribute="formula">i=(b-(b/1.19))*t/100</arg>
                   <arg attribute="beanshell">c=!"".equals(a)?"-":""</arg>
@@ -4728,42 +4738,42 @@ o el carpintero asociado -->
                     <arg attribute="type">STRING</arg>
                     <arg attribute="enabled">true</arg>
                     <arg attribute="returnCol">13</arg>
-                  </subarg>f
+                  </subarg>
       
-                  <subarg>
+                  <subarg>f
                     <arg attribute="name">4 Ult Dígitos</arg>
                     <arg attribute="length">110</arg>
                     <arg attribute="type">STRING</arg>
                     <arg attribute="enabled">true</arg>
                     <arg attribute="maxlength">4</arg>
                     <arg attribute="returnCol">14</arg>
-                  </subarg>g
+                  </subarg>
       
-                  <subarg>
+                  <subarg>g
                     <arg attribute="name">Comisión</arg>
                     <arg attribute="length">140</arg>
                     <arg attribute="type">DECIMAL</arg>
                     <arg attribute="returnCol">3</arg>
                     <arg attribute="enabled">false</arg>
-                  </subarg>h
+                  </subarg>
       
-                  <subarg>
+                  <subarg>h
                     <arg attribute="name">Rete Fuente</arg>
                     <arg attribute="length">110</arg>
                     <arg attribute="returnCol">8</arg>
                     <arg attribute="type">DECIMAL</arg>
                     <arg attribute="enabled">FALSE</arg>
-                  </subarg>i
+                  </subarg>
       
-                  <subarg>
+                  <subarg>i
                     <arg attribute="name">Rete IVA</arg>
                     <arg attribute="length">110</arg>
                     <arg attribute="type">DECIMAL</arg>
                     <arg attribute="enabled">FALSE</arg>
                     <arg attribute="returnCol">9</arg>
-                  </subarg>j
+                  </subarg>
       
-                  <subarg>
+                  <subarg>j
                     <arg attribute="name">id_franquicia</arg>
                     <arg attribute="length">110</arg>
                     <arg attribute="type">COMBOSQL</arg>
@@ -4772,9 +4782,9 @@ o el carpintero asociado -->
                     <arg attribute="sqlCombo">LCSEL0004</arg>
                     <arg attribute="importValue">idtarjetacombo</arg>
                     <arg attribute="printable">true</arg>
-                  </subarg>k
+                  </subarg>
       
-                  <subarg>
+                  <subarg>k
                     <arg attribute="name">ctabanco</arg>
                     <arg attribute="length">110</arg>
                     <arg attribute="type">COMBOSQL</arg>
@@ -4783,9 +4793,9 @@ o el carpintero asociado -->
                     <arg attribute="sqlCombo">LCSEL0053</arg>
                     <arg attribute="importValue">idtarjetacombo</arg>
                     <arg attribute="printable">true</arg>
-                  </subarg>l
+                  </subarg>
       
-                  <subarg>
+                  <subarg>l
                     <arg attribute="name">ctagasto</arg>
                     <arg attribute="length">110</arg>
                     <arg attribute="type">COMBOSQL</arg>
@@ -4794,9 +4804,9 @@ o el carpintero asociado -->
                     <arg attribute="sqlCombo">LCSEL0054</arg>
                     <arg attribute="importValue">idtarjetacombo</arg>
                     <arg attribute="printable">true</arg>
-                  </subarg>m
+                  </subarg>
       
-                  <subarg>
+                  <subarg>m
                     <arg attribute="name">ctaretefuente</arg>
                     <arg attribute="length">110</arg>
                     <arg attribute="type">COMBOSQL</arg>
@@ -4805,9 +4815,9 @@ o el carpintero asociado -->
                     <arg attribute="sqlCombo">LCSEL0055</arg>
                     <arg attribute="importValue">idtarjetacombo</arg>
                     <arg attribute="printable">true</arg>
-                  </subarg>n
+                  </subarg>
       
-                  <subarg>
+                  <subarg>n
                     <arg attribute="name">ctareteiva</arg>
                     <arg attribute="length">110</arg>
                     <arg attribute="type">COMBOSQL</arg>
@@ -4816,9 +4826,9 @@ o el carpintero asociado -->
                     <arg attribute="sqlCombo">LCSEL0056</arg>
                     <arg attribute="importValue">idtarjetacombo</arg>
                     <arg attribute="printable">true</arg>
-                  </subarg>o
+                  </subarg>
       
-                  <subarg>
+                  <subarg>o
                     <arg attribute="name">operador</arg>
                     <arg attribute="length">110</arg>
                     <arg attribute="type">COMBOSQL</arg>
@@ -4827,9 +4837,9 @@ o el carpintero asociado -->
                     <arg attribute="sqlCombo">LCSEL0057</arg>
                     <arg attribute="importValue">idtarjetacombo</arg>
                     <arg attribute="printable">true</arg>
-                  </subarg>p
+                  </subarg>
       
-                  <subarg>
+                  <subarg>p
                     <arg attribute="name">tcode</arg>
                     <arg attribute="length">110</arg>
                     <arg attribute="type">COMBOSQL</arg>
@@ -4839,6 +4849,7 @@ o el carpintero asociado -->
                     <arg attribute="importValue">idtarjetacombo</arg>
                     <arg attribute="printable">true</arg>
                   </subarg>
+
                   <!-- q -->
                   <subarg>
                     <arg attribute="name">pcomision</arg>
@@ -5525,6 +5536,8 @@ o el carpintero asociado -->
                       <arg attribute="importValue">totalmenosreteglobal</arg>
                       <arg attribute="importValue">trm</arg>
                       <arg attribute="importValue">totaltodastarjetas</arg>
+                      <arg attribute="importValue">totalanticipos</arg>
+                      <!-- totalanticipos -->
                     </subarg>
                   </parameters>
                 </component>
@@ -5589,7 +5602,7 @@ o el carpintero asociado -->
                       </parameters>
                     </component>                    
                 <!-- 11 cartera-->
-                <component>
+                <!-- <component> en la factura de contado no se usa
                 <driver>this</driver>
                 <method>getPackage</method>
                 <parameters>
@@ -5602,13 +5615,25 @@ o el carpintero asociado -->
                     <arg attribute="importValue">charctatipofactura</arg>
                   </subarg>
                 </parameters>
-              </component>
+              </component> -->
 
                 <!-- 8 centrocosto -->
                 <component>
                   <driver id="centrocosto">common.gui.components.GenericData</driver>
                   <method>getPackage</method>
                 </component>
+                <!-- autoretencion -->
+                <component>
+                <driver>this</driver>
+                <method>getPackage</method>
+                <parameters>
+                  <arg attribute="nullField">true</arg>
+                  <arg attribute="blankPackage">true</arg>
+                  <subarg>
+                    <arg attribute="importValue">totalautoretencion</arg>
+                  </subarg>
+                </parameters>
+              </component>
                 <!-- 9 -->
                 <component>
                   <driver id="checktable">client.gui.components.TableFindData</driver>
@@ -7211,6 +7236,7 @@ o el carpintero asociado -->
                       <arg attribute="importValue">totalmenosreteglobal</arg>
                       <arg attribute="importValue">trm</arg>
                       <arg attribute="importValue">totaltodastarjetas</arg>
+                      <arg attribute="importValue">totalanticipos</arg>
                     </subarg>
                   </parameters>
                 </component>
@@ -7285,8 +7311,8 @@ o el carpintero asociado -->
                   <method>getPackage</method>
                 </component> -->
 
-                <!-- 11 -->
-                <component>
+                <!-- cartera 11 -->
+                <!-- <component> no se usa en factura de contado
                 <driver>this</driver>
                 <method>getPackage</method>
                 <parameters>
@@ -7299,12 +7325,25 @@ o el carpintero asociado -->
                     <arg attribute="importValue">charctatipofactura</arg>
                   </subarg>
                 </parameters>
-              </component>
+              </component> -->
+
                 <!-- 8 centrocosto -->
                 <component>
                   <driver id="centrocosto">common.gui.components.GenericData</driver>
                   <method>getPackage</method>
                 </component>
+                <!-- autoretencion -->
+                <component>
+                <driver>this</driver>
+                <method>getPackage</method>
+                <parameters>
+                  <arg attribute="nullField">true</arg>
+                  <arg attribute="blankPackage">true</arg>
+                  <subarg>
+                    <arg attribute="importValue">totalautoretencion</arg>
+                  </subarg>
+                </parameters>
+              </component>
                 <!-- 9 -->
                 <component>
                   <driver id="checktable">client.gui.components.TableFindData</driver>

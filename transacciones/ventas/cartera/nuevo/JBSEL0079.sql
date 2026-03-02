@@ -1,3 +1,4 @@
+--JBSEL0079
 DROP TABLE IF EXISTS aux_parametros_busqueda;
 CREATE TEMP TABLE aux_parametros_busqueda AS
 SELECT
@@ -50,7 +51,6 @@ FROM
 					d.ndocumento=c.nfactura AND
 					c.idtercero = a.id_tercero AND
 					d.estado='true' AND
-					--c.movimiento=true AND comentado para permitir hacer abonos a sistecredito jbe Ene 7 2026
 					c.total_factura>0 AND
 					d.codigo_tipo NOT IN ('SP','AR','SS','A1','SU','AU')
 				GROUP BY
@@ -88,10 +88,15 @@ ORDER BY
 --
 
 SELECT DISTINCT
-	l.id_centrocosto
+	cc.nombre as centrocosto
 FROM
 	libro_auxiliar l,
-	aux_facs_activas a
-WHERE
+	aux_facs_activas a,
+	centrocosto cc
+where
+	l.id_centrocosto = cc.id_centrocosto and
 	l.ndocumento = a.ndocumento AND
 	l.id_centrocosto IS NOT NULL;
+
+
+

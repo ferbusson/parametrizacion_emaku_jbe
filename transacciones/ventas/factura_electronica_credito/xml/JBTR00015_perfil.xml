@@ -958,7 +958,7 @@ o el carpintero asociado -->
 
           <!-- <arg attribute="externalValue">totalValuesDescuento,client.gui.components.TableDataFields,az</arg> -->
 
-          <arg attribute="totales">d,i,j,k,l,m,r,t,u,v,w,x,y,z,aa,ab,ac,ag,ai</arg>
+          <arg attribute="totales">d,i,j,k,l,m,r,t,u,v,w,x,y,z,aa,ab,ac,ag,ai,aj</arg>
 
           <arg attribute="exportTotalCol">d,totalcantidades</arg>
           <arg attribute="exportTotalCol">i,stotal</arg>
@@ -978,6 +978,7 @@ o el carpintero asociado -->
           <arg attribute="exportTotalCol">r,verde</arg>
           <arg attribute="exportTotalCol">ac,totallineas</arg>
           <arg attribute="exportTotalCol">ai,totaljavipuntosgenerados</arg>
+          <arg attribute="exportTotalCol">aj,totalautoretencion</arg>
           <!-- lista de precios -->
           <!-- <arg attribute="beanshell">e=al!=0?(e&gt;3||e&lt;1?1:e):(e&gt;2||e&lt;1?1:e)</arg> habilita la lista segun parametros del tercero -->
           <!-- vunitario -->
@@ -1023,6 +1024,7 @@ o el carpintero asociado -->
           <arg attribute="beanshell">ab=&quot;28312&quot;.equals(n)?0:k</arg>          <!-- netosinbolsa sin bolsa -->
           <arg attribute="beanshell">ag="28312".equals(n)?0:i</arg>          <!-- subtotal sin bolsa -->
           <arg attribute="beanshell">ai=(ah&amp;&amp;(m/1000)&gt;1)?(m/1000):0</arg>          <!-- javipuntos -->
+          <arg attribute="formula">aj=k*(1.2/100.0)</arg>          <!-- autoretencion -->
           <!-- 0 (a) -->
           <subarg>
             <arg attribute="name">CODE</arg>
@@ -1344,6 +1346,14 @@ o el carpintero asociado -->
             <arg attribute="type">INTEGER</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="returnCol">13</arg>
+          </subarg>
+         <!-- 38 (aj) -->
+          <subarg>
+            <arg attribute="name">autoretencion</arg>
+            <arg attribute="length">100</arg>
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="roundDecimal">2</arg>
+            <arg attribute="enabled">false</arg>
           </subarg>
         </parameters>
       </component>
@@ -3717,6 +3727,18 @@ o el carpintero asociado -->
                   <driver id="centrocosto">common.gui.components.GenericData</driver>
                   <method>getPackage</method>
                 </component>
+                <!-- autoretencion -->
+                <component>
+                <driver>this</driver>
+                <method>getPackage</method>
+                <parameters>
+                  <arg attribute="nullField">true</arg>
+                  <arg attribute="blankPackage">true</arg>
+                  <subarg>
+                    <arg attribute="importValue">totalautoretencion</arg>
+                  </subarg>
+                </parameters>
+              </component>
                 <!-- 14 base -->
                 <component>
                   <driver id="base">client.gui.components.TableFindData</driver>
@@ -3800,6 +3822,11 @@ o el carpintero asociado -->
                   <driver id="puntosredimidosenpesos">common.gui.components.GenericData</driver>
                   <method>getPackage</method>
                 </component> -->
+
+                <component>
+              <driver id="principal">client.gui.components.TableFindData</driver>
+              <method>getBlankPackage</method>
+            </component>
 
               </action>
 

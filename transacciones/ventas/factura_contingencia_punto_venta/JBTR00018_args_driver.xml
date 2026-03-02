@@ -15,7 +15,7 @@
     <!-- Enlaza contingencia en info_documento -->
     <arg>GRUPD0004</arg>
     <!-- 3  datos documento -->
-    <arg>LCSEL0938</arg>
+    <arg>JBSEL0073</arg>
     <!-- 4  sodexo -->
     <arg>LCINS0022</arg>
     <!-- 5  bigpass -->
@@ -35,14 +35,47 @@
     <arg>INS0048</arg>          
     <!-- contacto_pedidos - informacin de despacho -->
     <arg>JBINS0001</arg>      
+    
     <!-- cartera clientes -->
-    <arg>LCINS0081</arg>
+    <!-- <arg>LCINS0081</arg> no se usa en factura de contado-->
 
     <!-- contacto_pedidos -->
     <!-- <arg>JBINS0001</arg>-->
 
     <!-- 8 centrocosto -->
     <arg attribute="addKey"/>
+    <!-- autoretencion -->
+    <subarg>
+        <LNData>
+        <driver>LNContabilidad</driver>
+        <method>fieldData</method>
+        <parameters>
+            <arg attribute="debuging">true</arg>
+            <arg attribute="CodeAPS">9</arg>
+            <arg attribute="Concepto">Autoretencion Factura de venta - (D)</arg>
+            <arg attribute="centrocosto">getName</arg>
+            <arg attribute="tercero">getName</arg>
+            <subarg>
+                <arg attribute="accountField">13559502,D</arg>
+            </subarg>
+        </parameters>
+        </LNData>    
+        <LNData>
+        <driver>LNContabilidad</driver>
+        <method>fieldData</method>
+        <parameters>
+            <arg attribute="debuging">true</arg>
+            <arg attribute="CodeAPS">9</arg>
+            <arg attribute="Concepto">Autoretencion Factura de venta - (C)</arg>
+            <arg attribute="centrocosto">getName</arg>
+            <arg attribute="tercero">getName</arg>
+            <subarg>
+                <arg attribute="accountField">23657001,C</arg>
+            </subarg>
+        </parameters>
+        </LNData>    
+      </subarg>
+
     <!-- 9 PAGO CON CHEQUES -->
       <subarg>
         <LNData>
@@ -65,7 +98,7 @@
             <arg attribute="centrocosto">getName</arg>
             <arg attribute="tercero">getName</arg>
             <subarg>
-              <arg attribute="accountCol">11053501,4</arg>
+              <arg attribute="accountCol">11050501,4</arg>
             </subarg>
           </parameters>
         </LNData>
@@ -110,7 +143,7 @@
             <arg attribute="centrocosto">getName</arg>
             <arg attribute="tercero">getName</arg>
             <subarg>
-                <arg attribute="accountField">11053501,D</arg>
+                <arg attribute="accountField">11050501,D</arg>
             </subarg>
         </parameters>
     </LNData>    
@@ -530,66 +563,33 @@
                 <subarg>
                     <arg attribute="accountCol">IdProdServ,0</arg>
 
-<!-- 
-JBE ACCOUNTS TABLE:
-================================================================================
-| CODE            | NAME                             | ACCOUNT       | NOTES     |
-================================================================================
-| 13559500002     | AUTORRETENCION 114-1 ET          | 13559502      | no        |
-| 14350100001     | MERCANCIAS GRAVADAS 19%          | 14350101      |           |
-| 14350100002     | MERCANCIA GRAVADAS 5%            | 14350102      |           |
-| 14350100003     | MERCANCIAS NO GRAVADAS EXCLUIDAS | 14350103      |           |
-| 23657000001     | AUTORRETENCION 114-1 ET          | 23657001      | no        |
-| 24080100001     | IVA EN VENTAS GENERADO 19%       | 24080101      |           |
-| 24080100002     | IVA EN VENTAS GENERADO 5%        | 24080102      |           |
-| 41350100001     | MERCANCIAS GRAVADAS              | 41350101      |           |
-| 41350100002     | MERCANCIAS NO GRAVADAS EXCLUIDAS | 41350102      |           |
-| 41350100006     | MERCANCIAS GRAVADAS 5%           | 41350106      |           |
-| 41450500001     | SERVICIO DE TRANSPORTE DE CARGA  | 41450501      |           |
-| 61350100001     | MERCANCIAS GRAVADAS 19%          | 61350101      |           |
-| 61350100002     | MERCANCIAS EXCLUIDAS             | 61350102      |           |
-| 11050500001     | CAJA PRINCIPAL                   | 11050501      | no        |
-================================================================================
--->
-
-
                     <!-- mercancia 5% -->
-                    <arg attribute="accountCol">41350106,6</arg>
+                    <arg attribute="accountCol">41350106,6</arg> <!-- ok -->
                     <!-- mercancia 19% -->
-                    <arg attribute="accountCol">41350101,6</arg>
+                    <arg attribute="accountCol">41350101,6</arg> <!-- ok -->
                     <!-- servicios transporte-->
-                    <arg attribute="accountCol">41450501,6</arg>
+                    <arg attribute="accountCol">41450501,6</arg> <!-- ok -->
                     <!-- mercancia Excluidas -->
-                    <arg attribute="accountCol">41350102,6</arg>
+                    <arg attribute="accountCol">41350102,6</arg> <!-- ok -->
                     <!-- Exentas -->
                     <arg attribute="accountCol">41355615,6</arg>
-                    <!-- Impuesto Bolsas -->
-                    <!-- <arg attribute="accountCol">240905,9</arg> -->
                     <!-- iva 5% -->
-                    <arg attribute="accountCol">24080102,5</arg>
-                    <!-- iva 19 servicios% -->
-                    <!-- <arg attribute="accountCol">24080503,5</arg> -->
+                    <arg attribute="accountCol">24080102,5</arg> <!-- ok -->
                     <!-- iva 19 ventas% -->
-                    <arg attribute="accountCol">24080101,5</arg>
+                    <arg attribute="accountCol">24080101,5</arg> <!-- ok -->
                     <!-- asientos de costos -->
-                    <!-- 5% -->
-                    <!-- <arg attribute="accountCostCol">6135560501,1</arg> -->
                     <!-- costos 19% -->
-                    <arg attribute="accountCostCol">61350101,1</arg>
-                    <!-- servicios 19% -->
-                    <!-- <arg attribute="accountCostCol">6135562001,1</arg> -->
+                    <arg attribute="accountCostCol">61350101,1</arg> <!-- ok -->
                     <!-- costos Excluidas -->
-                    <arg attribute="accountCostCol">61350102,1</arg>
-                    <!-- Exentas -->
-                    <!-- <arg attribute="accountCostCol">61355615,1</arg> -->
+                    <arg attribute="accountCostCol">61350102,1</arg> <!-- ok -->
+                    <!-- costos 5% -->
+                    <arg attribute="accountCostCol">61350106,1</arg> <!-- agregada -->
                     <!-- inventarios 5% -->
-                    <arg attribute="accountCostCol">14350102,1</arg>
+                    <arg attribute="accountCostCol">14350102,1</arg> <!-- ok -->
                     <!-- inventarios 19% -->
-                    <arg attribute="accountCostCol">14350101,1</arg>
+                    <arg attribute="accountCostCol">14350101,1</arg> <!-- ok -->
                     <!-- inventarios Excluidos -->
-                    <arg attribute="accountCostCol">14350103,1</arg>
-                    <!-- Exentas -->
-                    <!-- <arg attribute="accountCostCol">14355615,1</arg> -->
+                    <arg attribute="accountCostCol">14350103,1</arg> <!-- ok -->
 
                 </subarg>
             </parameters>
@@ -603,7 +603,7 @@ JBE ACCOUNTS TABLE:
             </parameters>
         </LNData>
 
-    </subarg>
+    </subarg>    
 
     <!-- Cruce con Anticipos -->
     <subarg>
@@ -711,7 +711,7 @@ JBE ACCOUNTS TABLE:
                 <arg attribute="centrocosto">getName</arg>
                 <arg attribute="tercero">getName</arg>
                 <subarg>
-                    <arg attribute="accountField">52959511,D</arg>
+                    <arg attribute="accountField">52959511,D</arg> <!-- puntos redimidos -->
                 </subarg>
             </parameters>
         </LNData>

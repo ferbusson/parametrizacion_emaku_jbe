@@ -6,10 +6,11 @@ select
 	0: saldo != 0
 	1: saldo > 0
 	2: saldo < 0*/
-	'0'::CHARACTER(1) AS clase,	
-	'2026-01-19'::DATE AS ffinal,
-	''::CHARACTER(50) AS terceron, -- nombre de tercero
-	''::CHARACTER(50) AS terceroi; -- id_char de tercero
+	'?'::CHARACTER(1) AS clase,	
+	'?'::DATE AS ffinal,
+	trim('?'::character(10)) AS char_cta, -- empty means all
+	'?'::CHARACTER(50) AS terceron, -- nombre de tercero
+	'?'::CHARACTER(50) AS terceroi; -- id_char de tercero
 	
 DROP TABLE IF EXISTS aux_facturas_cartera;
 CREATE TEMP TABLE aux_facturas_cartera AS
@@ -34,7 +35,8 @@ where
 	d.ndocumento=c.nfactura AND
 	d.fecha::date <=ffinal::date AND
 	d.estado AND
-	cu.char_cta LIKE '1305%' AND
+	case when f.char_cta = '' or f.char_cta is null then cu.char_cta LIKE '1305%' 
+		else cu.char_cta = f.char_cta end AND
 	c.id_cta = cu.id_cta AND
 	c.idtercero=g.id AND
 	(COALESCE(g.apellido1,'')||' '||COALESCE(g.apellido2,'')||' '||COALESCE(g.nombre1,'')||' '||COALESCE(g.nombre2,'')||' '||COALESCE(g.razon_social,'') ILIKE '%'||f.terceron||'%' OR
@@ -80,7 +82,9 @@ WHERE
 	pt.id=g.id AND
 	g.id=c.idtercero AND
 	cu.id_cta=c.id_cta AND
-	cu.char_cta like '1305%' AND
+	--cu.char_cta like '1305%' AND
+	case when f.char_cta = '' or f.char_cta is null then cu.char_cta LIKE '1305%' 
+		else cu.char_cta = f.char_cta end AND
 	d.fecha::date <= ffinal AND
 	c.ncomprobante=d.ndocumento AND
 	d.estado AND
@@ -95,12 +99,22 @@ GROUP BY
 ---------------------------------------------------------------------------------------------------
 
 
-select
+DROP TABLE IF EXISTS aux_resultado_detallado;
+CREATE TEMP TABLE aux_resultado_detallado AS
+select		
 	    foo.codigo, --id_char de tercero
         foo.nombre, --nombre de tercero
-		coalesce(a.nombre,'--') as sucursal,
+		case when a.id_administracion_sucursales = 1 then 'PRIN' 
+			when a.id_administracion_sucursales = 2 then 'C21A'
+			when a.id_administracion_sucursales = 3 then 'CASC'
+			when a.id_administracion_sucursales = 4 then 'AM15'
+			when a.id_administracion_sucursales = 5 then 'SICO'
+			when a.id_administracion_sucursales = 6 then 'SIKA'
+			when a.id_administracion_sucursales = 7 then 'CCEN'
+			else '--'
+			end as sucursal,
 		d.fecha::date as fecha_mov,
-		coalesce(rf.prefijo,d.codigo_tipo)||d.numero::integer||'/'||COALESCE(ex_documento,'*') as factura,
+		case when d.codigo_tipo = 'FC' then ex_documento else coalesce(rf.prefijo,d.codigo_tipo)||'-'||d.numero::integer end as factura,
 		(d.fecha::date + interval '1 day' * adc.dcredito)::date as fecha_vence,
 		case when (d.fecha::date + interval '1 day' * adc.dcredito)::date >= current_date then saldo else 0 end as sin_vencer,
 		case when current_date  - (d.fecha::date + interval '1 day' * adc.dcredito)::date between 1 and 30 then saldo else 0 end as vencidas_1_a_30,
@@ -149,8 +163,150 @@ where
 	((saldo!=0 AND 
 	ac.clase = '0') OR
 	(saldo!=0 AND saldo>0 AND ac.clase = '1') OR
-	(saldo!=0 AND saldo<0 AND ac.clase = '2'))
-ORDER BY
-	codigo,
-	fecha,
+	(saldo!=0 AND saldo<0 AND ac.clase = '2'));
+
+
+DROP TABLE IF EXISTS aux_sumatoria;
+CREATE TEMP TABLE aux_sumatoria AS
+select
+	null::text as codigo,
+	a.nombre,
+	null::text as sucursal,
+	null::date as fecha_mov,
+	null::text as factura,
+	null::date as fecha_vence,
+	sum(sin_vencer) as sin_vencer,
+	sum(vencidas_1_a_30) as vencidas_1_a_30,
+	sum(vencidas_31_a_60) as vencidas_31_a_60,
+	sum(vencidas_61_a_90) as vencidas_61_a_90,
+	sum(vencidas_mayor_90) as vencidas_mayor_90,
+	sum(saldo) as saldo
+from
+	aux_resultado_detallado a
+group by
 	nombre;
+
+DROP TABLE IF EXISTS aux_sumatoria_final_todos;
+CREATE TEMP TABLE aux_sumatoria_final_todos AS
+select
+	null::text as codigo,
+	null::text as nombre,
+	null::text as sucursal,
+	null::date as fecha_mov,
+	null::text as factura,
+	null::date as fecha_vence,
+	sum(sin_vencer) as sin_vencer,
+	sum(vencidas_1_a_30) as vencidas_1_a_30,
+	sum(vencidas_31_a_60) as vencidas_31_a_60,
+	sum(vencidas_61_a_90) as vencidas_61_a_90,
+	sum(vencidas_mayor_90) as vencidas_mayor_90,
+	sum(saldo) as saldo
+from
+	aux_resultado_detallado a;
+
+
+DROP TABLE IF EXISTS aux_resultado_con_totales;
+CREATE TEMP TABLE aux_resultado_con_totales AS
+select
+	trim(d.codigo) as codigo,
+	d.nombre,
+	d.sucursal,
+	d.fecha_mov,
+	d.factura,
+	d.fecha_vence,
+	d.sin_vencer,
+	d.vencidas_1_a_30,
+	d.vencidas_31_a_60,
+	d.vencidas_61_a_90,
+	d.vencidas_mayor_90,
+	null::float8 as saldo
+	--d.saldo
+from
+	aux_resultado_detallado d
+union all
+select
+	trim(s.codigo) as codigo,
+	s.nombre,
+	s.sucursal,
+	s.fecha_mov,
+	s.factura,
+	s.fecha_vence,
+	s.sin_vencer,
+	s.vencidas_1_a_30,
+	s.vencidas_31_a_60,
+	s.vencidas_61_a_90,
+	s.vencidas_mayor_90,
+	s.saldo
+from
+	aux_sumatoria s
+union all
+select
+	trim(t.codigo) as codigo,
+	t.nombre,
+	t.sucursal,
+	t.fecha_mov,
+	t.factura,
+	t.fecha_vence,
+	t.sin_vencer,
+	t.vencidas_1_a_30,
+	t.vencidas_31_a_60,
+	t.vencidas_61_a_90,
+	t.vencidas_mayor_90,
+	t.saldo
+from
+	aux_sumatoria_final_todos t;
+
+/*
+select
+	a.codigo,
+	case when a.codigo is null and a.nombre is null then 'TOTAL FINAL:' WHEN a.nombre is not null and a.codigo is null then 'TOTAL CLIENTE:' else a.nombre end as nombre,
+	a.sucursal,
+	a.fecha_mov,
+	a.factura,
+	a.fecha_vence,
+	a.sin_vencer,
+	a.vencidas_1_a_30,
+	a.vencidas_31_a_60,
+	a.vencidas_61_a_90,
+	a.vencidas_mayor_90,
+	a.saldo
+from
+	aux_resultado_con_totales a
+ORDER by
+	a.nombre,
+	a.codigo nulls last,	
+	a.sucursal,
+	a.fecha_mov;
+*/
+
+select
+	case when rn = 1 then a.codigo else null end as codigo,
+	case when rn = 1 then
+		case when a.codigo is null and a.nombre is null then 'TOTAL FINAL:'		     
+		     else a.nombre end
+	when a.nombre is not null and a.codigo is null then 'TOTAL CLIENTE:'
+	else null end as nombre,
+	a.sucursal,
+	a.fecha_mov,
+	a.factura,
+	a.fecha_vence,
+	a.sin_vencer,
+	a.vencidas_1_a_30,
+	a.vencidas_31_a_60,
+	a.vencidas_61_a_90,
+	a.vencidas_mayor_90,
+	a.saldo
+from
+	(select
+		*,
+		ROW_NUMBER() OVER (
+			PARTITION BY nombre
+			ORDER BY codigo nulls last, sucursal, fecha_mov
+		) as rn
+	from aux_resultado_con_totales
+	) a
+ORDER by
+	a.nombre,
+	a.codigo nulls last,
+	a.sucursal,
+	a.fecha_mov;

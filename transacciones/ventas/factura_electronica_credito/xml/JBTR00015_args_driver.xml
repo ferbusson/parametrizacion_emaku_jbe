@@ -23,6 +23,38 @@
 
     <!-- 8 centrocosto -->
     <arg attribute="addKey"/>
+
+    <!-- autoretencion -->
+    <subarg>
+        <LNData>
+        <driver>LNContabilidad</driver>
+        <method>fieldData</method>
+        <parameters>
+            <arg attribute="debuging">true</arg>
+            <arg attribute="CodeAPS">9</arg>
+            <arg attribute="Concepto">Autoretencion Factura de venta - (D)</arg>
+            <arg attribute="centrocosto">getName</arg>
+            <arg attribute="tercero">getName</arg>
+            <subarg>
+                <arg attribute="accountField">13559502,D</arg>
+            </subarg>
+        </parameters>
+        </LNData>    
+        <LNData>
+        <driver>LNContabilidad</driver>
+        <method>fieldData</method>
+        <parameters>
+            <arg attribute="debuging">true</arg>
+            <arg attribute="CodeAPS">9</arg>
+            <arg attribute="Concepto">Autoretencion Factura de venta - (C)</arg>
+            <arg attribute="centrocosto">getName</arg>
+            <arg attribute="tercero">getName</arg>
+            <subarg>
+                <arg attribute="accountField">23657001,C</arg>
+            </subarg>
+        </parameters>
+        </LNData>    
+      </subarg>
     
     <!-- 14  Ret. Fuente -->
     <subarg>
@@ -196,33 +228,23 @@ JBE ACCOUNTS TABLE:
                     <arg attribute="accountCol">41350102,6</arg>
                     <!-- Exentas -->
                     <arg attribute="accountCol">41355615,6</arg>
-                    <!-- Impuesto Bolsas -->
-                    <!-- <arg attribute="accountCol">240905,9</arg> -->
                     <!-- iva 5% -->
                     <arg attribute="accountCol">24080102,5</arg>
-                    <!-- iva 19 servicios% -->
-                    <!-- <arg attribute="accountCol">24080503,5</arg> -->
                     <!-- iva 19 ventas% -->
                     <arg attribute="accountCol">24080101,5</arg>
                     <!-- asientos de costos -->
-                    <!-- 5% -->
-                    <!-- <arg attribute="accountCostCol">6135560501,1</arg> -->
                     <!-- costos 19% -->
                     <arg attribute="accountCostCol">61350101,1</arg>
-                    <!-- servicios 19% -->
-                    <!-- <arg attribute="accountCostCol">6135562001,1</arg> -->
                     <!-- costos Excluidas -->
                     <arg attribute="accountCostCol">61350102,1</arg>
-                    <!-- Exentas -->
-                    <!-- <arg attribute="accountCostCol">61355615,1</arg> -->
+                    <!-- costos 5% -->
+                    <arg attribute="accountCostCol">61350106,1</arg> <!-- agregada -->
                     <!-- inventarios 5% -->
                     <arg attribute="accountCostCol">14350102,1</arg>
                     <!-- inventarios 19% -->
                     <arg attribute="accountCostCol">14350101,1</arg>
                     <!-- inventarios Excluidos -->
                     <arg attribute="accountCostCol">14350103,1</arg>
-                    <!-- Exentas -->
-                    <!-- <arg attribute="accountCostCol">14355615,1</arg> -->
 
                 </subarg>
             </parameters>
@@ -309,5 +331,7 @@ JBE ACCOUNTS TABLE:
                 </subarg>
             </parameters>
         </LNData> -->
+
+    <arg>JBUPD0011</arg> 
 
 </container>

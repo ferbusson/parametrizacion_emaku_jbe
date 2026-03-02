@@ -12,6 +12,31 @@
     </preferences>
     <!--  Componente Oculto -->
 
+<component locate="Center">
+      <driver>common.gui.components.XMLTextArea</driver>
+      <parameters>
+        <arg attribute="enabled">false</arg>
+        <arg attribute="driverEvent" id="nro_comprobante">common.gui.components.GenericData</arg>
+        <arg attribute="keySQL">SEL0189</arg>
+        <arg attribute="rows">100</arg>
+        <arg attribute="colorBackground">202,223,144</arg>
+      </parameters>
+    </component>
+<component>
+    <driver id="nombrecentrocosto">common.gui.components.GenericData</driver>
+    <parameters>
+    <arg attribute="driverEvent" id="nro_comprobante">common.gui.components.GenericData</arg>
+        <arg attribute="keySQL">JBSEL0078</arg>
+      <subarg>
+        <arg attribute="format">TEXT</arg>
+        <arg attribute="name">centro</arg>
+        <arg attribute="size">5</arg>
+        <arg attribute="maxlength">20</arg>
+        <arg attribute="printable">true</arg>
+      </subarg>
+    </parameters>
+  </component>
+
   <component>
     <driver id="hora">common.gui.components.GenericData</driver>
     <parameters>
@@ -1188,9 +1213,274 @@
             </panel>
         </panel>
       </panel>
+      <panel name="CONTABILIZACION" icon="CONTABILIZACION" type="BorderLayout">
+          <panel type="BorderLayout">
+            <component>
+            <driver id="contab">client.gui.components.TableFindData</driver>
+            <parameters>
+                <arg attribute="rows">22</arg>
+                <arg attribute="returnNullValue">true</arg>
+                <arg attribute="colorBackground">251,206,154</arg>
+                <arg attribute="colorSelected">246,168,75</arg>
+                <!-- 
+                    <arg attribute="Query">SEL0268</arg>
+                -->
+                <arg attribute="totales">c,d</arg>
+                <arg attribute="beanshell">c=!"".equals(a) &amp;&amp; d==0.0?c:0.00</arg>
+                <arg attribute="beanshell">d=!"".equals(a) &amp;&amp; c==0.0?d:0.00</arg>
+                <arg attribute="tagData">4</arg>
+                <arg attribute="driverEvent" id="nro_comprobante">common.gui.components.GenericData</arg>
+                <arg attribute="keySQL">LCSEL0628</arg>
+                <subarg>
+                    <arg attribute="name">CUENTA</arg>
+                    <arg attribute="length">90</arg>
+                    <arg attribute="type">STRING</arg>
+                    <arg attribute="enabled">true</arg>
+                    <arg attribute="returnCol">0</arg>
+                    <arg attribute="importValue">cuenta</arg>
+                    <arg attribute="printable">true</arg>
+                </subarg>
+                <subarg>
+                    <arg attribute="name">NAME</arg>
+                    <arg attribute="length">370</arg>
+                    <arg attribute="type">STRING</arg>
+                    <arg attribute="enabled">false</arg>
+                    <arg attribute="queryCol">0</arg>
+                </subarg>
+                <subarg>
+                    <arg attribute="name">DEBITO</arg>
+                    <arg attribute="length">115</arg>
+                    <arg attribute="type">DECIMAL</arg>
+                    <arg attribute="enabled">true</arg>
+                    <arg attribute="returnCol">1</arg>
+                    <arg attribute="printable">true</arg>
+                </subarg>
+                <subarg>
+                    <arg attribute="name">CREDITO</arg>
+                    <arg attribute="length">115</arg>
+                    <arg attribute="type">DECIMAL</arg>
+                    <arg attribute="enabled">true</arg>
+                    <arg attribute="returnCol">2</arg>
+                    <arg attribute="printable">true</arg>
+                </subarg>
+                <subarg>
+                    <arg attribute="name">TAG</arg>
+                    <arg attribute="length">0</arg>
+                    <arg attribute="type">STRING</arg>
+                    <arg attribute="enabled">true</arg>
+                </subarg>
+            </parameters>
+        </component>
+
+            <panel locate="South" type="FlowLayout" align="rigth">
+              <component locate="North">
+                <driver>common.gui.components.XMLLabel</driver>
+                <parameters>
+                  <arg attribute="text">Sumas Iguales</arg>
+                  <arg attribute="alignment">0</arg>
+                </parameters>
+              </component>
+              <component locate="East">
+                <driver id="sum_debe">client.gui.components.TableDataFields</driver>
+                <parameters>
+                  <arg attribute="Panel">false</arg>
+                  <arg attribute="linkTable">contab</arg>
+                  <subarg>
+                    <arg attribute="name">BALANCE</arg>
+                    <arg attribute="format">NUMERIC</arg>
+                    <arg attribute="totalCol">c</arg>
+                    <arg attribute="size">8</arg>
+                    <arg attribute="maxlength">26</arg>
+                    <arg attribute="clean">true</arg>
+                    <arg attribute="enabled">false</arg>
+                    <arg attribute="alignment">RIGHT</arg>
+                    <arg attribute="exportValue">sumdebe</arg>
+                  </subarg>
+                </parameters>
+              </component>
+              <component locate="East">
+                <driver id="sum_haber">client.gui.components.TableDataFields</driver>
+                <parameters>
+                  <arg attribute="Panel">false</arg>
+                  <arg attribute="linkTable">contab</arg>
+                  <subarg>
+                    <arg attribute="name">BALANCE</arg>
+                    <arg attribute="format">NUMERIC</arg>
+                    <arg attribute="totalCol">d</arg>
+                    <arg attribute="size">8</arg>
+                    <arg attribute="maxlength">26</arg>
+                    <arg attribute="clean">true</arg>
+                    <arg attribute="enabled">false</arg>
+                    <arg attribute="alignment">RIGHT</arg>
+                    <arg attribute="exportValue">sumhaber</arg>
+                  </subarg>
+                </parameters>
+              </component>
+              <component locate="East">
+                <driver id="diff">client.gui.components.TableDataFields</driver>
+                <parameters>
+                  <arg attribute="Panel">false</arg>
+                  <arg attribute="linkTable">contab</arg>
+                  <subarg>
+                    <arg attribute="label">Diferencia</arg>
+                    <arg attribute="name">BALANCE</arg>
+                    <arg attribute="format">NUMERIC</arg>
+                    <arg attribute="totalCol">d</arg>
+                    <arg attribute="size">8</arg>
+                    <arg attribute="maxlength">26</arg>
+                    <arg attribute="clean">true</arg>
+                    <arg attribute="enabled">false</arg>
+                    <arg attribute="alignment">RIGHT</arg>
+                    <arg attribute="calculateExportValue">sumdebe-sumhaber</arg>
+                    <arg attribute="exportValue">diff</arg>
+                  </subarg>
+                </parameters>
+              </component>
+              <box locate="west" width="10" />
+            </panel>
+          </panel>
+          </panel>
     </tab>
-    <panel locate="South" type="FlowLayout" />
-    <component locate="South">
+    <panel locate="South" type="BorderLayout">
+    <panel locate="West" type="BorderLayout">
+    <component locate="West">
+            <driver>common.gui.components.XMLLabel</driver>
+            <parameters>
+              <arg attribute="text">Carta</arg>
+              <arg attribute="alignment">0</arg>
+              <arg attribute="font">Dialog,0,12</arg>
+            </parameters>
+          </component>
+    <component locate="Center">
+      <driver id="pagomediacarta">common.gui.components.ButtonsPanel</driver>
+      <parameters>
+        <subarg>
+        <arg attribute="label">PRINT1</arg>
+        <arg attribute="icon">/icons/ico_impresora.png</arg>
+        <arg attribute="keyStroke">F8</arg>
+      </subarg>
+      </parameters>
+      <events>
+        <object>
+          <name>PRINT1</name>
+          <action>
+            <type>printer</type>
+            <printerTemplate>/graphics/TSComprobanteIngresoPaginaCompleta.xml</printerTemplate>
+            <!-- 1 numero -->
+            <component>
+              <driver id="nro_comprobante">common.gui.components.GenericData</driver>
+              <method>getPrintPackage</method>
+            </component>
+
+            <!-- 6 Tercero -->
+            <component>
+              <driver>client.gui.components.FindThird</driver>
+              <method>getPrintPackage</method>
+            </component>  
+
+            <!-- 4 Fecha -->
+            <component>
+              <driver id="fecha">common.gui.components.GenericData</driver>
+              <method>getPrintPackage</method>
+            </component>
+
+            <!-- 12 Valor numero -->
+            <component>
+              <driver id="vpago">common.gui.components.GenericData</driver>
+              <method>getPrintPackage</method>
+            </component>
+
+            <!-- 13 Valor letras -->
+            <component>
+              <driver id="vpago">common.gui.components.GenericData</driver>
+              <method>getPrintPackage</method>
+            </component>
+
+             6
+                <component>
+                    <driver>common.gui.components.XMLTextArea</driver>
+                    <method>getPrintPackage</method>
+                </component>
+
+            <!-- 3 centrocosto -->                        
+            <component>
+              <driver id="nombrecentrocosto">common.gui.components.GenericData</driver>
+              <method>getPrintPackage</method>
+            </component>
+
+            8
+            <component>
+              <driver id="contab">client.gui.components.TableFindData</driver>
+              <method>getAgrupedPrintPackage</method>
+              <parameters>
+                <arg attribute="colum">0</arg>
+                <subarg>
+                  <arg attribute="operation">SUM</arg>
+                  <arg attribute="column">2</arg>
+                </subarg>
+                <subarg>
+                  <arg attribute="operation">SUM</arg>
+                  <arg attribute="column">3</arg>
+                </subarg>
+              </parameters>
+            </component>
+
+            <!-- 9 medios de pago -->
+            <component>
+                <driver>this</driver>
+                <method>getPrintPackage</method>
+                <parameters>
+                    <subarg>
+                        <arg attribute="beanshell">efectivo&gt;0.00?"X":""</arg>
+                        <arg attribute="beanshell">tcheck&gt;0.00?"X":""</arg>
+                        <arg attribute="beanshell">tconsignation&gt;0.00?"X":""</arg>
+                        <arg attribute="beanshell">tcreditcard&gt;0.00?"X":""</arg>
+                    </subarg>
+                </parameters>
+            </component>
+
+            <!-- 5 Usuario -->
+             <component>
+              <driver id="cajero">common.gui.components.GenericData</driver>
+              <method>getPrintPackage</method>
+            </component>  
+
+            <component>
+              <driver id="pagomediacarta">common.gui.components.ButtonsPanel</driver>
+              <method>setEnabled</method>
+              <parameters>
+                <arg attribute="button">PRINT1</arg>
+                <arg attribute="state">true</arg>
+              </parameters>
+            </component>
+
+
+          </action>
+        </object>
+        <object>
+          <name>SALIR</name>
+          <component>
+            <driver>gfforma</driver>
+            <method>setVisible</method>
+            <parameters>
+              <arg>false</arg>
+            </parameters>
+          </component>
+        </object>
+      </events>
+    </component>
+    </panel>
+
+    <panel locate="East" type="BorderLayout">
+    <component locate="West">
+            <driver>common.gui.components.XMLLabel</driver>
+            <parameters>
+              <arg attribute="text">Tirilla</arg>
+              <arg attribute="alignment">0</arg>
+              <arg attribute="font">Dialog,0,12</arg>
+            </parameters>
+          </component>
+    <component locate="Center">
       <driver id="pago">common.gui.components.ButtonsPanel</driver>
       <parameters>
         <arg>PRINT</arg>
@@ -1212,25 +1502,20 @@
               <method>getPrintPackage</method>
             </component>            
 
-            <!-- 1 -->
-            <!-- <component>
-              <driver id="nro_comprobante">common.gui.components.GenericData</driver>
-              <method>getPrintPackage</method>
-            </component> -->
 
-            <!-- 2 -->
+            <!-- 1 -->
             <component>
               <driver id="nro_comprobante">common.gui.components.GenericData</driver>
               <method>getPrintPackage</method>
             </component>
 
-            <!-- 3 Hora-->
+            <!-- 2 Hora-->
             <component>
               <driver id="hora">common.gui.components.GenericData</driver>
               <method>getPrintPackage</method>
             </component>
 
-            <!-- 4 Prefijo -->
+            <!-- 3 Prefijo -->            
             <component>
               <driver>this</driver>
               <method>getPackage</method>
@@ -1241,37 +1526,37 @@
               </parameters>
             </component>
 
-            <!-- 5 Fecha -->
+            <!-- 4 Fecha -->
             <component>
               <driver id="fecha">common.gui.components.GenericData</driver>
               <method>getPrintPackage</method>
             </component>
 
-            <!-- 6 Vendedor -->
+            <!-- 5 Vendedor -->
              <component>
               <driver id="cajero">common.gui.components.GenericData</driver>
               <method>getPrintPackage</method>
             </component>  
 
-            <!-- 7 Tercero -->
+            <!-- 6 Tercero -->
             <component>
               <driver>client.gui.components.FindThird</driver>
               <method>getPrintPackage</method>
             </component>  
 
-            <!-- 8 Linea -->
+            <!-- 7 Linea -->
             <component>
               <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
               <method>getBlankPackage</method>
             </component>
 
-            <!-- 9 Letrero concepto -->
+            <!-- 8 Letrero concepto -->
             <component>
               <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
               <method>getBlankPackage</method>
             </component>
 
-            <!-- 8 Linea -->
+            <!-- 9 Linea -->
             <component>
               <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
               <method>getBlankPackage</method>
@@ -1282,32 +1567,6 @@
               <driver id="cartera">client.gui.components.TableFindData</driver>
               <method>getPrintPackage</method>
             </component>  
-
-            <!-- <component>
-              <driver id="cartera">client.gui.components.TableFindData</driver>
-              <method>generateConcept</method>
-              <parameters>
-                <arg attribute="conceptStart">Abono Documentos:
-                </arg>
-                <arg attribute="conceptEnd">.</arg>
-                <arg attribute="avoidConnectorAtFinal">true</arg>
-                <arg attribute="validColumn">5</arg>
-                <subargs>
-                  <arg attribute="connector">Numero: </arg>
-                  <arg attribute="column">3</arg>
-                  <arg attribute="connector"> por $</arg>
-                  <arg attribute="column">4</arg>
-                  <arg attribute="connector"> abono $</arg>
-                  <arg attribute="column">5</arg>
-                  <arg attribute="connector"> - descuento $</arg>
-                  <arg attribute="column">7</arg>
-                  <arg attribute="connector"> saldo $</arg>
-                  <arg attribute="column">8</arg>
-                  <arg attribute="connector">
-                  </arg>
-                </subargs>
-              </parameters>
-            </component> -->
 
             <!-- 11 Linea -->
             <component>
@@ -1363,11 +1622,13 @@
               <method>getPrintPackage</method>
             </component>            
 
+
             <!-- 20 linea -->
-            <component>
+            <!-- <component>
               <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
               <method>getBlankPackage</method>
             </component>
+             -->
             <component>
               <driver id="pago">common.gui.components.ButtonsPanel</driver>
               <method>setEnabled</method>
@@ -1391,6 +1652,8 @@
         </object>
       </events>
     </component>
+    </panel>
+    </panel>
   </FORM>
   <preferences>
     <size width="990" height="540" />
@@ -1411,6 +1674,7 @@
     <branchPhone>telefono</branchPhone>
     <branchEmail>email</branchEmail>
     <branchCity>ciudad</branchCity>    
+
 
   </preferences>
           <component locate="Center">
@@ -1512,6 +1776,7 @@
                         <arg attribute="enabled">false</arg>
                         <arg attribute="placement">LEFT</arg>
                         <arg attribute="singleIcon">true</arg>
+                        <arg attribute="printable">true</arg>
                         <subarg>
                                 <arg attribute="driverEventClass">client.gui.components.TableFindData</arg>
                                 <arg attribute="method">setQuery</arg>
@@ -1582,6 +1847,7 @@
                 <arg attribute="format">TEXT</arg>
                 <arg attribute="size">9</arg>
                 <arg attribute="maxlength">26</arg>
+                <arg attribute="printable">true</arg>
                 <arg attribute="enabled">true</arg>
                 <arg attribute="clean">false</arg>
                 <arg attribute="foreground">249,87,87</arg>
@@ -1612,8 +1878,10 @@
                 <arg attribute="sqlCode">DGSEL0021</arg>
                 <arg attribute="sqlCode">SEL0343</arg>
                 <arg attribute="sqlCode">DGSEL0019</arg>
+                <arg attribute="sqlCode">LCSEL0628</arg>
+                <arg attribute="sqlCode">SEL0189</arg>
+                <arg attribute="sqlCode">JBSEL0078</arg>                
                 <arg attribute="sqlCodeExportValue">LCSEL0090,horarioatencion,piepaginauno,piepaginados,piepaginatres</arg>
-                <arg attribute="printable">true</arg>
               </subarg>
             </parameters>
           </component>
@@ -1820,6 +2088,7 @@
       <arg attribute="text">:</arg>
       <arg attribute="alignment">LEFT</arg>
       <arg attribute="font">Dialog,1,18</arg>
+      <arg attribute="printable">true</arg>
     </parameters>
   </component>  
   <component locate="East">
@@ -1978,7 +2247,15 @@
         <component>
           <driver id="bigpass">client.gui.components.TableFindData</driver>
           <method>clean</method>
-        </component>        
+        </component>                
+        <component>
+          <driver id="pagomediacarta">common.gui.components.ButtonsPanel</driver>
+          <method>setEnabled</method>
+          <parameters>
+            <arg attribute="button">PRINT1</arg>
+            <arg attribute="state">true</arg>
+          </parameters>
+        </component>
         <component>
           <driver id="pago">common.gui.components.ButtonsPanel</driver>
           <method>setEnabled</method>

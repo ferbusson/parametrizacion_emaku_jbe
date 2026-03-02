@@ -204,7 +204,7 @@
             <arg attribute="centrocosto">getName</arg>
             <arg attribute="tercero">getName</arg>
             <subarg>
-                <arg attribute="accountField">11053501,C</arg>
+                <arg attribute="accountField">11050501,C</arg>
             </subarg>
         </parameters>
     </LNData>
@@ -246,11 +246,11 @@
                 <subarg>
                     <arg attribute="accountCol">IdProdServ,0</arg>
                     <!-- 5% -->
-                    <arg attribute="accountCol">4175560501,6</arg>
+                    <arg attribute="accountCol">41750504,6</arg> OK
                     <!-- 19% -->
-                    <arg attribute="accountCol">4175560502,6</arg>
+                    <arg attribute="accountCol">41750501,6</arg> OK
                     <!-- Excluidas -->
-                    <arg attribute="accountCol">41755610,6</arg>
+                    <arg attribute="accountCol">41750502,6</arg> OK
                     <!-- Exentas -->
                     <arg attribute="accountCol">41755615,6</arg>
 
@@ -258,34 +258,34 @@
                     <arg attribute="accountCol">240905,9</arg>
 
                     <!-- iva 5% -->
-                    <arg attribute="accountCol">24081005,5</arg>
+                    <arg attribute="accountCol">24080102,5</arg> OK
                     <!-- iva 19 servicios% -->
-                    <arg attribute="accountCol">24081006,5</arg>
+                    <arg attribute="accountCol">24080101,5</arg> OK
 
 
                     <!-- asientos de costos -->
                     <!-- 5% -->
                     <!--<arg attribute="accountCostCol">6135560502,1</arg>-->
-                    <arg attribute="accountCostCol">6135560501,1</arg>
+                    <arg attribute="accountCostCol">61350106,1</arg> OK
                     <!-- 19% -->
                     <!--<arg attribute="accountCostCol">6135560504,1</arg>-->
-                    <arg attribute="accountCostCol">6135560502,1</arg>
+                    <arg attribute="accountCostCol">61350101,1</arg> OK
                     <!-- Excluidas -->
                     <!--<arg attribute="accountCostCol">6135561002,1</arg>-->
-                    <arg attribute="accountCostCol">61355610,1</arg>
+                    <arg attribute="accountCostCol">61350102,1</arg> OK
                     <!-- Exentas -->
                     <!--<arg attribute="accountCostCol">6135561502,1</arg>-->
                     <arg attribute="accountCostCol">61355615,1</arg>
 
                     <!-- 5% -->
                     <!--<arg attribute="accountCostCol">14350502,1</arg>-->
-                    <arg attribute="accountCostCol">1435560501,1</arg>
+                    <arg attribute="accountCostCol">14350102,1</arg> OK
                     <!-- 19% -->
                     <!--<arg attribute="accountCostCol">14350504,1</arg>-->
-                    <arg attribute="accountCostCol">1435560502,1</arg>
+                    <arg attribute="accountCostCol">14350101,1</arg> OK
                     <!-- Excluidas -->
                     <!--<arg attribute="accountCostCol">14351002,1</arg>-->
-                    <arg attribute="accountCostCol">14355610,1</arg>
+                    <arg attribute="accountCostCol">14350103,1</arg> OK
                     <!-- Exentas -->
                     <!--<arg attribute="accountCostCol">14351502,1</arg>-->
                     <arg attribute="accountCostCol">14355615,1</arg>
