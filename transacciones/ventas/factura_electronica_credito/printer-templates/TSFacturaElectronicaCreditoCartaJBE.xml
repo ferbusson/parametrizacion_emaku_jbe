@@ -248,6 +248,11 @@
 			<field multipage="true" rownewpage="235" colnewpage="40" row="235" col="40" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
 		</package>
 
+		5a
+	 	<package>
+				<field multipage="true" rownewpage="170" colnewpage="130" row="175" col="130" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
+		</package>
+
 		<!-- 6 fecha -->
 		<package>
 			<field multipage="true" rownewpage="130" colnewpage="100" row="130" col="100" type="DATE" mask="EEEEEE, dd MMMM yyyy" fontName="Dialog" fontSize="8" fontStyle="0"/>

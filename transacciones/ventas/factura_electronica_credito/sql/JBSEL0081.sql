@@ -1,7 +1,9 @@
+drop table if exists cupotercero;
 CREATE TEMP TABLE cupotercero AS
 SELECT 
 	i.id,
 	COALESCE(i.cupomaximo,0) AS cupomaximo,
+	coalesce(i.diascredito,0) as diascredito,
 	i.estado,
 	cu.id_cta,
 	foo.char_cta,

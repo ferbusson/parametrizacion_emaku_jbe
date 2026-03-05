@@ -75,6 +75,24 @@
   </preferences>
   
   <component>
+    <driver id="nombre_comercial">common.gui.components.GenericData</driver>
+    <parameters>
+      <arg attribute="keySQL">JBSEL0083</arg>
+      <arg attribute="driverEvent">client.gui.components.FindThird</arg>
+      <subarg>
+        <arg attribute="format">TEXT</arg>
+        <arg attribute="size">36</arg>
+        <arg attribute="maxlength">200</arg>
+        <arg attribute="enabled">false</arg>
+        <arg attribute="foreground">0,0,0</arg>
+        <arg attribute="background">186,245,248</arg>
+        <arg attribute="clean">true</arg>
+        <arg attribute="printable">true</arg>
+      </subarg>
+    </parameters>
+  </component>
+
+  <component>
           <driver id="ndocumento">common.gui.components.GenericData</driver>
           <parameters>
             <arg attribute="keySQL">LCSEL0459</arg>
@@ -498,6 +516,7 @@
             <arg attribute="sqlCodeWT">LCSEL0478</arg>            <!-- retorna ultimo id_direccion del tercero -->
             <arg attribute="sqlCodeWT">LCSEL0479</arg>            <!-- retorna ultimo id_telefono del tercero -->
             <arg attribute="sqlCodeWT">LCSEL0986</arg>            <!-- retorna 1 si el tercero es empleado 0 en caso contrario -->
+            <arg attribute="sqlCodeWT">JBSEL0083</arg>            <!-- consulta nombre comercial si existe -->            
             <arg attribute="importTypeDocument">codigo_tipo</arg>            
             <arg attribute="enabled">false</arg>
             <arg attribute="exportValue">idtercero</arg>
@@ -2753,6 +2772,12 @@
                   <driver>client.gui.components.FindThird</driver>
                   <method>getPrintPackage</method>
                 </component>
+
+                <component>
+                  <driver id="nombre_comercial">common.gui.components.GenericData</driver>
+                  <method>getPrintPackage</method>
+                </component>
+
                 <!-- 6 -->
                 <component>
                   <driver id="date">common.gui.components.GenericData</driver>

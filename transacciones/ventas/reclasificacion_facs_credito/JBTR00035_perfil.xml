@@ -1,0 +1,139 @@
+<FORM>
+  <preferences>
+    <size height="500" width="550"/>
+    <name>Reclasificación de tipo Crédito Facturas</name>
+    <icon>/icons/ico_ext_diurno_16x16.png</icon>
+    <iconificable/>
+    <resizable />
+    <closable/>
+
+    <exportValue>delete,-1</exportValue>
+    <notCleanExportValue>delete</notCleanExportValue>
+
+  </preferences>
+  <panel locate="North" type="FlowLayout"/>
+  <panel locate="East" type="FlowLayout"/>
+  <panel type="BorderLayout" locate="Center">
+    <panel type="BorderLayout">
+
+      <panel locate="North" type="FlowLayout"/>
+
+      <panel locate="Center" type="BorderLayout">
+        <panel locate="North" type="FlowLayout"/>
+        <panel locate="East" type="FlowLayout"/>
+        <panel locate="West" type="FlowLayout"/>
+        <panel locate="Center" type="BorderLayout">
+          <panel cols="1" locate="Center" rows="1" type="GridLayout">
+            <panel locate="Center" type="BorderLayout">
+              <panel locate="North" type="FlowLayout"/>
+              <component locate="Center">
+                <driver id="facturas">client.gui.components.TableFindData</driver>
+                <parameters>
+                  <arg attribute="rows">17</arg>
+                  <arg attribute="protectSelected">true</arg>
+                  <arg attribute="returnNullValue">true</arg>
+                  <subarg>
+                    <arg attribute="name">Prefijo</arg>
+                    <arg attribute="length">270</arg>
+                    <arg attribute="type">COMBOSQL</arg>
+                    <arg attribute="enabled">true</arg>
+                    <arg attribute="returnCol">0</arg>
+                    <arg attribute="exportValueCombo">codigotipo</arg>
+                    <arg attribute="sqlCombo">JBSEL0084</arg>
+                  </subarg>
+                  <subarg>
+                    <!-- B1 -->
+                    <arg attribute="name">Número</arg>
+                    <arg attribute="length">110</arg>
+                    <arg attribute="type">STRING</arg>
+                    <arg attribute="enabled">true</arg>
+                    <arg attribute="printable">true</arg>
+                    <arg attribute="returnCol">1</arg>
+                  </subarg>
+                  
+                  <subarg>
+                    <arg attribute="name">Tipo Crédito Correcto</arg> <!--el combo retorna el id_cta de la cuenta correcta -->
+                    <arg attribute="length">150</arg>
+                    <arg attribute="type">COMBOSQL</arg>
+                    <arg attribute="enabled">true</arg>
+                    <arg attribute="returnCol">2</arg>
+                    <arg attribute="exportValueCombo">idctaok</arg>
+                    <arg attribute="sqlCombo">JBSEL0085</arg>
+                  </subarg>
+                </parameters>
+              </component>
+            </panel>
+          </panel>
+          <panel locate="South" type="FlowLayout"/>
+        </panel>
+      </panel>
+    </panel>
+  </panel>
+
+<panel locate="South" type="BorderLayout">
+  
+
+  <component locate="East">
+    <driver>common.gui.components.ButtonsPanel</driver>
+    <parameters>
+      <arg>SAVE</arg>
+      <arg>NEW</arg>
+      <arg>EXIT</arg>
+    </parameters>
+    <events>
+      <object>
+        <name>NEW</name>
+
+       
+        <component>
+          <driver id="facturas">client.gui.components.TableFindData</driver>
+          <method>clean</method>
+        </component>
+        <!--  limpiando llaves externas -->
+        <component>
+          <driver>this</driver>
+          <method>cleanExternalValues</method>
+        </component>
+      </object>
+      <object>
+        <name>SAVE</name>
+        <!-- <component>
+          <driver>this</driver>
+          <method>validMultiPackage</method>
+          <parameters>
+            <arg attribute="driver" id="nombre">client.gui.components.EmakuSearchField</arg>
+            <arg attribute="errorMessage">Error, Falta el nombre de la temporada</arg>
+          </parameters>
+        </component>
+        <component>
+          <driver>this</driver>
+          <method>validMultiPackage</method>
+          <parameters>
+            <driver id="dseparado">common.gui.components.GenericData</driver>
+            <driver attribute="driver" id="dseparado">common.gui.components.GenericData</driver>
+            <arg attribute="errorMessage">Error, Faltan los días de separado</arg>
+          </parameters>
+        </component>
+        <component>
+          <driver>this</driver>
+          <method>validMultiPackage</method>
+          <parameters>
+            <driver attribute="driver" id="pvalorseparado">common.gui.components.GenericData</driver>
+            <arg attribute="errorMessage">Error, Falta el porcentaje del valor mínimo para retirar el separado</arg>
+          </parameters>
+        </component> -->
+        
+
+
+        
+        <!-- 1 borra lineas asociadas a la temporada -->
+        <component>
+          <driver id="facturas">client.gui.components.TableFindData</driver>
+          <method>getPackage</method>
+        </component>
+      </object>
+
+    </events>
+  </component>
+</panel>
+</FORM>

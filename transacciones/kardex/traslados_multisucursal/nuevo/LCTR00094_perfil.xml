@@ -263,7 +263,7 @@
         <subarg><!--3 d -->
           <arg attribute="name">Dispo.</arg>
           <arg attribute="length">60</arg>
-          <arg attribute="type">INTEGER</arg>
+          <arg attribute="type">DECIMAL</arg>
           <arg attribute="enabled">false</arg>
           <arg attribute="clean">false</arg>
           <arg attribute="defaultValue">1</arg>
@@ -287,7 +287,7 @@
         <subarg><!--6 g -->
           <arg attribute="name">CANTIDAD</arg>
           <arg attribute="length">80</arg>
-          <arg attribute="type">INTEGER</arg>
+          <arg attribute="type">DECIMAL</arg>
           <arg attribute="enabled">true</arg>
           <arg attribute="returnCol">1</arg>
           <arg attribute="clean">false</arg>

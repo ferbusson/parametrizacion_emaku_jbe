@@ -134,6 +134,25 @@ Preguntas: si el pedido es a credito, se pueden redimir puntos javipuntos?
 
   </preferences>
 
+
+<component>
+    <driver id="nombre_comercial">common.gui.components.GenericData</driver>
+    <parameters>
+      <arg attribute="keySQL">JBSEL0083</arg>
+      <arg attribute="driverEvent">client.gui.components.FindThird</arg>
+      <subarg>
+        <arg attribute="format">TEXT</arg>
+        <arg attribute="size">36</arg>
+        <arg attribute="maxlength">200</arg>
+        <arg attribute="enabled">false</arg>
+        <arg attribute="foreground">0,0,0</arg>
+        <arg attribute="background">186,245,248</arg>
+        <arg attribute="clean">true</arg>
+        <arg attribute="printable">true</arg>
+      </subarg>
+    </parameters>
+  </component>
+
 <!-- este componente va a cargar el idtercero que aplica para javipuntos, puede ser el tercero principal de la factura
 o el carpintero asociado -->
 <component>
@@ -614,6 +633,7 @@ o el carpintero asociado -->
             <arg attribute="sqlCodeWT">LCSEL0478</arg>            <!-- retorna ultimo id_direccion del tercero -->
             <arg attribute="sqlCodeWT">LCSEL0479</arg>            <!-- retorna ultimo id_telefono del tercero -->
             <arg attribute="sqlCodeWT">LCSEL0986</arg>            <!-- retorna 1 si el tercero es empleado 0 en caso contrario -->
+            <arg attribute="sqlCodeWT">JBSEL0083</arg>            <!-- consulta nombre comercial si existe -->            
             <arg attribute="importTypeDocument">codigo_tipo</arg>
             <!-- <arg attribute="sqlInit">LCSEL0103</arg>
             <arg attribute="queryOnInit">true</arg> -->
@@ -3617,23 +3637,23 @@ o el carpintero asociado -->
                   </parameters>
                 </component>
 
-                <!-- <component>
+                <component>
                 <driver id="efectivoneto">common.gui.components.GenericData</driver>
                 <method>validPackage</method>
                 <parameters>
-                  <arg attribute="conditional">"130505".equals(charctatipofactura) &amp;&amp; "0".equals(terceroempleado) || !"130505".equals(charctatipofactura) || "130505".equals(charctatipofactura) &amp;&amp; "1".equals(terceroempleado) &amp;&amp; pagooacredito &lt;= cupocredito</arg>
+                  <arg attribute="conditional">pagooacredito &lt;= cupocredito</arg>
                   <arg attribute="errorMessage">Error, no tiene cupo disponible</arg>
                 </parameters>
-              </component> lust -->
+              </component>
 
-                <!-- <component>
+                <component>
                 <driver id="efectivoneto">common.gui.components.GenericData</driver>
                 <method>validPackage</method>
                 <parameters>
-                  <arg attribute="conditional">"130505".equals(charctatipofactura) &amp;&amp; "0".equals(terceroempleado) || "130505".equals(charctatipofactura) &amp;&amp; "1".equals(terceroempleado) &amp;&amp; facturasvencidas==0.0 || !"130505".equals(charctatipofactura)</arg>
+                  <arg attribute="conditional">facturasvencidas==0.0</arg>
                   <arg attribute="errorMessage">Error, debe cancelar facturas crédito vencidas antes de poder acceder a un nuevo crédito</arg>
                 </parameters>
-              </component> lust -->
+              </component>
 
                 <component>
                   <driver id="pagocarta">common.gui.components.ButtonsPanel</driver>
@@ -3994,6 +4014,10 @@ o el carpintero asociado -->
                   <driver>client.gui.components.FindThird</driver>
                   <method>getPrintPackage</method>
                 </component>
+                <component>
+                  <driver id="nombre_comercial">common.gui.components.GenericData</driver>
+                  <method>getPrintPackage</method>
+                </component>
                 <!-- 6 -->
                 <component>
                   <driver id="date">common.gui.components.GenericData</driver>
@@ -4257,6 +4281,11 @@ o el carpintero asociado -->
                 <!-- 5 -->
                 <component>
                   <driver>client.gui.components.FindThird</driver>
+                  <method>getPrintPackage</method>
+                </component>
+                
+                <component>
+                  <driver id="nombre_comercial">common.gui.components.GenericData</driver>
                   <method>getPrintPackage</method>
                 </component>
                 <!-- 6 -->
