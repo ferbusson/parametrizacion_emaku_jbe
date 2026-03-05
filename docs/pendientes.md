@@ -57,7 +57,7 @@
 - [x] Reporte de Facturas por Tercero
 - [x] Listado de siglas de vendedores por sucursal
 - [x] Hacer que se habilite la edicion de vunitario para los productos de combinaciones
-- [ ] Ver la posibilidad de mejorar el contraste de la letra en el F2
+- [x] Ver la posibilidad de mejorar el contraste de la letra en el F2
 - [x] Habilitar la consulta bodegas para vendedores
 - [x] Habilitar el maestro de productos
 - [x] Habilitar el re envio de facturas por correo electrónico
@@ -95,22 +95,22 @@ Z7 CARPINTERO CENTRO
 mdjw nxaw pblv ikba 
 
 
-- [ ] habilitar reportes de cartera por edades
-- [ ] habilitar reportes de cxp
+- [x] habilitar reportes de cartera por edades
+- [x] habilitar reportes de cxp
 - [ ] hacer que se imprima el nombre del usuario no solo el login
-- [ ] revisar el reporte de libros auxiliares no saca info
+- [x] revisar el reporte de libros auxiliares no saca info
 - [x] exportar el listado de productos para que lo puedan modificar y reimportar
 - [ ] hacer que el tercero rápido guarde la direccion de jbe por defecto
 - [x] hacer que el tercero rápido solo muestre cedula
 - [ ] hacer que el tercero rápido guarde el teléfono de jbe por defecto
 - [x] hacer que se pueda recibir abonos a sistecredito por medio de abono a cartera
 - [x] revisar que el perfil de factura credito este ok en las sucursales
-- [ ] revisar el reporte de informe diario
+- [x] revisar el reporte de informe diario
 - [x] revisar cuentas para transferencias
-- [ ] ver el tema de devoluciones con Jairo, para que las haga el cajero
+- [x] ver el tema de devoluciones con Jairo, para que las haga el cajero
 - [ ] confirmar solicitud de validacion para no se pueda vender productos por debajo del costo
 
-- [ ] agregar impresion carta a abonos a cartera
+- [x] agregar impresion carta a abonos a cartera
 - [x] validar que la factura a credito valide los cupos y dias de crédito
 - [ ] subir precios de lista constructora
 - [x] f2 limitarlo y mostrar saldo y precios
@@ -119,16 +119,16 @@ mdjw nxaw pblv ikba
 - [x] revisar tarjetas y consignaciones en recaudo de revision de arqueos
 - [x] revisar por qué no carga las bodegas en nuevo traslado multisucursal
 - [x] cerrar los dias de credito que dependa del tercero y que no se pueda poner en el formulario
-	consultar cupo
-	poner la consulta de dias de credito en el componente
-	validar que no se pueda guardar si los dias de credito son cero
-	consultar el cupo y validar que la factura sea menor o igual a ese cupo
+- [x] consultar cupo
+- [x] poner la consulta de dias de credito en el componente
+- [x] validar que no se pueda guardar si los dias de credito son cero
+- [x] consultar el cupo y validar que la factura sea menor o igual a ese cupo
 	
-x revisar impresion nueva factura credito los dias de credito deben ser los dias de credito
+- [x] revisar impresion nueva factura credito los dias de credito deben ser los dias de credito
 
-Revisar reporte diario por almacen
-Revisar los ajustes de inventarios
-Revisar porque existe saldo negativo en la referencia 3040105
+- [] Revisar reporte diario por almacen
+- [] Revisar los ajustes de inventarios
+- [] Revisar porque existe saldo negativo en la referencia 3040105
 
 
 - [x] dejar el combo de vendedores en blanco y validar que sea obligatorio (facturas)
@@ -190,7 +190,7 @@ Combo con medios de pago: listado de cuentas de bancos y efectivo
 
 
 ### Tareas:
-- [ ] Agregar calendario para seleccionar fecha
+- [x] Agregar calendario para seleccionar fecha
 - [x] Poner check box en la primera columna
 - [x] Quitar descuentos 2 y 3
 - [x] Calcular descuentos a partir de la base
