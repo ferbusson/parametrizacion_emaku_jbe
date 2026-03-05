@@ -1,14 +1,11 @@
 <FORM>
   <preferences>
-    <size height="500" width="550"/>
+    <size height="420" width="605"/>
     <name>Reclasificación de tipo Crédito Facturas</name>
     <icon>/icons/ico_ext_diurno_16x16.png</icon>
     <iconificable/>
     <resizable />
     <closable/>
-
-    <exportValue>delete,-1</exportValue>
-    <notCleanExportValue>delete</notCleanExportValue>
 
   </preferences>
   <panel locate="North" type="FlowLayout"/>
@@ -34,7 +31,7 @@
                   <arg attribute="returnNullValue">true</arg>
                   <subarg>
                     <arg attribute="name">Prefijo</arg>
-                    <arg attribute="length">270</arg>
+                    <arg attribute="length">290</arg>
                     <arg attribute="type">COMBOSQL</arg>
                     <arg attribute="enabled">true</arg>
                     <arg attribute="returnCol">0</arg>
@@ -45,7 +42,7 @@
                     <!-- B1 -->
                     <arg attribute="name">Número</arg>
                     <arg attribute="length">110</arg>
-                    <arg attribute="type">STRING</arg>
+                    <arg attribute="type">INTEGER</arg>
                     <arg attribute="enabled">true</arg>
                     <arg attribute="printable">true</arg>
                     <arg attribute="returnCol">1</arg>
