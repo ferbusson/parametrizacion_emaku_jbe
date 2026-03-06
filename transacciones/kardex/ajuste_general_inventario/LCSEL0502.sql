@@ -19,6 +19,7 @@ SELECT
 -- 2 diferencia = 0
 -- 3 diferencia < 0
 -- 4 todos los del filtro
+-- 5 ignora filtros y solo tiene en cuenta los recolectores
 
 
 DROP TABLE IF EXISTS aux_productos_filtro;
@@ -48,12 +49,47 @@ WHERE
 	TRIM(s.reco2) != '' AND
 	m.id_marca = i.id_marca AND
 	p.id_item = i.id_item AND		
+	s.id_filtro != '5' and
 	i.id_linea = l.id_linea AND
 	CASE WHEN TRIM(s.id_linea) = '' THEN TRUE ELSE TRIM(s.id_linea)::INTEGER = i.id_linea END AND
 	CASE WHEN TRIM(s.id_grupo) = '' THEN TRUE ELSE TRIM(s.id_grupo)::INTEGER = i.id_grupo END AND
 	CASE WHEN TRIM(s.id_sgrupo) = '' THEN TRUE ELSE TRIM(s.id_sgrupo)::INTEGER = i.id_sgrupo END AND
 	CASE WHEN TRIM(s.id_marca) = '' THEN TRUE ELSE TRIM(s.id_marca)::INTEGER = i.id_marca END AND		
-	CASE WHEN TRIM(s.id_proveedor) = '' THEN TRUE ELSE TRIM(s.id_proveedor)::INTEGER = pm.id_proveedor END;
+	CASE WHEN TRIM(s.id_proveedor) = '' THEN TRUE ELSE TRIM(s.id_proveedor)::INTEGER = pm.id_proveedor end
+union all
+SELECT DISTINCT -- se pone distinct porque un proveedor puede tenere varias marcas y crea repetidos
+	p.codigo,
+	TRIM(i.ref_proveedor) AS ref_proveedor,
+	i.nombre||' '||m.descripcion AS descripcion,
+	m.descripcion AS marca,
+	l.descripcion AS linea,
+	p.pcosto,
+	p.id_prod_serv,
+	a.bodega::INTEGER AS bodega,
+	a.id_filtro
+FROM
+	prod_serv p,
+	ajustes a,
+	info_recolectores ir,
+	documentos d,
+	linea l,
+	marcas m,
+	item i
+LEFT OUTER JOIN
+	proveedor_marca pm
+ON
+	i.id_marca = pm.id_marca
+where
+	d.codigo_tipo = 'DR' and
+	d.estado and
+	d.ndocumento = ir.ndocumento and
+	trim(ir.codigo) = trim(p.codigo) and
+	d.numero >= LPAD(a.reco1,10,'0') AND
+	d.numero <= LPAD(a.reco2,10,'0') AND
+	m.id_marca = i.id_marca AND
+	p.id_item = i.id_item AND		
+	a.id_filtro = '5' and
+	i.id_linea = l.id_linea;
 	
 	
 
@@ -243,6 +279,8 @@ WHERE
 	(COALESCE(foo.sdo,0)-COALESCE(rec.cantidad,0))*-1 = 0) OR
 	(foo.id_filtro = '3' AND
 	(COALESCE(foo.sdo,0)-COALESCE(rec.cantidad,0))*-1 < 0) OR
-	(foo.id_filtro = '4') -- todos los productos del filtro
+	(foo.id_filtro = '4') or-- todos los productos del filtro
+	(foo.id_filtro = '5' AND -- solo productos recolector con diferencia entre saldo sistema y fisico 
+	COALESCE(foo.sdo,0) != COALESCE(rec.cantidad,0))
 ORDER BY
 	foo.descripcion;

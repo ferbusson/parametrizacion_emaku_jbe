@@ -511,7 +511,7 @@
               <arg attribute="importValueCode">hasta</arg>
             <arg attribute="Panel">false</arg>
             <arg attribute="sqlCombo">LCSEL0501</arg>
-            <arg attribute="selectedIndex">1</arg>
+            <arg attribute="selectedIndex">0</arg>
             <arg attribute="exportValue">filtro</arg>
             <arg attribute="clean">false</arg>
             <arg attribute="preferredLength">400</arg>
