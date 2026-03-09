@@ -3646,14 +3646,14 @@ o el carpintero asociado -->
                 </parameters>
               </component>
 
-                <component>
+                <!-- <component>
                 <driver id="efectivoneto">common.gui.components.GenericData</driver>
                 <method>validPackage</method>
                 <parameters>
                   <arg attribute="conditional">facturasvencidas==0.0</arg>
                   <arg attribute="errorMessage">Error, debe cancelar facturas crédito vencidas antes de poder acceder a un nuevo crédito</arg>
                 </parameters>
-              </component>
+              </component> -->
 
                 <component>
                   <driver id="pagocarta">common.gui.components.ButtonsPanel</driver>
