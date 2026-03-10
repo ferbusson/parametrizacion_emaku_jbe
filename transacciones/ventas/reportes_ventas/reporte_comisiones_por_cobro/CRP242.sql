@@ -17,8 +17,18 @@ select
 	gf.id_char as id_char_tercero_factura,
  	trim(coalesce(gf.apellido1,'')||' '||coalesce(gf.apellido2,'')||' '||coalesce(gf.nombre1,'')||' '||coalesce(gf.nombre2,'')||' '||coalesce(gf.razon_social,'')) as nombre_tercero_factura,
 	d.codigo_tipo,
-	d.codigo_tipo||'-'||d.numero::bigint as numero_factura,
-	d.fecha::date + interval '1 day' * id.vencimiento as vencimiento,
+	d.numero::bigint as numero_orden,
+	case when substring(d.codigo_tipo,2,2) = '1' then 'PPAL' 
+		when substring(d.codigo_tipo,2,2) = '2' then 'L21'
+		when substring(d.codigo_tipo,2,2) = '3' then 'CARPI'
+		when substring(d.codigo_tipo,2,2) = '4' then 'AV1515'
+		when substring(d.codigo_tipo,2,2) = '5' then 'ICO'
+		when substring(d.codigo_tipo,2,2) = '6' then 'SIKA'
+		when substring(d.codigo_tipo,2,2) = '7' then 'CARP CENTRO'
+		else '--'
+	end as sucursal,
+	coalesce(rf.prefijo,d.codigo_tipo)||'-'||d.numero::bigint as numero_factura,
+	(d.fecha::date + interval '1 day' * id.vencimiento)::date as vencimiento,
  	case when d.codigo_tipo like 'G%' then SUM(coalesce(haber::numeric,0)) else 0 end as ventas_credito
 from
 	aux_parametros_query a,
@@ -27,6 +37,14 @@ inner join
 	info_documento id
 on
 	d.ndocumento = id.ndocumento
+inner join
+	resolucion_documento rd
+on
+	d.ndocumento = rd.ndocumento
+inner join
+	resolucion_facturacion rf
+on
+	rd.id_resolucion_facturacion = rf.id_resolucion_facturacion 
 inner join
 	tercero_def td
 on
@@ -63,6 +81,7 @@ group by
  	trim(coalesce(g.apellido1,'')||' '||coalesce(g.apellido2,'')||' '||coalesce(g.nombre1,'')||' '||coalesce(g.nombre2,'')||' '||coalesce(g.razon_social,'')),
 	d.ndocumento,
 	d.codigo_tipo,
+	rf.prefijo,
 	gf.id_char,
  	trim(coalesce(gf.apellido1,'')||' '||coalesce(gf.apellido2,'')||' '||coalesce(gf.nombre1,'')||' '||coalesce(gf.nombre2,'')||' '||coalesce(gf.razon_social,'')),
  	id.vencimiento,
@@ -110,6 +129,8 @@ select
 	a.id_char_tercero_factura,
  	a.nombre_tercero_factura,
 	a.codigo_tipo,
+	a.numero_orden,
+	a.sucursal,
 	a.numero_factura,
 	a.vencimiento,
 	p.fecha_pago,
@@ -138,6 +159,8 @@ group by
 	a.id_char_tercero_factura,
  	a.nombre_tercero_factura,
 	a.codigo_tipo,
+	a.numero_orden,
+	a.sucursal,
 	a.numero_factura,
 	a.vencimiento,
 	p.fecha_pago,
@@ -155,6 +178,7 @@ select
 	a.id_char_tercero_factura,
  	a.nombre_tercero_factura,
 	a.codigo_tipo,
+	a.sucursal,
 	a.numero_factura,
 	a.vencimiento,
 	a.fecha_pago,
@@ -168,4 +192,8 @@ from
 inner join
 	comisiones_vendedores c
 on
-	a.id_comision = c.id_comision;
+	a.id_comision = c.id_comision
+ORDER by
+	a.sigla,
+	a.codigo_tipo,
+	a.numero_orden;

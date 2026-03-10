@@ -1,0 +1,118 @@
+<FORM>
+    <preferences>
+        <size width="370" height="165" />
+        <name>Reporte Comisiones por Cobro</name>
+        <icon>REPORT</icon>
+        <iconificable />
+        <resizable />
+        <closable />
+    </preferences>
+    <panel locate="North" type="FlowLayout" />
+    <panel locate="West" type="FlowLayout" />
+    <panel locate="East" type="FlowLayout" />
+  <panel locate="Center" type="BorderLayout">
+    <panel locate="West" type="GridLayout" rows="3" cols="1">
+      <component>
+        <driver>common.gui.components.XMLLabel</driver>
+        <parameters>
+          <arg attribute="text">Fecha Desde</arg>
+        </parameters>
+      </component>
+      <component>
+        <driver>common.gui.components.XMLLabel</driver>
+        <parameters>
+          <arg attribute="text">Fecha Hasta</arg>
+        </parameters>
+      </component>
+      <component>
+        <driver>common.gui.components.XMLLabel</driver>
+        <parameters>
+          <arg attribute="text">Vendedor</arg>
+        </parameters>
+      </component>
+    </panel>
+    <panel locate="Center" type="GridLayout" rows="3" cols="1">
+      <component>
+        <driver id="fechai">common.gui.components.XMLDateField</driver>
+        <parameters>
+          <arg attribute="exportValue">fechai</arg>
+        </parameters>
+      </component>
+      <component>
+        <driver id="fechaf">common.gui.components.XMLDateField</driver>
+        <parameters>
+          <arg attribute="exportValue">fechaf</arg>
+        </parameters>
+      </component>
+      <component locate="Center">
+        <driver id="idt">client.gui.components.EmakuSearchField</driver>
+        <parameters>
+          <arg attribute="size">15</arg>
+          <arg attribute="maxlength">26</arg>
+          <arg attribute="nullValue">true</arg>
+          <arg attribute="exportValue">keyword</arg>
+          <arg attribute="format">TEXT</arg>
+          <arg attribute="sqlCombo">SEL0324</arg>
+          <arg attribute="blankArgs">false</arg>
+          <arg attribute="keyDataSearch">searchProd</arg>
+          <arg attribute="repeatData">2</arg>
+          <arg attribute="noDataBeep">true</arg>
+          <arg attribute="noDataMessage">No se encontro registros</arg>
+          <arg attribute="selectedIndex">1</arg>
+          <arg attribute="enabled">true</arg>
+          <arg attribute="clean">true</arg>
+        </parameters>
+      </component>
+    </panel>
+  </panel>
+    <component locate="South">
+        <driver>common.gui.components.ButtonsPanel</driver>
+        <parameters>
+            <subarg>
+                <arg attribute="label">REPORT</arg>
+                <arg attribute="icon">REPORT</arg>
+                <arg attribute="keyStroke">F9</arg>
+                <arg attribute="typePackage">REPORTREQUEST</arg>
+                <arg attribute="idReport">CRE0242</arg>
+            </subarg>
+            <arg>NEW</arg>
+            <arg>EXIT</arg>
+        </parameters>
+        <events>
+            <object>
+                <name>NEW</name>
+        <component>
+          <driver>this</driver>
+          <method>cleanExternalValues</method>
+        </component>
+                <component>
+                    <driver id="fechai">common.gui.components.XMLDateField</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="fechaf">common.gui.components.XMLDateField</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                  <driver id="idt">client.gui.components.EmakuSearchField</driver>
+                    <method>clean</method>
+                </component>
+            </object>
+            <object>
+                <name>REPORT</name>
+        <component>
+          <driver>this</driver>
+          <method>getPackage</method>
+          <parameters>
+          <arg attribute="blankPackage">true</arg>
+            <subarg>
+              <arg attribute="importValue">fechai</arg>
+              <arg attribute="importValue">fechaf</arg>
+              <arg attribute="importValue">keyword</arg>
+            </subarg>
+          </parameters>
+        </component>
+            </object>
+        </events>
+    </component>
+</FORM>
