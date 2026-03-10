@@ -32,7 +32,7 @@
       <arg attribute="tercero">getName</arg>
       <arg attribute="centrocosto">getName</arg>
       <subarg>
-        <arg attribute="accountField">421040,C</arg>
+        <arg attribute="accountField">42104001,C</arg>
       </subarg>
     </parameters>
   </LNData>
@@ -348,9 +348,11 @@
       <driver>LNSelectedField</driver>
       <method>getSubpackage</method>
       <parameters>
-        <arg attribute="sql">INS0072</arg>
-        <arg attribute="fields">2,3,4</arg>
+        <arg attribute="sql">LCINS0093</arg>
+        <arg attribute="fields">2,3,4,1,5</arg>
         <arg attribute="conditional">B&gt;0</arg>
+        <arg attribute="discartKey">idTercero</arg>
+        <arg attribute="discartKey">centrocosto</arg>
       </parameters>
     </LNData>
     <LNData>
@@ -361,6 +363,7 @@
         <arg attribute="naturaleza">C</arg>
         <arg attribute="debuging">true</arg>
         <arg attribute="centrocosto">getName</arg>
+        <arg attribute="tercero">getName</arg>
         <subarg>
           <arg attribute="accountKey">0</arg>
           <arg attribute="accountData">1</arg>
@@ -402,9 +405,11 @@
       <driver>LNSelectedField</driver>
       <method>getFields</method>
       <parameters>
-        <arg attribute="sql">INS0072</arg>
-        <arg attribute="fields">2,3,4</arg>
+        <arg attribute="sql">LCINS0093</arg>
+        <arg attribute="fields">2,3,4,1,5</arg>
         <arg attribute="conditional">B&gt;0</arg>
+        <arg attribute="discartKey">idTercero</arg>
+        <arg attribute="discartKey">centrocosto</arg>
       </parameters>
     </LNData>
     <LNData>
@@ -415,6 +420,7 @@
         <arg attribute="Concepto">Abono a CxP segun comprobante de egreso - Rete ICA</arg>
         <arg attribute="naturaleza">C</arg>
         <arg attribute="centrocosto">getName</arg>
+        <arg attribute="tercero">getName</arg>
         <subarg>
           <arg attribute="accountKey">0</arg>
           <arg attribute="accountData">1</arg>

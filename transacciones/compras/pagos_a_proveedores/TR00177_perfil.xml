@@ -2,7 +2,7 @@
 <FORM>
   <FORM>
     <preferences>
-      <size width="800" height="650"/>
+      <size width="800" height="660"/>
       <name>PAYMENTFORM</name>
       <icon>PAGO_PROVE</icon>
       <iconificable/>
@@ -577,6 +577,7 @@
                     <arg attribute="calculateExportValue">totalnotascredito+totaldescuentostablaprin+partidadoblecredito</arg>
                     <!-- <arg attribute="totalCol">i</arg> -->
                     <arg attribute="exportValue">vdescuento</arg>
+                    <arg attribute="printable">true</arg>
                     <!-- <arg attribute="background">0,0,0</arg> -->
                     <!-- <arg attribute="sendRecord">"421040","","0",value,"DC"</arg> -->
                   </subarg>
@@ -708,7 +709,8 @@
                 <arg attribute="totales">e</arg>
                 <arg attribute="returnNullValue">true</arg>
                 <arg attribute="importTotalCol">w,totalcomp</arg>
-                <arg attribute="beanshell">e=(w/1.16)&gt;c?((w/1.16)*d)/100:0</arg>
+                <arg attribute="beanshell">e=w&gt;c?(w*d)/100:0</arg>
+                <arg attribute="formula">g=w</arg>
                 <arg attribute="enabled">false</arg>
                 <!-- <arg attribute="sendRecord">0,"","0",4,"RF"</arg> -->
                 <subarg>
@@ -751,6 +753,13 @@
                   <arg attribute="type">INTEGER</arg>
                   <arg attribute="enabled">false</arg>
                   <arg attribute="returnCol">2</arg>
+                </subarg>
+                <subarg>
+                  <arg attribute="name">valorbase</arg>
+                  <arg attribute="length">10</arg>
+                  <arg attribute="type">DECIMAL</arg>
+                  <arg attribute="enabled">false</arg>
+                  <arg attribute="returnCol">5</arg>
                 </subarg>
               </parameters>
             </component>
@@ -795,7 +804,7 @@
                 <arg attribute="totales">e</arg>
                 <arg attribute="returnNullValue">true</arg>
                 <arg attribute="importTotalCol">q,totalcomp</arg>
-                <arg attribute="beanshell">e=q/1.16&gt;c?((q*(0.16/1.16))*d)/100:0</arg>
+                <arg attribute="beanshell">e=q/1.19&gt;c?((q*(0.19/1.19))*d)/100:0</arg>
                 <arg attribute="enabled">false</arg>
                 <!-- <arg attribute="sendRecord">0,"","0",4,"RI"</arg> -->
                 <subarg>
@@ -882,7 +891,8 @@
                 <arg attribute="totales">e</arg>
                 <arg attribute="returnNullValue">true</arg>
                 <arg attribute="importTotalCol">w,totalcomp</arg>
-                <arg attribute="beanshell">e=w/1.16&gt;c?((w/1.16)*d)/1000:0</arg>
+                <arg attribute="beanshell">e=w&gt;c?(w*d)/100:0</arg>
+                <arg attribute="formula">g=w</arg>
                 <arg attribute="enabled">false</arg>
                 <!-- <arg attribute="sendRecord">0,"","0",4,"RC"</arg> -->
                 <subarg>
@@ -918,7 +928,7 @@
                   <arg attribute="type">INTEGER</arg>
                   <arg attribute="enabled">false</arg>
                   <arg attribute="returnCol">1</arg>
-                  <arg attribute="importValue">stotal</arg>
+                  <!-- <arg attribute="importValue">stotal</arg> -->
                 </subarg>
                 <subarg>
                   <arg attribute="name">id_cta</arg>
@@ -926,6 +936,13 @@
                   <arg attribute="type">INTEGER</arg>
                   <arg attribute="enabled">false</arg>
                   <arg attribute="returnCol">2</arg>
+                </subarg>
+                <subarg>
+                  <arg attribute="name">valorbase</arg>
+                  <arg attribute="length">10</arg>
+                  <arg attribute="type">DECIMAL</arg>
+                  <arg attribute="enabled">false</arg>
+                  <arg attribute="returnCol">5</arg>
                 </subarg>
               </parameters>
             </component>
@@ -1102,6 +1119,50 @@
             </subarg>
           </parameters>
         </component>
+        <panel locate="South" type="BorderLayout">
+        <component locate="North"><!--total antes de iva-->
+            <driver id="totalbase">client.gui.components.TableDataFields</driver>
+            <parameters>
+              <arg attribute="Panel">false</arg>
+              <arg attribute="linkTable">cartera</arg>
+              <subarg>
+                <arg attribute="name">TOTAL</arg>
+                <arg attribute="format">NUMERIC</arg>
+                <arg attribute="exportValue">totalbase</arg>
+                <arg attribute="size">10</arg>
+                <arg attribute="maxlength">26</arg>
+                <arg attribute="font">Dialog,0,18</arg>
+                <arg attribute="foreground">87,244,249</arg>
+                <arg attribute="background">0,0,0</arg>
+                <arg attribute="alignment">RIGHT</arg>
+                <arg attribute="totalCol">u</arg>
+                <arg attribute="enabled">false</arg>
+                <arg attribute="printable">true</arg>
+              </subarg>
+            </parameters>
+          </component>
+          <component locate="Center"><!--total iva-->
+            <driver id="totaliva">client.gui.components.TableDataFields</driver>
+            <parameters>
+              <arg attribute="Panel">false</arg>
+              <arg attribute="linkTable">cartera</arg>
+              <subarg>
+                <arg attribute="name">TOTAL</arg>
+                <arg attribute="format">NUMERIC</arg>
+                <arg attribute="exportValue">totaliva</arg>
+                <arg attribute="size">10</arg>
+                <arg attribute="maxlength">26</arg>
+                <arg attribute="font">Dialog,0,18</arg>
+                <arg attribute="foreground">87,244,249</arg>
+                <arg attribute="background">0,0,0</arg>
+                <arg attribute="alignment">RIGHT</arg>
+                <arg attribute="totalCol">v</arg>
+                <arg attribute="enabled">false</arg>
+                <arg attribute="printable">true</arg>
+              </subarg>
+            </parameters>
+          </component>
+        </panel>
       </panel>
     </tab>
     <panel locate="South" type="FlowLayout"/>
@@ -1200,6 +1261,14 @@
               </parameters>
           </component>
 
+          <component>
+              <driver>this</driver>
+              <method>validMultiPackage</method>
+              <parameters>
+                  <driver attribute="driver" id="mediosdepago">client.gui.components.XMLComboBox</driver>
+                  <arg attribute="errorMessage">Oops! Selecciona el medio de pago por favor</arg>
+              </parameters>
+          </component>
             
 
             <!-- <component>
@@ -1415,11 +1484,13 @@
                 <method>getPrintPackage</method>
             </component>
             <component>
-                <driver id="totaldescuento">client.gui.components.TableDataFields</driver>
+                <!-- <driver id="totaldescuento">client.gui.components.TableDataFields</driver> -->
+                <driver id="tdescuento">client.gui.components.TableDataFields</driver>
                 <method>getPrintPackage</method>
             </component>
             <component>
-                <driver id="total_comprobante">client.gui.components.TableDataFields</driver>
+                <!-- <driver id="total_comprobante">client.gui.components.TableDataFields</driver> -->
+                <driver id="vpago">client.gui.components.TableDataFields</driver>
                 <method>getPrintPackage</method>
             </component>
 
@@ -1481,48 +1552,7 @@
     <exportValue>idbanco,1266</exportValue>
     <consecutive>CE</consecutive>
   </preferences>
-          <component locate="Center"><!--total antes de iva-->
-            <driver id="totalbase">client.gui.components.TableDataFields</driver>
-            <parameters>
-              <arg attribute="Panel">false</arg>
-              <arg attribute="linkTable">cartera</arg>
-              <subarg>
-                <arg attribute="name">TOTAL</arg>
-                <arg attribute="format">NUMERIC</arg>
-                <arg attribute="exportValue">totalbase</arg>
-                <arg attribute="size">10</arg>
-                <arg attribute="maxlength">26</arg>
-                <arg attribute="font">Dialog,0,18</arg>
-                <arg attribute="foreground">87,244,249</arg>
-                <arg attribute="background">0,0,0</arg>
-                <arg attribute="alignment">RIGHT</arg>
-                <arg attribute="totalCol">r</arg>
-                <arg attribute="enabled">false</arg>
-                <arg attribute="printable">true</arg>
-              </subarg>
-            </parameters>
-          </component>
-          <component locate="Center"><!--total iva-->
-            <driver id="totaliva">client.gui.components.TableDataFields</driver>
-            <parameters>
-              <arg attribute="Panel">false</arg>
-              <arg attribute="linkTable">cartera</arg>
-              <subarg>
-                <arg attribute="name">TOTAL</arg>
-                <arg attribute="format">NUMERIC</arg>
-                <arg attribute="exportValue">totaliva</arg>
-                <arg attribute="size">10</arg>
-                <arg attribute="maxlength">26</arg>
-                <arg attribute="font">Dialog,0,18</arg>
-                <arg attribute="foreground">87,244,249</arg>
-                <arg attribute="background">0,0,0</arg>
-                <arg attribute="alignment">RIGHT</arg>
-                <arg attribute="totalCol">t</arg>
-                <arg attribute="enabled">false</arg>
-                <arg attribute="printable">true</arg>
-              </subarg>
-            </parameters>
-          </component>
+          
           <component locate="Center"><!--total facturas-->
             <driver id="totalfacturas">client.gui.components.TableDataFields</driver>
             <parameters>
@@ -1784,8 +1814,11 @@
         <arg attribute="formula">k=f-o</arg>
         <!--saldo: valor factura - descuento - pago-->
         <arg attribute="beanshell">s=a?1:0</arg>
+
+        <arg attribute="beanshell">u=a?r:0</arg>
+        <arg attribute="beanshell">v=a?t:0</arg>
         <!--contador linea-->
-        <arg attribute="totales">f,g,i,k,o,r,s,t</arg>
+        <arg attribute="totales">f,g,i,k,o,s,u,v</arg>
         <arg attribute="returnNullValue">true</arg>
         <arg attribute="sqlMultiCode">LCSEL0636,15,6,8</arg>
         <subarg>
@@ -1943,6 +1976,20 @@
           <arg attribute="type">DECIMAL</arg>
           <arg attribute="enabled">false</arg>
           <arg attribute="printable">true</arg>
+        </subarg>
+        <subarg>
+          <!--20u -->
+          <arg attribute="name">baseseleccion</arg>
+          <arg attribute="length">10</arg>
+          <arg attribute="type">DECIMAL</arg>
+          <arg attribute="enabled">false</arg>
+        </subarg>
+        <subarg>
+          <!--21v -->
+          <arg attribute="name">ivaseleccion</arg>
+          <arg attribute="length">10</arg>
+          <arg attribute="type">DECIMAL</arg>
+          <arg attribute="enabled">false</arg>
         </subarg>
       </parameters>
     </component>
