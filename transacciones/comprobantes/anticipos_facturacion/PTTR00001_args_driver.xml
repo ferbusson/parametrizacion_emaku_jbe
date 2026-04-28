@@ -174,7 +174,7 @@
           <arg attribute="centrocosto">getName</arg>
           <arg attribute="tercero">getName</arg>
           <subarg>
-            <arg attribute="accountField">28050501,C</arg>
+            <arg attribute="accountField">28050101,C</arg>
           </subarg>
         </parameters>
       </LNData>

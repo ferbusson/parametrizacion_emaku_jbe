@@ -3303,14 +3303,32 @@
                 </component>
 
                 <!-- 5 -->
-                <component>
+                <!-- <component>
                   <driver id="cartera">client.gui.components.TableFindData</driver>
                   <method>getPrintValidPackage</method>
                   <parameters>
                       <arg attribute="validMinValue">14</arg>
                       <arg attribute="validValue">0</arg>
                   </parameters>
-                </component>  
+                </component>   -->
+
+                <component>
+                  <driver id="cartera">client.gui.components.TableFindData</driver>
+                  <method>generateConcept</method>
+                  <parameters>
+                      <arg attribute="conceptStart">Abono a facturas: </arg>
+                      <arg attribute="conceptEnd">.</arg>
+                      <arg attribute="avoidConnectorAtFinal">true</arg>
+                      <arg attribute="validColumn">5</arg>
+                      <subargs>
+                      <arg attribute="column">3</arg>
+                      <arg attribute="connector"> por </arg>
+                      <arg attribute="column">5</arg>
+                      <arg attribute="connector"> descuento </arg>
+                      <arg attribute="column">7</arg>
+                      </subargs>
+                  </parameters>
+                </component>
 
             <!-- 3 centrocosto -->                        
             <component>
@@ -3472,7 +3490,7 @@
                 <driver id="tpagar">common.gui.components.GenericData</driver>
                 <method>validPackage</method>
                 <parameters>
-                    <arg attribute="maxValue">efectivo+tcreditcard+tchecksodexobigpass+tconsignation+totalcredibancoparcial+totalpagosmanuales:vrpag</arg>
+                    <arg attribute="maxValue">efectivo+tcreditcard+tchecksodexobigpass+tconsignation+totalanticipos+totalcredibancoparcial+totalpagosmanuales:vrpag</arg>
                     <arg attribute="errorMessage">Error, el total a pagar debe ser mayor o igual al valor del comprobante</arg>
                 </parameters>
                 </component>
@@ -3480,7 +3498,7 @@
                 <driver id="tpagar">common.gui.components.GenericData</driver>
                 <method>validPackage</method>
                 <parameters>
-                    <arg attribute="maxValue">vrpag+1:tcreditcard+tchecksodexobigpass+tconsignation+totalcredibancoparcial+totalpagosmanuales</arg>
+                    <arg attribute="maxValue">vrpag+1:tcreditcard+tchecksodexobigpass+tconsignation+totalanticipos+totalcredibancoparcial+totalpagosmanuales</arg>
                     <arg attribute="errorMessage">Error, la suma de pagos en tarjetas, cheques o consignaciones no debe exceder el total del comprobante</arg>
                 </parameters>
                 </component>
@@ -3549,6 +3567,7 @@
                       <arg attribute="importValue">tconsignation</arg>
                       <arg attribute="importValue">cambio</arg>
                       <arg attribute="importValue">totalcomp</arg>
+                      <arg attribute="importValue">totalanticipos</arg>                      
                       </subarg>
                   </parameters>
                 </component>
@@ -3869,6 +3888,16 @@
                       <arg attribute="validValue">0</arg>
                   </parameters>
                 </component>
+                14
+                <component>
+                  <driver id="anticipos">client.gui.components.TableFindData</driver>
+                  <method>getPackage</method>
+                  <parameters>
+                      <arg attribute="validMinValue">5</arg>
+                      <arg attribute="validValue">0</arg>
+                  </parameters>
+                </component>
+
 
                 12
                 <component>

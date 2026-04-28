@@ -37,7 +37,7 @@ ON
 WHERE 
 	d.estado = true
 	and c.nfactura is null
-	and c.id_cta = (select id_cta from cuentas where char_cta = '28050501') --cuenta anticipos
+	and c.id_cta in (select id_cta from cuentas where char_cta in ('28050501','28050101')) --cuenta anticipos
 	and c.idtercero = '?'
 ORDER BY 
 	fecha, 

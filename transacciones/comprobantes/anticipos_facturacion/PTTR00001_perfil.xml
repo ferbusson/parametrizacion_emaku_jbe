@@ -20,6 +20,52 @@
   </preferences>
   <!-- ocultos -->
 
+<component>
+    <driver id="piepaginauno">common.gui.components.GenericData</driver>
+    <parameters>
+      <subarg>
+        <arg attribute="format">TEXT</arg>
+        <arg attribute="exportValue">piepaginauno</arg>
+        <arg attribute="name">piepaginauno</arg>
+        <arg attribute="size">20</arg>
+        <arg attribute="maxlength">200</arg>
+        <arg attribute="sqlInit">LCSEL0094</arg>
+        <arg attribute="queryOnInit">true</arg>
+        <arg attribute="importValue">codigo_tipo</arg>
+      </subarg>
+    </parameters>
+  </component>
+  <component>
+    <driver id="piepaginados">common.gui.components.GenericData</driver>
+    <parameters>
+      <subarg>
+        <arg attribute="format">TEXT</arg>
+        <arg attribute="exportValue">piepaginados</arg>
+        <arg attribute="name">piepaginados</arg>
+        <arg attribute="size">20</arg>
+        <arg attribute="maxlength">200</arg>
+        <arg attribute="sqlInit">LCSEL0095</arg>
+        <arg attribute="queryOnInit">true</arg>
+        <arg attribute="importValue">codigo_tipo</arg>
+      </subarg>
+    </parameters>
+  </component>
+  <component>
+    <driver id="piepaginatres">common.gui.components.GenericData</driver>
+    <parameters>
+      <subarg>
+        <arg attribute="format">TEXT</arg>
+        <arg attribute="exportValue">piepaginatres</arg>
+        <arg attribute="name">piepaginatres</arg>
+        <arg attribute="size">20</arg>
+        <arg attribute="maxlength">200</arg>
+        <arg attribute="sqlInit">LCSEL0096</arg>
+        <arg attribute="queryOnInit">true</arg>
+        <arg attribute="importValue">codigo_tipo</arg>
+      </subarg>
+    </parameters>
+  </component>
+  
     <component>
     <driver id="nitalterno">common.gui.components.GenericData</driver>
     <parameters>
