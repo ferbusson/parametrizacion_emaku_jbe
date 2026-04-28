@@ -351,24 +351,7 @@ o el carpintero asociado -->
         <arg attribute="importValue">codigo_tipo</arg>
       </subarg>
     </parameters>
-  </component>
-  <component>
-    <driver id="totaljavipuntosgenerados">client.gui.components.TableDataFields</driver>
-    <parameters>
-      <arg attribute="Panel">false</arg>
-      <subarg>
-        <arg attribute="name">totaljavipuntosgenerados</arg>
-        <arg attribute="format">NUMERIC</arg>
-        <arg attribute="size">10</arg>
-        <arg attribute="clean">false</arg>
-        <arg attribute="maxlength">26</arg>
-        <arg attribute="enabled">false</arg>
-        <arg attribute="alignment">RIGHT</arg>
-        <arg attribute="calculateBSExportValue">(puntosredimidos*25)/1000&gt;1?totaljavipuntosgenerados-(puntosredimidos*25)/1000:totaljavipuntosgenerados</arg> <!-- si se redimen puntos estos se restan del total de puntos que se estan generando -->
-        <arg attribute="printable">true</arg>
-      </subarg>
-    </parameters>
-  </component>
+  </component>  
 
   <!-- Base IVA gravados -->
   <component>
@@ -410,7 +393,7 @@ o el carpintero asociado -->
   </component>
 
   <!-- total sin retenciones -->
-  <component>
+  <!-- <component>
     <driver id="totalmenosreteglobal">client.gui.components.TableDataFields</driver>
     <parameters>
       <arg attribute="Panel">false</arg>
@@ -423,11 +406,11 @@ o el carpintero asociado -->
         <arg attribute="enabled">false</arg>
         <arg attribute="alignment">RIGHT</arg>
         <arg attribute="exportValue">totalmenosreteglobal</arg>
-        <arg attribute="calculateExportValue">totalfact-(trfuente+triva+trica+puntosredimidosenpesos)</arg>
+        <arg attribute="calculateExportValue">totalfact-(trfuente+triva+trica)</arg> aqui lo quite
         <arg attribute="printable">true</arg>
       </subarg>
     </parameters>
-  </component>
+  </component> -->
   <component>
     <driver id="id_res_fact">client.gui.components.TableDataFields</driver>
     <parameters>
@@ -923,7 +906,7 @@ o el carpintero asociado -->
                   <arg attribute="foreground">0,0,0</arg>
                   <arg attribute="background">152,251,152</arg>
                   <arg attribute="alignment">RIGHT</arg>
-                  <arg attribute="calculateExportValue">totalfact-(trfuente+triva+trica+puntosredimidosenpesos)</arg>
+                  <arg attribute="calculateExportValue">totalfact-(trfuente+triva+trica)</arg> <!-- lo quite de aqui -->
                 </subarg>
               </parameters>
             </component>
@@ -1134,9 +1117,9 @@ o el carpintero asociado -->
           <!-- base 5% -->
           <arg attribute="beanshell">u=s==&quot;10&quot;?l:0</arg>
           <!-- IVA 5% -->
-          <arg attribute="beanshell">v=s==&quot;5&quot;?k:0</arg>
+          <arg attribute="beanshell">v=s==&quot;5&quot;||s==&quot;16&quot;||s==&quot;17&quot;||s==&quot;18&quot;||s==&quot;19&quot;||s==&quot;20&quot;||s==&quot;21&quot;||s==&quot;22&quot;?k:0</arg>
           <!-- base 19% -->
-          <arg attribute="beanshell">w=s==&quot;5&quot;?l:0</arg>
+          <arg attribute="beanshell">w=s==&quot;5&quot;||s==&quot;16&quot;||s==&quot;17&quot;||s==&quot;18&quot;||s==&quot;19&quot;||s==&quot;20&quot;||s==&quot;21&quot;||s==&quot;21&quot;?l:0</arg>
           <!-- IVA 19% -->
           <arg attribute="beanshell">x=s==&quot;13&quot;&amp;&amp;!&quot;28312&quot;.equals(n)?k:0</arg>
           <!-- base exento -->
@@ -1908,7 +1891,8 @@ o el carpintero asociado -->
               <arg attribute="maxlength">26</arg>
               <arg attribute="enabled">false</arg>
               <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="totalCol">j</arg>
+              <!-- <arg attribute="totalCol">j</arg> -->
+              <arg attribute="calculateExportValue">subtotalsinbolsa-netosinbolsa</arg>
               <arg attribute="exportValue">vdescuentoglobal</arg>
               <arg attribute="return">false</arg>
               <arg attribute="foreground">0,0,0</arg>
@@ -2814,7 +2798,7 @@ o el carpintero asociado -->
           <arg attribute="enabled">false</arg>
           <arg attribute="alignment">RIGHT</arg>
           <arg attribute="exportValue">totalmenosreteglobal</arg>
-          <arg attribute="calculateExportValue">totalfact-(trfuente+triva+trica+puntosredimidosenpesos)</arg>
+          <arg attribute="calculateExportValue">totalfact-(trfuente+triva+trica)</arg> <!-- aqui tambien lo quite -->
           <arg attribute="printable">true</arg>
         </subarg>
       </parameters>
@@ -3204,7 +3188,7 @@ o el carpintero asociado -->
                     <arg attribute="maxlength">26</arg>
                     <arg attribute="exportValue">totalfacturamenosretenciones</arg>
                     <arg attribute="clean">true</arg>
-                    <arg attribute="calculateExportValue">(totalfact)-(trfuente+triva+trica+puntosredimidosenpesos)</arg>
+                    <arg attribute="calculateExportValue">(totalfact)-(trfuente+triva+trica)</arg> <!-- de aqui lo quite porque es el total -->
                     <arg attribute="font">Dialog,1,20</arg>
                     <arg attribute="alignment">RIGHT</arg>
                     <arg attribute="enabled">false</arg>
@@ -3525,7 +3509,7 @@ o el carpintero asociado -->
                       <!--           <arg attribute="calculateBSExportValue">(tcreditcard+pagooacredito+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+efectivot+tconsignation)&gt;(totalfact-(trfuente+triva+trica+puntosredimidosenpesos))&amp;&amp;(tcreditcard+pagooacredito+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation)&lt;(totalfact-(trfuente+triva+trica+puntosredimidosenpesos))?(efectivot+tcreditcard+pagooacredito+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation)-(totalfact-(trfuente+triva+trica+puntosredimidosenpesos)):0.0
       </arg> lust-->
 
-                      <arg attribute="calculateBSExportValue">(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+efectivot+tconsignation+totalanticipos+pagooacredito+puntosredimidosenpesos)&gt;(totalfact-(trfuente+triva+trica+puntosredimidosenpesos))&amp;&amp;(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos+pagooacredito+puntosredimidosenpesos)&lt;(totalfact-(trfuente+triva+trica+puntosredimidosenpesos))?(efectivot+tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos+pagooacredito+puntosredimidosenpesos)-(totalfact-(trfuente+triva+trica+puntosredimidosenpesos)):0.0
+                      <arg attribute="calculateBSExportValue">(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+efectivot+tconsignation+totalanticipos+pagooacredito+puntosredimidosenpesos)&gt;(totalfact-(trfuente+triva+trica))&amp;&amp;(tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos+pagooacredito+puntosredimidosenpesos)&lt;(totalfact-(trfuente+triva+trica))?(efectivot+tcreditcard+tsodexobigpass+totalcredibancoparcial+totalpagosmanuales+tconsignation+totalanticipos+pagooacredito+puntosredimidosenpesos)-(totalfact-(trfuente+triva+trica)):0.0
                       </arg>
                       <arg attribute="printable">true</arg>
                     </subarg>
@@ -5320,6 +5304,25 @@ o el carpintero asociado -->
                     <!-- <arg attribute="sqlCode">LCSEL0946</arg> -->
                   </parameters>
                 </component>
+
+                <component>
+    <driver id="totaljavipuntosgenerados">client.gui.components.TableDataFields</driver>
+    <parameters>
+      <arg attribute="Panel">false</arg>
+      <subarg>
+        <arg attribute="label">Javipuntos generados</arg>
+        <arg attribute="name">totaljavipuntosgenerados</arg>
+        <arg attribute="format">NUMERIC</arg>
+        <arg attribute="size">10</arg>
+        <arg attribute="clean">false</arg>
+        <arg attribute="maxlength">26</arg>
+        <arg attribute="enabled">false</arg>
+        <arg attribute="alignment">RIGHT</arg>
+        <arg attribute="calculateBSExportValue">(puntosredimidos*25)/1000&gt;1?totaljavipuntosgenerados-(puntosredimidos*25)/1000:totaljavipuntosgenerados</arg> <!-- si se redimen puntos estos se restan del total de puntos que se estan generando -->
+        <arg attribute="printable">true</arg>
+      </subarg>
+    </parameters>
+  </component>
                 </panel>
       </panel>
     </tab>
@@ -8505,6 +8508,16 @@ o el carpintero asociado -->
                   </parameters>
                 </component> -->
 
+                <!-- 49 Paquete Blanco Gracias por su compra -->
+                <component>
+                  <driver id="vpago">common.gui.components.GenericData</driver>
+                  <method>getBlankPackage</method>
+                </component>
+                <!-- 49 Paquete Blanco Gracias por su compra -->
+                <component>
+                  <driver id="vpago">common.gui.components.GenericData</driver>
+                  <method>getBlankPackage</method>
+                </component>
                 <!-- 49 Paquete Blanco Gracias por su compra -->
                 <component>
                   <driver id="vpago">common.gui.components.GenericData</driver>

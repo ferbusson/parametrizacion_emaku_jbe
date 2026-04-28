@@ -1223,7 +1223,7 @@
               <arg attribute="enabled">false</arg>
               <arg attribute="alignment">RIGHT</arg>
               <arg attribute="totalCol">j</arg>
-              <arg attribute="exportValue">vdescuentoglobal</arg>
+              <arg attribute="calculateExportValue">subtotalsinbolsa-netosinbolsa</arg>
               <arg attribute="return">false</arg>
               <arg attribute="foreground">0,0,0</arg>
               <arg attribute="background">186,245,248</arg>

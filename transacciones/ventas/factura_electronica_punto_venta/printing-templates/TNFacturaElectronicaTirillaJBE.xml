@@ -21,7 +21,7 @@
       <field row="325" center="218" type="STRING" importValue="true">piepaginauno</field>
 
       
-      <font row="40" col="0" name="Sans" size="12" />
+      <font row="40" col="0" name="Sans" size="11" />
 
       <field row="390" center="220" type="STRING">FACTURA ELECTRÓNICA DE VENTA</field>
 
@@ -45,7 +45,7 @@
       <field row="508" col="177" type="STRING">Item #</field>
       <field row="508" col="10" type="STRING">Código</field>
       <field row="518" col="10" type="STRING">Descripcion</field>
-      <field row="528" col="10" type="STRING">Cant</field>
+      <field row="528" col="15" type="STRING">Cant</field>
       <field row="528" col="60" type="STRING">%IVA</field>
       <field row="528" col="110" type="STRING">V. Unit</field>
       <field row="528" col="180" type="STRING">Total</field>
@@ -100,7 +100,7 @@
       <subpackage rowInit="548" rowAcum="10" colCounter="200">
          <field col="10" type="STRING" incrementRow="true" /> <!-- codigo -->
          <field col="10" incrementRow="true" type="STRING" /> <!-- descripcion -->
-         <field col="15" width="3" type="NUMERIC" mask="###" /> <!-- cantidad -->
+         <field col="30" width="3" type="NUMERIC" mask="###.##" /> <!-- cantidad -->
          <field col="140" width="13" type="NUMERIC" mask="#,###,##0.00" /> <!-- vlr uni -->
          <field col="75" width="3" type="NUMERIC" mask="###" /> <!-- %iva -->
 
@@ -342,8 +342,17 @@
    </package> -->
 
    <!-- 49 -->
+   <!-- <package>
+      <field textLine="ESTAMOS DE ANIVERSARIO" rowAcum="15" textCol="54" row="last" col="200" type="STRING"/>
+   </package> -->
+   <!-- 49 -->
+   <!-- <package>
+      <field textLine="¡¡60 AÑOS!!" rowAcum="15" textCol="83" row="last" col="200" type="STRING"/>
+   </package> -->
+
+   <!-- 49 -->
    <package>
-      <field textLine="¡¡GRACIAS POR SU COMPRA!!" rowAcum="15" textCol="43" row="last" col="200" type="STRING"/>
+      <field textLine="¡¡GRACIAS POR SU COMPRA!!" rowAcum="15" textCol="50" row="last" col="200" type="STRING"/>
    </package>
    <package>
       <field textLine="ICA Actividad Comercial: 211 - Tarifa 5x1000" rowAcum="15" textCol="20" row="last" col="200" type="STRING"/>
@@ -351,7 +360,7 @@
    
    <!-- 50 -->
    <!-- <package>
-      <field textLine="VISITA www.lacalionline.com" rowAcum="15" textCol="47" row="last" col="200" type="STRING"/>
+      <field textLine="VISITA secretaria@javierbenavideserazosas.com" rowAcum="15" textCol="47" row="last" col="200" type="STRING"/>
    </package> -->
 
     <!-- 51 cufe -->

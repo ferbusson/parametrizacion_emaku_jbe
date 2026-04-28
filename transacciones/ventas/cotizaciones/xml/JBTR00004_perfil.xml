@@ -920,7 +920,7 @@
       <component locate="North">
         <driver>common.gui.components.XMLLabel</driver>
         <parameters>
-          <arg attribute="text">Listas Disponibles: Carta: 1 (Default) | Abanico: 2 | Bases: 3</arg>
+          <arg attribute="text">Listas Disponibles: Mostrador: 1 (Default) | Abanico: 2 | Bases: 3</arg>
           <arg attribute="alignment">0</arg>
           <arg attribute="font">Dialog,1,10</arg>
         </parameters>
@@ -1045,7 +1045,7 @@
             <subarg>
             <arg attribute="name">Cant</arg>
             <arg attribute="length">70</arg>
-            <arg attribute="type">INTEGER</arg>
+            <arg attribute="type">DECIMAL</arg>
             <arg attribute="enabled">true</arg>
             <arg attribute="returnCol">1</arg>
             <arg attribute="recalculate">false</arg>
@@ -1556,7 +1556,7 @@
       <subarg>
         <arg attribute="name">CANTIDAD</arg>
         <arg attribute="length">70</arg>
-        <arg attribute="type">INTEGER</arg>
+        <arg attribute="type">DECIMAL</arg>
         <arg attribute="enabled">false</arg>
       </subarg>
       <!-- 4 Lista (d) -->

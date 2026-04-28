@@ -1,0 +1,133 @@
+<container>
+  <subarg>
+    <arg attribute="idDocument">AF</arg>
+    <arg attribute="consecutive" />
+    <arg attribute="actionDocument">createDocument</arg>
+    <arg attribute="cash" />
+  </subarg>
+
+  <!-- 0 observaciones -->
+  <arg>INS0037</arg>  
+
+  <!-- 2 bodega salida -->
+  <arg attribute="addKey"/> 
+
+  <!-- 1 centrocosto -->
+  <arg attribute="addKey"/> 
+  
+  <!-- 1 idTercero -->
+  <arg attribute="addKey"/> 
+
+  <!-- 1 Ajuste al peso -->
+  <LNData>
+         <driver>LNContabilidad</driver>
+         <method>fieldData</method>
+         <parameters>
+                 <arg attribute="CodeAPS">6</arg>
+                 <arg attribute="Concepto">Ajuste Inventario Fragmantación - Ajuste al peso</arg>
+                 <arg attribute="debuging">true</arg>
+                 <arg attribute="centrocosto">getName</arg>
+                 <subarg>
+                         <arg attribute="accountField">42958101,D</arg>
+                 </subarg>
+         </parameters>
+ </LNData>
+
+  <!-- 3 -->
+  <subarg>
+    <LNData>
+      <driver>LNInventarios</driver>
+      <method>movimientos</method>
+      <parameters>
+        <arg attribute="tipoMovimiento">salida</arg>
+      </parameters>
+    </LNData>
+
+    <LNData>   <!-- S A L I D A -->
+      <driver>LNContabilidad</driver>
+      <method>columnData</method>
+      <parameters>
+        <arg attribute="debuging">true</arg>
+        <arg attribute="Base">0</arg>
+        <arg attribute="CodeAPS">14</arg> <!-- devoluciones en compra -->
+        <arg attribute="Concepto">Ajuste Inventario Fragmantación - Salida</arg>
+        <arg attribute="centrocosto">getName</arg>
+        <arg attribute="tercero">getName</arg>
+        <subarg>
+          <arg attribute="accountCol">IdProdServ,0</arg>            
+
+            <!-- 5% -->
+            <!-- <arg attribute="accountCol">1435560501,2</arg> -->
+            <!-- 19% -->
+            <!-- <arg attribute="accountCol">1435560502,2</arg> -->
+            <!-- Excluidas -->
+            <!-- <arg attribute="accountCol">14355610,2</arg> -->
+            <!-- Exentas -->
+            <!-- <arg attribute="accountCol">14355615,2</arg> -->
+
+
+            <!-- 5% -->
+            <arg attribute="accountCol">14350102,2</arg>
+            <!-- 19% -->
+            <arg attribute="accountCol">14350101,2</arg>
+            <!-- Excluidas -->
+            <arg attribute="accountCol">14350103,2</arg>
+            <!-- Exentas -->
+            <!-- <arg attribute="accountCol">14355615,2</arg> -->
+
+        </subarg>
+      </parameters>
+    </LNData>
+
+</subarg>
+
+  <!-- 4 -->
+  <arg attribute="removeKey">bodegaSaliente</arg>
+
+  <!-- 5 bodega entrada -->
+  <arg attribute="addKey"/>   
+
+  <!-- 6 -->
+  <subarg>
+    
+    <LNData>
+        <driver>LNInventarios</driver>
+        <method>movimientos</method>
+        <parameters>
+          <arg attribute="tipoMovimiento">entrada</arg>
+        </parameters>
+    </LNData>
+
+    <LNData> <!-- E N T R A D A -->
+      <driver>LNContabilidad</driver>
+      <method>columnData</method>
+      <parameters>
+        <arg attribute="debuging">true</arg>
+        <arg attribute="Base">0</arg>
+        <arg attribute="CodeAPS">6</arg> <!-- compras -->
+        <arg attribute="Concepto">Ajuste Inventario Fragmantación - Entrada</arg>
+        <arg attribute="centrocosto">getName</arg>
+        <arg attribute="tercero">getName</arg>
+        <subarg>
+            <arg attribute="accountCol">IdProdServ,0</arg>
+            <!-- 5% -->
+            <!-- <arg attribute="accountCol">1435560501,2</arg> -->
+            <!-- 19% -->
+            <!-- <arg attribute="accountCol">14350101,2</arg> -->
+            <!-- Excluidas -->
+            <!-- <arg attribute="accountCol">14355610,2</arg> -->
+            <!-- Exentas -->
+            <!-- <arg attribute="accountCol">14355615,2</arg> -->
+
+            <!-- 5% -->
+            <arg attribute="accountCol">14350102,2</arg>
+            <!-- 19% -->
+            <arg attribute="accountCol">14350101,2</arg>
+            <!-- Excluidas -->
+            <arg attribute="accountCol">14350103,2</arg>
+        </subarg>
+      </parameters>
+    </LNData>
+  </subarg>
+
+</container>

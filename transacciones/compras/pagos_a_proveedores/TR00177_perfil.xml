@@ -636,8 +636,8 @@
                   <arg attribute="importValueCode">tercerofactura</arg>
                   <arg attribute="importValueCode">vpago</arg>
                   <arg attribute="exportValue">efectivo</arg>
-                  <arg attribute="sqlCode">JBSEL0066</arg>
-                  <arg attribute="sqlCode">JBSEL0068</arg>
+                  <arg attribute="sqlCode">JBSEL0066</arg> <!--contabilidad medio de pago-->
+                  <arg attribute="sqlCode">JBSEL0068</arg> <!--impresion-->
                   <!-- <arg attribute="sqlCode">GRSEL0002</arg> -->
                 </parameters>
               </component>

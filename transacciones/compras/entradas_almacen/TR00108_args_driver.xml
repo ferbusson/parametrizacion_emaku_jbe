@@ -15,6 +15,15 @@
   <arg>LCINS0087</arg>
   <!-- 4 Se almacena el tercero -->
   <arg>INS0048</arg>
+
+
+ <!-- 14 asientos generados por la tabla, crea tabla npventa -->
+  <arg>JBINS0020</arg>
+
+  CENTRO COSTO
+  <arg attribute="addKey"/>
+
+
 <!--  Flete al gasto  -->
  <LNData>
          <driver>LNContabilidad</driver>
@@ -72,6 +81,7 @@
         <arg attribute="sql">LCINS0093</arg>
         <arg attribute="fields">2,3,4,5,1</arg>
         <arg attribute="discartKey">idTercero</arg>
+        <arg attribute="discartKey">centrocosto</arg>
         <arg attribute="conditional">B&gt;0</arg>
       </parameters>
     </LNData>
@@ -100,6 +110,7 @@
         <arg attribute="sql">LCINS0093</arg>
         <arg attribute="fields">2,3,4,5,1</arg>
         <arg attribute="discartKey">idTercero</arg>
+        <arg attribute="discartKey">centrocosto</arg>
         <arg attribute="conditional">B&gt;0</arg>
       </parameters>
     </LNData>
@@ -128,6 +139,7 @@
         <arg attribute="sql">LCINS0093</arg>
         <arg attribute="fields">2,3,4,5,1</arg>
         <arg attribute="discartKey">idTercero</arg>
+        <arg attribute="discartKey">centrocosto</arg>
         <arg attribute="conditional">B&gt;0</arg>
         <arg attribute="tercero">getName</arg>
       </parameters>
@@ -157,6 +169,7 @@
         <arg attribute="sql">LCINS0093</arg>
         <arg attribute="fields">2,3,4,5,1</arg>
         <arg attribute="discartKey">idTercero</arg>
+        <arg attribute="discartKey">centrocosto</arg>
         <arg attribute="conditional">B&gt;0</arg>
       </parameters>
     </LNData>
@@ -200,6 +213,7 @@
     <parameters>
       <arg attribute="sql">LCSEL0638</arg>
       <arg attribute="conditional">c&gt;0</arg>
+      <arg attribute="discartKey">centrocosto</arg>
       <arg attribute="fields">0,1,2</arg>
     </parameters>
   </LNData>
@@ -210,8 +224,7 @@
   <!-- 13 adicionando bodega -->
   <arg attribute="addKey"/>
 
-  <!-- 14 asientos generados por la tabla, crea tabla npventa -->
-  <arg>MTINS0058</arg>
+ 
 
   <!-- 15 -->
   <subarg>
@@ -224,6 +237,7 @@
         <!-- Inserta en datos_prod -->
         <arg attribute="fields">0,1,2,3,4,8,9</arg>
         <arg attribute="discartKey">idTercero</arg>
+        <arg attribute="discartKey">centrocosto</arg>
       </parameters>
     </LNData>
     <!-- Registro para nuevas listas de precios -->
@@ -235,6 +249,7 @@
         <!-- Actualiza pcosto en prod_serv -->
         <arg attribute="fields">2,0,4</arg>
         <arg attribute="discartKey">idTercero</arg>
+        <arg attribute="discartKey">centrocosto</arg>
         <arg attribute="discartKey">bodegaEntrante</arg></parameters>
     </LNData>
     <LNData>
@@ -244,6 +259,7 @@
         <arg attribute="sql">MTINS0059</arg>
         <!-- Inserta en npventa -->
         <arg attribute="fields">2,4,0</arg>
+        <arg attribute="discartKey">centrocosto</arg>
         <arg attribute="discartKey">idTercero</arg>
         <arg attribute="discartKey">bodegaEntrante</arg>
       </parameters>

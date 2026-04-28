@@ -1,0 +1,314 @@
+<FORM>
+  <preferences>
+    <size width="1040" height="470" />
+    <name>Editar Conteo Inventario</name>
+    <icon>AGRUPARPRODSERV</icon>
+    <iconificable />
+    <resizable />
+    <closable />
+    <date />
+    <consecutive>DR</consecutive>
+  </preferences>
+  <panel locate="North" type="BorderLayout">
+    <panel locate="West" type="BorderLayout">
+      <panel locate="North" type="FlowLayout" />
+      <panel locate="South" type="FlowLayout" />
+      <panel locate="Center" type="BorderLayout">
+        <panel locate="West" type="FlowLayout" />
+        <component locate="North">
+          <driver>common.gui.components.XMLLabel</driver>
+          <parameters>
+            <arg attribute="text">OBSERVACIONES</arg>
+            <arg attribute="alignment">LEFT</arg>
+          </parameters>
+        </component>
+        <component locate="Center">
+          <driver id="observaciones">common.gui.components.XMLTextArea</driver>
+          <parameters>
+            <arg attribute="exportValue">observaciones</arg>
+            <arg attribute="keySQL">SEL0120</arg>
+            <arg attribute="driverEvent" id="number">common.gui.components.GenericData</arg>            
+            <arg attribute="rows">100</arg>
+            <arg attribute="cols">400</arg>
+            <arg attribute="enabled">true</arg>
+          </parameters>
+        </component>
+      </panel>
+    </panel>
+    <panel locate="East" type="BorderLayout">
+      <box locate="East" width="10" />
+      <box locate="West" width="10" />
+      <box locate="North" length="25" />
+      <box locate="South" length="10" />
+      <panel locate="Center" type="BorderLayout">
+        <panel locate="West" type="GridLayout" rows="3" cols="1">
+          <component locate="Center">
+            <driver>common.gui.components.XMLLabel</driver>
+            <parameters>
+              <arg attribute="text">DATE</arg>
+              <arg attribute="font">Dialog,0,14</arg>
+            </parameters>
+          </component>
+          <component locate="North">
+            <driver>common.gui.components.XMLLabel</driver>
+            <parameters>
+              <arg attribute="text">NUMBER</arg>
+              <arg attribute="font">Dialog,0,14</arg>
+            </parameters>
+          </component>
+          <component locate="North">
+            <driver>common.gui.components.XMLLabel</driver>
+            <parameters>
+              <arg attribute="text">Total Productos</arg>
+              <arg attribute="font">Dialog,0,14</arg>
+            </parameters>
+          </component>
+        </panel>
+        <panel locate="Center" type="GridLayout" rows="3" cols="1">
+          <component locate="Center">
+            <driver id="fecha">client.gui.components.TableDataFields</driver>
+            <parameters>
+              <arg attribute="keySQL">SEL0309</arg>
+              <arg attribute="driverEvent" id="number">common.gui.components.GenericData</arg>
+              <subarg>
+                <arg attribute="name">Fecha</arg>
+                <arg attribute="dateFormat">yyyy-MM-dd</arg>
+                <arg attribute="format">DATE</arg>
+                <arg attribute="size">10</arg>
+                <arg attribute="maxlength">10</arg>
+                <arg attribute="clean">true</arg>
+                <arg attribute="enabled">false</arg>
+                <arg attribute="font">Dialog,0,18</arg>
+                <arg attribute="alignment">RIGHT</arg>
+                <arg attribute="printable">true</arg>
+              </subarg>
+            </parameters>
+          </component>
+          <component locate="Center">
+            <driver id="number">common.gui.components.GenericData</driver>
+            <parameters>
+              <arg attribute="Panel">false</arg>
+              <subarg>
+                <arg attribute="format">TEXT</arg>
+                <arg attribute="size">10</arg>
+                <arg attribute="maxlength">26</arg>
+                <arg attribute="enabled">true</arg>
+                <arg attribute="clean">false</arg>
+                <arg attribute="font">Dialog,0,18</arg>
+                <arg attribute="foreground">249,87,87</arg>
+                <arg attribute="background">0,0,0</arg>
+                <arg attribute="alignment">RIGHT</arg>
+                <arg attribute="idDocument">DR</arg>
+                <arg attribute="constantValue">DR</arg>
+                <arg attribute="sqlCode">LMSEL0001</arg>
+                <arg attribute="sqlCode">DGSEL0021</arg>
+                <arg attribute="sqlCode">SEL0309</arg>
+                <arg attribute="sqlCode">SEL0120</arg>
+              </subarg>
+            </parameters>
+          </component>
+          <component locate="Center">
+            <driver id="prendas">client.gui.components.TableDataFields</driver>
+            <parameters>
+              <arg attribute="Panel">false</arg>
+              <arg attribute="linkTable">barras</arg>
+              <subarg>
+                <arg attribute="format">NUMERIC</arg>
+                <arg attribute="size">10</arg>
+                <arg attribute="maxlength">26</arg>
+                <arg attribute="enabled">false</arg>
+                <arg attribute="clean">false</arg>
+                <arg attribute="font">Dialog,0,18</arg>
+                <arg attribute="foreground">255,255,255</arg>
+                <arg attribute="background">0,0,0</arg>
+                <arg attribute="alignment">RIGHT</arg>
+                <arg attribute="totalCol">b</arg>
+                <arg attribute="exportValue">prendas</arg>
+              </subarg>
+            </parameters>
+          </component>
+        </panel>
+      </panel>
+    </panel>
+  </panel>
+  <panel locate="West" type="FlowLayout" />
+  <panel locate="East" type="FlowLayout" />
+  <panel locate="Center" type="BorderLayout">
+    <component locate="Center">
+      <driver id="barras">client.gui.components.TableFindData</driver>
+      <parameters>
+        <arg attribute="keySQL">LMSEL0001</arg>
+        <arg attribute="driverEvent" id="number">common.gui.components.GenericData</arg>
+        <arg attribute="rows">1000</arg>
+        <arg attribute="colorBackground">220,251,187</arg>
+        <arg attribute="colorSelected">179,193,183</arg>
+        <arg attribute="protectSelected">true</arg>
+        <arg attribute="Query">DGSEL0089</arg>
+        <arg attribute="beanshell">b=b!=0?b:1</arg>  
+        <arg attribute="totales">b</arg>
+        <!-- <subarg>
+          <arg attribute="name">CODE</arg>
+          <arg attribute="length">120</arg>
+          <arg attribute="type">STRING</arg>
+          <arg attribute="enabled">true</arg>
+          <arg attribute="returnCol">0</arg>
+        </subarg> -->
+        <subarg>
+            <!-- A0 -->
+            <arg attribute="name">CODE</arg>
+            <arg attribute="length">120</arg>
+            <arg attribute="type">DATASEARCH</arg>
+            <arg attribute="sqlCombo">DGSEL0170</arg>
+            <arg attribute="keyDataSearch">searchp</arg>
+            <arg attribute="repeatData">1</arg>
+            <arg attribute="noDataBeep">true</arg>
+            <arg attribute="noDataMessage">No se encontro registros</arg>
+            <arg attribute="selectedIndex">1</arg>
+            <arg attribute="printable">true</arg>
+            <arg attribute="returnCol">0</arg>
+            <arg attribute="enabled">true</arg>
+        </subarg>
+        <subarg><!-- b -->
+          <arg attribute="name">Cantidad</arg>
+          <arg attribute="length">80</arg>
+          <arg attribute="type">INTEGER</arg>
+          <arg attribute="enabled">true</arg>
+          <arg attribute="returnCol">1</arg>
+        </subarg>
+        <subarg>
+          <arg attribute="name">DESCRIPCION</arg>
+          <arg attribute="length">415</arg>
+          <arg attribute="type">STRING</arg>
+          <arg attribute="enabled">false</arg>
+          <arg attribute="queryCol">1</arg>
+          <arg attribute="printable">true</arg>
+          <arg attribute="queryCol">1</arg>
+        </subarg>
+        <subarg>
+          <arg attribute="name">Línea</arg>
+          <arg attribute="length">150</arg>
+          <arg attribute="type">STRING</arg>
+          <arg attribute="enabled">false</arg>
+          <arg attribute="printable">true</arg>
+          <arg attribute="queryCol">9</arg>
+        </subarg>
+        <subarg>
+          <arg attribute="name">Marca</arg>
+          <arg attribute="length">110</arg>
+          <arg attribute="type">STRING</arg>
+          <arg attribute="enabled">false</arg>
+          <arg attribute="printable">true</arg>
+          <arg attribute="queryCol">10</arg>
+        </subarg>
+        <!-- <subarg>
+          <arg attribute="name">Costo</arg>
+          <arg attribute="length">110</arg>
+          <arg attribute="type">DECIMAL</arg>
+          <arg attribute="enabled">false</arg>
+          <arg attribute="printable">true</arg>
+          <arg attribute="queryCol">7</arg>
+        </subarg> -->
+        <subarg>
+          <arg attribute="name">Venta</arg>
+          <arg attribute="length">110</arg>
+          <arg attribute="type">DECIMAL</arg>
+          <arg attribute="enabled">false</arg>
+          <arg attribute="printable">true</arg>
+          <arg attribute="queryCol">2</arg>
+        </subarg>        
+
+      </parameters>
+    </component>
+  </panel>
+  <panel locate="South" type="FlowLayout">
+  <panel locate="West" type="BorderLayout">
+    <component locate="West">
+      <driver id="estado">common.gui.components.XMLLabel</driver>
+      <parameters>
+        <arg attribute="keySQL">DGSEL0021</arg>
+        <arg attribute="driverEvent" id="number">common.gui.components.GenericData</arg>
+        <arg attribute="text">:</arg>
+        <arg attribute="alignment">LEFT</arg>
+        <arg attribute="font">Dialog,1,14</arg>
+      </parameters>
+    </component>
+  </panel>
+    <component>
+      <driver>common.gui.components.ButtonsPanel</driver>
+      <parameters>
+        <arg>SAVEAS</arg>
+        <arg>NEW</arg>
+        <arg>EXIT</arg>
+      </parameters>
+      <events>
+        <object>
+          <name>SAVEAS</name>
+          <action>
+            <type>transaction</type>
+            <component>
+              <driver id="number">common.gui.components.GenericData</driver>
+              <method>getPackage</method>
+            </component>
+            <component>
+              <driver id="barras">client.gui.components.TableFindData</driver>
+              <method>getBlankPackage</method>
+            </component>
+            <component>
+              <driver id="barras">client.gui.components.TableFindData</driver>
+              <method>getPackage</method>
+            </component>
+
+            <component>
+                <driver>this</driver>
+                <method>getPackage</method>
+                <parameters>
+                    <arg attribute="blankPackage">true</arg>
+                    <arg attribute="nullField">true</arg>
+                    <arg attribute="blankPackage">true</arg>
+                    <subarg>
+                        <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">observaciones</arg>
+                    </subarg>
+                </parameters>
+            </component>
+            <component>
+              <driver>common.gui.components.ButtonsPanel</driver>
+              <method>setEnabled</method>
+              <parameters>
+                <arg attribute="button">SAVEAS</arg>
+                <arg attribute="state">false</arg>
+              </parameters>
+            </component>
+          </action>
+        </object>
+        <object>
+          <name>NEW</name>
+          <component>
+            <driver id="barras">client.gui.components.TableFindData</driver>
+            <method>clean</method>
+          </component>
+          <component>
+            <driver id="observaciones">common.gui.components.XMLTextArea</driver>
+            <method>clean</method>
+          </component>
+          <component>
+            <driver id="fecha">client.gui.components.TableDataFields</driver>
+            <method>clean</method>
+          </component>       
+          <!--  limpiando llaves externas -->
+          <component>
+            <driver>this</driver>
+            <method>cleanExternalValues</method>
+          </component>
+          <component>
+              <driver>common.gui.components.ButtonsPanel</driver>
+              <method>setEnabled</method>
+              <parameters>
+                <arg attribute="button">SAVEAS</arg>
+                <arg attribute="state">true</arg>
+              </parameters>
+            </component>
+        </object>
+      </events>
+    </component>
+  </panel>
+</FORM>

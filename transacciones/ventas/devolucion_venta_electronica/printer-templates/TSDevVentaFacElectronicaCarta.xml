@@ -176,7 +176,7 @@
 		<package generateMultiPage="true">
 			<subpackage rowInit="272" rowAcum="10" maxRowsAcum="20" rowInitNewPage="263" maxRowsAcumNewPage="20" maxRowsFootPage="16" maxRowsFootNewPage="16">					
 			<field col="40" fontName="Dialog" fontSize="6" fontStyle="0" type="STRING" incrementRow="false" /> <!-- descripcion -->
-			<field col="282" fontName="Dialog" fontSize="6" fontStyle="0" type="NUMERIC" mask="##,###" incrementRow="false" /> <!-- cant -->
+			<field col="282" fontName="Dialog" fontSize="6" fontStyle="0" type="NUMERIC" mask="##,###.##" incrementRow="false" /> <!-- cant -->
 			
 			<field col="342" fontName="Dialog" fontSize="6" fontStyle="0" type="NUMERIC" mask="#,###,##0.00" incrementRow="false" /> <!-- Precio -->
 			<field textLine="%" textCol="568" col="567" fontName="Dialog" fontSize="6" fontStyle="0" type="NUMERIC" mask="##,###" incrementRow="false" /> <!-- piva -->

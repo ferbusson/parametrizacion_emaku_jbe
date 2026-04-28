@@ -25,4 +25,4 @@ $$ LANGUAGE plpgsql;
 CREATE TRIGGER trg_calcular_saldo_acumulado_puntos
     BEFORE INSERT ON puntos_tercero
     FOR EACH ROW
-    EXECUTE FUNCTION calcular_saldo_acumulado_puntos();
+    EXECUTE PROCEDURE calcular_saldo_acumulado_puntos();

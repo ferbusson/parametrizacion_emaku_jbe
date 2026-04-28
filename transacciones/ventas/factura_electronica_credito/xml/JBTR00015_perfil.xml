@@ -1029,9 +1029,9 @@ o el carpintero asociado -->
           <!-- base 5% -->
           <arg attribute="beanshell">u=s==&quot;10&quot;?l:0</arg>
           <!-- IVA 5% -->
-          <arg attribute="beanshell">v=s==&quot;5&quot;?k:0</arg>
+          <arg attribute="beanshell">v=s==&quot;5&quot;||s==&quot;16&quot;||s==&quot;17&quot;||s==&quot;18&quot;||s==&quot;19&quot;||s==&quot;20&quot;||s==&quot;21&quot;?k:0</arg>
           <!-- base 19% -->
-          <arg attribute="beanshell">w=s==&quot;5&quot;?l:0</arg>
+          <arg attribute="beanshell">w=s==&quot;5&quot;||s==&quot;16&quot;||s==&quot;17&quot;||s==&quot;18&quot;||s==&quot;19&quot;||s==&quot;20&quot;||s==&quot;21&quot;?l:0</arg>
           <!-- IVA 19% -->
           <arg attribute="beanshell">x=s==&quot;13&quot;&amp;&amp;!&quot;28312&quot;.equals(n)?k:0</arg>
           <!-- base exento -->
@@ -1802,7 +1802,8 @@ o el carpintero asociado -->
               <arg attribute="maxlength">26</arg>
               <arg attribute="enabled">false</arg>
               <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="totalCol">j</arg>
+              <!-- <arg attribute="totalCol">j</arg> -->
+              <arg attribute="calculateExportValue">subtotalsinbolsa-netosinbolsa</arg>
               <arg attribute="exportValue">vdescuentoglobal</arg>
               <arg attribute="return">false</arg>
               <arg attribute="foreground">0,0,0</arg>
@@ -3013,17 +3014,15 @@ o el carpintero asociado -->
                 <driver id="diascredito">common.gui.components.GenericData</driver>
                   <parameters>
                     <arg attribute="Panel">false</arg>
-                      <arg attribute="keySQL">JBSEL0059</arg>
-                      <arg attribute="driverEvent" id="nro_orden_pedido">client.gui.components.TableDataFields</arg>
+                      <arg attribute="keySQL">JBSEL0094</arg>
+                      <arg attribute="driverEvent" id="tipofactura">client.gui.components.XMLComboBox</arg>
                     <subarg>
                       <arg attribute="label"> Días: </arg>
                       <arg attribute="name">diascredito</arg>
                       <arg attribute="format">TEXT</arg>
                        <arg attribute="mask">NUMERIC</arg>
                       <arg attribute="size">3</arg>
-                      <!-- <arg attribute="enableField">pedidoacredito,2</arg> -->
                       <arg attribute="maxlength">3</arg>
-                      <!-- <arg attribute="defaultText">30</arg> -->
                       <arg attribute="clean">true</arg>
                       <arg attribute="font">Dialog,1,18</arg>
                       <arg attribute="alignment">RIGHT</arg>
@@ -3055,12 +3054,14 @@ o el carpintero asociado -->
                     <arg attribute="addAttribute">key</arg>
                     <arg attribute="clean">false</arg>
                     <arg attribute="Panel">false</arg>
+                    <arg attribute="importValueCode">diascreditotercero</arg>
                     <arg attribute="exportValue">charctatipofactura</arg>
                     <arg attribute="exportTextValue">nombrecredito</arg>
+                    
                     <arg attribute="printable">true</arg>
                     <arg attribute="addAttribute">key</arg>
-                    <arg attribute="nameField">cuenta</arg>                
-                    <!-- <arg attribute="sqlCode">LCSEL0946</arg> -->
+                    <arg attribute="nameField">cuenta</arg>                              
+                    <arg attribute="sqlCode">JBSEL0094</arg>
                   </parameters>
                 </component>
                 </panel>
@@ -3447,6 +3448,28 @@ o el carpintero asociado -->
       </component>
 
 
+      <component >
+                <driver id="diascreditotercero">common.gui.components.GenericData</driver>
+                  <parameters>
+                    <arg attribute="Panel">false</arg>
+                      <arg attribute="keySQL">JBSEL0059</arg>
+                      <arg attribute="driverEvent" id="nro_orden_pedido">client.gui.components.TableDataFields</arg>
+                    <subarg>
+                      <arg attribute="label">DiasCreditoTercero: </arg>
+                      <arg attribute="name">diascredito</arg>
+                      <arg attribute="format">TEXT</arg>
+                       <arg attribute="mask">NUMERIC</arg>
+                      <arg attribute="size">3</arg>
+                      <arg attribute="clean">true</arg>
+                      <arg attribute="font">Dialog,1,18</arg>
+                      <arg attribute="alignment">RIGHT</arg>
+                      <arg attribute="enabled">false</arg>
+                      <arg attribute="exportValue">diascreditotercero</arg>
+                    </subarg>
+                  </parameters>
+                </component>
+
+
               <component>
                   <driver id="facturasvencidas">common.gui.components.GenericData</driver>
                   <parameters>
@@ -3641,8 +3664,10 @@ o el carpintero asociado -->
                 <driver id="efectivoneto">common.gui.components.GenericData</driver>
                 <method>validPackage</method>
                 <parameters>
-                  <arg attribute="conditional">pagooacredito &lt;= cupocredito</arg>
-                  <arg attribute="errorMessage">Error, no tiene cupo disponible</arg>
+                  <!--13050504: addi - 13050502: sistecredito - 13050501: jbe - 13050503: covifactura-->
+                  <!-- Validamos que solo evalue el cupo de crédito cuando se trate de creditos JBE o Covifactura, para Addi y Sistecrédito no se debe evaluar el cupo -->
+                  <arg attribute="conditional">(!("13050501".equals(charctatipofactura)||"13050503".equals(charctatipofactura)) || pagooacredito &lt;= cupocredito)</arg> 
+                  <arg attribute="errorMessage">Error, no tiene cupo disponible</arg> 
                 </parameters>
               </component>
 

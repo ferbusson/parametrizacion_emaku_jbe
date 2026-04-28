@@ -1,0 +1,15 @@
+<container>
+
+  <subarg>
+    <arg attribute="idDocument">DR</arg>
+    <arg attribute="consecutive" />
+    <arg attribute="actionDocument">editDocument</arg>
+    <arg attribute="cash" />
+    <arg attribute="date" />
+  </subarg>
+
+  <arg>EXDEL0001</arg>
+  <arg>MTINS0046</arg>
+  <arg>DGUPD0008</arg>
+  
+</container>

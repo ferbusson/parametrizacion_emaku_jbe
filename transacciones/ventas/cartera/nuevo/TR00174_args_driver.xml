@@ -7,8 +7,8 @@
   </subarg>
   0
   <arg>INS0037</arg>
-  1
-  <arg>INS0079</arg>
+  1 datos_documento
+  <arg>JBINS0024</arg>
 
 
   <!--  PAGO CON TARJETAS -->
@@ -679,6 +679,36 @@
       </parameters>
     </LNData>
   </subarg>
+
+  <!-- Cruce con Anticipos -->
+    <subarg>
+        <LNData>
+            <driver>LNSelectedField</driver>
+            <method>getSubpackage</method>
+            <parameters>
+                <arg attribute="sql">JBINS0011</arg>
+                <arg attribute="fields">0,2,3,4,5,6,8</arg>
+                <arg attribute="discartKey">bodegaSaliente</arg>
+                <arg attribute="discartKey">centrocosto</arg>
+                <arg attribute="discartKey">cuenta</arg>
+            </parameters>
+        </LNData>
+        <LNData>
+            <driver>LNContabilidad</driver>
+            <method>columnDataAccount</method>
+            <parameters>
+                <arg attribute="Concepto">Cruce de anticipo con facturacion</arg>
+                <arg attribute="naturaleza">D</arg>
+                <arg attribute="debuging">true</arg>
+                <arg attribute="tercero">getName</arg>
+                <arg attribute="centrocosto">getName</arg>
+                <subarg>
+                    <arg attribute="accountKey">7</arg>
+                    <arg attribute="accountData">1</arg>
+                </subarg>
+            </parameters>
+        </LNData>
+    </subarg>
 
     <arg>JBUPD0010</arg>
 

@@ -242,7 +242,7 @@
 			<subpackage rowInit="272" rowAcum="10" maxRowsAcum="24" rowInitNewPage="263" maxRowsAcumNewPage="24" maxRowsFootPage="16" maxRowsFootNewPage="16" colCounter="40">
 				<field col="-140" fontName="Dialog" fontSize="6" fontStyle="0" type="STRING" incrementRow="false" /> <!-- codigo -->
 					<field col="60" fontName="Dialog" fontSize="6" fontStyle="0" type="STRING" incrementRow="false" /> <!-- descripcion -->
-					<field col="282" fontName="Dialog" fontSize="6" fontStyl="0" type="NUMERIC" mask="##,###" incrementRow="false" /> <!-- cant -->
+					<field col="282" fontName="Dialog" fontSize="6" fontStyl="0" type="NUMERIC" mask="##,###.##" incrementRow="false" /> <!-- cant -->
 					<field col="342" fontName="Dialog" fontSize="6" fontStyle="0" type="NUMERIC" mask="#,###,##0.00" incrementRow="false" /> <!-- precio -->
 					<field textLine="%" textCol="568" col="567" fontName="Dialog" fontSize="6" fontStyle="0" type="NUMERIC" mask="##,###" incrementRow="false" /> <!-- piva -->
 					<field textLine="%" textCol="395" col="394" fontName="Dialog" fontSize="6" fontStyle="0" type="NUMERIC" mask="#,###,###" incrementRow="false" /> <!-- pdescuento -->

@@ -715,6 +715,91 @@ el boton cerrar cierra el formulario
           </panel>
         </panel>
       </panel>
+       <panel icon="NTERCERO" name="Acumulado" type="BorderLayout">
+        <panel locate="North" type="BorderLayout">
+          <panel locate="East" type="FlowLayout"/>
+          <panel locate="North" type="FlowLayout"/>
+          <component locate="North">
+            <driver>common.gui.components.XMLLabel</driver>
+            <parameters>
+              <arg attribute="text">Total de ventas acumuladas</arg>
+              <arg attribute="font">Dialog,0,13</arg>
+            </parameters>
+          </component>
+          <panel align="center" locate="West" type="FlowLayout">
+          <component locate="West">
+              <driver id="mes">common.gui.components.GenericData</driver>
+              <parameters>
+                <subarg>
+                  <arg attribute="label">Mes:       </arg>
+                  <arg attribute="format">TEXT</arg>
+                  <arg attribute="size">15</arg>
+                  <arg attribute="sqlInit">JBSEL0090</arg>
+                  <arg attribute="queryOnInit">true</arg>
+                  <arg attribute="maxlength">250</arg>
+                  <arg attribute="font">Dialog,1,12</arg>
+                  <arg attribute="enabled">false</arg>
+                  <arg attribute="clean">true</arg>
+                  <arg attribute="alignment">CENTER</arg>
+                  <arg attribute="printable">true</arg>
+                </subarg>
+              </parameters>
+            </component>
+            </panel>
+        </panel>
+        <panel locate="Center" type="BorderLayout">
+          <panel locate="East" type="FlowLayout"/>
+          
+          <panel align="center" locate="West" type="FlowLayout">
+            <component locate="West">
+              <driver id="usuario">common.gui.components.GenericData</driver>
+              <parameters>
+                <subarg>
+                  <arg attribute="label">Vendedor:</arg>
+                  <arg attribute="format">TEXT</arg>
+                  <arg attribute="size">15</arg>
+                  <arg attribute="sqlInit">JBSEL0092</arg>
+                  <arg attribute="importValue">vendedor</arg>
+                  <arg attribute="queryOnInit">true</arg>
+                  <arg attribute="maxlength">250</arg>
+                  <arg attribute="font">Dialog,1,12</arg>
+                  <arg attribute="enabled">false</arg>
+                  <arg attribute="clean">true</arg>
+                  <arg attribute="alignment">CENTER</arg>
+                  <arg attribute="printable">true</arg>
+                </subarg>
+              </parameters>
+            </component>
+          </panel>
+        </panel>
+        <panel locate="South" type="BorderLayout">
+          <panel locate="East" type="FlowLayout"/>
+          
+          <panel align="center" locate="West" type="FlowLayout">
+            <component locate="West">
+              <driver id="ventasacumuladas">common.gui.components.GenericData</driver>
+              <parameters>                  
+                <subarg>
+                  <!-- <arg attribute="reload">true</arg> -->
+                  <arg attribute="label">Valor $:</arg>
+                  <arg attribute="format">NUMERIC</arg>
+                  <arg attribute="size">15</arg>
+                  <arg attribute="sqlInit">JBSEL0091</arg>
+                  <arg attribute="importValue">vendedor</arg>
+                  <arg attribute="queryOnInit">true</arg>
+                  <arg attribute="maxlength">250</arg>
+                  <arg attribute="font">Dialog,1,12</arg>
+                  <arg attribute="enabled">false</arg>
+                  <arg attribute="clean">true</arg>
+                  <arg attribute="alignment">CENTER</arg>
+                  <arg attribute="printable">true</arg>
+                </subarg>
+              </parameters>
+            </component>
+          </panel>
+        </panel>
+        
+      </panel>
     </tab>
     <panel locate="Center" type="BorderLayout">
                 <panel locate="Center" type="BorderLayout">
@@ -1101,7 +1186,8 @@ el boton cerrar cierra el formulario
           <!-- dctoxy -->
           <arg attribute="beanshell">ak=af&gt;0?af:ae&gt;0?ae:ai&gt;0?ai:aj&gt;0?aj:ah&gt;0?ah:ag&gt;0?ag:ad</arg>
           <!-- PDCTO -->
-          <arg attribute="beanshell">h="28312".equals(n)||am&gt;0?0:az!=0?az:h!=0?h:ak</arg>          <!-- pdescuento -->
+          <!--<arg attribute="beanshell">h="28312".equals(n)||am&gt;0?0:az!=0?az:h!=0?h:ak</arg> Se cambia 25Mar2026: esta condicion permite dejar el pdescuento que se ingrese manualmente, se cambia por la siguiente porque si se lee un codigo en el mismo renglon de un producto con desc el segundo hereda el descuento asi no est en promocion-->          <!-- pdescuento -->
+          <arg attribute="beanshell">h="28312".equals(n)||am&gt;0?0:az!=0?az:ak</arg>
 
 
           <!-- STOTAL -->
@@ -1227,8 +1313,8 @@ el boton cerrar cierra el formulario
             <arg attribute="name">PDCTO</arg>
             <arg attribute="length">80</arg>
             <arg attribute="type">DECIMAL</arg>
-            <arg attribute="roundDecimal">0</arg>
-            <arg attribute="enabled">true</arg>
+            <arg attribute="roundDecimal">2</arg>
+            <arg attribute="enabled">false</arg>
             <arg attribute="returnCol">4</arg>
             <arg attribute="printable">true</arg>
             </subarg>
@@ -1247,7 +1333,7 @@ el boton cerrar cierra el formulario
             <arg attribute="name">DESCUENTO</arg>
             <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
-            <arg attribute="roundDecimal">0</arg>
+            <arg attribute="roundDecimal">2</arg>
             <arg attribute="enabled">false</arg>
             </subarg>
             <!-- 11 (k) -->
@@ -1421,7 +1507,7 @@ el boton cerrar cierra el formulario
             <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="enabled">false</arg>
-            <arg attribute="roundDecimal">0</arg>
+            <arg attribute="roundDecimal">2</arg>
             <arg attribute="queryCol">12</arg>
             </subarg>
             <!-- 31 (ae) -->
@@ -1431,7 +1517,7 @@ el boton cerrar cierra el formulario
             <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="enabled">false</arg>
-            <arg attribute="roundDecimal">0</arg>
+            <arg attribute="roundDecimal">2</arg>
             <arg attribute="queryCol">14</arg>
             </subarg>
             <!-- 32 (af) -->
@@ -1441,7 +1527,7 @@ el boton cerrar cierra el formulario
             <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="enabled">false</arg>
-            <arg attribute="roundDecimal">0</arg>
+            <arg attribute="roundDecimal">2</arg>
             <arg attribute="queryCol">16</arg>
             </subarg>
             <!-- 33 (ag) -->
@@ -1451,7 +1537,7 @@ el boton cerrar cierra el formulario
             <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="enabled">false</arg>
-            <arg attribute="roundDecimal">0</arg>
+            <arg attribute="roundDecimal">2</arg>
             <arg attribute="queryCol">30</arg>
             </subarg>
             <!-- 34 (ah) -->
@@ -1461,7 +1547,7 @@ el boton cerrar cierra el formulario
             <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="enabled">false</arg>
-            <arg attribute="roundDecimal">0</arg>
+            <arg attribute="roundDecimal">2</arg>
             <arg attribute="queryCol">32</arg>
             </subarg>
             <!-- 35 (ai) -->
@@ -1471,7 +1557,7 @@ el boton cerrar cierra el formulario
             <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="enabled">false</arg>
-            <arg attribute="roundDecimal">0</arg>
+            <arg attribute="roundDecimal">2</arg>
             <arg attribute="queryCol">34</arg>
             </subarg>
             <!-- 36 (aj) -->
@@ -1481,7 +1567,7 @@ el boton cerrar cierra el formulario
             <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="enabled">false</arg>
-            <arg attribute="roundDecimal">0</arg>
+            <arg attribute="roundDecimal">2</arg>
             <arg attribute="queryCol">36</arg>
             </subarg>
             <!-- 37 (ak) -->
@@ -1490,7 +1576,7 @@ el boton cerrar cierra el formulario
             <!-- Se usa para almacenar la sumatoria de la combinacion de descuentos aplicados en la promocion xy -->
             <arg attribute="length">100</arg>
             <arg attribute="type">DECIMAL</arg>
-            <arg attribute="roundDecimal">0</arg>
+            <arg attribute="roundDecimal">2</arg>
             <arg attribute="enabled">false</arg>
             </subarg>
             <!-- 38 (al) -->
@@ -2757,6 +2843,14 @@ el boton cerrar cierra el formulario
                     <method>clean</method>
                   </component>
                   <component>
+                    <driver id="ventasacumuladas">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                  </component>                  
+                  <component>
+                    <driver id="usuario">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                  </component>                                    
+                  <component>
                     <driver id="totalValues">client.gui.components.TableDataFields</driver>
                     <method>clean</method>
                   </component>
@@ -2846,55 +2940,3 @@ el boton cerrar cierra el formulario
   </panel>
 
 </FORM>
-
-<!--List of components:
-<driver id="nro_fact">client.gui.components.TableDataFields</driver>
-<driver id="baseivagravados">client.gui.components.TableDataFields</driver>
-<driver id="subtotalglobalsinverde">client.gui.components.TableDataFields</driver>
-<driver id="totalmenosreteglobal">client.gui.components.TableDataFields</driver>
-<driver id="id_res_fact">client.gui.components.TableDataFields</driver>
-<driver id="res_fact">client.gui.components.TableDataFields</driver>
-<driver id="res_fact_fecha">client.gui.components.TableDataFields</driver>
-<driver id="res_fact_desde">client.gui.components.TableDataFields</driver>
-<driver id="res_fact_vigencia">client.gui.components.TableDataFields</driver>
-<driver id="res_fact_prefijo">client.gui.components.TableDataFields</driver>
-<driver id="nrogenerador">client.gui.components.TableDataFields</driver>
-<driver id="total">client.gui.components.TableDataFields</driver>
-<driver id="totalcantidad">client.gui.components.TableDataFields</driver>
-<driver id="totalcanttemp">client.gui.components.TableDataFields</driver>
-<driver id="totalValuesDescuento">client.gui.components.TableDataFields</driver>
-<driver id="totalValues">client.gui.components.TableDataFields</driver>
-<driver id="iddirecciontercero">common.gui.components.GenericData</driver>
-<driver id="idtelefonotercero">common.gui.components.GenericData</driver>
-<driver id="terceroempleado">common.gui.components.GenericData</driver>
-<driver id="idbodegae">common.gui.components.GenericData</driver>
-<driver id="bodega">common.gui.components.GenericData</driver>
-<driver id="piepaginauno">common.gui.components.GenericData</driver>
-<driver id="piepaginados">common.gui.components.GenericData</driver>
-<driver id="piepaginatres">common.gui.components.GenericData</driver>
-<driver id="horarioatencion">common.gui.components.GenericData</driver>
-<driver id="nitalterno">common.gui.components.GenericData</driver>
-<driver id="terceroal">common.gui.components.GenericData</driver>
-<driver id="centrocosto">common.gui.components.GenericData</driver>
-<driver id="referrercustomername">common.gui.components.GenericData</driver>
-<driver id="date">common.gui.components.GenericData</driver>
-<driver id="credit">common.gui.components.GenericData</driver>
-<driver id="vencimiento">common.gui.components.GenericData</driver>
-<driver id="numeroordenexterno">common.gui.components.GenericData</driver>
-<driver id="email">common.gui.components.GenericData</driver>
-<driver id="direccioncontacto">common.gui.components.GenericData</driver>
-<driver id="telefonocontacto">common.gui.components.GenericData</driver>
-<driver id="tipo_doc">client.gui.components.XMLComboBox</driver>
-<driver id="Vendedor">client.gui.components.XMLComboBox</driver>
-<driver id="combotemporales">client.gui.components.XMLComboBox</driver>
-<driver id="principal">client.gui.components.TableFindData</driver>
-<driver id="temporales">client.gui.components.TableFindData</driver>
-<driver>client.gui.components.FindThird</driver>
-<driver id="referrercustomerid">client.gui.components.EmakuSearchField</driver>
-<driver>common.gui.components.XMLTextArea</driver>
-
-<driver id="sendbuttontemporales">client.gui.components.EmakuSendRecordButton</driver>
-<driver id="temporal">common.gui.components.ButtonsPanel</driver>
-<driver id="pagocarta">common.gui.components.ButtonsPanel</driver>
-<driver id="pagotirilla">common.gui.components.ButtonsPanel</driver>
--->

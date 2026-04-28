@@ -897,19 +897,19 @@
           <!-- VERDE vlr unitario imp -->
           <arg attribute="beanshell">r="28312".equals(n)?d*e:ad&gt;0?d*(ae*(ad/100.0)):0</arg>          <!-- verde -->
           <!-- basecinco -->
-          <arg attribute="beanshell">t=s==&quot;10&quot;?j:0</arg>
+          <arg attribute="beanshell">t=s==&quot;10&quot;?k:0</arg>
           <!-- base 5% -->
           <arg attribute="beanshell">u=s==&quot;10&quot;?k:0</arg>
           <!-- IVA 5% -->
-          <arg attribute="beanshell">v=s==&quot;5&quot;?j:0</arg>
+          <arg attribute="beanshell">v=s==&quot;5&quot;?k:0</arg>
           <!-- base 19% -->
           <arg attribute="beanshell">w=s==&quot;5&quot;?k:0</arg>
           <!-- IVA 19% -->
-          <arg attribute="beanshell">x=s==&quot;13&quot;&amp;&amp;!&quot;28312&quot;.equals(n)?j:0</arg>
+          <arg attribute="beanshell">x=s==&quot;13&quot;&amp;&amp;!&quot;28312&quot;.equals(n)?k:0</arg>
           <!-- base exento -->
           <arg attribute="beanshell">y=s==&quot;13&quot;?k:0</arg>
           <!-- IVA exento -->
-          <arg attribute="beanshell">z=s==&quot;12&quot;&amp;&amp;!&quot;28312&quot;.equals(n)?j:0</arg>
+          <arg attribute="beanshell">z=s==&quot;12&quot;&amp;&amp;!&quot;28312&quot;.equals(n)?k:0</arg>
           <!-- base excluido -->
           <arg attribute="beanshell">aa=s==&quot;12&quot;?k:0</arg>
           <!-- IVA excluido -->
@@ -951,7 +951,8 @@
             <subarg>
             <arg attribute="name">Cant</arg>
             <arg attribute="length">70</arg>
-            <arg attribute="type">INTEGER</arg>
+            <arg attribute="type">DECIMAL</arg>
+            <arg attribute="roundDecimal">2</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="returnCol">1</arg>
             <arg attribute="recalculate">false</arg>
@@ -1263,7 +1264,8 @@
               <arg attribute="maxlength">26</arg>
               <arg attribute="enabled">false</arg>
               <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="totalCol">j</arg>
+              <!-- <arg attribute="totalCol">j</arg> -->
+              <arg attribute="calculateExportValue">subtotalsinbolsa-netosinbolsa</arg>
               <arg attribute="exportValue">vdescuentoglobal</arg>
               <arg attribute="return">false</arg>
               <arg attribute="foreground">0,0,0</arg>

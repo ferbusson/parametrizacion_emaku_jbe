@@ -28,7 +28,7 @@
                  <arg attribute="debuging">true</arg>
                  <arg attribute="centrocosto">getName</arg>
                  <subarg>
-                         <arg attribute="accountField">42958101,D</arg>
+                         <arg attribute="accountField">61350101,D</arg>
                  </subarg>
          </parameters>
  </LNData>
@@ -49,7 +49,7 @@
       <parameters>
         <arg attribute="debuging">true</arg>
         <arg attribute="Base">0</arg>
-        <arg attribute="CodeAPS">14</arg>
+        <arg attribute="CodeAPS">14</arg> <!-- devoluciones en compra -->
         <arg attribute="Concepto">Ajuste Inventario Fragmantación - Salida</arg>
         <arg attribute="centrocosto">getName</arg>
         <arg attribute="tercero">getName</arg>
@@ -57,13 +57,23 @@
           <arg attribute="accountCol">IdProdServ,0</arg>            
 
             <!-- 5% -->
-            <arg attribute="accountCol">1435560501,2</arg>
+            <!-- <arg attribute="accountCol">1435560501,2</arg> -->
             <!-- 19% -->
-            <arg attribute="accountCol">1435560502,2</arg>
+            <!-- <arg attribute="accountCol">1435560502,2</arg> -->
             <!-- Excluidas -->
-            <arg attribute="accountCol">14355610,2</arg>
+            <!-- <arg attribute="accountCol">14355610,2</arg> -->
             <!-- Exentas -->
-            <arg attribute="accountCol">14355615,2</arg>
+            <!-- <arg attribute="accountCol">14355615,2</arg> -->
+
+
+            <!-- 5% -->
+            <arg attribute="accountCol">14350102,2</arg>
+            <!-- 19% -->
+            <arg attribute="accountCol">14350101,2</arg>
+            <!-- Excluidas -->
+            <arg attribute="accountCol">14350103,2</arg>
+            <!-- Exentas -->
+            <!-- <arg attribute="accountCol">14355615,2</arg> -->
 
         </subarg>
       </parameters>
@@ -94,20 +104,27 @@
       <parameters>
         <arg attribute="debuging">true</arg>
         <arg attribute="Base">0</arg>
-        <arg attribute="CodeAPS">6</arg> <!-- 13 -->
+        <arg attribute="CodeAPS">6</arg> <!-- compras -->
         <arg attribute="Concepto">Ajuste Inventario Fragmantación - Entrada</arg>
         <arg attribute="centrocosto">getName</arg>
         <arg attribute="tercero">getName</arg>
         <subarg>
             <arg attribute="accountCol">IdProdServ,0</arg>
             <!-- 5% -->
-            <arg attribute="accountCol">1435560501,2</arg>
+            <!-- <arg attribute="accountCol">1435560501,2</arg> -->
+            <!-- 19% -->
+            <!-- <arg attribute="accountCol">14350101,2</arg> -->
+            <!-- Excluidas -->
+            <!-- <arg attribute="accountCol">14355610,2</arg> -->
+            <!-- Exentas -->
+            <!-- <arg attribute="accountCol">14355615,2</arg> -->
+
+            <!-- 5% -->
+            <arg attribute="accountCol">14350102,2</arg>
             <!-- 19% -->
             <arg attribute="accountCol">14350101,2</arg>
             <!-- Excluidas -->
-            <arg attribute="accountCol">14355610,2</arg>
-            <!-- Exentas -->
-            <arg attribute="accountCol">14355615,2</arg>
+            <arg attribute="accountCol">14350103,2</arg>
         </subarg>
       </parameters>
     </LNData>

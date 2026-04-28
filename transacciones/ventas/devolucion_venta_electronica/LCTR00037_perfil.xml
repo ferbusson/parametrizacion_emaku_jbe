@@ -108,7 +108,8 @@
                     <arg attribute="font">Dialog,1,20</arg>
                     <arg attribute="alignment">RIGHT</arg>
                     <arg attribute="exportValue">subtotalimpr</arg>
-                    <arg attribute="calculateExportValue">netosinbolsa</arg>
+                    <!-- <arg attribute="calculateExportValue">netosinbolsa</arg> -->
+                    <arg attribute="calculateExportValue">stotala</arg>                  
                     <arg attribute="printable">true</arg>
                 </subarg>
             </parameters>
@@ -123,7 +124,8 @@
                     <arg attribute="size">11</arg>
                     <arg attribute="maxlength">26</arg>
                     <arg attribute="enabled">false</arg>
-                    <arg attribute="calculateExportValue">descuentoa</arg>
+                    <!-- <arg attribute="calculateExportValue">descuentoa</arg> -->
+                    <arg attribute="calculateExportValue">stotala-baseivagravados</arg>
                     <arg attribute="font">Dialog,1,20</arg>
                     <arg attribute="alignment">RIGHT</arg>
                     <arg attribute="printable">true</arg>
@@ -1828,6 +1830,11 @@
                                 </component>
 
                                 <component>
+                                    <driver id="labelforuser">common.gui.components.XMLLabel</driver>
+                                    <method>clean</method>
+                                </component>
+
+                                <component>
                                     <driver id="date">common.gui.components.GenericData</driver>
                                     <method>clean</method>
                                 </component>
@@ -2865,6 +2872,8 @@
                             <arg attribute="sqlCode">LCSEL0570</arg>
                             <arg attribute="sqlCode">LCSEL0571</arg>
                             <arg attribute="sqlCode">LCSEL0458</arg>                          
+                            <arg attribute="sqlCode">JBSEL0089</arg> <!-- letrero de devs anteriores de la factura consultada -->
+                            
                         </subarg>
                     </parameters>
                 </component>
@@ -2976,8 +2985,8 @@
 
                         <arg attribute="beanshell">r=q=="10"?j:0</arg>                        <!-- base 5% -->
                         <arg attribute="beanshell">s=q=="10"?k:0</arg>                        <!-- iva 5% -->
-                        <arg attribute="beanshell">t=q=="5"?j:0</arg>                        <!-- base 19% -->
-                        <arg attribute="beanshell">u=q=="5"?k:0</arg>                        <!-- iva 19% -->
+                        <arg attribute="beanshell">t=q=="5"||q==&quot;16&quot;||q==&quot;17&quot;||q==&quot;18&quot;||q==&quot;19&quot;||q==&quot;20&quot;||q==&quot;21&quot;||q==&quot;22&quot;?j:0</arg>                        <!-- base 19% -->
+                        <arg attribute="beanshell">u=q=="5"||q==&quot;16&quot;||q==&quot;17&quot;||q==&quot;18&quot;||q==&quot;19&quot;||q==&quot;20&quot;||q==&quot;21&quot;||q==&quot;22&quot;?k:0</arg>                        <!-- iva 19% -->
                         <arg attribute="beanshell">v=q=="13"&amp;&amp;!&quot;28312&quot;.equals(m)?j:0</arg>                        <!-- base exento -->
                         <arg attribute="beanshell">w=q=="13"?k:0</arg>                        <!-- iva exento -->
                         <arg attribute="beanshell">x=q=="12"&amp;&amp;!&quot;28312&quot;.equals(m)?j:0</arg>                        <!-- base excluido -->
@@ -3017,14 +3026,16 @@
                             <arg attribute="name">Disponible</arg>
                             <arg attribute="length">80</arg>
                             <arg attribute="enabled">false</arg>
-                            <arg attribute="type">INTEGER</arg>
+                            <arg attribute="type">DECIMAL</arg>
+                            <arg attribute="roundDecimal">2</arg>
                             <arg attribute="clean">false</arg>
                             <arg attribute="queryCol">5</arg>
                         </subarg>
                         <subarg>                            <!-- D3 -->
                             <arg attribute="name">CANTIDAD</arg>
                             <arg attribute="length">80</arg>
-                            <arg attribute="type">INTEGER</arg>
+                            <arg attribute="type">DECIMAL</arg>
+                            <arg attribute="roundDecimal">2</arg>
                             <arg attribute="enabled">true</arg>
                             <arg attribute="returnCol">1</arg>
                             <arg attribute="clean">false</arg>
@@ -3310,6 +3321,15 @@
                 </parameters>
               </component>
             </panel>
+            <component locate="West">
+            <driver id="labelforuser">common.gui.components.XMLLabel</driver>
+            <parameters>
+                <arg attribute="keySQL">JBSEL0089</arg>
+                <arg attribute="driverEvent" id="fac_cambio">client.gui.components.TableDataFields</arg>
+                <arg attribute="text">:</arg>
+                <arg attribute="alignment">LEFT</arg>
+            </parameters>
+            </component>      
             <panel locate="East" type="FlowLayout" />
             <component locate="Center">
                 <driver>common.gui.components.ButtonsPanel</driver>
@@ -3393,6 +3413,10 @@
 
                         <component>
                             <driver id="total">common.gui.components.GenericData</driver>
+                            <method>clean</method>
+                        </component>
+                        <component>
+                            <driver id="labelforuser">common.gui.components.XMLLabel</driver>
                             <method>clean</method>
                         </component>
 

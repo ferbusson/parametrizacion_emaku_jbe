@@ -1,0 +1,18 @@
+<container>
+	<!--  
+		Este modelo es para logica de negocios de un documento.
+	-->
+	<!--
+		El primer paquete de subargumentos contiene informacion especifica
+		para crear un documento. 
+	-->
+	<subarg>
+		<arg attribute="idDocument">DR</arg>
+		<arg attribute="consecutive" />
+		<arg attribute="actionDocument">createDocument</arg>
+		<arg attribute="cash" />
+                <arg attribute="date" />
+	</subarg>
+       <arg>INS0037</arg>
+       <arg>MTINS0046</arg>
+</container>

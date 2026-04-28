@@ -844,7 +844,7 @@
       <component locate="North">
         <driver>common.gui.components.XMLLabel</driver>
         <parameters>
-          <arg attribute="text">Listas Disponibles: Carta: 1 (Default) | Abanico: 2 | Bases: 3</arg>
+          <arg attribute="text">Listas Disponibles: Catálogo: 1 (Default) | Abanico: 2 | Bases: 3</arg>
           <arg attribute="alignment">0</arg>
           <arg attribute="font">Dialog,1,10</arg>
         </parameters>
@@ -965,13 +965,14 @@
             <subarg>
             <arg attribute="name">Cant</arg>
             <arg attribute="length">70</arg>
-            <arg attribute="type">INTEGER</arg>
+            <arg attribute="type">DECIMAL</arg>
             <arg attribute="enabled">false</arg>
             <arg attribute="returnCol">1</arg>
             <arg attribute="recalculate">false</arg>
             <arg attribute="defaultValue">1</arg>
             <arg attribute="nameField">Cantidad</arg>
             <arg attribute="printable">true</arg>
+            <arg attribute="roundDecimal">2</arg>
             <arg attribute="minValue">0</arg>
             </subarg>
             <!-- 5 (e) -->
@@ -1277,7 +1278,8 @@
               <arg attribute="maxlength">26</arg>
               <arg attribute="enabled">false</arg>
               <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="totalCol">j</arg>
+              <!-- <arg attribute="totalCol">j</arg> -->
+              <arg attribute="calculateExportValue">subtotalsinbolsa-netosinbolsa</arg>
               <arg attribute="exportValue">vdescuentoglobal</arg>
               <arg attribute="return">false</arg>
               <arg attribute="foreground">0,0,0</arg>
@@ -2603,7 +2605,7 @@
         </panel>
 
       </panel>
-	<panel name="RETENCIONES" icon="RETENCIONES" type="BorderLayout">
+  <panel name="RETENCIONES" icon="RETENCIONES" type="BorderLayout">
                 <panel locate="Center" type="GridLayout" rows="3" cols="1">
                     <panel locate="Center" type="BorderLayout">
                         <component locate="North">

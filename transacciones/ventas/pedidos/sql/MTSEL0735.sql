@@ -21,7 +21,7 @@ FROM
 	info_empleado i
 WHERE
 	i.estado='ACT' AND
-	i.id = 209; -- don jose aparece en todas las sucursales
+	i.id IN (209,211); -- don jose aparece en todas las sucursales se agrega anyi tambien porque se mueve de sucursal constantemente
 	
 select
 	id,
@@ -29,5 +29,5 @@ select
 from
 	aux_listado_empleados
 ORDER BY
-	sigla::integer;
+	sigla;
 

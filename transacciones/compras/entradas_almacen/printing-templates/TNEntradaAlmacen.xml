@@ -138,9 +138,9 @@
 			<field col="25" type="STRING" fontSize="7" fontName="Sans" fontStyle="0" /> <!-- codigo -->
 			<field col="94" type="STRING" fontSize="7" fontName="Sans" fontStyle="0" /> <!-- referencia -->
 			<field col="167" type="STRING" fontSize="7" fontName="Sans" fontStyle="0" /> <!-- descripcion -->
-			<field col="468" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###" /> <!-- cantidad -->
+			<field col="468" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###.##" /> <!-- cantidad -->
 			<field col="433" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###" /> <!-- % IVA -->
-			<field col="398" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###" /> <!-- % Desc -->
+			<field col="398" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###.##" /> <!-- % Desc -->
 			<field col="580" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="#,###,###,##0.00" /> <!-- total -->
 			<field col="525" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="#,###,###,##0.00" /> <!-- vunitario -->
 		</subpackage>

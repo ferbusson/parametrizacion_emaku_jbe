@@ -791,6 +791,7 @@
                         <arg attribute="importValue">codigo_tipo</arg>              
                         <arg attribute="sqlCode">LCSEL0437</arg> <!-- cajero -->
                         <arg attribute="sqlCode">SEL0169</arg> <!-- tercero -->
+                        <arg attribute="sqlCode">JBSEL0082</arg> <!-- nombre comercial -->
                         <arg attribute="sqlCode">SEL0120</arg> <!-- observaciones -->
                         <!-- <arg attribute="sqlCode">DGSEL0081</arg> dias vigencia -->
                         <arg attribute="sqlCode">SEL0177</arg> <!-- fecha factura SEL0177-->
@@ -1298,7 +1299,8 @@
               <arg attribute="maxlength">26</arg>
               <arg attribute="enabled">false</arg>
               <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="totalCol">j</arg>
+              <!-- <arg attribute="totalCol">j</arg> -->
+              <arg attribute="calculateExportValue">subtotalsinbolsa-netosinbolsa</arg>
               <arg attribute="exportValue">vdescuentoglobal</arg>
               <arg attribute="return">false</arg>
               <arg attribute="foreground">0,0,0</arg>
@@ -1710,6 +1712,25 @@
             <visible>false</visible>
         </preferences>
         <!--  Componente Oculto -->
+
+         <component>
+            <driver id="nombre_comercial">common.gui.components.GenericData</driver>
+            <parameters>
+               <arg attribute="keySQL">JBSEL0082</arg>
+                  <arg attribute="driverEvent" id="nro_fact">client.gui.components.TableDataFields</arg>
+              <subarg>
+                <arg attribute="format">TEXT</arg>
+                <arg attribute="getValue">_nombre_comercial</arg>
+                <arg attribute="exportValue">nombre_comercial</arg>
+                <arg attribute="name">nombreComercial</arg>
+                <arg attribute="maxlength">80</arg>
+                <arg attribute="size">15</arg>
+                <arg attribute="printable">TRUE</arg>
+                <arg attribute="enabled">false</arg>
+                <arg attribute="clean">true</arg>
+              </subarg>
+            </parameters>
+          </component>
 
     <component locate="Center">
               <driver id="fechaprocesamiento">common.gui.components.GenericData</driver>
@@ -2790,7 +2811,7 @@
         </panel>
 
       </panel>
-	<panel name="RETENCIONES" icon="RETENCIONES" type="BorderLayout">
+    <panel name="RETENCIONES" icon="RETENCIONES" type="BorderLayout">
                 <panel locate="Center" type="GridLayout" rows="3" cols="1">
                     <panel locate="Center" type="BorderLayout">
                         <component locate="North">
@@ -4390,6 +4411,13 @@
                   <driver>client.gui.components.FindThird</driver>
                   <method>getPrintPackage</method>
                 </component>
+
+                5a
+                <component>
+                  <driver id="nombre_comercial">common.gui.components.GenericData</driver>
+                  <method>getPrintPackage</method>
+                </component>
+
                 <!-- 6 -->
                 <component>
                   <driver id="date">common.gui.components.GenericData</driver>
@@ -4657,7 +4685,7 @@
                 <object>
                   <name>PRINT</name>
 
-                  <!-- impresion lado cliente Carta -->
+                  <!-- impresion lado cliente tirilla -->
                   <action>
                     <type>printer</type>
                     <printerTemplate>/graphics/TSFacturaElectronicaTirillaJBE.xml</printerTemplate>
@@ -5173,6 +5201,16 @@
                   </parameters>
                 </component> -->
 
+                <!-- 49 Paquete Blanco Gracias por su compra -->
+                <component>
+                  <driver id="vpago">common.gui.components.GenericData</driver>
+                  <method>getBlankPackage</method>
+                </component>
+                <!-- 49 Paquete Blanco Gracias por su compra -->
+                <component>
+                  <driver id="vpago">common.gui.components.GenericData</driver>
+                  <method>getBlankPackage</method>
+                </component>
                 <!-- 49 Paquete Blanco Gracias por su compra -->
                 <component>
                   <driver id="vpago">common.gui.components.GenericData</driver>

@@ -502,6 +502,7 @@
                                 <arg attribute="name">BODEGA</arg>
                                 <arg attribute="addAttribute">key</arg>
                                 <arg attribute="nameField">bodegaEntrante</arg>
+                                <arg attribute="sqlCode">LCSEL0609</arg>
                             </parameters>
                         </component>
                         <component>
@@ -1077,6 +1078,26 @@
         </panel>
         <panel icon="/icons/ico_compras_plantilla_16x16.png" name="Docs Temporales" type="BorderLayout">
             <panel align="left" locate="North" type="FlowLayout">
+              <component locate="North">
+    <driver id="centrocosto">common.gui.components.GenericData</driver>
+    <parameters>
+        <arg attribute="keySQL">LCSEL0609</arg>
+        <arg attribute="driverEvent" id="Bodega">client.gui.components.XMLComboBox</arg>
+      <subarg>
+        <arg attribute="format">TEXT</arg>
+        <arg attribute="name">centrocosto</arg>
+        <arg attribute="size">5</arg>
+        <arg attribute="clean">FALSE</arg>
+        <arg attribute="defaultTextValue">1</arg>
+        <arg attribute="enabled">FALSE</arg>
+        <arg attribute="maxlength">20</arg>
+        <arg attribute="nameField">centrocosto</arg>
+        <arg attribute="addAttribute">key</arg>
+        <arg attribute="nullValue">true</arg>
+        <arg attribute="exportValue">keyCentro</arg>
+      </subarg>
+    </parameters>
+  </component>
                 <component locate="West">
                     <driver>common.gui.components.XMLLabel</driver>
                     <parameters>
@@ -2342,7 +2363,7 @@
                                 <arg attribute="importTotalCol">w,netomasflete</arg>
                                 <arg attribute="beanshell">e=w&gt;c?(w*d)/100:0</arg>
                                 <arg attribute="formula">g=w</arg>
-                                <arg attribute="enabled">false</arg>
+                                <arg attribute="enabled">true</arg>
                                 <!-- a -->
                                 <subarg>
                                     <arg attribute="name">CUENTA</arg>
@@ -2445,7 +2466,7 @@
                                 <arg attribute="importTotalCol">q,netomasflete</arg>
                                 <arg attribute="beanshell">e=q&gt;c?(w*d)/100:0</arg>
                                 <arg attribute="formula">g=q</arg>
-                                <arg attribute="enabled">false</arg>
+                                <arg attribute="enabled">true</arg>
                                 <!-- a -->
                                 <subarg>
                                     <arg attribute="name">CUENTA</arg>
@@ -2548,7 +2569,7 @@
                                 <arg attribute="importTotalCol">k,netomasflete</arg>
                                 <arg attribute="beanshell">e=n*d/100:0</arg>
                                 <arg attribute="formula">g=n</arg>
-                                <arg attribute="enabled">false</arg>
+                                <arg attribute="enabled">true</arg>
                                 <subarg>
                                     <arg attribute="name">CUENTA</arg>
                                     <arg attribute="length">120</arg>
@@ -2644,7 +2665,7 @@
                                 <arg attribute="importTotalCol">k,netomasflete</arg>
                                 <arg attribute="beanshell">e=k&gt;c?(k*d)/100:0</arg>
                                 <arg attribute="formula">g=k</arg>
-                                <arg attribute="enabled">false</arg>
+                                <arg attribute="enabled">true</arg>
                                 <!-- a -->
                                 <subarg>
                                     <arg attribute="name">CUENTA</arg>
@@ -2845,6 +2866,17 @@
                                 <method>getPackage</method>
                             </component>
 
+                            <!-- 14 -->
+                            <component>
+                                <driver id="principal">client.gui.components.TableFindData</driver>
+                                <method>getBlankPackage</method>
+                            </component>
+
+                            <component>
+                                <driver id="centrocosto">common.gui.components.GenericData</driver>
+                                <method>getPackage</method>
+                            </component>
+
                             <component>
                                 <driver id="flete">client.gui.components.TableDataFields</driver>
                                 <method>getPackage</method>
@@ -2914,10 +2946,10 @@
                                 <method>getPackage</method>
                             </component>
                             <!-- 14 -->
-                            <component>
+<!--                             <component>
                                 <driver id="principal">client.gui.components.TableFindData</driver>
                                 <method>getBlankPackage</method>
-                            </component>
+                            </component> -->
                             <!-- 15 -->
                             <component>
                                 <driver id="principal">client.gui.components.TableFindData</driver>

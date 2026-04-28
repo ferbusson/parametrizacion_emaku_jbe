@@ -1,0 +1,20 @@
+<container>
+
+  <subarg>
+      <arg attribute="idDocument">TC</arg>
+      <arg attribute="consecutive" />
+      <arg attribute="date" />
+      <arg attribute="actionDocument">createDocument</arg>
+      <arg attribute="cash" />
+      <arg attribute="reloadProdServ" />
+  </subarg>
+  
+  <!-- Crea tabla nueva_info -->  
+  <arg>JBINS0022</arg>
+
+  <!-- Inserta en tabla nueva_info -->
+  <arg>JBINS0023</arg>
+
+  <!-- Ver transaccion manual LCTR00077 LCINS0079-->
+
+</container>

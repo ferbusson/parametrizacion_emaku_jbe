@@ -588,12 +588,34 @@ JBE ACCOUNTS TABLE:
                     <arg attribute="accountCol">41350106,6</arg> <!-- ok -->
                     <!-- mercancia 19% -->
                     <arg attribute="accountCol">41350101,6</arg> <!-- ok -->
-                    <!-- servicios transporte-->
-                    <arg attribute="accountCol">41450501,6</arg> <!-- ok -->
                     <!-- mercancia Excluidas -->
                     <arg attribute="accountCol">41350102,6</arg> <!-- ok -->
                     <!-- Exentas -->
                     <arg attribute="accountCol">41355615,6</arg>
+
+<!--Servicios -->
+                    <!-- SERVCORTE19 Servicio corte 19 -->
+                    <arg attribute="accountCol">41350301,6</arg>
+
+                    <!-- SERVPERF19 Servicio perforacion 19 -->
+                    <arg attribute="accountCol">41350302,6</arg>
+
+                    <!-- SERVENCHA19 Servicio enchape 19 -->
+                    <arg attribute="accountCol">41350304,6</arg>
+
+                    <!-- SERVDISENO19 Servicio diseño 19 -->
+                    <arg attribute="accountCol">41350305,6</arg>
+
+                    <!-- SERVCARGA19 Servicio transporte carga 19 -->
+                    <arg attribute="accountCol">41450501,6</arg>
+
+                    <!-- SERTRABST19 Servicio transporte terceros 19 -->
+                    <arg attribute="accountCol">41450503,6</arg>
+
+                    <!-- Intereses iva 19-->
+                    <arg attribute="accountCol">41350303,6</arg>
+
+
                     <!-- iva 5% -->
                     <arg attribute="accountCol">24080102,5</arg> <!-- ok -->
                     <!-- iva 19 ventas% -->

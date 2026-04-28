@@ -1,0 +1,30 @@
+<container>
+  <!--  
+    Este modelo es para logica de negocios de un documento.
+  -->
+  <!--
+    El primer paquete de subargumentos contiene informacion especifica
+    para crear un documento. 
+  -->
+  <subarg>
+    <arg attribute="idDocument">TN</arg>
+    <arg attribute="consecutive" />
+    <arg attribute="actionDocument">createDocument</arg>
+    <arg attribute="cash" />
+  </subarg>
+  <!--  adicionando numero ref -->
+  <arg attribute="addKey" />
+  <arg>HCINS0021</arg>
+  <!--  adicionando dcredito -->
+  <arg attribute="addKey" />
+  <!--  adicionando codigo tipo -->
+  <arg attribute="addKey" />
+  <LNData>
+    <driver>LNSelectedField</driver>
+    <method>getSubpackage</method>
+    <parameters>
+      <arg attribute="sql">LCINS0199</arg>
+      <arg attribute="fields">0,1,2,3,11,5,8,9,7,14</arg>
+    </parameters>
+  </LNData>
+</container>

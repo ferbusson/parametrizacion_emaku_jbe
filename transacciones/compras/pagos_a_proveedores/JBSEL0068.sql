@@ -16,8 +16,8 @@ select
 		when cu.char_cta = '21051004' then 'BCO / BANCOLOMBIA'		
 		when cu.char_cta = '21051006' then 'BCO / BANCOLOMBIA'		
 		when cu.char_cta = '21051008' then 'BCO / BOGOTÁ'		
-		when cu.char_cta = '21051009' then 'BCO / DAVIVIENDA'		
-        else 'EFECTIVO'
+		when cu.char_cta = '21051009' then 'TARJETA C. DAVIVIENDA'		
+        else 'CONSIGNACIÓN EN EFECTIVO'
 			end as medio_pago
 from
 	aux_parametros_consulta a

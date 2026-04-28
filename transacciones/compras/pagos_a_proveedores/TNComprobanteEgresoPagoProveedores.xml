@@ -69,16 +69,16 @@
 		<field row="220" col="470" type="STRING">% Dto</field>
 		<field row="220" col="510" type="STRING">Valor a Pagar</field>
 
-		<field row="640" col="370" type="STRING">Subtotal</field>
-		<field row="655" col="370" type="STRING">IVA</field>
-		<field row="670" col="370" type="STRING">DTO Financiero</field>
-		<field row="685" col="370" type="STRING">Total</field>
+		<field row="640" col="350" type="STRING">Subtotal</field>
+		<field row="655" col="350" type="STRING">IVA</field>
+		<field row="670" col="350" type="STRING">DTO Financiero</field>
+		<field row="685" col="350" type="STRING">Total</field>
 
 		<line row="700" col="340" row2="700" col2="585" />
 		<!-- <field row="705" col="370" type="STRING">PAGOS REALIZADOS</field> -->
-		<field row="720" col="370" type="STRING">Medio de Pago:</field>
-		<field row="735" col="370" type="STRING">Valor</field>
-		<field row="750" col="370" type="STRING">Valor Notas</field>
+		<field row="720" col="350" type="STRING">Medio de Pago:</field>
+		<field row="735" col="350" type="STRING">Valor</field>
+		<field row="750" col="350" type="STRING">Valor Notas</field>
 		
 
 
@@ -110,7 +110,7 @@
 			<field col="30" type="STRING" fontSize="7" fontName="Sans" fontStyle="0" /> <!-- factura -->
 			<field col="360" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###" /> <!-- valor_factura -->
 			<field col="575" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###" /> <!-- abono -->
-			<field col="490" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###" /> <!-- % desc -->
+			<field col="490" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###.#" /> <!-- % desc -->
 			<field col="440" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="##,###" /> <!-- valor Desc -->
 			<field col="210" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="#,###,###,##0.00" /> <!-- valor base factura -->
 			<field col="290" type="NUMERIC" fontSize="7" fontName="Sans" fontStyle="0" mask="#,###,###,##0.00" /> <!-- valor iva factura -->
@@ -135,7 +135,7 @@
 
 		<!-- medio de pago-->
 	<package>
-		<field row="720" col="460" type="STRING" />
+		 <field row="720" col="435" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0" />
 	</package>
 		<!-- total consignado-->
 	<package>

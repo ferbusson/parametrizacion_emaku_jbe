@@ -11,10 +11,10 @@
       <id>gfforma</id>
       <visible>false</visible>
     </preferences>
-        <component locate="Center">
+        <!-- <component locate="Center">
       <driver id="mediodepagoimpresion">common.gui.components.GenericData</driver>
       <parameters>
-        <arg attribute="keySQL">JBSEL0068</arg>
+        <arg attribute="keySQL">JBSEL0072</arg>
         <arg attribute="driverEvent" id="mediosdepago">client.gui.components.XMLComboBox</arg>
         <subarg>
           <arg attribute="format">TEXT</arg>
@@ -26,7 +26,7 @@
           <arg attribute="printable">true</arg>
         </subarg>
       </parameters>
-    </component>
+    </component> -->
     <component>
       <driver id="tdescuentofinancieroynotas">client.gui.components.TableDataFields</driver>
       <parameters>
@@ -430,6 +430,7 @@
                     <arg attribute="enabled">false</arg>
                     <arg attribute="font">Dialog,0,18</arg>
                     <arg attribute="alignment">RIGHT</arg>
+                    <arg attribute="printable">true</arg>
                     <!-- <arg attribute="foreground">249,87,87</arg> -->
                     <arg attribute="calculateExportValue">totalnotascredito+totaldescuentostablaprin+partidadoblecredito</arg>
                     <!-- <arg attribute="totalCol">i</arg> -->
@@ -480,21 +481,40 @@
                   </subarg>
                 </parameters>
               </component>
-              <component>
-                <!-- <arg attribute="Panel">false</arg> -->
-                <driver id="mediosdepago">client.gui.components.XMLComboBox</driver>
+              <!-- <component>
+                <driver id="mediosdepago">common.gui.components.GenericData</driver>
                 <parameters>
+                  <arg attribute="keySQL">JBSEL0072</arg>
+                  <arg attribute="driverEvent" id="nro_comprobante">common.gui.components.GenericData</arg>
                   <arg attribute="preferredLength">580</arg>
                   <arg attribute="exportTextValue">mediosdepago</arg>
                   <arg attribute="sqlCombo">JBSEL0064</arg>
                   <arg attribute="font">Dialog,0,14</arg>
                   <arg attribute="selectedIndex">1</arg>
+                  <arg attribute="enabled">false</arg>
                   <arg attribute="importValueCode">tercerofactura</arg>
                   <arg attribute="importValueCode">vpago</arg>
                   <arg attribute="exportValue">efectivo</arg>
-                  <arg attribute="sqlCode">JBSEL0066</arg>
-                  <arg attribute="sqlCode">JBSEL0068</arg>
-                  <!-- <arg attribute="sqlCode">GRSEL0002</arg> -->
+                </parameters>
+              </component> -->
+              <component locate="Center">
+                <driver id="mediosdepago">common.gui.components.GenericData</driver>
+                <parameters>
+                  <arg attribute="Panel">false</arg>
+                  <arg attribute="keySQL">JBSEL0072</arg>
+                  <arg attribute="driverEvent" id="nro_comprobante">common.gui.components.GenericData</arg>                  
+                  <subarg>
+                    <arg attribute="name">MEDIOSDEPAGO</arg>
+                    <arg attribute="format">TEXT</arg>
+                    <arg attribute="size">10</arg>
+                    <arg attribute="maxlength">150</arg>
+                    <arg attribute="exportValue">mediosdepago</arg>
+                    <arg attribute="enabled">false</arg>
+                    <arg attribute="font">Dialog,0,14</arg>
+                    <arg attribute="alignment">LEFT</arg>
+                    <arg attribute="printable">true</arg>
+                    <!-- <arg attribute="sqlCode">JBSEL0066</arg> -->
+                  </subarg>
                 </parameters>
               </component>
             </panel>
@@ -1028,16 +1048,16 @@
                 <method>getPrintPackage</method>
             </component>
             <component>
-                <driver id="totaldescuento">client.gui.components.TableDataFields</driver>
+                <driver id="tdescuento">client.gui.components.TableDataFields</driver>
                 <method>getPrintPackage</method>
             </component>
             <component>
-                <driver id="total_comprobante">client.gui.components.TableDataFields</driver>
+                <driver id="vpago">client.gui.components.TableDataFields</driver>
                 <method>getPrintPackage</method>
             </component>
 
             <component>
-                <driver id="mediodepagoimpresion">common.gui.components.GenericData</driver>
+                <driver id="mediosdepago">common.gui.components.GenericData</driver>
                 <method>getPrintPackage</method>
             </component>
             <component>
@@ -1236,11 +1256,14 @@
           <component locate="West">
                   <driver id="date">common.gui.components.GenericData</driver>
                   <parameters>
-                    <arg attribute="keySQL">LCSEL0447</arg>
+                    <arg attribute="Panel">false</arg>
+                    <arg attribute="keySQL">DGSEL0130</arg>
                     <arg attribute="driverEvent" id="nro_comprobante">common.gui.components.GenericData</arg>
                     <subarg>                      
                       <arg attribute="format">TEXT</arg>
                       <arg attribute="size">10</arg>
+                      <arg attribute="foreground">249,87,87</arg>
+                      <arg attribute="background">0,0,0</arg>
                       <arg attribute="maxlength">50</arg>
                       <arg attribute="enabled">false</arg>
                       <arg attribute="return">false</arg>
@@ -1270,9 +1293,10 @@
                 <arg attribute="constantValue">CE</arg>
                 <arg attribute="sqlCode">JBSEL0069</arg> <!--tabla cartera -->
                 <arg attribute="sqlCode">SEL0169</arg> <!--tercero -->
-                <arg attribute="sqlCode">LCSEL0447</arg> <!-- fecha -->
+                <arg attribute="sqlCode">DGSEL0130</arg> <!-- fecha -->
                 <arg attribute="sqlCode">JBSEL0070</arg> <!-- tabla notas credito -->                
-                <arg attribute="sqlCode">JBSEL0071</arg> <!-- tabla notas credito -->                
+                <arg attribute="sqlCode">JBSEL0071</arg> <!-- tabla contabilizacion manual -->                
+                <arg attribute="sqlCode">JBSEL0072</arg> <!-- medio de pago -->                
               </subarg>
             </parameters>
           </component>
@@ -1597,7 +1621,7 @@
           <method>clean</method>
         </component>
         <component>
-          <driver id="mediosdepago">client.gui.components.XMLComboBox</driver>
+          <driver id="mediosdepago">common.gui.components.GenericData</driver>
           <method>clean</method>
         </component>
         <component>
@@ -1648,8 +1672,12 @@
           <driver id="cartera">client.gui.components.TableFindData</driver>
           <method>clean</method>
         </component>
-        <component>
+        <!-- <component>
           <driver id="date">common.gui.components.XMLDateField</driver>
+          <method>clean</method>
+        </component> -->
+        <component>
+          <driver id="date">common.gui.components.GenericData</driver>
           <method>clean</method>
         </component>
         <component>

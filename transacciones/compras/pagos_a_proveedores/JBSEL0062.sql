@@ -183,5 +183,7 @@ FROM
 	ORDER BY
 		fecha,numero) as foo
 WHERE
-	foo.saldo!=0;
+	foo.saldo!=0
+order by
+	ex_documento;
 

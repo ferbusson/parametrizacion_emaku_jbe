@@ -26,7 +26,7 @@ WHERE
     i.ndocumento = d.ndocumento AND
     d.estado AND
     lp.id_prod_serv = i.id_prod_serv AND
-    i.id_bodega IN (916,920) -- Se acuerda que para estos formularios: editar productos (completo y sencillo) y maestro de productos en la principal el promedio sea el de bodega o americas
+    i.id_bodega IN (138) -- Se acuerda que para estos formularios: editar productos (completo y sencillo) y maestro de productos en la principal el promedio sea el de bodega principal
 ORDER BY
     i.id_prod_serv,
     i.fecha DESC;
