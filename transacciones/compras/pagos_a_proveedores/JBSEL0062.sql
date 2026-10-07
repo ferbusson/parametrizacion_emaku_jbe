@@ -3,8 +3,9 @@ drop table if exists aux_facturas_pendientes;
 create temp table aux_facturas_pendientes as
 WITH tercero_param AS (
     SELECT ?::BIGINT AS id_tercero
-),
-v_base AS (
+)
+,
+valor_base_de_iva_facturas AS (
     SELECT 
         l.ndocumento,
         l.id_centrocosto,
@@ -25,6 +26,35 @@ v_base AS (
     GROUP BY 
     	l.ndocumento,
     	l.id_centrocosto
+)
+,
+valor_base_de_iva_devoluciones AS (
+    SELECT 
+        ea.ndocumento,
+        ROUND(SUM(l.haber)::NUMERIC, 2) AS vlor
+    FROM 
+    	valor_base_de_iva_facturas ea
+    join
+    	info_documento id
+    on
+    	ea.ndocumento = id.rf_documento 
+    join
+    	libro_auxiliar l
+    on
+    	id.ndocumento = l.ndocumento
+    join
+    	cuentas cta 
+    ON 
+    	cta.id_cta = l.id_cta
+       	AND cta.char_cta LIKE '1435%'
+   JOIN 
+   		tercero_param t 
+    ON 
+    	l.id_tercero = t.id_tercero
+    where
+    	l.haber > 0
+    GROUP BY 
+    	ea.ndocumento
 ),
 base AS (
     SELECT
@@ -41,7 +71,7 @@ base AS (
                 ELSE '' 
             END AS numero,
         c.nfactura,
-        v_base.vlor,
+        coalesce(valor_base_de_iva_facturas.vlor,0) - coalesce(valor_base_de_iva_devoluciones.vlor,0) as vlor,
         c.total_factura,
         ac.char_cta,
         ac.nombre as nombre_cuenta,
@@ -53,7 +83,8 @@ base AS (
     JOIN documentos d ON d.ndocumento = c.nfactura AND d.estado = TRUE
     JOIN info_documento i ON i.ndocumento = d.ndocumento
     JOIN cuentas ac ON ac.id_cta = c.id_cta AND ac.char_cta ILIKE '2205%'
-    left JOIN v_base ON v_base.ndocumento = c.nfactura
+    left JOIN valor_base_de_iva_facturas ON valor_base_de_iva_facturas.ndocumento = c.nfactura
+    left JOIN valor_base_de_iva_devoluciones ON valor_base_de_iva_devoluciones.ndocumento = c.nfactura
     WHERE c.total_factura > 0
 )
 
@@ -115,6 +146,27 @@ where
 	la.ndocumento in (select distinct ndocumento from aux_facturas_pendientes)
 group by
 	la.ndocumento;
+
+drop table if exists aux_valor_iva_de_devoluciones;
+create temp table aux_valor_iva_de_devoluciones as
+select
+	ea.ndocumento,
+	sum(la.haber) as valor_iva
+from
+	aux_valor_iva_de_facturas ea
+    join
+    	info_documento id
+    on
+    	ea.ndocumento = id.rf_documento
+    join
+		libro_auxiliar la
+	on
+		la.ndocumento = id.ndocumento
+where
+	la.id_cta in (select cu.id_cta from aux_cuentas_iva cu)
+group by
+	ea.ndocumento;
+
 
 select
 	false as seleccion,
@@ -181,7 +233,7 @@ FROM
 			c.id_cta,
 			c.nombre_cuenta,
 			c.ndocumento,
-			coalesce(iva.valor_iva,0) as valor_iva,
+			coalesce(iva.valor_iva,0)-coalesce(iva_dev.valor_iva,0) as valor_iva,
 			c.codigocentrocosto,
 			c.id_centrocosto
 		from					
@@ -195,7 +247,7 @@ FROM
 				cartera c,
 				cuentas cu,
 				documentos d
-			where
+			where				
 				c.id_cta = cu.id_cta and
 				cu.char_cta like '2205%' and
 				c.ncomprobante=d.ndocumento AND
@@ -209,7 +261,12 @@ FROM
 		left join
 			aux_valor_iva_de_facturas iva
 		on
-			c.nfactura = iva.ndocumento) AS foo
+			c.nfactura = iva.ndocumento
+		left join
+			aux_valor_iva_de_devoluciones iva_dev
+		on
+			c.nfactura = iva_dev.ndocumento
+		) AS foo
 	LEFT OUTER JOIN
 		info_documento if
 	ON
