@@ -28,7 +28,7 @@
                  <arg attribute="debuging">true</arg>
                  <arg attribute="centrocosto">getName</arg>
                  <subarg>
-                         <arg attribute="accountField">61350101,D</arg>
+                         <arg attribute="accountField">42958101,C</arg>
                  </subarg>
          </parameters>
  </LNData>

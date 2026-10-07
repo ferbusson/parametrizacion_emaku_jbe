@@ -3612,14 +3612,6 @@ o el carpintero asociado -->
                 <type>transaction</type>
                 <!-- BOTON GUARDAR CARTA -->
                 <!-- <component>
-                  <driver>this</driver>
-                  <method>validMultiPackage</method>
-                  <parameters>
-                    <driver attribute="driver" id="diascredito">common.gui.components.GenericData</driver>
-                    <arg attribute="errorMessage">Error, El cliente no tiene asignado días de crédito</arg>
-                  </parameters>
-                </component> -->
-                <component>
                   <driver id="efectivoneto">common.gui.components.GenericData</driver>
                   <method>validPackage</method>
                   <parameters>
@@ -3634,7 +3626,7 @@ o el carpintero asociado -->
                     <driver attribute="driver" id="tipofactura">client.gui.components.XMLComboBox</driver>
                     <arg attribute="errorMessage">Error, Seleccione el tipo de Crédito Por favor</arg>
                   </parameters>
-                </component>
+                </component> -->
                 <component>
                   <driver>this</driver>
                   <method>validMultiPackage</method>
@@ -3664,6 +3656,15 @@ o el carpintero asociado -->
                 <driver id="efectivoneto">common.gui.components.GenericData</driver>
                 <method>validPackage</method>
                 <parameters>
+                  <arg attribute="conditional">!("13050501".equals(charctatipofactura)||"13050503".equals(charctatipofactura)) || facturasvencidas==0.0</arg>
+                  <arg attribute="errorMessage">Error, debe cancelar facturas crédito vencidas antes de poder acceder a un nuevo crédito</arg>
+                </parameters>
+              </component>
+
+                <component>
+                <driver id="efectivoneto">common.gui.components.GenericData</driver>
+                <method>validPackage</method>
+                <parameters>
                   <!--13050504: addi - 13050502: sistecredito - 13050501: jbe - 13050503: covifactura-->
                   <!-- Validamos que solo evalue el cupo de crédito cuando se trate de creditos JBE o Covifactura, para Addi y Sistecrédito no se debe evaluar el cupo -->
                   <arg attribute="conditional">(!("13050501".equals(charctatipofactura)||"13050503".equals(charctatipofactura)) || pagooacredito &lt;= cupocredito)</arg> 
@@ -3671,14 +3672,7 @@ o el carpintero asociado -->
                 </parameters>
               </component>
 
-                <!-- <component>
-                <driver id="efectivoneto">common.gui.components.GenericData</driver>
-                <method>validPackage</method>
-                <parameters>
-                  <arg attribute="conditional">facturasvencidas==0.0</arg>
-                  <arg attribute="errorMessage">Error, debe cancelar facturas crédito vencidas antes de poder acceder a un nuevo crédito</arg>
-                </parameters>
-              </component> -->
+              
 
                 <component>
                   <driver id="pagocarta">common.gui.components.ButtonsPanel</driver>

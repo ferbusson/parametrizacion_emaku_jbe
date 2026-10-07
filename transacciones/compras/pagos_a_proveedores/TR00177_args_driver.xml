@@ -452,11 +452,21 @@
       <method>getSubpackage</method>
       <parameters>
         <arg attribute="sql">JBINS0017</arg>
-        <arg attribute="fields">0,2,3,4,6,7</arg>
+        <arg attribute="fields">7,14,12,13,15,11</arg>
         <arg attribute="discartKey">centrocosto</arg>
       </parameters>
     </LNData>
     <LNData>
+          <driver>LNContabilidad</driver>
+          <method>rowDataAccountSC</method>
+          <parameters>
+            <!-- <arg attribute="centrocosto">getName</arg>
+            <arg attribute="scentrocosto">getName</arg>
+            <arg attribute="tercero">getname</arg>
+            <arg attribute="inventario">notData</arg> -->
+          </parameters>
+      </LNData>
+    <!-- <LNData>
       <driver>LNContabilidad</driver>
       <method>columnDataAccount</method>
       <parameters>
@@ -466,12 +476,14 @@
         <arg attribute="tercero">getName</arg>
         <arg attribute="centrocosto">getName</arg>
         <subarg>
-          <arg attribute="accountKey">5</arg> <!-- el indice que le corresponde en los returnCol  -->
-          <arg attribute="accountData">1</arg> <!--total de la factura-->
+          <arg attribute="accountKey">4</arg> el indice que le corresponde en los returnCol 
+          <arg attribute="accountData">14</arg> total de la factura
         </subarg>
       </parameters>
-    </LNData>
+    </LNData> -->
   </subarg>
+
+
 
    <subarg>
     <!--  inserta en contabilizacion manual documentos -->  
@@ -480,7 +492,7 @@
           <method>getSubpackage</method>
           <parameters>
               <arg attribute="sql">JBINS0019</arg>
-              <arg attribute="fields">2,0,5,6</arg>
+              <arg attribute="fields">4,0,8,9</arg>
               <arg attribute="discartKey">centrocosto</arg>
               <arg attribute="discartKey">idTercero</arg>
           </parameters>
@@ -493,7 +505,7 @@
           <method>getSubpackage</method>
           <parameters>
               <arg attribute="sql">FIINS0002</arg>
-              <arg attribute="fields">5,5,7</arg>
+              <arg attribute="fields">8,8,11</arg>
               <arg attribute="conditional">"c".startsWith("13") </arg>
               <arg attribute="discartKey">centrocosto</arg>
               <arg attribute="discartKey">scentrocosto</arg>
@@ -507,7 +519,7 @@
       <method>getSubpackage</method>
       <parameters>
         <arg attribute="sql">GRINS0003</arg>
-        <arg attribute="fields">7,5,6,8</arg>
+        <arg attribute="fields">11,8,9,12</arg>
         <arg attribute="discartKey">idTercero</arg>       
               <arg attribute="discartKey">centrocosto</arg>
               <arg attribute="discartKey">scentrocosto</arg>              
@@ -521,8 +533,8 @@
           <method>getSubpackage</method>
           <parameters>
               <arg attribute="sql">DGINS0023</arg>
-              <arg attribute="fields">6,6,7</arg>
-              <arg attribute="conditional">"c".startsWith("2") &amp;&amp; !"c".startsWith("24") &amp;&amp; !"c".startsWith("2365") &amp;&amp; !"c".startsWith("2370")</arg>
+              <arg attribute="fields">9,9,11</arg>
+              <arg attribute="conditional">"e".startsWith("2") &amp;&amp; !"e".startsWith("24") &amp;&amp; !"e".startsWith("2365") &amp;&amp; !"e".startsWith("2370")</arg>
               <arg attribute="discartKey">centrocosto</arg>
               <arg attribute="discartKey">scentrocosto</arg>              
           </parameters>
@@ -534,8 +546,8 @@
           <method>getSubpackage</method>
           <parameters>
               <arg attribute="sql">FIINS0003</arg>
-              <arg attribute="fields">6,6,7</arg>
-              <arg attribute="conditional">"c".startsWith("1") &amp;&amp; "i".equals("TRUE") &amp;&amp; f&gt;0</arg>
+              <arg attribute="fields">9,9,11</arg>
+              <arg attribute="conditional">"e".startsWith("1") &amp;&amp; "m".equals("TRUE") &amp;&amp; j&gt;0</arg>
               <arg attribute="discartKey">centrocosto</arg>
               <arg attribute="discartKey">scentrocosto</arg>              
           </parameters>
@@ -548,8 +560,8 @@
           <method>getSubpackage</method>
           <parameters>
               <arg attribute="sql">FIINS0003</arg>
-              <arg attribute="fields">5,5,7</arg>
-              <arg attribute="conditional">"c".startsWith("2") &amp;&amp; "i".equals("TRUE") &amp;&amp; e&gt;0</arg>
+              <arg attribute="fields">8,8,11</arg>
+              <arg attribute="conditional">"e".startsWith("2") &amp;&amp; "m".equals("TRUE") &amp;&amp; i&gt;0</arg>
               <arg attribute="discartKey">centrocosto</arg>
               <arg attribute="discartKey">scentrocosto</arg>              
           </parameters>
@@ -559,10 +571,10 @@
           <driver>LNContabilidad</driver>
           <method>rowDataAccountSC</method>
           <parameters>
-            <arg attribute="centrocosto">getName</arg>
-            <arg attribute="scentrocosto">getName</arg>
+<!--             <arg attribute="centrocosto">getName</arg>
+            <arg attribute="scentrocosto">getName</arg> -->
             <arg attribute="tercero">getname</arg>
-            <arg attribute="inventario">notData</arg>
+            <!-- <arg attribute="inventario">notData</arg> -->
           </parameters>
       </LNData>
     </subarg>

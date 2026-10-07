@@ -10,7 +10,7 @@ SELECT
 	case when p.id is not null then 1 else 0 end as empleado -- 1 si es empleado 0 si no lo es
 from
 	(select
-		trim('?'::text) as id,
+		trim('?'::text) as id, --(select id from general where id_char = '901506443')
 		trim('?'::text) as char_cta) as foo
 inner join
 	cuentas cu
@@ -29,14 +29,18 @@ on
 DROP TABLE IF EXISTS saldotercero;	
 CREATE TEMP TABLE saldotercero AS
 select
+		foo.idtercero,
 		foo.fecha_vencimiento,
 		foo.empleado,
+		foo.char_cta,
         COALESCE(SUM(saldo),0) AS saldo
 FROM
         (select
+        	c.idtercero,
         	c.fecha_vencimiento,
             c.tfactura+COALESCE(co.cargos,0)-COALESCE(co.vcomprobante,0) AS saldo,
-            c.empleado
+            c.empleado,
+            c.char_cta
         FROM
 	        (SELECT
 					d.fecha,
@@ -57,9 +61,9 @@ FROM
 	                documentos d,
 	                cupotercero
 	            where
-	               	--cupotercero.char_cta = '13050501' and
-                    cupotercero.char_cta = ac.char_cta and
-					ac.char_cta ~ '130505.' AND
+	               	cupotercero.char_cta in ('13050501','13050503') and
+                    --cupotercero.char_cta = ac.char_cta and
+					ac.char_cta in ('13050501','13050503') AND
 					ac.id_cta=c.id_cta AND
 					d.ndocumento=c.nfactura AND
 					c.idtercero=cupotercero.id AND
@@ -102,11 +106,34 @@ WHERE
 	foo.saldo>0
 group by
 	foo.fecha_vencimiento,
+	foo.idtercero,
+	foo.char_cta,
 	foo.empleado;
                 
 --
+
+/*
+DROP TABLE IF EXISTS error_msg;
+CREATE TEMP TABLE error_msg AS
+SELECT 
+	1
+FROM
+	(SELECT
+		error_text('El cliente tiene ('||foo.facturasvencidas||') facturas vencidas. debe cancelar facturas crédito vencidas antes de poder acceder a un nuevo crédito JBE o Covifactura')
+	FROM
+		(select
+			coalesce(sum(case when fecha_vencimiento::date < current_date then 1 else 0 end),0) as facturasvencidas 
+		from
+			saldotercero
+		where
+			char_cta in ('13050501','13050503')
+		having 
+			coalesce(sum(case when fecha_vencimiento::date < current_date then 1 else 0 end),0)>0
+			) AS foo) AS foo;
+*/
+
 -- si la suma es mayor a cero significa que al menos una de las facturas esta vencida
 select
-	coalesce(sum(case when fecha_vencimiento::date < current_date and empleado = 1 then 1 else 0 end),0) as facturasvencidas 
+		COALESCE(SUM(CASE WHEN (CURRENT_DATE - fecha_vencimiento::date) > 10 then 1 else 0 end),0) 		 
 from
 	saldotercero;

@@ -69,10 +69,11 @@
 		<field row="220" col="470" type="STRING">% Dto</field>
 		<field row="220" col="510" type="STRING">Valor a Pagar</field>
 
-		<field row="640" col="350" type="STRING">Subtotal</field>
-		<field row="655" col="350" type="STRING">IVA</field>
-		<field row="670" col="350" type="STRING">DTO Financiero</field>
-		<field row="685" col="350" type="STRING">Total</field>
+		<field row="635" col="350" type="STRING">Subtotal</field>
+		<field row="650" col="350" type="STRING">IVA</field>
+		<field row="665" col="350" type="STRING">DTO Financiero</field>
+		<field row="680" col="350" type="STRING">Retenciones</field>
+		<field row="695" col="350" type="STRING">Total</field>
 
 		<line row="700" col="340" row2="700" col2="585" />
 		<!-- <field row="705" col="370" type="STRING">PAGOS REALIZADOS</field> -->
@@ -80,7 +81,13 @@
 		<field row="735" col="350" type="STRING">Valor</field>
 		<field row="750" col="350" type="STRING">Valor Notas</field>
 		
-
+		<line row="600" col="20" row2="600" col2="340" />
+		<line row="600" col="340" row2="620" col2="340" />
+		<line row="600" col="120" row2="620" col2="120" />
+		<line row="600" col="240" row2="620" col2="240" />
+		<field row="615" col="40" type="STRING">Cuenta</field>
+		<field row="615" col="160" type="STRING">Debe</field>
+		<field row="615" col="280" type="STRING">Haber</field>
 
 	</metadata>
     <package>
@@ -121,19 +128,23 @@
 	</package>
 	<!-- total base antes de iva -->
 	<package>
-		<field row="640" col="570" type="NUMERIC" mask="##,###,###,###" />
+		<field row="635" col="570" type="NUMERIC" mask="##,###,###,###" />
 	</package>
 	<!-- total iva-->
 	<package>
-		<field row="655" col="570" type="NUMERIC" mask="##,###,###,###" />
+		<field row="650" col="570" type="NUMERIC" mask="##,###,###,###" />
 	</package>
 	<!-- total desc financiero -->
 	<package>
-		<field row="670" col="570" type="NUMERIC" mask="##,###,###,###" />
+		<field row="665" col="570" type="NUMERIC" mask="##,###,###,###" />
+	</package>
+	<!-- total retenciones -->
+	<package>
+		<field row="680" col="570" type="NUMERIC" mask="##,###,###,###" />
 	</package>
 	<!-- total-->
 	<package>
-		<field row="685" col="570" type="NUMERIC" mask="##,###,###,###" />
+		<field row="695" col="570" type="NUMERIC" mask="##,###,###,###" />
 	</package>
 
 		<!-- medio de pago-->
@@ -148,6 +159,20 @@
 			<!-- total notas-->
 	<package>
 		<field row="750" col="570" type="NUMERIC" mask="##,###,###,###" />
+	</package>
+
+	 8 tabla contabilizacion
+	<package>
+		<subpackage rowInit="633" rowAcum="10">
+			<field col="30" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
+			<field col="-300" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
+			<field col="-300" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
+			<field col="230" width="14" type="NUMERIC" fontName="Dialog" fontSize="8" fontStyle="0"
+				mask="##,###,###,###" />
+			<field col="330" width="14" type="NUMERIC" fontName="Dialog" fontSize="8" fontStyle="0"
+				mask="##,###,###,###" />
+			<field col="-300" type="STRING" fontName="Dialog" fontSize="8" fontStyle="0"/>
+		</subpackage>
 	</package>
 	
 	<!-- total base antes de iva -->

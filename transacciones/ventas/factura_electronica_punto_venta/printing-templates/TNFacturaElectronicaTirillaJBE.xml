@@ -136,6 +136,16 @@
    <package>
       <field textLine="INC" rowAcum="13" textCol="5" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,##0.00" />
    </package>  
+<!-- 11a -->
+   <package>
+      <field textLine="Total" rowAcum="13" textCol="5" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,##0.00" />
+   </package>
+
+   <!-- 11b -->
+   <package>
+      <field textLine="Retenciones" rowAcum="13" textCol="5" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,##0.00" />
+   </package>
+
    <!-- 12 --> 
    <package>
       <field textLine="Neto a Pagar" rowAcum="13" textCol="5" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,##0.00" />
@@ -184,6 +194,10 @@
       <field textLine="Bonos" rowAcum="13" textCol="5" validZero="true" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,###.##" />
    </package>  
 
+   <!-- consignaciones transferencias -->
+   <package>
+	   <field textLine="Consignaciones" rowAcum="13" textCol="5" validZero="true" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,###.##" />
+   </package> 
    <!-- 20 -->
    <package>
       <field textLine="Cambio" rowAcum="13" textCol="5" validZero="true" fontName="Dialog" fontSize="10" fontStyle="0" row="last" col="204" width="13" type="NUMERIC" mask="#,###,###.##" />

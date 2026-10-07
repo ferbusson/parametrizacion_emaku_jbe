@@ -10,7 +10,7 @@ WHERE
 		'11100504', -- banco agrario
 		'11100505', -- davivienda 4585
 		'11100507', -- banco bogota
-		'11053502', -- banco caja
+		'11050502', -- banco caja
 		'21051004', -- credito virtual bancolombia
 		'21051006', -- tarjeta credito bancolombia
 		'21051008', -- tarjeta credito bogota

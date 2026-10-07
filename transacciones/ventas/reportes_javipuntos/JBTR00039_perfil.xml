@@ -1,0 +1,172 @@
+<FORM>
+  <preferences>
+    <size width="720" height="420" />
+    <name>Reporte Javipuntos por Tercero</name>
+    <icon>NART</icon>
+    <iconificable />
+    <resizable />
+    <closable />
+  </preferences>      
+  <!-- <panel locate="North" type="FlowLayout" /> -->
+  <panel locate="West" type="FlowLayout" />
+  <panel locate="East" type="FlowLayout" />
+
+    <panel locate="North" name="PRODUCTO" icon="/icons/ico_producto_16x16.png" type="BorderLayout">
+      <panel locate="North" type="FlowLayout" />
+      <panel locate="West" type="FlowLayout" />
+      <panel locate="East" type="FlowLayout" />
+      <panel locate="Center" type="BorderLayout">
+        
+          <component locate="West">
+            <driver>client.gui.components.FindThird</driver>
+            <parameters>
+              <arg attribute="keySQL">JBSEL0034</arg>
+            <arg attribute="driverEvent" id="nrogenerador">client.gui.components.TableDataFields</arg>
+              <arg attribute="sqlSizeRecords">SEL0132</arg>            <!-- cuenta los records -->
+              <arg attribute="sqlRecords">LCSEL0936</arg>            <!-- consulta informacion del tercero seleccionado -->
+              <arg attribute="sqlAddress">LCSEL0933</arg>            <!-- retorna direcciones de tercero desde tercero def en consultar si no los numeros que tenga -->
+              <arg attribute="sqlPhones">LCSEL0934</arg>            <!-- retorna numeros de telefono de tercero desde tercero def en consultar si no los numeros que tenga -->
+              <arg attribute="sqlCodeWT">LCSEL0382</arg>            <!-- retorna el email del tercero direccion por defecto si no tiene -->
+              <arg attribute="sqlCodeWT">LCSEL0478</arg>            <!-- retorna ultimo id_direccion del tercero -->
+              <arg attribute="sqlCodeWT">LCSEL0479</arg>            <!-- retorna ultimo id_telefono del tercero -->
+              <arg attribute="sqlCodeWT">LCSEL0986</arg>            <!-- retorna 1 si el tercero es empleado 0 en caso contrario -->
+              <arg attribute="importTypeDocument">codigo_tipo</arg>
+              <arg attribute="sqlInit">LCSEL0103</arg>
+              <arg attribute="queryOnInit">true</arg>
+              <arg attribute="exportValue">idtercero</arg>
+              <arg attribute="importValue">id_centrocosto</arg>
+              <arg attribute="maxRecords">100</arg>
+              <arg attribute="placement">LEFT</arg>
+              <arg attribute="singleIcon">true</arg>
+              <!-- <arg attribute="transferFocus">credit,common.gui.components.GenericData</arg> -->
+              <arg attribute="sqlCode">JBSEL0103</arg>              
+            </parameters>
+          </component>
+        
+      </panel>
+
+
+    </panel>
+
+
+    <panel locate="Center" name="Costo Y PVenta" icon="/icons/ico_codigo_barras_16x16.png" type="BorderLayout">
+      <panel locate="North" type="FlowLayout" />
+      <panel locate="West" type="FlowLayout" />
+      <panel locate="East" type="FlowLayout" />
+      <panel locate="Center" type="BorderLayout">
+      <panel locate="North" type="BorderLayout">
+        <component locate="North">
+            <driver>common.gui.components.XMLLabel</driver>
+            <parameters>
+              <arg attribute="text">Listo Facturas y Puntos</arg>
+              <arg attribute="alignment">0</arg>
+            </parameters>
+          </component>          
+        </panel>
+        <component locate="Center">
+          <driver id="listado">client.gui.components.TableFindData</driver>
+          <parameters>
+            <arg attribute="rows">10</arg>
+            <arg attribute="name">Listas</arg>
+            <arg attribute="colorBackground">94,234,212</arg>
+            <arg attribute="keySQL">JBSEL0103</arg>
+            <arg attribute="totales">c,d,e</arg>
+            <arg attribute="exportTotalCol">c,detallepuntosgenerados</arg>
+            <arg attribute="exportTotalCol">d,detallepuntosredimidos</arg>
+            <arg attribute="driverEvent">client.gui.components.FindThird</arg>
+            <!-- <arg attribute="sqlInit">JBSEL0042</arg>
+            <arg attribute="reload">true</arg>
+            <arg attribute="queryOnInit">true</arg>  -->
+            <subarg> <!--0a-->
+              <arg attribute="name">Factura</arg>
+              <arg attribute="type">STRING</arg>
+              <arg attribute="length">140</arg>
+              <arg attribute="enabled">FALSE</arg>
+              <arg attribute="clean">true</arg>
+            </subarg>
+            <subarg> <!--0a-->
+              <arg attribute="name">Fecha</arg>
+              <arg attribute="type">STRING</arg>
+              <arg attribute="length">150</arg>
+              <arg attribute="enabled">FALSE</arg>
+              <arg attribute="clean">true</arg>
+            </subarg>
+            <subarg><!--1b-->
+              <arg attribute="name">Puntos Generados</arg>
+              <arg attribute="type">INTEGER</arg>
+              <arg attribute="length">120</arg>
+              <arg attribute="enabled">false</arg>
+              <arg attribute="clean">true</arg>
+            </subarg>
+            <subarg><!--1b-->
+              <arg attribute="name">Puntos Redimidos</arg>
+              <arg attribute="type">INTEGER</arg>
+              <arg attribute="length">120</arg>
+              <arg attribute="enabled">false</arg>
+              <arg attribute="clean">true</arg>
+            </subarg>
+            <subarg><!--1b-->
+              <arg attribute="name">Saldo</arg>
+              <arg attribute="type">INTEGER</arg>
+              <arg attribute="length">120</arg>
+              <arg attribute="enabled">false</arg>
+              <arg attribute="clean">true</arg>
+            </subarg>
+          </parameters>
+        </component>
+      </panel>
+      <panel locate="South" type="FlowLayout">
+            <component>
+                <driver id="totalpuntosgenerados">client.gui.components.TableDataFields</driver>
+                <parameters>
+                    <arg attribute="linkTable">listado</arg>
+                    <subarg>
+                        <arg attribute="label">Puntos Acumulados</arg>
+                        <arg attribute="format">INTEGER</arg>
+                        <arg attribute="size">9</arg>
+                        <arg attribute="maxlength">26</arg>
+                        <arg attribute="font">Dialog,1,14</arg>
+                        <arg attribute="alignment">RIGHT</arg>
+                        <arg attribute="printable">true</arg>
+                        <arg attribute="enabled">false</arg>
+                        <arg attribute="calculateExportValue">detallepuntosgenerados-detallepuntosredimidos</arg>
+                    </subarg>
+                </parameters>
+            </component>
+
+        </panel>
+    </panel>
+  <component locate="South">
+    <driver>common.gui.components.ButtonsPanel</driver>
+    <parameters>
+      <!-- <arg>SAVE</arg> -->
+      <arg>NEW</arg>
+      <arg>EXIT</arg>
+    </parameters>
+    <events>
+      <object>
+        <name>NEW</name>
+        <component>
+          <driver id="listado">client.gui.components.TableFindData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="totalpuntosgenerados">client.gui.components.TableDataFields</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver>client.gui.components.FindThird</driver>
+          <method>clean</method>
+        </component>
+       
+
+        <!--  limpiando llaves externas -->
+        <component>
+          <driver>this</driver>
+          <method>cleanExternalValues</method>
+        </component>
+      </object>
+
+    </events>
+  </component>
+</FORM>

@@ -3087,6 +3087,7 @@ o el carpintero asociado -->
                     <arg attribute="maxlength">26</arg>
                     <arg attribute="clean">true</arg>
                     <arg attribute="enabled">false</arg>
+                    <arg attribute="printable">true</arg>
                     <arg attribute="calculateExportValue">totalfact</arg>
                     <arg attribute="exportValue">totalfprov</arg>
                     <arg attribute="font">Dialog,1,18</arg>
@@ -3103,8 +3104,10 @@ o el carpintero asociado -->
                     <arg attribute="name">TRETENCIONES</arg>
                     <arg attribute="format">NUMERIC</arg>
                     <arg attribute="size">10</arg>
+                    <arg attribute="exportValue">totalretenciones</arg>
                     <arg attribute="clean">true</arg>
                     <arg attribute="maxlength">26</arg>
+                    <arg attribute="printable">true</arg>
                     <arg attribute="enabled">false</arg>
                     <arg attribute="font">Dialog,1,18</arg>
                     <arg attribute="alignment">RIGHT</arg>
@@ -3427,6 +3430,7 @@ o el carpintero asociado -->
                       <arg attribute="font">Dialog,1,18</arg>
                       <arg attribute="alignment">RIGHT</arg>
                       <arg attribute="enabled">false</arg>
+                      <arg attribute="printable">true</arg>
                       <arg attribute="calculateExportValue">tconsignation</arg>
                     </subarg>
                   </parameters>
@@ -8179,6 +8183,27 @@ o el carpintero asociado -->
                   </parameters>
                 </component>
 
+                <!-- 11a total antes de retenciones -->
+                <component>
+                  <driver>this</driver>
+                  <method>getPackage</method>
+                  <parameters>
+                    <subarg>
+                      <arg attribute="importValue">totalfprov</arg>
+                    </subarg>
+                  </parameters>
+                </component>
+
+                <!-- 11a total retenciones -->
+                <component>
+                  <driver>this</driver>
+                  <method>getPackage</method>
+                  <parameters>
+                    <subarg>
+                      <arg attribute="importValue">totalretenciones</arg>
+                    </subarg>
+                  </parameters>
+                </component>
 
                 <!-- 12 Total -->
                 <component>
@@ -8255,8 +8280,11 @@ o el carpintero asociado -->
                 <component>
                   <driver id="totalbonos">client.gui.components.TableDataFields</driver>
                   <method>getPrintPackage</method>
+                </component>                
+                <component>
+                  <driver id="totalconsignaciones">common.gui.components.GenericData</driver>
+                  <method>getPrintPackage</method>
                 </component>
-
                 <!-- 20 Cambio -->
                 <component>
                   <driver id="cambio">common.gui.components.GenericData</driver>

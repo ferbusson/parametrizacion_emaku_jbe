@@ -19,7 +19,9 @@ select
 	char_cta,
 	foo.id_cta,
 	idtercero,
-	ROUND((RANDOM()*100000)::numeric,0) as tagdata
+	ROUND((RANDOM()*100000)::numeric,0) as tagdata,
+	0.0 as valor_seleccionado,
+	nombre_cuenta
 FROM
 	(SELECT
 		CAST(fecha AS date) AS fecha,
@@ -32,7 +34,8 @@ FROM
 		vfactura,
 		char_cta,
 		id_cta,
-		idtercero
+		idtercero,
+		nombre_cuenta
 	FROM
 		(SELECT
 			c.idtercero,
@@ -45,7 +48,8 @@ FROM
 			c.tfactura+COALESCE(co.vcomprobante,0) AS saldo,
 			c.char_cta,
 			c.id_cta,
-			c.ndocumento
+			c.ndocumento,
+			c.nombre_cuenta
 		FROM
 			(SELECT
 				d.fecha,
@@ -57,7 +61,8 @@ FROM
 				SUM(c.total_factura) AS tfactura,
 				ac.char_cta,
 				ac.id_cta,
-				d.ndocumento
+				d.ndocumento,
+				ac.nombre as nombre_cuenta
 			FROM
 				cartera c,
 				documentos d,
@@ -65,7 +70,8 @@ FROM
 			 	aux_params_cartera a
 			WHERE
 				c.idtercero = a.id AND
-				ac.char_cta like '1345%' and
+				(ac.char_cta like '1345%' or 
+				ac.char_cta like '1330%') and
 				d.ndocumento=c.nfactura AND
 				ac.id_cta=c.id_cta AND
 				d.estado AND

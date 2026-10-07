@@ -206,6 +206,7 @@
                   <arg attribute="alignment">RIGHT</arg>
                   <arg attribute="return">true</arg>
                   <arg attribute="calculateExportValue">totalcostosalida-totalcostoentrada</arg>
+                  <!-- <arg attribute="calculateBSExportValue">totalcostosalida-totalcostoentrada&lt;0?totalcostoentrada-totalcostosalida:totalcostosalida-totalcostoentrada</arg> -->
                 </subarg>
               </parameters>
             </component>
