@@ -458,7 +458,7 @@
                 <component>
                     <driver>common.gui.components.XMLLabel</driver>
                     <parameters>
-                        <arg attribute="text">Menos Retiros parciales</arg>
+                        <arg attribute="text">Retiros parciales</arg>
                         <arg attribute="font">Dialog,1,13</arg>
                         <arg attribute="alignment">LEFT</arg>
                     </parameters>

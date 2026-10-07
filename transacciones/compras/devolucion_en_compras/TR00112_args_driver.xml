@@ -200,20 +200,20 @@
         <subarg>
           <arg attribute="accountCol">IdProdServ,0</arg>
           <!-- 5 -->
-          <arg attribute="accountCol">1435560501,4</arg>
+          <arg attribute="accountCol">14350102,4</arg>
           <!-- 19 -->
-          <arg attribute="accountCol">1435560502,4</arg>
+          <arg attribute="accountCol">14350101,4</arg>
           <!-- excluida -->
-          <arg attribute="accountCol">14355610,4</arg>
+          <arg attribute="accountCol">14350103,4</arg>
           <!-- exenta -->
           <arg attribute="accountCol">14355615,4</arg>
           <!-- no gravada -->
           <arg attribute="accountCol">14352002,4</arg>
           
           <!-- iva 5% -->
-          <arg attribute="accountCol">24080509,5</arg>
+          <arg attribute="accountCol">24080104,5</arg>
           <!-- iva 19% -->
-          <arg attribute="accountCol">24080510,5</arg>
+          <arg attribute="accountCol">24080103,5</arg>
 
         </subarg>
       </parameters>

@@ -118,7 +118,8 @@ WHERE
 				  'CAMBIOS',
                   'DEVOLUCION VENTA',
                   'DVENTA ELECTRONICA',
-				 'COMPROBANTES INGRESO');
+				 'COMPROBANTES INGRESO',
+				'ANTICIPOS FACTURACION');
 				
 -- se excluyen comprobantes de ingreso, se usa para controlar las consignaciones factura multipago
 DROP TABLE IF EXISTS tipo_docs_solo_facturacion;
@@ -146,7 +147,8 @@ WHERE
 				  'FCONTINGENCIA',
 				  'CAMBIOS',
                   'DEVOLUCION VENTA',
-                  'DVENTA ELECTRONICA');
+                  'DVENTA ELECTRONICA',
+					'ANTICIPOS FACTURACION');
 
 DROP TABLE IF EXISTS tipo_doc_comprobante;
 CREATE TEMP TABLE tipo_doc_comprobante AS
@@ -381,7 +383,7 @@ SELECT
 FROM
     (SELECT
         a.fecha_comprobante,
-        SUM(CASE WHEN c.char_cta = '11053501' THEN a.abono_comprobante ELSE 0 END) AS efectivo,
+        SUM(CASE WHEN c.char_cta = '11050501' THEN a.abono_comprobante ELSE 0 END) AS efectivo,
         SUM(CASE WHEN c.char_cta = '28050504' THEN a.abono_comprobante ELSE 0 END) AS tregalo,
         SUM(CASE WHEN c.char_cta = '11052001' THEN a.abono_comprobante ELSE 0 END) AS sodexo,
         SUM(CASE WHEN c.char_cta = '11052501' THEN a.abono_comprobante ELSE 0 END) AS bigpass
@@ -427,7 +429,7 @@ LEFT OUTER JOIN
     WHERE
         a.ndocumento = l.ndocumento AND
         c.id_cta=l.id_cta AND
-        c.char_cta IN ('11053501','530535') --efectivo, descuentos
+        c.char_cta IN ('11050501','530535') --efectivo, descuentos
     GROUP BY 
         l.fecha::DATE) AS efectivo
 ON
@@ -588,7 +590,7 @@ UNION
 SELECT
     7::INTEGER AS id,
 	a.nom_suc,
-	'ANTICIPOS'::VARCHAR AS nombre,
+	'ANTICIPOS CRUZADOS FACS'::VARCHAR AS nombre,
 	COALESCE(anticipos.valor,0) AS valor,
 	a.id_administracion_sucursales
 FROM    
@@ -596,7 +598,7 @@ FROM
 LEFT OUTER JOIN
      (SELECT
         l.fecha::DATE AS fecha,
-        sum(debe)-sum(haber) AS valor
+        sum(debe) AS valor
     FROM
         aux_docs a,
         libro_auxiliar l,
@@ -604,7 +606,7 @@ LEFT OUTER JOIN
     WHERE
         a.ndocumento = l.ndocumento AND
         c.id_cta=l.id_cta AND
-        c.char_cta in ('28050502')
+        c.char_cta in ('28050101','28150501')
     GROUP BY 
         l.fecha::DATE) AS anticipos
 ON
@@ -618,7 +620,7 @@ SELECT
     8::INTEGER AS id,
 	a.nom_suc,
 	'CONSIGNACIONES'::VARCHAR AS nombre,
-	COALESCE(consignaciones.valor,0)+COALESCE(aci.consignaciones,0)+COALESCE(consignacionesfactura.valor,0) AS valor,
+	COALESCE(consignaciones.valor,0)+/*COALESCE(aci.consignaciones,0)+*/COALESCE(consignacionesfactura.valor,0) AS valor,
 	a.id_administracion_sucursales
 FROM    
     (SELECT DISTINCT fecha, nom_suc, id_administracion_sucursales FROM aux_docs) a
@@ -644,23 +646,24 @@ LEFT OUTER JOIN
 	) AS consignaciones
 ON
     a.fecha = consignaciones.fecha
-LEFT OUTER JOIN
+/*LEFT OUTER JOIN
     aux_medios_pago_ci aci
 ON
-    a.fecha = aci.fecha_comprobante
+    a.fecha = aci.fecha_comprobante*/
 left outer join 
 	(SELECT
 		a.fecha,
-		SUM(co.valor) AS valor
+		SUM(case when a.suma then co.valor else co.valor*-1 end) AS valor
+		--SUM(co.valor) AS valor --Mayo 29 2026: cambio esto para que la suma de consignaciones tenga en cuenta las devoluciones, antes no se necesitaba porque las devs se hacian siempre en efectivo
     FROM
         aux_docs a,
-		tipo_docs_solo_facturacion sf,
+		--tipo_docs_solo_facturacion sf,
 		consignaciones co,
         cuentas c
     WHERE
 		a.ndocumento = co.ndocumento AND
-		a.codigo_tipo = sf.codigo_tipo and
-		a.suma AND
+		--a.codigo_tipo = sf.codigo_tipo and
+		--a.suma AND--Mayo 29 2026: cambio esto para que la suma de consignaciones tenga en cuenta las devoluciones, antes no se necesitaba porque las devs se hacian siempre en efectivo
         c.id_cta=co.id_cta AND
         (c.char_cta like ('1110%') or
 		c.char_cta like ('1120%'))

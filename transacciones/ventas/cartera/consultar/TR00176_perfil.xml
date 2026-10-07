@@ -1096,8 +1096,6 @@
                                 <arg attribute="printable">true</arg>
                                 <arg attribute="enabled">false</arg>
                                 <arg attribute="returnCol">0</arg>
-                                <arg attribute="sqlCombo">LCLCSEL0933</arg>
-                                <arg attribute="importValue">denominacion</arg>
                             </subarg>
                         </parameters>
                     </component>
@@ -1184,8 +1182,6 @@
                                 <arg attribute="printable">true</arg>
                                 <arg attribute="enabled">false</arg>
                                 <arg attribute="returnCol">0</arg>
-                                <arg attribute="sqlCombo">LCLCSEL0934</arg>
-                                <arg attribute="importValue">denominacion</arg>
                             </subarg>
                         </parameters>
                     </component>

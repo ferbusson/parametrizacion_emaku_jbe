@@ -103,6 +103,7 @@
                         <arg attribute="exportValue">tercero</arg>
                         <arg attribute="placement">LEFT</arg>
                         <arg attribute="singleIcon">true</arg>
+                        <arg attribute="sqlCode">JBSEL0099</arg>
                         <subarg>
                             <arg attribute="driverEventClass" id="principal">client.gui.components.TableFindData</arg>
                             <arg attribute="method">setQuery</arg>
@@ -287,8 +288,8 @@
                     <component locate="West">
                         <driver id="credit">common.gui.components.GenericData</driver>
                         <parameters>
-                            <arg attribute="keySQL">LCSEL0032</arg>
-                            <arg attribute="driverEvent" id="info_documento">client.gui.components.TableDataFields</arg>
+                            <arg attribute="keySQL">JBSEL0099</arg>
+                            <arg attribute="driverEvent">client.gui.components.FindThird</arg>
                             <subarg>
                                 <arg attribute="label">CREDIT</arg>
                                 <arg attribute="format">TEXT</arg>
@@ -403,7 +404,7 @@
                             <arg attribute="font">Dialog,1,13</arg>
                             <arg attribute="alignment">RIGHT</arg>
                             <arg attribute="addAttribute">finalKey</arg>
-                            <arg attribute="exportValue">infodoc</arg>
+                            <arg attribute="exportValue">numerofacturaproveedor</arg>
                             <arg attribute="exportField">1</arg>
                             <arg attribute="printable">true</arg>
                         </subarg>
@@ -527,15 +528,18 @@
                         <!--3 d -->
                         <arg attribute="name">Saldo</arg>
                         <arg attribute="length">0</arg>
-                        <arg attribute="type">INTEGER</arg>
+                        <!-- <arg attribute="type">INTEGER</arg> -->
+                        <arg attribute="type">DECIMAL</arg>
+                        <arg attribute="roundDecimal">2</arg>
                         <arg attribute="enabled">false</arg>
-                        <arg attribute="roundDecimal">0</arg>
                     </subarg>
                     <subarg>
                         <!--4 e -->
                         <arg attribute="name">CANTIDAD</arg>
                         <arg attribute="length">60</arg>
-                        <arg attribute="type">INTEGER</arg>
+                        <!-- <arg attribute="type">INTEGER</arg> -->
+                        <arg attribute="type">DECIMAL</arg>
+                        <arg attribute="roundDecimal">2</arg>
                         <arg attribute="enabled">true</arg>
                         <arg attribute="clean">false</arg>
                         <arg attribute="defaultValue">1</arg>
@@ -806,16 +810,19 @@
                         <!--3 f -->
                         <arg attribute="name">Saldo</arg>
                         <arg attribute="length">40</arg>
-                        <arg attribute="type">INTEGER</arg>
+                        <!-- <arg attribute="type">INTEGER</arg> -->
+                        <arg attribute="type">DECIMAL</arg>
+                        <arg attribute="roundDecimal">2</arg>
                         <arg attribute="enabled">false</arg>
                         <arg attribute="printable">true</arg>
-                        <arg attribute="roundDecimal">0</arg>
                     </subarg>
                     <subarg>
                         <!--4 g -->
                         <arg attribute="name">CANTIDAD</arg>
                         <arg attribute="length">60</arg>
-                        <arg attribute="type">INTEGER</arg>
+                        <!-- <arg attribute="type">INTEGER</arg> -->
+                        <arg attribute="type">DECIMAL</arg>
+                        <arg attribute="roundDecimal">2</arg>
                         <arg attribute="enabled">true</arg>
                         <arg attribute="clean">false</arg>
                         <arg attribute="defaultValue">1</arg>
@@ -1033,15 +1040,18 @@
                         <!-- 3 d  -->
                         <arg attribute="name">Saldo</arg>
                         <arg attribute="length">0</arg>
-                        <arg attribute="type">INTEGER</arg>
+                        <!-- <arg attribute="type">INTEGER</arg> -->
+                        <arg attribute="type">DECIMAL</arg>
+                        <arg attribute="roundDecimal">2</arg>
                         <arg attribute="enabled">false</arg>
-                        <arg attribute="roundDecimal">0</arg>
                     </subarg>
                     <subarg>
                         <!--4 e -->
                         <arg attribute="name">CANTIDAD</arg>
                         <arg attribute="length">60</arg>
-                        <arg attribute="type">INTEGER</arg>
+                        <!-- <arg attribute="type">INTEGER</arg> -->
+                        <arg attribute="type">DECIMAL</arg>
+                        <arg attribute="roundDecimal">2</arg>
                         <arg attribute="enabled">true</arg>
                         <arg attribute="clean">false</arg>
                         <arg attribute="defaultValue">1</arg>
@@ -1248,15 +1258,18 @@
                         <!-- 3 d  -->
                         <arg attribute="name">Saldo</arg>
                         <arg attribute="length">0</arg>
-                        <arg attribute="type">INTEGER</arg>
+                        <!-- <arg attribute="type">INTEGER</arg> -->
+                        <arg attribute="type">DECIMAL</arg>
+                        <arg attribute="roundDecimal">2</arg>
                         <arg attribute="enabled">false</arg>
-                        <arg attribute="roundDecimal">0</arg>
                     </subarg>
                     <subarg>
                         <!--4 e -->
                         <arg attribute="name">CANTIDAD</arg>
                         <arg attribute="length">60</arg>
-                        <arg attribute="type">INTEGER</arg>
+                        <!-- <arg attribute="type">INTEGER</arg> -->
+                        <arg attribute="type">DECIMAL</arg>
+                        <arg attribute="roundDecimal">2</arg>
                         <arg attribute="enabled">true</arg>
                         <arg attribute="clean">false</arg>
                         <arg attribute="defaultValue">1</arg>
@@ -1771,15 +1784,18 @@
                         <!--3 d -->
                         <arg attribute="name">Saldo</arg>
                         <arg attribute="length">0</arg>
-                        <arg attribute="type">INTEGER</arg>
+                        <!-- <arg attribute="type">INTEGER</arg> -->
+                        <arg attribute="type">DECIMAL</arg>
+                        <arg attribute="roundDecimal">2</arg>
                         <arg attribute="enabled">false</arg>
-                        <arg attribute="roundDecimal">0</arg>
                     </subarg>
                     <subarg>
                         <!--4 e -->
                         <arg attribute="name">CANTIDAD</arg>
                         <arg attribute="length">60</arg>
-                        <arg attribute="type">INTEGER</arg>
+                        <!-- <arg attribute="type">INTEGER</arg> -->
+                        <arg attribute="type">DECIMAL</arg>
+                        <arg attribute="roundDecimal">2</arg>
                         <arg attribute="enabled">false</arg>
                         <arg attribute="clean">false</arg>
                         <arg attribute="defaultValue">1</arg>
@@ -2021,15 +2037,18 @@
                         <!--3 d -->
                         <arg attribute="name">Saldo</arg>
                         <arg attribute="length">0</arg>
-                        <arg attribute="type">INTEGER</arg>
+                        <!-- <arg attribute="type">INTEGER</arg> -->
+                        <arg attribute="type">DECIMAL</arg>
+                        <arg attribute="roundDecimal">2</arg>
                         <arg attribute="enabled">false</arg>
-                        <arg attribute="roundDecimal">0</arg>
                     </subarg>
                     <subarg>
                         <!--4 e -->
                         <arg attribute="name">CANTIDAD</arg>
                         <arg attribute="length">60</arg>
-                        <arg attribute="type">INTEGER</arg>
+                        <!-- <arg attribute="type">INTEGER</arg> -->
+                        <arg attribute="type">DECIMAL</arg>
+                        <arg attribute="roundDecimal">2</arg>
                         <arg attribute="enabled">false</arg>
                         <arg attribute="clean">false</arg>
                         <arg attribute="defaultValue">1</arg>
@@ -2983,6 +3002,7 @@
                                 <arg attribute="returnNullValue">true</arg>
                                 <arg attribute="importTotalCol">w,netomasflete</arg>
                                 <arg attribute="beanshell">e=w&gt;c?(w*d)/100:0</arg>
+                                <!-- <arg attribute="beanshell">e=w&gt;c?ROUND((w*d/100),1)</arg> -->
                                 <arg attribute="formula">g=w</arg>
                                 <arg attribute="enabled">true</arg>
                                 <!-- a -->
@@ -3447,7 +3467,7 @@
                                         <arg attribute="blankPackage">true</arg>
                                         <arg attribute="nullField">true</arg>
                                     <subarg>
-                                        <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">infodoc</arg>
+                                        <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">numerofacturaproveedor</arg>
                                         <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">dcredit</arg>
                                         <arg attribute="importValue" setAttributeName="attribute" setAttributeValue="finalKey">ndocumentooc</arg>                                        
                                     </subarg>
@@ -3588,11 +3608,11 @@
                                 <driver id="principal">client.gui.components.TableFindData</driver>
                                 <method>getPackage</method>
                             </component>
-                            <!-- 16 -->
-                            <!-- <component>
+                            <!-- 16 autoliquidacion de pventa y registro de historico de pventa-->
+                            <component>
                                 <driver id="principal">client.gui.components.TableFindData</driver>
                                 <method>getBlankPackage</method>
-                            </component> -->
+                            </component>
                             
                             <!-- <component>
                                 <driver id="pago1">common.gui.components.ButtonsPanel</driver>
@@ -3888,7 +3908,7 @@
                         </component>
 
                         <component>
-                            <driver id="pago">common.gui.components.ButtonsPanel</driver>
+                              <driver id="pago">common.gui.components.ButtonsPanel</driver>
                             <method>setEnabled</method>
                             <parameters>
                                 <arg attribute="button">PRINT</arg>

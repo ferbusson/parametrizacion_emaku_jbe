@@ -7,6 +7,7 @@ WITH tercero_param AS (
 v_base AS (
     SELECT 
         l.ndocumento,
+        l.id_centrocosto,
         ROUND(SUM(l.debe)::NUMERIC, 2) AS vlor
     FROM 
     	libro_auxiliar l
@@ -22,7 +23,8 @@ v_base AS (
     WHERE 
     	l.debe > 0
     GROUP BY 
-    	l.ndocumento
+    	l.ndocumento,
+    	l.id_centrocosto
 ),
 base AS (
     SELECT
@@ -30,17 +32,20 @@ base AS (
         d.codigo_tipo,
         c.dcredito,
         c.idtercero,
+        id_centrocosto,
         d.codigo_tipo || '-' || d.numero::BIGINT ||
             CASE 
                 WHEN i.ex_documento IS NOT NULL 
                      AND btrim(i.ex_documento) <> '' 
-                THEN ' / ' || i.ex_documento 
+                THEN '|' || i.ex_documento 
                 ELSE '' 
             END AS numero,
         c.nfactura,
         v_base.vlor,
         c.total_factura,
         ac.char_cta,
+        ac.nombre as nombre_cuenta,
+        
         ac.id_cta,
         d.ndocumento
     FROM cartera c
@@ -63,8 +68,16 @@ SELECT
     SUM(total_factura) AS tfactura,
     char_cta,
     id_cta,
-    ndocumento
-FROM base
+    nombre_cuenta,
+    ndocumento,
+    cc.codigo as codigocentrocosto,
+	cc.id_centrocosto
+FROM 
+	base
+left join
+	centrocosto cc
+on
+	base.id_centrocosto = cc.id_centrocosto 
 GROUP BY
     fecha,
     codigo_tipo,
@@ -75,7 +88,10 @@ GROUP BY
     vlor,
     char_cta,
     id_cta,
-    ndocumento;
+    nombre_cuenta,
+    ndocumento,
+	cc.codigo,
+	cc.id_centrocosto;
 
 drop table if exists aux_cuentas_iva;
 create temp table aux_cuentas_iva as
@@ -101,7 +117,6 @@ group by
 	la.ndocumento;
 
 select
-	--'nada'::text as nada,
 	false as seleccion,
 	fecha,
 	dcredito,
@@ -117,11 +132,22 @@ select
 	ndocumento,
 	vfactura,
 	0 as valor_pago,
-	char_cta,
+	trim(char_cta) as char_cta,
 	id_cta,
 	case when foo.codigo_tipo = '1C' then round((saldo/1.19)::numeric,2) else round(vfactura::numeric,2) end as valor_base,
 	0 as contador_factura,
-	case when foo.codigo_tipo = '1C' then saldo-round((saldo/1.19)::numeric,2) else round((valor_iva)::numeric,2) end as valor_iva
+	case when foo.codigo_tipo = '1C' then saldo-round((saldo/1.19)::numeric,2) else round((valor_iva)::numeric,2) end as valor_iva,
+	0.0 as baseseleccion,
+	0.0 as ivaseleccion,
+	foo.nombre_cuenta as concepto,
+	foo.codigocentrocosto,
+	'NULL' as codigosubcentrocosto,
+	'NULL' as vk,
+	foo.id_tercero,
+	'NULL' as id_producto,
+	0 as haber,
+	'NULL' as id_activo,
+	id_centrocosto
 FROM
 	(select
 		foo.codigo_tipo,
@@ -135,12 +161,17 @@ FROM
 		vfactura,
 		char_cta,
 		id_cta,
-		foo.valor_iva
+		nombre_cuenta,
+		foo.valor_iva,
+		foo.codigocentrocosto,
+		foo.id_tercero,
+		foo.id_centrocosto
 	FROM
 		(select
 			c.codigo_tipo,
 			c.fecha,
 			c.dcredito,
+			c.idtercero as id_tercero,
 			c.numero,
 			c.nfactura,
 			c.vfactura,
@@ -148,8 +179,11 @@ FROM
 			c.tfactura+COALESCE(co.vcomprobante,0) AS saldo,
 			c.char_cta,
 			c.id_cta,
+			c.nombre_cuenta,
 			c.ndocumento,
-			coalesce(iva.valor_iva,0) as valor_iva
+			coalesce(iva.valor_iva,0) as valor_iva,
+			c.codigocentrocosto,
+			c.id_centrocosto
 		from					
 			aux_facturas_pendientes AS c
 		LEFT OUTER JOIN
@@ -185,5 +219,7 @@ FROM
 WHERE
 	foo.saldo!=0
 order by
-	ex_documento;
+	trim(replace(foo.ex_documento,' ',''),'');
+
+
 

@@ -45,7 +45,7 @@ WHERE
 DROP TABLE IF EXISTS aux_tarjetas;
 CREATE TEMP TABLE aux_tarjetas AS
 SELECT
-	SUM(COALESCE(t.valor,0)) as valor
+	SUM(COALESCE(case when d.codigo_tipo like 'M%' then t.valor*-1 else t.valor end,0)) as valor
 FROM
 	args_arqueo_medios a,
 	documentos d,
@@ -103,7 +103,7 @@ FROM
 		a.codigo_tipo NOT LIKE 'J%' AND -- Se exceptuan los retiros parciales y la entrega de base sencilla
 		a.codigo_tipo NOT LIKE 'K%' AND -- Ago 6 2020 luego de revision Ago 04 2020
 		c.id_cta=a.id_cta AND
-		(c.char_cta='11053501' OR -- Cheques son tratados como efectivo
+		(c.char_cta='11050501' OR -- Cheques son tratados como efectivo
 		c.char_cta='11051501')
 	UNION
 	SELECT
@@ -117,7 +117,7 @@ FROM
 	SELECT
 		3,
 		'Cheques Sodexo Pass',
-		COALESCE(SUM(debe),0)
+		COALESCE(SUM(debe),0)-COALESCE(SUM(haber),0)
 	FROM
 		aux_medios a,
 		cuentas c
@@ -128,22 +128,17 @@ FROM
 	SELECT
 		4,
 		'Consignaciones',
-		COALESCE(SUM(debe),0)
+		COALESCE(SUM(case when a.codigo_tipo like 'M%' then co.valor*-1 else co.valor end),0)		
 	FROM
-		aux_medios a,
-		consignaciones co,
-		cuentas c
+		(select distinct a.ndocumento,a.codigo_tipo from aux_medios a where detalle ILIKE '%Consignacion%') as a,
+		consignaciones co
 	where
-		a.ndocumento = co.ndocumento and
-		c.id_cta=a.id_cta AND
-		(a.detalle ILIKE '%Consignacion%' OR
-	 	c.char_cta ~ '112005.' or 
-	 	c.char_cta ~ '110540.') -- transferencias
+		a.ndocumento = co.ndocumento		
 	UNION
 	SELECT
 		5,
 		'Cheques Big Pass',
-		COALESCE(SUM(debe),0)
+		COALESCE(SUM(debe),0)-COALESCE(SUM(haber),0)
 	FROM
 		aux_medios a,
 		cuentas c
@@ -166,7 +161,7 @@ FROM
 	SELECT
 		6,
 		'Tarjetas Regalo (Redención)',
-		COALESCE(SUM(debe),0)
+		COALESCE(SUM(debe),0)-COALESCE(SUM(haber),0)
 	FROM
 		aux_medios a,
 		cuentas c
@@ -177,13 +172,13 @@ FROM
 	SELECT
 		7,
 		'Anticipos Facturados',
-		COALESCE(SUM(debe),0)
+		COALESCE(SUM(debe),0)-COALESCE(SUM(haber),0)
 	FROM
 		aux_medios a,
 		cuentas c
 	WHERE
 		c.id_cta=a.id_cta AND
-		c.char_cta='28050502'
+		c.char_cta='28050101'
 
 		) AS f
 ORDER BY

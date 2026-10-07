@@ -14,6 +14,9 @@
       <!-- 5b Inserta en auditoria terceros -->
       <arg>LCINS0197</arg>
 
+      <!-- 16 inserta o actualiza observaciones tercero -->
+     <arg>JBUPD0019</arg>
+
       <!-- 6 Borra de propiedad_tercero -->
       <arg>DEL0017</arg>
       <!-- Inserta en propiedad_tercero -->
@@ -57,7 +60,6 @@
       <arg>LCDEL0002</arg>
       <!-- 15 Inserta en linea_tercero -->
       <arg>LCINS0049</arg>
-     <!-- 16 Actualiza args_traslado_tercero -->
-     <!--<arg>LCUPD0021</arg>-->
+     
 
  </container>

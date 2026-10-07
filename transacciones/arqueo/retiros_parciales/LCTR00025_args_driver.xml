@@ -1,0 +1,52 @@
+<container>
+  <subarg>
+    <arg attribute="consecutive" />
+    <arg attribute="date" />
+    <arg attribute="actionDocument">createDocument</arg>
+  </subarg> 
+
+  <!-- 0 -->
+  <arg>INS0037</arg>
+
+  <!-- 1 -->
+  <arg>DGINS0015</arg>
+
+  <!-- 2 tercero -->
+  <!-- <arg>INS0048</arg> -->
+
+  <!-- id centrocosto -->
+  <arg attribute="addKey"/>
+
+  <!-- idtercero -->
+  <arg attribute="addKey"/>
+
+  <!-- 3 -->
+  <!-- <subarg>
+    <LNData>
+      <driver>LNContabilidad</driver>
+      <method>fieldData</method>
+      <parameters>
+        <arg attribute="debuging">true</arg>
+        <arg attribute="Concepto">Vale de retiro</arg>
+        <arg attribute="centrocosto">getName</arg>
+        <arg attribute="tercero">getName</arg>
+        <subarg>
+          <arg attribute="accountField">11050501,C</arg>
+        </subarg>
+      </parameters>
+    </LNData>
+    <LNData>
+      <driver>LNContabilidad</driver>
+      <method>fieldData</method>
+      <parameters>
+        <arg attribute="debuging">true</arg>
+        <arg attribute="Concepto">Vale de retiro</arg>
+        <arg attribute="centrocosto">getName</arg>
+        <arg attribute="tercero">getName</arg>
+        <subarg>
+          <arg attribute="accountField">11050502,D</arg>
+        </subarg>
+      </parameters>
+    </LNData>
+  </subarg> -->
+</container>

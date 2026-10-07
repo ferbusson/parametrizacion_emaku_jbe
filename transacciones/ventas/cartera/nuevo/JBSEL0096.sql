@@ -39,6 +39,9 @@ WHERE
 	and c.nfactura is null
 	and c.id_cta in (select id_cta from cuentas where char_cta in ('28050501','28050101')) --cuenta anticipos
 	and c.idtercero = '?'
+	and c.abono_comprobante > 0 -- 14 Julio 2026: agrego esta validacion para no listar los registros en la 28050101 
+	-- que alcanzan a registrarse en los anticipos para sistecredito que al generarse automaticamente pasan a la 28150101
+    -- y en cartera quedan en cero
 ORDER BY 
 	fecha, 
 	numero;

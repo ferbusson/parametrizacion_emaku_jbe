@@ -1039,7 +1039,7 @@
                   <arg attribute="background">0,0,0</arg>
                   <arg attribute="font">Dialog,0,18</arg>
                   <arg attribute="exportValue">cuentasxpagar</arg>
-                  <arg attribute="sendRecord">"23359501","DOCUMENTO A CREDITO","0.0",value,"23359501","NULL",6842,"0","DOCCREDITOCXP","NULL","FALSE","0","0","NULL"</arg>          
+                  <arg attribute="sendRecord">"23350501","DOCUMENTO A CREDITO","0.0",value,"23350501","NULL",4408,"0","DOCCREDITOCXP","NULL","FALSE","0","0","NULL"</arg>          
                 </subarg>
               </parameters>
             </component>

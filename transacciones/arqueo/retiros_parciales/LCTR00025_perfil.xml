@@ -1,0 +1,493 @@
+<FORM>
+  <preferences>
+    <size width="550" height="250" />
+    <name>Nuevo Retiro Parcial</name>
+    <icon>/icons/ico_actividad_economica.png</icon>
+    <iconificable />
+    <resizable />
+    <closable />
+    <date />
+
+      <loadMultiBranch>LCSEL0135</loadMultiBranch>
+      <mainPackageStore>id_bodega</mainPackageStore>
+      <minorPackageStore>id_bodega_separado</minorPackageStore>
+      <costCenter>id_centrocosto</costCenter>
+      <documentPrefix>codigo_tipo</documentPrefix>
+      <branchName>nombre_suc</branchName>
+
+      <branchAddress>direccion</branchAddress>
+      <branchPhone>telefono</branchPhone>
+      <branchEmail>email</branchEmail>
+      <branchCity>ciudad</branchCity>
+
+    <notCleanExportValue>horarioatencion</notCleanExportValue>    
+    <notCleanExportValue>piepaginauno</notCleanExportValue>    
+    <notCleanExportValue>piepaginados</notCleanExportValue>    
+    <notCleanExportValue>piepaginatres</notCleanExportValue>    
+
+  </preferences>
+
+  <!-- ocultos -->
+  <component>
+    <driver id="nitalterno">common.gui.components.GenericData</driver>
+    <parameters>
+      <subarg>
+        <arg attribute="format">TEXT</arg>
+        <arg attribute="name">nitalterno</arg>
+        <arg attribute="size">20</arg>
+        <arg attribute="maxlength">200</arg>
+        <arg attribute="sqlInit">MTSEL0737</arg>
+        <arg attribute="queryOnInit">true</arg>
+        <arg attribute="importValue">nombre_suc</arg>
+        <arg attribute="nameField">nitalterno</arg>
+        <arg attribute="exportValue">nitalterno</arg>
+      </subarg>
+    </parameters>
+  </component>
+  <component>
+    <driver id="terceroal">common.gui.components.GenericData</driver>
+    <parameters>
+      <subarg>
+        <arg attribute="format">TEXT</arg>
+        <arg attribute="name">terceroal</arg>
+        <arg attribute="size">20</arg>
+        <arg attribute="maxlength">200</arg>
+        <arg attribute="sqlInit">MTSEL0738</arg>
+        <arg attribute="queryOnInit">true</arg>
+        <arg attribute="importValue">nombre_suc</arg>
+        <arg attribute="nameField">terceroal</arg>
+        <arg attribute="exportValue">terceroal</arg>
+      </subarg>
+    </parameters>
+  </component>
+
+<component>
+    <driver id="vendedor">common.gui.components.GenericData</driver>
+    <parameters>
+      <subarg>
+        <arg attribute="format">TEXT</arg>
+        <arg attribute="name">vendedor</arg>
+        <arg attribute="size">20</arg>
+        <arg attribute="maxlength">200</arg>
+        <arg attribute="sqlInit">LCSEL0100</arg>
+        <arg attribute="queryOnInit">true</arg>
+        <arg attribute="importValue">hostName</arg>
+        <arg attribute="importValue">userLogin</arg>
+        <arg attribute="nameField">vendedor</arg>
+        <arg attribute="exportValue">vendedor</arg>
+        <arg attribute="printable">true</arg>
+      </subarg>
+    </parameters>
+  </component>
+
+  <component>
+    <driver id="horarioatencion">common.gui.components.GenericData</driver>
+    <parameters>
+      <subarg>
+        <arg attribute="format">TEXT</arg>
+        <arg attribute="name">horarioatencion</arg>
+        <arg attribute="exportValue">horarioatencion</arg>
+        <arg attribute="size">20</arg>
+        <arg attribute="maxlength">200</arg>
+        <arg attribute="sqlInit">LCSEL0093</arg>
+        <arg attribute="queryOnInit">true</arg>
+        <arg attribute="importValue">codigo_tipo</arg>        
+      </subarg>
+    </parameters>
+  </component>
+  <component>
+    <driver id="piepaginauno">common.gui.components.GenericData</driver>
+    <parameters>
+      <subarg>
+        <arg attribute="format">TEXT</arg>
+        <arg attribute="exportValue">piepaginauno</arg>
+        <arg attribute="name">piepaginauno</arg>
+        <arg attribute="size">20</arg>
+        <arg attribute="maxlength">200</arg>
+        <arg attribute="sqlInit">LCSEL0094</arg>
+        <arg attribute="queryOnInit">true</arg>
+        <arg attribute="importValue">codigo_tipo</arg>
+      </subarg>
+    </parameters>
+  </component>
+  <component>
+    <driver id="piepaginados">common.gui.components.GenericData</driver>
+    <parameters>
+      <subarg>
+        <arg attribute="format">TEXT</arg>
+        <arg attribute="exportValue">piepaginados</arg>
+        <arg attribute="name">piepaginados</arg>
+        <arg attribute="size">20</arg>
+        <arg attribute="maxlength">200</arg>
+        <arg attribute="sqlInit">LCSEL0095</arg>
+        <arg attribute="queryOnInit">true</arg>
+        <arg attribute="importValue">codigo_tipo</arg>
+      </subarg>
+    </parameters>
+  </component>
+  <component>
+    <driver id="piepaginatres">common.gui.components.GenericData</driver>
+    <parameters>
+      <subarg>
+        <arg attribute="format">TEXT</arg>
+        <arg attribute="exportValue">piepaginatres</arg>
+        <arg attribute="name">piepaginatres</arg>
+        <arg attribute="size">20</arg>
+        <arg attribute="maxlength">200</arg>
+        <arg attribute="sqlInit">LCSEL0096</arg>
+        <arg attribute="queryOnInit">true</arg>
+        <arg attribute="importValue">codigo_tipo</arg>
+      </subarg>
+    </parameters>
+  </component>
+
+
+  <component>
+          <driver id="idcentrocosto">common.gui.components.GenericData</driver>
+          <parameters>
+            <subarg>
+              <arg attribute="format">TEXT</arg>
+              <arg attribute="name">centrocosto</arg>
+              <arg attribute="size">20</arg>
+              <arg attribute="maxlength">20</arg>
+              <arg attribute="sqlInit">MTSEL0682</arg>
+              <arg attribute="queryOnInit">true</arg>
+              <arg attribute="importValue">id_centrocosto</arg>          
+              <arg attribute="nameField">centrocosto</arg>
+              <arg attribute="exportValue">centrocosto</arg>
+              <arg attribute="nullValue">true</arg>
+              <arg attribute="addAttribute">key</arg>
+              <arg attribute="nullValue">true</arg>
+              <arg attribute="exportValue">keyCentro</arg>
+            </subarg>
+          </parameters>
+    </component>
+
+  <component>
+          <driver id="idtercerocaja">common.gui.components.GenericData</driver>
+          <parameters>
+            <subarg>
+              <arg attribute="format">TEXT</arg>
+              <arg attribute="name">idtercerocaja</arg>
+              <arg attribute="size">20</arg>
+              <arg attribute="maxlength">20</arg>
+              <arg attribute="sqlInit">LCSEL0136</arg>
+              <arg attribute="queryOnInit">true</arg>
+              <arg attribute="importValue">userLogin</arg>          
+              <arg attribute="nameField">idTercero</arg>
+              <arg attribute="exportValue">idtercerocaja</arg>
+              <arg attribute="nullValue">true</arg>
+              <arg attribute="addAttribute">key</arg>
+              <arg attribute="nullValue">true</arg>
+            </subarg>
+          </parameters>
+    </component>
+
+      <component>
+      <driver id="imagelogo">common.gui.components.XMLLabel</driver>
+      <parameters>
+        <arg attribute="sqlInit">MTSEL0671</arg>
+        <arg attribute="queryOnInit">true</arg>
+        <arg attribute="importValue">nombre_suc</arg>
+        <arg attribute="alignment">0</arg>
+        <arg attribute="queryImage">true</arg>
+        <arg attribute="widthImage">280</arg>
+        <arg attribute="heightImage">200</arg>
+      </parameters>
+    </component>
+  <!-- fin ocultos -->
+
+  <panel locate="North" type="BorderLayout">
+    <panel locate="North" type="FlowLayout" />
+    <panel locate="Center" type="BorderLayout">
+<!--       <panel locate="West" type="BorderLayout">
+        <component locate="Center">
+          <driver>client.gui.components.FindThird</driver>
+          <parameters>
+            <arg attribute="sqlSizeRecords">SEL0132</arg>
+            <arg attribute="sqlRecords">LCSEL0935</arg>
+            <arg attribute="sqlAddress">LCSEL0933</arg>
+            <arg attribute="sqlPhones">LCSEL0934</arg>
+            <arg attribute="maxRecords">100</arg>
+          </parameters>
+        </component>
+      </panel> -->
+      <panel locate="East" type="BorderLayout">
+        <!-- <box locate="North" length="50" />
+        <box locate="South" length="40" />
+        <box locate="East" width="30" /> -->
+        <panel locate="North" type="FlowLayout" />
+        <panel locate="South" type="FlowLayout" />
+        <panel locate="East" type="FlowLayout" />
+
+        <panel locate="West" type="GridLayout" rows="3" cols="1">
+          <component locate="West">
+            <driver>common.gui.components.XMLLabel</driver>
+            <parameters>
+              <arg attribute="text">Fecha</arg>
+              <arg attribute="alignment">0</arg>
+              <arg attribute="font">Dialog,0,14</arg>
+            </parameters>
+          </component>
+          <component locate="West">
+            <driver>common.gui.components.XMLLabel</driver>
+            <parameters>
+              <arg attribute="text">Nro. Documento</arg>
+              <arg attribute="alignment">0</arg>
+              <arg attribute="font">Dialog,0,14</arg>
+            </parameters>
+          </component>
+          <component locate="West">
+            <driver>common.gui.components.XMLLabel</driver>
+            <parameters>
+              <arg attribute="text">Valor</arg>
+              <arg attribute="alignment">0</arg>
+              <arg attribute="font">Dialog,0,14</arg>
+            </parameters>
+          </component>
+        </panel>
+        <panel locate="Center" type="GridLayout" rows="3" cols="1">
+          <component locate="Center">
+            <driver id="fecha">common.gui.components.GenericData</driver>
+            <parameters>
+              <arg attribute="Panel">false</arg>
+              <subarg>
+                <arg attribute="name">DATE</arg>
+                <arg attribute="format">TEXT</arg>
+                <arg attribute="size">9</arg>
+                <arg attribute="maxlength">50</arg>
+                <arg attribute="enabled">false</arg>
+                <arg attribute="return">false</arg>
+                <arg attribute="clean">false</arg>
+                <arg attribute="font">Dialog,0,18</arg>
+                <arg attribute="exportValue">fechai</arg>
+                <arg attribute="systemDate">yyyy-MM-dd</arg>
+                <arg attribute="printable">true</arg>
+              </subarg>
+            </parameters>
+          </component>
+          <component locate="Center">
+            <driver id="nro_comprobante">common.gui.components.GenericData</driver>
+            <parameters>
+              <arg attribute="Panel">false</arg>
+              <subarg>
+                <arg attribute="name">Numero Documento</arg>
+                <arg attribute="format">TEXT</arg>
+                <arg attribute="size">9</arg>
+                <arg attribute="maxlength">26</arg>
+                <arg attribute="enabled">false</arg>
+                <arg attribute="clean">false</arg>
+                <arg attribute="foreground">249,87,87</arg>
+                <arg attribute="background">0,0,0</arg>
+                <arg attribute="font">Dialog,0,18</arg>
+                <arg attribute="alignment">RIGHT</arg>
+                <arg attribute="idAutoDocument">codigo_tipo</arg>
+                <!--<arg attribute="idDocument">VR</arg>-->
+              </subarg>
+            </parameters>
+          </component>
+          <component locate="Center">
+            <driver id="total_comprobante">common.gui.components.GenericData</driver>
+            <parameters>
+              <arg attribute="Panel">false</arg>
+              <subarg>
+                <arg attribute="name">TOTAL</arg>
+                <arg attribute="format">NUMERIC</arg>
+                <arg attribute="exportValue">totalcomp</arg>
+                <arg attribute="size">9</arg>
+                <arg attribute="maxlength">26</arg>
+                <arg attribute="font">Dialog,0,18</arg>
+                <arg attribute="foreground">87,244,249</arg>
+                <arg attribute="background">0,0,0</arg>
+                <arg attribute="alignment">RIGHT</arg>
+                <arg attribute="printable">true</arg>
+              </subarg>
+            </parameters>
+          </component>
+        </panel>
+      </panel>
+    </panel>
+  </panel>
+  <panel locate="Center" type="BorderLayout">
+    <panel locate="West" type="FlowLayout" />
+    <panel locate="East" type="FlowLayout" />
+    <component locate="North">
+      <driver>common.gui.components.XMLLabel</driver>
+      <parameters>
+        <arg attribute="text">Observaciones:</arg>
+        <arg attribute="alignment">0</arg>
+      </parameters>
+    </component>
+    <component locate="Center">
+      <driver id="concepto">common.gui.components.XMLTextArea</driver>
+      <parameters>
+        <arg attribute="rows">100</arg>
+        <arg attribute="colorBackground">195,252,202</arg>
+      </parameters>
+    </component>
+  </panel>
+  <component locate="South">
+    <driver>common.gui.components.ButtonsPanel</driver>
+    <parameters>
+      <arg>PRINT</arg>
+      <arg>NEW</arg>
+      <arg>EXIT</arg>
+    </parameters>
+    <events>
+      <object>
+        <name>PRINT</name>
+        <action>
+          <type>transaction</type>
+          <!-- NA -->
+            <component>
+              <driver>this</driver>
+              <method>getPackage</method>
+              <parameters>
+                <subarg>
+                  <arg attribute="importValue">codigo_tipo</arg>
+                </subarg>
+              </parameters>
+            </component>
+          <!-- 0 -->
+          <component>
+            <driver id="concepto">common.gui.components.XMLTextArea</driver>
+            <method>getPackage</method>
+          </component>
+          <!-- 1 -->
+          <component>
+            <driver>this</driver>
+            <method>getPackage</method>
+            <parameters>
+              <subarg>
+                <arg attribute="importValue">totalcomp</arg>
+                <arg attribute="importValue">totalcomp</arg>
+              </subarg>
+            </parameters>
+          </component>
+<!--       2    <component>
+            <driver>client.gui.components.FindThird</driver>
+            <method>getPackage</method>
+          </component> -->
+
+          
+          <component>
+            <driver id="idcentrocosto">common.gui.components.GenericData</driver>
+            <method>getPackage</method>
+          </component>
+
+          <component>
+            <driver id="idtercerocaja">common.gui.components.GenericData</driver>
+            <method>getPackage</method>
+          </component>
+
+          <!-- 3 -->
+         <!--  <component>
+            <driver id="total_comprobante">common.gui.components.GenericData</driver>
+            <method>getPackage</method>
+          </component> -->
+          
+          <component>
+            <driver>common.gui.components.ButtonsPanel</driver>
+            <method>setEnabled</method>
+            <parameters>
+              <arg attribute="button">PRINT</arg>
+              <arg attribute="state">false</arg>
+            </parameters>
+          </component>
+        </action>
+        <action>
+          <type>printer</type>
+          <printerTemplate>/graphics/TNRetiroParcial.xml</printerTemplate>
+            <!-- Usuario -->
+            <component>
+              <driver>this</driver>
+              <method>getPackage</method>
+              <parameters>
+                <subarg>
+                  <arg attribute="importValue">codigo_tipo</arg>
+                </subarg>
+              </parameters>
+            </component>              
+
+            <!-- 1 -->
+            <component>
+              <driver id="vendedor">common.gui.components.GenericData</driver>
+              <method>getPrintPackage</method>
+            </component>
+
+            2 <!-- Linea -->
+            <component>
+              <driver id="fecha">common.gui.components.GenericData</driver>
+              <method>getBlankPackage</method>
+            </component>
+            6 <!-- Valor vale en numeros -->
+            <component>
+              <driver id="total_comprobante">common.gui.components.GenericData</driver>
+              <method>getPrintPackage</method>
+            </component>
+            7 <!-- Valor vale en letras -->
+            <component>
+              <driver id="total_comprobante">common.gui.components.GenericData</driver>
+              <method>getPrintPackage</method>
+            </component>
+            <!-- Linea -->
+                    <component>
+                      <driver id="fecha">common.gui.components.GenericData</driver>
+                      <method>getBlankPackage</method>
+                    </component>                    
+                  <!-- Letrero observaciones -->
+                    <component>
+                      <driver id="fecha">common.gui.components.GenericData</driver>
+                      <method>getBlankPackage</method>
+                    </component>
+                    <!-- observaciones -->
+                    <component>
+                      <driver id="concepto">common.gui.components.XMLTextArea</driver>
+                      <method>getPrintPackage</method>
+                    </component>
+
+
+            2 <!-- Linea -->
+            <component>
+              <driver id="fecha">common.gui.components.GenericData</driver>
+              <method>getBlankPackage</method>
+            </component>
+
+            <!-- pie pagina -->
+            <component>
+              <driver id="fecha">common.gui.components.GenericData</driver>
+              <method>getBlankPackage</method>
+            </component>
+          
+        </action>
+      </object>
+      <object>
+        <name>NEW</name>
+        <component>
+          <driver>this</driver>
+          <method>cleanExternalValues</method>
+        </component>
+        <!-- <component>
+          <driver>client.gui.components.FindThird</driver>
+          <method>clean</method>
+        </component> -->
+        <component>
+          <driver id="total_comprobante">common.gui.components.GenericData</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver id="concepto">common.gui.components.XMLTextArea</driver>
+          <method>clean</method>
+        </component>
+        <component>
+          <driver>common.gui.components.ButtonsPanel</driver>
+          <method>setEnabled</method>
+          <parameters>
+            <arg attribute="button">PRINT</arg>
+            <arg attribute="state">true</arg>
+          </parameters>
+        </component>
+      </object>
+    </events>
+  </component>
+</FORM>

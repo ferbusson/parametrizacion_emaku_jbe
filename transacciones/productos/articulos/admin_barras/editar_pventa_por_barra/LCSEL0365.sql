@@ -44,7 +44,7 @@ FROM
 WHERE
     d.ndocumento = i.ndocumento AND
     d.estado AND
-    d.codigo_tipo IN ('EA','RC','IM','AT','IP') AND
+    d.codigo_tipo IN ('EA','RC','IM','AT','IP','AO','AF') AND
     lp.id_prod_serv = i.id_prod_serv
 ORDER BY
     i.id_prod_serv,
@@ -64,7 +64,7 @@ FROM
 WHERE
     d.ndocumento = i.ndocumento AND
     d.estado AND
-    d.codigo_tipo IN ('EA','RC','IM','AT','IP') AND
+    d.codigo_tipo IN ('EA','RC','IM','AT','IP','AO','AF') AND
     apb.id_prod_serv = i.id_prod_serv AND
     apb.pinventario = 0 AND
     i.valor_ent > 0

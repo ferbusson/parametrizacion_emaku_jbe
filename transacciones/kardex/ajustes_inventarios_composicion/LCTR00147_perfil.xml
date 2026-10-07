@@ -235,6 +235,9 @@
             <arg attribute="totales">h,i</arg>
             <arg attribute="exportTotalCol">h,totalcantidad</arg>
             <arg attribute="exportTotalCol">i,totalcostosalida</arg>
+
+            <arg attribute="beanshell">h=h&gt;g?0:h</arg>
+            
             <arg attribute="formula">i=f*h</arg>
             <arg attribute="colorBackground">153,255,255</arg>
             <arg attribute="colorSelected">51,255,255</arg>
@@ -292,6 +295,7 @@
               <arg attribute="enabled">true</arg>
               <arg attribute="nameField">pcosto</arg>
               <arg attribute="returnCol">3</arg>
+              <arg attribute="minValue">0</arg>
             </subarg>
             <subarg><!-- g -->
               <arg attribute="name">SALDO_SISTEMA</arg>
@@ -310,6 +314,7 @@
               <arg attribute="printable">true</arg>
               <arg attribute="nameField">cantidad</arg>
               <arg attribute="returnCol">1</arg>
+              <arg attribute="minValue">0</arg>
             </subarg>
             <subarg><!-- i -->
               <arg attribute="name">Total Costo</arg>
@@ -318,6 +323,7 @@
               <arg attribute="roundDecimal">2</arg>
               <arg attribute="enabled">FALSE</arg>
               <arg attribute="returnCol">2</arg>
+              <arg attribute="minValue">0</arg>
             </subarg>
             <subarg><!-- j -->
               <arg attribute="name">ID</arg>
@@ -408,6 +414,7 @@
               <arg attribute="queryCol">4</arg>
               <arg attribute="enabled">true</arg>              
               <arg attribute="nameField">pcosto</arg>
+              <arg attribute="minValue">0</arg>
               <arg attribute="returnCol">3</arg>
             </subarg>
             <subarg><!-- g -->
@@ -426,7 +433,9 @@
               <arg attribute="enabled">TRUE</arg>
               <arg attribute="printable">true</arg>
               <arg attribute="nameField">cantidad</arg>
+              <!-- <arg attribute="roundDecimal">2</arg> -->
               <arg attribute="returnCol">1</arg>
+              <arg attribute="minValue">0</arg>
             </subarg>
             <subarg><!-- i -->
               <arg attribute="name">Total Costo</arg>
@@ -435,6 +444,7 @@
               <arg attribute="roundDecimal">2</arg>
               <arg attribute="enabled">FALSE</arg>
               <arg attribute="returnCol">2</arg>
+              <arg attribute="minValue">0</arg>
             </subarg>
             <subarg><!-- j -->
               <arg attribute="name">ID</arg>

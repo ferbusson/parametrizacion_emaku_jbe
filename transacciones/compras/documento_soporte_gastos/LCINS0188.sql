@@ -1,0 +1,23 @@
+INSERT INTO 
+	datos_documento(
+		ndocumento,
+		efectivo,
+		tcredito,
+		cheque,
+		consignacion,
+		traslado,
+		cambio,
+		valor,
+		cxc,
+		cxp
+		) 
+values('?',
+	COALESCE('?',0.0),
+	COALESCE('?',0.0),
+	COALESCE('?',0.0),
+	COALESCE('?',0.0),
+	COALESCE('?',0.0),
+	COALESCE('?',0.0),
+	COALESCE('?',0.0),
+	COALESCE('?',0.0),
+	COALESCE('?',0.0));

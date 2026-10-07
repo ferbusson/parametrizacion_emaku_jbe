@@ -28,7 +28,8 @@
                  <arg attribute="debuging">true</arg>
                  <arg attribute="centrocosto">getName</arg>
                  <subarg>
-                         <arg attribute="accountField">429581,C</arg>
+                         <!--<arg attribute="accountField">429581,C</arg>-->
+                         <arg attribute="accountField">61350107,C</arg>
                  </subarg>
          </parameters>
  </LNData>
@@ -58,13 +59,21 @@
           <arg attribute="accountCol">IdProdServ,0</arg>            
 
             <!-- 5% -->
-            <arg attribute="accountCol">1435560501,2</arg>
+            <!-- <arg attribute="accountCol">1435560501,2</arg> -->
             <!-- 19% -->
-            <arg attribute="accountCol">1435560502,2</arg>
+            <!-- <arg attribute="accountCol">1435560502,2</arg> -->
             <!-- Excluidas -->
-            <arg attribute="accountCol">14355610,2</arg>
+            <!-- <arg attribute="accountCol">14355610,2</arg> -->
             <!-- Exentas -->
-            <arg attribute="accountCol">14355615,2</arg>
+            <!-- <arg attribute="accountCol">14355615,2</arg> -->
+
+
+            <!-- 5% -->
+            <arg attribute="accountCol">14350102,2</arg>
+            <!-- 19% -->
+            <arg attribute="accountCol">14350101,2</arg>
+            <!-- Excluidas -->
+            <arg attribute="accountCol">14350103,2</arg>
 
         </subarg>
       </parameters>
@@ -102,13 +111,21 @@
         <subarg>
             <arg attribute="accountCol">IdProdServ,0</arg>
             <!-- 5% -->
-            <arg attribute="accountCol">1435560501,2</arg>
+            <!-- <arg attribute="accountCol">1435560501,2</arg> -->
+            <!-- 19% -->
+            <!-- <arg attribute="accountCol">14350101,2</arg> -->
+            <!-- Excluidas -->
+            <!-- <arg attribute="accountCol">14355610,2</arg> -->
+            <!-- Exentas -->
+            <!-- <arg attribute="accountCol">14355615,2</arg> -->
+
+
+            <!-- 5% -->
+            <arg attribute="accountCol">14350102,2</arg>
             <!-- 19% -->
             <arg attribute="accountCol">14350101,2</arg>
             <!-- Excluidas -->
-            <arg attribute="accountCol">14355610,2</arg>
-            <!-- Exentas -->
-            <arg attribute="accountCol">14355615,2</arg>
+            <arg attribute="accountCol">14350103,2</arg>
         </subarg>
       </parameters>
     </LNData>

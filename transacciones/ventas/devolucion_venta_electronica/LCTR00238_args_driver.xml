@@ -280,8 +280,10 @@
                     <!-- 19% -->
                     <!--<arg attribute="accountCostCol">14350504,1</arg>-->
                     <arg attribute="accountCostCol">14350101,1</arg> OK
+
                     <!-- descuentos 19% -->
-                    <arg attribute="accountCostCol">14750505,1</arg>
+                    <arg attribute="accountCostCol">41750505,6</arg>
+
                     <!-- Excluidas -->
                     <!--<arg attribute="accountCostCol">14351002,1</arg>-->
                     <arg attribute="accountCostCol">14350103,1</arg> OK
@@ -290,10 +292,12 @@
                     <arg attribute="accountCostCol">14355615,1</arg>
                     
                     <!-- descuentos Exentas -->                
-                    <arg attribute="accountCostCol">41750506,1</arg>
+                    <arg attribute="accountCostCol">41750506,6</arg>
 
                 </subarg>
             </parameters>
         </LNData>
     </subarg>
+
+    <arg>JBUPD0011</arg>
 </container>

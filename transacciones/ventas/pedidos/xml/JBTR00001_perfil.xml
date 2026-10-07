@@ -1165,7 +1165,8 @@ el boton cerrar cierra el formulario
           <arg attribute="exportTotalCol">r,verde</arg>
           <arg attribute="exportTotalCol">ac,totallineas</arg>
 
-          <arg attribute="beanshell">d=d&gt;c?0:d</arg> <!--Valida que no se venda en rojo -->
+          <!-- <arg attribute="beanshell">d=d&gt;c?0:d</arg>--> <!--Valida que no se venda en rojo -->
+          <arg attribute="beanshell">d=WARNEXCEEDS(a,d,c)</arg>
 
           <!-- lista de precios
           1 Mostrador
@@ -1187,7 +1188,10 @@ el boton cerrar cierra el formulario
           <arg attribute="beanshell">ak=af&gt;0?af:ae&gt;0?ae:ai&gt;0?ai:aj&gt;0?aj:ah&gt;0?ah:ag&gt;0?ag:ad</arg>
           <!-- PDCTO -->
           <!--<arg attribute="beanshell">h="28312".equals(n)||am&gt;0?0:az!=0?az:h!=0?h:ak</arg> Se cambia 25Mar2026: esta condicion permite dejar el pdescuento que se ingrese manualmente, se cambia por la siguiente porque si se lee un codigo en el mismo renglon de un producto con desc el segundo hereda el descuento asi no est en promocion-->          <!-- pdescuento -->
-          <arg attribute="beanshell">h="28312".equals(n)||am&gt;0?0:az!=0?az:ak</arg>
+
+          <!-- <arg attribute="beanshell">h="28312".equals(n)||am&gt;0?0:az!=0?az:ak</arg> Junio 16 2026: estaba esta, pongo la que sigue a continuacion-->
+
+          <arg attribute="beanshell">h="28312".equals(n)||am&gt;0?0:az!=0?az:h!=0?h:ak</arg>
 
 
           <!-- STOTAL -->
@@ -1271,7 +1275,8 @@ el boton cerrar cierra el formulario
             <arg attribute="enabled">true</arg>
             <arg attribute="returnCol">1</arg>
             <arg attribute="recalculate">false</arg>
-            <arg attribute="defaultValue">1</arg>
+            <!-- <arg attribute="defaultValue">1</arg> -->
+            <arg attribute="queryCol">49</arg>
             <arg attribute="nameField">Cantidad</arg>
             <arg attribute="printable">true</arg>
             <arg attribute="minValue">0</arg>
@@ -1314,7 +1319,10 @@ el boton cerrar cierra el formulario
             <arg attribute="length">80</arg>
             <arg attribute="type">DECIMAL</arg>
             <arg attribute="roundDecimal">2</arg>
-            <arg attribute="enabled">false</arg>
+            <!-- <arg attribute="enabled">false</arg> Junio 16 2026: se activa por solicitud JBE para poder dar descuento a  prods promocion lista sub dis pasto y fac credito -->
+            <!-- <arg attribute="enabled">true</arg> Julio 1 2026: se desactiva nuevamente por solicitud Jairo-->
+            <!--Julio 10 2026: se activa por solicitud JBE para poder dar descuento a  prods promocion lista sub dis pasto y fac credito -->
+            <arg attribute="enabled">true</arg> <!--Agosto 3 2026: se desactiva por solicitud JBE -->
             <arg attribute="returnCol">4</arg>
             <arg attribute="printable">true</arg>
             </subarg>

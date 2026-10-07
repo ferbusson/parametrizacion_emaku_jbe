@@ -78,11 +78,14 @@ SELECT
 	pt.es_pintor,
 	pt.tiene_precio_base,
 	foo.orden,
-	foo.id_lista
+	foo.id_lista,
+	g.id_clase_tercero,
+    case when extract('DOW' from current_date) = 3 then true else false end AS es_miercoles
 FROM
 	administracion_sucursales a,
 	documentos_sucursales ds,
 	perfil_tercero pt,
+	general g,
 	documentos_standar dst,
 	(SELECT 
 		dp.cant,
@@ -104,7 +107,8 @@ FROM
 	    dp.ndocumento=d.ndocumento AND
 	    ps.id_prod_serv=dp.id_prod_serv AND
 	    d.ndocumento=a.ndocumento) AS foo -- 1 facturacion normal, 2 dia sin iva
-WHERE
+where
+	foo.tercero = g.id AND
 	foo.tercero = pt.id AND
 	a.id_centrocosto = foo.id_centrocosto AND
 	a.id_administracion_sucursales = ds.id_administracion_sucursales AND
@@ -295,6 +299,8 @@ SELECT distinct
 	foo.id_prod_serv,
 	foo.descripcion,
 	foo.pventa1,
+	foo.pventa2,
+	foo.pventa3,
 	foo.iva,
 	foo.tag,
 	CASE WHEN foo.id_prod_serv=28741 THEN 100 ELSE coalesce(i.disponible,0) END AS disponible,
@@ -344,6 +350,8 @@ FROM
 		i.iva,
 		current_timestamp AS tag,
 		pv1.pventa1,
+		pv1.pventa2,
+		pv1.pventa3,
 		trm,
 		coalesce(coalesce(coalesce(COALESCE(COALESCE(COALESCE(COALESCE(COALESCE(COALESCE(COALESCE(a0.id_linea,a1.id_linea),a2.id_linea),a3.id_linea),a4.id_linea),a5.id_linea),a6.id_linea),a7.id_linea),a8.id_linea),a9.id_linea),-1) AS id_lineap,
 		coalesce(coalesce(coalesce(COALESCE(COALESCE(COALESCE(COALESCE(COALESCE(COALESCE(COALESCE(a0.id_grupo,a1.id_grupo),a2.id_grupo),a3.id_grupo),a4.id_grupo),a5.id_grupo),a6.id_grupo),a7.id_grupo),a8.id_grupo),a9.id_grupo),-1) AS id_grupop,
@@ -381,7 +389,30 @@ FROM
 		i.id_lista
 	FROM 
 		marcas ma,
-		(select pv.id_prod_serv,pv.pventa as pventa1 from pventa pv, item_a i where pv.id_lista = i.id_lista and pv.id_catalogo=i.id_catalogo AND pv.id_prod_serv = i.id_prod_serv) as pv1,
+		(select
+		id_prod_serv,
+		COALESCE(max(case when row_number = 1 then pventa end),0) as pventa1,
+		COALESCE(max(case when row_number = 2 then pventa end),0) as pventa2,
+		COALESCE(max(case when row_number = 3 then pventa end),0) as pventa3
+	from (
+		select
+			pv.id_prod_serv,
+			pv.id_lista,
+			pv.pventa,
+			row_number() over (order by pv.id_lista) as row_number
+		from
+			pventa pv,
+			item_a i
+		where
+			pv.id_prod_serv::varchar = i.id_prod_serv::varchar
+			and pv.id_catalogo = i.id_catalogo
+		ORDER by
+			pv.id_lista) as t
+		group by 
+			id_prod_serv
+		)as pv1,
+		
+		
 		(SELECT trm from trm order by id_trm desc limit 1) AS trm,
 		item_a i
 	LEFT OUTER JOIN
@@ -854,6 +885,8 @@ SELECT
 	au.es_pintor,
 	au.tiene_precio_base,
 	pv.id_prod_serv,
+    au.id_clase_tercero,
+    au.es_miercoles,
 	CASE WHEN dia_siniva=1 OR sdsi.id_sgrupo IS NULL THEN pventa ELSE CASE WHEN sdsi.id_sgrupo IS NOT NULL AND ROUND(((pv.pventa-(pv.pventa*
 	CASE WHEN a.pdescuentoi > 0 THEN a.pdescuentoi WHEN a.pdescuentom > 0 THEN a.pdescuentom 
 	WHEN a.pdescuentoxysg > 0 THEN a.pdescuentoxysg WHEN a.pdescuentoxysm > 0 THEN a.pdescuentoxysm 
@@ -897,21 +930,46 @@ SELECT
 	CASE WHEN pvo.id_regimen='E' THEN ROUND((pvo.pventa/(1+(piva/100)))::numeric,0) ELSE pvo.pventa::NUMERIC END AS pventa,
 	CASE WHEN pvo.id_regimen='E' THEN 0 ELSE pvo.piva END AS piva,
 	a.tag,
-	a.disponible,
+    case when a.id_prod_serv in (7720,
+		7721,
+		7722,
+		7723,
+		7777,
+		8005,
+		8008,
+		8009,
+		8010,
+		8875,
+		9447,
+		9449,
+		12526,
+		12718) then 2000 else a.disponible end as disponible,
 	CASE WHEN pvo.id_regimen='E' THEN ROUND((pvo.pventa/(1+(piva/100)))::numeric,0) ELSE pvo.pventa::NUMERIC END AS pventa1,
 	--CASE WHEN pvo.id_regimen='E' THEN ROUND((pvo.pventa/(1+(piva/100)))::numeric,0) ELSE pvo.pventa::NUMERIC END AS pventa2,
 	a.trm,
 	a.id_marcap,
 	a.id_itemp,
 	a.narticulosa,
-	--CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentoa ELSE 0 END AS pdescuentoa, --t12 comentado Oct 13 2025
-	a.pdescuentoa,	
+	case 
+        when pvo.id_catalogo = 1 
+            and (pvo.es_miercoles is not true or pvo.id_clase_tercero = 13)
+        then a.pdescuentoa 
+        else 0 
+    end as pdescuentoa,	
 	a.narticulosm,
-	--CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentom ELSE 0 END AS pdescuentom, --u14 comentado Oct 13 2025
-	pdescuentom,
+	case 
+        when pvo.id_catalogo = 1 
+            and (pvo.es_miercoles is not true or pvo.id_clase_tercero = 13)
+        then a.pdescuentom 
+        else 0 
+    end as pdescuentom,
 	a.narticulosi,
-	--CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentoi ELSE 0 END AS pdescuentoi, --v16 comentado Oct 13 2025
-	pdescuentoi,
+	case 
+        when pvo.id_catalogo = 1 
+            and (pvo.es_miercoles is not true or pvo.id_clase_tercero = 13)
+        then a.pdescuentoi 
+        else 0 
+    end as pdescuentoi,
 	a.id_marca_pc,
 	a.id_item_pc,
 	a.id_marca_po,
@@ -925,17 +983,33 @@ SELECT
 	a.id_sgrupop,
 	a.id_submarcap,
 	a.narticulosxyl,
-	--CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentoxyl ELSE 0 END AS pdescuentoxyl, --w30 comentado Oct 13 2025
-	a.pdescuentoxyl, 
+	case 
+        when pvo.id_catalogo = 1 
+            and (pvo.es_miercoles is not true or pvo.id_clase_tercero = 13)
+        then a.pdescuentoxyl 
+        else 0 
+    end as pdescuentoxyl, 
 	a.narticulosxyg,
-	--CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentoxyg ELSE 0 END AS pdescuentoxyg, --x32 comentado Oct 13 2025
-	a.pdescuentoxyg,
+	case 
+        when pvo.id_catalogo = 1 
+            and (pvo.es_miercoles is not true or pvo.id_clase_tercero = 13)
+        then a.pdescuentoxyg 
+        else 0 
+    end as pdescuentoxyg,
 	a.narticulosxysg,
-	--CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentoxysg ELSE 0 END AS pdescuentoxysg, --y34 comentado Oct 13 2025
-	a.pdescuentoxysg,
+	case 
+        when pvo.id_catalogo = 1 
+            and (pvo.es_miercoles is not true or pvo.id_clase_tercero = 13)
+        then a.pdescuentoxysg 
+        else 0 
+    end as pdescuentoxysg,
 	a.narticulosxysm,
-	--CASE WHEN pvo.cuenta_plataforma IN ('130510','130506','130515') THEN a.pdescuentoxysm ELSE 0 END AS pdescuentoxysm, --z36 comentado Oct 13 2025
-	a.pdescuentoxysm,
+	case 
+        when pvo.id_catalogo = 1 
+            and (pvo.es_miercoles is not true or pvo.id_clase_tercero = 13)
+        then a.pdescuentoxysm 
+        else 0 
+    end as pdescuentoxysm,
 	a.codigo,
 	a.ref_proveedor,
 	a.contador,
@@ -948,8 +1022,8 @@ SELECT
 	a.id_lista,
 	a.es_pintor,
 	a.tiene_precio_base,
-	pv2.pventa as pventa2,
-	pv3.pventa as pventa3
+	CASE WHEN pvo.id_regimen='E' THEN ROUND((a.pventa2/(1+(piva/100)))::numeric,0) ELSE a.pventa2::NUMERIC END AS pventa2,
+    CASE WHEN pvo.id_regimen='E' THEN ROUND((a.pventa3/(1+(piva/100)))::numeric,0) ELSE a.pventa3::NUMERIC END AS pventa3
 FROM
 	aux_consulta_con_promociones a,
 	pventa_ok pvo

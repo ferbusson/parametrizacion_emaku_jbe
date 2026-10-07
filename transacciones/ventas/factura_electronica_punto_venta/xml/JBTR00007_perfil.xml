@@ -5557,13 +5557,12 @@ o el carpintero asociado -->
                       <arg attribute="importValue">tcreditcard</arg>
                       <arg attribute="importValue">tsodexobigpass</arg>
                       <arg attribute="importValue">tconsignation</arg>
-                      <!-- <arg attribute="beanshell">tcreditcard!=0.00?valorcero:pagooacredito</arg> lust -->                      <!-- pago cxc -->
                       <arg attribute="importValue">cambio</arg>
                       <arg attribute="importValue">totalmenosreteglobal</arg>
                       <arg attribute="importValue">trm</arg>
                       <arg attribute="importValue">totaltodastarjetas</arg>
                       <arg attribute="importValue">totalanticipos</arg>
-                      <!-- totalanticipos -->
+                      <arg attribute="importValue">puntosredimidosenpesos</arg>
                     </subarg>
                   </parameters>
                 </component>
@@ -7267,12 +7266,12 @@ o el carpintero asociado -->
                       <arg attribute="importValue">tcreditcard</arg>
                       <arg attribute="importValue">tsodexobigpass</arg>
                       <arg attribute="importValue">tconsignation</arg>
-                      <!-- <arg attribute="beanshell">tcreditcard!=0.00?valorcero:pagooacredito</arg> lust -->                      <!-- pago cxc -->
                       <arg attribute="importValue">cambio</arg>
                       <arg attribute="importValue">totalmenosreteglobal</arg>
                       <arg attribute="importValue">trm</arg>
                       <arg attribute="importValue">totaltodastarjetas</arg>
                       <arg attribute="importValue">totalanticipos</arg>
+                      <arg attribute="importValue">puntosredimidosenpesos</arg>
                     </subarg>
                   </parameters>
                 </component>
@@ -8537,15 +8536,15 @@ o el carpintero asociado -->
                 </component> -->
 
                 <!-- 49 Paquete Blanco Gracias por su compra -->
-                <component>
+                <!-- <component>
                   <driver id="vpago">common.gui.components.GenericData</driver>
                   <method>getBlankPackage</method>
-                </component>
+                </component> -->
                 <!-- 49 Paquete Blanco Gracias por su compra -->
-                <component>
+                <!-- <component>
                   <driver id="vpago">common.gui.components.GenericData</driver>
                   <method>getBlankPackage</method>
-                </component>
+                </component> -->
                 <!-- 49 Paquete Blanco Gracias por su compra -->
                 <component>
                   <driver id="vpago">common.gui.components.GenericData</driver>

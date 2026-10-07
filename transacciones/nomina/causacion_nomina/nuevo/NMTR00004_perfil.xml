@@ -450,12 +450,12 @@
                             <arg attribute="protectSelected">true</arg>
                             <arg attribute="beanshell">d=
                                 ("22".equals(t)||"56".equals(t))?
-                                	u+v:
+                                    u+v:
 
                                 <!-- Julio 29 2025: Antes la formula en esta parte estaba asi: (zz&gt;0&amp;&amp;"23".equals(t)||"24".equals(t))?
                                   u+v+w+x+y+z: 
                                   La divido en dos porque los 23 LMaternidad y LPaternidad por cobrar tienen un tratamiento aparte los 24 LRemunerada:
-                              	-->
+                                -->
                                 (zz&gt;0&amp;&amp;"23".equals(t))? 
                                   w+x:
                                 (zz&gt;0&amp;&amp;"24".equals(t))?
@@ -2301,7 +2301,7 @@
                             <!-- <arg attribute="formula">aq=m+n+o+p+ah+ap</arg> -->
                              <arg attribute="beanshell">aq=m+n+o+p+ah+at+as</arg>
                             <arg attribute="beanshell">f=e</arg>
-                            <arg attribute="formula">h=ROUND((f*g/100.0),100)</arg>
+                            <arg attribute="formula">h=ROUND((f*g/100.0),0)</arg>
 
                             <arg attribute="conditionalColor">255,87,51:u!=0||v!=0||w!=0||x!=0||y!=0||z!=0||aa!=0||ab!=0||ac!=0||ad!=0||ae!=0</arg>
                             <subarg><!-- a 0-->
@@ -3458,7 +3458,7 @@
 
                     <!-- Junio 01 2022 se adicionaron ICBF(13) y Sena(12) a la formula anterior -->
                     
-                    <arg attribute="beanshell">h=ROUND((f*g/100.0),100)</arg> <!-- Cambia de formula a beanshell Ago 30 de 2023 -->
+                    <arg attribute="beanshell">h=ROUND((f*g/100.0),0)</arg> <!-- Cambia de formula a beanshell Ago 30 de 2023 -->
 
                     
                     

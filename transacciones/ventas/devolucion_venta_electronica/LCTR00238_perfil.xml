@@ -730,6 +730,7 @@
                                     <arg attribute="name">CTASXCOBRAR</arg>
                                     <arg attribute="format">NUMERIC</arg>
                                     <arg attribute="size">11</arg>
+                                    <arg attribute="clean">true</arg>
                                     <arg attribute="maxlength">26</arg>
                                     <arg attribute="font">Dialog,1,18</arg>
                                     <arg attribute="alignment">RIGHT</arg>
@@ -1266,6 +1267,12 @@
                             <component>
                                 <driver id="entrada">client.gui.components.TableFindData</driver>
                                 <method>getPackage</method>
+                            </component>
+
+                            <!-- actualiza id_tercero de libro auxiliar cuando es de sistecredito-->
+                            <component>
+                                <driver id="entrada">client.gui.components.TableFindData</driver>
+                                <method>getBlankPackage</method>
                             </component>
 
                             <component>
@@ -1960,6 +1967,15 @@
 
                             <component>
                                 <driver id="date">common.gui.components.GenericData</driver>
+                                <method>clean</method>
+                            </component>
+                            <component>
+                                <driver id="tcxp">client.gui.components.TableDataFields</driver>
+                                <method>clean</method>
+                            </component>
+                            
+                            <component>
+                                <driver id="cxp">client.gui.components.XMLComboBox</driver>
                                 <method>clean</method>
                             </component>
 
@@ -3392,6 +3408,17 @@
                         <arg attribute="queryCol">14</arg>
                         <arg attribute="returnCol">11</arg>
                     </subarg>
+                    <subarg>                            <!-- D3 -->
+                            <arg attribute="name">pcosto</arg>
+                            <arg attribute="length">80</arg>
+                            <arg attribute="type">DECIMAL</arg>
+                            <arg attribute="roundDecimal">2</arg>
+                            <arg attribute="enabled">false</arg>
+                            <arg attribute="returnCol">12</arg>
+                            <arg attribute="queryCol">15</arg>
+                            <arg attribute="clean">true</arg>
+                            <arg attribute="nameField">pcosto</arg>
+                        </subarg>
                     </parameters>
                 </component>
 

@@ -8,6 +8,18 @@ from
 where
     d.codigo_tipo='?' AND    
     d.numero=LPAD('?',10,'0')
+), aux_costos_factura as (
+	select
+		i.ndocumento,
+		i.id_prod_serv,
+		i.valor_sal
+	from
+		inventarios i
+	join
+		aux_parametros_query a
+	on
+		i.salida is not null
+		and a.ndocumento = i.ndocumento 
 ) 
 , aux_prefijos_devoluciones as (
 select
@@ -61,13 +73,19 @@ select
 	coalesce(dp.porcentajebp,-1) as porcentajebp,
     coalesce(dp.inc,-1) as inc,
 	coalesce(adev.cant,0) as ya_devuelto,
-	dp.cant - coalesce(adev.cant,0) as saldo
+	dp.cant - coalesce(adev.cant,0) as saldo,
+	iv.valor_sal as pcosto
 from
 	aux_parametros_query a
 inner join
 	datos_prod dp
 on
 	a.ndocumento = dp.ndocumento
+join
+	aux_costos_factura iv
+on
+	dp.ndocumento = iv.ndocumento 
+	and dp.id_prod_serv = iv.id_prod_serv 
 left join
 	aux_devs_asociadas_a_factura adev
 on
@@ -107,7 +125,8 @@ SELECT
     ps.codigo,
     it.ref_proveedor,
     a.porcentajebp,
-    a.inc
+    a.inc,
+    a.pcosto
 FROM 
 	aux_cruce_con_devoluiciones a,
     datos_documento dd,

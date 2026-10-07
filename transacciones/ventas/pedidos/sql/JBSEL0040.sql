@@ -74,7 +74,7 @@ SELECT
     case when pt.es_pintor then 1 else 0 end as es_pintor,
     case when pt.tiene_precio_base then 1 else 0 end as tiene_precio_base,
     g.id_clase_tercero,
-    case when extract('DOW' from current_date) = 3 then true else false end AS es_miercoles
+    case when extract('DOW' from current_date) = 3 or extract('DOW' from current_date) = 4 then true else false end AS es_miercoles
 FROM
     administracion_sucursales a,
     documentos_sucursales ds,
@@ -946,7 +946,7 @@ SELECT
 9447,
 9449,
 12526,
-12718) then 1000 else a.disponible end as disponible,
+12718) then 2000 else a.disponible end as disponible,
     --pvo.pventa,
     --pvo.pventa,
     CASE WHEN pvo.id_regimen='E' THEN ROUND((pvo.pventa/(1+(piva/100)))::numeric,0) ELSE pvo.pventa::NUMERIC END AS pventa,
@@ -1054,7 +1054,8 @@ SELECT
     CASE WHEN pvo.id_regimen='E' THEN ROUND((a.pventa2/(1+(piva/100)))::numeric,0) ELSE a.pventa2::NUMERIC END AS pventa2,
     CASE WHEN pvo.id_regimen='E' THEN ROUND((a.pventa3/(1+(piva/100)))::numeric,0) ELSE a.pventa3::NUMERIC END AS pventa3,
     a.se_puede_editar,
-    a.tiene_precio_base
+    a.tiene_precio_base,
+    case when a.disponible > 0 and a.disponible < 1 then 0.01 else 1 end as cantidad
 FROM
     aux_consulta_con_promociones a,
     pventa_ok pvo

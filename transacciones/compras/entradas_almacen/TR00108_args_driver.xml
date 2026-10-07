@@ -303,8 +303,11 @@
       </parameters>
     </LNData>
   </subarg>
-  <!-- <arg>MTUPD0026</arg>-->
-  <!-- 16 Actualiza datos a partir de la tabla creada en MTINS0058 y MTINS0059 pventa -->
+  <!-- autoliquidacion de pventa segun porcentaje utilidad actual - usa tabla npventa creada antes con JBINS0020-->
+  <!-- tambien guarda historico de pventa y utilidad en registro_historico_pventapara poder 
+        revertir los cambios si la EA es anulada -->
+   <arg>JBUPD0018</arg>
+  
 
 
   <!-- Comentado completamente Marzo 21 2023 -->

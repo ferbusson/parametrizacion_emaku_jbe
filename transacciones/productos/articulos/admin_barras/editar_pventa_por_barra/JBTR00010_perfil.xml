@@ -2,7 +2,7 @@
 
 <FORM>
   <preferences>
-    <size width="590" height="590" />
+    <size width="800" height="590" />
     <name>Editar Pventa y Costo</name>
     <icon>NART</icon>
     <iconificable />
@@ -29,17 +29,38 @@
   <component>
     <driver id="tarifaasientogenerico">client.gui.components.TableDataFields</driver>
     <parameters>
-        <arg attribute="keySQL">LCSEL0439</arg>
+        <arg attribute="keySQL">LCSEL0439</arg> <!--esta es la tarifa-->
         <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>          
       <subarg>
         <arg attribute="format">NUMERIC</arg>
         <arg attribute="size">10</arg>
+        <arg attribute="keyExternalValue">x</arg>
         <arg attribute="maxlength">26</arg>
         <arg attribute="alignment">RIGHT</arg>
         <arg attribute="exportValue">tarifaasientogenerico</arg>
       </subarg>
     </parameters>
-  </component>            
+  </component>           
+  <component locate="Center">
+    <driver id="id_prod_serv">common.gui.components.GenericData</driver>
+    <parameters>
+      <subarg>
+        <arg attribute="format">TEXT</arg>
+        <arg attribute="getValue">_id_prod_serv</arg>
+        <!--<arg attribute="addAttribute">finalKey</arg>-->
+        <arg attribute="nameField">code</arg>
+        <arg attribute="size">10</arg>
+        <arg attribute="maxlength">26</arg>
+        <arg attribute="alignment">LEFT</arg>
+        <arg attribute="exportValue">id_prod_serv</arg>
+        <arg attribute="enabled">false</arg>
+        <arg attribute="clean">true</arg>
+
+        <arg attribute="nameField">idProdServ</arg>
+        <arg attribute="addAttribute">key</arg>
+      </subarg>
+    </parameters>
+  </component> 
   <component>
     <driver id="marca">common.gui.components.GenericData</driver>
     <parameters>
@@ -63,8 +84,8 @@
     <panel locate="North" type="FlowLayout" />
     <panel locate="West" type="FlowLayout" />
     <panel locate="East" type="FlowLayout" />
-    <panel locate="Center" type="BorderLayout">
-      <panel locate="West" type="GridLayout" rows="16" cols="1">
+    <panel locate="North" type="BorderLayout">
+      <panel locate="West" type="GridLayout" rows="5" cols="1">
         <component>
           <driver>common.gui.components.XMLLabel</driver>
           <parameters>
@@ -100,73 +121,9 @@
             <arg attribute="alignment">0</arg>
           </parameters>
         </component>
-        <component>
-          <driver>common.gui.components.XMLLabel</driver>
-          <parameters>
-            <arg attribute="text">PV Mostrador</arg>
-            <arg attribute="alignment">0</arg>
-          </parameters>
-        </component>
-        <component>
-          <driver>common.gui.components.XMLLabel</driver>
-          <parameters>
-            <arg attribute="text">Abanico Mostrador</arg>
-            <arg attribute="alignment">0</arg>
-          </parameters>
-        </component>
-        <component>
-          <driver>common.gui.components.XMLLabel</driver>
-          <parameters>
-            <arg attribute="text">Base Mostrador</arg>
-            <arg attribute="alignment">0</arg>
-          </parameters>
-        </component>
-        <panel type="FlowLayout" />
-        <component>
-          <driver>common.gui.components.XMLLabel</driver>
-          <parameters>
-            <arg attribute="text">PV Sub Pasto</arg>
-            <arg attribute="alignment">0</arg>
-          </parameters>
-        </component>
-        <component>
-          <driver>common.gui.components.XMLLabel</driver>
-          <parameters>
-            <arg attribute="text">Abanico Sub Pasto</arg>
-            <arg attribute="alignment">0</arg>
-          </parameters>
-        </component>
-        <component>
-          <driver>common.gui.components.XMLLabel</driver>
-          <parameters>
-            <arg attribute="text">Base Sub Pasto</arg>
-            <arg attribute="alignment">0</arg>
-          </parameters>
-        </component>
-        <panel type="FlowLayout" />
-        <component>
-          <driver>common.gui.components.XMLLabel</driver>
-          <parameters>
-            <arg attribute="text">PV Sub Poblaciones</arg>
-            <arg attribute="alignment">0</arg>
-          </parameters>
-        </component>
-                <component>
-          <driver>common.gui.components.XMLLabel</driver>
-          <parameters>
-            <arg attribute="text">Abanico Poblaciones</arg>
-            <arg attribute="alignment">0</arg>
-          </parameters>
-        </component>
-        <component>
-          <driver>common.gui.components.XMLLabel</driver>
-          <parameters>
-            <arg attribute="text">Base Poblaciones</arg>
-            <arg attribute="alignment">0</arg>
-          </parameters>
-        </component>
+        
       </panel>
-      <panel locate="Center" type="GridLayout" rows="16" cols="1">
+      <panel locate="Center" type="GridLayout" rows="5" cols="1">
         <component locate="North">
           <driver id="codigo">client.gui.components.EmakuSearchField</driver>
           <parameters>
@@ -196,6 +153,7 @@
             <arg attribute="sqlCode">JBSEL0029</arg>            
             <arg attribute="sqlCode">JBSEL0030</arg>            
             <arg attribute="sqlCode">JBSEL0031</arg>            
+            <arg attribute="sqlCode">JBSEL0095</arg>                        
             <arg attribute="sqlCodeExportValue">LCSEL0365,_descripcion,_pcosto,_pventatres,_linea,_grupo,_sgrupo,_marca,_submarca,_presentacion,_asiento,_id_prod_serv,pcostoultcompra</arg>
           </parameters>
         </component>
@@ -252,13 +210,14 @@
           </parameters>
         </component>
         <component locate="Center">
-          <driver id="costoultcompra">common.gui.components.GenericData</driver>
+          <driver id="costoultcompra">client.gui.components.TableDataFields</driver>
           <parameters>
             <subarg>
               <arg attribute="format">NUMERIC</arg>
               <arg attribute="size">15</arg>
               <arg attribute="getValue">pcostoultcompra</arg>
               <arg attribute="exportValue">pcostoultcompraexport</arg>
+              <arg attribute="keyExternalValue">y</arg>
               <arg attribute="maxlength">26</arg>
               <arg attribute="alignment">RIGHT</arg>
               <arg attribute="enabled">false</arg>              
@@ -266,369 +225,121 @@
             </subarg>
           </parameters>
         </component>
-        <panel type="FlowLayout" align="left">
-        <component locate="Center">
-          <driver id="pventauno">common.gui.components.GenericData</driver>
-          <parameters>
-            <arg attribute="keySQL">MTSEL0125</arg>
-            <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
-            <subarg>
-              <arg attribute="format">NUMERIC</arg>
-              <arg attribute="size">15</arg>
-              <arg attribute="maxlength">10</arg>
-              <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="exportValue">pventauno</arg>
-              <arg attribute="enabled">true</arg>
-              <arg attribute="clean">true</arg>
-            </subarg>
-          </parameters>
-        </component>
-        <component>
-          <driver>common.gui.components.XMLLabel</driver>
-          <parameters>
-            <arg attribute="text">%Margen Utilidad</arg>
-            <arg attribute="alignment">0</arg>
-          </parameters>
-        </component>
-        <component locate="Center">
-          <driver id="putilidad1">common.gui.components.GenericData</driver>
-          <parameters>
-            <subarg>
-              <arg attribute="format">NUMERIC</arg>
-              <arg attribute="size">7</arg>
-              <arg attribute="maxlength">26</arg>
-              <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="calculateBSExportValue">pventauno!=0?((pventauno/(1+(tarifaasientogenerico/100)))-pcostoultcompraexport)/(pventauno/(1+(tarifaasientogenerico/100)))*100:0</arg>
-              <arg attribute="enabled">false</arg>
-              <arg attribute="clean">true</arg>
-            </subarg>
-          </parameters>
-        </component>        
-      </panel>
-      <panel type="FlowLayout" align="left">
-        <component locate="Center">
-          <driver id="abanicouno">common.gui.components.GenericData</driver>
-          <parameters>
-            <arg attribute="keySQL">JBSEL0026</arg>
-            <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
-            <subarg>
-              <arg attribute="format">NUMERIC</arg>
-              <arg attribute="size">15</arg>
-              <arg attribute="maxlength">10</arg>
-              <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="exportValue">abanicouno</arg>
-              <arg attribute="enabled">true</arg>
-              <arg attribute="clean">true</arg>
-            </subarg>
-          </parameters>
-        </component>
-        <component>
-          <driver>common.gui.components.XMLLabel</driver>
-          <parameters>
-            <arg attribute="text">%Margen Utilidad</arg>
-            <arg attribute="alignment">0</arg>
-          </parameters>
-        </component>
-        <component locate="Center">
-          <driver id="putilidad1a">common.gui.components.GenericData</driver>
-          <parameters>
-            <subarg>
-              <arg attribute="format">NUMERIC</arg>
-              <arg attribute="size">7</arg>
-              <arg attribute="maxlength">26</arg>
-              <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="calculateBSExportValue">abanicouno!=0?((abanicouno/(1+(tarifaasientogenerico/100)))-pcostoultcompraexport)/(abanicouno/(1+(tarifaasientogenerico/100)))*100:0</arg>
-              <arg attribute="enabled">false</arg>
-              <arg attribute="clean">true</arg>
-            </subarg>
-          </parameters>
-        </component>        
-      </panel>
 
-      <panel type="FlowLayout" align="left">
-        <component locate="Center">
-          <driver id="baseuno">common.gui.components.GenericData</driver>
-          <parameters>
-            <arg attribute="keySQL">JBSEL0027</arg>
-            <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
-            <subarg>
-              <arg attribute="format">NUMERIC</arg>
-              <arg attribute="size">15</arg>
-              <arg attribute="maxlength">10</arg>
-              <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="exportValue">baseuno</arg>
-              <arg attribute="enabled">true</arg>
-              <arg attribute="clean">true</arg>
-            </subarg>
-          </parameters>
-        </component>
-        <component>
-          <driver>common.gui.components.XMLLabel</driver>
-          <parameters>
-            <arg attribute="text">%Margen Utilidad</arg>
-            <arg attribute="alignment">0</arg>
-          </parameters>
-        </component>
-        <component locate="Center">
-          <driver id="putilidad1b">common.gui.components.GenericData</driver>
-          <parameters>
-            <subarg>
-              <arg attribute="format">NUMERIC</arg>
-              <arg attribute="size">7</arg>
-              <arg attribute="maxlength">26</arg>
-              <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="calculateBSExportValue">baseuno!=0?((baseuno/(1+(tarifaasientogenerico/100)))-pcostoultcompraexport)/(baseuno/(1+(tarifaasientogenerico/100)))*100:0</arg>
-              <arg attribute="enabled">false</arg>
-              <arg attribute="clean">true</arg>
-            </subarg>
-          </parameters>
-        </component>        
-      </panel>
-
-      <panel type="FlowLayout" />
-
-      <panel type="FlowLayout" align="left">
-        <component locate="Center">
-          <driver id="pventados">common.gui.components.GenericData</driver>
-          <parameters>
-            <arg attribute="keySQL">MTSEL0126</arg>
-            <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
-            <subarg>
-              <arg attribute="format">NUMERIC</arg>
-              <arg attribute="size">15</arg>
-              <arg attribute="maxlength">10</arg>
-              <arg attribute="exportValue">pventados</arg>
-              <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="enabled">true</arg>
-              <arg attribute="clean">true</arg>
-            </subarg>
-          </parameters>
-        </component>
-        <component>
-          <driver>common.gui.components.XMLLabel</driver>
-          <parameters>
-            <arg attribute="text">%Margen Utilidad</arg>
-            <arg attribute="alignment">0</arg>
-          </parameters>
-        </component>
-        <component locate="Center">
-          <driver id="putilidad2">common.gui.components.GenericData</driver>
-          <parameters>
-            <subarg>
-              <arg attribute="format">NUMERIC</arg>
-              <arg attribute="size">7</arg>
-              <arg attribute="maxlength">10</arg>
-              <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="calculateBSExportValue">pventados!=0?((pventados/(1+(tarifaasientogenerico/100)))-pcostoultcompraexport)/(pventados/(1+(tarifaasientogenerico/100)))*100:0</arg>
-              <arg attribute="enabled">false</arg>
-              <arg attribute="clean">true</arg>
-            </subarg>
-          </parameters>
-        </component>        
-      </panel>
-      <panel type="FlowLayout" align="left">
-        <component locate="Center">
-          <driver id="abanicodos">common.gui.components.GenericData</driver>
-          <parameters>
-            <arg attribute="keySQL">JBSEL0028</arg>
-            <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
-            <subarg>
-              <arg attribute="format">NUMERIC</arg>
-              <arg attribute="size">15</arg>
-              <arg attribute="maxlength">10</arg>
-              <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="exportValue">abanicodos</arg>
-              <arg attribute="enabled">true</arg>
-              <arg attribute="clean">true</arg>
-            </subarg>
-          </parameters>
-        </component>
-        <component>
-          <driver>common.gui.components.XMLLabel</driver>
-          <parameters>
-            <arg attribute="text">%Margen Utilidad</arg>
-            <arg attribute="alignment">0</arg>
-          </parameters>
-        </component>
-        <component locate="Center">
-          <driver id="putilidad2a">common.gui.components.GenericData</driver>
-          <parameters>
-            <subarg>
-              <arg attribute="format">NUMERIC</arg>
-              <arg attribute="size">7</arg>
-              <arg attribute="maxlength">26</arg>
-              <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="calculateBSExportValue">abanicodos!=0?((abanicodos/(1+(tarifaasientogenerico/100)))-pcostoultcompraexport)/(abanicodos/(1+(tarifaasientogenerico/100)))*100:0</arg>
-              <arg attribute="enabled">false</arg>
-              <arg attribute="clean">true</arg>
-            </subarg>
-          </parameters>
-        </component>        
-      </panel>
-
-      <panel type="FlowLayout" align="left">
-        <component locate="Center">
-          <driver id="basedos">common.gui.components.GenericData</driver>
-          <parameters>
-            <arg attribute="keySQL">JBSEL0029</arg>
-            <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
-            <subarg>
-              <arg attribute="format">NUMERIC</arg>
-              <arg attribute="size">15</arg>
-              <arg attribute="maxlength">10</arg>
-              <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="exportValue">basedos</arg>
-              <arg attribute="enabled">true</arg>
-              <arg attribute="clean">true</arg>
-            </subarg>
-          </parameters>
-        </component>
-        <component>
-          <driver>common.gui.components.XMLLabel</driver>
-          <parameters>
-            <arg attribute="text">%Margen Utilidad</arg>
-            <arg attribute="alignment">0</arg>
-          </parameters>
-        </component>
-        <component locate="Center">
-          <driver id="putilidad2b">common.gui.components.GenericData</driver>
-          <parameters>
-            <subarg>
-              <arg attribute="format">NUMERIC</arg>
-              <arg attribute="size">7</arg>
-              <arg attribute="maxlength">26</arg>
-              <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="calculateBSExportValue">basedos!=0?((basedos/(1+(tarifaasientogenerico/100)))-pcostoultcompraexport)/(basedos/(1+(tarifaasientogenerico/100)))*100:0</arg>
-              <arg attribute="enabled">false</arg>
-              <arg attribute="clean">true</arg>
-            </subarg>
-          </parameters>
-        </component>        
-      </panel>
-
-<panel type="FlowLayout" />
-
-      <panel type="FlowLayout" align="left">
-        <component locate="Center">
-          <driver id="pventatres">common.gui.components.GenericData</driver>
-          <parameters>
-            <subarg>
-              <arg attribute="format">NUMERIC</arg>
-              <arg attribute="size">15</arg>
-              <arg attribute="getValue">_pventatres</arg>
-              <arg attribute="maxlength">10</arg>
-              <arg attribute="exportValue">pventatres</arg>
-              <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="enabled">true</arg>
-              <arg attribute="clean">true</arg>
-            </subarg>
-          </parameters>
-        </component>
-        <component>
-          <driver>common.gui.components.XMLLabel</driver>
-          <parameters>
-            <arg attribute="text">%Margen Utilidad</arg>
-            <arg attribute="alignment">0</arg>
-          </parameters>
-        </component>
-        <component locate="Center">
-          <driver id="putilidad3">common.gui.components.GenericData</driver>
-          <parameters>
-            <subarg>
-              <arg attribute="format">NUMERIC</arg>
-              <arg attribute="size">7</arg>
-              <arg attribute="maxlength">10</arg>
-              <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="calculateBSExportValue">pventatres!=0?((pventatres/(1+(tarifaasientogenerico/100)))-pcostoultcompraexport)/(pventatres/(1+(tarifaasientogenerico/100)))*100:0</arg>
-              <arg attribute="enabled">false</arg>
-              <arg attribute="clean">true</arg>
-            </subarg>
-          </parameters>
-        </component>
-      </panel>
-
-<panel type="FlowLayout" align="left">
-        <component locate="Center">
-          <driver id="abanicotres">common.gui.components.GenericData</driver>
-          <parameters>
-            <arg attribute="keySQL">JBSEL0030</arg>
-            <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
-            <subarg>
-              <arg attribute="format">NUMERIC</arg>
-              <arg attribute="size">15</arg>
-              <arg attribute="maxlength">10</arg>
-              <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="exportValue">abanicotres</arg>
-              <arg attribute="enabled">true</arg>
-              <arg attribute="clean">true</arg>
-            </subarg>
-          </parameters>
-        </component>
-        <component>
-          <driver>common.gui.components.XMLLabel</driver>
-          <parameters>
-            <arg attribute="text">%Margen Utilidad</arg>
-            <arg attribute="alignment">0</arg>
-          </parameters>
-        </component>
-        <component locate="Center">
-          <driver id="putilidad3a">common.gui.components.GenericData</driver>
-          <parameters>
-            <subarg>
-              <arg attribute="format">NUMERIC</arg>
-              <arg attribute="size">7</arg>
-              <arg attribute="maxlength">26</arg>
-              <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="calculateBSExportValue">abanicotres!=0?((abanicotres/(1+(tarifaasientogenerico/100)))-pcostoultcompraexport)/(abanicotres/(1+(tarifaasientogenerico/100)))*100:0</arg>
-              <arg attribute="enabled">false</arg>
-              <arg attribute="clean">true</arg>
-            </subarg>
-          </parameters>
-        </component>        
-      </panel>
-
-      <panel type="FlowLayout" align="left">
-        <component locate="Center">
-          <driver id="basetres">common.gui.components.GenericData</driver>
-          <parameters>
-            <arg attribute="keySQL">JBSEL0031</arg>
-            <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
-            <subarg>
-              <arg attribute="format">NUMERIC</arg>
-              <arg attribute="size">15</arg>
-              <arg attribute="maxlength">10</arg>
-              <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="exportValue">basetres</arg>
-              <arg attribute="enabled">true</arg>
-              <arg attribute="clean">true</arg>
-            </subarg>
-          </parameters>
-        </component>
-        <component>
-          <driver>common.gui.components.XMLLabel</driver>
-          <parameters>
-            <arg attribute="text">%Margen Utilidad</arg>
-            <arg attribute="alignment">0</arg>
-          </parameters>
-        </component>
-        <component locate="Center">
-          <driver id="putilidad3b">common.gui.components.GenericData</driver>
-          <parameters>
-            <subarg>
-              <arg attribute="format">NUMERIC</arg>
-              <arg attribute="size">7</arg>
-              <arg attribute="maxlength">26</arg>
-              <arg attribute="alignment">RIGHT</arg>
-              <arg attribute="calculateBSExportValue">basetres!=0?((basetres/(1+(tarifaasientogenerico/100)))-pcostoultcompraexport)/(basetres/(1+(tarifaasientogenerico/100)))*100:0</arg>
-              <arg attribute="enabled">false</arg>
-              <arg attribute="clean">true</arg>
-            </subarg>
-          </parameters>
-        </component>        
-      </panel>
+       
 
       </panel>
     </panel>
+
+
+
+<panel type="BorderLayout" locate="Center">
+        <component locate="North">
+          <driver>common.gui.components.XMLLabel</driver>
+          <parameters>
+            <arg attribute="text">Cat&#xE1;logos y Precios de Venta Por Lista</arg>
+            <arg attribute="alignment">0</arg>
+          </parameters>
+        </component>
+        <component locate="Center">
+          <driver id="listas">client.gui.components.TableFindData</driver>
+          <parameters>
+            <arg attribute="keySQL">JBSEL0095</arg>
+            <arg attribute="driverEvent" id="codigo">client.gui.components.EmakuSearchField</arg>
+            <arg attribute="rows">1</arg>
+            <arg attribute="name">Listas</arg>
+            <arg attribute="colorBackground">94,234,212</arg>
+            <arg attribute="externalValue">tarifaasientogenerico,client.gui.components.TableDataFields,x</arg>
+            <arg attribute="externalValue">costoultcompra,client.gui.components.TableDataFields,y</arg>
+            <!-- utilidad 1-->
+            <arg attribute="beanshell">c=(b!=0&amp;&amp;y&gt;=0)?((b/(1+(x/100))-y)/(b/(1+(x/100))))*100:0</arg>
+            <!-- utilidad 2-->
+            <arg attribute="beanshell">e=(d!=0&amp;&amp;y&gt;=0)?((d/(1+(x/100))-y)/(d/(1+(x/100))))*100:0</arg>
+            <!-- utilidad 3-->
+            <arg attribute="beanshell">g=(f!=0&amp;&amp;y&gt;=0)?((f/(1+(x/100))-y)/(f/(1+(x/100))))*100:0</arg>
+            <!--<arg attribute="sqlInit">JBSEL0095</arg>
+            <arg attribute="reload">true</arg>
+            <arg attribute="queryOnInit">true</arg>-->
+            <subarg>
+              <!--0a-->
+              <arg attribute="name">Catalogo / Lista</arg>
+              <arg attribute="type">STRING</arg>
+              <arg attribute="length">160</arg>
+              <arg attribute="enabled">FALSE</arg>
+              <arg attribute="clean">true</arg>
+            </subarg>
+            <subarg>
+              <!--1b-->
+              <arg attribute="name">Mostrador</arg>
+              <arg attribute="type">DECIMAL</arg>
+              <arg attribute="length">120</arg>
+              <arg attribute="roundDecimal">0</arg>
+              <arg attribute="enabled">true</arg>
+              <arg attribute="returnCol">0</arg>
+              <arg attribute="clean">true</arg>
+            </subarg>
+            <subarg>
+              <!--4e-->
+              <arg attribute="name">%Ut. Mos</arg>
+              <arg attribute="type">DECIMAL</arg>
+              <arg attribute="length">75</arg>
+              <arg attribute="roundDecimal">2</arg>
+              <arg attribute="enabled">false</arg>
+              <arg attribute="clean">true</arg>
+            </subarg>
+            <subarg>
+              <!--2c-->
+              <arg attribute="name">Abanico</arg>
+              <arg attribute="type">DECIMAL</arg>
+              <arg attribute="length">120</arg>
+              <arg attribute="roundDecimal">0</arg>
+              <arg attribute="enabled">true</arg>
+              <arg attribute="returnCol">1</arg>
+              <arg attribute="clean">true</arg>
+            </subarg>
+            <subarg>
+              <!--5f-->
+              <arg attribute="name">%Ut. Aba</arg>
+              <arg attribute="type">DECIMAL</arg>
+              <arg attribute="length">75</arg>
+              <arg attribute="roundDecimal">2</arg>
+              <arg attribute="enabled">false</arg>
+              <arg attribute="clean">true</arg>
+            </subarg>
+            <subarg>
+              <!--3d-->
+              <arg attribute="name">Base</arg>
+              <arg attribute="type">DECIMAL</arg>
+              <arg attribute="length">120</arg>
+              <arg attribute="roundDecimal">0</arg>
+              <arg attribute="enabled">true</arg>
+              <arg attribute="returnCol">2</arg>
+              <arg attribute="clean">true</arg>
+            </subarg>
+            <subarg>
+              <!--6g-->
+              <arg attribute="name">%Ut. Bas</arg>
+              <arg attribute="type">DECIMAL</arg>
+              <arg attribute="length">75</arg>
+              <arg attribute="roundDecimal">2</arg>
+              <arg attribute="enabled">false</arg>
+              <arg attribute="clean">true</arg>
+            </subarg>
+            <subarg>
+              <!--7h -->
+              <arg attribute="name">id_catalogo</arg>
+              <arg attribute="type">INTEGER</arg>
+              <arg attribute="length">0</arg>
+              <arg attribute="enabled">false</arg>
+              <arg attribute="returnCol">3</arg>
+              <arg attribute="clean">true</arg>
+            </subarg>
+          </parameters>
+        </component>
+      </panel>
+
+
+
   </panel>
   <component locate="South">
     <driver>common.gui.components.ButtonsPanel</driver>
@@ -640,6 +351,10 @@
     <events>
       <object>
         <name>NEW</name>
+        <component>
+          <driver id="listas">client.gui.components.TableFindData</driver>
+          <method>clean</method>
+        </component>
         <component>
           <driver id="marca">common.gui.components.GenericData</driver>
           <method>clean</method>
@@ -660,7 +375,7 @@
           <driver id="pcosto">common.gui.components.GenericData</driver>        
           <method>clean</method>
         </component>
-        <component>
+        <!--<component>
           <driver id="pventauno">common.gui.components.GenericData</driver>
           <method>clean</method>
         </component>
@@ -671,13 +386,13 @@
         <component>
           <driver id="pventatres">common.gui.components.GenericData</driver>
           <method>clean</method>
-        </component>
+        </component>-->
         <component>
-         <driver id="costoultcompra">common.gui.components.GenericData</driver>
+         <driver id="costoultcompra">client.gui.components.TableDataFields</driver>
           <method>clean</method>
         </component>
 
-        <component>
+        <!--<component>
           <driver id="abanicouno">common.gui.components.GenericData</driver>
           <method>clean</method>
         </component>
@@ -724,7 +439,7 @@
         <component>
           <driver id="putilidad3b">common.gui.components.GenericData</driver>
           <method>clean</method>
-        </component>
+        </component>-->
         
 
         <!--  limpiando llaves externas -->
@@ -764,46 +479,7 @@
               <arg attribute="importValue">barra</arg>
             </subarg>
           </parameters>
-        </component>
-        <!-- 1 -->
-        <component>
-          <driver>this</driver>
-          <method>getPackage</method>
-          <parameters>
-            <subarg>
-              <arg attribute="importValue">pventauno</arg>
-              <arg attribute="importValue">abanicouno</arg>
-              <arg attribute="importValue">baseuno</arg>
-              <arg attribute="importValue">barra</arg>
-            </subarg>
-          </parameters>
-        </component>
-        <!-- 2 -->
-        <component>
-          <driver>this</driver>
-          <method>getPackage</method>
-          <parameters>
-            <subarg>
-              <arg attribute="importValue">pventados</arg>
-              <arg attribute="importValue">abanicodos</arg>
-              <arg attribute="importValue">basedos</arg>
-              <arg attribute="importValue">barra</arg>
-            </subarg>
-          </parameters>
-        </component>
-        <!-- 3 -->
-        <component>
-          <driver>this</driver>
-          <method>getPackage</method>
-          <parameters>
-            <subarg>
-              <arg attribute="importValue">pventatres</arg>
-              <arg attribute="importValue">abanicotres</arg>
-              <arg attribute="importValue">basetres</arg>
-              <arg attribute="importValue">barra</arg>
-            </subarg>
-          </parameters>
-        </component>
+        </component>        
         <!-- 4 -->
         <component>
           <driver>this</driver>
@@ -817,7 +493,7 @@
           </parameters>
         </component>
         <!-- auditoria -->
-        <component>
+        <!--<component>
           <driver>this</driver>
           <method>getPackage</method>
           <parameters>
@@ -831,7 +507,10 @@
               <arg attribute="importValue">pventatres</arg>              
             </subarg>
           </parameters>
-        </component>
+        </component>-->
+
+
+
         <!-- 5 inserta en items_pendientes_traslado para ser enviado por el cron -->
         <!-- <component>
           <driver>this</driver>
@@ -842,6 +521,18 @@
             </subarg>
           </parameters>
         </component>        -->
+
+        <!--id_prod_serv-->
+        <component>
+          <driver id="id_prod_serv">common.gui.components.GenericData</driver>
+          <method>getPackage</method>
+        </component>
+
+        <!-- 2 -->
+        <component>
+          <driver id="listas">client.gui.components.TableFindData</driver>
+          <method>getPackage</method>
+        </component>        
         
       </object>
     </events>

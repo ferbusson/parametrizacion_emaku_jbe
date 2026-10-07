@@ -709,7 +709,8 @@
             </parameters>
         </LNData>
     </subarg>
-
-    <arg>JBUPD0010</arg>
+    <!-- actualizaba el movimiento contable de los abonos hechos a sistecredito haciendo que el registro que normalmente es debe quedara como haber y el haber quedara como debe
+    luego revision Daniela solicitan que esto no se haga asi, que el registro quede como cualquier otro abono Agosto 1 2026: 06:38 am
+    <arg>JBUPD0010</arg> -->
 
 </container>

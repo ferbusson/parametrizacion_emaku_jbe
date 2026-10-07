@@ -1,0 +1,132 @@
+<container>
+  <subarg>
+    <arg attribute="idDocument">DS</arg>
+    <arg attribute="consecutive" />
+    <arg attribute="date" />
+    <arg attribute="actionDocument">createDocument</arg>
+    <arg attribute="cash" />
+  </subarg>
+  
+  <!-- 00 info documento -->
+    <arg>LCUPD0005</arg>
+  <!-- 0 observaciones o concepto-->
+  <arg>INS0037</arg>
+  <!-- 1 datos_documento-->
+  <arg>LCINS0188</arg>
+
+  <!-- 2 datos_prod-->
+  <arg>LCINS0185</arg>  
+  
+  <!-- Forma de Pago -->  
+    <!-- 3 Consignacion -->
+    <LNData>
+        <driver>LNSelectedField</driver>
+        <method>getSubpackage</method>
+        <parameters>
+          <arg attribute="sql">LCINS0110</arg>
+          <arg attribute="fields">0,1,2,3</arg>
+          <arg attribute="conditional">c&gt;0</arg>
+        </parameters>
+      </LNData>
+  <!-- 4 Tarjetas -->
+  <LNData>
+      <driver>LNSelectedField</driver>
+      <method>getSubpackage</method>
+      <parameters>
+        <arg attribute="sql">INS0045</arg>
+        <arg attribute="fields">0,1,2,3,4</arg>
+      </parameters>
+    </LNData>
+    <!-- 5 Cheques -->
+  <LNData>
+        <driver>LNSelectedField</driver>
+        <method>getSubpackage</method>
+        <parameters>
+          <arg attribute="sql">LCINS0108</arg>
+          <arg attribute="fields">0,1,2,3</arg>
+          <arg attribute="conditional">b&gt;0</arg> 
+        </parameters>
+  </LNData>
+  <!-- 6 Transferencias -->
+  <LNData>
+        <driver>LNSelectedField</driver>
+        <method>getSubpackage</method>
+        <parameters>
+          <arg attribute="sql">LCINS0109</arg>
+          <arg attribute="fields">0,1,2</arg>
+          <arg attribute="conditional">c&gt;0</arg>
+        </parameters>
+      </LNData>
+
+<!-- 8 cartera -->
+  <arg>JBINS0028</arg>
+  
+  <!-- 7 Tercero -->
+  <arg>INS0048</arg>
+
+  <!-- 9 centrocosto -->
+  <arg attribute="addKey"/>
+
+ 6<!-- 10 Ret. Fuente -->
+    <subarg>
+      <LNData>
+        <driver>LNSelectedField</driver>
+        <method>getSubpackage</method>
+        <parameters>
+          <arg attribute="sql">LEINS0102</arg>
+          <arg attribute="fields">2,3,4,5,1,6</arg>
+          <arg attribute="discartKey">idTercero</arg>
+          <arg attribute="discartKey">centrocosto</arg>
+          <arg attribute="conditional">B&gt;0</arg>
+        </parameters>
+      </LNData>     
+    </subarg>
+    7<!-- 11 Ret. I.V.A. -->
+    <subarg>
+      <LNData>
+        <driver>LNSelectedField</driver>
+        <method>getSubpackage</method>
+        <parameters>
+          <arg attribute="sql">LEINS0102</arg>
+          <arg attribute="fields">2,3,4,5,1,6</arg>
+          <arg attribute="discartKey">idTercero</arg>
+          <arg attribute="discartKey">centrocosto</arg>
+          <arg attribute="conditional">B&gt;0</arg>
+        </parameters>
+      </LNData>     
+    </subarg>
+    8<!-- 12 Ret. I.C.A. -->
+    <subarg>
+      <LNData>
+        <driver>LNSelectedField</driver>
+        <method>getSubpackage</method>
+        <parameters>
+          <arg attribute="sql">LEINS0102</arg>
+          <arg attribute="fields">2,3,4,5,1,6</arg>
+          <arg attribute="discartKey">idTercero</arg>
+          <arg attribute="discartKey">centrocosto</arg>
+          <arg attribute="conditional">B&gt;0</arg>
+          <arg attribute="tercero">getName</arg>
+        </parameters>
+      </LNData>   
+    </subarg>
+    
+  <!-- 13 -->
+      <LNData>
+          <driver>LNContabilidad</driver>
+          <method>rowDataAccountSC</method>
+          <parameters>
+            <arg attribute="centrocosto">getName</arg>
+            <arg attribute="scentrocosto">getName</arg>
+            <arg attribute="tercero">getname</arg>
+            <arg attribute="inventario">notData</arg>
+          </parameters>
+      </LNData>
+
+    <!-- 14 -->
+    <LNData>
+      <driver>LNContabilidad</driver>
+      <method>recoverDocument</method>
+    </LNData>
+    
+</container>

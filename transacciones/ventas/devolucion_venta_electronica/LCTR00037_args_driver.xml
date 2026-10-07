@@ -19,7 +19,19 @@
     <arg>LCUPD0005</arg>
 
     <!-- 2 datos documento -->
-    <arg>LCINS0021</arg>
+    <arg>JBINS0027</arg>
+
+    <!-- 6 tabla: tarjetas - pagos parciales manuales multiples tarjetas -->
+    <LNData>
+        <driver>LNSelectedField</driver>
+        <method>getSubpackage</method>
+        <parameters>
+            <arg attribute="sql">LCINS0018</arg>
+            <arg attribute="fields">0,1,2,3,4,5,7,8,9,13,14</arg>
+            <arg attribute="discartKey">idTercero</arg>
+            <arg attribute="discartKey">centrocosto</arg>
+        </parameters>
+    </LNData>
 
     <!-- 3 tercero_def -->
     <arg>LCINS0025</arg>

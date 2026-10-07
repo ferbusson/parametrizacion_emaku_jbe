@@ -14,6 +14,24 @@
         </preferences>
         <!--  Componente Oculto -->
 
+        <component>
+            <driver id="compsaldodocumentocruce">common.gui.components.GenericData</driver>
+            <parameters>
+                <arg attribute="Panel">false</arg>
+                <arg attribute="keySQL">JBSEL0122</arg>
+                <arg attribute="driverEvent" id="cxp">client.gui.components.XMLComboBox</arg>                                
+                <subarg>
+                    <arg attribute="name">saldodocumentocruce</arg>
+                    <arg attribute="format">NUMERIC</arg>
+                    <arg attribute="size">18</arg>
+                    <arg attribute="maxlength">20</arg>
+                    <arg attribute="alignment">RIGHT</arg>
+                    <arg attribute="exportValue">saldodocumentocruce</arg>                                    
+                    <arg attribute="enabled">false</arg>
+                </subarg>
+            </parameters>
+        </component>
+
         <!-- Cuenta 13 de la fac -->
     <component>
         <driver id="cuentatrece">client.gui.components.TableDataFields</driver>
@@ -759,7 +777,7 @@
                                 <arg attribute="nameField">cxc</arg>
                                 <arg attribute="nullValue">true</arg>
                                 <arg attribute="returnNullValue">true</arg>
-
+                                <arg attribute="sqlCode">JBSEL0122</arg> <!-- consulta saldo de documento seleccionado -->                                                            
                             </parameters>
                         </component>
                         <component locate="Center">
@@ -770,6 +788,7 @@
                                     <arg attribute="name">CTASXCOBRAR</arg>
                                     <arg attribute="format">NUMERIC</arg>
                                     <arg attribute="size">11</arg>
+                                    <!-- <arg attribute="importMaxValue">saldodocumentocruce</arg> implementar en fuentes basado en importMinValue -->
                                     <arg attribute="maxlength">26</arg>
                                     <arg attribute="font">Dialog,1,18</arg>
                                     <arg attribute="alignment">RIGHT</arg>
@@ -1567,7 +1586,7 @@
                 <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
                 <parameters>
                   <arg attribute="driverEvent" id="fac_cambio">client.gui.components.TableDataFields</arg>
-                  <arg attribute="keySQL">JBSEL0114</arg>       
+                  <arg attribute="keySQL">LCSEL0066</arg>       
                   <!-- <arg attribute="enabled">false</arg> -->
                   <arg attribute="rows">40</arg>
                   <arg attribute="colorBackground">191,255,179</arg>
@@ -1658,77 +1677,77 @@
                   <subarg>
                     <arg attribute="name">id_franquicia</arg>
                     <arg attribute="length">110</arg>
-                    <arg attribute="type">COMBOSQL</arg>
+                    <arg attribute="type">STRING</arg>
                     <arg attribute="enabled">false</arg>
                     <arg attribute="returnCol">2</arg>
-                    <arg attribute="sqlCombo">LCSEL0004</arg>
-                    <arg attribute="importValue">idtarjetacombo</arg>
+                    <!-- <arg attribute="sqlCombo">LCSEL0004</arg>
+                    <arg attribute="importValue">idtarjetacombo</arg> -->
                     <arg attribute="printable">true</arg>
                   </subarg>k
       
                   <subarg>
                     <arg attribute="name">ctabanco</arg>
                     <arg attribute="length">110</arg>
-                    <arg attribute="type">COMBOSQL</arg>
+                    <arg attribute="type">STRING</arg>
                     <arg attribute="enabled">false</arg>
                     <arg attribute="returnCol">0</arg>
-                    <arg attribute="sqlCombo">LCSEL0053</arg>
-                    <arg attribute="importValue">idtarjetacombo</arg>
+                    <!-- <arg attribute="sqlCombo">LCSEL0053</arg>
+                    <arg attribute="importValue">idtarjetacombo</arg> -->
                     <arg attribute="printable">true</arg>
                   </subarg>l
       
                   <subarg>
                     <arg attribute="name">ctagasto</arg>
                     <arg attribute="length">110</arg>
-                    <arg attribute="type">COMBOSQL</arg>
+                    <arg attribute="type">STRING</arg>
                     <arg attribute="enabled">false</arg>
                     <arg attribute="returnCol">10</arg>
-                    <arg attribute="sqlCombo">LCSEL0054</arg>
-                    <arg attribute="importValue">idtarjetacombo</arg>
+                    <!-- <arg attribute="sqlCombo">LCSEL0054</arg>
+                    <arg attribute="importValue">idtarjetacombo</arg> -->
                     <arg attribute="printable">true</arg>
                   </subarg>m
       
                   <subarg>
                     <arg attribute="name">ctaretefuente</arg>
                     <arg attribute="length">110</arg>
-                    <arg attribute="type">COMBOSQL</arg>
+                    <arg attribute="type">STRING</arg>
                     <arg attribute="enabled">false</arg>
                     <arg attribute="returnCol">11</arg>
-                    <arg attribute="sqlCombo">LCSEL0055</arg>
-                    <arg attribute="importValue">idtarjetacombo</arg>
+                    <!-- <arg attribute="sqlCombo">LCSEL0055</arg>
+                    <arg attribute="importValue">idtarjetacombo</arg> -->
                     <arg attribute="printable">true</arg>
                   </subarg>n
       
                   <subarg>
                     <arg attribute="name">ctareteiva</arg>
                     <arg attribute="length">110</arg>
-                    <arg attribute="type">COMBOSQL</arg>
+                    <arg attribute="type">STRING</arg>
                     <arg attribute="enabled">false</arg>
                     <arg attribute="returnCol">12</arg>
-                    <arg attribute="sqlCombo">LCSEL0056</arg>
-                    <arg attribute="importValue">idtarjetacombo</arg>
+                    <!-- <arg attribute="sqlCombo">LCSEL0056</arg>
+                    <arg attribute="importValue">idtarjetacombo</arg> -->
                     <arg attribute="printable">true</arg>
                   </subarg>o
       
                   <subarg>
                     <arg attribute="name">operador</arg>
                     <arg attribute="length">110</arg>
-                    <arg attribute="type">COMBOSQL</arg>
+                    <arg attribute="type">STRING</arg>
                     <arg attribute="enabled">false</arg>
                     <arg attribute="returnCol">5</arg>
-                    <arg attribute="sqlCombo">LCSEL0057</arg>
-                    <arg attribute="importValue">idtarjetacombo</arg>
+                    <!-- <arg attribute="sqlCombo">LCSEL0057</arg>
+                    <arg attribute="importValue">idtarjetacombo</arg> -->
                     <arg attribute="printable">true</arg>
                   </subarg>p
       
                   <subarg>
                     <arg attribute="name">tcode</arg>
                     <arg attribute="length">110</arg>
-                    <arg attribute="type">COMBOSQL</arg>
+                    <arg attribute="type">STRING</arg>
                     <arg attribute="enabled">false</arg>
                     <arg attribute="returnCol">6</arg>
-                    <arg attribute="sqlCombo">LCSEL0058</arg>
-                    <arg attribute="importValue">idtarjetacombo</arg>
+                    <!-- <arg attribute="sqlCombo">LCSEL0058</arg>
+                    <arg attribute="importValue">idtarjetacombo</arg> -->
                     <arg attribute="printable">true</arg>
                   </subarg>
                   <!-- q -->
@@ -1736,21 +1755,21 @@
                     <arg attribute="name">pcomision</arg>
                     <arg attribute="length">110</arg>
                     <arg attribute="type">DECIMAL</arg>
-                    <!-- <arg attribute="type">COMBOSQL</arg>-->
+                    <!-- <arg attribute="type">STRING</arg>-->
                     <arg attribute="enabled">false</arg>
-                    <arg attribute="sqlCombo">LCSEL0059</arg>
-                    <arg attribute="importValue">idtarjetacombo</arg>
+                    <!-- <arg attribute="sqlCombo">LCSEL0059</arg>
+                    <arg attribute="importValue">idtarjetacombo</arg> -->
                     <arg attribute="printable">true</arg>
                   </subarg>
                   <!-- r -->
                   <subarg>
                     <arg attribute="name">tercerobanco</arg>
                     <arg attribute="length">110</arg>
-                    <arg attribute="type">COMBOSQL</arg>
+                    <arg attribute="type">STRING</arg>
                     <arg attribute="enabled">false</arg>
                     <arg attribute="returnCol">15</arg>
-                    <arg attribute="sqlCombo">LCSEL0189</arg>
-                    <arg attribute="importValue">idtarjetacombo</arg>
+                    <!-- <arg attribute="sqlCombo">LCSEL0189</arg>
+                    <arg attribute="importValue">idtarjetacombo</arg> -->
                     <arg attribute="printable">true</arg>
                   </subarg>
                   <!-- s -->
@@ -1759,8 +1778,8 @@
                     <arg attribute="length">110</arg>
                     <arg attribute="type">DECIMAL</arg>
                     <arg attribute="enabled">false</arg>
-                    <arg attribute="sqlCombo">LCSEL0190</arg>
-                    <arg attribute="importValue">idtarjetacombo</arg>
+                    <!-- <arg attribute="sqlCombo">LCSEL0190</arg>
+                    <arg attribute="importValue">idtarjetacombo</arg> -->
                     <arg attribute="printable">true</arg>
                   </subarg>
                   <!-- t -->
@@ -1769,8 +1788,8 @@
                     <arg attribute="length">110</arg>
                     <arg attribute="type">DECIMAL</arg>
                     <arg attribute="enabled">false</arg>
-                    <arg attribute="sqlCombo">LCSEL0191</arg>
-                    <arg attribute="importValue">idtarjetacombo</arg>
+                    <!-- <arg attribute="sqlCombo">LCSEL0191</arg>
+                    <arg attribute="importValue">idtarjetacombo</arg> -->
                     <arg attribute="printable">true</arg>
                   </subarg>
                 </parameters>
@@ -2059,16 +2078,34 @@
                                     <arg attribute="conditional">(efectivo+tcxp) &gt;= (totalfact-totalretenciones)</arg>
                                     <arg attribute="errorMessage">Error, Digite el valor del pago en Efectivo o en Cuentas por Pagar (Si es CxP debe seleccionar Documento Abonado)</arg>
                                 </parameters>
+                            </component>-->
+
+                            <component>
+                                <driver id="tcxp">client.gui.components.TableDataFields</driver>
+                                <method>validPackage</method>
+                                <parameters>
+                                    <arg attribute="conditional">(!"".equals(cxp) &amp;&amp; saldodocumentocruce&gt;=tcxp) || (tcxp==0 &amp;&amp; "".equals(cxp) &amp;&amp; saldodocumentocruce==0)</arg>
+                                    <arg attribute="errorMessage">Error, El valor del pago en Cuentas por Pagar excede el saldo del Documento Abonado</arg>
+                                </parameters>
                             </component>
 
                             <component>
                                 <driver id="tcxp">client.gui.components.TableDataFields</driver>
                                 <method>validPackage</method>
                                 <parameters>
-                                    <arg attribute="conditional">(tcxp&gt;0 &amp;&amp; !"".equals(cxp)) || (tcxp==0 &amp;&amp; "".equals(cxp) &amp;&amp; efectivo&gt;0)</arg>
-                                    <arg attribute="errorMessage">Error, Error, debe seleccionar Documento Abonado</arg>
+                                    <arg attribute="conditional">(tcxp&gt;0 &amp;&amp; !"".equals(cxp)) || (tcxp==0 &amp;&amp; "".equals(cxp))</arg>
+                                    <arg attribute="errorMessage">Error, información incompleta en Cuentas por Pagar</arg>
                                 </parameters>
-                            </component> -->
+                            </component>
+                            <component>
+                                <driver id="tcxp">client.gui.components.TableDataFields</driver>
+                                <method>validPackage</method>
+                                <parameters>
+                                    <arg attribute="conditional">(tcxp+efectivo+pagoconcheque+pagoconconsignacion+pagocontarjeta+pagoconanticipo)==(totalfact-totalretenciones)</arg>
+                                    <arg attribute="errorMessage">Error, la suma de los valores en los medios de pago debe ser igual al Total de la Devolución</arg>
+                                </parameters>
+                            </component>
+                            totalfact-totalretenciones
 
                             <!-- NA -->
                             <component>
@@ -2119,6 +2156,11 @@
                                 </parameters>
                             </component>
 
+                            <!-- 6 tarjetas - multiples tarjetas - manuales -->
+                            <component>
+                                <driver id="tpagosmanuales">client.gui.components.TableFindData</driver>
+                                <method>getPackage</method>
+                            </component>
 
                             <!-- 3 tercero -->
                             <component>
@@ -3854,7 +3896,7 @@
 
                             <arg attribute="sqlCode">JBSEL0112</arg> <!-- cheques bigpas JBSEL0112-->
                             <arg attribute="sqlCode">JBSEL0113</arg> <!-- cheques sodexo JBSEL0113-->
-                            <arg attribute="sqlCode">JBSEL0114</arg> <!-- pagos con tarjeta JBSEL0114-->
+                            <arg attribute="sqlCode">LCSEL0066</arg> <!-- pagos con tarjeta LCSEL0066-->
                             <arg attribute="sqlCode">JBSEL0115</arg> <!-- cosignaciones JBSEL0115-->
                             <arg attribute="sqlCode">JBSEL0116</arg> <!-- cheques JBSEL0116-->
                             <arg attribute="sqlCode">JBSEL0117</arg> <!-- anticipos cartera JBSEL0117-->
@@ -4271,6 +4313,16 @@
                         <arg attribute="queryCol">41</arg>
                         <arg attribute="returnCol">11</arg>
                     </subarg>
+                    <subarg>                            <!-- D3 -->
+                            <arg attribute="name">pcosto</arg>
+                            <arg attribute="length">80</arg>
+                            <arg attribute="type">DECIMAL</arg>
+                            <arg attribute="roundDecimal">2</arg>
+                            <arg attribute="enabled">false</arg>
+                            <arg attribute="returnCol">12</arg>
+                            <arg attribute="clean">true</arg>
+                            <arg attribute="nameField">pcosto</arg>
+                        </subarg>
                     </parameters>
                 </component>
 

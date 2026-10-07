@@ -1,0 +1,13 @@
+<container>
+    <subarg>
+        <arg attribute="consecutive" />
+        <arg attribute="cash" />
+        <arg attribute="actionDocument">editDocument</arg>
+    </subarg>
+
+    <!-- 0 -->
+    <arg>JBUPD0016</arg>
+    <!-- 1 -->
+    <arg>LCUPD0022</arg>
+
+</container>

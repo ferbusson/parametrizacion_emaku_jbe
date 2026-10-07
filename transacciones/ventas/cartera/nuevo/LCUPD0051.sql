@@ -28,6 +28,7 @@ WHERE
 	l.id_tercero = a.idtercero;
 	
 -- actualiza id_centrocosto de todo el libro_auxiliar
+/*
 UPDATE
 	libro_auxiliar AS l
 SET
@@ -40,3 +41,4 @@ WHERE
 	a.id_cta = l2.id_cta AND
 	a.idtercero = l2.id_tercero AND
 	l.ndocumento = a.ncomprobante;
+	*/

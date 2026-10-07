@@ -64,6 +64,7 @@
         <subarg>
           <arg attribute="format">TEXT</arg>
           <arg attribute="size">9</arg>
+          <arg attribute="name">documentocompra</arg>
           <arg attribute="maxlength">50</arg>
           <arg attribute="enabled">false</arg>
           <arg attribute="clean">true</arg>
@@ -900,6 +901,7 @@
           <arg attribute="format">TEXT</arg>
           <arg attribute="size">9</arg>
           <arg attribute="maxlength">150</arg>
+          <arg attribute="name">faccruceimp</arg>
           <arg attribute="enabled">false</arg>
           <arg attribute="alignment">RIGHT</arg>
           <arg attribute="printable">true</arg>
@@ -1143,6 +1145,7 @@
                   <arg attribute="foreground">249,87,87</arg>
                   <arg attribute="background">0,0,0</arg>
                   <arg attribute="font">Dialog,0,18</arg>
+                  <arg attribute="nullValue">true</arg>
                 </subarg>
               </parameters>
             </component>

@@ -2,13 +2,13 @@ DROP TABLE IF EXISTS cupotercero;
 DROP TABLE IF EXISTS saldotercero;
 
 CREATE TEMP TABLE cupotercero AS
-SELECT 
+SELECT
 	i.id,
 	COALESCE(i.cupomaximo,0) AS cupomaximo,
 	i.estado,
 	cu.id_cta,
-	foo.char_cta,
-	case when p.id is not null then 1 else 0 end as empleado -- 1 si es empleado 0 si no lo es
+	foo.char_cta--,
+	--case when p.id is not null then 1 else 0 end as empleado -- 1 si es empleado 0 si no lo es
 from
 	(select
 		trim('?'::text) as id,
@@ -21,11 +21,12 @@ inner join
 	info_credito i
 on	
 	i.id::text = foo.id
-left join
-	propiedad_tercero p
-on
-	i.id = p.id and 
-	p.codigo = '12';
+--left join
+	--propiedad_tercero p
+--on
+	--i.id = p.id and 
+	--p.codigo = '12'
+limit 1;
 	
 CREATE TEMP TABLE saldotercero AS
 SELECT
