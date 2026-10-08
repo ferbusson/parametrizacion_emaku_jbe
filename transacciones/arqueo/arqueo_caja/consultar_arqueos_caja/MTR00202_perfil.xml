@@ -2,7 +2,7 @@
     <preferences>
 
         <size width="750" height="590" />
-        <name>Consultar Arqueo</name>
+        <name>Consultar Arqueos</name>
         <icon>CONSULTAR</icon>
         <iconificable />
         <closable />
@@ -11,6 +11,27 @@
 
     </preferences>
 
+                
+            <component>
+                    <driver id="tdevolucionesimpresion">client.gui.components.TableDataFields</driver>
+                    <parameters>
+                        <arg attribute="Panel">false</arg>
+                        <!-- <arg attribute="linkTable">devolucionesve</arg> -->
+                        <subarg>
+                            <arg attribute="format">NUMERIC</arg>
+                            <arg attribute="size">20</arg>
+                            <arg attribute="maxlength">13</arg>
+                            <arg attribute="clean">true</arg>
+                            <arg attribute="font">Dialog,0,13</arg>
+                            <arg attribute="alignment">RIGHT</arg>
+                            <arg attribute="printable">true</arg>
+                            <!-- <arg attribute="totalCol">f</arg> -->
+                            <arg attribute="enabled">false</arg>
+                            <arg attribute="exportValue">tdevolucionesimpresion</arg>
+                            <arg attribute="calculateExportValue">devolucionesefectivo+devolucionesvetotal</arg>
+                        </subarg>
+                    </parameters>
+                </component>
 <component>
         <driver id="totalfacturasmascambios">common.gui.components.GenericData</driver>
         <parameters>
@@ -83,7 +104,7 @@
                 <arg attribute="alignment">RIGHT</arg>
                 <arg attribute="printable">true</arg>
                 <arg attribute="enabled">false</arg>
-                <arg attribute="calculateExportValue">tfptotalpos+tfacturaelectronicapos+tcontingenciapos+tfptotaltregalo+sepptotal+aseptotal+carptotal+tfptotal-(devolucionesefectivo+devolucionesveefectivo)+tfaccreditoefectivo</arg>
+                <arg attribute="calculateExportValue">tfptotalpos+tfacturaelectronicapos+tcontingenciapos+tfptotaltregalo+sepptotal+aseptotal+carptotal+tfptotal-(devolucionesefectivo+devolucionesvetotal)+tfaccreditoefectivo</arg>
             </subarg>
         </parameters>
     </component>
@@ -3256,6 +3277,7 @@
                         <arg attribute="font">Dialog,0,15</arg>
                     </parameters>
                 </component>
+                
             </panel>
             <component locate="Center">
                 <driver id="anulados">client.gui.components.TableFindData</driver>
@@ -3458,7 +3480,7 @@
 
                         <!--20 devolucion en venta pos y electronica -->
                         <component>
-                            <driver id="tdevoluciones">client.gui.components.TableDataFields</driver>
+                            <driver id="tdevolucionesimpresion">client.gui.components.TableDataFields</driver>
                             <method>getPrintPackage</method>
                         </component>                        
 
@@ -3692,10 +3714,9 @@
 
                         <!--20 devolucion en venta pos y electronica -->
                         <component>
-                            <!-- <driver id="devolucionesefectivo">client.gui.components.TableDataFields</driver> -->
-                            <driver id="tdevoluciones">client.gui.components.TableDataFields</driver>
+                            <driver id="tdevolucionesimpresion">client.gui.components.TableDataFields</driver>
                             <method>getPrintPackage</method>
-                        </component>
+                        </component>                        
 
                         <!-- 21 devoluciones
                         <component>
