@@ -81,7 +81,7 @@ select
 	CAST(d.fecha + CAST(textcat(text(dc.dcredito), text(' days')) as interval) AS date) AS vencimiento,
 	d.codigo_tipo||'-'||d.numero::BIGINT||case when id.ex_documento is not null and trim(id.ex_documento,'') != '' then ' / '||id.ex_documento else '' end AS numero,
 	ca.saldo_anterior as saldo,
-	ca.abono_comprobante as abono,
+	coalesce(ca.abono_comprobante,0) as abono,
 	ca.pdcto_comprobante,
 	ca.dcto_comprobante as valor_descuento,
 	0 as total_pagar,
@@ -89,7 +89,7 @@ select
 	id.ex_documento as fac_proveedor,
 	d.ndocumento,
 	ca.saldo_anterior as vfactura,
-	ca.abono_comprobante as valor_pago,
+	coalesce(ca.abono_comprobante,0) as valor_pago,
 	cu.char_cta,
 	cu.id_cta,
 
@@ -132,6 +132,8 @@ on
 where  
 	cu.char_cta like '2205%'
 	AND ca.abono_comprobante != 0
-	and ca.abono_comprobante is not null;
+	and ca.abono_comprobante is not null
+order by
+	trim(replace(id.ex_documento,' ',''),'');
 
 
