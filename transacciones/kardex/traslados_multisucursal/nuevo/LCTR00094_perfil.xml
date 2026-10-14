@@ -230,6 +230,10 @@
         <arg attribute="colorBackground">152,203,255</arg>
         <arg attribute="colorSelected">66,160,255</arg>
         <arg attribute="protectSelected">true</arg>
+
+        <!-- evita que se registren cantidades superiores al saldo en toda la tabla, parametros(codigo_producto,cantidad en la tabla, saldo) 
+         la columna que evalua el beanshell debe ser la de la cantidad, en este caso es g-->
+        <arg attribute="beanshell">g=WARNEXCEEDS(a,g,d)</arg> 
         <subarg><!--0 a-->
           <arg attribute="name">CODE</arg>
           <arg attribute="length">135</arg>
