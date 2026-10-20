@@ -289,6 +289,7 @@ where
 	a.ndocumento = l.ndocumento and
 	l.id_cta = cu.id_cta and
 	 (cu.char_cta like '11%' OR
+	  cu.char_cta like '28050101%' OR
 	  cu.char_cta like '28050502%' OR
 	  cu.char_cta like '28050504%' OR
 	  cu.char_cta like '2810%');

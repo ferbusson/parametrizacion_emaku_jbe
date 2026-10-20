@@ -102,6 +102,7 @@ FROM
 WHERE
   (c.char_cta like '11%' OR
   c.char_cta like '1305%' OR    
+  c.char_cta in ('28050101','28150501') or
   c.char_cta like '28050502%' OR
   c.char_cta like '28050504%' OR
   c.char_cta like '2810%');
@@ -122,7 +123,7 @@ WHERE
   CASE WHEN TRIM(a.id_bodega_ppal) = '' THEN TRUE ELSE ads.id_administracion_sucursales=a.id_administracion_sucursales::INTEGER END AND
   ds.id_administracion_sucursales=ads.id_administracion_sucursales AND
   ds.id_documento = dst.id_documento and
-  dst.nombre in ('FCREDITO','FACTURACION','CAMBIOS','FCONTINGENCIA','FELECTRONICAPOS','FCONTINGENCIAE');
+  dst.nombre in ('FCREDITO','FACTURACION','CAMBIOS','FCONTINGENCIA','FELECTRONICAPOS','FCONTINGENCIAE','ANTICIPOS FACTURACION');
 
 
 DROP TABLE IF EXISTS aux_devoluciones;
@@ -155,7 +156,7 @@ WHERE
         l.id_cta = c.id_cta AND
   (c.char_cta like '11%' OR
   c.char_cta like '1305%' OR    
-  c.char_cta like '28050502%' OR
+  c.char_cta like '28050502%' or
   c.char_cta like '28050504%' OR
   c.char_cta like '2810%') AND
         d.ndocumento=i.ndocumento AND
