@@ -57,7 +57,7 @@
               <driver id="concepto">client.gui.components.TableDataFields</driver>
               <parameters>
                 <arg attribute="driverEventRecord">client.gui.components.TableFindData</arg>
-                <arg attribute="recordColumnId">10</arg>
+                <arg attribute="recordColumnId">26</arg>
                 <subarg>
                   <arg attribute="name">cuenta</arg>
                   <arg attribute="format">TEXT</arg>
@@ -342,7 +342,7 @@
               <arg attribute="length">98</arg>
               <arg attribute="type">DECIMAL</arg>
               <arg attribute="enabled">true</arg>
-              <arg attribute="returnCol">14</arg>
+              <arg attribute="returnCol">16</arg>
               <arg attribute="valideEnabledCol">q=q</arg>
               <!-- <arg attribute="queryCol">15</arg> -->
             </subarg>
@@ -363,7 +363,7 @@
               <arg attribute="printable">true</arg>
             </subarg>
             <subarg><!-- g 6 f 5 -->
-              <arg attribute="name">Documento</arg>
+              <arg attribute="name">Documento Sis</arg>
               <arg attribute="length">105</arg>
               <arg attribute="type">TABLESEARCH</arg>
               <arg attribute="initSQL">HCSEL0011</arg>
@@ -458,12 +458,13 @@
               <arg attribute="valideEnabledCol">o=o</arg>
               <!--<arg attribute="queryCol">6</arg>-->
             </subarg>
-            <subarg><!-- k 10 j 9 -->
-              <arg attribute="name">NAME</arg>
-              <arg attribute="length">0</arg>
+            <subarg><!-- k 10 nombre de la cuenta char_cta -->
+              <arg attribute="name">Documento Ext</arg>
+              <arg attribute="length">100</arg>
               <arg attribute="type">STRING</arg>
-              <arg attribute="enabled">false</arg>
-              <arg attribute="queryCol">0</arg>
+              <arg attribute="enabled">true</arg>
+              <arg attribute="returnCol">11</arg>
+              <arg attribute="returnNullCol">true</arg>
             </subarg>
             <subarg><!-- l 11 k 10 -->
               <arg attribute="name">T</arg>
@@ -471,7 +472,7 @@
               <arg attribute="type">BOOLEAN</arg>
               <arg attribute="enabled">false</arg>
               <arg attribute="queryCol">1</arg>
-              <arg attribute="returnCol">10</arg>
+              <arg attribute="returnCol">12</arg>
             </subarg>
             <subarg><!-- m 12 l 11 -->
               <arg attribute="name">C</arg>
@@ -500,7 +501,7 @@
               <arg attribute="type">BOOLEAN</arg>
               <arg attribute="enabled">false</arg>
               <arg attribute="queryCol">9</arg>
-              <arg attribute="returnCol">12</arg>
+              <arg attribute="returnCol">14</arg>
             </subarg>
             <subarg><!-- q 16 -->
               <arg attribute="name">R</arg>
@@ -508,7 +509,7 @@
               <arg attribute="type">BOOLEAN</arg>
               <arg attribute="enabled">false</arg>
               <arg attribute="queryCol">14</arg>
-              <arg attribute="returnCol">13</arg> 
+              <arg attribute="returnCol">15</arg> 
             </subarg>
             <subarg><!-- r 17 p 15 -->
               <arg attribute="name">id_terceros</arg>
@@ -536,7 +537,7 @@
               <arg attribute="type">STRING</arg>
               <arg attribute="enabled">false</arg>
               <arg attribute="queryCol">4</arg>
-              <arg attribute="returnCol">11</arg>
+              <arg attribute="returnCol">13</arg>
             </subarg>
             <subarg><!-- u 20 s 18 -->
               <arg attribute="name">tagdata</arg>
@@ -590,6 +591,21 @@
                     <arg attribute="importValue">ndocumento</arg>
                     <arg attribute="sqlCombo">LCSEL0955</arg>
                 </subarg>
+            <subarg><!-- z 26 nombre de la cuenta char_cta -->
+              <arg attribute="name">NombreCuenta</arg>
+              <arg attribute="length">0</arg>
+              <arg attribute="type">STRING</arg>
+              <arg attribute="enabled">true</arg>
+              <arg attribute="queryCol">0</arg>
+            </subarg>
+            <subarg><!-- idactivo -->
+              <arg attribute="name">idactivo</arg>
+              <arg attribute="length">0</arg>
+              <arg attribute="type">INTEGER</arg>
+              <arg attribute="enabled">false</arg>
+              <arg attribute="defaultValue">-1</arg>
+              <arg attribute="returnCol">10</arg>
+            </subarg>
           </parameters>
         </component>
       </panel>
