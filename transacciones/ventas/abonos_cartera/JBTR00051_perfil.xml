@@ -1105,7 +1105,7 @@
                   <arg attribute="enabled">false</arg>
                   <arg attribute="font">Dialog,1,20</arg>
                   <arg attribute="alignment">RIGHT</arg>
-                  <arg attribute="totalCol">h</arg>
+                  <arg attribute="totalCol">i</arg>
                   <arg attribute="sendRecord">"53053501","",value,"0","DC"</arg>
                 </subarg>
               </parameters>
@@ -1138,7 +1138,7 @@
                   <arg attribute="maxlength">26</arg>
                   <arg attribute="font">Dialog,1,20</arg>
                   <arg attribute="alignment">RIGHT</arg>
-                  <arg attribute="totalCol">f</arg>
+                  <arg attribute="totalCol">g</arg>
                   <arg attribute="enabled">false</arg>
                   <arg attribute="exportValue">vrpag</arg>
                   <arg attribute="printable">true</arg>

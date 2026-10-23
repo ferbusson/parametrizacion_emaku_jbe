@@ -1,0 +1,236 @@
+<FORM>
+    <preferences>
+        <size width="620" height="190" />
+        <name>Contabilización Documentos</name>
+        <icon>REPORT</icon>
+        <iconificable />
+        <resizable />
+        <closable />
+    </preferences>
+    <panel locate="North" type="FlowLayout" />
+    <panel locate="West" type="FlowLayout" />
+    <panel locate="East" type="FlowLayout" />
+    <panel locate="Center" type="BorderLayout">
+        <panel locate="West" type="GridLayout" rows="4" cols="1">
+            <component>
+                <driver>common.gui.components.XMLLabel</driver>
+                <parameters>
+                    <arg attribute="text">Tipo de Documento (F2 Buscar)</arg>
+                </parameters>
+            </component>
+            <component>
+                <driver>common.gui.components.XMLLabel</driver>
+                <parameters>
+                    <arg attribute="text">Descripción </arg>
+                </parameters>
+            </component>
+            <component>
+                <driver>common.gui.components.XMLLabel</driver>
+                <parameters>
+                    <arg attribute="text">Prefijo Reso DIAN</arg>
+                </parameters>
+            </component>
+            <component>
+                <driver>common.gui.components.XMLLabel</driver>
+                <parameters>
+                    <arg attribute="text">Número</arg>
+                </parameters>
+            </component>
+        </panel>
+        <panel locate="Center" type="GridLayout" rows="4" cols="1">
+            <component>
+                <driver id="codigotipo">client.gui.components.EmakuSearchField</driver>
+                <parameters>
+                  <arg attribute="returnValue">002</arg>
+                  <arg attribute="size">10</arg>
+                  <arg attribute="maxlength">26</arg>
+                  <arg attribute="nullValue">true</arg>
+                  <arg attribute="exportValue">codigotipo</arg>
+                  <arg attribute="format">TEXT</arg>
+                  <arg attribute="sqlCombo">LCSEL0902</arg>
+                  <arg attribute="blankArgs">false</arg>
+                  <arg attribute="keyDataSearch">searchProd</arg>
+                  <arg attribute="repeatData">1</arg>
+                  <arg attribute="noDataBeep">true</arg>
+                  <arg attribute="noDataMessage">No se encontro registros</arg>
+                  <arg attribute="selectedIndex">1</arg>
+                  <arg attribute="enabled">true</arg>
+                  <arg attribute="clean">true</arg>
+                  <arg attribute="sqlCode">LCSEL0903</arg>                  
+                  <arg attribute="sqlCodeExportValue">FESEL0002,_nombre,_tipoda,_tipode,_tiponc,_tiponco,_tipond</arg>
+                </parameters>
+            </component>
+          <component locate="Center">
+                <driver id="nombre">common.gui.components.GenericData</driver>
+                <parameters>
+                    <subarg>
+                        <arg attribute="format">TEXT</arg>
+                        <arg attribute="enabled">false</arg>
+                        <arg attribute="size">30</arg>
+                        <arg attribute="maxlength">50</arg>
+                        <arg attribute="exportValue">nombre</arg>
+                        <arg attribute="getValue">_nombre</arg>
+                        <arg attribute="enabled">false</arg>
+                    </subarg>
+                </parameters>
+            </component>
+            <component locate="Center">
+                <driver id="prefijofacturacion">common.gui.components.GenericData</driver>
+                <parameters>
+                    <arg attribute="keySQL">LCSEL0903</arg>
+                  <arg attribute="driverEvent" id="codigotipo">client.gui.components.EmakuSearchField</arg>
+                    <subarg>
+                        <arg attribute="format">TEXT</arg>
+                        <arg attribute="enabled">false</arg>
+                        <arg attribute="size">10</arg>
+                        <arg attribute="maxlength">50</arg>
+                        <arg attribute="enabled">false</arg>
+                    </subarg>
+                </parameters>
+            </component>
+              <!-- <component>
+                <driver id="tipodocumento">client.gui.components.XMLComboBox</driver>
+                <parameters>
+                    <arg attribute="sqlCombo">LCSEL0661</arg>
+                    <arg attribute="Panel">true</arg>
+                    <arg attribute="preferredLength">320</arg>
+                    <arg attribute="selectedIndex">1</arg>
+                    <arg attribute="exportValue">tipodocumento</arg>
+                </parameters>
+            </component>
+            <component>
+                <driver id="documento">client.gui.components.XMLComboBox</driver>
+                <parameters>
+                    <arg attribute="sqlCombo">LCSEL0662</arg>
+                    <arg attribute="preferredLength">320</arg>
+                    <arg attribute="Panel">true</arg>
+                    <arg attribute="importValue">tipodocumento</arg>
+                    <arg attribute="exportValue">codigotipo</arg>
+                </parameters>
+            </component> -->
+            <component>
+                <driver id="numero">common.gui.components.GenericData</driver>
+                <parameters>
+                    <subarg>
+                        <arg attribute="format">TEXT</arg>
+                        <arg attribute="size">11</arg>
+                        <arg attribute="maxlength">26</arg>
+                        <arg attribute="enabled">true</arg>
+                        <arg attribute="alignment">RIGHT</arg>
+                        <arg attribute="exportValue">numero</arg>
+                    </subarg>
+                </parameters>
+            </component>
+        </panel>
+    </panel>
+    <component locate="South">
+        <driver>common.gui.components.ButtonsPanel</driver>
+        <parameters>
+            <subarg>
+                <arg attribute="label">REPORT</arg>
+                <arg attribute="icon">REPORT</arg>
+                <arg attribute="keyStroke">F9</arg>
+                <arg attribute="typePackage">REPORTREQUEST</arg>
+                <arg attribute="idReport">CRE0136</arg>
+            </subarg>
+        <subarg>
+            <arg attribute="label">EXCEL</arg>
+            <arg attribute="icon">/icons/ico_excel.png</arg>
+            <arg attribute="keyStroke">F9</arg>
+            <arg attribute="typePackage">XLSREPORTREQUEST</arg>
+            <arg attribute="idReport">XLS0015</arg>
+        </subarg>
+            <arg>NEW</arg>
+            <arg>EXIT</arg>
+        </parameters>
+        <events>
+            <object>
+                <name>NEW</name>
+            <component>
+              <driver>common.gui.components.ButtonsPanel</driver>
+              <method>setEnabled</method>
+              <parameters>
+                <arg attribute="button">EXCEL</arg>
+                <arg attribute="state">TRUE</arg>
+              </parameters>
+            </component>            
+
+            <component>
+              <driver>common.gui.components.ButtonsPanel</driver>
+              <method>setEnabled</method>
+              <parameters>
+                <arg attribute="button">REPORT</arg>
+                <arg attribute="state">TRUE</arg>
+              </parameters>
+            </component>            
+
+                <component>
+                    <driver>this</driver>
+                    <method>cleanExternalValues</method>
+                </component>
+                <component>
+                    <driver id="numero">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="codigotipo">client.gui.components.EmakuSearchField</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="nombre">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>
+                <component>
+                    <driver id="prefijofacturacion">common.gui.components.GenericData</driver>
+                    <method>clean</method>
+                </component>                
+            </object>
+            <object>
+                <name>REPORT</name>
+                <component>
+            <driver>this</driver>
+            <method>getPackage</method>
+            <parameters>
+                <subarg>
+                    <arg attribute="importValue">codigotipo</arg>
+                    <arg attribute="importValue">numero</arg>
+                </subarg>
+            </parameters>
+            </component> 
+            <component>
+              <driver>common.gui.components.ButtonsPanel</driver>
+              <method>setEnabled</method>
+              <parameters>
+                <arg attribute="button">REPORT</arg>
+                <arg attribute="state">TRUE</arg>
+              </parameters>
+            </component>            
+
+            </object>
+            <object>
+                <name>EXCEL</name>
+                <component>
+                    <driver>this</driver>
+                    <method>getPackage</method>
+                    <parameters>
+                        <arg attribute="blankPackage">true</arg>
+                        <subarg>
+                            <arg attribute="importValue">codigotipo</arg>
+                            <arg attribute="importValue">numero</arg>
+                        </subarg>
+                    </parameters>
+                </component>
+            <component>
+              <driver>common.gui.components.ButtonsPanel</driver>
+              <method>setEnabled</method>
+              <parameters>
+                <arg attribute="button">EXCEL</arg>
+                <arg attribute="state">TRUE</arg>
+              </parameters>
+            </component>            
+
+
+            </object>
+        </events>
+    </component>
+</FORM>

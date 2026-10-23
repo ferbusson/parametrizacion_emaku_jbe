@@ -154,7 +154,7 @@ FROM
 		ON
 			rd.id_resolucion_facturacion = rf.id_resolucion_facturacion 
 	    where
-			d.codigo_tipo IN ('FC','1B') and -- PONGO ESTO PARA QUE SE LISTEN LAS FACTURAS DE MIGRACION DE CARTERA CXC y 1B los saldos iniciales de sistecredito
+			d.codigo_tipo IN ('FC','1B','SI') and -- PONGO ESTO PARA QUE SE LISTEN LAS FACTURAS DE MIGRACION DE CARTERA CXC y 1B los saldos iniciales de sistecredito
 			ac.id_cta=c.id_cta and
 			ac.char_cta not in ('28050502') and -- se excluyen los separados Oct 7 2024
 			d.ndocumento=c.nfactura AND
