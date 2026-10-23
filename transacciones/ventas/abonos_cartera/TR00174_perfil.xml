@@ -43,6 +43,51 @@
     <requestFocus>client.gui.components.FindThird</requestFocus>
   </preferences>
   <!--OCULTOS -->
+  <component locate="Center">
+            <driver id="idcentrocosto">common.gui.components.GenericData</driver>
+            <parameters>
+              <!-- <arg attribute="keySQL">LCSEL0429</arg>
+              <arg attribute="driverEvent">client.gui.components.FindThird</arg> Comentado 07 Sep 2026: para guardar id_centrocosto de la sucursal donde se hace el pago No el de la factura que se esta pagando-->
+              <subarg>
+                <arg attribute="addAttribute">key</arg>
+                <arg attribute="nameField">centrocosto</arg>
+                <arg attribute="format">TEXT</arg>
+                <arg attribute="size">9</arg>
+                <arg attribute="maxlength">50</arg>
+                <arg attribute="enabled">false</arg>
+
+                <!-- Descomentado 07 Sep 2026: para guardar id_centrocosto de la sucursal donde se hace el pago No el de la factura que se esta pagando -->
+                <arg attribute="importValue">id_centrocosto</arg>
+                <arg attribute="sqlInit">MTSEL0682</arg>
+                <arg attribute="queryOnInit">true</arg>
+
+                <arg attribute="clean">false</arg>
+                <arg attribute="font">Dialog,0,18</arg>
+                <arg attribute="printable">true</arg>
+              </subarg>
+            </parameters>
+          </component>
+  <component locate="Center">
+    <driver id="nombrecentrocosto">common.gui.components.GenericData</driver>
+    <parameters>
+      <!-- Comentado 07 Sep 2026: para guardar id_centrocosto de la sucursal donde se hace el pago No el de la factura que se esta pagando -->
+      <!-- <arg attribute="keySQL">JBSEL0079</arg>
+      <arg attribute="driverEvent">client.gui.components.FindThird</arg> -->
+      <subarg>
+        <!-- Descomentado 07 Sep 2026: para guardar id_centrocosto de la sucursal donde se hace el pago No el de la factura que se esta pagando -->
+        <arg attribute="importValue">id_centrocosto</arg>
+        <arg attribute="sqlInit">JBSEL0022</arg>
+        <arg attribute="queryOnInit">true</arg>
+
+        <arg attribute="format">TEXT</arg>
+        <arg attribute="size">9</arg>
+        <arg attribute="maxlength">50</arg>
+        <arg attribute="enabled">false</arg>
+        <arg attribute="clean">false</arg>
+        <arg attribute="printable">true</arg>
+      </subarg>
+    </parameters>
+  </component>
   <component>
     <driver id="nitalterno">common.gui.components.GenericData</driver>
     <parameters>
@@ -312,7 +357,7 @@
             </parameters>
           </component>
         </panel>
-        <panel locate="Center" type="GridLayout" rows="6" cols="1">
+        <panel locate="Center" type="GridLayout" rows="4" cols="1">
           <component locate="Center">
             <driver id="fecha">common.gui.components.GenericData</driver>
             <parameters>
@@ -397,52 +442,7 @@
                 <arg attribute="printable">true</arg>
               </subarg>
             </parameters>
-          </component>
-          <component locate="Center">
-    <driver id="idcentrocosto">common.gui.components.GenericData</driver>
-    <parameters>
-      <!-- <arg attribute="keySQL">LCSEL0429</arg>
-      <arg attribute="driverEvent">client.gui.components.FindThird</arg> Comentado 07 Sep 2026: para guardar id_centrocosto de la sucursal donde se hace el pago No el de la factura que se esta pagando-->
-      <subarg>
-        <arg attribute="addAttribute">key</arg>
-        <arg attribute="nameField">centrocosto</arg>
-        <arg attribute="format">TEXT</arg>
-        <arg attribute="size">9</arg>
-        <arg attribute="maxlength">50</arg>
-        <arg attribute="enabled">false</arg>
-
-        <!-- Descomentado 07 Sep 2026: para guardar id_centrocosto de la sucursal donde se hace el pago No el de la factura que se esta pagando -->
-        <arg attribute="importValue">id_centrocosto</arg>
-        <arg attribute="sqlInit">MTSEL0682</arg>
-        <arg attribute="queryOnInit">true</arg>
-
-        <arg attribute="clean">false</arg>
-        <arg attribute="font">Dialog,0,18</arg>
-        <arg attribute="printable">true</arg>
-      </subarg>
-    </parameters>
-  </component>
-  <component locate="Center">
-    <driver id="nombrecentrocosto">common.gui.components.GenericData</driver>
-    <parameters>
-      <!-- Comentado 07 Sep 2026: para guardar id_centrocosto de la sucursal donde se hace el pago No el de la factura que se esta pagando -->
-      <!-- <arg attribute="keySQL">JBSEL0079</arg>
-      <arg attribute="driverEvent">client.gui.components.FindThird</arg> -->
-      <subarg>
-        <!-- Descomentado 07 Sep 2026: para guardar id_centrocosto de la sucursal donde se hace el pago No el de la factura que se esta pagando -->
-        <arg attribute="importValue">id_centrocosto</arg>
-        <arg attribute="sqlInit">JBSEL0022</arg>
-        <arg attribute="queryOnInit">true</arg>
-
-        <arg attribute="format">TEXT</arg>
-        <arg attribute="size">9</arg>
-        <arg attribute="maxlength">50</arg>
-        <arg attribute="enabled">false</arg>
-        <arg attribute="clean">false</arg>
-        <arg attribute="printable">true</arg>
-      </subarg>
-    </parameters>
-  </component>
+          </component>          
         </panel>
       </panel>
     </panel>
