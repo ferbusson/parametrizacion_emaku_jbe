@@ -22,7 +22,17 @@ SELECT
 	pc.vinculada,
 	pc.edocumento,
 	pc.retencion,
-	l.id_vinculo_movimiento
+	l.id_vinculo_movimiento,
+	l.ex_documento,
+	CASE 
+        WHEN l.ndocumento_enlace IS NOT NULL THEN 
+            SUM(CASE WHEN l.ndocumento_enlace IS NOT NULL THEN 1 ELSE 0 END) 
+            OVER (
+                ORDER BY l.haber -- le damos numeracion a cada doc basados en su valor
+                ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+            )
+        ELSE NULL 
+    END AS contador
 from
 	libro_auxiliar l
 inner join
@@ -51,32 +61,34 @@ WHERE
 --
 
 SELECT
-	foo.char_cta,
-	foo.detalle,
-	foo.debe,
-	foo.haber,
-	foo.base,
-	foo.id_char,
-	numero,
-	foo.centrocosto,
-	foo.scentrocosto,
-	v.codigo AS vinculo,
-	foo.nombre,
-	foo.terceros,
-	foo.centro,
-	foo.scentro,
-	foo.vinculada,
-	foo.edocumento,
-	foo.retencion,
-	id_tercero,
-	foo.id_prod_serv AS id_producto,
-	foo.id_cta,
-	NEXTVAL('orden_seq'),
-	nombret,
-	foo.nfactura,
-	nombretimp,
-	detalleimp,
-	numdocimp
+	/* 0 */ foo.char_cta,
+	/* 1 */ foo.detalle,
+	/* 2 */ foo.debe,
+	/* 3 */ foo.haber,
+	/* 4 */ foo.base,
+	/* 5 */ foo.id_char,
+	/* 6 */ numero,
+	/* 7 */ foo.centrocosto,
+	/* 8 */ foo.ex_documento,
+	/* 9 */ foo.scentrocosto,
+	/* 10 */ v.codigo AS vinculo,
+	/* 11 */ foo.terceros,
+	/* 12 */ foo.centro,
+	/* 13 */ foo.scentro,
+	/* 14 */ foo.vinculada,
+	/* 15 */ foo.edocumento,
+	/* 16 */ foo.retencion,
+	/* 17 */ id_tercero,
+	/* 18 */ foo.id_prod_serv AS id_producto,
+	/* 19 */ foo.id_cta,
+	/* 20 */ NEXTVAL('orden_seq'),
+	/* 21 */ nombret,
+	/* 22 */ foo.nfactura,
+	/* 23 */ nombretimp,
+	/* 24 */ detalleimp,
+	/* 25 */ numdocimp,
+	/* 26 */ foo.nombre,
+	/* 27 */ 0 as id_activo
 FROM	
 	(SELECT
 		foo.char_cta,
@@ -104,7 +116,8 @@ FROM
 	 	foo.nfactura,
 	 	nombretimp,
 	 	detalleimp,
-	 	numdocimp
+	 	numdocimp,
+		foo.ex_documento
 	FROM
 		(SELECT
 			foo.char_cta,
@@ -135,8 +148,8 @@ FROM
 			--doc.nfactura,
 		 	SUBSTRING(foo.id_char||'-'||nombret,1,30) AS nombretimp,
 		 	SUBSTRING(foo.detalle,1,41) AS detalleimp,
-		 	coalesce(doc.numero_exdocumento,doc2.numero_exdocumento) as numdocimp
-		 	--doc.numero_exdocumento as numdocimp
+		 	coalesce(doc.numero_exdocumento,doc2.numero_exdocumento) as numdocimp,
+		 	foo.ex_documento
 		FROM
 			(select
 				foo.codigo_tipo,
@@ -163,7 +176,9 @@ FROM
 				foo.edocumento,
 				foo.retencion,
 				foo.id_vinculo_movimiento,
-				TRIM(COALESCE(g.nombre1,'')||' '||COALESCE(g.nombre2,'')||' '||COALESCE(g.apellido1,'')||' '||COALESCE(g.apellido2,'')||' '||COALESCE(g.razon_social,'')) AS nombret
+				foo.contador,
+				TRIM(COALESCE(g.nombre1,'')||' '||COALESCE(g.nombre2,'')||' '||COALESCE(g.apellido1,'')||' '||COALESCE(g.apellido2,'')||' '||COALESCE(g.razon_social,'')) AS nombret,
+				foo.ex_documento
 			FROM
 				(select
 					foo.codigo_tipo,
@@ -189,7 +204,9 @@ FROM
 					foo.vinculada,
 					foo.edocumento,
 					foo.retencion,
-					foo.id_vinculo_movimiento
+					foo.id_vinculo_movimiento,
+					foo.ex_documento,
+					foo.contador
 				FROM
 					aux_libro_auxiliar_consulta AS foo
 				LEFT OUTER JOIN
@@ -208,6 +225,7 @@ FROM
 				c.idtercero,
 				c.nfactura,
 				c.ncomprobante,
+				row_number() over (order by SUM(c.abono_comprobante)) as contador, -- le damos numeracion a cada doc basados en su valor
 				SUM(c.abono_comprobante) AS abono_comprobante,
 				SUM(c.cargo_comprobante) AS cargo_comprobante
 			 FROM
@@ -219,7 +237,8 @@ FROM
 			 	c.idtercero = a.id_tercero and
 			 	d.estado AND
 				c.nfactura=d.ndocumento and
-				d.ndocumento = id.ndocumento
+				d.ndocumento = id.ndocumento and
+				c.ncomprobante = (select ndocumento from aux_libro_auxiliar_consulta limit 1)
 			GROUP BY
 				d.codigo_tipo||'-'||d.numero::BIGINT,
 				id.ex_documento,
@@ -229,7 +248,9 @@ FROM
 				c.ncomprobante) AS doc
 		ON
 			doc.id_cta=foo.id_cta AND
-			doc.nfactura=foo.ndocumento_enlace AND
+			doc.contador=foo.contador AND
+			foo.edocumento and
+			foo.ndocumento_enlace is not null and
 			doc.ncomprobante=foo.ndocumento AND
 			doc.idtercero=foo.id_tercero
 		LEFT OUTER JOIN

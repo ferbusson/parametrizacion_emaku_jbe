@@ -358,7 +358,7 @@
           </component>
         </panel>
         <panel locate="Center" type="GridLayout" rows="4" cols="1">
-          <component locate="Center">
+          <!-- <component locate="Center">
             <driver id="fecha">common.gui.components.GenericData</driver>
             <parameters>
               <arg attribute="Panel">false</arg>
@@ -376,7 +376,18 @@
                 <arg attribute="printable">true</arg>
               </subarg>
             </parameters>
-          </component>
+          </component> -->
+          <component locate="West">
+              <driver id="date">common.gui.components.XMLDateField</driver>
+              <parameters>
+                  <arg attribute="dateFormatString">yyyy-MM-dd HH:mm:ss</arg>
+                  <arg attribute="exportValue">fechai</arg>
+                  <arg attribute="name">fechadoc</arg>
+                  <arg attribute="addAttribute">key</arg>
+                  <arg attribute="nameField">fechadoc</arg>
+                  <arg attribute="printable">true</arg>
+              </parameters>
+            </component>
           <component locate="Center">
             <driver id="nro_comprobante">common.gui.components.GenericData</driver>
             <parameters>
@@ -463,7 +474,7 @@
 
         <arg attribute="beanshell">g=a&amp;&amp;g==0?j:a&amp;&amp;g!=0?g:0</arg>
 
-        <arg attribute="beanshell">g=j&lt;g?0:g</arg>
+        <!-- <arg attribute="beanshell">g=j&lt;g?0:g</arg> -->
         <arg attribute="beanshell">h=h&gt;100?100:h</arg>
         <arg attribute="formula">i=l*(h/100)</arg>
         <arg attribute="beanshell">j=f&lt;(g+i)?0:f-(g+i)</arg>
@@ -736,6 +747,10 @@
           <driver id="balance_contable">common.gui.components.GenericData</driver>
           <method>clean</method>
         </component>
+        <component>
+          <driver id="date">common.gui.components.XMLDateField</driver>
+          <method>clean</method>
+        </component>        
         <!-- <component>
           <driver id="tcredibanco">client.gui.components.TableFindData</driver>
           <method>clean</method>
@@ -2936,6 +2951,11 @@
                     </subarg>
                   </parameters>
                 </component>
+                  <!-- NA -->
+              <component>
+                <driver id="date">common.gui.components.XMLDateField</driver>
+                <method>getPackage</method>
+              </component>
                 <!--  Inicia envio de paquetes -->
                                 0
                 <component>
@@ -3489,6 +3509,11 @@
                     </subarg>
                   </parameters>
                 </component>
+                  <!-- NA -->
+              <component>
+                <driver id="date">common.gui.components.XMLDateField</driver>
+                <method>getPackage</method>
+              </component>
                 <!--  Inicia envio de paquetes -->
                                 0
                 <component>
@@ -4045,6 +4070,10 @@
                   <driver id="bigpass">client.gui.components.TableFindData</driver>
                   <method>clean</method>
                 </component>
+                <component>
+                  <driver id="date">common.gui.components.XMLDateField</driver>
+                  <method>clean</method>
+                </component>        
                 <component>
                   <driver>this</driver>
                   <method>transferFocus</method>

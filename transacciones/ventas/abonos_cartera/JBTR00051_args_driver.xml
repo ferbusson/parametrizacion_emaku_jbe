@@ -1,7 +1,7 @@
 <container>
   <subarg>
     <arg attribute="consecutive" />
-    <arg attribute="date" />
+    <!-- <arg attribute="date" /> -->
     <arg attribute="actionDocument">createDocument</arg>
     <arg attribute="cash" />
   </subarg>
