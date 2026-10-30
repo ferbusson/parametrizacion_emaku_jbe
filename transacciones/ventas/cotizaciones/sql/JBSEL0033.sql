@@ -1,7 +1,7 @@
 --JBSEL0033
 with aux_parametros_query as(
 select
-	d.ndocumento
+	d.*
 from
 	documentos d
 where
@@ -30,7 +30,7 @@ SELECT
     ps.codigo,
     substring(it.nombre,1,66) as descripcion,
     coalesce(s.saldo,0) as saldo,
-    cant,
+    dp.cant,
     dp.id_lista,
     dp.pventa,
     dp.iva,
@@ -71,9 +71,12 @@ SELECT
 	pv1.pventa as pventa1,
 	pv2.pventa as pventa2,
 	pv3.pventa as pventa3,
-	pt.es_pintor::integer as espintor,
-	pt.tiene_precio_base::integer as tienepreciobase
+	--pt.es_pintor::integer as espintor,
+    1::integer as generado_anterior, -- 1 para que la tabla del pedido no recalcule el vunitario, ver las formulas en JBTR00001_perfil.xml
+	pt.tiene_precio_base::integer as tienepreciobase,
+	dp.cant -- se usa para validar si es mayor al disponible pintar la fila con color
 FROM 
+    info_documento id,
     prod_serv ps,
      item it,
     tercero_def td,
@@ -105,8 +108,14 @@ on
 WHERE 
     dp.ndocumento= (select a.ndocumento from aux_parametros_query a) and
     dp.ndocumento = td.ndocumento and
+    dp.ndocumento = id.ndocumento and
     td.id = pt.id and
     ps.id_prod_serv=dp.id_prod_serv AND
      it.id_item=ps.id_item
+     and case 
+                        when (select a.fecha::date from aux_parametros_query a) + interval '1 day'*id.vencimiento < CURRENT_DATE then false
+                        when (select a.estado from aux_parametros_query a) = false then false
+                        when id.procesado = true then false
+                        else true end
 ORDER BY
 	dp.orden;

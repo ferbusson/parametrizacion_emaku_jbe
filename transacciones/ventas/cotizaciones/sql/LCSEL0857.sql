@@ -945,7 +945,7 @@ SELECT
 9447,
 9449,
 12526,
-12718) then 1000 else a.disponible end as disponible,
+12718) then 2000 else a.disponible end as disponible,
     --pvo.pventa,
     --pvo.pventa,
     CASE WHEN pvo.id_regimen='E' THEN ROUND((pvo.pventa/(1+(piva/100)))::numeric,0) ELSE pvo.pventa::NUMERIC END AS pventa,

@@ -934,7 +934,8 @@
           <arg attribute="driverEvent" id="nrogenerador">client.gui.components.TableDataFields</arg>
           <arg attribute="rowHeight">24</arg>
           <arg attribute="font">Dialog,1,13</arg>
-          <arg attribute="Query">LCSEL0857</arg>
+          <!-- <arg attribute="Query">LCSEL0857</arg> query Con promociones 30 Oct 2026 se quita a peticion de JBE-->
+          <arg attribute="Query">JBSEL0146</arg> <!-- query Sin promociones 30 Oct 2026 se quita a peticion de JBE-->
           <arg attribute="importValue">idtercero</arg>
           <arg attribute="importValue">id_centrocosto</arg>
           <arg attribute="importValue">id_bodega</arg>
