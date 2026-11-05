@@ -60,6 +60,7 @@ GROUP BY
     iv.id_prod_serv;
 
 --
+/*
 DROP TABLE IF EXISTS aux_pinventario_por_bodega_y_producto;
 CREATE TEMP TABLE aux_pinventario_por_bodega_y_producto AS
 (SELECT DISTINCT ON(i.id_bodega,i.id_prod_serv)
@@ -201,7 +202,27 @@ ORDER BY
     i.id_prod_serv,
     i.fecha desc)
     ;
+*/
 --
+DROP TABLE IF EXISTS aux_valor_inventario_bodega;
+CREATE TEMP TABLE aux_valor_inventario_bodega AS
+SELECT
+    i.id_bodega,
+    round(sum(COALESCE(i.entrada,0)*COALESCE(i.valor_ent,0)
+            - COALESCE(i.salida,0)*COALESCE(i.valor_sal,0))::numeric, 2) AS valor_inventario
+FROM
+    inventarios i
+    JOIN documentos d ON d.ndocumento = i.ndocumento AND d.estado = true,
+    aux_listado_productos lp,
+    aux_parametros_reporte a
+WHERE
+    lp.id_prod_serv = i.id_prod_serv AND
+    lp.id_bodega    = i.id_bodega AND
+    i.id_bodega in (select id from aux_bodegas_reporte) and
+    i.fecha::DATE <= a.fechaf::date
+GROUP BY i.id_bodega;
+
+/*
 drop table if exists aux_valor_inventario_bodega;
 create temp table aux_valor_inventario_bodega as
 SELECT  
@@ -215,8 +236,27 @@ ON
     foo.id_prod_serv = a.id_prod_serv AND
     foo.id_bodega = a.id_bodega
 group by
-	foo.id_bodega;
+	foo.id_bodega;*/
 
+
+DROP TABLE IF EXISTS aux_valor_inventario_bodega_inicial;
+CREATE TEMP TABLE aux_valor_inventario_bodega_inicial AS
+SELECT
+    i.id_bodega,
+    round(sum(COALESCE(i.entrada,0)*COALESCE(i.valor_ent,0)
+            - COALESCE(i.salida,0)*COALESCE(i.valor_sal,0))::numeric, 2) AS valor_inventario_inicial
+FROM
+    inventarios i
+    JOIN documentos d ON d.ndocumento = i.ndocumento AND d.estado = true,
+    aux_listado_productos lp,
+    aux_parametros_reporte a
+WHERE
+    lp.id_prod_serv = i.id_prod_serv AND
+    lp.id_bodega    = i.id_bodega AND
+    i.id_bodega in (select id from aux_bodegas_reporte) and
+    i.fecha::DATE < a.fechai
+GROUP BY i.id_bodega;
+/*
 drop table if exists aux_valor_inventario_bodega_inicial;
 create temp table aux_valor_inventario_bodega_inicial as
 SELECT  
@@ -231,7 +271,7 @@ ON
     foo.id_bodega = a.id_bodega
 group by
 	foo.id_bodega;
-
+*/
 
 
 -- 2a. Facturas (Z%/G%) dentro del rango, resolviendo el documento fuente
@@ -335,9 +375,16 @@ select
     coalesce(cv.costo_ventas, 0) as costo_ventas_del_mes_valor,
     coalesce(vm.valor_ventas, 0) - coalesce(cv.costo_ventas, 0) as utilidad_bruta,
     (((coalesce(vm.valor_ventas, 0) - coalesce(cv.costo_ventas, 0)) / coalesce(vm.valor_ventas, 0))*100)::numeric(20,2) as p_utilidad,
-    (coalesce(cv.costo_ventas, 0) / ((coalesce(vii.valor_inventario_inicial, 0) + coalesce(vi.valor_inventario, 0))/2))::numeric(20,2) as rotacion,
+    /*(coalesce(cv.costo_ventas, 0) / ((coalesce(vii.valor_inventario_inicial, 0) + coalesce(vi.valor_inventario, 0))/2))::numeric(20,2) as rotacion,
     ((select (fechaf::date - fechai::date) +1  from aux_parametros_reporte) /
-    	(coalesce(cv.costo_ventas, 0) / ((coalesce(vii.valor_inventario_inicial, 0) + coalesce(vi.valor_inventario, 0))/2))::numeric(20,2))::numeric(10,0) as dias_inventario
+    	(coalesce(cv.costo_ventas, 0) / ((coalesce(vii.valor_inventario_inicial, 0) + coalesce(vi.valor_inventario, 0))/2))::numeric(20,2))::numeric(10,0) as dias_inventario*/
+    case when (coalesce(vii.valor_inventario_inicial, 0) + coalesce(vi.valor_inventario, 0)) != 0 then
+    	(coalesce(cv.costo_ventas, 0) / ((coalesce(vii.valor_inventario_inicial, 0) + coalesce(vi.valor_inventario, 0))/2))::numeric(20,2)
+    else 0 end as rotacion,
+    case when (coalesce(vii.valor_inventario_inicial, 0) + coalesce(vi.valor_inventario, 0)) != 0 then
+    ((select (fechaf::date - fechai::date) +1  from aux_parametros_reporte) /
+    	(coalesce(cv.costo_ventas, 0) / ((coalesce(vii.valor_inventario_inicial, 0) + coalesce(vi.valor_inventario, 0))/2))::numeric(20,2))::numeric(10,0) 
+    else 0 end as dias_inventario
 from
     aux_bodegas_reporte b
 left join aux_valor_inventario_bodega vi on vi.id_bodega = b.id

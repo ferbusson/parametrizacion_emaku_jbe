@@ -1,0 +1,25 @@
+<container>
+  <subarg>
+    <arg attribute="idDocument">AC</arg>
+    <arg attribute="consecutive"/>
+    <arg attribute="date"/>
+    <arg attribute="actionDocument">createDocument</arg>
+    <arg attribute="cash"/>
+  </subarg>
+  <subarg>
+  <!-- <LNData>
+      <driver>LNInventarios</driver>
+      <method>movimientos</method>
+      <parameters>
+        <arg attribute="tipoMovimiento">recover</arg>
+      </parameters>
+    </LNData> -->
+  <LNData>
+      <driver>LNInventarios</driver>
+      <method>movimientos</method>
+      <parameters>
+        <arg attribute="tipoMovimiento">recoverFromDate</arg>
+      </parameters>
+    </LNData>
+  </subarg>
+</container>

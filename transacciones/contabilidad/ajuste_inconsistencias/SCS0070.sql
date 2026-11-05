@@ -1,0 +1,1 @@
+SELECT g.id,TRIM(g.nombre1||' '||g.nombre2||' '||g.apellido1||' '||g.apellido2||' '||g.razon_social) as nombre FROM general g,perfiles p WHERE g.id=p.id AND p.tipo='006'

@@ -1,0 +1,291 @@
+<FORM>
+	<preferences>
+		<size width="810" height="570" />
+		<name>Ajuste de Inconcistencias en Costeo</name>
+		<icon>/icons/ico_salida_alquiler.png</icon>
+		<iconificable />
+		<closable />
+		<resizable />
+		<date />
+		<consecutive>AC</consecutive>
+		<!-- <localConfigEquals sourceValue="SQL" keyLocal="cash" arg="USER">SEL0086</localConfigEquals>-->
+	</preferences>
+	<panel locate="North" type="BorderLayout">
+		<panel locate="West" type="BorderLayout">
+			<panel locate="North" type="FlowLayout"/>
+			<panel locate="South" type="FlowLayout"/>
+			<panel locate="Center" type="BorderLayout">
+				<panel locate="West" type="FlowLayout"/>
+				<panel locate="East" type="FlowLayout"/>
+				<component locate="North">
+					<driver>common.gui.components.XMLLabel</driver>
+					<parameters>
+						<arg attribute="text">OBSERVACIONES</arg>
+						<arg attribute="alignment">LEFT</arg>
+					</parameters>
+				</component>
+				<component locate="Center">
+					<driver id="observaciones">common.gui.components.XMLTextArea</driver>
+					<parameters>
+						<arg attribute="rows">100</arg>
+						<arg attribute="cols">300</arg>
+					</parameters>
+				</component>
+			</panel>
+		</panel>
+		<panel locate="Center" type="BorderLayout">
+			<box locate="East" width="50" />
+			<box locate="West" width="100" />
+			<box locate="North" length="40" />
+			<panel locate="Center" type="BorderLayout">
+				<panel locate="North" type="BorderLayout">
+					<panel locate="West" type="GridLayout" rows="2" cols="1">
+						<component locate="Center">
+							<driver>common.gui.components.XMLLabel</driver>
+							<parameters>
+								<arg attribute="text">DATE</arg>
+								<arg attribute="font">Dialog,0,14</arg>
+							</parameters>
+						</component>
+						<component locate="North">
+							<driver>common.gui.components.XMLLabel</driver>
+							<parameters>
+								<arg attribute="text">NUMBER</arg>
+								<arg attribute="font">Dialog,0,14</arg>
+							</parameters>
+						</component>
+					</panel>
+					<panel locate="Center" type="GridLayout" rows="2" cols="1">
+						<component locate="Center">
+							<driver id="date">common.gui.components.GenericData</driver>
+							<parameters>
+								<arg attribute="Panel">false</arg>
+								<arg attribute="returnBlankPackage">true</arg>
+								<subarg>
+									<arg attribute="name">DATE</arg>
+									<arg attribute="format">TEXT</arg>
+									<arg attribute="size">30</arg>
+									<arg attribute="maxlength">50</arg>
+									<arg attribute="enabled">false</arg>
+									<arg attribute="return">false</arg>
+									<arg attribute="clean">false</arg>
+									<arg attribute="systemDate">yyyy-MM-dd</arg>
+									<arg attribute="printable">true</arg>
+								</subarg>
+							</parameters>
+						</component>
+						<component locate="Center">
+							<driver id="number">client.gui.components.TableDataFields</driver>
+							<parameters>
+								<arg attribute="Panel">false</arg>
+								<subarg>
+									<arg attribute="format">TEXT</arg>
+									<arg attribute="size">10</arg>
+									<arg attribute="maxlength">26</arg>
+									<arg attribute="enabled">false</arg>
+									<arg attribute="clean">false</arg>
+									<arg attribute="font">Dialog,0,18</arg>
+									<arg attribute="foreground">249,87,87</arg>
+									<arg attribute="background">0,0,0</arg>
+									<arg attribute="alignment">RIGHT</arg>
+									<arg attribute="idDocument">AC</arg>
+								</subarg>
+							</parameters>
+						</component>
+					</panel>
+				</panel>
+			</panel>
+		</panel>
+	</panel>
+	<tab locate="Center">
+		<panel name="Inventarios" icon="/icons/ico_pro_proc.png" type="BorderLayout">
+			<component locate="Center">
+				<driver id="inventarios">client.gui.components.TableFindData</driver>
+				<parameters>
+					<arg attribute="rows">100</arg>
+					<arg attribute="initSQL">DGSEL0127</arg>
+					<arg attribute="colorBackground">175,197,218</arg>
+					<arg attribute="colorSelected">162,183,202</arg>
+					<arg attribute="returnNullValue">true</arg>
+					<subarg>
+						<arg attribute="name">Bodega</arg>
+						<arg attribute="length">70</arg>
+						<arg attribute="type">STRING</arg>
+						<arg attribute="enabled">false</arg>
+					</subarg>
+					<subarg>
+						<arg attribute="name">CODE</arg>
+						<arg attribute="length">90</arg>
+						<arg attribute="type">STRING</arg>
+						<arg attribute="enabled">false</arg>
+						<arg attribute="printable">true</arg>
+					</subarg>
+					<subarg>
+						<arg attribute="name">DESCRIPCION</arg>
+						<arg attribute="length">320</arg>
+						<arg attribute="type">STRING</arg>
+						<arg attribute="enabled">false</arg>
+						<arg attribute="printable">true</arg>
+					</subarg>
+					<subarg>
+						<arg attribute="name">Saldo Calculado</arg>
+						<arg attribute="length">100</arg>
+						<arg attribute="type">DECIMAL</arg>
+						<arg attribute="roundDecimal">2</arg>
+						<arg attribute="enabled">false</arg>
+						<arg attribute="printable">true</arg>
+					</subarg>
+					<subarg>
+						<arg attribute="name">Saldo Inventario</arg>
+						<arg attribute="length">100</arg>
+						<arg attribute="type">DECIMAL</arg>
+						<arg attribute="roundDecimal">2</arg>
+						<arg attribute="enabled">false</arg>
+						<arg attribute="printable">true</arg>
+					</subarg>
+					<subarg>
+						<arg attribute="name">Diferencia</arg>
+						<arg attribute="length">100</arg>
+						<arg attribute="type">DECIMAL</arg>
+						<arg attribute="roundDecimal">2</arg>
+						<arg attribute="enabled">false</arg>
+						<arg attribute="printable">true</arg>
+					</subarg>
+					<subarg>
+						<arg attribute="name">idBodega</arg>
+						<arg attribute="length">0</arg>
+						<arg attribute="type">DECIMAL</arg>
+						<arg attribute="roundDecimal">2</arg>
+						<arg attribute="enabled">false</arg>
+						<arg attribute="printable">true</arg>
+						<arg attribute="nameField">idBodega</arg>
+						<arg attribute="returnCol">0</arg>
+					</subarg>
+					<subarg>
+						<arg attribute="name">idproducto</arg>
+						<arg attribute="length">0</arg>
+						<arg attribute="type">DECIMAL</arg>
+						<arg attribute="roundDecimal">2</arg>
+						<arg attribute="enabled">false</arg>
+						<arg attribute="printable">true</arg>
+						<arg attribute="returnCol">1</arg>
+						<arg attribute="nameField">idproducto</arg>
+					</subarg>
+				</parameters>
+			</component>
+		</panel>
+		<panel name="Libro Auxiliar" icon="/icons/ico_materias.png" type="BorderLayout">
+			<component locate="Center">
+				<driver id="auxiliar">client.gui.components.TableFindData</driver>
+				<parameters>
+					<arg attribute="rows">100</arg>
+					<arg attribute="initSQL">DGSEL0128</arg>
+					<arg attribute="colorBackground">224,230,192</arg>
+					<arg attribute="colorSelected">199,207,157</arg>
+					<arg attribute="returnNullValue">true</arg>
+					<subarg>
+						<arg attribute="name">Cuenta</arg>
+						<arg attribute="length">80</arg>
+						<arg attribute="type">STRING</arg>
+						<arg attribute="enabled">false</arg>
+					</subarg>
+					<subarg>
+						<arg attribute="name">DESCRIPCION</arg>
+						<arg attribute="length">175</arg>
+						<arg attribute="type">STRING</arg>
+						<arg attribute="enabled">false</arg>
+						<arg attribute="printable">true</arg>
+					</subarg>
+					<subarg>
+						<arg attribute="name">TERCERO</arg>
+						<arg attribute="length">80</arg>
+						<arg attribute="type">STRING</arg>
+						<arg attribute="enabled">false</arg>
+						<arg attribute="printable">true</arg>
+					</subarg>
+					<subarg>
+						<arg attribute="name">PRODUCTO</arg>
+						<arg attribute="length">80</arg>
+						<arg attribute="type">STRING</arg>
+						<arg attribute="enabled">false</arg>
+						<arg attribute="printable">true</arg>
+					</subarg>
+					<subarg>
+						<arg attribute="name">Saldo Calculado</arg>
+						<arg attribute="length">120</arg>
+						<arg attribute="type">DECIMAL</arg>
+						<arg attribute="roundDecimal">2</arg>
+						<arg attribute="enabled">false</arg>
+						<arg attribute="printable">true</arg>
+					</subarg>
+					<subarg>
+						<arg attribute="name">Saldo Sistema</arg>
+						<arg attribute="length">120</arg>
+						<arg attribute="type">DECIMAL</arg>
+						<arg attribute="roundDecimal">2</arg>
+						<arg attribute="enabled">false</arg>
+						<arg attribute="printable">true</arg>
+					</subarg>
+					<subarg>
+						<arg attribute="name">Diferencia</arg>
+						<arg attribute="length">120</arg>
+						<arg attribute="type">DECIMAL</arg>
+						<arg attribute="roundDecimal">2</arg>
+						<arg attribute="enabled">false</arg>
+						<arg attribute="printable">true</arg>
+					</subarg>
+					<subarg>
+						<arg attribute="name">idCta</arg>
+						<arg attribute="length">0</arg>
+						<arg attribute="type">DECIMAL</arg>
+						<arg attribute="roundDecimal">2</arg>
+						<arg attribute="enabled">false</arg>
+						<arg attribute="printable">true</arg>
+						<arg attribute="returnCol">0</arg>
+						<arg attribute="nameField">idCta</arg>
+					</subarg>
+					<subarg>
+						<arg attribute="name">idTercero</arg>
+						<arg attribute="length">0</arg>
+						<arg attribute="type">DECIMAL</arg>
+						<arg attribute="roundDecimal">2</arg>
+						<arg attribute="enabled">false</arg>
+						<arg attribute="printable">true</arg>
+						<arg attribute="returnCol">1</arg>
+						<arg attribute="nameField">idTercero</arg>
+					</subarg>
+					<subarg>
+						<arg attribute="name">idProdServ</arg>
+						<arg attribute="length">0</arg>
+						<arg attribute="type">DECIMAL</arg>
+						<arg attribute="roundDecimal">2</arg>
+						<arg attribute="enabled">false</arg>
+						<arg attribute="printable">true</arg>
+						<arg attribute="returnCol">2</arg>
+						<arg attribute="nameField">idProducto</arg>
+					</subarg>
+				</parameters>
+			</component>
+		</panel>
+	</tab>
+	<component locate="South">
+		<driver id="pago">common.gui.components.ButtonsPanel</driver>
+		<parameters>
+			<arg>PRINT</arg>
+			<arg>EXIT</arg>
+		</parameters>
+		<events>
+			<object>
+				<name>PRINT</name>
+				<action>
+					<type>transaction</type>
+					 <component>
+						<driver id="inventarios">client.gui.components.TableFindData</driver>
+						<method>getBlankPackage</method>
+					</component> 
+				</action>
+			</object>
+		</events>
+	</component>
+</FORM>
+
